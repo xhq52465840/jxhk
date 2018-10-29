@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+	.cur-pointer{
+		cursor : pointer;
+	}
+	.color{
+		color : blue;
+	}
+</style>
+</head>
+<body>
+<div>
+	<div class="uui-managepage">
+		<div qid="content" class="hidden">
+			<div class="row form-group" style="height: 43px;margin-bottom: 12px;">
+				<div class="col-md-12 text-right" qid="btn_area" style="margin-top:10px;">
+					<button class="btn btn-default btn-sm hidden" qid="baoCun">保存</button>
+					<button class="btn btn-default btn-sm hidden" qid="xiaFa">下发</button>
+				</div>
+			</div>
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-baseinfo-panel"></span>工作单基本信息</h2>
+					</div>
+					<div class="panel-body">
+						
+						<table class="uui-table table-fixed">
+							<tbody>
+								<tr>
+									<td class="name" data-field="workName">工作单名称</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="workName" name="workName"/></td>
+									<td class="name" data-field="workNo">工作单编号</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="workNo" name="workNo"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="target">被审计单位</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="target" name="target"/></td>
+									<td class="name" data-field="address">审计地点</td>
+									<td class="value"><input type="text"  class="form-control input-sm" qid="address" name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >审计日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm" qid="startDate" name="startDate" maxlength="12"/></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm" qid="endDate" name="endDate" maxlength="12"/></div>
+										</div>
+									</td>
+									<td class="name" data-field="method">审计方式</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="method" name="method"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="teamLeader">审计组长</td>
+									<td class="value"><input type="text"  class="form-control input-sm" qid="teamLeader" name="teamLeader"/></td>
+									<td class="name" data-field="standard">审计标准</td>
+									<td class="value"><input type="text"  class="form-control input-sm" qid="standard" name="standard"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="managers">项目主管</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm" qid="managers" name="managers"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="member">审计组员</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm" qid="member" name="member"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="remark">备注</td>
+									<td class="value" colspan="3">
+										<textarea class="form-control input-sm" rows="3" qid="remark" name="remark"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="name"><input type="file" name="uploadify" qid="uploadify"/></td>
+									<td class="value" colspan="3">
+										<table class="table">
+											<tbody qid="fileList">
+									      </tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-checkarea-panel"></span>审计范围</h2>
+					</div>
+					<div class="panel-body">
+						<div class="row show-grid" qid="professionContainer"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div qid="logsContainer"></div>
+	</div>
+</div>
+</body>
+</html>

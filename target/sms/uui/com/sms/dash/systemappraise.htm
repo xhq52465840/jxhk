@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+    	.table th{
+    		border: 1px solid #ddd;
+    		text-align: center;
+    	}
+    	.enable:hover{
+    		cursor:pointer;
+    		background-color:#0099FF;
+    	}
+    	.table td{
+    		border: 1px solid #ddd;
+    		text-align: center;
+    	}
+    </style>
+<title></title>
+</head>
+<body>
+	<div>
+		<div qid="display" class="hidden" >
+		<div>
+				<label>选择日期</label>&nbsp;&nbsp;&nbsp;
+				<select style="width:70px;" qid="years">
+					<option qid="first1" selected = "selected"></option>
+					<option qid="first2"></option>
+					<option qid="first3"></option>
+					<option qid="first4"></option>
+					<option qid="first5"></option>
+					<option qid="first6"></option>
+					<option qid="first7"></option>
+					<option qid="first8"></option>
+					<option qid="first9"></option>
+					<option qid="first10"></option>
+				</select>&nbsp;&nbsp;&nbsp;
+				<label>年</label>&nbsp;&nbsp;&nbsp;
+				<select   style="width:60px;" qid="months">
+					<option qid="1">1</option>
+					<option qid="2">2</option>
+					<option qid="3">3</option>
+					<option qid="4">4</option>
+					<option qid="5">5</option>
+					<option qid="6">6</option>
+					<option qid="7">7</option>
+					<option qid="8">8</option>
+					<option qid="9">9</option>
+					<option qid="10">10</option>
+					<option qid="11">11</option>
+					<option qid="12">12</option>
+				</select>&nbsp;&nbsp;&nbsp;
+				<label>月</label>&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-default" type="button" qid="seachdata">查询</button>
+		</div>
+			<div qid="system-data" style="margin-top:15px;">
+				<table qid="system-table" class="table" style="border: 1px solid #ddd;">
+					<thead>
+						<tr><th>安监机构</th></tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div qid="config" class="hidden" style="height:500px;border:1px solid #ccc;padding:10px;">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label  class="col-sm-2 control-label">选择安监机构</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" qid="unit" placeholder="安监机构">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  class="col-sm-2 control-label">选择系统</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" qid="sysType" placeholder="选择系统">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" class="btn btn-default" qid="update">保存</button>
+						<button type="button" class="btn btn-default" qid="cancel" style="margin-left:10px">取消</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

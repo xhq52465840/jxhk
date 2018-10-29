@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>信息类型</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //$.u.inituui();
+
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='unit-config-header']"));
+
+            $.um($("div[umid='admin-horizontal-menus']"),{urlparams:true,menuType:"UNIT",selected:"管理"});
+
+            $.um($("div[umid='user-vertical-menus']"),{urlparams:true,postUrlparams:{unit:parseInt($.urlParam().id)},menuId:132,selected:"安全信息类型"});
+
+            $.um($("div[umid='project-config']"));
+
+            $.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面头部 begin-->
+    <div umid="unit-config-header" umodule="com.sms.pageheader.unitConfig"></div>
+    <!--页面头部 end-->
+
+    <!--二级横向导航 begin-->
+    <div umid="admin-horizontal-menus" umodule="com.sms.horizontalMenus"></div>
+    <!--二级横向导航 end-->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-nav">
+    			<div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+    		</div>
+    		<div class="page-content-main">
+    			<div umid="project-config" umodule="com.sms.unitconfig.projectconfig">安全信息类型</div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

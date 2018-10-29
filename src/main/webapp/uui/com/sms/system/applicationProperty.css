@@ -1,0 +1,15 @@
+.com-sms-system-applicationProperty .table tr:hover td {
+	background-color: #f0f0f0;
+}
+
+.com-sms-system-applicationProperty .table tr td .pp {
+	visibility: hidden;
+}
+
+.com-sms-system-applicationProperty .table tr td:hover .pp {
+	visibility: visible;
+}
+
+.com-sms-system-applicationProperty .select2-group {
+	width:280px;
+}

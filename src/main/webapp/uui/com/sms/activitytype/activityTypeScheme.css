@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+    .activity-sortlist{
+    	background:#f0f0f0;
+    	padding:15px 0;
+    }
+    .activity-sortlist .form-group{
+    	margin-left:0px;margin-right: 0px;
+    }
+    .activity-sortlist .activity-div{
+    	min-height:40px;border:1px solid #bbb;padding:7px;background-color:white;
+    }
+    .activity-sortlist .activity-div ul{
+    	min-height:40px;border:1px solid #bbb;padding:7px;background-color:white;
+    }
+    .activity-sortlist .list-group-item{
+    	margin:3px;padding:3px;
+    }

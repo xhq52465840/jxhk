@@ -1,0 +1,42 @@
+{
+	"data":{
+		"aaData":[{
+			"config": {
+				"method":"getTargetForImproveIssue"
+			},
+			"propid": "improveUnit",
+			"propname": "责任单位",
+			"propvalue": [],
+			"propshow":"",
+			"propplugin": "com.audit.filter.selectProp"
+		},{
+			"config": {
+				"method":"getImproveNoticeStatus"
+			},
+			"propid": "status",
+			"propname": "状态",
+			"propvalue": [],
+			"propshow":"",
+			"propplugin": "com.audit.filter.selectProp"
+		},{
+			"config": {
+				"method":"stdcomponent.getbysearch",
+				"dataobject":"activityStatus"
+			},
+			"propid": "flowStatus",
+			"propname": "流程状态",
+			"propvalue": [],
+			"propshow":"",
+			"propplugin": "com.audit.filter.selectProp"
+		},
+		{
+			"config": null,
+			"propid": "improveNoticeNo",
+			"propname": "整改编号",
+			"propvalue": [],
+			"propshow":"",
+			"propplugin": "com.audit.filter.textProp"
+		}]
+	},
+	"success":true
+}

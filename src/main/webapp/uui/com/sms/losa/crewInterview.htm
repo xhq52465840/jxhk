@@ -1,0 +1,123 @@
+!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+ <form role="form"  way-data="jsonCrew" way-persistent="true">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">机组访谈</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" id="operate" style="height:100%">
+      
+           <h2 class="text-primary"  style="font-family: sans-serif;font-size:18px">
+				1.训练
+			</h2>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">a) 在你所得到的训练和在航线运行中发生的实际情况之间存在着什么样的差异？</label>
+					<textarea style="width:100%" rows="4" name="theDiffBetweenTraAndAct"></textarea>
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">b) 如果有差异，为什么？</label>
+					<textarea style="width:100%" rows="4" name="theReasonBetweenTraAndAct"></textarea>
+				</fieldset>
+			</form>
+			<h2 class="text-primary" style="font-family: sans-serif;font-size:18px">
+				2.标准化
+			</h2>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">c) 与你一起飞行的其他机组成员在标准化方面情况如何？</label>
+					<textarea style="width:100%" rows="4" name="theConditionOfOtherCrew"></textarea>
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">d) 如果标准化水平不足，你认为在程序性不遵守行为的原因是什么？</label>
+					<textarea style="width:100%" rows="4" name="theReasonOfOtherCrew"></textarea>
+				</fieldset>
+			</form>
+			<h2 class="text-primary"style="font-family: sans-serif;font-size:18px">
+				3.自动化
+			</h2>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">e) 什么是这架飞机最大的自动化“问题”？</label>
+					<textarea style="width:100%" rows="4" name="theAutoProblemOfTheAircra"></textarea>
+				</fieldset>
+			</form>
+			<h2 class="text-primary" style="font-family: sans-serif;font-size:18px">
+				4.总体安全的改进——在提高安全水平方面所关心的问题和建议
+			</h2>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">f) 飞行运行</label>
+					<textarea style="width:100%" rows="4" name="flightOperation"></textarea>
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">g) 签派</label>
+					<textarea style="width:100%" rows="4" name="dispatch"></textarea>
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">h) 机场和空中交通管制</label>
+					<textarea style="width:100%" rows="4" name="airportAndControl"></textarea>
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<label style="color:black;font-family: sans-serif;font-size:14px">i) 标准操作程序</label>
+					<textarea style="width:100%" rows="4" name="standardProcedure"></textarea>
+				</fieldset>
+			</form>
+             <h2 class="text-primary" style="font-family: sans-serif;font-size:18px">
+				5.其他访谈问题
+			</h2>
+			<textarea style="width:100%" rows="4" name="otherQuestion" ></textarea>
+         
+      </div>
+      <!--  <button class="btn btn-default" type="button" id="more" onclick="addmore()">增加其他问题</button> --> 
+     </div>
+      <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+           
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a  id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item active" ><a  style="color:white" id="crewUrl" href="">机组访谈</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>  
+           <button  type="button" class="btn btn-default" qid="saveCrew" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitCrew" href="">提交</button>
+           
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+   </div>
+ </form>
+</div>
+  </body>

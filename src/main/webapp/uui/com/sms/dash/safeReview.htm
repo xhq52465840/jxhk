@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	.th-1{
+		background:url(../../../img/sms/title.jpg) repeat-x;
+		color:white;
+		text-align:center;
+		border-top-left-radius: 10px;
+	}
+	.th-2{
+		background:url(../../../img/sms/title.jpg) repeat-x;
+		color:white;
+		text-align:center;
+		border-top-right-radius: 10px;
+	}
+	.th-3{
+		text-align:center;
+		color:white;
+		background-color:#A2ACB5;
+	}
+	.th-right{
+		border-right: 1px solid white;
+	}
+	.td-color{
+		background-color:#F4F4F6;
+	}
+	.com-edit{
+		cursor:pointer;
+	}
+	table.text-mid td{
+		text-align : center;
+	}
+	.com-score{
+		cursor:pointer;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div qid="score">
+			<div class="row" style="padding:10px 0;">
+				<div class="col-sm-12" style="text-align:center;">
+					<div class="form-group" style="font-weight: bold;font-size:25px;color:#7d4fab;">
+						<span qid="unitReview" name="unitReview">
+						</span>
+					</div>
+				</div>
+				<div class="col-sm-12" style="text-align:center;">
+					<input type="hidden" qid="sendID"/>
+					<span style="font-size: 10px;" qid="subTitle"></span>
+				</div>
+	    	</div>
+	    	<table class="table text-mid">
+		    	<thead>
+		    		<tr>
+		    			<th colspan="2" width="60%" class="th-1">评审标准</th><th colspan="3" class="th-2">完成情况统计表</th>
+		    		</tr>
+		    		<tr>
+		    			<th width="30%" class="th-3 th-right">考核项目</th>
+		    			<th width="30%" class="th-3 th-right">考核内容</th>
+		    			<th width="20%" class="th-3 th-right">完成情况</th>
+		    			<th width="10%" class="th-3 th-right">得分</th>
+		    			<th width="10%" class="th-3">操作</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    	</tbody>
+		    	<tfoot>
+		    		<tr><td>备注</td><td colspan="4"><textarea class="form-control" qid="remark_v" readonly="readonly"></textarea></td></tr>
+		    		<tr><td colspan="5" style="text-align:right;">总分:<span qid="countScore"></span></td></tr>
+		    	</tfoot>
+		    </table>
+		</div>
+	</div>
+</body>
+</html>

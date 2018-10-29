@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+    	<div umid="userinfo"></div>
+    	<div umid="quaRightInfo" ></div>
+    	<div umid="usersetting"></div>
+    	<div umid="selectUserAvatar"></div>
+    	<div umid="edittable"></div>
+    	<div umid="quaDialogEdit"></div>
+	    <div class="page-header" style="padding-bottom: 0px; font-size:24px;line-height:1.25;">
+	    	<div class="img-text-container">
+	    		<img qid="img_useravatar" src="" width="48" height="48"/>
+	    		<%=com.sms.profile.i18n.userInformation %><br/><span qid="label_username"></span>
+	    	</div>
+	    </div>
+	    <!--页面主内容区域 begin-->
+	    <div class="page-content">
+	            <div class="container-fluid no-left-right-padding">
+	            	<div class="row ">
+	            		<div class="col-sm-6" qid="infocontainer">
+	            			<div class="uui-panel-graph">
+	            				<div class="uui-panel-rect-widget">
+	            					<div class="uui-panel-rect-header">
+										<h4 class="uui-panel-rect-title">
+											<strong><%=com.sms.profile.i18n.detail %></strong>
+											<span qid="btn_editUserinfo" class="glyphicon glyphicon-pencil pull-right"></span>
+										</h4>
+									</div>
+	            					<div class="uui-panel-rect-body">
+	            						<div class="dl-horizontal item-details">
+					            			<dl >
+											  <dt><%=com.sms.profile.i18n.image %></dt>
+											  <dd><img qid="avatar-picker-trigger" class="avatar-picker-trigger" src="" width="48" height="48"/></dd>
+											</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.account %></dt>
+											  <dd qid="username"></dd>
+											</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.fullName %></dt>
+											  <dd qid="fullname"></dd>
+											</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.mail %></dt>
+											  <dd qid="email"></dd>
+											</dl>
+											
+											<dl >
+											  <dt><%=com.sms.profile.i18n.password %></dt>
+											  <dd><a href="#" qid="pwd"><%=com.sms.profile.i18n.remaind %></a></dd>
+											</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.userGroup %></dt>
+											  <dd qid="userGroupContainer">
+											  	<ul qid="userGroup" class="list-unstyled" style="padding-left: 0px; margin: 0;"></ul>
+											  </dd>
+											</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.oaDeptName %></dt>
+										  <dd><span qid="usersetting_oaDeptName"></span></dd>
+										</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.safeAgencyRole %></dt>
+											  <dd qid="unitRoleContainer">
+											  	<ul qid="unitRole" class="list-unstyled" style="padding-left: 0px; margin: 0;"></ul>
+											  </dd>
+											</dl>
+											<dl>
+											  <dt><%=com.sms.profile.i18n.org %></dt>
+											  <dd qid="orgContainer">
+											  	<ul qid="org" class="list-unstyled" style="padding-left: 0px; margin: 0;"></ul>
+											  	  <!-- <a href="#"><%=com.sms.profile.i18n.remiandA %></a> -->
+											  </dd>
+											</dl>
+										</div>
+										
+	            					</div>
+	            				</div>
+							</div>
+							<!-- <div class="uui-panel-graph">
+								<div class="uui-panel-rect-widget">
+									<div class="uui-panel-rect-header">
+										<h4 class="uui-panel-rect-title"><strong><%=com.sms.profile.i18n.Parameterize %></strong><span qid="edit-usersetting-trigger" class="glyphicon glyphicon-pencil pull-right"></span></h4>
+									</div>
+									<div class="uui-panel-rect-body">
+										<div class="dl-horizontal item-details" qid="usersetting_container">
+				            		    <dl>
+										  <dt><%=com.sms.profile.i18n.pageDisplayNum %></dt>
+										  <dd><span qid="usersetting_pageDisplayNum"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.emailFormat %></dt>
+										  <dd><span qid="usersetting_emailFormat"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.emailUser %></dt>
+										  <dd><span qid="usersetting_emailuser"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.defaultAccess %></dt>
+										  <dd><span qid="usersetting_defaultaccess"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.autoWatch %></dt>
+										  <dd><span qid="usersetting_autowatch"></span></dd>
+										</dl> 
+									</div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+						<div class="col-sm-6" qid="tablecontainer">
+							<div class="uui-panel-graph" >
+								<div class="uui-panel-rect-widget" >
+									<div class="uui-panel-rect-header">
+										<h4 class="uui-panel-rect-title"><strong><%=com.sms.profile.i18n.Parameterize %></strong><span qid="edit-usersetting-trigger" class="glyphicon glyphicon-pencil pull-right"></span></h4>
+									</div>
+									<div class="uui-panel-rect-body">
+										<div class="dl-horizontal item-details" >
+				            		    <dl>
+										  <dt><%=com.sms.profile.i18n.pageDisplayNum %></dt>
+										  <dd><span qid="usersetting_pageDisplayNum"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.emailFormat %></dt>
+										  <dd><span qid="usersetting_emailFormat"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.emailUser %></dt>
+										  <dd><span qid="usersetting_emailuser"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.defaultAccess %></dt>
+										  <dd><span qid="usersetting_defaultaccess"></span></dd>
+										</dl>
+										<dl>
+										  <dt><%=com.sms.profile.i18n.autoWatch %></dt>
+										  <dd><span qid="usersetting_autowatch"></span></dd>
+										</dl> 
+									</div>
+									</div>
+								</div>
+							</div>
+	            		</div>
+	            	</div>
+	            	
+	            	<div class="row" style="margin-top: 20px;">
+	            		<div class="col-sm-12 no-left-right-padding">
+	            			<div class="uui-managepage-header">
+	            				<h4 class="uui-managepage-title"><strong><%=com.sms.profile.i18n.activeLog %></strong></h4>
+	            			</div>
+		            		<div umid="activity-log" ></div>
+	            		</div>
+            		</div>
+	            	
+	            </div>
+	    </div>
+	    <div qid="pwdDialog">
+	    	<form qid="pwdForm">
+		    	<div class="row ">
+		        	<div class="col-sm-2">新密码</div>
+		        	<div class="col-sm-9">
+		        		<input type="password" class="form-control" id="pwdText" name="pwdText" maxlength="15"/>
+		        	</div>
+		        </div>
+		        <div class="row " style="margin-top:5px;">
+		        	<div class="col-sm-2">再次输入</div>
+		        	<div class="col-sm-9">
+		        		<input type="password" class="form-control" id="confirm_password" name="confirm_password" maxlength="15"/>
+		        	</div>
+		        </div>
+	        </form>
+	    </div>
+	    <!--页面主内容区域 end-->
+	    	
+<div qid="addDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+	       			<select name="type"> <option>PERSONAL</option>
+				  </select>
+               </div>
+                <div class="form-group ">
+               	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+			 		<div class="col-sm-9">
+					    <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50"></input>
+					</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">所在单位和部门：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50"></input>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">担任职务：</label>
+                   <div class="col-sm-9">
+                       <input  type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	<div qid="addtwoDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       			<div class="form-group hidden">
+		       			<select name="type"> <option>AUDIT</option>
+					  </select>
+	               </div>
+	                 <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受审单位：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">专业：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="profession" name="profession" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+                  
+               
+           </form>   
+		</div>
+	</div>
+	<div qid="addthreeDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       			<div class="form-group hidden">
+		       			<select name="type"> <option>TRAIN</option>
+					  </select>
+	               </div>
+             	<div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+			   <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训机构：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训课程：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               
+           </form>   
+		</div>
+	</div>
+	<div qid="addfourDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>SITUATION</option>
+					  </select>
+	               </div>
+               
+                <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">名称：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">颁证机构：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+               
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addfiveDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>RISK</option>
+					  </select>
+	               </div>
+               <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addsixDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>SAFE</option>
+					  </select>
+	               </div>
+                  <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addsevenDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>INFO</option>
+					  </select>
+	               </div>
+                 <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	
+    </div>
+</body>
+</html>

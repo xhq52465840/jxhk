@@ -1,0 +1,107 @@
+!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage" >
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+ 	<form role="form" id="jsonCrew"  way-persistent="true">
+  		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">机组访谈</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="form uui-managepage-filter-new uui-panel-graph-new crewinterview">
+     		<div class="uui-panel-rect-body uui-managepage-filter-content-new" id="operate" style="height:100%">
+           		<div class="text-primary-crewinterview"  style="font-family: sans-serif;font-size:14px">
+					1.训练
+				</div>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">a) 在你所得到的训练和在航线运行中发生的实际情况之间存在着什么样的差异？</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.theDiffBetweenTraAndAct"></textarea>
+					</fieldset>
+				</form>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">b) 如果有差异，为什么？</label>
+						<textarea class="depAccountBgWhite" rows="4" v-model="jsonCrew.theReasonBetweenTraAndAct"></textarea>
+					</fieldset>
+				</form>
+				<div class="text-primary-crewinterview" style="font-family: sans-serif;font-size:14px">
+					2.标准化
+				</div>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">c) 与你一起飞行的其他机组成员在标准化方面情况如何？</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.theConditionOfOtherCrew"></textarea>
+					</fieldset>
+				</form>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">d) 如果标准化水平不足，你认为在程序性不遵守行为的原因是什么？</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.theReasonOfOtherCrew"></textarea>
+					</fieldset>
+				</form>
+				<div class="text-primary-crewinterview"style="font-family: sans-serif;font-size:14px">
+					3.自动化
+				</div>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">e) 什么是这架飞机最大的自动化“问题”？</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.theAutoProblemOfTheAircra"></textarea>
+					</fieldset>
+				</form>
+				<div class="text-primary-crewinterview" style="font-family: sans-serif;font-size:14px">
+					4.总体安全的改进——在提高安全水平方面所关心的问题和建议
+				</div>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">f) 飞行运行</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.flightOperation"></textarea>
+					</fieldset>
+				</form>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">g) 签派</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.dispatch"></textarea>
+					</fieldset>
+				</form>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">h) 机场和空中交通管制</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.airportAndControl"></textarea>
+					</fieldset>
+				</form>
+				<form>
+					<fieldset>
+						<label style="color:black;font-family: sans-serif;font-size:12px">i) 标准操作程序</label>
+						<textarea  class="depAccountBgWhite" rows="4" v-model="jsonCrew.standardProcedure"></textarea>
+					</fieldset>
+				</form>
+	            <div class="text-primary-crewinterview" style="font-family: sans-serif;font-size:14px">
+					5.其他访谈问题
+				</div>
+				<textarea  class="depAccountBgWhite"  rows="4" v-model="jsonCrew.otherQuestion" ></textarea>
+      		</div>
+      <!--  <button class="btn btn-default" type="button" id="more" onclick="addmore()">增加其他问题</button> -->     
+      		<div id="footer" class="row  float_footer" >
+	  			<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	  				<button  type="button" class="btn btn-default" qid="saveCrew" href="" v-on:click="save">保存</button>
+      				<button  type="button" class="btn btn-default" qid="submitCrew" href="" v-on:click="submit">提交</button>
+     			</div>
+     		</div>
+     	</div>
+ 	</form>
+ 	</div>
+</div>
+ </body>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+<bean id="eiosaReprotDao" class="com.usky.sms.eiosa.ReportDao" />
+<bean id="iosaSectionDao" class="com.usky.sms.eiosa.SectionDao" />
+<bean id="sectionTaskDao" class="com.usky.sms.eiosa.SectionTaskDao" />
+<bean id="isarpDao" class="com.usky.sms.eiosa.IsarpDao" />
+<bean id="operateLogDao" class="com.usky.sms.eiosa.OperateLogDao" />
+<bean id="operateLogService" class="com.usky.sms.eiosa.OperateLogService" />
+<bean id="documentsDao" class="com.usky.sms.eiosa.DocumentsDao" />
+<bean id="chapterDao" class="com.usky.sms.eiosa.ChapterDao" />
+<bean id="isarpActionDao" class="com.usky.sms.eiosa.IsarpActionDao" />
+<bean id="actionAttachmentDao" class="com.usky.sms.eiosa.ActionAttachmentDao" />
+<bean id="assessmentsDao" class="com.usky.sms.eiosa.AssessmentsDao" />
+<bean id="isarpAssessmentsDao" class="com.usky.sms.eiosa.IsarpAssessmentsDao" />
+<bean id="auditorActionDao" class="com.usky.sms.eiosa.AuditorActionDao" />
+<bean id="sectionDocumentDao" class="com.usky.sms.eiosa.SectionDocumentDao" />
+<bean id="iosaCodeDao" class="com.usky.sms.eiosa.IosaCodeDao" />
+<bean id="iosaSection" class="com.usky.sms.eiosa.SectionService" />
+<bean id="isarpService" class="com.usky.sms.eiosa.IsarpService" />
+<bean id="eiosaDocumentService" class="com.usky.sms.eiosa.DocumentService" />
+
+<bean id="isarpHistoryDao" class="com.usky.sms.eiosa.IsarpHistoryDao" />
+
+<bean id="reportService" class="com.usky.sms.eiosa.ReportService" />
+
+</beans>

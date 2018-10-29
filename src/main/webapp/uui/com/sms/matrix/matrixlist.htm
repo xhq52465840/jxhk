@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-container">
+        <div class="container uui-module-header">
+            <div class="uui-grid row">
+                <div class="col-md-3 uui-container">
+                    <h2 class="uui-module-h2"><%=com.sms.matrix.matrixlist.i18n.title %>
+                    </h2>
+                </div>
+                <div class="col-md-9 uui-container" style="text-align: right; padding-right: 20px !important;">
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-sm" qid="btn_create"><span class="glyphicon glyphicon-plus"></span><%=com.sms.matrix.matrixlist.i18n.createMatrix %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form uui-module-filter" style="margin-top: 20px;">
+            <h3 class="uui-module-h3"><%=com.sms.matrix.matrixlist.i18n.filtrate %></h3>
+            <div class="uui-grid row">
+                <div class="form-group col-md-3 col-xs-3">
+                    <label for="<%=this._id%>-publish"><%=com.sms.matrix.matrixlist.i18n.release %></label>
+                    <select class="form-control input-sm" qid="publish">
+                        <option value=""><%=com.sms.matrix.matrixlist.i18n.all %></option>
+                        <option value="Y"><%=com.sms.matrix.matrixlist.i18n.yes %></option>
+                        <option value="N"><%=com.sms.matrix.matrixlist.i18n.no %></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 col-xs-3">
+                    <label for="<%=this._id%>-publish"><%=com.sms.matrix.matrixlist.i18n.status %></label>
+                    <select class="form-control input-sm" qid="status">
+                        <option value=""><%=com.sms.matrix.matrixlist.i18n.all %></option>
+                        <option value="Y"><%=com.sms.matrix.matrixlist.i18n.startUse %></option>
+                        <option value="N"><%=com.sms.matrix.matrixlist.i18n.forbidden %></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12 col-xs-12">
+                    <button class="btn btn-default btn-sm" qid="btn_filter"><%=com.sms.matrix.matrixlist.i18n.filter %></button>
+                    <button class="btn btn-link" qid="btn_resetfilter"><%=com.sms.matrix.matrixlist.i18n.remvoefilter %></button>
+                </div>
+            </div>
+        </div>
+        <div class="page-content" style="margin-top: 40px;">
+            <div class="container" qid="matrix-container">
+                <!--动态每项-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

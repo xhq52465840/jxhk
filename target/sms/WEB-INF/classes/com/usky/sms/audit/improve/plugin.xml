@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="improveDao" class="com.usky.sms.audit.improve.ImproveDao" />
+	<bean id="improveFlowUserDao" class="com.usky.sms.audit.improve.ImproveFlowUserDao" />
+	<bean id="transactorDao" class="com.usky.sms.audit.improve.TransactorDao" />
+	<bean id="improve" class="com.usky.sms.audit.improve.ImproveService" />
+
+</beans>

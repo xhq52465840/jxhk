@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.com-sms-detailmodule-shel-analysisDialog .form-group label{
+		font-weight: normal;
+    color: #707070;
+	}
+</style>
+</head>
+<body>
+	<div>
+      <div qid="analysisDialog" class="com-sms-detailmodule-shel-analysisDialog  analysisDialog" >
+      	<form class="form-horizontal" qid="form">
+          <!-- 缺陷类型 -->
+      		<div class="form-group">
+      			<label for="<%= this._id %>-defectType" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.defectType %>
+              <span class='text-danger'>*</span>
+            </label>
+      			<div class="col-sm-9">
+      				<input type="text" class="form-control input-sm" qid="defectType" name="defectType"  readonly="readonly"/>
+      			</div>
+      		</div>
+          <!-- 缺陷分析 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-defectAnalysis" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.defectAnalysis %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <textarea class="form-control input-sm" qid="defectAnalysis" maxlength="2000" name="defectAnalysis"></textarea>
+            </div>
+          </div>
+          <!-- 措施类型 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-measureType" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.measureType %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control input-sm" qid="measureType" name="measureType" />
+            </div>
+          </div>
+          <!-- 制定措施 -->
+          <div qid="Ymeasure">
+          <div class="form-group">
+            <label for="<%= this._id %>-description" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.description %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <textarea class="form-control input-sm" qid="description" maxlength="2000" name="description" ></textarea>
+            </div>
+          </div>          
+          <!-- 责任单位 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-organizations" qid="org-label" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.organizations %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control input-sm" qid="organizations" name="organizations" readOnly style="cursor:default;" />
+              <input type="hidden" qid="organizationIds"  />
+            </div>
+          </div>          
+          <!-- 验证日期 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-deadline" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.deadline %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <!-- <div class='input-group'> -->
+                <input type="text" class="form-control input-sm" qid="deadline" name="deadline" />
+                <!-- <span class='input-group-btn'>
+                  <button class='btn btn-default btn-sm' style='padding: 4px 6px;' ><span class='glyphicon glyphicon-calendar'></span></button>
+                </span>
+                              </div> -->
+            </div>            
+          </div>
+          <!-- 验证人 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-confirmMan" class="col-sm-2 control-label">
+              <%= com.sms.detailmodule.shel.analysisDialog.i18n.fields.confirmMan %>
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control input-sm" qid="confirmMan" name="confirmMan" />
+            </div>
+          </div>
+          </div>
+      	</form>
+       <!-- 	树形结构 -->
+      	<div qid="treeContent" style="display:none; position: absolute;z-index:1060;background:#eee;width: 376px;">
+		     <ul qid="tree" class="ztree" style="margin-top:20; width:100%;height: 300px;padding-top:20px;overflow: auto;"></ul>
+	       </div>
+      </div>
+  </div>
+</body>
+</html>

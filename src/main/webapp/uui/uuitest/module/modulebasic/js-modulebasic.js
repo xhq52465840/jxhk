@@ -1,0 +1,1 @@
+﻿console.log('js-compbasic.js 被加载啦');

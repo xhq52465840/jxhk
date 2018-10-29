@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title></head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="resolutionsDialog" ></div>
+    	<div umid="resolutionsDialogEdit" ></div>
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title"><%=com.sms.activityproperty.resolutions.i18n.title %></h3>
+                    </div>
+                    <div class="col-md-9 text-right" >
+                        <div class="btn-group">
+    	                    <button class="btn btn-default  btn-sm" qid="btn_addresolutions"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.activityproperty.resolutions.i18n.addResult %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top:10px;">
+        	<p><%=com.sms.activityproperty.resolutions.i18n.describution %></p>
+        	<ul>
+        		<li><a  qid="btn_cancel" style="cursor:pointer;"><%=com.sms.activityproperty.resolutions.i18n.removeDefault %></a></li>
+        	</ul>
+        </div>
+
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            
+        </table>
+    </div>
+</body>
+</html>

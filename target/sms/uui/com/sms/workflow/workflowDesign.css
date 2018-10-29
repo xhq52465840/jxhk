@@ -1,0 +1,58 @@
+.position-default{
+	margin-top:20px;
+}
+.position-fixed{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	margin-top:0px !important;
+	z-index:99;
+}
+.property-panel{
+	background-color: #ffffff;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	margin: 20px;
+	max-height: -webkit-calc(100% - 40px);
+	max-height: calc(100% - 40px);
+	overflow: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 260px;
+	word-wrap: break-word;
+}
+.property-panel .property-view{
+	margin:20px;
+}
+.property-panel .property-view .description{
+	margin-top:10px;
+}
+.property-panel .property-view .module{
+	margin-top:20px;
+}
+.property-panel .property-view .module .mod-header{
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAFUlEQVR42mP4//8/A8OzZ8/+M4BYAEtpCazz+zmdAAAAAElFTkSuQmCC) repeat-x 0 10px;
+}
+.property-panel .property-view .module .mod-header:before,
+.property-panel .property-view .module .mod-header:after{
+	clear:both;
+	content: " ";
+	display: table;
+}
+.property-panel .property-view .module .mod-header h5{
+	background: #ffffff;
+	display: inline;
+	padding-right: 3px;
+}
+.property-panel .property-view .module .mod-content{
+	margin-top:10px;
+}
+.property-panel .property-view .module .mod-content ul li+li{
+	margin-top:5px;
+}

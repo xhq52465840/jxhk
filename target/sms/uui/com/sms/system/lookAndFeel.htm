@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="lookAndFeel.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="uui-module">
+	<!-- 标识 -->
+			<h2 class="uui-module-h2">标识</h2>
+	<div qid="logo" style="margin-left:50px">
+			<div id="logoimage">
+				<img  style="width:50px;height:50px"  /><button class="btn btn-link" qid="btn_default">恢复默认</button>
+			</div>
+				<div style="font-size: 12px;margin-left:100px" class="help-block">商标的尺寸为50x50像素,且为png类型。</div>
+			<div style="margin-left:-80px">
+			<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="uploaded" class="col-sm-2 control-label help-block" style="margin-top:0px">上传文件</label>
+				<div class="col-sm-10">
+	      		<input type="file" qid="logo-upload" id="uploaded"/>
+	    		</div>
+			</div>
+			</form>
+			</div>
+	</div> <hr>
+	<!-- 站点标题 -->
+		<h2 class="uui-module-h2">站点标题</h2><br>
+	<div qid="site-title" style="margin-left:160px">
+		<input type="checkbox" id="show-site-title"><label class="lab" for="show-site-title">Show Site Title</label>
+		<p>当启用时，在标志旁会出现标题。</p>
+		<button class="btn btn-default update">更新</button>
+	</div><hr>
+	<!-- 图标 -->
+	<!-- <h2 class="uui-module-h2">图标</h2>
+	<div qid="tubiao" style="margin-left:50px">
+	<div class="image" style="width:100%;height:100px"></div>
+			<table width="40%" height="200px">
+			<tr width="30%" height="50px"><td><label>上&nbsp;&nbsp;传&nbsp;&nbsp;文&nbsp;&nbsp;件</label></td><td><input type="file" qid="logo-upload" name="logo-upload"/></td></tr>
+			<tr height="30px"><td></td><td>——————或——————</td></tr>
+			<tr><td><label>通过URL上传</label></td><td><input type="text" qid="url" name="url" style="width:272px"/></td></tr>
+			<tr><td></td><td><button class="btn btn-default">上传&nbsp;&nbsp;图标</button></td></tr>
+			</table>
+	</div><hr> -->
+	<!-- 颜色 -->
+	<h2 class="uui-module-h2">颜色</h2>
+	<div qid="color">
+	<p>要应用相匹配的标志配色方案，请点击这里。</p><br>
+	<table class="table" qid="color-table">
+	<tbody>
+		<tr>
+			<td><b>页头背景颜色</b></td>
+			<td width="300px"><div class="edit"><input type="text" defaultValue="#205081" value="#205081">
+				<div class="colorSelector" style="background-color:#205081"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="1">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="1">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>页头高亮背景颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#296CA3" value="#296CA3">
+				<div class="colorSelector" style="background-color:#296CA3"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="2">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="2">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>Header Separator Colour</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#2E3D54" value="#2E3D54">
+				<div class="colorSelector" style="background-color:#2E3D54"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="3">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="3">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>页头文字颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#ffffff" value="#ffffff">
+				<div class="colorSelector" style="background-color:#ffffff"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="4">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="4">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>页头高亮文字颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#f0f0f0" value="#f0f0f0">
+				<div class="colorSelector" style="background-color:#f0f0f0"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="5">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="5">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>Menu Item Highlinght Background Colour</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#3b73af" value="#3b73af">
+				<div class="colorSelector" style="background-color:#3b73af"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="6">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="6">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>菜单项文字颜色高亮</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#ffffff" value="#ffffff">
+				<div class="colorSelector" style="background-color:#ffffff"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="7">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="7">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>按钮背景颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#3b7fc4" value="#3b7fc4">
+				<div class="colorSelector" style="background-color:#3b7fc4"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="8">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="8">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>按钮文字颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#ffffff" value="#ffffff">
+				<div class="colorSelector" style="background-color:#ffffff"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="9">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="9">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>已生效项目的链接颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#3b73af" value="#3b73af">
+				<div class="colorSelector" style="background-color:#3b73af"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="10">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="10">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>标题颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#292929" value="#292929">
+				<div class="colorSelector" style="background-color:#292929"></div>
+				<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="11">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="11">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+		<tr>
+			<td><b>链接的颜色</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#3b73af" value="#3b73af">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="12">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="12">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+		</tr>
+	</tbody>
+	</table>
+	</div><hr>
+	
+	<!-- 小工具颜色 -->
+	<h2 class="uui-module-h2">小工具颜色</h2>
+	 <div qid="tool-color">
+	 	<br><br>
+	 	<table class="table" qid="tools-color-table">
+	 	<tbody>
+	 		<tr>
+			<td><b>色彩1(默认)</b></td>
+			<td width="300px"><div class="edit"><input type="text" defaultValue="#3b73af" value="#3b73af">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="1">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="1">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+	 		<tr>
+			<td><b>色彩2</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#d04437" value="#d04437">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="2">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="2">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			
+			<tr>
+			<td><b>色彩3</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#ea632b" value="#ea632b">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="3">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="3">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+			<td><b>色彩4</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#14892c" value="#14892c">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="4">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="4">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+			<td><b>色彩5</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#205081" value="#205081">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="5">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="5">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+			<td><b>色彩6</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#654982" value="#654982">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="6">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="6">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+			<td><b>色彩7</b></td>
+			<td><div class="edit"><input type="text" defaultValue="#707070" value="#707070">
+			<div class="colorSelector" style="background-color:#3b73af"></div>
+			<div class="bi"><span class="glyphicon glyphicon-pencil" ></span></div></div></td>
+			<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="7">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="7">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+		</tbody>
+	 	</table>
+	 </div><hr>
+	
+	<!-- 日期/时间格式 -->
+	<h2 class="uui-module-h2">日期/时间格式</h2>
+	<div qid="data-time">
+	<p>日期/时间格式的文档可以在网上找到。</p>
+		<table class="table" qid="data-table">
+		<tbody>
+			<tr>
+				<td><b>时间格式</b></td>
+				<td width="300px"><div class="datafm"><input type="text" defaultValue="h:mm a" value="h:mm a"><br><span>例如  11:55 上午</span> <span class="glyphicon glyphicon-pencil sp" ></span></div></td>
+				<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="1">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="1">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+				<td><b>星期格式</b></td>
+				<td><div class="datafm"><input type="text" defaultValue="EEEE h:mm a" value="EEEE h:mm a"><br><span>例如  星期三 11:55 上午</span><span class="glyphicon glyphicon-pencil sp" ></span></div></td>
+				<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="2">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="2">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+				<td><b>完整日期/时间格式</b></td>
+				<td><div class="datafm"><input type="text" defaultValue="dd/MMM/yy h:mm a" value="dd/MMM/yy h:mm a"><br><span>例如  23/五月/07 11:55 上午</span><span class="glyphicon glyphicon-pencil sp" ></span></div></td>
+				<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="3">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="3">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+				<td><b>短日期格式(年月日)</b></td>
+				<td><div class="datafm"><input type="text" defaultValue="dd/MMM/yy" value="dd/MMM/yy"><br><span>例如  23/五月/07</span><span class="glyphicon glyphicon-pencil sp" ></span></div></td>
+				<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="4">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="4">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+			<tr>
+				<td><b>在日期选择器中使用ISO8601标准</b></td>
+				<td><div class="datafm"><input type="checkbox" id="choose"><span id="yes">是</span><span id="no">否</span><span class="glyphicon glyphicon-pencil pp" ></span></div></td>
+				<td><button class="btn btn-default btn-sm update" style="display:none"  dataid="5">更新</button>
+				<button class="btn btn-default btn-sm back" style="display:none" dataid="5">恢复</button>
+				<button class="btn btn-link cancel" style="display:none" >取消</button></td>
+			</tr>
+		</tbody>
+		</table>
+	</div><hr>
+	<!-- 尾部 -->
+	<h2 class="uui-module-h2">刷新客户端资源</h2>
+	<div>
+	如果应用补丁或做其他支持的变化，可能有必要引起的JIRA所有的浏览器客户端重新获取网络资源的最新副本。 
+点击此链接将确保用户看到这些更新。
+	</div>
+	</div>
+</body>
+</html>
+		

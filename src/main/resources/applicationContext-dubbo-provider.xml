@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd 
+                        http://code.alibabatech.com/schema/dubbo 
+                        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="sms_inuse" organization="dubbox" />
+
+	<!-- 使用zookeeper暴露发现服务地址 -->
+	<dubbo:registry address="${zookeeper.default.address}" check="false" />
+ 
+	<!-- 用dubbo协议在20881端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="-1" />
+	
+	<dubbo:protocol name="rest" contextpath="sms" server="servlet" port="${serverPort}" />
+<!-- 	<dubbo:protocol name="rest" server="tomcat" port="8990"/> -->
+	
+	<!-- 全局timeout设置 -->
+	<dubbo:provider delay="-1" timeout="25000" retries="0" />
+
+	<dubbo:service protocol="dubbo,rest" ref="externalService" interface="com.usky.sms.facade.ExternalInterface" />
+</beans>

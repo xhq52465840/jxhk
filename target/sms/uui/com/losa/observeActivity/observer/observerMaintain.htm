@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<style>
+	td {
+	  padding: 4px;
+	  vertical-align:middle;
+	  align:center;
+	}
+</style>
+</head>
+<body>
+  	<div>
+  		<div id="observerInfo" style="padding: 12px 0 0 0;">
+  	  		<div class="page-header-main unit-details">
+  	    		<table style="width:101%;">
+  	      			<thead class="header">
+  	      				<tr>
+  	      					<td class="searchTitleIcon"><div>&nbsp;</div></td>
+  	      					<td  class="rightBigTitle">
+  	      						<div class="uui-managepage-title" style="margin-top: 4px;">LOSA人员维护</div>
+  	      					</td>
+  	      				</tr>
+  	      			</thead>
+  	    		</table>
+  	    				<table class="rightBigHeader">
+					<tbody>
+						<tr  class="first">
+							<td align="center" style="width:8%">
+								姓名：
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" v-model="observerQueryForm.observerName"/>
+							</td>
+							<td align="center" style="width:8%">
+								职责:
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" v-select.allowclear="observerQueryForm.respName" :options="respNames" />
+							</td>
+							<td align="center" style="width:7%">
+								所属公司:
+							</td>
+							<td style="width:13%">
+								<input type="text" class="form-control input-sm" v-model="observerQueryForm.observerOrg" style="width:160px"/>
+							</td>
+							<td align="center" style="width:7%">
+								技术岗位:
+							</td>
+							<td style="width:13%">
+								<input type="text" class="form-control input-sm" v-model="observerQueryForm.observerPost" style="width:160px"/>
+							</td>
+						</tr>
+						<tr  class="second">
+							<td align="center" style="width:8%">
+								主操作机型:
+							</td>
+							<td>
+								<input type="text" class="form-control input-sm" v-select.allowclear="observerQueryForm.observerAircraftType" :options="aircraftTypes"/>
+							</td>
+							<td align="center" style="width:8%">
+								飞行网编号:
+							</td>
+							<td>
+								<input type="text" class="form-control input-sm" v-model="observerQueryForm.observerFXWID"/>
+							</td>
+							<td align="center" style="width:8%">
+								状态:
+							</td>
+							<td style="width:7%">
+								<select id="planStatus" style="width:130px" v-model="observerQueryForm.observerStatus">
+					                <option value="">全部</option>
+					                <option v-for="option in observerStatusNames" v-bind:value="option.dictCode">
+					                  {{ option.dictName }}
+					                </option>
+				                </select>
+							</td>
+                            
+							<td colspan="2" align="center">
+								<button type="button" class="btn btn-default" v-on:click="search"><span class="fa fa-search"></span>查询</button>
+						  		<button type="button" class="btn btn-default" v-on:click="reset">重置</button>
+						  	</td>
+						</tr>
+					</tbody>
+				</table>
+  	  		</div>
+  	  		<div class="panel panel-sms" style="width: 100%; padding: 8px 0 0 0; ">
+  	  			<table  class="changeColor" style="width: 100%; font-size:12px;">
+  	  				<thead class="header">
+						<tr>	
+						    <td style="width:2%" align="left"></td>				
+							<td style="width:8%; font-weight:bold;" align="left">姓名</td>
+							<td style="width:11%; font-weight:bold;" align="left">职责</td>
+							<td style="width:10%; font-weight:bold;" align="left">所属公司</td>
+							<td style="width:10%; font-weight:bold;" align="left">技术岗位</td>
+							<td style="width:10%; font-weight:bold;" align="left">联系电话</td>
+							<td style="width:15%; font-weight:bold;" align="left">身份证号码</td>
+							<td style="width:7%; font-weight:bold;" align="left">主操作机型</td>
+							<td style="width:8%; font-weight:bold;" align="left">飞行网编号</td>
+							<td style="width:5%; font-weight:bold;" align="left">状态</td>
+							<td style="width:11%; font-weight:bold;" align="left"></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="oi in observerInfos" style="height: 41px;width=100%;">
+						    
+						    <td align="left"></td>						
+							<td align="left" v-show="oi.edit" width="22%">
+								<input style="width:100%" type="text"  v-select="oi.userId" :options="observers"/>
+							</td>
+							<td v-else align="left" width="22%">{{oi.observerName}}</td>
+							<td align="left" v-show="oi.edit" width="10%">
+								<input type="text" style="width:100%" v-select.multiple="oi.respName" :options="respNames" />
+							</td>
+							<td v-else align="left" width="10%">{{oi.respCode}}</td>
+							<td align="left" v-show="oi.edit" width="10%">
+								<input type="text" style="width:100%"; v-select="oi.observerOrg" :options="observerOrg" />
+							</td>
+							<td v-else align="left" width="10%">{{oi.observerOrgName}}</td>
+							<td align="left" v-show="oi.edit" width="7%">
+								<input type="text" style="width:100%;" v-model="oi.observerPost"/>
+							</td>
+							<td v-else align="left" width="7%">{{oi.observerPost}}</td>
+							<td align="left" v-show="oi.edit" width="10%">
+								<input type="text" style="width:100%;" v-model="oi.observerPhone"/>
+							</td>
+							<td v-else align="left" width="10%">{{oi.observerPhone}}</td>
+							<td align="left" v-show="oi.edit" width="10%">
+								<input type="text" style="width:100%" v-model="oi.observerIDCode"/>
+							</td>
+							<td v-else align="left" width="7%">{{oi.observerIDCode}}</td>						
+							<td align="left" v-show="oi.edit" width="7%">
+								<input type="text" style="width:100%" v-select="oi.observerAircraftType" :options="aircraftTypes" />
+							</td>
+							<td v-else align="left" width="7%">
+								<input type="text" style="width:100%" v-select="oi.observerAircraftType" :options="aircraftTypes" readonly="true"/>
+							</td>
+							<td align="left" v-show="oi.edit" width="7%">
+								<input type="text" style="width:100%;text-align:left" v-model="oi.observerFXWID" />
+							</td>
+							<td v-else align="left" width="7%">{{oi.observerFXWID}}</td>
+							<td align="left" width="7%">{{oi.deleted==0?"正常":"失效"}}</td>
+							<td align="left" width="12%">
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="change(this)" v-show="oi.deleted==0&&!oi.edit">修改</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="del(this)" v-show="oi.deleted==0&&!oi.edit">失效</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="add(this)" v-show="oi.deleted==1">复效</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="save(this)" v-show="oi.deleted==0&&oi.edit">保存</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="cancel(this)" v-show="oi.deleted==0&&oi.edit">取消</button>
+							</td>
+						</tr>
+					</tbody>
+  	  			</table>
+  	  			<button type="button" class="btn btn-default"  style="margin:10px 0px 0px 8px;width:100px;" @click="append">添加</button>
+				<pagebars :pagemsg.sync="pagebarsData" :pagefun="page"></pagebars>
+  	  		</div>
+  		</div>
+  	</div>
+</body>

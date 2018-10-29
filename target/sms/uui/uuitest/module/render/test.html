@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试render模块</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../../com/sms/boot.js"></script>
+    <script type="text/javascript">
+        var header = null;
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+
+            var form = $.um($("div[umid='columns']"));
+            /*$("button.open").click(function(){
+				form.open();
+			});
+            var inputRenderClazz = $.u.load("com.sms.plugin.render.singleTextProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"名称",required:true});
+			$("#singleTextProp").html(result);
+			
+			var inputRenderClazz = $.u.load("com.sms.plugin.render.multiTextProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"备注"});
+			$("#multiTextProp").html(result);
+			
+			var inputRenderClazz = $.u.load("com.sms.plugin.render.selectUserProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"经办人",required:true});
+			$("#selectUserProp").html(result);
+			inputRenderObj.get("edit","render")(null,$("#selectUserProp"));
+			
+			var inputRenderClazz = $.u.load("com.sms.plugin.render.dateProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"创建日期",required:true,description:"开始日期格式为yy-mm-dd"});
+			$("#dateProp").html(result);
+			inputRenderObj.get("edit","render")(null,$("#dateProp"));
+			var result = inputRenderObj.get("edit", "html")({label:"报告日期",description:"结束日期格式为yy-mm-dd"});
+			$("#date2Prop").html(result);
+			inputRenderObj.get("edit","render")(null,$("#date2Prop"));
+			
+			
+			var inputRenderClazz = $.u.load("com.sms.plugin.render.tagProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"标签"});
+			$("#tagProp").html(result);
+			inputRenderObj.get("edit","render")(null,$("#tagProp"));
+			
+			
+			var inputRenderClazz = $.u.load("com.sms.plugin.render.priorityProp");
+			var inputRenderObj = new inputRenderClazz();
+			var result = inputRenderObj.get("edit", "html")({label:"优先级"});
+			$("#priorityProp").html(result);
+			inputRenderObj.get("edit","render")(null,$("#priorityProp"));*/
+
+        });
+    </script>
+</head>
+<body style="background-color:white !important;">
+	<div style="margin:40px auto;width:800px;">
+		<div class="panel panel-default">
+		  <div class="panel-heading">创建信息</div>
+		  <div class="panel-body">
+		   
+		   <div umid="columns" umodule="com.sms.search.columnsProp"></div>
+		   <div class="text-center">
+		   		<button class='btn btn-default btn-sm open'>创建信息</button>
+		   </div>
+		  </div>
+		</div>
+   </div>
+	<div class="btn-group" data-toggle="buttons">
+		<label class="btn btn-primary active"> <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio
+			1 (preselected)
+		</label> 
+		<label class="btn btn-primary"> <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+		</label> 
+		<label class="btn btn-primary"> <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+		</label>
+	</div>
+	<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true" autocomplete="off">
+	  Single toggle
+	</button>
+</body>
+</html>

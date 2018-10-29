@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div>
+    	<div class="panel panel-sms">
+    		<div class="panel-heading">
+				<h2 class="panel-title">					系统工作分析
+					<div class="pull-right panel-button-container" data="file" qid="add_analysis">
+						<div class="panel-button-inner">
+							<i class="fa fa-plus "></i>
+						</div>
+					</div> 
+				</h2>
+				
+			</div>
+    		<div class="panel-body">
+    			<table class="uui-table">
+						<thead>
+							<tr class="infomodel-title">
+								<th style="width:140px">系统</th>
+								<th style="width:140px;">部门</th>
+								<th style="width:140px;">子系统</th>
+								<th style="width:140px;" >一级流程</th>
+								<th style="width:140px;" >二级流程</th>
+								<th style="width:140px;" >三级流程</th>
+								<th class="operate-tool"  style="width:100px;"  style="border-left: none;">操作</th>
+							</tr>
+						</thead>
+						<tbody qid="workList"></tbody>
+				</table>
+    		</div>
+    	</div>
+    	 <div qid="analysisDialog" style="display:none">
+      	<form class="form-horizontal" qid="form">
+          <!-- 系统 -->
+      		<div class="form-group">
+      			<label for="<%= this._id %>-system" class="col-sm-2 control-label">
+      			            系统
+      			     <span class='text-danger'>*</span>
+             </label>
+      			<div class="col-sm-9">
+      				<input type="text" class="form-control input-sm" qid="system" name="system" />
+      			</div>
+      		</div>
+          <!-- 部门 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-department" class="col-sm-2 control-label">
+                                            部门
+                 <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input class="form-control input-sm" qid="department"  name="department" />
+            </div>
+          </div>
+          <!-- 子系统 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-downsystem" class="col-sm-2 control-label">
+                                               子系统
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control input-sm" qid="downsystem" name="downsystem" />
+            </div>
+          </div>
+          <!-- 一级流程 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-oneFLow" class="col-sm-2 control-label">
+                                              一级流程
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input class="form-control input-sm" qid="oneFLow" maxlength="" name="oneFLow" />
+            </div>
+          </div>
+          <!-- 二级流程 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-twoFLow" class="col-sm-2 control-label">
+                                              二级流程
+              <span class='text-danger'>*</span>
+            </label>
+            <div class="col-sm-9">
+              <input class="form-control input-sm" qid="twoFLow" maxlength="" name="twoFLow" />
+            </div>
+          </div> 
+          <!-- 三级流程 -->
+          <div class="form-group">
+            <label for="<%= this._id %>-threeFLow" class="col-sm-2 control-label">
+                                              三级流程
+              <span class='text-danger'></span>
+            </label>
+            <div class="col-sm-9">
+              <input class="form-control input-sm" qid="threeFLow" maxlength="" name="threeFLow" />
+            </div>
+          </div> 
+      	</form>
+       <!-- 	树形结构 -->
+      	<div qid="treeContent" style="display:none; position: absolute;z-index:1060;background:#eee;width: 376px;">
+		     <ul qid="tree" class="ztree" style="margin-top:20; width:100%;height: 300px;padding-top:20px;overflow: auto;"></ul>
+	       </div>
+      </div>
+    </div>
+</body>
+</html>

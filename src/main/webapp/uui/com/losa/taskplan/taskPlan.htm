@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>LOSA审计计划</title>
+<style>
+	.buttonCss{
+		margin-top:10px;
+	}
+	.planListButtonListCss{
+		margin-bottom:10px;
+	}
+	.addContentList{
+		position:relative;
+		width:100%;
+		height:62px;
+	}
+	.addContentList .addContentHeader{
+		position:absolute;
+		width:0px;
+		height:0px;
+		border-width:0px 12px 12px 12px;
+		border-color:transparent transparent #f1f1f1 transparent;
+		border-style:solid;
+		left:1135px;
+		top:0px;
+	}
+	.addContentList .addContentBody{
+		position:absolute;
+		top:12px;
+		left:0px;
+		width:100%;
+		height:48px;
+		background:#f1f1f1;
+		border-radius:4px;
+	}
+	.addContentList .addContentBody table.changeColor{
+		width:100%;
+		height:100%;
+	}
+	.addContentList .addContentBody table.changeColor td{
+		height:46px;
+		vertical-align:middle;
+	}
+	.addContentList  .addContentBody table.changeColor td input[type='button']{
+		width:48px;
+		height:34px;
+		line-height:30px;
+	}
+</style>
+</head>
+<body>
+	<div class=" container-fluid" style="padding: 10px 0">
+		<!-- <div umid="planDetail"></div>
+		<div umid="planEdit"></div> -->
+		<div umid="mulPlan"></div>
+		<div umid="schemeEdit"></div>
+		<div id="planQueryForm" style="width: 100%; padding: 1px;padding-bottom: 0;">
+			<div class="col-sm-20 col-md-20">
+				<table style="width:100%;">
+					<thead class="header">
+						<tr>
+							<td class="searchTitleIcon"><div>&nbsp;</div></td>
+							<td  class="rightBigTitle"><div class="uui-managepage-title">航线审计任务计划</div></td>
+							<td style="padding-right: 5px;" valign="middle" align="right">
+								<span class="fa uui-cursor-pointer fa-angle-double-up" style="color: black;font-size: 20px" v-on:click="collapseToggle"></span>
+							</td>
+						</tr>
+					</thead>
+				</table>
+				<table class="rightBigHeader">
+					<tbody>
+						<tr  class="first">
+							<td align="center" style="width:8%">
+								计划编号：
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.planNo"/>
+							</td>
+							<td align="center" style="width:8%">
+								所属方案:
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.schemeName"/>
+							</td>
+							<td align="center" style="width:10%">
+								观察日期 :
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" id="observeDateFrom" v-model="planQueryForm.observeDateFrom"/>
+							</td>
+							<td align="center" style="width:5%" align="center">
+								至 :
+							</td>
+							<td style="width:10%">
+								<input type="text" class="form-control input-sm" id="observeDateTo" v-model="planQueryForm.observeDateTo"/>
+							</td>
+							<td align="center" style="width:7%">
+								航班号:
+							</td>
+							<td style="width:13%">
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.flyNo" style="width:160px"/>
+							</td>
+						</tr>
+						<tr  class="second">
+							<td align="center" style="width:8%">
+								起飞机场:
+							</td>
+							<td>
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.depAirportName"/>
+							</td>
+							<td align="center" style="width:8%">
+								着陆机场:
+							</td>
+							<td>
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.arrAirportName"/>
+							</td>
+							<td align="center" style="width:10%">
+								观察员:
+							</td>
+							<td>
+								<input type="text" class="form-control input-sm" v-model="planQueryForm.observerName"/>
+							</td>
+							<td align="center" style="width:8%">
+								状态：
+							</td>
+							<td style="width:7%">
+								<select id="planStatus" style="width:130px" v-model="planQueryForm.planStatus">
+					                <option value="">全部</option>
+					                <option v-for="option in planStatusNames" v-bind:value="option.dictCode">
+					                  {{ option.dictName }}
+					                </option>
+				                </select>
+							</td>
+							<td colspan="2" align="center">
+								<button type="button" class="btn btn-default" v-on:click="search"><span class="fa fa-search"></span>查询</button>
+						  		<button type="button" class="btn btn-default" v-on:click="reset">重置</button>
+						  	</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="planList" class="panel panel-sms" style="width: 100%; padding: 10px;">
+		<div class="planListButtonList">
+			<div class="buttonlist">
+				<button type="button" class="btn btn-default" v-on:click="modifyStatus" data="distributed">发布</button>
+				<button type="button" class="btn btn-default" v-on:click="delPlans">删除</button>
+				<button type="button" class="btn btn-default" v-on:click="addSinglePlan">添加单条计划</button>
+				<button type="button" class="btn btn-default" v-on:click="addMulPlan">添加计划</button>
+				
+			</div>
+			<div class="addContentList" id="add_tr" style="display:block">
+			<div class="addContentHeader">
+				
+			</div>
+			<div class="addContentBody">
+			<table class="changeColor">
+				<tr>
+					<td width="4%"></td>
+					<td width="6%"></td>
+					<td width="23%" style="text-align:center">
+						<input v-if="schemeId==''||schemeId==null" type="text" placeholder="请选择计划所属方案"  style="width: 95%" id="addScheme" v-select.allowclear="addParam.schemeId" :options="options1" selectOnChange="changeScheme"/>
+						<p v-else >{{ schemeSubject }}</p>
+					</td>
+					<td width="11%"><input class="date" type="text" id="addObserveDate" v-model="addParam.observeDate" placeholder="请输入观察日期"/></td>
+					<td width="11%"><selectflights :data-object.sync="dataObject" :options="options" :input-tips="inputTips" :input-value.sync="addParam"></selectflights></td>
+					<td width="11%"><input type="text" id="addFlyAirport" disabled="disabled" v-model="addParam.deptAirport"/></td>
+					<td width="11%"><input type="text" id="addLandAirport" disabled="disabled" v-model="addParam.arrAirport"/></td>
+					<td width="12%" style="padding-bottom:2px"><input type="text" style="width: 80%" id="addObserver" v-select.allowclear="addParam.observerId" :options="options2" placeholder="请选择观察员"/></td>
+					<!-- <td width="8%" align="center">草稿</td> -->
+					<td width="4%"><input type="button" value="保存" v-on:click="saveSinglePlan"/></td>
+					<td width="4%"><input type="button" value="取消" v-on:click="cancelAddPlan"/></td>
+				</tr>
+			</table>
+			</div>
+			</div>
+		</div>
+		<div>
+			<table class="changeColor rightBigContentTable" style="width: 100%;">
+				<thead class="header2">
+					<tr>
+					   <td style="width:1%" align="left"></td>
+						<td style="width:6%" align="left"><input type="checkbox" id="allPlan" v-on:click="checkAllPlans" v-model="checkedAll" :isCheckedAll="isCheckedAll">全选</td>
+						<td style="width:13%" align="left" v-sortfun.literal="page" :options="orders" sortby="lp.plan_no">计划编号</td>
+						<td style="width:18%" align="left" v-sortfun.literal="page" :options="orders" sortby="lp.scheme_id">所属方案</td>
+						<td style="width:10%" align="left" v-sortfun.literal="page" :options="orders" sortby="lp.observe_date">观察日期</td>
+						<td style="width:8" align="left" v-sortfun.literal="page" :options="orders" sortby="lp.flight_id">航班号</td>
+						<td style="width:12%" align="left" v-sortfun.literal="page" :options="orders" sortby="dep.fullname">起飞机场</td>
+						<td style="width:12%" align="left" v-sortfun.literal="page" :options="orders" sortby="arr.fullname">着陆机场</td>
+						<td style="width:8%" align="left" v-sortfun.literal="page" :options="orders" sortby="tu.fullname">观察员</td>
+						<td style="width:11%" align="left" v-sortfun.literal="page" :options="orders" sortby="lp.plan_status">状态</td>
+						<td style="width:0%" align="left"></td>
+					</tr>
+				</thead>
+				<tbody id="planListBody">
+					<tr v-for="tp in taskPlans" style="height: 41px;">
+					    <td align="left"></td>
+						<td align="left">
+							<input type="checkbox" dataid={{tp.id}} datastatus={{tp.planStatus}} v-model="tp.checked"/>
+						</td>
+						<td align="left"> 
+						    <p v-if="tp.observiewId==null">{{ tp.planNo }}</p>
+							<a v-else href="#" data={{tp.observiewId}} data1={{tp.id}} v-on:click="openObserview">{{ tp.planNo }}</a>
+						</td>
+						<td align="left">
+							<a v-if="schemeId==''||schemeId==null" href="#" dataid={{tp.schemeId}} v-on:click="openScheme">{{ tp.schemeSubject }}</a>
+							<p v-else >{{ tp.schemeSubject }}</p>
+						</td>
+						<td align="left">{{ tp.observeDate | datestr}}</td>
+						<td align="left">{{ tp.flyNo }}</td>
+						<td align="left">{{ tp.deptAirport }}{{tp.depAirportNo}}</td>
+						<td align="left">{{ tp.arrAirport }}{{tp.arrAirportNo}}</td>
+						<td align="left">{{ tp.observer }}</td>
+						<td align="left">{{ tp.planStatusName }}</td>
+						
+						<td align="left"></td>
+					</tr>
+					<!-- 为了不影响交替行换色，加了一个空行 -->
+				</tbody>
+			</table>
+		</div>
+			<!-- 分页开始 -->
+			 <pagebars :pagemsg.sync="pagebarsData" :pagefun="queryPlans"></pagebars> 
+			<!-- 分页结束 -->
+		</div>	
+		<div umid="planLog"></div>	
+	</div>
+</body>
+</html>

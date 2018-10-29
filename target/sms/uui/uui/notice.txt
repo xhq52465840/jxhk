@@ -1,0 +1,15 @@
+﻿v0.1				created by Wayne
+v0.2	2013-11-15	Wayne 将jqcookie作为loader的加载内容		
+v0.3	2014-02-14	备注一下：
+					1、考虑增加htm的component标签，用来加载组件，component有个参数type（com.xx.xx），会在afterrender之后
+					2、id保留，增加cid，cid和id的区别在于，id是html的id，cid是本component的id（cid = this.id + cid的string串）
+					3、通过jquery的has方法，使得
+v0.4	2014-06-01	新增uniqid，新增loadres替代loadjs和loadcss
+
+待优化中，可能是新的版本不兼容的...
+1、根增加默认class（根都必须要div包括），class默认增加类的class名"-代替."
+2、增加qid，这样替代id，qid为自己设置，新增this.qid("qid名字")方法——封装attr为啥的获取
+3、新增setParentSelector，设置后再做afterrender（前面先destroy一下，如果render过的话），表示重新渲染（内存性的类）
+4、new的时候，不需要加id了，id为系统生成（this.id仍然有效）
+5、新的div标签替代符，这样直接加载组件（从根开始 render，一个个div下来）
+6、界面刷新频率（出错提示，但界面不变化，界面走样）

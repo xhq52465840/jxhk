@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../detailmodule/infomodel.css"/>
+    <title>安全信息详情</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../../uui/layer/layer.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+
+           
+            $.um($("div[umid='application-header']"));
+            
+            $.um($("div[umid='detail']"),{"singlePage":true});
+            
+            $.um($("div[umid='foot']"));
+            
+        });
+    </script>
+</head>
+<body style="background-color:white !important;">
+    
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content" style="background:transparent;">
+    	<div umid="detail" umodule="com.sms.search.detail"></div>
+    	
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot" style="border:none;"></div>
+    <!--页面底部 end-->
+</body>
+</html>

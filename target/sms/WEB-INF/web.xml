@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Session过期时间，默认为30分钟 -->
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<servlet>
+		<servlet-name>LogViewerServlet</servlet-name>
+		<servlet-class>org.logviewer.servlet.tomcat.LogViewerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogViewerServlet</servlet-name>
+		<url-pattern>/websocket</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>executors</param-name>
+		<param-value>20</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.logviewer.servlet.ExecutorContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.alibaba.dubbo.remoting.http.servlet.BootstrapListener</listener-class>
+	</listener>
+
+	<!-- 配置Spring上下文 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext*.xml,classpath*:**/plugin.xml</param-value>
+	</context-param>
+
+	<!-- 启动 Spring 监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+<!-- 	<filter> -->
+<!-- 		<filter-name>CorsFilter</filter-name> -->
+<!-- 		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>CorsFilter</filter-name> -->
+<!-- 		<url-pattern>/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
+		<filter>
+			<filter-name>CORS</filter-name>
+			<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+			<init-param>
+				<param-name>cors.allowOrigin</param-name>
+				<param-value>*</param-value>
+			</init-param>
+			<init-param>
+				<param-name>cors.supportedMethods</param-name>
+				<param-value>GET, POST, HEAD, PUT, DELETE</param-value>
+			</init-param>
+			<init-param>
+				<param-name>cors.supportedHeaders</param-name>
+				<param-value>Accept, Origin, X-Requested-With, Content-Type, Last-Modified</param-value>
+			</init-param>
+			<init-param>
+				<param-name>cors.exposedHeaders</param-name>
+				<param-value>Set-Cookie</param-value>
+			</init-param>
+			<init-param>
+				<param-name>cors.supportsCredentials</param-name>
+				<param-value>true</param-value>
+			</init-param>
+		</filter>
+
+	<!-- Filter的编码应用 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>com.usky.sms.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>characterEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>enabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 用户验证 -->
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<param-value>authenticationFilter</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Web请求使用同一个Hibernate的session -->
+	<filter>
+		<filter-name>HibernateFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<!-- 自定义sessionFactory的名称 -->
+		<!-- 
+			<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>sessionFactory</param-value>
+			</init-param>
+		-->
+		<!-- 是否启用该Filter，默认为true -->
+		<!-- 
+		-->
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>DispatcherFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<param-value>dispatcherFilter</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 定时任务 -->
+	<filter>
+		<filter-name>JobFilter</filter-name>
+		<filter-class>com.usky.sms.filter.JobFilter</filter-class>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>asdmpseq</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>abc-123</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 过滤关键字 -->
+	<filter>
+		<filter-name>ContentFilter</filter-name>
+		<filter-class>com.usky.sms.filter.ContentFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>/Setup</url-pattern>
+		<url-pattern>/rest/externalService/getToDoStatistics</url-pattern>
+	</filter-mapping>
+
+	<!--
+		<filter-mapping>
+		<filter-name>authenticationFilter</filter-name>
+		<url-pattern>/uui/index.html</url-pattern>
+		</filter-mapping>
+	-->
+
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>/Setup</url-pattern>
+		<url-pattern>/rest/externalService/getToDoStatistics</url-pattern>
+		<url-pattern>/rest/externalService/getToDoStatisticsByPkPsnbasdoc</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ContentFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>HibernateFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>DispatcherFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>CORS</filter-name>
+		<url-pattern>/rest/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>initializeServlet</servlet-name>
+		<servlet-class>com.usky.sms.servlet.InitializeServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>Call</display-name>
+		<servlet-name>Call</servlet-name>
+		<servlet-class>com.usky.Call</servlet-class>
+		<init-param>
+			<description>具体数据库连接参数在context.xml中定义</description>
+			<param-name>DatabaseContext</param-name>
+			<param-value>java:comp/env/jdbc/mysql</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Call</servlet-name>
+		<url-pattern>/Call</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>Setup</display-name>
+		<servlet-name>Setup</servlet-name>
+		<servlet-class>com.usky.Setup</servlet-class>
+		<init-param>
+			<description>具体数据库连接参数在context.xml中定义</description>
+			<param-name>DatabaseContext</param-name>
+			<param-value>java:comp/env/jdbc/mysql</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Setup</servlet-name>
+		<url-pattern>/Setup</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>rest-dispatcher</servlet-name>
+		<servlet-class>com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>rest-dispatcher</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>servletPackage</param-name>
+		<param-value>com.usky.sms.service</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>javamelody</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>javamelody</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
+	</listener>
+
+</web-app>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	.div-height {
+		height: 400px;
+	}
+	.div-bg{
+		height:520px;
+	}
+	.title-review{
+		border-radius:10px 10px 0 0;
+		background:url(../../../img/sms/title.jpg) repeat-x;
+		color:white;
+		padding:5px 0 0 20px;
+		height:36px;
+		font-size: 16px;
+	}
+</style>
+</head>
+<body>
+<div style="height:720px;margin:0 auto;">
+	<div class="div-bg">
+		<!-- <div class="title-review">分子公司维度看板</div> -->
+		<div class="tab-pane">
+			<form qid="form">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td style="width: 20%">审计类型*</td>
+						<td style="width: 30%"><input type="text" qid="auditType" name="auditType" class="form-control input-sm"/></td>
+						<td style="width: 20%">级别</td>
+						<td style="width: 30%"><input type="text" qid="grade" name="grade" class="form-control input-sm"/></td>
+					</tr>
+					<tr>
+						<td>执行安监机构</td>
+						<td><input type="text" qid="opUnit" name="opUnit" class="form-control input-sm"/></td>
+						<td>被审计单位</td>
+						<td><input type="text" qid="auditUnit" name="auditUnit" class="form-control input-sm"/></td>
+					</tr>
+					<tr>
+						<td>日期*</td>
+						<td><input type="text" qid="year1" name="year1" class="form-control input-sm"/></td>
+						<td class="text-center">至</td>
+						<td><input type="text" qid="year2" name="year2" class="form-control input-sm"/></td>
+					</tr>
+					<tr>
+						<td>专业</td>
+						<td><input type="text" qid="professions" name="professions" class="form-control input-sm"/></td>
+						<td></td>
+						<td class="text-rigth"><button type="button" qid="btn_search" class="btn btn-default">搜索</button></td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+		<div id="auditConsub" style="width: 100%;height: 500px;"></div>
+	</div>
+</div>
+</body>
+</html>

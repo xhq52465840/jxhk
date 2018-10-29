@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+</style>
+</head>
+<body >
+	<div class=" container-fluid" >
+	<div umid="docEdit"></div>
+	<div umid="checkDocumentIosaDialog" ></div>
+		<div class="uui-managepage">
+			<div id="documents">
+				<div class="form uui-managepage-filter uui-panel-graph"
+					style="width: 95%; padding: 10px">
+					<div class="uui-panel-rect-widget">
+						<div class="uui-panel-rect-body uui-managepage-filter-content">
+							<div class="row" id="queryform">
+								
+								<div class="form-group col-sm-20 col-md-20">
+									<label>Discipline :</label>&nbsp;&nbsp; 
+									<select id="docSection" v-model="documentsQueryForm.sectionId"
+										style="width: 130px" v-on:change="noClick">
+										<option value="">全部</option>
+										<option v-for="option in sectionNames" v-bind:value="option.number">
+										    {{ option.name }}
+										 </option>
+									</select>&nbsp;&nbsp;&nbsp;&nbsp; 
+									<label> Documentations:</label>&nbsp;&nbsp;
+									<!--  <input type="text" class="form-control input-sm" v-model="documentsQueryForm.docname"
+										qid="reviewedSelect" style="width: 13%" />-->
+									<input type="text" class="form-control chief" style="width:13%" 
+                                     v-select.allowclear="select" :options="options" v-model="documentsQueryForm.docname"/>&nbsp;&nbsp;&nbsp;&nbsp;
+									<!-- <label> Acronyms:</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="acronymsSelect" style="width:13%"/>&nbsp;&nbsp;&nbsp;&nbsp; -->
+									<button type="button" class="btn btn-default"
+										qid="searchDocument" v-on:click="reportSearchClick">Search</button>
+									&nbsp;&nbsp;
+									
+									<button v-if="eiosaUserRole!='auditor'" type="button" class="btn btn-default document" data=""
+										qid="addNewDocument" v-on:click="newdoc">New</button>
+									&nbsp;
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms" style="margin-top: 10px;">
+					<div class="panel-heading">
+						<h2 class="panel-title">Documents</h2>
+					</div>
+
+					<table id="documentTable" class=" scrolltable   table_docs table-bordered ">
+						<thead>
+							<tr>
+								<td class="name w1" v-sortfun.literal="page" :options="orders" sortby="reviewed">Manuals/ Documents Reviewed</td>
+								<td class="name w2" v-sortfun.literal="page" :options="orders" sortby="acronyms">Acronyms</td>
+								<td class="name w3" v-sortfun.literal="page" :options="orders" sortby="versionno">Version/ Revision</td>
+								<td class="name w4" v-sortfun.literal="page" :options="orders" sortby="type">Type</td>
+								<td class="name w5" v-sortfun.literal="page" :options="orders" sortby="docdate">Date</td>
+								<td class="name w6" colspan="8" style="text-align: center">Discipline</td>
+								<td class="name w14"></td>
+								<td class="name w15" />
+							</tr>
+						</thead>
+						<tr v-for="sd in sectiondocument">
+							<td class="w1"><a v-if="eiosaUserRole!='auditor'" href="#" dataid="{{ sd.doc.id }}" v-on:click="opendoc">{{ sd.doc.reviewed }}</a>
+							 <p v-else>{{ sd.doc.reviewed }}</p>
+							</td>
+							<td class="w2"><a v-if="eiosaUserRole!='auditor'" href="#" dataid="{{ sd.doc.id }}" v-on:click="opendoc">{{ sd.doc.acronyms }}</a>
+							 <p v-else>{{ sd.doc.acronyms }}</p>
+							</td>
+							<td class="w3">{{ sd.doc.versionno }}</td>
+							<td class="w4">{{ sd.doc.type }}</td>
+							<td class="w5">{{ sd.doc.docdate | datestr }}</td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.ORG" dataid="{{ sd.doc.id }}" datasec="ORG"
+								v-on:click="doccheck"  disabled={{eiosaUserRole=='auditor'}} />ORG</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.FLT" dataid="{{ sd.doc.id }}" datasec="FLT"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />FLT</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.DSP" dataid="{{ sd.doc.id }}" datasec="DSP"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />DSP</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.MNT" dataid="{{ sd.doc.id }}" datasec="MNT"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />MNT</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.CAB" dataid="{{ sd.doc.id }}" datasec="CAB"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />CAB</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.GRH" dataid="{{ sd.doc.id }}" datasec="GRH"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />GRH</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.CGO" dataid="{{ sd.doc.id }}" datasec="CGO"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />CGO</nobr></td>
+							<td class="w7"><nobr><input type="checkbox" class="documentCheck"
+								v-model="sd.SEC" dataid="{{ sd.doc.id }}" datasec="SEC"
+								v-on:click="doccheck" disabled={{eiosaUserRole=='auditor'}} />SEC</nobr></td>
+
+							<td class="w14">
+								<div v-for="attach in sd.doc.attachmentList">
+									<a  href="#" dataid="{{ attach.id }}" v-on:click="attachclick">{{ attach.attachShowName }}</a><br>
+								</div>
+								
+							</td>
+							<td class="w15" v-show="eiosaUserRole!='auditor'">
+								<a  dataid="{{ sd.doc.id }}" v-on:click="deldoc" class="glyphicon glyphicon-trash uui-cursor-pointer" title="删除 {{ sd.doc.reviewed }}"></a>
+							</td>
+						</tr>
+					</table>
+                   <!-- 分页开始 -->
+				<pagebars :pagemsg.sync="pagebarsVue" :pagefun="search"></pagebars>
+		           <!-- 分页结束 -->
+				</div>
+				
+				<div class="uui-managepage">
+	    <div class="panel panel-sms">
+	      <div class="panel-heading">
+	          
+	         <h2 class="panel-title">
+	           <span id="g9SShQPdRwNF23RzzQKe-toggle-panel" class="fa uui-cursor-pointer fa-chevron-right fa-plus" v-on:click="logShow"></span>
+	           Log
+	         </h2>
+	        
+	      </div>
+	       
+	    <div class="panel-body hidden">
+	      <div umid="documentLogTable"></div> 
+	    </div>
+	    </div>
+	    
+	    </div>
+    </div>
+    </div>
+		
+	</div>
+</body>
+</html>

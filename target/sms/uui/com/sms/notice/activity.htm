@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>站内通知</title>
+<style type="text/css">
+	.com-sms-notice-activity .panel-collapse{
+		height:290px;
+		overflow-x: hidden;
+		overflow-y:auto;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div qid="createDialog" class="com-sms-notice-activity">
+			<input type="hidden" autofocus="autofocus" />
+			<div class="row">
+				<div class="col-sm-8">
+					  <div class="form-group" >
+					    <label><%=com.sms.notice.activity.i18n.receive%><span class="text-danger">*</span></label><div style="float:right" qid="select-error"></div>
+					    <div class="row" style="height: 470px;overflow: hidden;">
+					    	<div class="col-sm-6" style="padding-right: 0px;">
+					    		<div class="panel-group" qid="collapseaccordion" role="tablist" aria-multiselectable="true">
+									  <div class="panel panel-default">
+									    <div class="panel-heading">
+									      <h4 class="panel-title">
+									        <a data-toggle="collapse" data-parent="#<%= this._id%>-collapseaccordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="font-size:14px;">
+									          	<%=com.sms.notice.activity.i18n.user%>
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" data-type="user">
+									      <div class="panel-body">
+										      <div class="form-group">
+												  <div class="input-group">
+													  <input qid="col-one-user-input" type="text" class="form-control input-sm" placeholder="<%=com.sms.notice.activity.i18n.userPlaceHolder%>"/> 
+													  <span class="input-group-btn">
+													  	  <button class="btn btn-default btn-sm" type="button" qid="btn_searchuser" style="font-size:12px;"><span class="glyphicon glyphicon-search"></span></button>
+													  </span>
+												  </div>
+											  </div>
+									       	  <div class="form-group">
+											   <select qid="col-one-user-select" multiple="multiple" size="10" style="border-color: #eee;width: 100%;height: 200px;" class="form-control">
+												</select>
+											  </div>
+									      </div>
+									    </div>
+									  </div>
+									  <!-- 2 -->
+									  <div class="panel panel-default">
+									    <div class="panel-heading">
+									      <h4 class="panel-title">
+									        <a data-toggle="collapse" data-parent="#<%= this._id%>-collapseaccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size:14px;">
+									          	<%=com.sms.notice.activity.i18n.org%>
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" data-type="orga">
+									      <div class="panel-body">
+									      	<ul qid="col-tree" class="ztree"></ul>
+									      </div>
+									    </div>
+									  </div>
+									  <!-- 3 -->
+									  <div class="panel panel-default">
+									    <div class="panel-heading">
+									      <h4 class="panel-title">
+									        <a data-toggle="collapse" data-parent="#<%= this._id%>-collapseaccordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-size:14px;">
+									          	<%=com.sms.notice.activity.i18n.role%>
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" data-type="role">
+									      <div class="panel-body">
+									      	<div class="form-group">
+											   <input type="text" qid="collapse-role-input" class="form-control input-sm" placeholder="<%=com.sms.notice.activity.i18n.rolePlaceHolder%>"/>
+											  </div>
+									       	  <div class="form-group">
+											   <select qid="collapse-role" multiple="multiple" size="10" style="border-color: #eee;width: 100%;height: 200px;" class="form-control">
+												</select>
+											  </div>
+									      </div>
+									    </div>
+									  </div>
+									  <!-- 4 -->
+									  <div class="panel panel-default">
+									    <div class="panel-heading">
+									      <h4 class="panel-title">
+									        <a data-toggle="collapse" data-parent="#<%= this._id%>-collapseaccordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="font-size:14px;">
+									          	组织机构+机构角色
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" data-type="role2">
+									      <div class="panel-body">
+									      	<div class="form-group">
+											   <input type="text" qid="collapse-role1-input" class="form-control input-sm" placeholder="<%=com.sms.notice.activity.i18n.role1%>"/>
+											   <input type="text" qid="collapse-role2-input" style="margin-top:5px;" class="form-control input-sm" placeholder="<%=com.sms.notice.activity.i18n.role2%>"/>
+											  </div>
+									       	  <div class="form-group">
+											   <select qid="collapse-role3" multiple="multiple" size="10" style="border-color: #eee;width: 100%;height: 200px;" class="form-control">
+												</select>
+											  </div>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+					    	</div>
+					    	<div class="col-sm-1" style="text-align:center;height: 400px;margin-left: -5px;">
+						    	<span style="position: relative;top: 50%;">
+						    		<button class="btn btn-default btn-sm" qid="add_btn"><i class="fa fa-chevron-right"></i></button>
+						    		<br/>
+						    		<button class="btn btn-default btn-sm" qid="del_btn"><i class="fa fa-chevron-left"></i></button>
+						    	</span>
+					    	</div>
+					    	<div class="col-sm-5"  style="padding-left: 0px;margin-left: -4px;">
+					    		<select qid="all-result" multiple="multiple" size="10" style="border-color: #eee;height: 460px;overflow-x: auto;" class="form-control">
+								</select>
+					    	</div>
+					    </div>
+					  </div>
+				</div>
+				<div class="col-sm-4">
+					  <div class="form-group">
+					    <label><%=com.sms.notice.activity.i18n.subject%><span class="text-danger">*</span></label><div style="float:right" qid="select-error2"></div>
+					    <input type="text" class="form-control input-sm" maxlength="255" qid="info-theme" name="info-theme" />
+					  </div>
+					  <div class="form-group">
+					    <label><%=com.sms.notice.activity.i18n.content%><span class="text-danger">*</span></label><div style="float:right" qid="select-error3"></div>
+					    <textarea class="form-control" qid="info-content" maxlength="2000" name="info-content" rows="17"></textarea>
+					  </div>
+					  <div class="form-group">
+					    <label><%=com.sms.notice.activity.i18n.attach%><div style="float:right" qid="select-error4"></div></label>
+					    <input type="file" name="" qid="info-attachment" />
+					  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

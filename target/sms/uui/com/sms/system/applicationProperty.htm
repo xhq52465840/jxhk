@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="applicationProperty.css" rel="stylesheet" />
+<style type="text/css">
+	.table td.app-usergroup input{
+		width:280px;
+			}
+	.table tbody input.name{
+		width : 188px;
+		height : 28px;
+		border-radius: 3px;
+		display: inline-block;
+		padding: 4px;
+		font-size: 13px;
+		line-height: 18px;
+		color: #555555;
+		border: 1px solid #ccc;
+	}
+	.table tbody input.url{
+		width : 188px;
+		height : 28px;
+		border-radius: 3px;
+		display: inline-block;
+		padding: 4px;
+		font-size: 13px;
+		line-height: 18px;
+		color: #555555;
+		border: 1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+	<div class="uui-managepage">
+		<div class="uui-managepage-header">
+        	<div class="container-fluid">
+	            <div class="row">
+	                <div class="col-md-12 no-left-right-padding">
+	                    <h3 class="uui-managepage-title"><%=com.sms.system.applicationProperty.i18n.title %></h3>
+	                </div>
+	            </div>
+            </div>
+        </div>
+
+
+		<p><%=com.sms.system.applicationProperty.i18n.explain%></p>
+		<table qid="application-table"  class="table">
+			<thead>
+				<tr>
+					<th width="20%"><%=com.sms.system.applicationProperty.i18n.name%></th>
+					<th width="20%"><%=com.sms.system.applicationProperty.i18n.path%></th>
+					<th width="10%"><%=com.sms.system.applicationProperty.i18n.hidden%></th>
+					<th width="30%"><%=com.sms.system.applicationProperty.i18n.userGroup%></th>
+					<th width="20%"><%=com.sms.system.applicationProperty.i18n.handle%></th>
+				</tr>
+				<tr>
+					<td><input type="text"  qid="name" maxlength="50"/><span class="text-danger">*</span></td>
+					<td><input type="text"  qid="url" maxlength="255"/><span class="text-danger">*</span></td>
+					<td><input type="checkbox" qid="status"/></td>
+					<td><input type="text"  qid="usergroup"/></td>
+					<td><button class="btn btn-default btn-sm" qid="add"><%=com.sms.system.applicationProperty.i18n.add%></button></td>
+				</tr>
+			</thead>
+			<tbody>
+				<div qid="delete-dialog" class="hidden" style="width:600px;height:500px;"><p qid="desc"></p></div>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

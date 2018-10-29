@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="airportMeteorologyReportDao" class="com.usky.sms.flightmovementinfo.AirportMeteorologyReportDao" />
+	<bean id="airportDao" class="com.usky.sms.flightmovementinfo.AirportDao" />
+	<bean id="crewBaoWuDao" class="com.usky.sms.flightmovementinfo.CrewBaoWuDao" />
+	<bean id="crewRNPInfoDao" class="com.usky.sms.flightmovementinfo.CrewRNPInfoDao" />
+	<bean id="crewSpecAirportInfoDao" class="com.usky.sms.flightmovementinfo.CrewSpecAirportInfoDao" />
+	<bean id="crewEtopsInfoDao" class="com.usky.sms.flightmovementinfo.CrewEtopsInfoDao" />
+	<bean id="crewLicenseInfoDao" class="com.usky.sms.flightmovementinfo.CrewLicenseInfoDao" />
+	<bean id="flightCrewMemberDao" class="com.usky.sms.flightmovementinfo.FlightCrewMemberDao" />
+	<bean id="flightCrewScheduleInfoDao" class="com.usky.sms.flightmovementinfo.FlightCrewScheduleInfoDao" />
+	<bean id="cabinCrewMemberDao" class="com.usky.sms.flightmovementinfo.CabinCrewMemberDao" />
+	<bean id="cabinCrewScheduleInfoDao" class="com.usky.sms.flightmovementinfo.CabinCrewScheduleInfoDao" />
+	<bean id="flightDispatchInfoDao" class="com.usky.sms.flightmovementinfo.FlightDispatchInfoDao" />
+	<bean id="loadSheetDao" class="com.usky.sms.flightmovementinfo.LoadSheetDao" />
+	<bean id="flightInfoDao" class="com.usky.sms.flightmovementinfo.FlightInfoDao" />
+	<bean id="cabinLicenceInfoDao" class="com.usky.sms.flightmovementinfo.CabinLicenceInfoDao" />
+	<bean id="cabinQualificationInfoDao" class="com.usky.sms.flightmovementinfo.CabinQualificationInfoDao" />
+	<bean id="flightSupportInfoDao" class="com.usky.sms.flightmovementinfo.FlightSupportInfoDao" />
+	
+	<bean id="airPlaneDao" class="com.usky.sms.flightmovementinfo.AirPlaneDao" />
+	
+	<!-- 服务 -->
+	<bean id="flightInfo" class="com.usky.sms.flightmovementinfo.FlightInfoService" />
+	<bean id="flightInfoCache" class="com.usky.sms.flightmovementinfo.FlightInfoCache" />
+
+</beans>

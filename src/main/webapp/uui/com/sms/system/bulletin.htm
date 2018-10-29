@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+        <div class="uui-managepage-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 no-left-right-padding">
+                        <h3 class="uui-managepage-title"><%=com.sms.system.bulletin.i18n.title %></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <small><%=com.sms.system.bulletin.i18n.explain %></small>
+        </div>
+        <div style="margin-top: 10px;min-width:300px;width:70%;">
+            <form role="form" class="form-horizontal" qid="form">
+                <div class="form-group control">
+                    <label for="<%=this._id%>-content" class="col-sm-3 control-label"><%=com.sms.system.bulletin.i18n.notice %></label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" qid="content" style="height: 100px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group control">
+                    <label class="col-sm-3 control-label"><%=com.sms.system.bulletin.i18n.visibility %></label>
+                    <div class="col-sm-5">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" qid="PUBLIC" name="visible" checked="checked" /><%=com.sms.system.bulletin.i18n.publicity %>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" qid="PRIVATE" name="visible" /><%=com.sms.system.bulletin.i18n.proprietary%>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group control">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-9">
+                        <button class="btn btn-default" qid="btn_save"><%=com.sms.system.bulletin.i18n.Setting%></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

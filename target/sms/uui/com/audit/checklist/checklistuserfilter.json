@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+      {
+        "propid": "type",
+        "propname": "类型",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.activityTypeProp"
+      },
+      {
+        "propid": "keyword",
+        "propname": "关键字",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.keywordProp"
+      },
+      {
+        "propid": "summary",
+        "propname": "主题",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.summaryProp"
+      },
+      {
+        "propid": "unit",
+        "propname": "安监机构",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.unitProp"
+      },
+      {
+        "propid": "status",
+        "propname": "状态",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.statusProp"
+      }
+    ],
+    "orders": {
+		"propid":"summary",
+		"propname":"主题",
+		"order":"asc"
+    },
+    "uql": "",
+     "staticfilters": [
+      {
+        "propid": "version",
+        "propname": "版本",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.check.checkversion"
+      },
+      {
+        "propid": "check",
+        "propname": "检查项",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.check.typeProp"
+      },
+     
+      {
+        "propid": "type",
+        "propname": "类型",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.search.statusProp"
+      }
+    ],
+    
+     "btnfilter": [
+   		{
+    		"propid":"addbtn",
+    		"propname":"选择当前版本",
+    		"propshow":"",
+    		"propvalue":"",
+    	    "propplugin":"com.sms.plugin.checklist.addbtnProp"
+        };
+    
+     ],
+    "_staticfilters": [
+      {
+        "propid": "PSD",
+        "propname": "运行控制",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "CAB",
+        "propname": "客舱服务",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "CGO",
+        "propname": "货物运输",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "ORG",
+        "propname": "组织管理",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "MNT",
+        "propname": "机务维修",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "FLT",
+        "propname": "飞行运行",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "GRH",
+        "propname": "地面保障",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "OTH",
+        "propname": "其他系统",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

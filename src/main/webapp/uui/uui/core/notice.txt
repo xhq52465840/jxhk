@@ -1,0 +1,19 @@
+﻿core目录，存放基本的核心构造，比如类、基本Component
+0.1 created by	Wayne
+	Clazz的使用参考TestClazz.html
+0.2 2013-11-15	Wayne	优化了img的src，a的href，object的codebase地址获取方式，不再会请求两次服务器资源		
+0.3 2013-11-27	Wayne	新增ucomp的destroy和resize方法，resize用来刷新当前组件dom，destory用来做一些dom或者引用的null（这里一定要注意设置一些对象的null，减少内存泄露）  
+0.4 2013-11-30	Wayne	增加proxy方法（简单封装$.proxy，怕同学们搞不明白乱用参数），改进闭包防止泄露；
+						增加getclazz方法，替代currentClazz参数。
+						增加getabsurl方法，用来获取相对于当前js文件路径的绝对路径
+						去掉render、afterrender、beforerender的currentObject、currentClazz参数，一律使用this、this.getclazz()方法
+						最后，增加一条规范，所有的事件，比如click等等方法，若用到类中变量，必须要用proxy方法包装，防止泄露
+0.5 2013-12-10	Wayne	增加组件的show和hide方法
+						另外，最近遇到异步请求loading的显示问题，只能在异步下访问，于是萌生异步组件加载的想法*********************但实际没有这个必要，一是请求几k的资源很快，二是加载组件根本没太多复杂的请求业务逻辑，三是编写者不用考虑重复加载js的问题**********************************所以还是维持同步加载组件
+0.6	2013-12-24	Wayne	特别提醒注意：$.u.clazz.extend的那些基本方法，不能在impl或者override方法里实现，实现的话意味着直接覆盖component的这些方法，比如把destroy方法写在impl方法里，就无法使用this._super进行操作
+						即impl方法无法再被this._super，所以写代码的时候也要注意（本来impl方法也就是设计为暴露出来的公共方法调用）
+0.7	2014-2-10	Wayne	ucomp增加shortid的属性
+0.8	2014-2-21	Wayne	ucomp增加thisSelector属性和to$的方法，这样组件的thisSelector能够暴露出来
+
+1.1	2014-06-04	Wayne	新版本，umid、umodule，组件的标签化、target渲染
+1.1	2014-07-23	Wayne	parent和children方法

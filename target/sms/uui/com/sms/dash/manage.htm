@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+
+<div>
+    <div class="container uui-container">
+        <div class="uui-grid row">
+            <div class="col-md-3 col-lg-2 uui-container">
+                <h2><%=com.sms.dash.manage.i18n.title %>
+                </h2>
+            </div>
+            <div class="col-md-9 col-lg-10 uui-container" style="text-align: right; margin-top: 15px; padding-right: 20px !important;">
+                <div class="btn-group">
+                    <button class="btn btn-default btn-sm" qid="btn_create"><%=com.sms.dash.manage.i18n.createDash %></button>
+                    <button class="btn btn-default btn-sm" qid="btn_default" style="display:none;"><%=com.sms.dash.manage.i18n.backDefault %></button> <!-- 暂时不用 -->
+                </div>
+            </div>
+        </div>
+   </div>
+        
+<!--页面主内容区域 begin-->
+ <!--  <div class="page-content">
+  	<div class="page-content-inner">
+  		<div class="page-content-nav">
+  			<div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+  		</div>
+  		<div class="page-content-main">
+  			 <div umid="config-screen" umodule="com.sms.fieldscreen.configScreen">配置界面</div>
+  		</div>
+  	</div>
+  </div> -->
+<!--页面主内容区域 end-->
+        
+        <!--页面主内容区域 begin-->
+        <div class="page-content" style="border-top: 1px solid #ccc;">
+            <div class="page-content-inner">
+                    <div class="page-content-nav">
+                        <div class="vertical-nav">
+                            <ul class="nav" qid="leftnav" style="border-top: 0px;">
+                                <li class="" real="favourites"><a href="./ManageBoard.html#view=favourites"><%=com.sms.dash.manage.i18n.collect %></a></li>
+                                <li class="" real="my"><a href="./ManageBoard.html#view=my"><%=com.sms.dash.manage.i18n.mine %></a></li>
+                                <li class="" real="popular"><a href="./ManageBoard.html#view=popular"><%=com.sms.dash.manage.i18n.hotspot %></a></li>
+                                <li class="" real="search"><a href="./ManageBoard.html#view=search"><%=com.sms.dash.manage.i18n.search %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page-content-main">
+                        <!-- <div class="page-workcomp"> -->
+                            <div umid="managecontent"></div>
+                        <!-- </div> -->
+                    </div>
+            </div>
+    	</div>
+   </div>
+</body>
+</html>

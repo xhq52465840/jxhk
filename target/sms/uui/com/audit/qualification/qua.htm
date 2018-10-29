@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+    	<div umid="userinfo"></div>
+    	<div umid="selectUserAvatar" ></div>
+    	<div umid="usersetting"></div>
+    	<div umid="creattrain" umodule="com.audit.qualification.creattrain"></div>
+    	<div umid="quaDialogEdit" ></div>
+	    <div class="page-header" style="padding-bottom: 0px; font-size:24px;line-height:1.25;">
+	    	 <div class="uui-managepage-header">
+	    	 	<div class="container-fluid no-left-right-padding row ">
+			    	 	<div class="col-md-3">
+			    	 		<i class="fa fa-tasks shortcut-icon icon-list-alt" style="margin-right:10px;"></i> 
+				    	 	<!-- <i class="shortcut-icon icon-list-alt" style="margin-right:10px;"></i> -->
+				    		<%=com.audit.qualification.qua.i18n.userInformation %><br/>
+			    	 	</div >
+			    		<div class="col-md-9 text-right">
+			    			 <button class="btn btn-default btn-sm" qid="btn_addtrain"><span class="glyphicon glyphicon-plus"></span>创建培训</button>
+			    			 <button class="btn btn-default btn-sm" qid="btn_adduser"><span class="glyphicon glyphicon-plus"></span>创建人员</button>
+			    	 	</div>
+			    	 </div>
+	    	 </div>
+	    </div>
+	    <!--页面主内容区域 begin-->
+	    <div class="page-content">
+	            <div class="container-fluid no-left-right-padding">
+	            	<div class="row col-md-12">
+	            		<div class="col-sm-5">
+	            			<div class="panel panel-default">
+	            					<div class="panel-heading">
+										 	<label  class=" control-label" style="color:#707070;font-weight:normal;">审计员</label> 
+									</div>
+	            					<div class="panel-body">
+	            						<div class="unit-dropzone" qid="unit-dropzone"  >
+										</div>
+	            				</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-1">
+							<div class="glyphicon-arrow">
+							<a href="#" class="addrolebtn" role="button">
+							<i class="fa fa-arrow-left"></i>
+							</a>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="panel panel-default">
+	            					<div class=" panel-heading">
+										<div qid="filterbox" >
+										</div>
+										
+									</div>
+	            					<div class="panel-body">
+	            						<div class="dl-horizontal resume-details">
+					            			<table qid="usertable"
+													class="usertable table table-striped table-bordered" 
+													cellspacing="0"
+													width="100%" style="margin-bottom: 0;">
+												</table>
+										</div>
+	            					</div>
+							</div>
+         					<!-- <div qid="modules">
+         					<div class="container-fluid">
+									<div class="row-fluid">
+										<div class="span12">
+											<div class="drag panel panel-default">
+													王允
+											</div>
+											<div class="drag panel panel-default">
+													曹操
+											</div>
+											<div class="drag panel panel-default">
+													董卓
+											</div>
+										</div>
+									</div>
+								</div>
+						   </div> -->
+	            			
+						</div>
+            		</div>
+            	</div>
+	            	
+	    </div>
+	
+	    <!--页面主内容区域 end-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+       {
+        "propid": "activityNo",
+        "propname": "信息编号",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.singleTextProp"
+      },
+      {
+        "propid": "type",
+        "propname": "信息类型",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.activityTypeProp"
+      },
+      {
+        "propid": "summary",
+        "propname": "主题",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.summaryProp"
+      },
+      {
+        "propid": "unit",
+        "propname": "安监机构",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.unitProp"
+      },
+      {
+        "propid": "status",
+        "propname": "状态",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.statusProp"
+      },
+      {
+        "propid": "created",
+        "propname": "报告时间",
+        "propvalue": null,
+        "propplugin": "com.sms.plugin.render.dateProp"
+      }
+    ],
+    "orders": {
+		"propid":"created",
+		"propname":"报告时间",
+		"order":"desc"
+    },
+    "uql": "",
+    "staticfilters": [
+      {
+        "propid": "type",
+        "propname": "类型",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "priority",
+        "propname": "优先级",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "status",
+        "propname": "状态",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      },
+      {
+        "propid": "occurredDate",
+        "propname": "发生时间",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.dateProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

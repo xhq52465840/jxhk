@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+<div>
+    <div class="container uui-container">
+        <div class="uui-grid row">
+            <div class="col-md-6 uui-container">
+                <h2><%=com.sms.filter.manage.i18n.title %>
+                </h2>
+            </div>
+        </div>
+    </div>    
+        
+        <!--页面主内容区域 begin-->
+ <!--  <div class="page-content">
+  	<div class="page-content-inner">
+  		<div class="page-content-nav">
+  			<div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+  		</div>
+  		<div class="page-content-main">
+  			 <div umid="config-screen" umodule="com.sms.fieldscreen.configScreen">配置界面</div>
+  		</div>
+  	</div>
+  </div> -->
+<!--页面主内容区域 end-->
+        <!--页面主内容区域 begin-->
+        <div class="page-content " style="border-top: 1px solid #ccc;">
+            <div class="page-content-inner">
+                    <div class="page-content-nav">
+                        <div class="vertical-nav">
+                            <ul class="nav" qid="leftnav" style="border-top: 0px;">
+                                <li class="" real="favourites"><a href="./ManageFilters.html#view=favourites"><%=com.sms.filter.manage.i18n.collect %></a></li>
+                                <li class="" real="my"><a href="./ManageFilters.html#view=my"><%=com.sms.filter.manage.i18n.owner %></a></li>
+                                <li class="" real="popular"><a href="./ManageFilters.html#view=popular"><%=com.sms.filter.manage.i18n.popular %></a></li>
+                                <li class="" real="search"><a href="./ManageFilters.html#view=search"><%=com.sms.filter.manage.i18n.search %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page-content-main">
+                        <!-- <div class="page-workcomp"> -->
+                            <div umid="managecontent"></div>
+                        <!-- </div> -->
+                    </div>
+            </div>
+        </div>
+</div>    
+</body>
+</html>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="isarpCharpter_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="9225d8b0-abaa-4c28-bd51-71cce2417436">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="5"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="763e383c-219d-4a98-97e8-ccdbefbe101d">
+		<parameter name="table1" class="net.sf.jasperreports.engine.JRDataSource"/>
+		<field name="isarp" class="java.lang.String">
+			<fieldDescription><![CDATA[isarp]]></fieldDescription>
+		</field>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+		<field name="flowStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[flowStatus]]></fieldDescription>
+		</field>
+		<field name="conformity" class="java.lang.String">
+			<fieldDescription><![CDATA[conformity]]></fieldDescription>
+		</field>
+		<field name="chapter" class="java.lang.String">
+			<fieldDescription><![CDATA[chapter]]></fieldDescription>
+		</field>
+		<field name="section" class="java.lang.String"/>
+		<field name="acronyms" class="java.lang.String"/>
+		<field name="sectionName" class="java.lang.String"/>
+		<field name="charpter" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="tableList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="role" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="31">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="44083d55-7abe-4e55-a82a-75018cb9811d">
+					<printWhenExpression><![CDATA[$F{role}.trim().equals("auditor")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="18" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[仅作为研讨使用]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="222">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="555" height="154" uuid="489c593b-ef07-4f4f-9fab-e954383bfc8c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="954266fa-f804-44cf-b098-e102efee4fe3">
+						<datasetParameter name="table1">
+							<datasetParameterExpression><![CDATA[$F{tableList}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[$F{tableList}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="56" uuid="4c6dbd7e-0da4-452b-ac22-2251468d126a">
+						<jr:tableHeader height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="31" forecolor="#FF0000" backcolor="#000000" uuid="64262ddf-ba09-4a27-89e6-fcb4e149d528"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑" size="12"/>
+								</textElement>
+								<text><![CDATA[Section]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="28" uuid="7a357b88-c587-48cf-a730-bcd74d2529f9"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Section]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="55" height="48" uuid="d6e1b781-fec3-46d2-bd14-b5f642b7b522"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{section}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="ca210b46-97d0-426c-99af-e57dd2e63cbc">
+						<jr:tableHeader height="31" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="47" height="31" forecolor="#FF0000" backcolor="#000000" uuid="bede49b7-379a-4aa7-a32a-f9bb60f00ba3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{sectionName}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="28" uuid="bbcf3919-5498-4ece-ab25-4887c1252f1f"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Isarp]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="47" height="48" uuid="9d4983bf-76f4-447d-a771-ad0bac85eb16"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{isarp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="222" uuid="c92f776a-fe24-4496-891a-94a2671cfcdb">
+						<jr:tableHeader height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="222" height="31" isPrintWhenDetailOverflows="true" forecolor="#FF0000" backcolor="#000000" uuid="7fa873b3-82f6-4310-949c-43825462b459"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Acronyms]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="222" height="28" uuid="9388adab-698d-4bfd-b441-24f1178c874f"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Text]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="222" height="48" uuid="47fd2eb3-a3e9-4daf-84be-c58eb10bf7d2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="8fbcea94-3aae-4700-a0d9-6651e6b823df">
+						<jr:tableHeader height="31" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="93" height="31" forecolor="#FF0000" backcolor="#000000" uuid="f8a62c75-e5a9-42c9-8db7-4cecea013b26"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{acronyms}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="28" uuid="0e1ae5f8-2624-495e-a5c3-0072122db447"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Chapter]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="93" height="48" uuid="040fc7a1-8fd1-41e5-a12d-5751f416a27a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{chapter}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="66" uuid="00cbfa08-0e0f-46ec-83f7-17a44a4a3295">
+						<jr:tableHeader height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="65" height="31" forecolor="#FF0000" uuid="89cfaf29-658e-4454-84dc-ce503e52f5b2"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑" size="12"/>
+								</textElement>
+								<text><![CDATA[Charpter]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="65" height="28" uuid="25b43c91-e5e9-4ca9-b40c-90759c6f02b8"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[FlowStatus]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="65" height="48" uuid="8b571251-70d5-4dce-99c4-edd4910b93dd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="仿宋" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{flowStatus}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="68" uuid="44b97a70-9675-447d-a254-95b18a728510">
+						<jr:tableHeader height="31" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="68" height="31" forecolor="#FF0000" backcolor="#0000FF" uuid="cad0cc01-00f9-4c2f-9b5e-6a513472ef3f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{charpter}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="28" uuid="f26e06a5-329e-47e8-a735-4a84bd116309"/>
+								<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[Conformity]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="48" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="68" height="48" uuid="983ee495-8ca4-4673-8141-5ae53a7b812e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{conformity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break type="Column">
+				<reportElement x="0" y="194" width="100" height="1" uuid="24b5bd0b-edfb-4990-917e-19ceb96e433d"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37">
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="22" y="0" width="100" height="37" uuid="ecda5842-9240-4692-b0f9-8a47c1ec9382">
+					<printWhenExpression><![CDATA[$F{type}.trim().equals("pdf")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="80" height="37" uuid="06c41d5a-4464-43e9-8576-59cb57c713bc">
+					<printWhenExpression><![CDATA[$F{type}.trim().equals("pdf")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="0" width="27" height="37" uuid="bef78ad0-ad3e-4e70-b18d-697b9523dab1">
+					<printWhenExpression><![CDATA[$F{type}.trim().equals("pdf")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

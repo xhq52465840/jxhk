@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>待处理</title>
+</head>
+<body style="background-color:#fff !important;">
+   <div umid="approvalSummary" umodule="com.sms.dash.juneyao.approvalSummary"></div>
+   <script type="text/javascript" src="../../../../uui/jquery.min.js"></script>
+   <script type="text/javascript" src="../../../../uui/uui-loader.js"></script>
+   <script type="text/javascript" src="../../boot.js"></script>
+   <script type="text/javascript" src="../../../../uui/widget/jqurl/jqurl.js"></script> 
+   <script type="text/javascript">
+       $(function () {
+           // var scrrenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth;
+           // $('body').css({
+           //      width: scrrenWidth,
+           //      minWidth: scrrenWidth
+           //  });
+           debugger;
+           var params = $.urlParam(null);
+           if (!params.mode || params.mode.indexOf("config") > -1) {
+               $.um($("div[umid='approvalSummary']"), "config", params.gadgetsinstance);
+           }
+           else {
+               $.um($("div[umid='approvalSummary']"), "display", params.gadgetsinstance);
+           }
+       });
+   </script>
+</body>
+</html>

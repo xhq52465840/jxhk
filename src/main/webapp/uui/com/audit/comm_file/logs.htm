@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+	.diagramview:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+	<div>
+	<div umid="diagramviewdialog"></div>
+		<div class="panel panel-sms" style="margin-top: 15px;">
+			<div class="panel-heading" style="height: 30px;border-top-left-radius: 7px;border-top-right-radius: 7px;">
+				<h5 style="margin-top: 1px;">
+					<span class="fa fa-chevron-down uui-cursor-pointer" qid="toggle-panel"></span><%= com.audit.comm_file.logs.i18n.title%>
+				</h5>
+			</div>
+			<div class="panel-body" qid="panel-body">
+				<ul class="nav nav-tabs sms-tabs" role="tablist" qid="tabs">
+					<li class=""><a href="#component" role="tab" data-toggle="tab"><%= com.audit.comm_file.logs.i18n.tabs.remark.title%></a></li>
+					<li><a href="#log" role="tab" data-toggle="tab"><%= com.audit.comm_file.logs.i18n.tabs.activity.title%></a>
+					<li><a href="#workflowlog" role="tab" data-toggle="tab"><%= com.audit.comm_file.logs.i18n.tabs.processLog.title%></a>
+					<li qid="diagramview" class="pull-right" style="margin:4px"><span class="diagramview" data-id="" href="#" style="cursor:pointer">流程图</span></li>
+				</ul>
+				<div class="tab-content sms-tabs">
+					<div id="component" class="tab-pane">
+						<div umid="component"></div>
+						
+					</div>
+					<div id="log" class="tab-pane">
+						<div umid="log"></div>
+					</div>
+					<div id="workflowlog" class="tab-pane">
+						<div umid="workflowlog"></div>
+					</div>
+				</div>
+				<div qid="addcommentarea">
+					<div qid="mod-content" style="display: none;">
+					<%= com.audit.comm_file.logs.i18n.tabs.remark.title%>
+						<div>
+							<div style="margin-bottom: 10px;">
+								<form qid="remarkform">
+									<textarea class="form-control input-sm" maxlength="2000" name="description"
+										style="overflow-y: auto; height: 200px;" qid="description"></textarea>
+								</form>
+							</div>
+							<button class="btn btn-default btn-sm" qid="add_content">
+								<%= com.audit.comm_file.logs.i18n.buttons.add%></button>
+							<button class="btn btn-link" qid="cancle_content"><%= com.audit.comm_file.logs.i18n.buttons.cancel%></button>
+						</div>
+					</div>
+					<div qid="mod-footer">
+						<button class="btn btn-default btn-sm" qid="remark">
+							<i class="fa  fa-comment-o fa-fw"></i>&nbsp;<%= com.audit.comm_file.logs.i18n.buttons.remark%>
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

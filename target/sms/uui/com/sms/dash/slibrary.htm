@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.com-sms-dash-slibrary .dataTables_wrapper .dataTables_paginate{
+		padding-top: 0px !important;
+		margin-top:0px !important;
+	}
+</style>
+</head>
+<body>
+	<div style="min-height: 100px;">
+		<div qid="display" class="hidden" style="overflow-y:auto;">
+			<table qid="datatable"
+				class="dashTable table table-striped table-fixed" cellspacing="0"
+				style="margin-top: 0 !important;" width="100%"></table>
+		</div>
+		<div qid="config" class="container-fluid hidden" style="padding:20px;min-height:200px;">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="<%= this._id%>-page-size" class="col-sm-4 col-xs-3 control-label">条数</label>
+			    <div class="col-sm-4 col-xs-3">
+			      <input type="text" class="form-control" qid="page-size" value="" maxlength="3" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="<%= this._id%>-window-height" class="col-sm-4 col-xs-3 control-label">高度(px)</label>
+			    <div class="col-sm-4 col-xs-3">
+			      <input type="text" class="form-control" qid="window-height" value="" maxlength="4" />
+			      <div class="help-block"><span class="text-danger">设置高度后，面板将以此为高度，不设置则根据显示内容自动调整高度。</span></div>
+			    </div>
+			  </div>
+			  
+			  <div style="background-color: #f3f2f7; border: 1px solid #e0e0e0;">
+					<ul qid="libTree" class="ztree" style="overflow:auto;height: 300px;"></ul>
+				</div>
+		  
+		  	<div style="padding-top: 20px;">
+			  	<button type="button" class="btn btn-success btn-sm" qid="update">保存</button>
+					<button type="button" class="btn btn-danger btn-sm" qid="cancel" style="margin-left: 10px">取消</button>
+				</div>
+			  
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"> 
+    	img.qizi{
+    		-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			-khtml-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			-o-user-select:none;
+    	}
+    	.two_year_width{
+    		width:1110px;
+    	}
+    	.three_year_width{
+    		width:1610px;
+    	}
+    	.disnone{display:none} 
+    	/* .table { border-collapse: collapse; }
+    	.thead_th td{
+			border:0px;
+		} */
+    	.td_border td{
+    		height:25px;
+			border:0px;
+		}
+		
+		
+		 th{
+			text-align:center;
+		}
+		.td_border td:not(:first-child){
+			/* background:url("../img/bg-150.png") no-repeat center; */
+			background-image: url("../img/aa.png") ;
+			background-position:center;
+			background-repeat: repeat-x;
+			background-size:100% 80%;
+			text-align:center;
+		}
+	/* :first-child	选择器用于选取属于其父元素的首个子元素的指定选择器。 */
+		.td_border td:first-child{
+			width:150px;
+		}
+		.td_header_th_first{
+			width:150px;
+		}
+		
+		.td_border img{
+			margin-bottom:1px;
+		}
+		.td_border td{
+			border-top:1px solid white !important;
+			 border-right: 1px solid #ddd !important;; 
+		}
+		
+		ul{
+		list-style:none;
+		}
+		
+		.test_ul li{
+		float:right;
+		margin-left:10px;
+		} 
+          .year_month_fixed{
+			z-index:400;
+			position:fixed!important;
+			top:0;
+			width:100%;
+		}   
+		
+		.year_month_absolute{
+			z-index:400;
+			position:absolute!important;
+			top:0;
+			width:100%;
+		}   
+		
+		table th {
+		    border-right: 1px solid #ddd;
+		    }
+		    
+		 .td_border{
+		 overflow-y:scroll;
+		 }
+		
+		
+		   .td_border tr td
+		  {
+		   line-height:0.72857143;
+		   vertical-align:middle;
+		   }
+	
+		
+		
+		
+		
+</style>
+</head>
+<body>
+	<div style="margin-top: 15px;">
+	        
+		<div>
+			<div umid="diagramviewdialog"></div>
+			<div class="year-month-navbar ">
+				
+			</div>
+			<div class="panel panel-sms" >
+				<div class="panel-heading" style="height: 43px;margin-bottom: 12px;">
+				<h2 class="panel-title">
+					<div qid="title" class="pull-left" style="margin-top: 5px;font-size: 18px;">
+						<span qid="year_plan">2014</span>年公司运行安全审计计划
+					</div>
+					<div qid="" class="pull-right panel-button-container" style="border: 0px">
+						<div qid="btn_group" class="pull-left" style="margin-right:1px;">
+						</div>
+						<div qid="" class="pull-right" style="margin-left:8px;">
+						</div>
+					</div>
+				</h2>
+				</div>
+			</div>
+			<div class="row" style="margin-top: -14px;">
+				<div class="col-md-4 col-sm-4">
+					<div class="row">
+						<div class="col-md-5 col-sm-5" style="width: 45%;">
+							<select class="form-control first_year">
+							  
+							</select>
+						</div>
+						<div class="col-md-5 col-sm-5" style="width: 38%;">
+							<select class="form-control num_year">
+							  <option value ="one">一年</option>
+							  <option value ="two">两年</option>
+							  <option value="three">三年</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-sm-8">
+				<div class="text-right">
+					<h4 style="font-size: 16px">
+					<div>
+						 <ul class="test_ul">
+					      <!--  <li><img src="../img/r7.png">延期</li>
+					       <li><img src="../img/r6.png">完成</li>
+					       <li><img src="../img/r5.png">跟踪</li>
+					       <li><img src="../img/r4.png">整改</li>
+					       <li><img src="../img/r3.png">审计</li>
+					       <li><img src="../img/r2.png">计划</li>
+					       <li><img src="../img/r1.png">未发布</li> -->
+					       <li><img  width="20px" height="20px" src="../img/plane7.png">延期</li>
+					       <li><img  width="20px" height="20px" src="../img/plane6.png">完成</li>
+					       <li><img  width="20px" height="20px" src="../img/plane5.png">跟踪</li>
+					       <li><img  width="20px" height="20px" src="../img/plane4.png">整改</li>
+					       <li><img  width="20px" height="20px" src="../img/plane3.png">审计</li>
+					       <li><img  width="20px" height="20px" src="../img/plane2.png">计划</li>
+					       <li><img  width="20px" height="20px" src="../img/plane1.png">未发布</li>
+					       <li style="margin-left:0px;">图例  : </li>
+					     </ul>
+					</div>
+					</h4>
+					</div>
+				</div>
+			</div>
+			
+			<!-- <div class="text-center"><h3 qid="title"><span qid="year_plan">2015</span>年公司运行安全审计计划</h3></div>
+			<div class="row">
+				<div qid="btn_group" class="col-lg-3 col-md-3">
+				</div>
+				<div class="col-lg-6 col-md-6 text-center">
+					<span><img src="../img/1.png" alt="" />未发布</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/2.png" alt="" />计划</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/3.png" alt="" />审计</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/4.png" alt="" />整改</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/5.png" alt="" />跟踪</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/6.png" alt="" />完成</span>&nbsp;&nbsp;&nbsp;
+					<span><img src="../img/7.png" alt="" />延期</span>
+				</div>
+				<div class="col-lg-3 col-md-3 text-right">
+					<a href="#" class="btn btn-default" qid="daoChu" title="" id="">导出</a>
+				</div>
+			</div>
+			
+			<div class="tt-item-center aui-item" style="display: table;width: auto; margin-left: auto;margin-right: auto">
+	           <a href="#" qid="time_left">
+		          <span class="glyphicon glyphicon-chevron-left"></span>
+		        </a>&nbsp;&nbsp;
+		        <div class="btn-group">
+				   <button qid="time_scope" type="button" class="btn btn-primary">2015.01---2015.12</button>
+				   <button type="button" class="btn btn-primary dropdown-toggle" 
+				      data-toggle="dropdown">
+				      <span class="caret"></span>
+				      <span class="sr-only">切换下拉菜单</span>
+				   </button>
+				   <ul class="dropdown-menu" role="menu">
+				   		<li>
+				   			<div class="row">
+				   				<div class="col-lg-4"><a qid="oneyear" href="#">一年</a></div>
+				   				<div class="col-lg-4"><a qid="twoyear" href="#">两年</a></div>
+				   				<div class="col-lg-4"><a qid="threeyear" href="#">三年</a></div>
+				   			</div>
+				   		</li>
+				   </ul>
+				</div>
+		        &nbsp;&nbsp;
+		        <a href="#" qid="time_right">
+		          <span class="glyphicon glyphicon-chevron-right"></span>
+		        </a>
+			 </div> -->
+			
+		</div>
+		<div qid="yueli_width" style="margin-top:8px;/* overflow-x:scroll; */">
+			<table qid="datatable" class="table" style="border: #f6f6f6 1px solid;" >
+				<!-- <caption>审计计划内容</caption> -->
+				<thead qid="thead_th" class="td_header" style="background-color: #EFEFF1;">
+					
+				</thead>
+				<tbody id="tbody_td" qid="tbody_td" class="td_border">
+					
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="activity-body-content">
+			<div qid="left-column" style="margin-bottom: 20px;">
+			</div>
+		</div>
+		<!-- 模态框开始 -->
+	   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   		<div class="modal-dialog">
+      		<div class="modal-content">
+         		<div class="modal-header">
+            		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                 		 &times;
+            		</button>
+            		<h4 class="modal-title" id="myModalLabel">
+               			
+            		</h4>
+         		</div>
+         	<div class="modal-body">
+				<div style="margin-top: 10px">
+	            	<label for="name">审核说明:</label>
+	    			<textarea qid="audit_description" class="form-control" rows="4"></textarea>
+	    		</div>
+	    		<div class="alert alert-warning" aria-hidden="true" style="display:none">
+				   <!-- <a href="#" class="close">
+				      &times;
+				   </a> -->
+				   <strong>警告！</strong>不通过时您需要输入审核说明后才能提交。
+				</div>
+         	</div>
+         	<div class="modal-footer">
+            	<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+            	</button>
+            	<button qid="shenhe_btn" type="button" class="btn btn-primary">
+             		  确定
+            	</button>
+         	</div>
+     	 </div>
+		</div>
+	</div>
+		<!-- 模态框结束 -->
+		<ul class="dropdown-menu youjian_Menu" style="display:none;z-index:100">
+			<li class='gongzuodan'><a class='gongzuodan_time' href="javascript:;" name="">工作单</a></li>
+			<li class='jianchadan'><a class='jianchadan_time' href="javascript:;" name="">检查单</a></li>
+			<li class='shenjibaogao'><a class='shenjibaogao_time' href="javascript:;" name="">审计报告</a></li>
+			<li class='zhenggaidan'><a class='zhenggaidan_time' href="javascript:;" name="">整改单</a></li>
+			<!-- <li class='genzongbiao'><a class='genzongbiao_time' href="javascript:;" name="">跟踪表</a></li> -->
+		  	<li class='update'><a class='update_time' href="javascript:;" name="">修改时间</a></li>
+		  	<li class='delete'><a class='delete_time' href="javascript:;" name="">删除</a></li>
+  		</ul>
+		
+		
+		<!-- 改变旗子月份的模态框开始 -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal"
+   			data-target="#qiziModal" style="display:none">
+		</button>
+	<div class="qiziModal modal fade" id="qiziModal" tabindex="-1" role="dialog"
+   		aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+   	<div class="modal-dialog">
+      <div class="modal-content" style="width: 769px;">
+         <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel1">
+              	请选择你要修改的月份
+            </h4>
+         </div>
+         <div class="modal-body">
+         	   <div class="currentyear" name=""></div>
+         	   <div class="months text-center">
+    				<span><input type="radio" name="month" value="01">1月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="02">2月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="03">3月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="04">4月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="05">5月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="06">6月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="07">7月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="08">8月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="09">9月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="10">10月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="11">11月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="12">12月</span>
+   			   </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary" qid="qiziok">
+            		   提交更改
+            </button>
+         </div>
+      </div>
+</div>
+		<!-- 改变旗子月份的模态框结束 -->
+</body>
+</html>

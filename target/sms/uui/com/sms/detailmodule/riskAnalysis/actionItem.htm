@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="actionItem.css" type="text/css"></link>
+</head>
+<body>
+	<div>
+		<!-- <div umid="unitdialog"></div> -->
+			<table class="uui-table uui-table-dialog" >
+				<thead>
+					<tr>
+						<th style=""><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.desc%></th>
+						<th style="width:200px;"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.responsibleDept%></th>
+						<th style="width:120px;"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.expire%></th>
+						<th style="width:160px;"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.confirmMan%></th>
+						<th style="width:90px;"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.status%></th>
+						<th style="width:120px;"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.columns.operate%></th>
+					</tr>
+				</thead>
+				<tbody qid="actionitemcontainer">
+					
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="6" align="right" qid="foot-buttons" class="hidden">
+							<button class="btn btn-default btn-sm" qid="btn_addactionitem"><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.buttons.buttonAddActionItem%></button>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="unittreecontainer hidden" qid="unittreecontainer" >
+				<div style="height:250px;overflow-y:auto;" umid="unittree">
+					<!-- <ul qid="unittree" class="ztree"></ul> -->
+				</div>
+				<!-- <div class="help-block"><small><%= com.sms.detailmodule.riskAnalysis.actionItem.i18n.orgTreeTip%></small></div> -->
+			</div>
+	</div>
+	
+</body>
+</html>

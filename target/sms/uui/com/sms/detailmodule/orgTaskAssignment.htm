@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="assignOrg"></div>
+		<div umid="assignPublish"></div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+				   <%= com.sms.detailmodule.orgTaskAssignment.i18n.assignment %>
+					<div qid="btn_add" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus"></i>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" >
+				<table class="uui-table uui-table-hover " qid="table">
+					<thead>
+						<tr class="infomodel-title">
+							<td style="width:30%;"> <%= com.sms.detailmodule.orgTaskAssignment.i18n.columns.orgName %> </td>
+							<td  style="width:30%;">处理人</td>
+							<td  style="width:25%;">状态</td>
+							<td style="width:150px;"> <%= com.sms.detailmodule.orgTaskAssignment.i18n.columns.handle %> </td>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--选人开始  -->
+		<div qid='chooseMan' class='hidden'>
+		<form class="form-horizontal" role="form">
+		 <div class="form-group">
+			    <label for="" class="col-sm-3 control-label">处理人</label>
+			    <div class="col-sm-9">
+					<input type="text" class="form-control" qid="selectMan"/>
+			    </div>
+			  </div>
+			  </form>
+		</div>
+		<!-- 选人结束 -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div class="ui-tabs-bottom">
+            <ul>
+                <li><a href='#<%=this._id%>_divmoduledesigner'>设计</a></li>
+                <li><a href='#<%=this._id%>_divmodulecode'>代码</a></li>
+            </ul>
+            <div id="<%=this._id%>_divmoduledesigner">
+                <div qid="designer" class="uui-designer container">
+                </div>
+                <div qid="splitline" class="splitline">
+                    <div class="splitlineinner">
+                        <div title="下" class="splitdown ui-icon ui-icon-carat-1-s" qid="down"></div>
+                        <div title="中" class="splitmiddle ui-icon ui-icon-carat-2-n-s" qid="middle"></div>
+                        <div title="上" class="splitup ui-icon ui-icon-carat-1-n" qid="up"></div>
+                    </div>
+                </div>
+                <div style="display: none;margin-top:10px;">
+                    <textarea qid="htmeditor"></textarea>
+                </div>
+            </div>
+            <div id="<%=this._id%>_divmodulecode">
+                <div>
+                    <textarea qid="jseditor"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

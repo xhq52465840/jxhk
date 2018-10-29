@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+<bean id="observeActivityService" class="com.usky.sms.losa.activity.ObserveActivityService" />
+<bean id="observeActivityDao" class="com.usky.sms.losa.activity.ObserveActivityDao"/>
+<bean id="observeApproachDao" class="com.usky.sms.losa.activity.ObserveApproachDao"/>
+<bean id="observerInfoDao" class="com.usky.sms.losa.activity.ObserverInfoDao"/>
+<bean id="observerInfoService" class="com.usky.sms.losa.activity.ObserverInfoService"/>
+</beans>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="container-fluid uui-managepage" >
+	
+		<div class="row">
+			<div class="col-md-12 saved-search-selector">
+				<div class="throbber-space"></div>
+				<div class="uui-managepage-header">
+		        	<div class="container-fluid no-left-right-padding">
+			            <div class="row">
+			                <div class="col-md-3">
+			                    <h3 class="uui-managepage-title"><i class="glyphicon glyphicon-th"></i> 所有奖惩记录 </h3>
+			                </div>
+			                <div class="col-md-9 text-right add-button-btn">
+				                <button class="btn btn-subtle btn-sm " qid="btn-awardadd">
+									<i class="fa fa-plus"></i>&nbsp;新增奖惩记录
+								</button>
+					                
+			                </div>
+			            </div>
+		            </div>
+		        </div>
+				<div class="search-header-view">
+					<div class="header-section-primary">
+						<h1 class="search-title" qid="search-title" title="版本" style="display: inline-block;"></h1>
+						<div class="btn-group hidden" qid="div-savebuttons">
+							<button type="button" class="btn btn-default btn-sm" qid="btn-savefilter">保存</button>
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span> <span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu pull-right" role="menu" style="min-width: 160px; margin-top: 0px; border-top-left-radius: 0; border-top-right-radius: 0;">
+								<li><a href="#" qid="link-savefilteras">另存为</a></li>
+								<li><a href="#" qid="link-giveupedit">放弃修改</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <div class="container-fluid no-left-right-padding">
+		<div class="row  uui-panel-graph" qid="query-component" style="">
+			<div class="col-md-12">
+				<div class="search-criteria" qid="search-criteria">
+					<ul class="criteria-list">
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12" style="">
+				<div class="search-criteria-extended" qid="search-criteria-extended">
+					<ul class="criteria-list">
+					</ul>
+				</div>
+			</div>
+			<div class="uui-panel-rect-widget col-md-12 " style="margin-bottom: 5px;">
+                 <div class="uui-managepage-filter-content uui-panel-rect-body">
+				<form  role="form" qid="filter-form">
+			    <div class="row" style="padding:10px;">
+			   		<div class=" col-md-3 col-xs-3">
+		               	   <label for="<%=this._id%>-rewardType">处理类型</label>
+		                   <input type="text" class="form-control input-sm" name="rewardType" />
+		           	</div>
+			   		<div class=" col-md-3 col-xs-3">
+		               	   <label for="<%=this._id%>-personnelCategory">人员类别</label>
+		                   <input type="text" class="form-control input-sm" name="personnelCategory"  />
+		           	</div>
+		           	<div class=" col-md-3 col-xs-3">
+		               	   <label for="<%=this._id%>-name">姓名</label>
+		                   <input type="text" class="form-control input-sm" name="name"  />
+		           	</div>
+			   		<div class=" col-md-3 col-xs-3">
+		               	   <label for="<%=this._id%>-flightUnit">单位</label>
+		                   <input type="text" class="form-control input-sm" name="flightUnit"  />
+		           	</div>
+				 </div>
+				 <div class="row" style="padding:10px;">
+			   		<div class=" col-md-3 col-xs-3">
+		               	   <label for="<%=this._id%>-occurredDateStart">事件时间起</label>
+		                   <input type="text" class="form-control input-sm" name="occurredDateStart" title="" autocomplete="off"/>
+		           	</div>
+		           	<div class=" col-md-3 col-xs-3">
+		               		<label for="<%=this._id%>-occurredDateEnd">事件时间止</label>
+		                   	<input type="text" class="form-control input-sm" name="occurredDateEnd" maxlength="2000" title="" autocomplete="off"/>
+		           	</div>
+		           	<div class=" col-md-2 col-xs-2">
+		              		 <label for="<%=this._id%>-empDateStart" >聘用时间起</label>
+		                	 <input type="text" class="form-control input-sm startdate" name="empDateStart" style="" />
+		            </div>
+					<div class=" col-md-2 col-xs-2">
+							 <label for="<%=this._id%>-empDateEnd" >聘用时间止</label>
+						     <input type="text" class="form-control input-sm enddate" name="empDateEnd" style="" />
+		           	</div>
+		           	<div class=" col-md-2 col-xs-2">
+		           		    <label for="" class="col-md-12 col-xs-12">&nbsp;</label>
+		           		    <button class="btn btn-success" name="fliter"  style="text-shadow: 0 0px 0 #ffffff;" >搜索</button>
+		           		    <button class="btn btn-success" name="resetfilter"  style="text-shadow: 0 0px 0 #ffffff;" >清除筛选</button>
+		           	</div>
+				</div>
+				</form>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="row" style="min-height: 620px; background-color: white; border-top: #ddd solid 1px; border-bottom: #ddd solid 1px;">
+			<div class="col-md-12" style="padding-right: 0;">
+				<div  style="padding-right: 20px;">
+					<table qid="awardtable" class="results table table-striped table-bordered" cellspacing="0"
+						width="100%" style="margin-bottom: 0;">
+					</table>
+				</div>
+				<div qid="noresult" class="noresult hidden">
+					<h4><strong>根据当前搜索条件没有查询到信息</strong></h4>
+					<p>修改当前搜索条件 </p>
+				</div>
+			</div>
+		</div>
+
+	<div qid="addVersion" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">版本：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="addversion" name="addversion" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group hidden">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">版本：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="addversion" name="version" placeholder="" maxlength="50">
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+	<div class="uui-managepage">
+		<div umid="fileDialog"></div>
+		<div umid="recordDiForm"></div>
+		
+		<div class="row form-group" style="height: 43px;margin-bottom: 12px;">
+			<div class="col-md-8 " style="padding-left: 30px">
+				
+			</div>
+			<div qid="top_buttons" class="col-md-4 text-right" style="margin-top:10px;padding-right:30px;">
+				<button qid="save_zhenggaidan" type="button" class="btn btn-default active btn-sm" style="display:none">保存</button>
+				<button qid="export_zhenggaidan" type="button" class="btn btn-default active btn-sm" style="display:none">导出整改反馈</button>
+				<button qid="commit_zhenggaidan" type="button" class="btn btn-default active btn-sm" style="display:none">提交</button>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="panel panel-sms">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn" title="展开" style="cursor:pointer"></i>
+						&nbsp;基本信息
+					</h2>
+				</div>
+			<div class="panel-body baseInfo" qid="content" style="">
+			<form >
+				<table class="uui-table table-fixed">
+					<tbody>
+						<tr>
+							<td class="name" data-field="improveName">整改反馈名称</td>
+							<td class="value"><input type="text" class="form-control input-sm" name="improveName"  /></td>
+							<td class="name" data-field="improveNo">整改反馈单编号</td>
+							<td class="value"><input type="text" class="form-control input-sm" name="improveNo" /></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="auditunit_Name">审计单位</td>
+							<td class="value"><input type="text" class="form-control input-sm" name="auditunit_Name" /></td>
+							<td class="name" data-field="auditDate">审计日期</td>
+							<td class="value"><input type="text" maxlength="512" class="form-control input-sm"  name="auditDate" /></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="auditedunit_Name" >被审计单位</td>
+							<td class="value"><input type="text" maxlength="512" class="form-control input-sm"  name="auditedunit_Name" /></td>
+							<td class="name" data-field="audit_address">审计地点</td>
+							<td class="value"><input type="text" class="form-control input-sm"  name="audit_address" /></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="transactor">经办人</td>
+							<td class="value"><input type="text" maxlength="1024" class="form-control input-sm"  name="transactor" /></td>
+							<td class="name" data-field="transactorTel">经办人联系方式</td>
+							<td class="value"><input type="text" maxlength="256" class="form-control input-sm"  name="transactorTel" /></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="improver">整改联系人</td>
+							<td class="value"><input type="text" maxlength="1024" class="form-control input-sm"  name="improver"/></td>
+							<td class="name" data-field="improverTel">联系方式</td>
+							<td class="value"><input type="text" maxlength="256" class="form-control input-sm"  name="improverTel"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="remark">备注</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control input-sm" maxlength="2000" rows="3"  name="remark"></textarea>
+							</td>
+						</tr>
+					</tbody>			
+				</table>	
+				</form>
+			</div>
+			</div>
+		    
+		    <!-- 整改反馈问题列表-->
+			<div class="panel panel-sms">
+				<div class="panel-heading"><h2 class="panel-title">
+					<i class="glyphicon glyphicon-minus glyphicon-btn" title="展开" style="cursor:pointer"></i>
+					&nbsp;整改反馈问题列表
+					</h2>
+				</div>
+				<div class="panel-body">
+					<table qid="zhenggaidan_modify_table" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+				</div>
+			</div>
+		
+			<div class="panel panel-sms  hidden" qid="improveRejectedFiles"  style="">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+					<i class="glyphicon glyphicon-minus glyphicon-btn" title="展开" style="cursor:pointer"></i>
+					&nbsp;被拒绝的签批件
+					</h2>
+				</div>
+				<div class="panel-body ">
+					<table qid="Rejectdatatable" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+				</div>
+			</div>
+		
+			<div class="panel panel-sms files" name="improvefiles" style="">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+					<i class="glyphicon glyphicon-minus glyphicon-btn title="展开" style="cursor:pointer"></i>
+					&nbsp;上传的签批件
+						<div qid="add_file" class="pull-right uui-cursor-pointer">
+							<div class="">
+							<img title="添加附件" src="../img/add-question.png">
+							</div>
+						</div>
+					</h2>
+				</div>
+				<div class="panel-body ">
+					 <table qid="zhenggaidan_attachment" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+				</div>
+			</div>
+			
+			<!-- 验证签批件 -->
+			<div umid="attachment"></div>
+			<!-- 验证签批件 -->
+		
+		</div>
+		<!-- 日志 -->
+			<div class="activity-body-content container-fluid">
+				<div qid="left-column" style="margin-top: 20px;">
+					
+				</div>
+			</div>
+		
+	</div>
+</body>
+</html>

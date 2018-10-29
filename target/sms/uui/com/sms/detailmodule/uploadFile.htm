@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+    .uploadify-queue-item{
+    	padding:0px;
+    	background:#fff;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    	<div class="panel panel-sms">
+    		<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down" style="visibility: hidden;"></span> -->
+					附件
+					<div class="pull-right panel-button-container" data="file" qid="btn_file">
+						<div class="panel-button-inner">
+							<i class="fa fa-plus "></i>
+						</div>
+					</div> 
+				</h2>
+				
+			</div>
+    		<div class="panel-body">
+    			<table class="uui-table">
+						<thead>
+							<tr class="infomodel-title">
+								<th style="">文件名</th>
+								<th style="width:140px;">附件类型</th>
+								<th style="width:100px;">大小</th>
+								<th style="width:100px;" >上传时间</th>
+								<th class="operate-tool" style="border-left: none;"></th>
+							</tr>
+						</thead>
+						<tbody qid="fileList"></tbody>
+				</table>
+    		</div>
+    	</div>
+    	<div qid="info-file" style="display:none;">
+    		<input type="hidden" autofocus="autofocus" />
+			<div class="form-group">
+				<label class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">附件</label>
+				<div class="col-sm-9">
+					<input type="file" name="file-upload" qid="file-upload" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">附件类型</label>
+				<div class="col-sm-9">	
+					<select class="form-control input-sm" qid="file-type">
+						<!-- <option value="0">其他</option>
+						<option value="1">调查报告</option>
+						<option value="2">信息获取</option>
+						<option value="3">风险通告</option> -->
+		        	</select>
+		        </div>
+			</div>
+ 		</div>
+    </div>
+</body>
+</html>

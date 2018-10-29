@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>LOSA审计方案</title>
+
+</head>
+<body>
+	<div class="container-fluid" style="padding: 1px 0;">
+		<div umid="schemeEdit"></div>
+		<div id="schemeQueryForm" style="width: 100%; padding: 10px;padding-bottom: 0;">
+			<div class="col-sm-20 col-md-20">
+				<table style="width:100%;">
+					<thead class="header">
+						<tr>
+							<td class="searchTitleIcon"><div>&nbsp;</div></td>
+							<td class="rightBigTitle">
+								<div class="uui-managepage-title">航线审计方案</div>
+							</td>
+							<td style="padding-right: 5px;"  valign="middle" align="right">
+								<span class="fa uui-cursor-pointer fa-angle-double-up" style="color: black;font-size: 20px" data-toggle="collapse" data-target="#schemeQueryTable" v-on:click="collapseToggle"></span>
+							</td>
+						</tr>
+					</thead>
+				</table>
+				<table id="schemeQueryTable" class="collapse in rightBigHeader">
+					<tbody>
+						<tr class="first">
+							<td style="width: 10%" align="center">
+								方案编号：
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm" v-model="schemeQueryForm.schemeNo"/>
+							</td>
+							<td align="center" style="width: 8%">
+								方案主题:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm" v-model="schemeQueryForm.schemeSubject"/>
+							</td>
+							<td align="center" style="width: 10%">
+								实施单位:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm" v-model="schemeQueryForm.impleUnitName"/>
+							</td>
+							<td align="center" style="width: 8%">
+								方案类型:
+							</td>
+							<td class="value">
+								<select id="schemeType" style="width:100%" v-model="schemeQueryForm.schemeType">
+									<option value="">全部</option>
+									<option v-for="option in schemeTypeNames" v-bind:value="option.dictCode">
+										{{ option.dictName }}
+									</option>							
+		  						</select>
+							</td>
+							<td align="center" style="width:8%">
+								方案状态:
+							</td>
+							<td class="value"  style="width:9%">
+								<select id="schemeStatus" style="width:100%" v-model="schemeQueryForm.schemeStatus">
+									<option value="">全部</option>
+									<option v-for="option in schemeStatusNames" v-bind:value="option.dictCode">
+										{{ option.dictName }}
+									</option>
+						  		</select>
+							</td>
+						</tr>
+						<tr class="second">
+							<td align="center">
+								方案开始日期:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" v-model="schemeQueryForm.schemeStartDateFrom"/>
+							</td>
+							<td align="center">
+								至:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" v-model="schemeQueryForm.schemeStartDateTo"/>
+							</td>
+							<td align="center">
+								方案结束日期:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" v-model="schemeQueryForm.schemeEndDateFrom"/>
+							</td>
+							<td align="center">
+								至:
+							</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" v-model="schemeQueryForm.schemeEndDateTo"/>
+							</td>
+							<td colspan="2" align="center">
+								<button type="button" class="btn btn-default" v-on:click="search"><span class="fa fa-search"></span>查询</button>
+						  		<button type="button" class="btn btn-default" v-on:click="reset">重置</button>
+						  	</td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="schemeList" class="panel panel-sms" style="width: 100%; padding: 10px;">
+			<div class="planListButtonList" v-if="userAuth!='观察员'&&userAuth!=''" class="btn-group" style="float: right;">
+			    <button type="button" class="btn btn-default" v-on:click="addScheme">新增</button>
+			    <button type="button" class="btn btn-default" v-on:click="delSchemes">删除</button>
+			    <button type="button" class="btn btn-default" v-on:click="disSchemes">发布</button>
+			</div>
+			<table class="table changeColor rightBigContentTable" style="width: 100%;">
+				<thead class="header2">
+					<tr>
+						<th style="width:5%;text-align: left;"><input type="checkbox" id="allScheme" v-on:click="checkAllSchemes">全选</th>
+						<th style="width:15%;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.scheme_no">方案编号</th>
+						<th style="width:25%;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.scheme_subject">方案主题</th>
+						<th style="width:17;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.start_date">方案时间</th>
+						<th style="width:9%;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.scheme_type">方案类型</th>
+						<th style="width:14%;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.imple_unit_id">实施单位</th>
+						<th style="width:8%;text-align: left;" v-sortfun.literal="page" :options="orders" sortby="l.status">方案状态</th>
+						<th style="width:8%;text-align: left;" >报告上传</th>
+					</tr>
+				</thead>
+				<tbody id="schemeListBody">
+					<tr v-for="as in auditSchemes" style="height: 38px;">
+						<td align="left">
+							<input type="checkbox" dataid={{as.id}} datastatus={{as.schemeStatus}} dataSchemeNo = {{as.schemeNo}} v-on:click="isCheckAllChecked"/>
+						</td>
+						<td align="left">
+							<a href="#" dataid={{as.id}} v-on:click="retriveScheme">{{as.schemeNo}}</a>
+						</td>
+						<td align="left">{{as.schemeSubject}}</td>
+						<td align="left">{{as.startDate}}--{{as.endDate}}</td>
+						<td align="left">{{as.schemeTypeName}}</td>
+						<td align="left">{{as.impleUnitName}}</td>
+						<td align="left">{{as.schemeStatusName}}</td>
+						<td v-if="as.attach==1" align="left">已上传</td>
+	                    <td v-else align="left">未上传</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 分页开始 -->
+			
+				 <pagebars :pagemsg.sync="pagebarsData" :pagefun="querySchemes"></pagebars> 
+			 
+			<!-- 分页结束 -->
+			
+		</div>	
+		<div umid="schemeLogList"></div>
+	</div>
+	
+</body>
+</html>

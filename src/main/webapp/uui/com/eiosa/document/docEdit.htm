@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: right; float: right;
+}
+</style>
+</head>
+<body  >
+<div>
+	<div class="docform container-fluid">
+		<div umid="uploadDialog"></div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title" style="display:{{sectionId==null?'':'none'}}">Document Base：</h2>
+				<h2 class="panel-title" style="display:{{sectionId==null?'none':''}}">Documents：
+	            	<div class="pull-right panel-button-container" v-if="doc.id==null"  data="newDocument" v-on:click="addNewDocument"  id="addNeWDocument">
+                		<div class="panel-button-inner"><i class="fa fa-plus" title="添加参考文件"></i></div>
+              		</div>
+                </h2>
+			</div>
+
+			<table class="uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name" style="width: 40%">
+							Full name of the <br>Manuals/Documents：<span class="text-danger"> *</span>
+						</td>
+						<td class="value">
+							<input type="text" v-model="doc.reviewed" readOnly='{{readonly1}}' class="form-control input-sm popover-toggle" id="repReviewed"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name">Acronyms：<span class="text-danger"> *</span></td>
+						<td class="value">
+							<input type="text" v-model="doc.acronyms" readOnly={{readonly}} class="form-control input-sm popover-toggle"
+									style="text-transform: uppercase" id="repAcronyms"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name">Version/ Revision：<span class="text-danger"> *</span></td>
+						<td class="value">
+							<input type="text" v-model="doc.versionno" readOnly={{readonly}} 
+									class="form-control input-sm popover-toggle" id="repVersiono"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name">Documentation Type:<span class="text-danger"> *</span></td>
+						<td class="value">
+							<select class="form-control" disabled={{readonly}} id="repType" style="width: 100%" v-model="doc.type">
+								<option value="Type 1" selected="selected">Type 1</option>
+								<option value="Type 2">Type 2</option>
+								<option value="Type 3">Type 3</option>
+								<option value="Paper">Paper</option>
+							</select>
+							
+						</td>
+					</tr>
+					<tr>
+						<td class="name">Distribution Date:<span class="text-danger"> *</span></td>
+						<td class="value">
+							<input type="text" readOnly={{readonly}} v-model="doc.docdate | datestr"
+								class="form-control input-sm popover-toggle" id="repDocDate"/>
+						</td>
+					</tr>
+					<tr style="display:{{sectionId==null?'none':''}}">
+			            <td class="name">Charpter：</td>
+			            <td class="value"> 
+			            	<input type="text"  v-model="doc.charpter" id="charpter" class="form-control input-sm popover-toggle" />
+			            </td>
+			         </tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="panel panel-sms" umid="attachList">
+		</div>
+		
+		<div class="uui-managepage" style="display:{{sectionId==null?'':'none'}}">
+		    <div class="panel panel-sms">
+			    <div class="panel-heading">
+			         <h2 class="panel-title">
+			           <span id="g9SShQPdRwNF23RzzQKe-toggle-panel" class="fa uui-cursor-pointer fa-chevron-right fa-plus" v-on:click="logShow"></span>
+			           Log
+			         </h2>
+			    </div>
+			    <div class="panel-body hidden">
+			      <div umid="docEditLogTable"></div> 
+			    </div>
+		    </div>
+	    </div>
+
+		<div id="footer" class="row float_footer">
+			<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+				<button type="button" class="btn btn-default" 
+					v-on:click="save" dataid="{{ doc.id }}">保存</button>
+				<button type="button" class="btn btn-default" v-on:click="close" >取消</button>
+			</div>
+		</div>
+
+	</div>
+
+	<p class="footer_spaceholder"></p>
+</div>
+</body>

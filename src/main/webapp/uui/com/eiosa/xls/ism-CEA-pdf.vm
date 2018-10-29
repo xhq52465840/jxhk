@@ -1,0 +1,167 @@
+﻿<html>
+<head>
+<style>
+	body {
+        font-size:12.0pt; 
+		font-family:Microsoft YaHei;
+		vertical-align: middle;
+		text-align: center;
+    }
+    table, tr, th, td{
+        border: 1px solid black;
+        border-spacing: 0px;  
+    }
+	td, th, span{				
+		word-wrap:break-word;
+		word-break:break-all;
+		padding: 5px;
+	}
+</style>
+</head>
+<body>
+
+<p>
+<span style="font-size:22.0pt;">EIOSA吉祥</span><br></br><br></br>
+<span style="font-size:22.0pt;">内部审计符合性报告</span><br></br><br></br>
+<span style="font-size:22.0pt;">${listAll.get(0)}</span><br></br><br></br>
+<span style="font-size:22.0pt;">更新日期： ${listAll.get(1)}</span><br></br><br></br>
+</p>
+<br></br><br></br>
+
+<p>
+<span style="font-size:22.0pt;">概述</span><br></br><br></br>
+<span style="font-size:12.0pt;">自 ${listAll.get(2)} 至 ${listAll.get(3)}，依照国际航空运输协会（IATA）</span><br></br>
+<span style="font-size:12.0pt;">标准检查单 第${listAll.get(4)}版（ISM Ed${listAll.get(5)}），对吉祥 ${listAll.get(6)} 专业实施内部审计。</span><br></br>
+<span style="font-size:12.0pt;">ISM ${listAll.get(7)} 专业检查单共 ${listAll.get(8)} 条。涉及</span><br></br>
+<span style="font-size:12.0pt;">${listAll.get(9)}</span><br></br>
+<span style="font-size:12.0pt;">等内容。截止至本符合性报告生成时，共完成 ${listAll.get(10)} 条检</span><br></br>
+<span style="font-size:12.0pt;">查单项（占总比例 ${listAll.get(11)} ），ISM推荐的${listAll.get(12)} 条审计员行为共完</span><br></br>
+<span style="font-size:12.0pt;">成 ${listAll.get(13)} 条（占总比例 ${listAll.get(14)} ），其中不符合项（Finding） ${listAll.get(15)} 条，</span><br></br>
+<span style="font-size:12.0pt;">建议项（Observation） ${listAll.get(16)} 条，不适用项（N/A） ${listAll.get(17)} 条。</span><br></br>
+</p>
+<br></br><br></br>
+
+<table style="margin-left:auto; margin-right:auto; width:850px">
+  <tr>
+    <th style="width:40%;">${listAll.get(7)}</th>
+    <th style="width:20%;">Finding</th>
+    <th style="width:20%;">Observation</th >
+	<th style="width:20%;">N/A</th >
+  </tr>
+  #foreach($isarpAssessment in $listAll.get(18))
+  <tr>
+    <td style="width:40%;">${isarpAssessment.get(0)}</td >
+    <td style="width:20%;">${isarpAssessment.get(1)}</td>
+    <td style="width:20%;">${isarpAssessment.get(2)}</td >
+	<td style="width:20%;">${isarpAssessment.get(3)}</td >
+  </tr>
+  #end
+</table>
+<br></br><br></br>
+
+<table style="margin-left:auto; margin-right:auto; width:850px">
+  <tr>
+    <th style="width:16%;">Documents Reviewed</th>
+    <th style="width:7%;">Acronyms</th>
+    <th style="width:7%;">Version</th >
+	<th style="width:7%;">Documentation Type</th >
+	<th style="width:7%;">Date</th>
+    <th style="width:7%;">ORG</th>
+    <th style="width:7%;">FLT</th >
+	<th style="width:7%;">DSP</th >
+	<th style="width:7%;">MNT</th>
+    <th style="width:7%;">CAB</th>
+    <th style="width:7%;">GRH</th >
+	<th style="width:7%;">CGO</th >
+	<th style="width:7%;">SEC</th >
+  </tr>
+  #foreach($documentReferencess in $listAll.get(19))
+  <tr>
+    <td style="width:16%;">${documentReferencess.get(0)}</td >
+    <td style="width:7%;">${documentReferencess.get(1)}</td>
+    <td style="width:7%;">${documentReferencess.get(2)}</td >
+	<td style="width:7%;">${documentReferencess.get(3)}</td >
+	<td style="width:7%;">${documentReferencess.get(4)}</td >
+    <td style="width:7%;">${documentReferencess.get(5)}</td>
+    <td style="width:7%;">${documentReferencess.get(6)}</td >
+	<td style="width:7%;">${documentReferencess.get(7)}</td >
+	<td style="width:7%;">${documentReferencess.get(8)}</td >
+    <td style="width:7%;">${documentReferencess.get(9)}</td>
+    <td style="width:7%;">${documentReferencess.get(10)}</td >
+	<td style="width:7%;">${documentReferencess.get(11)}</td >
+	<td style="width:7%;">${documentReferencess.get(12)}</td >
+  </tr>
+  #end
+</table>
+<br></br><br></br>
+
+<table style="margin-left:auto; margin-right:auto; width:850px">
+  <tr>
+    <th style="width:34%;">Name</th>
+    <th style="width:33%;">Title</th >
+	<th style="width:33%;">IOSA Disciplines Audited</th >
+  </tr>
+  #foreach($auditorRecord in $listAll.get(20))
+  <tr>
+    <td style="width:34%;">${auditorRecord.get(0)}</td>
+    <td style="width:33%;">${auditorRecord.get(1)}</td >
+	<td style="width:33%;">${auditorRecord.get(2)}</td >
+  </tr>
+  #end
+</table>
+<br></br><br></br>
+
+#foreach($conformances in $listAll.get(21))
+<table style="margin-left:auto; margin-right:auto; width:850px">
+  <tr>
+    <td style="text-align:left;width:103%;" colspan=2 ><span>${conformances.get(0)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;width:103%;" colspan=2 ><span>${conformances.get(1)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;width:103%;" colspan=2 ><span>Text: </span><br></br><span>${conformances.get(2)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;width:103%;" colspan=2 ><span>Assessment：</span><br></br><span>${conformances.get(3)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;width:103%;" colspan=2 ><span>Auditor Comments: </span><br></br><span>${conformances.get(4)}</span></td>
+  </tr>
+  #foreach($auditorAction in $conformances.get(7))
+  <tr>
+    <td style="width:30%;" rowspan=4 >${auditorAction.get(0)}</td>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Title: </span><br></br><span>${auditorAction.get(1)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Audit Date: </span><br></br><span>${auditorAction.get(2)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Name(s) of the
+  Auditor: </span><br></br><span>${auditorAction.get(3)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Audit Record: </span><br></br><span>${auditorAction.get(4)}</span></td>
+  </tr>
+  #end
+  #foreach($document in $conformances.get(8))
+  <tr>
+    <td style="width:30%;" rowspan=4 >Documentation References</td>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Reviewed: </span><br></br><span>${document.get(0)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Acronyms: </span><br></br><span>${document.get(1)}</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Version: </span><br></br><span>${document.get(2)}</span></td>
+  </tr>
+   <tr>
+    <td style="text-align:left;padding-left:10px;width:70%;"><span>Charpter: </span><br></br><span>${document.get(3)}</span></td>
+  </tr>
+  #end
+</table>
+<br></br><br></br>
+  #end
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.show-grid{
+		margin-bottom: 5px;
+	}
+	.tree-container{
+		height: 300px;
+		background-color: #ddd;
+		overflow: auto;
+	}
+</style>
+</head>
+<body>
+<div class="uui-managepage">
+	<div umid="recordDiForm"></div>
+	<div qid="content">
+		
+		<!-- 功能按钮 begin -->
+		<div class="row show-grid" style="height: 43px;margin-bottom: 12px;">
+			<div class="col-sm-12 text-right" style="margin-top:10px;">
+				<button type="submit" class="btn btn-default btn-sm " qid="save">保存</button>
+				<button type="submit" class="btn btn-default btn-sm hidden" qid="export">导出</button>
+			</div>
+		</div>
+		
+		<form qid="checkForm">
+		<!-- 功能按钮 end -->
+		<!-- 检查单基本信息 begin -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-baseinfo-panel"></span>检查单基本信息</h2>
+			</div>
+			<div class="panel-body">
+					<table class="uui-table table-fixed">
+						<tbody>
+							<tr>
+								<td class="name" data-field="checkName">名称</td>
+								<td class="value">
+									<input type="text" class="form-control input-sm" qid="checkName" name="checkName"/>
+								</td>
+								<td class="name" data-field="checkNo">编号</td>
+								<td class="value">
+									<input type="text" class="form-control input-sm" qid="checkNo" name="checkNo"/>
+								</td>
+							</tr>
+							<tr>
+									<td class="name" data-field="target">被审计单位</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="target" name="target"/></td>
+									<td class="name" data-field="address">审计地点</td>
+									<td class="value"><input type="text" maxlength="512" class="form-control input-sm" qid="address" name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >审计日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm" qid="startDate" name="startDate" maxlength="12"/></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm" qid="endDate" name="endDate" maxlength="12"/></div>
+										</div>
+									</td>
+									<td class="name" data-field="method">审计方式</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="method" name="method"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="teamLeader">审计组长</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="teamLeader" name="teamLeader"/></td>
+									<td class="name" data-field="standard">审计标准</td>
+									<td class="value"><input type="text" maxlength="256" class="form-control input-sm" qid="standard" name="standard"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="managers">项目主管</td>
+									<td class="value" colspan="1"><input type="text" class="form-control input-sm" qid="managers" name="managers"/></td>
+									<td class="name" data-field="checkType">管理类别</td>
+									<td class="value">
+										<input type="text" class="form-control input-sm" qid="checkType" name="checkType"/>
+									</td>
+								</tr>
+							<tr>
+								<td class="name" data-field="member">审计员</td>
+								<td class="value" colspan="3">
+									<input type="text" class="form-control input-sm" qid="member" name="member"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="name" data-field="remark">备注</td>
+								<td class="value" colspan="3">
+									<textarea class="form-control input-sm" rows="3" qid="remark" name="remark" style="resize:none;"></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				
+			</div>
+		</div>
+		<!-- 检查单基本信息 end -->
+		
+		<!-- 检查小结 begin -->
+		<div class="panel panel-sms hidden" qid="resultContainer">
+			<div class="panel-heading">
+				<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-result-panel"></span>检查小结
+				</h2>
+			</div>
+			<div class="panel-body">
+				<table class="uui-table table-fixed">
+					<tbody>
+						<tr>
+							<td class="name"  data-field="result">
+								检查小结
+							</td>
+							<td class="value">
+								<textarea qid="result" class="form-control input-sm" maxLength="2000" name="result" rows="3" style="resize:none;"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- 检查小结 end -->
+
+		<!-- 检查要点 begin -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-checkitem-panel"></span>检查要点
+					<div class="pull-right">
+						<div class="uui-cursor-pointer hidden" qid="add">
+							<div class="">
+								<img src="../img/add-question.png">
+							</div>
+						</div> 
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body">
+				<div qid="checkpoints">
+					<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+		        	</table>
+				</div>
+				<div class="text-center hidden" qid="btn-showmore">
+					<i class="fa fa-angle-double-down fa-lg uui-cursor-pointer"></i>
+				</div>
+				<div qid="conclusion" class="alert alert-info hidden" style="margin-bottom: 0px;"></div>
+			</div>
+		</div>
+		<!-- 检查要点 end -->
+
+		<!-- 反馈 begin -->
+		<div class="panel panel-sms hidden" qid="recordContainer">
+			<div class="panel-heading">
+				<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-record-panel"></span>反馈记录
+				</h2>
+			</div>
+			<div class="panel-body">
+				<table class="uui-table table-fixed">
+					<tbody>
+						<tr>
+							<td class="name" data-field="record">
+								反馈记录
+							</td>
+							<td class="value">
+								<textarea qid="record" name="record" maxLength="2000" class="form-control input-sm" rows="3"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- 反馈 end -->
+
+		</form>
+		
+		
+
+		<div qid="logsContainer"></div>
+
+	</div>
+
+	<!-- 添加检查点 begin -->
+	<div qid="addDialog" class="hidden">
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="tree-container ztree" qid="left-div"></div>
+			</div>
+			<div class="col-sm-7">
+				<div class="row show-grid">
+					<div class="col-sm-4">审计要点：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="3" disabled name="point"></textarea></div>
+				</div>
+				<div class="row show-grid">
+					<div class="col-sm-4">审计依据：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="3" disabled name="according"></textarea></div>
+				</div>
+				<div class="row show-grid">
+					<div class="col-sm-4">审计提示：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="6" disabled name="prompt"></textarea></div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="help-block" style="margin-bottom: 0px;">
+					注意：选中“临时检查”节点后右键即可添加临时检查项
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 添加检查点 end -->
+
+	<!-- 增加临时审计要点 begin -->
+	<div qid="addPointDialog" class="hidden">
+		<form qid="pointForm">
+			<div class="row show-grid">
+				<div class="col-sm-4">审计要点：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="3" name="point"></textarea></div>
+			</div>
+			<div class="row show-grid">
+				<div class="col-sm-4">审计依据：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="3" name="according"></textarea></div>
+			</div>
+			<div class="row show-grid">
+				<div class="col-sm-4">审计提示：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="6" name="prompt"></textarea></div>
+			</div>
+		</form>
+	</div>
+	<!-- 增加临时审计要点 end -->
+
+</div>
+</body>
+</html>

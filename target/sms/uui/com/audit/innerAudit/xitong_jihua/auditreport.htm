@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" href="detail.css" type="text/css"></link> -->
+     <style>
+	        .disnone{
+	        	display:none;
+	        }
+	        .auditresult tr:hover span.glyphicon{
+				visibility:visible !important;
+			}
+      </style>
+</head>
+<body>
+<div>
+	<div umid="fileDialog1"></div>
+	<div umid="recordDiForm"></div>
+	
+	<div class="row form-group" style="height: 43px;margin-bottom: 12px;">
+			<div class="col-md-8 " style="padding-left: 30px">
+			</div>
+			<div qid="top_buttons" class="col-md-4 text-right" style="margin-top:10px;padding-right:30px;">
+		</div>
+	</div>
+	
+	<div class="container-fluid uui-managepage">
+		<!-- 审计报告基本信息 -->
+		<div class="panel panel-sms">
+			<div class="panel-heading"><h2 class="panel-title">
+			<i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>
+				&nbsp;审计报告基本信息</h2></div>
+			<!-- 开始 -->
+			<div class="panel-body baseInfo">
+			<form>
+				<table class="uui-table table-fixed">
+					<tbody>
+								<tr>
+									<td class="name" data-field="reportName">审计报告名称</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="reportName" /></td>
+									<td class="name" data-field="workNo">审计编号</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="workNo" /></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="target">被审计单位</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="target" /></td>
+									<td class="name" data-field="address">审计地点</td>
+									<td class="value"><input type="text" maxlength="512" class="form-control input-sm"  name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >审计日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm"  name="startDate" maxlength="12" /></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm"  name="endDate" maxlength="12" /></div>
+										</div>
+									</td>
+									<td class="name" data-field="auditItems">审计范围</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="auditItems" /></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="teamLeader">审计组长</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm"  name="teamLeader" /></td>
+									<td class="name" data-field="members">审计组员</td>
+									<td class="value"><input type="text" maxlength="256" class="form-control input-sm"  name="members" /></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="managers">经办人</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm"  name="managers" /></td>
+									<td class="name" data-field="contact">经办人联系方式</td>
+									<td class="value"><input type="text" maxlength="256" class="form-control input-sm"  name="contact" /></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="method">审计方式</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm"  name="method" /></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="remark">备注</td>
+									<td class="value" colspan="3">
+										<textarea class="form-control input-sm" maxlength="2000" rows="3"  name="remark"  style="resize:none"></textarea>
+									</td>
+								</tr>								
+					</tbody>			
+				</table>
+				</form>
+			</div>
+			<!-- 结束 -->
+		</div>
+		
+		<!-- 审计结论 -->
+		<div class="panel panel-sms">
+			<div class="panel-heading"><h2 class="panel-title">
+				<i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>
+				&nbsp;审计结论</h2>
+			</div>
+			<div class="panel-body ">
+				<div qid="auditresult" class="auditresult"></div>	
+			</div> 
+		</div>
+		
+		<!-- 审计中发现的问题 -->
+		<div class="panel panel-sms">
+			<div class="panel-heading"><h2 class="panel-title">
+				<i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>
+				&nbsp;审计中发现的问题</h2></div>
+			<p class="info_num"></p>
+			<div class="panel-body">
+			<table qid="hasProblems" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+			</div>
+		</div>
+		
+		<!-- 符合项 -->
+		<div umid="auditnoproblem"></div>
+		<!-- 符合项 -->
+		
+		<!-- 附件 -->
+		<div umid="auditfiles"></div>
+		<!-- 附件 -->
+		
+		
+		
+		</div>
+	<!-- 日志 -->
+	<div class="activity-body-content container-fluid">
+		<div qid="left-column" style="margin-top: 20px;">
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>

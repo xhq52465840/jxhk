@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>E-IOSA审计</title>
+<script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../uui/layer/layer.js"></script>
+ <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+<script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='docEdit']"),{docId:$.urlParam().docId,
+            							   reportId:$.urlParam().reportId,
+								           type:$.urlParam().type,
+								           isarpId:$.urlParam().isarpId,
+								           sectionId:$.urlParam().sectionId,
+								           isUpload:$.urlParam().isUpload
+								           
+            });
+                                          
+           
+        });
+    </script>
+
+</head>
+<body>
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main" style="padding:0px;padding-top: 0px">
+    			<div umid="docEdit" umodule="com.eiosa.document.docEdit"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+</body>
+</html>

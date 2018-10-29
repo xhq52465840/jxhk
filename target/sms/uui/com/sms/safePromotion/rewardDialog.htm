@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div qid="rewardDialog">
+       		<form qid ="form" class="form">
+				<div class="row">
+				  	<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardUnit" class="col-sm-2" >所属部门<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		               	<input type="text" class="form-control input-sm " qid="rewardUnit" name="rewardUnit" maxlength="255" />
+		               	</div>
+		       		</div>
+		       	</div>
+		       	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardUserName" class="col-sm-2" >姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		               	<input type="text" class="form-control input-sm " qid="rewardUserName"  name="rewardUserName"/>
+		               	</div>
+		       		</div>
+            	</div>
+            	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardType" class="col-sm-2" >奖惩类别<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		               		<select class="col-sm-12 form-control input-sm" qid="rewardType"  name="rewardType">
+								  <option value="P">惩罚</option>
+								  <option value="R">奖励</option>
+							</select>
+		               	</div>
+		       		</div>
+		       	</div>
+		       	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-eventGrade" class="col-sm-2" >事件等级<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		               	<input type="text" class="form-control input-sm " qid="eventGrade"  name="eventGrade"/>
+		               	</div>
+		       		</div>
+            	</div>
+            	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-eventDate" class="col-sm-2" >事发时间<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		               	<input type="text" class="form-control input-sm " qid="eventDate"  name="eventDate"/>
+		               	</div>
+		       		</div>
+            	</div>
+		       	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardAmmount" class="col-sm-2" >金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;额<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		           	 	<input type="text" class="form-control input-sm " qid="rewardAmmount"  name="rewardAmmount"/>
+		               	</div>
+		       		</div>
+            	</div>
+            	<div class="row">
+				  	<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardReason" class="col-sm-2" >奖惩原因<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		           	 	<textarea class="col-sm-12" rows="3" qid="rewardReason"  name="rewardReason" maxlength="255"></textarea>
+		               	</div>
+		       		</div>
+		       	</div>
+		       	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardContent" class="col-sm-2" >奖惩内容<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		           	 	<textarea class="col-sm-12" rows="3" qid="rewardContent"  name="rewardContent" maxlength="255"></textarea>
+		               	</div>
+		       		</div>
+            	</div>
+            	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-rewardRemark" class="col-sm-2" >备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+		           	 	<div class="col-sm-10">
+		           	 	<textarea class="col-sm-12" rows="3" qid="rewardRemark"  name="rewardRemark" maxlength="255"></textarea>
+		               	</div>
+		       		</div>
+            	</div>
+        	</form>
+       	</div>
+    </div>       	
+</body>
+</html>

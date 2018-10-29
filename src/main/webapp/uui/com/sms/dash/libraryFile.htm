@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+.text-half{
+	width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div qid="display" class="hidden">
+			<div class="alert alert-danger hidden" style="width:98%;margin: 10px auto;" qid="norule-tips">配置时没有指定条目，请重新编辑配置。</div>
+			<table qid="datatable"
+				class="dashTable table table-striped table-bordered" cellspacing="0"
+				style="margin-top: 0 !important;" width="100%"></table>
+		</div>
+		<div qid="config" class="hidden" style="padding:40px;">
+			<div class="row">
+				<div class="col-md-12 col-lg-12" style="padding-right: 5px;">
+					<div style="background-color: #f3f2f7; border: 1px solid #e0e0e0;">
+						<ul qid="libTree" class="ztree" style="overflow:auto;height: 300px;"></ul>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6" style="margin-top:10px;">
+					<button type="button" class="btn btn-success" qid="update">保存</button>
+					<button type="button" class="btn btn-danger" qid="cancel" style="margin-left: 10px">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

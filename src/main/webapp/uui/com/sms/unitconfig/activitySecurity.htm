@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="activitySecurity.css" type="text/css"></link>
+
+</head>
+<body>
+    <div class="uui-module">
+    	<div umid="selectActivitySecurityScheme"></div>
+    	<div class="page-header" style="padding:0;">
+	        <div class="page-header-inner">
+	            <div class="page-header-image">
+	                <div style="vertical-align:top;width:48px;height:48px;position:relative;">
+	                    <div class="unit-config-icon48-permissions"></div>
+	                </div>
+	            </div>
+	            <div class="page-header-main">
+	                <span><%=com.sms.unitconfig.activitySecurity.i18n.title %></span>
+	                <h3 >
+	                    <span qid="unit-config-activity-security-scheme-name" ></span>
+	                </h3>
+	                <div class="dropdown" style="display:inline-block;">
+	                	<span class="label label-success dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;"><%=com.sms.unitconfig.activitySecurity.i18n.applied %><span qid="unit-count">0</span><%=com.sms.unitconfig.activitySecurity.i18n.safeAgency %></span>
+	                	<ul class="dropdown-menu" style="max-height:300px;overflow:auto;" role="menu" qid="units"></ul>
+	                </div>
+	            </div>
+	            <div class="page-header-actions">
+		            <div class="btn-group">
+		            	<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" qid="button-operate"><span class="glyphicon glyphicon-cog"></span>&nbsp;行为&nbsp;<span class="caret"></span></button>
+		            	<ul class="dropdown-menu pull-right text-left" role="menu" >
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" qid="button-select-scheme"><%=com.sms.unitconfig.activitySecurity.i18n.header1 %></a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" qid="button-edit-scheme"><%=com.sms.unitconfig.activitySecurity.i18n.header2 %></a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" qid="button-change-scheme"><%=com.sms.unitconfig.activitySecurity.i18n.header3 %></a></li>
+						  </ul>
+					  </div>
+	            </div>
+	       </div>
+	    </div>
+	    <p><%=com.sms.unitconfig.activitySecurity.i18n.explain %></p>
+		
+		<table class="table" qid="table">
+			<thead>
+				<tr>
+					<th><%=com.sms.unitconfig.activitySecurity.i18n.safeClass %></th>
+					<th><%=com.sms.unitconfig.activitySecurity.i18n.describe %></th>
+					<th style="width:30%;"><%=com.sms.unitconfig.activitySecurity.i18n.role %></th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		
+    </div>
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/ucomp.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/ucomp.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>﻿/*
+* Create by wayne 
+* 组件定义，组件有这些属性
+*   componentobject._id ; // 容器组件id
+*   componentobject._ucid ; // 容器组件在父的名字
+*   componentobject.$ ; // 容器组件的jquery对象
+*   componentobject._parentcomponent // 容器组件父对象
+*   componentobject._options ; // 设置settings
+*
+*   component.clazzname ; // 标明当前类的String名
+*   component.superclazz ;  // 标明当前类的父类,父类String名通过".superclass.name"获取
+*   component.config.usehtm; // 是否有htm界面
+*   component.config.usesuperhtm = false; // 使用父类htm
+*   component.config.usei18n = false;      // 使用国际化,国际化文件为"类最后名_语言.js",比如"Secondtest_zh.js". 
+*   component.i18n = {};                    // 国际化定义:$.extend(true ,test.another.Secondtest.i18n, { abc: "abc"});
+*   component.widgetjs = [];                // 引用jq组件的js路径（相对于类js的jq-widget路径），当然，也可以选择直接在htm页面中script加载
+*   component.widgetcss = [];               // 引用jq组件的css对象（cssobj.path相对于类js的css路径），当然，也可以选择直接在htm页面中link加载
+*
+*   component.init                          // 初始化，settings和其他配置在这里传
+*   component.beforerender                  // 读取htm后（usehtm设置为true），但未加载入parentselector
+*   component.render                        // 加入parentselector
+*   component.afterrender                   // 加入parentselector之后
+*   component.destroy                       // 清除实例dom，不删除class对象
+*   component.resize                        // htm的缩放
+*   
+*   component.to$                           //selector + 组件方法
+*组件相关方法
+*   $.u.define         //定义component
+*   $.u.load          //加载component
+*****************************************************************************************************************************************************************************************************************
+***********************************************************特别提醒注意：$.u.clazz.extend的那些基本方法，不能在impl或者override方法里实现，实现的话意味着直接覆盖component的这些方法*****************************
+***********************************************************比如把destroy方法写在impl方法里，就无法使用this._super进行操作****************************************************************************************
+*/
+//@ sourceURL=component
+(function () {
+    var component = $.u.clazz.extend({
+        /**
+        *初始化传参 new 的时候
+        *参数分别为：装载对象的对象(容器)
+        */
+        _init: function (compSelector) {
+            this.$ = $();
+            this._id = $.u.uniqid();
+            this._ucid = null;
+            this._options = {};
+            this._parentcomponent = null;
+            this.__targethtm = "";
+            if (compSelector instanceof $) {
+                var Args = Array.prototype.slice.call(arguments, 1);
+                this.init.apply(this, Args);
+                this.target(compSelector);
+            }
+            else {
+                if (arguments.length > 1) {
+                    this.init.apply(this, arguments);
+                }
+            }
+        },
+        /**
+        *加载htm，com.usky.xx，会有http://0.0.0.0/项目名/com/usky/xx.htm，或者用父亲的
+        */
+        _loadhtm: function () {
+            var currentClazz = this.constructor;
+            if (currentClazz.config.usehtm &amp;&amp; currentClazz.htm == null) {
+                // 一切只为了拿到htm
+                var tempClazz = this.constructor;
+                // 如果usesuperhtm为false，则找自己的页面，如果为true，则看递归往上找到父亲的页面。
+                // 找到页面后，将页面的head全部导入，body构造为div, id为“类.id名”，然后里面所有的id都必须扩展为“类.id名.id”
+                // JQuery获取这些id的时候为$("#类\\.id名\\.id");
+                while (tempClazz.config.usesuperhtm) {
+                    tempClazz = tempClazz.superclazz;
+                }
+                if (tempClazz.clazzname != "component") { // 不能为根Class，根只有方法没有页面
+                    var htmUrl = $.u._buildcomponentpathprefix(tempClazz.clazzname) + '.htm';
+                    var htmstring = $.u.loadhtm(htmUrl);
+                    if (htmstring != null &amp;&amp; htmstring != '') {
+                        // 不能用 $(data), 会重新加载所有js导致内存溢出
+                        htmstring.match(/&lt;head[\s\S]*?>([\s\S]*)&lt;\/head>[\s\S]*?&lt;body[\s\S]*?>([\s\S]*)&lt;\/body>/);
+                        var headstr = RegExp.$1;
+                        var bodystr = RegExp.$2;
+                        // 忽略掉 "&lt;script> code here &lt;/script>", these will cause memory leak
+                        if (headstr &amp;&amp; ($.trim(headstr) != "")) {
+                            $.each($.u.getjssrcfromhead(headstr), function (idx, src) {
+                                var abssrc = $.u._absurl(src, htmUrl);
+                                $.u.loadjs(abssrc);
+                            });
+                            $.each($.u.getcsssrcfromhead(headstr), function (idx, src) {
+                                var cssobj = {};
+                                cssobj.path = $.u._absurl(src, htmUrl);
+                                $.u.loadcss(cssobj);
+                            });
+                            $.each($.u.getcssrawfromhead(headstr), function (idx, src) {
+                                $("head").append("&lt;style  type=\"text/css\">" + src + "&lt;\/style>");
+                            });
+                        }
+                        // 用了js模板这块就不能用了，所以img和a这类的必须要规范如果换行可能找不到--- 头加载完，这里要处理Body了，Body一个是将body里的内容全部放到div里，另一个是把国际化搞搞
+                        bodystr = bodystr.replace(/\r\n/g, '');
+                        // img和href的要特殊处理
+                        var rg = /(&lt;img.*?src\s*=\s*["'])([^"']*)(["'])/gi;
+                        bodystr = this._bodyurlfill(bodystr, rg, htmUrl);
+                        rg = /(&lt;a.*?href\s*=\s*["'])([^"']*)(["'])/gi;
+                        bodystr = this._bodyurlfill(bodystr, rg, htmUrl);
+                        rg = /(&lt;object.*?codebase\s*=\s*["'])([^"']*)(["'])/gi;
+                        bodystr = this._bodyurlfill(bodystr, rg, htmUrl);
+                        currentClazz.htm = bodystr;
+                    }
+                }
+            }
+            if (currentClazz.config.usehtm) {
+                //var bodystr = this._macrobodyfill(currentClazz.htm, /\{\@(.*?)\@\}/gi);// 模板格式为"{@内容@}"，内容定义: c.i18n.xxx本类的语言国际化，g.i18n.xxx全局的语言国际化，o.id本页面实例的id
+                var bodystr = this._macrobodyfill(currentClazz.htm);
+                eval(bodystr);
+                bodystr = __p;
+                this.beforerender(bodystr);
+                this.render(bodystr);
+                this.afterrender(bodystr);
+            }
+        },
+        _bodyurlfill: function (str, reg, referenceurl) {
+            return str.replace(reg, this.proxy(this._bodyurlfillmatcher, referenceurl));
+        },
+        _bodyurlfillmatcher: function (referenceurl, matchWholeStr, p1, p2, p3) {
+            var p2url = $.trim(p2);
+            if (p2url == "" || p2url.startwith("#"))
+                return matchWholeStr;
+            else
+                return p1 + $.u._absurl(p2url, referenceurl[0]) + p3;
+        },
+        _macrobodyfill: function (text) {
+            var templateSettings = {
+                // JavaScript可执行代码的界定符
+                evaluate: /&lt;%([\s\S]+?)%>/g,
+                // 直接输出变量的界定符
+                interpolate: /&lt;%=([\s\S]+?)%>/g,
+                // 需要将HTML输出为字符串(将特殊符号转换为字符串形式)的界定符
+                escape: /&lt;%-([\s\S]+?)%>/g
+            };
+            var noMatch = /.^/;
+            // escapes对象记录了需要进行相互换转的特殊符号与字符串形式的对应关系, 在两者进行相互转换时作为索引使用
+            // 首先根据字符串形式定义特殊字符
+            var escapes = {
+                '\\': '\\',
+                "'": "'",
+                'r': '\r',
+                'n': '\n',
+                't': '\t',
+                'u2028': '\u2028',
+                'u2029': '\u2029'
+            };
+            // 遍历所有特殊字符字符串, 并以特殊字符作为key记录字符串形式
+            for (var p in escapes)
+                escapes[escapes[p]] = p;
+            // 定义模板中需要替换的特殊符号, 包含反斜杠, 单引号, 回车符, 换行符, 制表符, 行分隔符, 段落分隔符
+            // 在将字符串中的特殊符号转换为字符串形式时使用
+            var escaper = /\\|'|\r|\n|\t|\u2028|\u2029/g;
+            // 在将字符串形式的特殊符号进行反转(替换)时使用
+            var unescaper = /\\(\\|'|r|n|t|u2028|u2029)/g;
+            // 反转字符串中的特殊符号
+            // 在模板中涉及到需要执行的JavaScript源码, 需要进行特殊符号反转, 否则如果以HTML实体或字符串形式出现, 会抛出语法错误
+            var unescape = function (code) {
+                return code.replace(unescaper, function (match, escape) {
+                    return escapes[escape];
+                });
+            };
+            // Underscore模板解析方法, 用于将数据填充到一个模板字符串中
+            // 模板解析流程:
+            // 1. 将模板中的特殊符号转换为字符串
+            // 2. 解析escape形式标签, 将内容解析为HTML实体
+            // 3. 解析interpolate形式标签, 输出变量
+            // 4. 解析evaluate形式标签, 创建可执行的JavaScript代码
+            // 5. 生成一个处理函数, 该函数在得到数据后可直接填充到模板并返回填充后的字符串
+            // 6. 根据参数返回填充后的字符串或处理函数的句柄
+            // -------------------
+            // 开始将模板解析为可执行源码
+            var source = "__p+='" + text.replace(escaper, function (match) {
+                // 将特殊符号转移为字符串形式
+                return '\\' + escapes[match];
+            }).replace(templateSettings.escape || noMatch, function (match, code) {
+                // 解析escape形式标签 {@- @}, 将变量中包含的HTML通过_.escape函数转换为HTML实体
+                return "'+\n$.u.escape(" + unescape(code) + ")+\n'";
+            }).replace(templateSettings.interpolate || noMatch, function (match, code) {
+                // 解析interpolate形式标签 {@= @}, 将模板内容作为一个变量与其它字符串连接起来, 则会作为一个变量输出
+                return "'\n+(" + unescape(code) + ")+\n'";
+            }).replace(templateSettings.evaluate || noMatch, function (match, code) {
+                // 解析evaluate形式标签 {@ @}, evaluate标签中存储了需要执行的JavaScript代码, 这里结束当前的字符串拼接, 并在新的一行作为JavaScript语法执行, 并将后面的内容再次作为字符串的开始, 因此evaluate标签内的JavaScript代码就能被正常执行
+                return "';\n" + unescape(code) + "\n;__p+='";
+            }) + "';\n";
+            source = "var __p='';" + source;
+            return source;
+        },
+        /**
+        *   校验选择器是不是组件选择器是不是有效，返回""表示有效
+        */
+        _isValidCompSelector: function (compSelector) {
+            if (compSelector == null || !(compSelector instanceof $) || compSelector.length == 0) {
+                return '开发时错误：页面元素不存在';
+            }
+            if (compSelector.length > 1) {
+                return '开发时错误：组件只能是唯一的页面元素';
+            }
+            if (!compSelector.is("div")) {
+                return '开发时错误：组件的页面元素必须使用div定义';
+            }
+            if (!compSelector.children().length > 0) {
+                return '开发时错误：组件的页面元素不能包含任何内容';
+            }
+            var ucid = compSelector.attr("ucid");
+            if (ucid == null || ucid == "") {
+                return '开发时错误：组件的页面元素必须有ucid属性';
+            }
+            return "";
+
+        },
+        _readableClazzEncode: function (decoded) {
+            return decoded.replace(/\./g, '-');
+        },
+        _readableClazzDecode: function (encoded) {
+            return encoded.replace(/\-/g, '.');
+        },
+        /** 
+        * 类必须的其他初始化，参数是后面的参数
+        */
+        init: function () {
+
+        },
+        /**
+        * 暴露出去的方法，用来渲染某个选择器
+        */
+        target: function (compSelector) {
+            var checkresult = this._isValidCompSelector(compSelector);
+            if (checkresult != "") {
+                throw new Error(checkresult);
+            }
+            if (this.__targethtm != "") {
+                this.destroy(); // 先做清理
+            }
+            this.$ = compSelector;
+            this._loadhtm();
+            this.__targethtm = compSelector.html();
+        },
+        /**
+        *用来覆盖，render之前调用，usehtm必须为true
+        */
+        beforerender: function (bodystr) {
+
+        },
+        /**
+        * 用来覆盖，usehtm必须为true，比如用jeasyui，_render内容要加上$.parser.parse
+        */
+        render: function (bodystr) {
+            if (bodystr &amp;&amp; bodystr != "") {
+                var sel = $(bodystr).insertAfter(this.$);
+                if (!sel.is("div")) {
+                    throw new Error('开发时错误：render渲染的组件元素必须以div包括');
+                }
+                var sttemp = this.$.attr("style");
+                if (!sttemp) {
+                    sttemp = "";
+                }
+                else {
+                    if (!sttemp.endwith(";")) {
+                        sttemp += ";";
+                    }
+                }
+                this.$.remove(); // 移除原来的
+                // 加css
+                sel.attr("style", sttemp + sel.attr("style"));
+                sel.addClass("__uskycomponentobject");
+                sel.addClass(this._readableClazzEncode(this.clazzname));
+                sel.data("__uskycomponentobject", this);
+                // 再通过qid加id，并且都加入到this里去
+                sel.attr("id", this._id);
+                $.each($("[qid]", sel), this.proxy(function (idx, aqidsel) {
+                    var $aqidsel = $(aqidsel);
+                    var ucid = $aqidsel.attr("ucid");
+                    if (ucid == null || ucid == "") {
+                        var qid = $aqidsel.attr("qid");
+                        $aqidsel.attr("id", this._id + "-" + qid);
+                        this[qid] = $aqidsel;
+                    }
+                }));
+                sel.attr("id", this._id);
+                // 再渲染组件里的组件（这里是递归哟）
+                $.each($("div[ucid]", sel), this.proxy(function (idx, ucsel) {
+                    var $ucsel = $(ucsel);                    
+                    var ucid = $aqidsel.attr("ucid");
+                }));
+                this.$ = sel;
+            }
+            else {
+                this.$.remove();
+                this.$ = $();
+            }
+        },
+        /**
+        *用来覆盖，usehtm必须为true，render之前调用
+        */
+        afterrender: function (bodystr) {
+
+        },
+        /**
+        *获取组件的clazz，怕一些人不会用this.constructor
+        */
+        getclazz: function () {
+            return this.constructor;
+        },
+        /**
+        *用来覆盖，如果有htm的时候进行缩放
+        */
+        resize: function () { },
+        /**
+        *用来覆盖，清除dom，还可以附加一些清理工作，比如jqueryui的dialog
+        */
+        destroy: function () {
+            for (var key in this) {
+                switch (key) {
+                    case "$":
+                        if (this.$.length > 0) {
+                            this.$.remove();
+                            this.$ = $();
+                        }
+                        break;
+                    case "_id":
+                        break;
+                    case "_options":
+                        break;
+                    case "_parentcomponent":
+                        this._parentcomponent = null;
+                        break;
+                    case "__targethtm":
+                        this[key] = "";
+                        break;
+                    default:
+                        delete this[key];
+                }
+            }
+        },
+        /**
+        *用来覆盖，显示组件
+        */
+        show: function () { },
+        /**
+        *用来覆盖，隐藏组件
+        */
+        hide: function () { },
+        /**
+        *简化一下，怕小朋友们搞不定jq proxy的参数
+        *func是函数，后面还可以带参数，记得参数的顺序是从func函数开始的顺序
+        *比如onclick已有event参数，存在函数fun1，this.proxy(func1,newparam)，对应的func1目标有fun1x(newparam, event)顺序的参数
+        */
+        proxy: function (func) {
+            if (arguments.length > 1) {
+                var Args = [];
+                Args = Array.prototype.slice.call(arguments, 1);
+                return $.proxy(func, this, Args);
+            }
+            else
+                return $.proxy(func, this);
+        },
+        /**
+        *用来获取相对本js类路径文件的绝对路径
+        */
+        getabsurl: function (relativeurl) {
+            return $.u.absurlbycompobj(relativeurl, this);
+        }
+    });
+
+    component.clazzname = 'component'; // 标明当前类的String名
+    component.superclazz = null;  // 标明当前类的父类,父类String名通过".superclass.name"获取
+    component.htm = null; // htm
+    component.config = {};
+    component.config.usehtm = false; // 使用加载htm    
+    component.config.usesuperhtm = false; // 使用父类htm
+    component.config.usei18n = false;      // 使用国际化,国际化文件为"类最后名_语言.js",比如"Secondtest_zh.js". 
+    component.i18n = {};                       // 国际化定义:$.extend(true ,test.another.Secondtest.i18n, { abc: "abc"});
+    component.widgetjs = [];
+    component.widgetcss = [];
+
+    $.u.component = component;
+    window['component'] = $.u.component; //注册到window去
+
+    ///////////////////////////////////////////////////与组件相关的方法////////////////////////////////////////////    
+    /**
+    * 定义类
+    * superclz为null表示直接component
+    * currentclz定义的类, superclz父类, currentclzmethods方法（当然也可以定义好后用impl继续添加方法）, currentclzconfigexts（扩展或覆盖类的config）
+    */
+    $.u.define = function (currentclz, superclz, currentclzmethods, currentclzconfigexts) {
+        if (superclz == null || superclz == "")
+            superclz = 'component';
+        if (currentclz == 'component')
+            throw new Error('开发时错误：component为基本组件，无法再定义');
+        var i, currentclzsplit, superclzsplit, superco, currentco;
+        // 先加载父类
+        superco = window;
+        superclzsplit = superclz.split(".");
+        var sourcefind = true;
+        for (i = 0; i &lt; superclzsplit.length; i = i + 1) {
+            superco = superco[superclzsplit[i]];
+            if (superco == null) {
+                sourcefind = false;
+                break;
+            }
+        }
+        if (!sourcefind) {
+            // 父类没找到则加载并继续获取
+            $.u.load(superclz);
+            superco = window;
+            for (i = 0; i &lt; superclzsplit.length ; i = i + 1) {
+                superco = superco[superclzsplit[i]];
+            }
+        }
+        // 构造子类
+        currentclzsplit = currentclz.split(".");
+        currentco = window;
+        for (i = 0; i &lt; currentclzsplit.length; i = i + 1) {
+            if (i == currentclzsplit.length - 1) {
+                currentco[currentclzsplit[i]] = superco.extend(currentclzmethods);
+            }
+            else {
+                currentco[currentclzsplit[i]] = currentco[currentclzsplit[i]] || {};
+            }
+            currentco = currentco[currentclzsplit[i]];
+        }
+        currentco.clazzname = currentclz;
+        currentco.superclazz = superco;
+        currentco.config = currentco.config || {};
+        $.extend(true, currentco.config, superco.config); // 深度合并
+        if (currentclzconfigexts &amp;&amp; typeof (currentclzconfigexts) == "object") {
+            $.extend(true, currentco.config, currentclzconfigexts);
+        }
+        currentco.i18n = currentco.i18n || {};
+        $.extend(true, currentco.i18n, superco.i18n);
+        currentco.widgetjs = currentco.widgetjs || [];
+        currentco.widgetcss = currentco.widgetcss || [];
+    }
+
+    /*
+    *   加载类、类的国际化、类的css和js
+    *   compClzName一个参数是组件的字符串类名（也可以是数组字符串类名，多个类加载）
+    *
+    */
+    $.u.load = function (compClzName) {
+        var single = true;
+        var compNames = [];
+        if ($.isArray(compClzName)) {
+            compNames = compClzName;
+        }
+        else {
+            compNames.push(compClzName);
+            single = false;
+        }
+        var compClazzes = [];
+        $.each(compNames, function (idx, aCompClzName) {
+            var scriptUrl = $.u._buildcomponentpathprefix(compClzName) + '.js';
+            $.u.loadjs(scriptUrl);
+            /**
+            *加载语言，com.usky.xx，会有http://0.0.0.0/项目名/com/usky/xx-i18n-zh.js
+            */
+            if ($.u.config.mode == 'dev') {
+                var currentclzsplit = compClzName.split(".");
+                var currentco = window;
+                for (var i = 0; i &lt; currentclzsplit.length ; i++) {
+                    currentco = currentco[currentclzsplit[i]];
+                }
+                if (currentco.config.usei18n) {
+                    var i18nUrl = $.u._buildcomponentpathprefix(compClzName) + '-i18n-' + $.u.config.region + ".js";
+                    $.u.loadjs(i18nUrl);
+                }
+                $.each(currentco.widgetjs, function (idx, jspath) {
+                    var absjspath = $.u._absurl(jspath, scriptUrl);
+                    $.u.loadjs(absjspath);
+                });
+                $.each(currentco.widgetcss, function (idx, cssobj) {
+                    var abscssobj = $.extend(true, {}, cssobj);
+                    abscssobj.path = $.u._absurl(abscssobj.path, scriptUrl);
+                    $.u.loadcss(abscssobj);
+                });
+                compClazzes.push(currentco);
+            }
+        });
+        if (single) {
+            return compClazzes[0];
+        }
+        else {
+            return compClazzes;
+        }
+    }
+
+    /*
+    *组件的id
+    *用-分割，比如"com.usky.xx"变成"com-usky-xx"
+    */
+    $.u._buildcomponentid = function (compClzName, id) {
+        if (compClzName == null || compClzName == '')
+            throw new Error('开发时错误：无法加载空对象');
+        var clzPaths = compClzName.replace(/\./g, '-');
+        return clzPaths + '-' + id + '-';
+    }
+    /*
+    *组件的pathprefix
+    *用/分割，比如"com.usky.xx"变成"http://0.0.0.0/项目名/com/usky/xx"
+    */
+    $.u._buildcomponentpathprefix = function (compClzName) {
+        if (compClzName == null || compClzName == '')
+            throw new Error('开发时错误：无法加载空对象');
+        var clzPaths = compClzName.replace(/\./g, '/');
+        //return $.u._global.domain + '/' + clzPaths;
+        return $.u._global.domain + clzPaths;
+    }
+
+    /**
+    * compSelector选择器
+    * compClzNameOrInstance某个类实例或类名，如果为null，则必须在compSelector里面定义
+    * 后面的arguments，都会传递给类的init方法
+    * 返回的是组件选择器
+    *
+    * 两种情况例子：
+    *   必须要有ucid，uc可以没有，不一定是div
+    *   1、"&lt;div ucid='me' ucomp='com.usky.xx'/>"
+    *   2、"&lt;div ucid='me'/>"
+    *   
+    */
+    $.uc = function (compSelector, compClzNameOrInstance) {
+        var checkresult = this._isValidCompSelector(compSelector);
+        if (checkresult != "") {
+            throw new Error(checkresult);
+        }
+        var ucid = compSelector.attr("ucid");
+        var ucomp = compSelector.attr("ucomp");
+        var compInstance = null;
+        if (ucomp != null &amp;&amp; ucomp != "") {
+            compClzNameOrInstance = ucomp;
+        }
+        if (compClzNameOrInstance &amp;&amp; typeof (compClzNameOrInstance) == "string") {
+            var clz = $.u.load(compClzNameOrInstance);
+            compInstance = new clz();
+        }
+        else if (compClzNameOrInstance &amp;&amp; compClzNameOrInstance instanceof $.u.clazz) {
+            compInstance = compClzNameOrInstance;
+        }
+        else {
+            throw new Error('开发时错误：无法确定是哪种组件');
+        }
+        var Args = [];
+        if (arguments.length > 2)
+            Args = Array.prototype.slice.call(arguments, 2);
+        compInstance._ucid = ucid;
+        compInstance.init.apply(compInstance, Args);
+        var parentcomp = compInstance.uc();
+        compInstance.target(compSelector);//直接渲染，不传参了
+        if (parentcomp) {
+            parentcomp[ucid] = compInstance.$;
+            compInstance._parentcomponent = compInstance;
+        }
+        return compInstance.$;
+    };
+
+    /**
+    *  扩展jquery选择器的方法
+    *  
+    *   
+    */
+    $.fn.extend({
+        uc: function () {
+            var compget = $(this).closest("div.__uskycomponentobject");
+            if (compget.length == 1)
+                return compget.data("__uskycomponentobject");
+            else
+                return null;
+        }
+    });
+
+    // TODO:之后还要加组件的属性class含有ucomp，还有所有组件必须以div包含进来
+
+})();
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#_absolutizeuri">_absolutizeuri</a></li><li><a href="global.html#_absurl">_absurl</a></li><li><a href="global.html#_global">_global</a></li><li><a href="global.html#_init">_init</a></li><li><a href="global.html#_isValidCompSelector">_isValidCompSelector</a></li><li><a href="global.html#_loadhtm">_loadhtm</a></li><li><a href="global.html#absurlbycompobj">absurlbycompobj</a></li><li><a href="global.html#afterrender">afterrender</a></li><li><a href="global.html#beforerender">beforerender</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#escape">escape</a></li><li><a href="global.html#exeremotejs">exeremotejs</a></li><li><a href="global.html#getabsurl">getabsurl</a></li><li><a href="global.html#getclazz">getclazz</a></li><li><a href="global.html#hide">hide</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#inituui">inituui</a></li><li><a href="global.html#JSON">JSON</a></li><li><a href="global.html#loadcss">loadcss</a></li><li><a href="global.html#loadhtm">loadhtm</a></li><li><a href="global.html#loadjs">loadjs</a></li><li><a href="global.html#proxy">proxy</a></li><li><a href="global.html#releasedom">releasedom</a></li><li><a href="global.html#render">render</a></li><li><a href="global.html#resize">resize</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#target">target</a></li><li><a href="global.html#uniqid">uniqid</a></li><li><a href="global.html#xmltostring">xmltostring</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Fri Jun 06 2014 15:30:41 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

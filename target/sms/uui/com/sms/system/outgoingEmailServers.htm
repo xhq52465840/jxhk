@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="outgoingEmailServers.css" rel="stylesheet" /></head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="dictionaryDialog" ></div>
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title" style="display:inline-block;" ><%=com.sms.system.outgoingEmailServers.i18n.title %></h3><span class="label label-primary" qid="label-active"></span>
+                    </div>
+                    <div class="col-md-9 text-right" >
+                        <div class="btn-group">
+    	                    <button class="btn btn-default btn-sm" qid="button-active"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top:10px;"><%=com.sms.system.outgoingEmailServers.i18n.explainF %></p>
+        <div style="border-bottom:1px solid #ccc;padding-bottom:5px;"><h4><strong><%=com.sms.system.outgoingEmailServers.i18n.explainS %></strong></h4></div>
+		<p style="margin-top:10px;"><%=com.sms.system.outgoingEmailServers.i18n.explainT %></p>
+        <table qid="datatable"  class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
+        <button class="hidden btn btn-default btn-sm" qid="button-add-server"><%=com.sms.system.outgoingEmailServers.i18n.explainE %></button>
+    </div>
+</body>
+</html>

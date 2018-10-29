@@ -1,0 +1,16 @@
+.com-sms-workflow-assignActivityWorkflow .table tbody tr{
+	cursor:pointer;
+}
+.com-sms-workflow-assignActivityWorkflow .table thead tr th{
+	border-bottom:1px solid #ccc;
+} 
+.com-sms-workflow-assignActivityWorkflow .table tbody tr:hover{
+	background:#f5f5f5;
+}
+
+.com-sms-workflow-assignActivityWorkflow .table tbody tr.selected{
+	background-color:#F0F7FC;
+}
+.com-sms-workflow-assignActivityWorkflow .table tbody tr:first-child td{
+	border-top:none;
+}

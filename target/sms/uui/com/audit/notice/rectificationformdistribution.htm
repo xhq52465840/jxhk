@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.issueContent,.issue{
+		color : blue;
+		cursor : pointer;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div umid = "distributionInfo"></div>
+		<div class="row">
+			<div class="col-md-3">
+                 <h3 class="uui-managepage-title">整改通知单/建议书</h3>
+             </div>
+             <div class="col-md-9 text-right" qid="button">
+				<button class="btn btn-default btn-sm " qid="btn_export">
+					导出
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">基本信息</h2>
+					</div>
+					<div class="panel-body">
+						<div umid="baseInfo"></div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">附件</h2>
+					</div>
+					<div class="panel-body">
+						<div umid="fileInfo"></div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">待验证的项目</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed" qid="verification">
+							<thead>
+								<tr>
+									<th style="width: 60px;"><label><input type="checkbox" qid="check"/>全选</label></th>
+									<th style="width: 5%;">序号</th>
+									<th style="width: 25%;">待验证的项目</th>
+									<th style="width: 16%;">责任单位</th>
+									<th style="width: 14%;">完成情况</th>
+									<th style="width: 10%;">完成日期</th>
+									<th style="width: 10%;">验证人员</th>
+									<th style="width: 10%;">验证结论</th>
+									<th style="width: 10%;">验证日期</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>
+										<button class="btn btn-default btn-sm" qid="btn_all">
+											批量分配验证人员
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button class="btn btn-default btn-sm" qid="btn_th">
+											批量通过
+										</button>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">已验证完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed" qid="complete">
+							<thead>
+								<tr>
+									<th style="width: 5%;">序号</th>
+									<th style="width: 25%;">已验证完成的项目</th>
+									<th style="width: 25%;">完成情况</th>
+									<th style="width: 10%;">验证人员</th>
+									<th style="width: 10%;">验证截至日期</th>
+									<th style="width: 10%;">验证完成日期</th>
+									<th style="width: 10%;">验证结论</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">未按时完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed" qid="unfinished">
+							<thead>
+								<tr>
+									<th style="width: 5%;">序号</th>
+									<th style="width: 25%;">未按时完成的项目</th>
+									<th style="width: 25%;">验证人</th>
+									<th style="width: 25%;">审计总结</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">暂时无法完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed" qid="unabletocomplete">
+							<thead>
+								<tr>
+									<th style="width: 5%;">序号</th>
+									<th style="width: 25%;">暂时无法完成的项目</th>
+									<th style="width: 25%;">验证人</th>
+									<th style="width: 25%;">审计总结</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

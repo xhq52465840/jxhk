@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>ISARPs Information</title>
+<script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../uui/layer/layer.js"></script>
+ <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+<script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript">
+
+		$(function() {
+
+			$.um($("div[umid='audit']"), {
+				id : $.urlParam().id,
+				sectionId : $.urlParam().sectionId,
+				reportId : $.urlParam().reportId,
+				sectionName : $.urlParam().sectionName,
+				chapter : $.urlParam().chapter,
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main" style="padding:0px;padding-top: 0px">
+    			<div umid="audit" umodule="com.eiosa.audit.auditEdit"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+</body>
+</html>

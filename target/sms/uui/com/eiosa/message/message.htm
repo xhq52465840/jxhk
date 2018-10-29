@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+  <div>
+       <div class="container-fluid" id="message">
+           <table class="uui-table" style="table-layout: fixed;">
+              <tbody>
+               <tr v-show="type=='sendMessage'" >
+                  
+                  <td class="value"><input  id="messageReceiver" type="text" v-model="receiver" class="form-control input-sm " />
+                  </td>
+                </tr>
+                <tr >
+                  
+                   <td class="value">
+                      
+                     <textarea v-if="type!='sendMessage'"   placeholder="如果需要添加说明，请在此输入" class="form-control" v-model="message.detail" rows="4"/>
+                      <textarea v-else="type=='sendMessage'"   placeholder="请在此输入消息内容" class="form-control" v-model="message.detail" rows="4"/>
+				  </td>
+                </tr>
+                <tr >
+                   <td>
+                    <input id="sendToNotice" type="checkbox" checked>同时发送到站内通知</input>
+                    </td>
+                </tr>
+              </tbody>
+           </table>
+           <div id="footer" class="row float_footer">
+			<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+				<button v-if="type!='auditFinish' "  type="button" class="btn btn-default" 
+					v-on:click="save" >提交</button>
+				
+				<button v-if="type=='auditFinish'"  type="button" class="btn btn-default" 
+					v-on:click="save" >审核通过</button>
+				<button v-if="type=='auditFinish'"  type="button" class="btn btn-default" 
+					v-on:click="noAudited" >审核不通过</button>
+				<button type="button" class="btn btn-default" v-on:click="close" >取消</button>
+			
+		 </div>
+       </div>
+  </div>
+
+</body>
+</html>

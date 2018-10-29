@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="todoViewDao" class="com.usky.sms.audit.todo.TodoViewDao" />
+	<bean id="todoViewFlowUserDao" class="com.usky.sms.audit.todo.TodoViewFlowUserDao" />
+	<bean id="todoView" class="com.usky.sms.audit.todo.TodoViewService" />
+
+</beans>

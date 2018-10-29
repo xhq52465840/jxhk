@@ -1,0 +1,17 @@
+$.extend(com.sms.unitconfig.permissions.i18n,{
+	title : '安监机构权限',
+	applied : '被应用于',
+	safeAgency : '个安监机构',
+	grantAssis : '权限助手',
+	modifyGrant : '修改权限',
+	action : '行为',
+	userDiffCase : '使用不同的方案',
+	explain : '安监机构权限允许你控制谁可以访问这个安监机构, 以及他们可以执行哪些操作, 例如 "编辑安全信息", "创建安全信息"等。要限制用户访问某一个安全信息，需要在安全信息权限中设置。',
+	safeGrant : '安监机构权限',
+	grant : '权限',
+	role : '用户/用户组/机构角色',
+	relate : '将权限方案与机构关联',
+	scheme : '方案',
+	schemeNotNull : '方案不能为空',
+	relateSafe : '将权限方案与安监机构关联',
+});

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="terminalDialog" ></div>
+    	<div umid="dictionaryDialog" ></div>
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title">航站管理</h3>
+                    </div>
+                    <div class="col-md-9 text-right" >
+                        <div class="btn-group">
+    	                    <button class="btn btn-default btn-sm" qid="btn_addDictionary"><span class="glyphicon glyphicon-plus"></span> 添加航站项</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form uui-managepage-filter uui-panel-graph" qid="filter" >
+            <div class="uui-panel-rect-widget">
+                <div class="uui-panel-rect-header">
+                    <h3 class="uui-panel-rect-title">筛选字段</h3>
+                </div>
+                <div class="uui-managepage-filter-content uui-panel-rect-body">
+                    <div>
+                        <div class="form-group col-md-3 col-xs-3 ">
+                            <label for="">归属地</label>
+                            <input type="text" class="form-control input-sm" name="attribution" maxlength="50" />
+                        </div>
+                         <div class="form-group col-md-3 col-xs-3">
+                            <label for="">城市</label>
+                            <input type="text" class="form-control input-sm" name="city" maxlength="50" />
+                        </div>
+                        <div class="form-group col-md-3 col-xs-3 ">
+                            <label for="">机场</label>
+                            <input type="text" class="form-control input-sm" name="airport" maxlength="50" />
+                        </div>
+                        <div class="form-group col-md-3 col-xs-3 ">
+                            <label for="">三字码</label>
+                            <input type="text" class="form-control input-sm" name="iatacode" maxlength="10" />
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-default btn-sm" qid="btn_filter">搜索</button>
+                        <button type="button" class="btn btn-link" qid="btn_resetfilter">清除删选</button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        
+
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            
+        </table>
+        
+        
+        
+        
+   <div qid="addDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+                <div class="form-group ">
+               	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">归属地：</label>
+			 		<div class="col-sm-9">
+					       <input type="text" class="form-control" qid="attribution" name="attribution" placeholder="" maxlength="50">
+					</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">城市：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="city" name="city" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">机场：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="airport" name="airport" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+                 <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">机场三字码：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="iatacode" name="iatacode" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+                 <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">国内/国际：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="type" name="type" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+    </div>
+</body>
+</html>

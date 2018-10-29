@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>待处理</title>
+    <style type="text/css">
+      body{
+        font-family: "Microsoft YaHei";
+        font-size: 12px;
+        overflow-y: hidden;
+      }
+      a{
+        color: #7b7a7a;
+        text-decoration: none;
+      }
+      a:visited,
+      a:link {
+          color: #7b7a7a;
+      }
+      a:hover{
+        color: #4d4c4c;
+        text-decoration: underline;
+      }
+      .text-red{
+        font-weight: bolder;
+        color: red;
+      }
+      td{
+        line-height: 20px;
+      }
+    </style>
+</head>
+<body>
+  <table>
+    <tr><td><a target="_blank" href="../DashBoard.html?pageId=33312538&scrollTarget=33511558">信息任务(<span id="infoWaitForMe" class="approval-count"></span>)</a></td></tr>
+    <tr><td><a target="_blank" href="../DashBoard.html?pageId=33312538&scrollTarget=33511557">审计任务(<span id="auditWaitForMe" class="approval-count"></span>)</a></td></tr>
+    <tr><td><a target="_blank" href="../DashBoard.html?pageId=33312538&scrollTarget=33511556">风险任务(<span id="riskWaitForMe" class="approval-count"></span>)</a></td></tr>
+    <tr><td><a target="_blank" href="../../../audit/validate/RiskValidate.html?cmd=dwzx">行动项(<span id="actionItemWaitForMe" class="approval-count"></span>)</a></td></tr>
+    <tr><td><a target="_blank" href="../DashBoard.html?pageId=33312538&scrollTarget=33511554">协助任务(<span id="assistWaitForMe" class="approval-count"></span>)</a></td></tr>
+    <tr><td><a target="_blank" href="../DashBoard.html?pageId=33312538&scrollTarget=33511559">评审任务(<span id="reviewWaitForMe" class="approval-count"></span>)</a></td></tr>
+  </table>
+   <script type="text/javascript" src="../../../../uui/jquery.min.js"></script>
+   <script type="text/javascript">
+       $(function() {
+         $.ajax({
+           url: '/sms/rest/externalService/getToDoStatistics',
+           type: "get",
+           dataType: "json"
+         }).done(function(resp){
+          if(resp && resp.success){
+            var data = resp ? (resp.data || {}) : {};
+            $('#infoWaitForMe').addClass(data.activityCount > 0 ? 'text-red' : '').text(data.activityCount);
+            $('#auditWaitForMe').addClass(data.auditCount > 0 ? 'text-red' : '').text(data.auditCount);
+            $('#riskWaitForMe').addClass(data.riskCount > 0 ? 'text-red' : '').text(data.riskCount);
+            $('#actionItemWaitForMe').addClass(data.actionItemCount > 0 ? 'text-red' : '').text(data.actionItemCount);
+            $('#assistWaitForMe').addClass(data.assistCount > 0 ? 'text-red' : '').text(data.assistCount);
+            $('#reviewWaitForMe').addClass(data.methanolCount > 0 ? 'text-red' : '').text(data.methanolCount);
+          }
+         }).error(function(){
+
+         });
+       });
+   </script>
+</body>
+</html>

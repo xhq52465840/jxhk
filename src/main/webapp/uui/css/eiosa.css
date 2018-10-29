@@ -1,0 +1,95 @@
+.table_docs thead tr {
+	height: 41px;
+	WIDTH: 1309px;
+	background-color : #A2ACB6;
+	color:#fff;
+	border-bottom:1px solid #fff;
+	
+}
+.layer-noboder{
+	box-shadow:none;
+}
+.table_docs .w1 {
+	WIDTH: 10%
+}
+.table_docs .w2 {
+	WIDTH: 6%
+}
+.table_docs .w3 {
+	WIDTH: 7%
+}
+.table_docs .w4 {
+	WIDTH: 8%
+}
+.table_docs .w5 {
+	WIDTH: 8%
+}
+.table_docs .w6 {
+	WIDTH: 40%
+}
+ .table_docs .w7 {
+	WIDTH: 5%
+}/*
+.table_docs .w8 {
+	WIDTH: 45px
+}
+.table_docs .w9 {
+	WIDTH: 55px
+}
+.table_docs .w10 {
+	WIDTH: 55px
+}
+.table_docs .w11 {
+	WIDTH: 55px
+}
+.table_docs .w12 {
+	WIDTH: 55px
+}
+.table_docs .w13 {
+	WIDTH: 55px
+} */
+.table_docs .w14 {
+	WIDTH: 10%
+}
+.table_docs .w15 {
+	WIDTH: 4%
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: right; float: right;
+}
+
+.footer_spaceholder {
+height: 100px;
+}
+
+/*分页控件*/
+.onpagebars {
+	font-weight: bold;
+	color: black;
+}
+/*分页控件*/
+
+/*排序指令*/
+.arrow {
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	height: 0;
+	margin-left: 6px;
+	margin-top: 6px;
+	opacity: 0.9;
+}
+
+.arrow.asc {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #fff;
+}
+
+.arrow.dsc {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #fff;
+}
+/*排序指令*/

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" name ="format-detection" content="telephone = no,text/html,charset=utf-8"  />
+    <title>奖惩记录</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='rewardPunishment']"));
+
+            //$.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <div umid="rewardPunishment" umodule="com.sms.safePromotion.rewardPunishment"  style="padding:3px  10px;"></div>
+          
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

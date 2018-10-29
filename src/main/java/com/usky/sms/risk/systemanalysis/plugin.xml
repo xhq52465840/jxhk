@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+	
+	<bean id="systemAnalysisClauseDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisClauseDao" />
+	<bean id="systemAnalysisDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisDao" />
+	<bean id="systemAnalysisMappingDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisMappingDao" />
+	<bean id="systemAnalysisRiskAnalysisDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisRiskAnalysisDao" />
+	<bean id="systemAnalysisRiskErrorMappingDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisRiskErrorMappingDao" />
+	<bean id="systemAnalysisRiskThreatMappingDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisRiskThreatMappingDao" />
+	<bean id="systemAnalysisActivityTypeEntityDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisActivityTypeEntityDao" />
+	<bean id="systemAnalysisRiskAnalysisActivityTypeEntityDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisRiskAnalysisActivityTypeEntityDao" />
+	<bean id="systemAnalysisRiskAnalysisConclusionDao" class="com.usky.sms.risk.systemanalysis.SystemAnalysisRiskAnalysisConclusionDao" />
+	<bean id="systemAnalysis" class="com.usky.sms.risk.systemanalysis.SystemAnalysisService" />
+
+	<bean id="residualDerivativeRiskDao" class="com.usky.sms.risk.systemanalysis.residualderivativerisk.ResidualDerivativeRiskDao" />
+	<bean id="residualRiskErrorMappingDao" class="com.usky.sms.risk.systemanalysis.residualderivativerisk.ResidualRiskErrorMappingDao" />
+	<bean id="residualRiskThreatMappingDao" class="com.usky.sms.risk.systemanalysis.residualderivativerisk.ResidualRiskThreatMappingDao" />
+	<bean id="derivativeRiskThreatMappingDao" class="com.usky.sms.risk.systemanalysis.residualderivativerisk.DerivativeRiskThreatMappingDao" />
+	<bean id="derivativeRiskErrorMappingDao" class="com.usky.sms.risk.systemanalysis.residualderivativerisk.DerivativeRiskErrorMappingDao" />
+
+
+</beans>

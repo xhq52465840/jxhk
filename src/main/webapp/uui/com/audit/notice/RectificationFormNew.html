@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>整改通知单/建议书</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+       		$.um($("div[umid='RectificationFormNew']")); 
+     	    $.um($("div[umid='foot']"));
+        });
+    </script>
+</head>
+<body>
+    
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content" style="background:transparent;">
+    	<div class="page-content-inner">
+			<div class="col-lg-12 col-md-12">
+				<div umid="RectificationFormNew" umodule="com.audit.notice.rectificationformNew"></div>
+			</div>
+		</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

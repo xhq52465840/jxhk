@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var module31, module32, module33, module34, module5;
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+            $("#createall").click(function () {
+                // 测试1：测试继承
+                // 方法1
+                module31 = $.um($("div[umid=module31]"), "我的31", "你的31");
+                // 方法2
+                $.u.load('uuitest.module.modulebasic.module.module3');
+                module32 = new uuitest.module.modulebasic.module.module3($("div[umid=module32]"), "我的32", "你的32");
+                // 方法3
+                $.u.load('uuitest.module.modulebasic.module.module3');
+                module33 = new uuitest.module.modulebasic.module.module3("我的33","你的33");
+                module33.target($("div[umid=module33]"));
+                // 内部包含
+                module5 = $.um($("div[umid=module5]"), "我的5", "你的5");
+                module5._options.test = "test1";
+                console.log(module5.children());
+            });
+            $("#destroyall").click(function () {
+                module31.destroy();
+                module32.destroy();
+                module33.destroy();
+                module5.destroy();
+            });
+        });
+    </script>
+    <button id="createall">创建所有</button><button id="destroyall">销毁所有</button>
+    <div umid="module31" umodule="uuitest.module.modulebasic.module.module3"></div>
+    <div umid="module32"></div>
+    <div umid="module33"></div>
+    <div umid="module5" umodule="uuitest.module.modulebasic.module.module5"></div>    
+</body>
+</html>

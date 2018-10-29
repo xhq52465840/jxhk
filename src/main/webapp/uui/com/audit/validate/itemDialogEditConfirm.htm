@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+	<div>
+    <div qid="item-dialog-edit">
+    	<div>
+      	<div class="col-sm-12">
+      		<form class="form-horizontal" role="form" qid="form">
+          	<div class="form-groups ">		          	
+							<!-- 行动项列表 begin -->
+          		<div class="form-group">
+          			<label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">已选择行动项</label>
+          			<div class="col-sm-10">
+	          			<table class="uui-table uui-table-hover table-fixed">
+	          				<thead>
+	          					<tr>
+	          						<td>行动项</td>
+	          						<td>责任部门</td>
+	          					</tr>
+	          				</thead>
+	          				<tbody qid="actionItemContainer"></tbody>
+	          			</table>
+          			</div>
+          		</div>
+							<!-- 行动项列表 end -->	                
+              <!-- 审批人 begin -->
+							<div class="form-group">
+                <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">审批人<span class='text-danger'>*</span></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" qid="processors" name="processors" />
+                </div>
+              </div>
+              <!-- 审批人 end -->
+			<!-- 附件 begin -->
+			<div class="form-group ">
+			<input type="hidden" autofocus="autofocus" />
+              <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">附件</label>
+				 	<div class="col-sm-10">
+						<input type="file" qid="attachment" />
+				  </div>
+			</div>
+			<!-- 附件 begin -->
+	        	</div>
+	        	<!-- 验证意见 begin -->
+			<div class="form-group ">
+			<input type="hidden" autofocus="autofocus" />
+              <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">验证意见</label>
+				 	<div class="col-sm-10">
+						<input class="col-sm-12" type="text" qid="confirmComment" />
+				  </div>
+			</div>
+			<!-- 验证意见begin -->
+          </form>
+        </div>
+    	</div>
+    </div>
+	</div> 
+	
+	                     
+</body>
+</html>

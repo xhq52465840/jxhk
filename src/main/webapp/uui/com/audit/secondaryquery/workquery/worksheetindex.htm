@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div umid="saveFilterDialog"></div>
+		<div umid="unitDialogEdit" ></div>
+		
+		<div class="row">
+			<div class="col-md-12 saved-search-selector">
+				<div class="throbber-space"></div>
+				<div class="uui-managepage-header">
+		        	<div class="container-fluid no-left-right-padding">
+			            <div class="row">
+			                <div class="col-md-3">
+			                    <h3 class="uui-managepage-title"><%=com.audit.secondaryquery.workquery.worksheetindex.i18n.title + com.audit.secondaryquery.workquery.worksheetindex.i18n.searchButton%></h3>
+			                </div>
+			                <div class="col-md-9 text-right">
+			                </div>
+			            </div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+		<div class="row" qid="query-component" style="margin-top: 5px;">
+			<div class="col-md-12">
+				<div class="search-criteria" qid="search-criteria">
+					<ul class="criteria-list">
+						<li class="text-query hidden"  style='display:inline-block'>
+							<div class="text-query-container">
+								<input class="text" qid="search-query" type="text"
+									placeholder="包含的内容" maxlength="20"/>
+							</div>
+						</li>
+						<li class="criteria-actions"  style='display:inline-block'>
+							<button qid="btn-more" type="button" class="btn btn-subtle"
+								data-placement="bottom" title="增加更多筛选条件">
+								<%=com.audit.secondaryquery.workquery.worksheetindex.i18n.more %>&nbsp;<span
+									class="caret"></span>
+							</button>
+						</li>
+						<li class=" hidden"  style='display:inline-block'>
+							<button qid="btn-search " class="btn btn-subtle" type="button"
+								data-placement="bottom" title="查找">
+								<span class="glyphicon glyphicon-search" style="color: #3b73af;"></span>
+							</button>
+						</li>
+						<li class=" hidden">
+							<button qid="btn-advanced " class="btn btn-link hidden" type="button"
+								data-placement="bottom" title="使用UQL进行高级查询"><%=com.audit.secondaryquery.workquery.worksheetindex.i18n.advance
+								%></button>
+						</li>
+					</ul>
+				</div>
+				<div qid="search-criteria-advanced" style="display: none;">
+					<div class="row">
+						<div class="col-md-10">
+							<span class="glyphicon glyphicon-ok-sign"
+								style="position: absolute; left: 25px; top: 6px; color: green;"></span>
+							<span class="glyphicon glyphicon-remove-sign"
+								style="position: absolute; left: 25px; top: 6px; color: red; display: none;"></span>
+							<input class="text" qid="search-query-advanced" type="text"
+								placeholder="" style="width: 100%; padding-left: 20px;" /> <a
+								class="glyphicon glyphicon-question-sign" href="#"
+								style="position: absolute; right: 25px; top: 6px;"></a>
+						</div>
+						<div class="col-md-2">
+							<button qid="btn-search-advanced" class="btn btn-subtle"
+								type="button" data-placement="bottom" title="查找">
+								<span class="glyphicon glyphicon-search" style="color: #3b73af;"></span>
+							</button>
+							<button qid="btn-basic" class="btn btn-link" type="button"
+								data-placement="bottom" title="使用基本查询"><%=com.audit.secondaryquery.workquery.worksheetindex.i18n.base
+								%></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12" style="margin-bottom: 5px;">
+				<div class="search-criteria-extended" qid="search-criteria-extended">
+					<ul class="criteria-list">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row" qid="result-panel"
+			style="min-height: 620px; background-color: white; border-top: #ddd solid 1px; border-bottom: #ddd solid 1px;">
+			<div class="col-md-12" style="padding-right: 0;">
+				<div qid="viewtablearea" style="padding-right: 20px;">
+					<div class="pull-right"
+							style="position: absolute; z-index: 999; right: 20px; top: 10px;">
+							<button qid="btn-columns" class="btn btn-subtle btn-sm pull-right hidden">
+								数据列&nbsp;<b class="caret"></b>
+							</button>
+							<div class='columns-layer hidden' style='width: 300px; padding: 0; background: white; border: 1px solid #ccc; border-radius: 5px; margin-top: 45px; right: -10px; position: relative; -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);'>
+								<div umid="columnpanel" umodule="com.audit.plugin.workquery.columnsProp"></div>
+								<div class='css-arrow' ></div>
+							</div>
+						</div>
+					<table qid="viewtable"
+						class="results table table-striped table-bordered" cellspacing="0"
+						width="100%" style="margin-bottom: 0;">
+					</table>
+				</div>
+				
+				<div qid="noresult" class="noresult hidden">
+					<h4><strong>根据当前搜索条件没有查询到信息</strong></h4>
+					<p>修改当前搜索条件 </p>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+</body>
+</html>

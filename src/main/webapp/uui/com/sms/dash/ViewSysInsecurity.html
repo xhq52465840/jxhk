@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>系统评价-不安全状态</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script> 
+    <script type="text/javascript">
+        $(function () {
+            //$.u.inituui();
+            var params = $.urlParam(null);
+            if (!params.mode || params.mode.indexOf("config") > -1) {
+                $.um($("div[umid='sysInsecurity']"), "config", params.gadgetsinstance);
+            }
+            else {
+                $.um($("div[umid='sysInsecurity']"), "display", params.gadgetsinstance);
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main">
+    			<div umid="sysInsecurity" umodule="com.sms.dash.sysInsecurity"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+</body>
+</html>

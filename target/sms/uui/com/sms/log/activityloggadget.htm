@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="full-view container-fluid">
+        <div class="activity-stream-header">
+            <div class="activity-stream-title-container">
+                <h2 class="stream-title" qid="stream-title">活动日志</h2>
+                <input qid="titleedit" class="stream-title-edit" value="" />
+            </div>
+            <div class="activity-stream-views" qid="logviews"><span class="activity-stream-view full-view-icon" title="完整视图"></span><span class="activity-stream-view list-view-icon" title="列表视图"></span><span class="activity-stream-view filter-view-icon" title="过滤器"></span></div>
+            <div class="clearer"></div>
+        </div>
+        <div class="filter-options" style="display: none;">
+            <form class="aform form-horizontal">
+                <fieldset>
+                    <legend>全局过滤器</legend>
+                    <div class="global-filter-description stream-provider" data-key="streams">全局过滤器能用来为所有已启用的流定制活动。 <a href="#" class="add-filter-link" qid="add-global-filter">添加一个全局过滤器。</a></div>
+                    <div class="smart-config" qid="smartconfig">
+<!--                        <div class="config-row form-group row">
+                            <div class="col-sm-3 col-xs-3">
+                                <select class="rule form-control">
+                                    <option value="key" selected="selected">风险机构</option>
+                                    <option value="safeinfokey">安全信息关键字</option>
+                                    <option value="updatedate">更新日期</option>
+                                    <option value="user">用户名</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <select class="operator form-control">
+                                    <option value="is" selected="selected">是</option>
+                                    <option value="not">不是</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-2 col-xs-2">
+                                <span class="add-remove-buttons">
+                                    <button class="add" type="button" title="添加"><span>添加</span></button>
+                                    <button class="remove" type="button" title="删除"><span>删除</span></button></span><div class="clearer"></div>
+                            </div>
+                        </div>-->
+                    </div>
+                </fieldset>
+                <fieldset qid="streams-available-streams" style="display:none;">
+                    <legend>有效的流</legend>
+                    <div class="available-streams-description">每个数据流可以切换和单独定制。</div>
+                </fieldset>
+                <fieldset qid="streams-display-options">
+                    <legend>显示选项</legend>
+                    <div>
+                        限制为 <span class="input-container">
+                            <input class="numofentries form-control" type="text" value="20" maxlength="2" qid="numofentries" /></span> 条目
+                    </div>
+                    <div class="col-sm-3 row">
+                        <div class="checkbox">
+                            <input type="checkbox" value="" qid="refresh-checkbox" /><label for="refresh-checkbox">自动刷新活动日志</label>
+                        </div>
+                        <select class="form-control" qid="refresh-select" style="display: none;">
+                            <option value="15">每 15 分钟</option>
+                            <option value="30">每 30 分钟</option>
+                            <option value="60">每小时</option>
+                            <option value="120">每 2 小时</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="form-group" style="margin-top:10px;">
+                    <div class="col-sm-10">
+                        <button qid="saveconfig" class="btn btn-default">保存</button>
+                        <button qid="cancelconfig" class="btn btn-link">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div umid="activitylog" umodule="com.sms.log.activitylog"></div>
+    </div>
+</body>
+</html>

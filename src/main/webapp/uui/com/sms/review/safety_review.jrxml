@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2015-05-22T13:36:56 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test_table" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="e717586f-87c5-4a08-a413-6c512eb7408b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="assessmentProjectInsts" uuid="44e52e04-1978-4526-b4ce-b61f8d803661">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="assessmentProjectInsts" class="net.sf.jasperreports.engine.data.JREmptyDataSource"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="name" class="java.lang.String"/>
+		<field name="assessmentCommentInsts" class="java.util.List"/>
+	</subDataset>
+	<subDataset name="assessmentCommentInsts" uuid="dd8f46c1-dccf-4055-a101-524f1b883fce">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="assessmentCommentInsts" class="net.sf.jasperreports.engine.JREmptyDataSource"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="description" class="java.lang.String"/>
+		<field name="completion" class="java.util.Map"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from orders]]>
+	</queryString>
+	<field name="title" class="java.lang.String"/>
+	<field name="assessmentProjectInsts" class="java.util.List"/>
+	<field name="unitDisplayName" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="score" class="java.lang.Double"/>
+	<field name="year" class="java.lang.Integer"/>
+	<field name="season" class="java.lang.Integer"/>
+	<field name="created" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="7" y="20" width="550" height="20" uuid="01a30fc8-d393-41fc-9768-a518cb825baf"/>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋_GB2312" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unitDisplayName} == null ? "" : $F{unitDisplayName} + "安全工作评审表"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="0" width="100" height="20" uuid="592c27de-3459-413b-9416-8948c9ccf793"/>
+				<textElement>
+					<font fontName="仿宋_GB2312" size="8"/>
+				</textElement>
+				<text><![CDATA[安全工作评审]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="7" y="45" width="550" height="15" uuid="88decdc4-ff92-41c6-b024-fb0560cc2ddf"/>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋_GB2312"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{created} == null ? "" : $F{created}) +"|"+ ($F{year} == null ? "" : $F{year}) +"年第" + ($F{season} == null ? "" : $F{season}) +"季度的报表"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="437" y="0" width="120" height="18" isPrintWhenDetailOverflows="true" uuid="56bcb7e1-a54e-4acf-9e2e-3e4a33fad2d0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[得分]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="0" width="140" height="18" isPrintWhenDetailOverflows="true" uuid="3d0eda9c-f4ce-47a9-8470-48ae56ff26dd">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[考核项目]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="0" width="140" height="18" isPrintWhenDetailOverflows="true" uuid="3bd451ac-482d-4c70-9a32-906322b5e714">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[考核内容]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="0" width="150" height="18" isPrintWhenDetailOverflows="true" uuid="03e3ac36-1d83-4e96-b58f-cb7ba17e6a50">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[完成情况]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" x="7" y="0" width="550" height="18" uuid="cc530d38-5096-44dd-a73e-b9f55a49e07b"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="assessmentProjectInsts" uuid="7549e989-c67c-4bff-8350-7b9384363553">
+						<datasetParameter name="assessmentProjectInsts">
+							<datasetParameterExpression><![CDATA[$F{assessmentProjectInsts}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{assessmentProjectInsts})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="140" uuid="d6d7820f-cbed-4a7c-b454-427499900de0">
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="140" height="18" isPrintWhenDetailOverflows="true" uuid="04bdc21c-f30e-4933-9593-19d5f5e75a26"/>
+								<box leftPadding="1" rightPadding="1">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="仿宋_GB2312"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="410" uuid="d6f6e578-2080-43ee-94fa-0d0fc9aeb35f">
+						<jr:detailCell height="18">
+							<componentElement>
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="410" height="18" isPrintWhenDetailOverflows="true" uuid="c77a22f8-c569-47fd-a5c3-312a55e4bbcd"/>
+								<jr:table>
+									<datasetRun subDataset="assessmentCommentInsts" uuid="f6231926-d650-437e-bf50-3af157e72ac3">
+										<datasetParameter name="assessmentCommentInsts">
+											<datasetParameterExpression><![CDATA[$F{assessmentCommentInsts}]]></datasetParameterExpression>
+										</datasetParameter>
+										<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{assessmentCommentInsts})]]></dataSourceExpression>
+									</datasetRun>
+									<jr:column width="140" uuid="3092d9d9-c4e5-44dc-9738-21b4b46ebbde">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<jr:detailCell style="Table 2_TD" height="18">
+											<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="140" height="18" isPrintWhenDetailOverflows="true" uuid="82667297-6ca8-488f-b71f-4b6af72014e2"/>
+												<box topPadding="0" leftPadding="1" rightPadding="1"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font fontName="仿宋_GB2312"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="150" uuid="676a8878-6aea-47e3-a207-4ad6d3a779cc">
+										<jr:detailCell style="Table 2_TD" height="18">
+											<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="150" height="18" isPrintWhenDetailOverflows="true" uuid="e3ff6dac-e9d1-4423-bafd-9f904fcb64fb">
+													<property name="local_mesure_unitheight" value="pixel"/>
+													<property name="com.jaspersoft.studio.unit.height" value="px"/>
+												</reportElement>
+												<box leftPadding="1" rightPadding="1"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font fontName="仿宋_GB2312"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{completion}.get("complete")]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="120" uuid="1b05b0f1-23ce-4df4-a42b-401445f65461">
+										<jr:detailCell style="Table 2_TD" height="18">
+											<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="120" height="18" isPrintWhenDetailOverflows="true" uuid="4f6d04b7-bea5-44b3-bc4b-7783e2179b2c">
+													<property name="local_mesure_unitheight" value="pixel"/>
+													<property name="com.jaspersoft.studio.unit.height" value="px"/>
+												</reportElement>
+												<box leftPadding="1" rightPadding="1"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font fontName="仿宋_GB2312"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{completion}.get("score")]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+								</jr:table>
+							</componentElement>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="7" y="0" width="32" height="18" uuid="f9e916de-4d1c-4985-bbcb-52229d367613">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="50" y="0" width="507" height="18" uuid="9c3d56a8-3a2b-46e5-b19e-2bef5fab1497"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="7" y="23" width="549" height="3" uuid="28f3eff5-4c14-4c10-a333-8f6189fefca2"/>
+			</line>
+			<textField>
+				<reportElement x="456" y="30" width="100" height="19" uuid="a1e935d4-0e0d-45b5-9496-5bc684b67a68">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="仿宋_GB2312"/>
+				</textElement>
+				<textFieldExpression><![CDATA["总分:"+$F{score}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>

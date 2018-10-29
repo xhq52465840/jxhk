@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="selectControlDialog"></div>
+		<div umid="riskThreatErrorMappingDialog"></div>
+		<div umid="actionItemDialog"></div>
+		<div umid="mappingTextDialog"></div>
+		<div qid="addDialog" class="hidden">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label"><%= com.sms.detailmodule.riskAnalysis.i18n.addRiskAnalysisDialog.system %></label>
+			    <div class="col-sm-9">
+					<input type="hidden" class="form-control" qid="system"/>
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskAnalysis.i18n.title %>
+					<div qid="btn_add" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus" title="<%= com.sms.detailmodule.riskAnalysis.i18n.buttons.addRiskAnalysis%>"></i>
+						</div>
+					</div>
+					<div qid="btn_release" class="pull-right panel-button-container"  style="margin-right:5px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif">
+						<div class="panel-button-inner">
+							<i class="release" title="<%= com.sms.detailmodule.riskAnalysis.i18n.buttons.release%>">发布</i>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" qid="tablecontainer">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

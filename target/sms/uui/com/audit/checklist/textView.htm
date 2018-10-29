@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<!-- <link rel="stylesheet" href="textView.css" type="text/css"></link>
+ --></head>
+<body>
+    <div>
+    	<div class="textview " >
+   		<!-- <ul  class="nav nav-tabs">
+		   <li class="active" data="upload"><a href="#home" data-toggle="tab">上传文件</a></li>
+		   <li class=""  data="excel"><a href="#ios" data-toggle="tab">从excel中复制数据</a></li>
+		</ul> -->
+    	<div class=" tab-pane fade in active" id="home">
+				 <div class="col-md-1">
+				 </div>
+			    <div class="col-md-10"  style="padding-top:50px;">
+			    	<form class="form-horizontal" role="form" qid="unit-form" name="unit-form">
+			    	<input type="hidden" autofocus="autofocus" />
+				    	 <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">版本：</label>
+		                    <div class="col-sm-10">
+		                        <input type="text" class="form-control"  name="version" placeholder="" maxlength="2000">
+		                    </div>
+	                     </div>
+	                     <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">类型：</label>
+		                    <div class="col-sm-10">
+		                        <input type="text" class="form-control"  name="type" placeholder="" maxlength="2000">
+		                    </div>
+	               		 </div>
+	               		  <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;">上传：</label>
+		                    <div class="col-sm-10">
+		                       <input type="file" name="uploadify" qid="uploadify" />
+		                    </div>
+		                    
+	               		 </div>
+	               		   <div class="form-group  loading-group hidden">
+	               		      <div class="col-sm-2">  </div>
+	               		      <div class="col-sm-10 "> 
+		               		        <div class=" ">
+		               		         <div  class="loading img-circle" ></div>
+        							  <div class="" style="padding-left:20%;"><h4>正在上传中，请稍后...</h4> </div>
+									</div>  
+							 </div>
+	               			 </div>
+	               			 <input id="res" name="res" type="reset" style="display:none;" /> 
+				         </form>
+				</div>
+				<div class="col-md-1"></div>	
+    	</div> 
+    	<!-- <div class=" tab-pane fade" id="ios">
+    		<div class="textview-container textview-show " >
+	    		<div><h6 class="col-md-2 label label-success dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;">
+	    		<%=com.audit.checklist.textView.i18n.headtips %></h6>
+	    		</div> 
+	    		<table class="table table-condensed"  qid="table">
+	    			<thead qid="thead">
+	    				<tr>
+	    					<th style="width:20%;"><%=com.audit.checklist.textView.i18n.from %></th>
+	    					<th style="width:55%;"><%=com.audit.checklist.textView.i18n.workflowAction %></th>
+	    					<th></th>
+	    					<th style="width:20%;"><%=com.audit.checklist.textView.i18n.to %></th>
+	    				</tr>
+	    			</thead>
+	    			 <tbody qid="tbody">
+	    				<tr>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.chapter %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.profession %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.version %></span></td>
+	    					<td><span class="label label-default"></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.point %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.according %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.prompt %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.value %></span></td>
+	    					<td><span class="label label-default"></span></td>
+	    					<td><span class="label label-default"></span></td>
+	    				</tr>
+	    				<tr>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.chapterpoint %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.profession %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.version %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.parent %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.pointORH %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.according %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.prompt %></span></td>
+	    					<td><span class="label label-default"><%=com.audit.checklist.textView.i18n.value %></span></td>
+	    				</tr>
+	    			</tbody>
+	    		</table>
+    		</div>
+    		 <textarea qid="ReadText" rows="3" style="width:99%;" title="从excel表中复制数据到这里" placeholder="从excel表中复制数据到这里" ></textarea>
+    		<div>
+	    		<span class="col-md-4"></span>
+	    		<span class="alert alert-warning hidden col-md-4"><i class="glyphicon glyphicon-info-sign"></i>
+	    		<%=com.audit.checklist.textView.i18n.alertdanger %>
+	    		</span>
+	    		<span class="col-md-4"></span>
+    		</div>
+    	</div> -->
+	    	
+    	</div>
+    	
+    <!-- 	
+    	<div id="loading" class="loading hidden">正在上传中，请稍后...</div>  
+    	
+    	模态框（Modal）
+<div class="modal fade" qid="myModal" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="false">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+         <div  class="loading img-circle" ></div>
+          <div class="" style="padding-left:20%;"><h4>正在上传中，请稍后...</h4> </div>
+       	 	<button  id="colsemodal" type="button" class="btn btn-default hidden "
+               data-dismiss="modal">关闭</button></div>
+      </div>/.modal-content
+</div>/.modal
+    	
+    	 -->
+    	
+    	
+    	
+    </div>
+</body>
+</html>

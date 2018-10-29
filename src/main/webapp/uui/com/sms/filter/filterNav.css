@@ -1,0 +1,83 @@
+.com-sms-filter-filterNav .cursor{
+	cursor:pointer;
+}
+.com-sms-filter-filterNav .filter-title{
+	color: #707070;
+	font-size: 12px;
+	line-height: normal;
+	margin:0;
+	padding: 0 10px;
+	text-transform: uppercase;
+	font-weight:bold;
+}
+.com-sms-filter-filterNav .filter-options{
+	list-style: none;
+	margin-top: 5px;
+	margin-bottom:0;
+	padding: 10px 0;
+}
+.com-sms-filter-filterNav .filter-options>li{
+	padding:0;
+}
+
+.com-sms-filter-filterNav .filter-options .new-search{
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+}
+
+.com-sms-filter-filterNav .filter-options .find-filters{
+	margin: 0 10px;
+}
+
+
+.com-sms-filter-filterNav .filter-panel-section {
+	border-top: 1px solid #ddd;
+	padding: 10px 0;
+}
+.com-sms-filter-filterNav .filter-panel-section h4{
+	margin-top:10px;
+}
+.com-sms-filter-filterNav .filter-list {
+	list-style: none;
+	padding: 0;
+	margin:0;
+}
+.com-sms-filter-filterNav .favourite-filters
+{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	/*min-height: 400px;*/
+	/*overflow: auto;*/
+	padding: 1px;
+	margin: 10px -1px 0;
+}
+.com-sms-filter-filterNav .filter-list.favourite-filters>li .filter-link{
+	padding-right:20px;
+}
+.com-sms-filter-filterNav .filter-list>li {
+	padding: 0;
+	position: relative;
+}
+
+.com-sms-filter-filterNav .filter-list>li.open,
+.com-sms-filter-filterNav .filter-list>li.hover{
+	background-color:#e6e6e6;
+}
+
+
+.com-sms-filter-filterNav .filter-list>li .filter-link {
+	padding: 5px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}
+.com-sms-filter-filterNav .filter-list>li .filter-link:hover{
+	text-decoration:none;
+}
+.com-sms-filter-filterNav .filter-list>li .filter-link.active{
+	font-weight:bold;
+	color:#333;
+}

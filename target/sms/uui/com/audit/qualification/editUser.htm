@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div>
+
+	<div umid="selectUserAvatar" ></div>
+	<div umid="editbtndefault" ></div>
+	<div umid="selectUserAvatar" ></div>
+	<div class="uui-managepage">
+		<div qid="content" class="">
+			<div class=""  style="margin-bottom: 10px;">
+			</div>
+			<div class="text-right" qid="btn_area" style="margin-bottom: 10px;">
+				<!-- <button class="btn btn-default btn-sm " qid="btn-return">返回</button> -->
+				<button class="btn btn-default btn-sm " qid="btn-save">保存</button>
+			</div>
+			<form qid="infoform">
+			
+			<!-- <div class=" col-sm-2"></div> -->
+			<div class=" col-sm-12">
+				<div class="panel panel-sms col-sm-12 " qid="panel-main">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>填写个人信息</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table-ex">
+							<tbody>
+								<tr>
+									<td class="name" data-field="user">姓名<span class="text-danger">&nbsp;*</span></td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="user" name="user" /></td>
+									<td class="name" data-field="spell">姓名拼音</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="spell" name="spell"/></td>
+									<td class="value" rowspan="5"><a href="#" class="" role="button"><img name="userpic" class="avatar-picker-trigger" src="" width="100%",height="100%"/></a></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="sex">性别</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="sex" name="sex"/></td>
+									<td class="name" data-field="unit">所属单位<span class="text-danger">&nbsp;*</span></td>
+									<td class="value" colspan="1"><input type="text" class="form-control input-sm" qid="unit" name="unit"/></td>
+								</tr>
+								<tr>	
+									<td class="name" data-field="department">所属部门</td>
+									<td class="value" colspan="3"><input type="text" maxlength="512" class="form-control input-sm" qid="department" name="department" readonly=readonly></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="duties">职务</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="duties" name="duties"/></td>
+									<td class="name" data-field="quarters">岗位</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="quarters" name="quarters"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="officeTel">办公电话</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="officeTel" name="officeTel"/></td>
+									<td class="name" data-field="faxNumber">传真号码</td>
+									<td class="value"><input type="text" maxlength="256" class="form-control input-sm" qid="faxNumber" name="faxNumber"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="cellTel">手机号码</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="cellTel" name="cellTel"/></td>
+									<td class="name" data-field="email">电子邮箱</td>
+									<td class="value" colspan="2"><input type="text" maxlength="256" class="form-control input-sm" qid="email" name="email"/></td>
+								</tr>
+								<tr>
+									<td class="name" rowspan="4" data-field="member">个人基本情况</td>
+									<td class="name" data-field="political">政治面貌</td>
+									<td class="value" ><input type="text" class="form-control input-sm" qid="political" name="political"/></td>
+									<td class="name" data-field="nationalist">民族</td>
+									<td class="value" ><input type="text" class="form-control input-sm" qid="nationalist" name="nationalist"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="education">文化程度</td>
+									<td class="value" ><input type="text" class="form-control input-sm" qid="education" name="education"/></td>
+									<td class="name" data-field="recruitment">籍贯</td>
+									<td class="value" ><input type="text" class="form-control input-sm" qid="recruitment" name="recruitment"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="cardNo">身份证号码</td>
+									<td class="value" colspan="3" ><input type="text" class="form-control input-sm" qid="cardNo" name="cardNo"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="address">家庭住址</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm" qid="address" name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" rowspan="2" data-field="userType">选择人员类型</td>
+									<td class="value"><input type='checkbox' class="userType" name="userTypea" style='margin-right: 2px;' value="风险管理员">风险管理员</td>
+									<td class="value"><input type='checkbox' class="userType" name="userTypeb" style='margin-right: 2px;' value="不安全事件调查员">不安全事件调查员</td>
+									<td class="value"><input type='checkbox' class="userType" name="userTypec" style='margin-right: 2px;' value="信息管理员">信息管理员</td>
+									<td class="value"><input type='checkbox' class="userType" name="userTyped" style='margin-right: 2px;' value="审计监察员">审计监察员</td>
+								</tr>
+								<tr>
+									<td class="value"><input type='checkbox' class="userType" name="userTypee" style='margin-right: 2px;' value="EIOSA审计员">EIOSA审计员</td>
+									<td class="value"><input type='checkbox' class="userType" name="userTypef" style='margin-right: 2px;' value="LOSA审计员">LOSA审计员</td> 
+									<td></td><td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+		
+				</div>
+				
+				
+				<div class="panel panel-sms col-sm-12">
+						<div class="panel-heading">
+							<h2 class="panel-title">
+							<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								个人工作简历
+								<div class="pull-right">
+									<div class="panel-button-container " qid="add">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+							</h2>
+						</div>
+						<div class="panel-body">
+							<div >
+								<table qid="resumetable" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+					        	</table>
+							</div>
+							<div class="text-center hidden" qid="btn-showmore">
+								<i class="fa fa-angle-double-down fa-lg uui-cursor-pointer"></i>
+							</div>
+							<!-- <div qid="conclusion" class="alert alert-info hidden" style="margin-bottom: 0px;"></div> -->
+						</div>
+					</div>
+				
+				
+				<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+						编号及安全监察证编号</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table">
+							<tbody>
+								<tr>
+									<td class="name" data-field="hiredDate">首次受聘日期</td>
+									<td class="value"  colspan="4"><input type="text" maxlength="1024" class="form-control input-sm" qid="hiredDate" name="hiredDate"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="auditorNo">编号</td>
+									<td class="value"  colspan="4"><input type="text" maxlength="1024" class="form-control input-sm" qid="auditorNo" name="auditorNo"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="safeNo">安全监察证编号</td>
+									<td class="value" colspan="4"><input type="text" class="form-control input-sm" qid="safeNo" name="safeNo"/></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+						受聘安全运行审计资格状况</h2>
+					</div>
+					<div class="panel-body">
+						<div class="row show-grid" qid="professionContainer"></div>
+					</div>
+				</div>
+				
+				
+				<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								培训记录
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addtwo">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetabletwo" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+					<!-- 	<i class="fa fa-square-o" style="margin: 0 5px;"></i> -->
+					<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+							资质及证书等情况记录
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addthree">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetablethree" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								参加安全运行审计情况
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addfour">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetablefour" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+					<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								风险管理员
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addfive">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetablefive" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+					<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								不安全事件调查员
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addsix">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetablesix" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+					<div class="panel panel-sms  col-sm-12">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+						<i class="glyphicon glyphicon-minus glyphicon-btn uui-cursor-pointer" style="margin: 0 5px;"></i>
+								信息管理员
+							<div class="pull-right">
+									<div class="panel-button-container " qid="addseven">
+										<div class="panel-button-inner">
+											<i class="fa fa-plus " ></i>
+										</div>
+									</div> 
+								</div>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div >
+							<table qid="resumetableseven" class="table table-striped table-bordered" cellspacing="0" style="margin-top: 0px !important;" width="100%">
+				        	</table>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			
+			<!-- <div class=" col-sm-2"></div> -->
+			</form>
+		</div>
+		
+	</div>
+	
+<div qid="addDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+	       			<select name="type"> <option>PERSONAL</option>
+				  </select>
+               </div>
+                <div class="form-group ">
+               	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+			 		<div class="col-sm-9">
+					    <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50"></input>
+					</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">所在单位和部门：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50"></input>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">担任职务：</label>
+                   <div class="col-sm-9">
+                       <input  type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	<div qid="addtwoDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       			<div class="form-group hidden">
+		       			<select name="type"> <option>TRAIN</option>
+					  </select>
+	               </div>
+                  <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+			   <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训机构：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训课程：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               
+           </form>   
+		</div>
+	</div>
+	<div qid="addthreeDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       			<div class="form-group hidden">
+		       			<select name="type"> <option>SITUATION</option>
+					  </select>
+	               </div>
+             
+                <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">名称：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">颁证机构：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	<div qid="addfourDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>AUDIT</option>
+					  </select>
+	               </div>
+                 <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受审单位：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">专业：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="profession" name="profession" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addfiveDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>RISK</option>
+					  </select>
+	               </div>
+               <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addsixDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>SAFE</option>
+					  </select>
+	               </div>
+                  <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	
+	<div qid="addsevenDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>INFO</option>
+					  </select>
+	               </div>
+                 <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">受聘日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">培训记录：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="department" name="department" placeholder="" maxlength="50">
+                   </div>
+               </div>
+                <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">备注：</label>
+                   <div class="col-sm-9">
+                       <textarea   type="text" class="form-control input-sm" qid="content" name="content" placeholder="" maxlength="2000" style="resize:none;" ></textarea>
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	<div qid="ImgDialog" class="hidden">
+	<div>
+    	<div qid="dialog-select-user-avatar" class="com-sms-selectAvatar">
+	    	<div class="upload">
+	    	<input type="hidden" autofocus="autofocus" />
+	    		<input qid="upload-avatar" type="file"/>
+	    	</div>
+    	</div>
+    </div>
+	</div>
+	<div qid="primaryDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" qid="unit-form">
+	       		<div class="form-group hidden">
+		       			<select name="type"> <option>SITUATION</option>
+					  </select>
+	               </div>
+               
+                <div class="form-group ">
+                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+				 		<div class="col-sm-9">
+						       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+						</div>
+			   </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">名称：</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">颁证机构：</label>
+                   <div class="col-sm-9">
+                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+                   </div>
+               </div>
+               
+           </form>   
+		</div>
+	</div>
+	
+	
+</div>
+</body>
+</html>

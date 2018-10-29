@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    </head>
+<body>
+	<div>
+	    <div qid="dialog">
+	    	<form class="form-horizontal" role="form" qid="form">
+				<div>
+				<table style="width:100%">
+				<tr>
+				<td width="20%"  height="40px;">
+				<div class="radio">
+					<label>
+						<input type="radio"  name="type" value="USER_GROUP"  checked="checked"/><%=com.sms.secure.usergroup.i18n.userGroup %>
+					</label>
+				</div>
+				</td>
+				<td width="80%">
+					<input type="hidden"  qid="usergroup" name="usergroup" class="form-control"/>
+				</td>
+				</tr>
+				<tr>
+				<td height="40px;">
+				<div class="radio">
+					<label>
+						<input type="radio"  name="type" value="USER" /><%=com.sms.secure.usergroup.i18n.singleuser %>
+					</label>
+				</div>
+				</td>
+				<td>
+					<input type="hidden"  qid="user" name="user" class="form-control"/>
+				</td>
+				</tr>
+				<tr>
+				<td height="40px;">
+				<div class="radio">
+					<label>
+						<input type="radio"  name="type" value="ROLE" /><%=com.sms.secure.usergroup.i18n.role %>
+					</label>
+				</div>
+				</td>
+				<td>
+					<input type="hidden"  qid="role" name="role" class="form-control"/>
+				</td>
+				</tr>
+				</table>
+				</div>
+	        </form>
+	    </div>
+    </div>
+</body>
+</html>

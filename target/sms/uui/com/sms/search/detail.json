@@ -1,0 +1,208 @@
+﻿{
+	"success":true,
+	"data":{
+		"actions":[
+			{
+				"action":1,
+				"name":"关闭问题"
+			},
+			{
+				"action":2,
+				"name":"解决问题"
+			}
+		],
+		"operations":[
+			{
+				"name":"编辑",
+				"desc":"编辑",
+				"icon":"edit",
+				"module":"com.sms.detailmodule.edit"
+			},
+			{
+				"name":"备注",
+				"desc":"备注",
+				"icon":"remark",
+				"module":"com.sms.detailmodule.remark"
+			}
+		],
+		"left":[
+			{
+				"key":"com.sms.detailmodule.base",
+				"tabs": [
+		      {
+		        "id": 437,
+		        "screen": 15,
+		        "created": "2014-10-10",
+		        "lastUpdate": "2014-10-10",
+		        "sequence": 2,
+		        "description": null,
+		        "name": "wwwww",
+		        "screenDisplayName": "default",
+		        "deleted": false,
+		        "fields": [
+		          {
+		            "description": "呵呵",
+		            "name": "咿呀",
+		            "defaultValue": null,
+		            "required": false,
+		            "renderer": "com.sms.plugin.render.multiTextProp",
+		            "key": "customfield_438"
+		          }
+		        ]
+		      },
+		      {
+		        "id": 74,
+		        "screen": 15,
+		        "created": null,
+		        "lastUpdate": null,
+		        "sequence": 1,
+		        "description": null,
+		        "name": "222",
+		        "screenDisplayName": "default",
+		        "deleted": false,
+		        "fields": [
+		          {
+		            "description": null,
+		            "name": "哼唧",
+		            "defaultValue": null,
+		            "required": false,
+		            "renderer": "com.sms.plugin.render.singleTextProp",
+		            "key": "customfield_392"
+		          },
+		          {
+		            "description": null,
+		            "name": "主题",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.singleTextProp",
+		            "key": "summary"
+		          },
+		          {
+		            "description": null,
+		            "name": "报告人",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.selectUserProp",
+		            "key": "reporter"
+		          },
+		          {
+		            "description": null,
+		            "name": "处理人",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.selectUserProp",
+		            "key": "assignee"
+		          },
+		          {
+		            "description": null,
+		            "name": "优先级",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.priorityProp",
+		            "key": "priority"
+		          },
+		          {
+		            "description": null,
+		            "name": "状态",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.statusProp",
+		            "key": "status"
+		          },
+		          {
+		            "description": "描述的描述",
+		            "name": "信息描述",
+		            "required": true,
+		            "renderer": "com.sms.plugin.render.singleTextProp",
+		            "key": "description"
+		          }
+		        ]
+		      }
+		    ],
+		    "fields": [
+		      {
+		        "name": "安监机构",
+		        "defaultValue": "{\"count\":11,\"lastUpdate\":\"2014-10-10\",\"categoryDisplayName\":\"上海地区单位\",\"responsibleUser\":null,\"code\":\"YN\",\"avatar\":41,\"deleted\":false,\"id\":16,\"organization\":[{\"id\":1,\"unitDeleted\":false,\"unit\":\"吉祥云南分公司\",\"users\":[{\"id\":9,\"name\":\"江益明(jiang_yiming)\"}],\"created\":null,\"lastUpdate\":null,\"description\":null,\"name\":\"USKY\",\"path\":\"\",\"parent\":null,\"deleted\":false,\"unitId\":16},{\"unitDeleted\":false,\"users\":[{\"id\":3,\"name\":\"卜芳惠(bu_fanghui)\"},{\"id\":1,\"name\":\"ADMIN(ADMIN)\"}],\"lastUpdate\":null,\"parentDeleted\":false,\"parent\":\"财务部\",\"deleted\":false,\"id\":5,\"parentId\":4,\"unit\":\"吉祥云南分公司\",\"created\":null,\"description\":null,\"name\":\"SMS行动小分队\",\"path\":\"/USKY/财务部\",\"unitId\":16},{\"unitDeleted\":false,\"users\":[{\"id\":4,\"name\":\"戴晓松(dai_xiaosong)\"},{\"id\":5,\"name\":\"党义博(dang_yibo)\"}],\"lastUpdate\":null,\"parentDeleted\":false,\"parent\":\"开发部\",\"deleted\":false,\"id\":9,\"parentId\":2,\"unit\":\"吉祥云南分公司\",\"created\":null,\"description\":null,\"name\":\"ASDMP行动小组\",\"path\":\"/USKY/开发部\",\"unitId\":16}],\"category\":4,\"created\":null,\"description\":\"test\",\"name\":\"吉祥云南分公司\",\"avatarUrl\":\"/sms/uui/img/unitavatar/unitavatar(12).png\"}",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.unitProp",
+		        "key": "unit"
+		      },
+		      {
+		        "name": "信息类型",
+		        "defaultValue": "{\"id\":4,\"created\":null,\"lastUpdate\":null,\"description\":\"sss\",\"name\":\"sss\",\"deleted\":false,\"url\":\"/img/icons/ico_story.png\"}",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.activityTypeProp",
+		        "key": "type"
+		      },
+		      {
+		        "description": "呵呵",
+		        "name": "咿呀",
+		        "defaultValue": null,
+		        "required": false,
+		        "renderer": "com.sms.plugin.render.multiTextProp",
+		        "key": "customfield_438"
+		      },
+		      {
+		        "description": null,
+		        "name": "哼唧",
+		        "defaultValue": null,
+		        "required": false,
+		        "renderer": "com.sms.plugin.render.singleTextProp",
+		        "key": "customfield_392"
+		      },
+		      {
+		        "description": null,
+		        "name": "主题",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.singleTextProp",
+		        "key": "summary"
+		      },
+		      {
+		        "description": null,
+		        "name": "报告人",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.selectUserProp",
+		        "key": "reporter"
+		      },
+		      {
+		        "description": null,
+		        "name": "处理人",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.selectUserProp",
+		        "key": "assignee"
+		      },
+		      {
+		        "description": null,
+		        "name": "优先级",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.priorityProp",
+		        "key": "priority"
+		      },
+		      {
+		        "description": null,
+		        "name": "状态",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.statusProp",
+		        "key": "status"
+		      },
+		      {
+		        "description": "描述的描述",
+		        "name": "信息描述",
+		        "required": true,
+		        "renderer": "com.sms.plugin.render.singleTextProp",
+		        "key": "description"
+		      }
+		    ]
+			},
+			{
+				"key":"com.sms.detailmodule.infomodel"
+			}
+		],
+		"right":[
+			{
+				"key":"com.sms.detailmodule.people"
+			},
+			{
+				"key":"com.sms.detailmodule.date"
+			},
+			{
+				"key":"com.sms.detailmodule.activity"
+			}
+		]
+	}
+}

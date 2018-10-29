@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	.title-div{
+		padding:0px;
+		height:500px;
+		background-color:#eee;
+		border-radius:10px;
+	}
+	.title-review{
+		border:1px solid #ccc;
+		border-radius:10px 10px 0 0;
+		background:url(../../../img/sms/title.jpg) repeat-x;
+		color:white;
+		padding:5px 0 0 20px;
+		height:36px;
+		font-size: 16px;
+	}
+	.review-line{
+		height:420px;
+		border:1px solid #ccc;
+		border-radius:0 0 10px 10px;
+	}
+</style>
+</head>
+<body>
+<div class="title-div">
+	<div class="row" style="margin:0;">
+		<div class="title-review">评审趋势图</div>
+		<div class="col-xs-2 col-sm-2" style="padding-left: 0;">
+			<select class="form-control" qid="select_year"></select>
+		</div>
+		<div class="col-xs-2 col-sm-2">
+			<button class="btn btn-default" type="button" qid="btn_search">搜索</button>
+		</div>
+	</div>
+	<div id="review_score_line" class="review-line"></div>
+</div>
+</body>
+</html>

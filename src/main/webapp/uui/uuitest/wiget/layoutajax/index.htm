@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqblockui/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/spin/spin.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/ajax/layoutajax.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.u.inituui();
+            $.u.ajax({
+                url: "sim.ashx",
+            }, $("#center"), { size: 1, selector: $("#center1") });
+            $.u.ajax({
+                url: "sim.ashx",
+            }, $("#north"), { size: 1, selector: $("#north1"), orient: "north" });
+            $.u.ajax({
+                url: "sim.ashx",
+            }, $("#south"), { size: 1, selector: $("#south1"), orient: "south" });
+            $.u.ajax({
+                url: "sim.ashx",
+            }, $("#west"), { size: 1, selector: $("#west1"), orient: "west" });
+            $.u.ajax({
+                url: "sim.ashx",
+            }, $("#east"), { size: 1, selector: $("#east1"), orient: "east" });
+            $.u.ajaxp({
+                url: "sim.ashx",
+            }, $("#progresser"), {});
+        });
+    </script>
+</head>
+<body style="font-size: 75%; height: 600px;">
+    <div id="north" style="background-color: yellow; position: absolute; left: 400px; top: 400px; width: 100px; height: 100px;">
+        <div id="north1" style="position: absolute; left: 30px; top: 30px; width: 30px; height: 30px; background-color: red; z-index: 30;">
+        </div>
+    </div>
+    <div id="south" style="background-color: yellow; position: absolute; left: 400px; top: 600px; width: 100px; height: 100px;">
+        <div id="south1" style="position: absolute; left: 30px; top: 30px; width: 30px; height: 30px; background-color: red; z-index: 30;">
+        </div>
+    </div>
+    <div id="west" style="background-color: yellow; position: absolute; left: 600px; top: 400px; width: 100px; height: 100px;">
+        <div id="west1" style="position: absolute; left: 30px; top: 30px; width: 30px; height: 30px; background-color: red; z-index: 30;">
+        </div>
+    </div>
+    <div id="east" style="background-color: yellow; position: absolute; left: 600px; top: 600px; width: 100px; height: 100px;">
+        <div id="east1" style="position: absolute; left: 30px; top: 30px; width: 30px; height: 30px; background-color: red; z-index: 30;">
+        </div>
+    </div>
+    <div id="center" style="background-color: yellow; position: absolute; left: 800px; top: 400px; width: 100px; height: 100px;">
+        <div id="center1" style="position: absolute; left: 30px; top: 30px; width: 30px; height: 30px; background-color: red; z-index: 30;">
+        </div>
+    </div>
+    <div id="progresser" style="background-color: yellow; position: absolute; left: 800px; top: 600px; width: 100px; height: 100px;">
+    </div>
+</body>
+</html>

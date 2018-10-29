@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; background-color: white;">
+        <div qid="top" class="ui-layout-north" style="margin-bottom: 15px;">
+            <!--            <div class="ui-layout-header">工具栏</div>-->
+            <ul class="ui-layout-toolbar">
+                <li>
+                    <button qid="save" class="btn btn-primary">保存</button></li>
+                <li>
+                    <button qid="saveall" class="btn btn-primary">保存所有</button></li>
+                <li>
+                    <button qid="instance" class="btn btn-primary">即时窗口</button></li>
+                <li>
+                    <button class="btn btn-default">按钮2</button></li>
+                <li>
+                    <button class="btn btn-default">按钮3</button></li>
+                <li>
+                    <button class="btn btn-default">按钮4</button></li>
+            </ul>
+        </div>
+        <div qid="left" class="ui-layout-west">
+            <div class="ui-layout-header">资源</div>
+            <div class="ui-layout-content" umid="left" umodule="uui.ide.myide.left">
+            </div>
+        </div>
+        <div qid="center" class="ui-layout-center">
+            <div umid="center" umodule="uui.ide.myide.center">
+            </div>
+        </div>
+        <div qid="right" class="ui-layout-east" style="background-color: white;">
+            <div class="ui-layout-header">配置</div>
+            <div class="ui-layout-content" umid="right" umodule="uui.ide.myide.right">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

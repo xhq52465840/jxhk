@@ -1,0 +1,2277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2017-06-05T16:48:09 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="activity" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" uuid="6e7d323a-86eb-44b1-91e9-d9e23de7706b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="fields" uuid="6a3310d1-c79e-46a4-a237-2beb2d3ee63d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="fields" class="net.sf.jasperreports.engine.data.JREmptyDataSource"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="leftField" class="java.util.Map"/>
+		<field name="rightField" class="java.util.Map"/>
+	</subDataset>
+	<subDataset name="flightInfos" uuid="93320faa-b365-4dda-ad9b-5ec3cc67fda6">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="flightInfos" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="flightPhase" class="java.lang.String"/>
+		<field name="flightInfo" class="java.util.Map"/>
+		<variable name="arrAirport" class="java.util.Map">
+			<variableExpression><![CDATA[$F{flightInfo} == null ? null : $F{flightInfo}.get("arrAirport")]]></variableExpression>
+		</variable>
+		<variable name="deptAirport" class="java.util.Map">
+			<variableExpression><![CDATA[$F{flightInfo} == null ? null : $F{flightInfo}.get("deptAirport")]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="groundPositions" uuid="0a449108-2278-4616-8562-e9931c4a7bfa">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="groundPositions" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="groundPosition" class="java.lang.String"/>
+		<field name="description" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="groundStaffs" uuid="6c7aeb44-7051-4c62-bfa4-2c3d02ea979f">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="groundStaffs" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="description" class="java.lang.String"/>
+		<field name="workType" class="java.lang.String"/>
+		<field name="userName" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="vehicleInfos" uuid="d27ebb57-bde8-474e-8954-7652986b0be6">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="vehicleInfos" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="vehicleInfo" class="java.lang.String"/>
+		<field name="description" class="java.lang.String"/>
+		<field name="num" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="maintainTools" uuid="05e96e4c-3068-4981-84bf-6f756c7140d7">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="maintainTools" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="description" class="java.lang.String"/>
+		<field name="maintainTool" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="eventAnalysises" uuid="e97c3e80-e310-450d-8166-657d80ef16a9">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="eventAnalysises" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="defectAnalysis" class="java.lang.String"/>
+		<field name="measureType" class="java.lang.String"/>
+		<field name="defectType" class="java.lang.String"/>
+		<field name="actionItem" class="java.util.Map"/>
+	</subDataset>
+	<subDataset name="actions" uuid="1e69851b-f46b-4ea2-9e3a-15a83cefa261">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="actions" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="body" class="java.lang.String"/>
+		<field name="fullname" class="java.lang.String"/>
+		<field name="lastDate" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="files" uuid="a60c6c82-b28c-47f9-a728-944afa60fe0a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="files" class="net.sf.jasperreports.engine.data.JREmptyDataSource">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fileName" class="java.lang.String"/>
+		<field name="directory" class="java.lang.String"/>
+		<field name="uploadTime" class="java.lang.String"/>
+		<field name="size" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="filePath" class="java.lang.String"/>
+	<parameter name="baseArea" class="java.util.Map"/>
+	<parameter name="temArea" class="java.util.Map"/>
+	<parameter name="riskTaskArea" class="java.util.Map"/>
+	<parameter name="attachmentArea" class="java.util.Map"/>
+	<parameter name="eventAnalysisArea" class="java.util.Map"/>
+	<parameter name="accessInformationArea" class="java.util.Map"/>
+	<parameter name="subActivityArea" class="java.util.Map"/>
+	<parameter name="actionArea" class="java.util.Map"/>
+	<parameter name="airlineInfoArea" class="java.util.Map"/>
+	<parameter name="userArea" class="java.util.Map"/>
+	<parameter name="dateArea" class="java.util.Map"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="activity" class="java.util.Map">
+		<variableExpression><![CDATA[$P{baseArea}.get("activity")]]></variableExpression>
+	</variable>
+	<variable name="unit" class="java.util.Map">
+		<variableExpression><![CDATA[$V{activity}.get("unit")]]></variableExpression>
+	</variable>
+	<variable name="type" class="java.util.Map">
+		<variableExpression><![CDATA[$V{activity}.get("type")]]></variableExpression>
+	</variable>
+	<variable name="status" class="java.util.Map">
+		<variableExpression><![CDATA[$V{activity}.get("status")]]></variableExpression>
+	</variable>
+	<variable name="priority" class="java.util.Map">
+		<variableExpression><![CDATA[$V{activity}.get("priority")]]></variableExpression>
+	</variable>
+	<variable name="label" class="java.lang.String">
+		<variableExpression><![CDATA[$V{activity}.get("label")]]></variableExpression>
+	</variable>
+	<variable name="fields" class="java.util.List">
+		<variableExpression><![CDATA[$P{baseArea}.get("fields")]]></variableExpression>
+	</variable>
+	<variable name="rightFields" class="java.util.List">
+		<variableExpression><![CDATA[$P{baseArea}.get("rightFields")]]></variableExpression>
+	</variable>
+	<variable name="flightInfos" class="java.util.List">
+		<variableExpression><![CDATA[$P{accessInformationArea}.get("flightInfos")]]></variableExpression>
+	</variable>
+	<variable name="groundPositions" class="java.util.List">
+		<variableExpression><![CDATA[$P{accessInformationArea}.get("groundPositions")]]></variableExpression>
+	</variable>
+	<variable name="vehicleInfos" class="java.util.List">
+		<variableExpression><![CDATA[$P{accessInformationArea}.get("vehicleInfos")]]></variableExpression>
+	</variable>
+	<variable name="groundStaffs" class="java.util.List">
+		<variableExpression><![CDATA[$P{accessInformationArea}.get("groundStaffs")]]></variableExpression>
+	</variable>
+	<variable name="maintainTools" class="java.util.List">
+		<variableExpression><![CDATA[$P{accessInformationArea}.get("maintainTools")]]></variableExpression>
+	</variable>
+	<variable name="eventAnalysises" class="java.util.List">
+		<variableExpression><![CDATA[$P{eventAnalysisArea}.get("eventAnalysises")]]></variableExpression>
+	</variable>
+	<variable name="actions" class="java.util.List">
+		<variableExpression><![CDATA[$P{actionArea}.get("actions")]]></variableExpression>
+	</variable>
+	<variable name="reporter" class="java.util.Map">
+		<variableExpression><![CDATA[$P{userArea} == null ? null : $P{userArea}.get("reporter")]]></variableExpression>
+	</variable>
+	<variable name="watchers" class="java.util.Map">
+		<variableExpression><![CDATA[$P{userArea} == null ? null : $P{userArea}.get("watchers")]]></variableExpression>
+	</variable>
+	<variable name="files" class="java.util.List">
+		<variableExpression><![CDATA[$P{attachmentArea} == null ? null : $P{attachmentArea}.get("files")]]></variableExpression>
+	</variable>
+	<variable name="occurredDate" class="java.util.Map">
+		<variableExpression><![CDATA[$P{accessInformationArea} == null ? null : $P{accessInformationArea}.get("occurredDate")]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="36">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="18" width="515" height="18" isPrintWhenDetailOverflows="true" uuid="33936716-e8f3-4b81-81ed-bd3cc9130ef9"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{activity}.get("summary")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" uuid="f5d7c35f-75d1-4a11-ab90-5ea8458d9539"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{unit}.get("name") + "/" + $V{unit}.get("code") + "-" + $V{activity}.get("num")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="72">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="b96a32fd-67cf-41ab-b095-884748f1fe21">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="7917e38c-a7ea-451f-9078-014739208426">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[信息类型]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="257" y="0" width="80" height="18" uuid="3827d387-4855-426b-a2bb-4310a4caefd5">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[状态]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="177" height="18" uuid="98f13455-917b-431a-863e-b2d6ab23d566"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{type}.get("name")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="337" y="0" width="178" height="18" uuid="fb3510fb-520a-4dba-be05-3e410f8c7a7d"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{status}.get("name")]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="36" width="515" height="18" uuid="0c319086-9d45-4991-afa9-ce4bfa600475">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="bd033252-f565-4371-8613-b6e8821dc384">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[优先级]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="257" y="0" width="80" height="18" uuid="3c6de88c-1b42-4275-acc3-053b4eb908fe">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[标签]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="177" height="18" uuid="11e20024-1188-4841-83aa-3850577ef9d6"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{priority}.get("name")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="337" y="0" width="178" height="18" uuid="0e968cf2-d502-45e8-88d9-c3fe29291218"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{label}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="54" width="515" height="18" uuid="0d5a8cba-1ea1-4eb4-af3c-1264a64c2562">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="0fa385ab-01df-4cb0-84ff-cacaa3303188">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[详细信息]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="435" height="18" uuid="1e38c7d0-c41c-48a4-b953-d131ae6ac41a">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{activity}.get("description")]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="515" height="18" uuid="4e23e0f7-011c-49c1-84b1-938cda88d6a4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0" width="515" height="18" backcolor="#DED9D9" uuid="dc0b2997-5842-4deb-8826-b1cc58a6bf67">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[信息详情]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[$V{fields} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="515" height="18" uuid="1227f3a5-fa92-47b6-9f37-290d7f11af27">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="fields" uuid="1908bbaa-72a7-4265-8604-542cfd7d0640">
+						<datasetParameter name="fields">
+							<datasetParameterExpression><![CDATA[$V{fields}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{fields})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="06bb5003-ea2f-4c41-a505-c0592d834b77">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader height="0"/>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="30297f3c-b7c8-4b47-a4a5-0b7306a36d84"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{leftField} == null ? "" : $F{leftField}.get("name")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="177" uuid="9e872a5e-fcae-4dbf-ab4a-ae3d2d6231fe">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader height="0"/>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="177" height="18" isPrintWhenDetailOverflows="true" uuid="38a2ed66-fe8b-45ef-80b2-5a0f55fe30c9"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{leftField} == null ? "" : $F{leftField}.get("exportValue")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="dd9edc6d-f0e2-487a-9a6f-a07129ae3aad">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader height="0"/>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="eabcc9fd-beea-470b-82b7-e50aba6c4bb9"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{rightField} == null ? "" : $F{rightField}.get("name")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="178" uuid="563566cf-e888-46a5-9593-237540e4a2b2">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader height="0"/>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="178" height="18" isPrintWhenDetailOverflows="true" uuid="04abc0df-d492-4fac-96c8-88b6176af3f1">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{rightField} == null ? "" : $F{rightField}.get("exportValue")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="36">
+			<printWhenExpression><![CDATA[$P{attachmentArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" isPrintWhenDetailOverflows="true" uuid="d476b5bc-9eed-4e7f-b56d-01c3e7036292">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="files" uuid="e90b3022-0949-40ca-9743-6b9b06dac838">
+						<datasetParameter name="files">
+							<datasetParameterExpression><![CDATA[$V{files}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{files})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="250" uuid="580ce3b8-f210-4d81-883e-ce30d47d2812">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="250" height="18" isPrintWhenDetailOverflows="true" uuid="7668284c-0aed-4c40-976d-23eb27e60602"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[文件名]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="250" height="18" isPrintWhenDetailOverflows="true" uuid="ad7638ac-e5d3-4ec1-8ad2-ac682030776f"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{fileName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="58fa9bd4-c270-4e06-9082-74ba701f6a89">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="18" isPrintWhenDetailOverflows="true" uuid="293ec1d8-30a4-4493-9ffa-54fdedd15503"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[附件类型]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="18" isPrintWhenDetailOverflows="true" uuid="52268ed3-ca15-4238-8da3-319b2af62dba"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{directory}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="b87d7a53-5f86-43c4-8759-354821bdf0d3">
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="e4242c4c-bd11-4ef0-b168-48d3616950d8"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[大小]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="96244622-6ea9-4054-aad8-b0a52e728de9"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{size}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="105" uuid="bd29b753-1e31-4e58-a108-8d0effaccee8">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="105" height="18" isPrintWhenDetailOverflows="true" uuid="a297dca4-f03a-41ca-b690-2c96b03f3f75"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[上传时间]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="105" height="18" isPrintWhenDetailOverflows="true" uuid="4edbfab7-5773-4e0d-869b-c7ed7dc5c609"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{uploadTime}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="3e306ad7-f371-40bc-ab32-648b52cfbfad">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[附件  ]]></text>
+			</staticText>
+		</band>
+		<band height="18">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="" mode="Opaque" x="410" y="0" width="105" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="cc4d0ab7-a44b-4680-9bf0-d548af20e221"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="微软雅黑" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{occurredDate}.get("occurredDate")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="250" y="0" width="160" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="4a416e87-17c9-4d8a-9ae5-3d6df27e41d4"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[发生时间：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="250" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="5b2a46cc-089a-4964-bca1-326ad3949f9f"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[信息获取]]></text>
+			</staticText>
+		</band>
+		<band height="36">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" isPrintWhenDetailOverflows="true" uuid="faf73050-a60a-4931-8551-d8b63b0579e9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="flightInfos" uuid="f7572c15-d074-4fed-97e5-71b0444796e7">
+						<datasetParameter name="flightInfos">
+							<datasetParameterExpression><![CDATA[$V{flightInfos}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{flightInfos})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="7838f6a6-6088-40c3-8da5-2f717631d5d0">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="a668031b-9a57-4883-933a-3ea9dd4580fd"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[航班号]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="1d975f09-f9ce-41f8-bd00-797e5c901697"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{flightInfo} == null ? "" : $F{flightInfo}.get("flightNO")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="bcc0f521-fed4-43f0-a432-18f7afd086f6">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="330e7125-f46d-4ff5-a709-623294c413b0"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[航班日期]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="efb5349b-4a35-4509-9162-729200f5bdf1"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{flightInfo} == null ? "" : $F{flightInfo}.get("flightBJDate")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="afb1de72-f251-498e-992f-b4ab468dc20a">
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="24a6741b-f198-4b60-b0c6-94db2bc12dbb"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[飞行阶段]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="870fdbf4-f9dd-4d64-a288-9b5e50b0be17"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{flightPhase}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="119" uuid="0873f788-799e-46bb-a6d6-0485307d432b">
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="119" height="18" isPrintWhenDetailOverflows="true" uuid="f1f5be99-2c72-4e18-bc2b-777348ed2e75"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[起飞|降落]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="119" height="18" isPrintWhenDetailOverflows="true" uuid="2621fbab-540b-43c5-ac51-b7c9742aa195"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[(OR($V{deptAirport} == null, $V{deptAirport}.get("cityName") == null) ? "" : $V{deptAirport}.get("cityName")) + " -> " + (OR($V{arrAirport} == null, $V{arrAirport}.get("cityName") == null) ? "" : $V{arrAirport}.get("cityName")) + "    " + (OR($F{flightInfo} == null, $F{flightInfo}.get("tailNO") == null) ? "" : $F{flightInfo}.get("tailNO"))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="156" uuid="e6645bb1-b135-46d8-b5a8-d53fa08f07b6">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="156" height="18" isPrintWhenDetailOverflows="true" uuid="fa55cf9a-545e-4d65-9535-786cf9982316"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[查看]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="156" height="18" isPrintWhenDetailOverflows="true" uuid="08a6277a-e095-4a08-9f7f-73e1d98562c0"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA["机组    乘务组    运控"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="122e4c27-cef0-458a-86db-cc20d668de90">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[航班信息]]></text>
+			</staticText>
+		</band>
+		<band height="36">
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="ddc9a300-b5fc-4706-bbc4-2b4ce69de35b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="groundPositions" uuid="5db1621f-b74a-4809-8c62-9fc94456c757">
+						<datasetParameter name="groundPositions">
+							<datasetParameterExpression><![CDATA[$V{groundPositions}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{groundPositions})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="2688be51-54e3-4937-8aaf-c19f83fdd1b3">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="fbd07a59-622b-40bc-879f-ded4a8135b06"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[位置]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="541c3a0a-c40b-4c96-b50a-c6b053c17baf"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{groundPosition}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="435" uuid="58447cc2-619d-48f7-aecc-d7b8d376ced5">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="435" height="18" isPrintWhenDetailOverflows="true" uuid="94d5e60e-c4fd-429d-b779-fa6176cc35c5"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[说明]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="435" height="18" isPrintWhenDetailOverflows="true" uuid="33e721a9-b372-471b-8453-04b928fa4a63"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="ccd1c452-0db0-459e-9dad-0564e396b460">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[地面位置]]></text>
+			</staticText>
+		</band>
+		<band height="36">
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="4aef9122-d9e1-42ac-a6be-b0b39e94a082">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="vehicleInfos" uuid="3ea84eb1-8093-4b51-8317-bc789bb6f0ef">
+						<datasetParameter name="vehicleInfos">
+							<datasetParameterExpression><![CDATA[$V{vehicleInfos}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{vehicleInfos})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="0e32e17b-55c9-4216-805f-c1ae5d760f71">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="ea683f51-101f-4e95-bf0d-a03993b6d3f2"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[车牌号]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="a44fce2f-0db8-40f2-9902-f058ff6f3fbb"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="954a95ff-d0bc-4382-bc68-3c63d7c4d785">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="de129e6d-ce15-49cb-afec-0b1dfdcaf821"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[车型]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="041ef076-ea09-46bb-94ec-c6ab8431a3ca"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{vehicleInfo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="355" uuid="1884a3d4-8ecc-4f74-a785-2456725c5d96">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="355" height="18" isPrintWhenDetailOverflows="true" uuid="0b50867c-db95-43f1-9e74-fc944bd9680e"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[说明]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="355" height="18" isPrintWhenDetailOverflows="true" uuid="1e1e5e2c-e2be-45ee-936f-ab18eaa4deb1"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="7f0319da-16c4-49af-802b-afbdd5295361">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[车辆信息]]></text>
+			</staticText>
+		</band>
+		<band height="36">
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="adf74145-fdcd-4f5d-9ee7-609b2d915eb9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="maintainTools" uuid="76ade98c-f2d8-4b54-a511-1a12c5d9c6d9">
+						<datasetParameter name="maintainTools">
+							<datasetParameterExpression><![CDATA[$V{maintainTools}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{maintainTools})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="3287e280-be80-4aee-89b0-36b44211170b">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="d8f47f2b-b6d2-4bf9-8640-7e0bec7c2aad"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[名称]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="452950a0-91bc-471d-9100-7af9bd7f914b"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{maintainTool}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="435" uuid="6bed6996-4e2a-4348-8d88-c4875617149d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="435" height="18" isPrintWhenDetailOverflows="true" uuid="976a8fa3-fc14-4ba9-bb2b-878820b0a104"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[说明]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="435" height="18" isPrintWhenDetailOverflows="true" uuid="3251a1f1-7b47-4641-994a-c8eb62a9a95b"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="df57d8fc-79cd-4a9b-9dc7-a72075655b4f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[维护工具]]></text>
+			</staticText>
+		</band>
+		<band height="36">
+			<printWhenExpression><![CDATA[$P{accessInformationArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="178dfe87-fb95-4c5b-ad19-54100f6ff0aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="groundStaffs" uuid="02867a99-b129-4344-b566-d62eda1196fa">
+						<datasetParameter name="groundStaffs">
+							<datasetParameterExpression><![CDATA[$V{groundStaffs}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{groundStaffs})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="ba8c6170-329a-4635-bce3-f5808791939d">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="c6b230d2-f300-436d-8c03-b5ab82d6344a"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[姓名]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="b7bdf7f5-7935-4ec4-b784-654b7e34fda8"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{userName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="4e1f026e-26c6-4c76-8403-0575141cfbef">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="8a471f5d-af76-46ae-926f-572aa4e93305"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[工种]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" isPrintWhenDetailOverflows="true" uuid="4e5e2fbb-8dee-4266-9075-8c632c8b1307"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{workType}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="355" uuid="9187a164-3aa3-4cf6-b0af-54215a696b7d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="355" height="18" isPrintWhenDetailOverflows="true" uuid="9613abf2-54f7-483a-9045-96b01910424f"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[描述]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="355" height="18" isPrintWhenDetailOverflows="true" uuid="2be772fa-0c6c-43f4-9bdb-2147d6c747e3"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="d7d2b7de-fd2e-4a4a-bede-0c1b6dfea8a5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[地面人员]]></text>
+			</staticText>
+		</band>
+		<band height="18" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<printWhenExpression><![CDATA[$P{eventAnalysisArea} != null]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="18" width="515" height="0" isPrintWhenDetailOverflows="true" uuid="4d25e7a2-7c2d-49c0-aeff-007c0d41a0bc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="eventAnalysises" uuid="8ef5af47-d5f1-49f2-a953-7c005254c12e">
+						<datasetParameter name="eventAnalysises">
+							<datasetParameterExpression><![CDATA[$V{eventAnalysises}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{eventAnalysises})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="515" uuid="4738d3a5-11e8-4b0f-8585-679775b8eaa2">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:detailCell height="90">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<frame>
+								<reportElement positionType="Float" x="0" y="18" width="515" height="18" uuid="eeeaecd5-eb4a-40de-b134-bf07adddefc9">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								</reportElement>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="18" uuid="46d7a06a-7577-416c-8e13-f9514c3b7cc9"/>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["缺陷类型"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="80" y="0" width="177" height="18" isPrintWhenDetailOverflows="true" uuid="759c1881-1ee9-4841-91f7-90dcd0843ca0">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{defectType}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="257" y="0" width="80" height="18" uuid="5bb73cd8-9ae6-4baf-b187-dab5c645ef01"/>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["事件分析"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="337" y="0" width="178" height="18" isPrintWhenDetailOverflows="true" uuid="cef69425-c1c9-4a46-9eb5-595425cb6c07">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{defectAnalysis}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement positionType="Float" x="0" y="36" width="515" height="18" uuid="119ec865-6080-4f64-9d33-c8649155c236">
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="18" uuid="13e4854e-269e-4ae8-b15b-07c0151f3ca5">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["措施类型"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="80" y="0" width="177" height="18" isPrintWhenDetailOverflows="true" uuid="574f3ff8-637d-431c-a088-8b56b00eecd0">
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{measureType}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="257" y="0" width="80" height="18" uuid="428bf1eb-0a72-4aa0-98d5-2a7e56bc2ef2">
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["制定措施"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="337" y="0" width="178" height="18" isPrintWhenDetailOverflows="true" uuid="1b83a567-5fe8-465f-99c7-d0b9f755c16b">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{actionItem} == null ? "" : $F{actionItem}.get("description")]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement positionType="Float" x="0" y="54" width="515" height="18" uuid="734295a1-d6f8-499a-955b-92f68d1ba5f1"/>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="18" uuid="295af40d-618b-4f75-8f8f-7759c526100d">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["责任单位"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="80" y="0" width="177" height="18" isPrintWhenDetailOverflows="true" uuid="dc453809-98c3-48fe-baad-b07fc7b13ac3">
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{actionItem} == null ? "" : $F{actionItem}.get("organizationsDisplayName")]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="257" y="0" width="80" height="18" uuid="e7f058b5-260b-490c-b51b-16c1e16fd5d7">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["完成期限"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="337" y="0" width="178" height="18" isPrintWhenDetailOverflows="true" uuid="c206ab99-00e4-41be-944d-847f98d6b342">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{actionItem} == null ? "" : $F{actionItem}.get("completionDeadLine")]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement positionType="Float" x="0" y="72" width="515" height="18" uuid="22fae1e8-e44b-4143-a090-cbf17275d615"/>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="18" uuid="f6b62a89-da6c-4d3f-ad1a-d90c46fd63d6">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["验收人"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="80" y="0" width="177" height="18" isPrintWhenDetailOverflows="true" uuid="ad989f0b-2fae-4e3d-817b-ecc727a76a5f">
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{actionItem} == null ? "" : $F{actionItem}.get("confirmManDisplayName")]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="257" y="0" width="80" height="18" uuid="0860c99e-0fb9-47a2-8438-1f3940280ee3">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["状态"]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="337" y="0" width="178" height="18" isPrintWhenDetailOverflows="true" uuid="bc163470-d05d-477e-956c-516f42219ba6">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{actionItem} == null ? "" : $F{actionItem}.get("status")]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement positionType="Float" x="0" y="0" width="515" height="18" uuid="8a3b6041-70ab-4214-8a1f-5a1b675621aa">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+								</reportElement>
+								<textField>
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="515" height="18" uuid="d53f7add-836a-416a-acad-3be47743a9d8">
+										<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									</reportElement>
+									<box leftPadding="2" rightPadding="2">
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="微软雅黑" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["事件分析"]]></textFieldExpression>
+								</textField>
+							</frame>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" backcolor="#DED9D9" uuid="8a771185-62d2-42e6-af67-97cce6f8168a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHEL分析]]></text>
+			</staticText>
+		</band>
+		<band height="72">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="515" height="18" uuid="5b895598-8167-42e2-b532-cd77be2f9385">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0" width="257" height="18" backcolor="#DED9D9" uuid="cec2b541-774a-42aa-b941-4588df5e4b78">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[用户]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="257" y="0" width="258" height="18" backcolor="#DED9D9" uuid="ea7c14cc-0794-4a4c-ba54-3771b27dc600">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[日期]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" uuid="fb83f173-dc7a-468f-9e09-4472a405d3cd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="1680140f-589d-4a34-b699-62010f854cfb">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[处理人]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="257" y="0" width="80" height="18" uuid="0eecd196-eb62-4bcb-9cbc-afe8e3183d56">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[创建]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="177" height="18" uuid="bc7a790e-8f23-4ff6-9242-227adfb97e7e"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{userArea} == null ? "" : $P{userArea}.get("assigneesDisplayName")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="337" y="0" width="178" height="18" uuid="a76b0a40-a60b-4639-907f-fc0081e02234"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{dateArea} == null ? "" : $P{dateArea}.get("created")]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="36" width="515" height="18" uuid="694084d6-bfa3-4c51-a06a-d7624815f385">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="e5cb131e-8cad-4c87-9f7b-e86f7667f947">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[创建人]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="257" y="0" width="80" height="18" uuid="c368d373-2947-4489-8ab8-ac47a66602d8">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[更新]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="177" height="18" uuid="ea7db3c1-b8ca-4607-b2fd-51a64538ed63"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{reporter} == null ? "" : $V{reporter}.get("fullname")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="337" y="0" width="178" height="18" uuid="af0e8d8b-4316-44d5-a59e-c90c12f2ea2a"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{dateArea} == null ? "" : $P{dateArea}.get("lastUpdate")]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="54" width="515" height="18" uuid="76264baa-01d2-431f-9355-a221531fb8d5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="18" uuid="ecf518b0-e79f-4264-bcf6-2ea522b9ba3e">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" isBold="true"/>
+					</textElement>
+					<text><![CDATA[关注]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="177" height="18" uuid="590c2944-3548-48c8-8021-b5d039060c3d"/>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{watchers} == null ? "" : $V{watchers}.get("count")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="36">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="18" isPrintWhenDetailOverflows="true" backcolor="#DED9D9" uuid="1d0cfcb6-4975-451c-8656-1f71018e80f6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" isBold="true"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="515" height="18" isPrintWhenDetailOverflows="true" uuid="04c37c8e-1928-4c93-b0ea-7b5bb96ac038">
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="actions" uuid="308c2a6d-ff9b-4557-ba1f-a3a3101b899a">
+						<datasetParameter name="actions">
+							<datasetParameterExpression><![CDATA[$V{actions}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($V{actions})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="46" uuid="8d11386d-ee11-4961-bf74-8f3d307ccf2c">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="46" height="18" isPrintWhenDetailOverflows="true" uuid="a2a076d1-2ad4-4f3c-abdc-9f61b7a04c25"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[姓名]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="46" height="18" isPrintWhenDetailOverflows="true" uuid="467573f8-2596-4523-8d16-6a9ea4dd4d78"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{fullname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="104" uuid="d2f55633-82c4-4cbb-a8e0-bc807681b163">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</jr:tableHeader>
+						<jr:columnHeader height="18">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="104" height="18" isPrintWhenDetailOverflows="true" uuid="472cb28e-d49f-40f9-9c23-db4bf466ec77"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[时间]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="104" height="18" isPrintWhenDetailOverflows="true" uuid="d8a5ea09-f50f-42c5-b02b-348e63ca274d">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{lastDate}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="365" uuid="aefd18a2-5882-47d1-a3b2-15ab8d18bc79">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:columnHeader height="18">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="365" height="18" isPrintWhenDetailOverflows="true" uuid="12b3bdbe-e93f-4768-812a-1c66a9438fbc"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑" isBold="true"/>
+								</textElement>
+								<text><![CDATA[备注]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="18">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement key="" stretchType="RelativeToTallestObject" x="0" y="0" width="365" height="18" isPrintWhenDetailOverflows="true" uuid="661494e9-cede-479f-86d9-333500d0b02c"/>
+								<box leftPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{body}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>

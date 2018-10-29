@@ -1,0 +1,36 @@
+﻿$.extend(com.sms.matrix.matrixs5.i18n,{
+	title : '风险矩阵',
+	one : '第一步：',
+	two : '第二步：',
+	three : '第三步：',
+	four : '第四步：',
+	five : '第五步：',
+	six : '第六步：',
+	seven : '第七步：',
+	
+	oneDesc :'填写基本信息',
+	twoDesc :'定义视察视角',
+	threeDesc :'定义范围间隔',
+	fourDesc :'定义决策帮助',
+	fiveDesc :'创建风险色带',
+	sixDesc :'调整风险色带',
+	sevenDesc :'完成预览',
+	
+	remaind :'创建风险色带能够反映出您的风险偏好，能够从色带中看出风险的高或者低。',
+	back :'上一步',
+	next :'下一步',
+	cancel :'取消',
+	addColor :'添加一个新的色块',
+	colorLump :'色块',
+	color :'颜色',
+	remove :'删除',
+	process :'处理方式',
+	describute :'描述',
+	accept :'接受',
+	alleviate :'减轻',
+	transfer :'转移',
+	avoid :'避免',
+	error :'不能没有色带',
+	
+	
+});

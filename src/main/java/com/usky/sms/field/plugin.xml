@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="field" class="com.usky.sms.field.FieldService" />
+	<bean id="fieldLayoutDao" class="com.usky.sms.field.FieldLayoutDao" />
+	<bean id="fieldLayoutItemDao" class="com.usky.sms.field.FieldLayoutItemDao" />
+	<bean id="fieldLayoutSchemeDao" class="com.usky.sms.field.FieldLayoutSchemeDao" />
+	<bean id="fieldLayoutSchemeEntityDao" class="com.usky.sms.field.FieldLayoutSchemeEntityDao" />
+	<bean id="fieldRegister" class="com.usky.sms.field.FieldRegister" />
+	
+	<bean id="activityTypeFieldScreenSchemeDao" class="com.usky.sms.field.screen.ActivityTypeFieldScreenSchemeDao" />
+	<bean id="activityTypeFieldScreenSchemeEntityDao" class="com.usky.sms.field.screen.ActivityTypeFieldScreenSchemeEntityDao" />
+	<bean id="fieldScreenDao" class="com.usky.sms.field.screen.FieldScreenDao" />
+	<bean id="fieldScreenLayoutItemDao" class="com.usky.sms.field.screen.FieldScreenLayoutItemDao" />
+	<bean id="fieldScreenSchemeDao" class="com.usky.sms.field.screen.FieldScreenSchemeDao" />
+	<bean id="fieldScreenSchemeItemDao" class="com.usky.sms.field.screen.FieldScreenSchemeItemDao" />
+	<bean id="fieldScreenTabDao" class="com.usky.sms.field.screen.FieldScreenTabDao" />
+
+</beans>

@@ -1,0 +1,45 @@
+﻿$.extend(com.sms.customfields.fieldLayoutSchemes.i18n,{
+	title : '查看字段配置方案',
+	addFieleConfig :  '添加字段配置方案',
+	explainA : '下面表格显示当前已经设置的字段配置方案以及关联的运行安监机构。',
+	explainB : '字段配置方案将 ',
+	explainC : '字段配置 ',
+	explainD : '映射到安全信息类型上。 字段配置方案可以关联到多个运行安监机构，运行安监机构中的安全信息通过字段配置与安全信息类型的映射关系，而显示不同的字段。 ',
+	
+	name: '名称',
+	nameNotNull : '名称不能为空',
+	describute : '描述',
+	handle : '操作',
+	SafetyAgencies : '安监机构',
+	
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',
+	
+	
+	config : '配置',
+	copy : '复制',
+	edit : '编辑',
+	remove : '删除',
+	configFail : '配置操作失败：',
+	copyField : '复制字段配置方案：',
+	copyFail  :'复操作失败：',
+	editField :'编辑字段配置方案：',
+	editFail : '编辑操作失败：',
+	affirm : '确认删除字段配置方案',
+	removeField  :'删除字段配置方案',
+	removeFail:'删除操作失败：',
+	
+	
+});

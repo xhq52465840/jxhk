@@ -1,0 +1,1 @@
+var boUrl = "http://172.31.68.23:8888/sms2ws/bo";

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+  <div class=" container-fluid" id="sectionStatusContext">
+     <div  id="sectionStatusContext">
+     <button type="button" class="btn btn-default"  id="exportComformitys">导出</button> 
+     <div class="panel panel-sms" style="margin-top: 10px;margin-bottom:0px;">
+          <div class="panel-heading">
+          <h2 class="panel-title">Section</h2>
+          </div>
+          </div>
+	 <table    style="table-layout: fixed;text-align: center;" class="uui-table">
+	   <tr>
+			  <td class="name" style="width:60px">专业</td>                                                   
+			  <td class="name" style="width:100px">  专业文件库</td>			  
+			 
+			  <td class="name" style="width:100px">Finding</td>
+			   <td class="name" style="width:100px">Observation</td>			  
+			  <td class="name" >N/A</td>
+			  <td class="name" style="width:100px">Conformity</td>
+			  
+	 </tr>
+	 <tr v-for="section in sectionList">
+		<td class="value" style="width:60px" ><a href="#" data={{section.id}} v-on:click="sectionToIsarp">{{section.sectionName}}</a></td>	
+		<td class="value" style="width:100px"><a href="#" data={{section.id}}  v-on:click="sectionDocument">专业文件库</a></td>		          		
+
+		<td class="value" style="width:100px"><a href="#" data={{section.id}} type="finding" v-on:click="conformity">{{section.finding}}</a></td>
+				<td class="value" style="width:100px"><a href="#" data={{section.id}} type="observation" v-on:click="conformity">{{section.observation}}</a></td>
+		<td class="value" ><a href="#" data={{section.id}} type="na" v-on:click="conformity">{{section.na}}</a></td>
+		<td class="value" style="width:100px"><a href="#" data={{section.id}} type="conformity" v-on:click="conformity">{{section.conformity}}</a></td>		
+	 </tr>          
+      </table>
+  </div>
+  </div>
+</body>
+</html>

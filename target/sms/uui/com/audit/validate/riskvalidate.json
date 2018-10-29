@@ -1,0 +1,23 @@
+{
+  "success": true,
+   "data":{
+     "colmuns":[
+       {"id":"completionStatus","text":"完成情况"},
+       {"id":"completionDate","text":"完成日期"},
+       {"id":"completionOverdueDays","text":"完成超期"},
+       {"id":"confirmMan","text":"验证人"},
+       {"id":"auditComment","text":"审批意见"},
+       {"id":"auditor","text":"审批人"},
+       {"id":"confirmDate","text":"验证日期"},
+       {"id":"confirmComment","text":"验证意见"},
+       {"id":"confirmOverdueDays","text":"验证超期"},
+       {"id":"auditDate","text":"审核日期"},
+       
+       {"id":"auditOverdueDays","text":"审核超期"},
+       {"id":"distributeDate","text":"下发日期"},
+       {"id":"lastUpdate","text":"更新日期"}
+     ]
+   },
+   "reason":"数据不存在"
+
+}

@@ -1,0 +1,41 @@
+﻿$.extend(com.sms.activitytype.activityTypeSchemes.i18n,{
+	safeMsgScheme : '安全信息类型方案',
+	addSafeCase : '添加安全信息类型方案',
+	explain :'安全信息类型方案用于确定哪些安全信息类型将提供给一组运营安监机构。它还允许指定的顺序介绍用户界面的安全信息类型。',
+	
+	
+	
+	name : '名称',
+	option : '选项',
+	SafetyAgencies : '安监机构',
+	handle : '操作',
+		
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',
+	
+	approve :'默认',
+	noSafetyAgencies:'没有安监机构',
+	edit: '编辑',
+	relevance :'关联',
+	copy :'复制',
+	remove : '删除',
+	editSafeMsg : '编辑安全信息类型方案',
+	copyFail : '复制操作失败：',
+	confirm : '你准备删除安全信息类型方案',
+	notice : '注意：',
+	Allexplain :'全信息类型方案',
+	removeSafeMsg : '删除安全信息类型方案：',
+	removeFail : '删除操作失败：',
+});

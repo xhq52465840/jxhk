@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage" style="width:100%">
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+  	<form role="form"  id="techWorkSheet" way-persistent="true">
+  		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-11">
+	         			<div class="uui-managepage-title">下降/进近/着陆技术工作单</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+   		<div class="form uui-managepage-filter uui-panel-graph-new accountDepart1" qid="accountDepart">
+     		<div class="descent" style="height:198px">
+     			<div class="uui-panel-rect-header-new">下降（高于10000英尺）</div>
+     			<div class="uui-panel-rect-body uui-managepage-filter-content-new" style="padding:10px 30px 0 11px">
+        			<table class="table table-bordered" style="font-family: sans-serif;font-size:12px;">
+            			<tbody>
+                  			<tr>
+								<td style="vertical-align:middle">
+									是否在到达下降顶点（TOD）之前作出了进近简令？（是/否）
+								</td>
+								<td  style="width:20%;vertical-align:middle">
+									<switchcheckbox id="isMadeBriefingBeforeTod"  :checkboxstate.sync="techWorkSheet.isMadeBriefingBeforeTod" :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" :change-event="changeEvent"></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td style="vertical-align:middle">
+									机组是否在到达飞行管理系统（FMS）的TOD时或在此之前开始下降的？（是/否）
+								</td>
+								<td style="vertical-align:middle">
+									<switchcheckbox  id="isDroBeforeTod" :checkboxstate.sync="techWorkSheet.isDroBeforeTod" :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" :change-event="changeEvent"></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td style="vertical-align:middle">
+									该航空器是否大幅度高于/低于飞行管理系统的垂直轨迹或标准的垂直轨迹？（是/否）
+								</td>
+								<td style="vertical-align:middle">
+									<switchcheckbox id="isBigMarginFly" :checkboxstate.sync="techWorkSheet.isBigMarginFly" :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" :change-event="changeEvent"></switchcheckbox>
+								</td>
+							</tr>
+						</tbody>
+        			</table>
+     			</div>
+     		</div>
+     		<div class="landing">
+       			<div class="uui-panel-rect-header-new">进近和着陆（低于10000英尺）</div>
+       			<div class="uui-panel-rect-body uui-managepage-filter-content-new">
+         			<table  class="table table-bordered" style="font-family: sans-serif;font-size:12px;">
+						<tbody>
+							<tr>	
+								<td width="25%">
+									何种进近？
+								</td>
+								<td  width="25%">
+									<select class="form-control" id="theAppoachType"v-model="techWorkSheet.theAppoachType">
+				                		<option value="">请选择</option>
+				                		<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='approach_type'" v-bind:value="option.dictCode">
+				                  			{{ option.dictName }}
+				                		</option>
+									</select>
+								</td>
+								<td  width="30%" >
+									进近类型
+								</td>
+								<td  width="20%">
+									<input type="input"  style="width:222px" v-model="techWorkSheet.theAppoachDesc" >
+								</td>
+							</tr>
+							<tr>
+								<td>
+									进近：人工飞行还是自动飞行？
+								</td>
+								<td>
+									<select class="form-control" id="theAppoachArtificialOrAut" v-model="techWorkSheet.theAppoachArtificialOrAut">
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='fly_type'" v-bind:value="option.dictCode">
+				                  			{{ option.dictName }}
+				                		</option>			
+									</select>
+								</td>
+								<td>
+									天气（选一）
+								</td>
+								<td>
+						 			<select class="form-control" id="theWeatherType" v-model="techWorkSheet.theWeatherType">
+						  				<option value="">请选择</option>
+						  				<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='weather_type'" v-bind:value="option.dictCode">
+				                  			{{ option.dictName }}
+				                		</option>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									在放襟翼期间，襟翼是否被“正常”的放下？<br /> （选一）
+								</td>
+								<td>
+						 			<select class="form-control" id="isFlapNormal" v-model="techWorkSheet.isFlapNormal">
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='flap_status'" v-bind:value="option.dictCode">
+				                  			{{ option.dictName }}
+				                		</option>
+						 			</select>
+								</td>
+			        			<td>
+									该航空器是否大幅高于/低于所期望的下降垂直轨迹？（是/否）
+								</td>
+								<td>
+									<switchcheckbox id="isBigMarginAbroveExpect" :checkboxstate.sync="techWorkSheet.isBigMarginAbroveExpect" :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" :change-event="changeEvent"></switchcheckbox>
+								</td>	
+							</tr>
+						</tbody>
+		 			</table>
+	   			</div>
+				<div class="uui-panel-rect-body uui-managepage-filter-content-new2-header">
+					<table class="table table-bordered param" style="width:100%;">
+			  			<thead>
+			  				<tr>					
+								<td width="25%">
+									稳定进近的参数
+								</td>
+								<td width="25%">
+									高于机场标高1500英尺
+								</td>
+								<td width="25%">
+									高于机场标高1000英尺
+								</td>
+								<td width="25%">
+									高于机场标高500英尺
+								</td>
+			   				</tr>
+			  			</thead>
+					</table>
+				</div>
+				<div class="uui-panel-rect-body uui-managepage-filter-content-new2" style="height:auto;min-height:232px">
+					<table class="table table-bordered param teckworksheettabledomnode" style="width:100%;">
+						<tbody v-for="oa in observeApproach">
+							<tr>
+								<td width="25%">目标空速误差在-5至+15之间</td>
+								<td width="25%">
+									<switchcheckbox :checkboxstate.sync="oa.targetAirspeedAbove1500" :change-event="checkOther" 
+									 	 check1500="targetAirspeedAbove" data={{oa.targetAirspeedAbove1500}} 
+										  dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td width="25%">
+								    <switchcheckbox :checkboxstate.sync="oa.targetAirspeedAbove1000" :change-event="checkOther" 
+								     	check1000="targetAirspeedAbove" data={{oa.targetAirspeedAbove1000}} 
+								     	dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText"></switchcheckbox>
+								</td>
+								<td width="25%">
+									<switchcheckbox :checkboxstate.sync="oa.targetAirspeedAbove500" :change-event="checkOther"
+								     	check500="targetAirspeedAbove"  data={{oa.targetAirspeedAbove500}} 
+								     	dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText"></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td>垂直速度≤1000 ft/min</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.verticalVelocity1500" :change-event="checkOther"
+									  check1500="verticalVelocity"  data={{oa.verticalVelocity1500}} 
+									  dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.verticalVelocity1000" :change-event="checkOther"
+									  check1000="verticalVelocity"  data={{oa.verticalVelocity1000}} 
+									  dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText"></switchcheckbox>
+								      
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.verticalVelocity500" :change-event="checkOther"
+									  check500="verticalVelocity"  data={{oa.verticalVelocity500}} 
+									  dataTime={{oa.approachTime}} :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td>稳定的发动机功率</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.runningEngine1500" :change-event="checkOther"
+									  check1500="runningEngine" data={{oa.runningEngine1500}} dataTime={{oa.approachTime}} 
+									  :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.runningEngine1000" :change-event="checkOther"
+									  check1000="runningEngine" data={{oa.runningEngine1000}} dataTime={{oa.approachTime}} 
+									  :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.runningEngine500" :change-event="checkOther"
+									  check500="runningEngine" data={{oa.runningEngine500}} dataTime={{oa.approachTime}}
+									  :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox> 
+								</td>
+							</tr>
+							<tr>
+								<td>着陆构型（襟缝翼位置/起落架放下）</td>
+								<td>
+								    <switchcheckbox :checkboxstate.sync="oa.loadingType1500" :change-event="checkOther"
+								      check1500="loadingType" data={{oa.loadingType1500}} dataTime={{oa.approachTime}}
+								      :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox> 
+								</td>
+								<td>
+								    <switchcheckbox :checkboxstate.sync="oa.loadingType1000" :change-event="checkOther"
+								       check1000="loadingType" data={{oa.loadingType1000}} dataTime={{oa.approachTime}}
+								       :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+								   <switchcheckbox :checkboxstate.sync="oa.loadingType500" :change-event="checkOther"
+								       check500="loadingType" data={{oa.loadingType500}} dataTime={{oa.approachTime}}
+								       :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td>稳定的航向道跟踪或着陆航迹</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableCrouse1500" :change-event="checkOther" 
+										check1500="stableCrouse" data={{oa.stableCrouse1500}} dataTime={{oa.approachTime}} 
+										:data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox> 
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableCrouse1000" :change-event="checkOther"
+									    check1000="stableCrouse" data={{oa.stableCrouse1000}} dataTime={{oa.approachTime}}
+									    :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableCrouse500" :change-event="checkOther"
+									    check500="stableCrouse" data={{oa.stableCrouse500}} dataTime={{oa.approachTime}}
+									    :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+								<td>稳定的下滑道跟踪或下降率</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableSlop1500" :change-event="checkOther"
+									 check1500="stableSlop" data={{oa.stableSlop1500}} dataTime={{oa.approachTime}}
+									 :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableSlop1000" :change-event="checkOther"
+									 check1000="stableSlop" data={{oa.stableSlop1000}} dataTime={{oa.approachTime}}
+									 :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+								<td>
+									<switchcheckbox :checkboxstate.sync="oa.stableSlop500" :change-event="checkOther"
+									 check500="stableSlop" data={{oa.stableSlop500}} dataTime={{oa.approachTime}}
+									 :data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+								</td>
+							</tr>
+							<tr>
+							  	<td>是否复飞(第<span>{{oa.approachTime}}</span>次)</td>
+							  	<td>
+							  		<switchcheckbox class="addbutton" :change-event="addApproach" dataTime={{oa.approachTime}} :checkboxstate.sync="oa.repeatFly" 
+							  		:data-size="dataSize" :data-on-color="dataOnColor" :data-on-text="dataOnText" :data-off-text="dataOffText" ></switchcheckbox>
+							  	</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+  			</div>
+			<div class="descripition">
+       			<div class="uui-panel-rect-header-new">叙述</div>
+       			<div class="uui-panel-rect-body uui-managepage-filter-content-new">
+					<table  class="table table-bordered" style="font-family: sans-serif;font-size:14px;">
+						<tbody>
+							<tr>
+								<td style="font-size:12px;border:0px;height:23px;padding:0px" v-align="top">
+									使用下面的图来描述从TOD到着陆所有的重要事件。描述机组成员遭遇威胁和差错时的表现。此外，需阐明你给出的行为评分的理由。
+								</td>
+							</tr>
+							<tr>
+								<td style="border:0px;padding:0px">
+									<textarea  class="depAccountBgWhite" rows="4" v-model="techWorkSheet.dropDesc">
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		   		<div class="body-nest" id="tableStatic">
+               		<img  height="400" width="800" src="../../../losa/img/losaTod.png"/>
+         		</div> 
+         	</div>                              
+     	</div>
+      	<div v-if="scoreList.length>0" class="form uui-managepage-filter-new uui-panel-graph-new ruleDepart"  style="height:auto;min-height:57px" qid="ruleDepart" >
+  		   <div class="uui-panel-rect-header-new" style="padding-left: 31px;">评分</div>
+      		<div class="uui-panel-rect-body uui-managepage-filter-content-new" style="height:auto;min-height:57px">
+         		<table class="table table-bordered" style="font-family: sans-serif;font-size:12px" id="product_table">
+					<tbody>
+					<tr style="font-weight:bold;">					   
+							<td  align="center" style="width:3%;">评分基准</td>
+							<td  align="center" style="width:2%;">评分项</td>
+							<td  align="center" style="width:5%;">评分项解释</td>
+							<td  align="center" style="width:10%;">评分项内容</td>
+							<td  align="center" style="width:1%;">评分选项</td>
+						</tr>
+						<tr v-for="score in scoreList" align="center">
+						  <td>{{score.scoreStandard}}</td>
+						  <td>{{score.scoreItems}}</td>
+						  <td>{{score.scoreItemsExplan}}</td>
+                          <td>{{score.scoreItemContent}}</td>
+						  <td>
+						    <select v-model="score.scoreSelectKey">
+						    <option value="">请选择</option>
+						    <option v-for="option in score.scoreSelect"  v-bind:value="option.scoreKey">
+											 {{ option.scoreVlaue}}
+							</option>
+						    </select>
+						  </td>			
+						</tr>
+				  	</tbody>
+				</table>
+      		</div>
+   		</div>
+      	<div id="footer" class="row  float_footer" >
+	  		<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	   			<button  type="button" class="btn btn-default" qid="saveTechWork" href="" v-on:click="save">保存</button>
+       			<button  type="button" class="btn btn-default" qid="submitTechWork" href="" v-on:click="submit">提交</button>
+     		</div>
+  		</div>
+ 	</form>
+ 	<!-- 
+ 	<div class="switch" data-on-label="是" data-off-label="否">
+ 		<input type="checkbox" />
+ 	</div>
+ 	-->
+ 	</div>
+</div>
+</body>

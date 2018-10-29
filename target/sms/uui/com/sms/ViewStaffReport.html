@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>员工安全报告</title>
+    <link rel="stylesheet" type="text/css" href="../../uui/widget/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../uui/widget/bootstrap/css/bootstrap-usky.css">
+    <link rel="stylesheet" type="text/css" href="../../uui/widget/select2/css/select2-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../uui/widget/select2/css/select2.css">
+    <link rel="stylesheet" type="text/css" href="../../uui/widget/uploadify/last/uploadify.css">
+     <link rel="stylesheet" type="text/css" href="xcConfirm.css"/>
+    <style type="text/css">
+    	body{
+    		min-width: 750px !important;
+    	}
+	    .control-label{
+	    	font-weight: normal;
+	    }
+	    .select2-container .select2-choice{
+      	border: none;
+      }
+        ::-ms-clear{
+        display: none;
+       }
+    </style>
+</head>
+<body >
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">员工主动安全报告</h3>
+		</div>
+		<div class="panel-body">
+			<div class="container-fluid" style="padding-top: 15px;">
+		        <form class="form-horizontal">
+		          <!-- 处理单位 -->
+		          <div class="form-group">
+		            <label for="unit" class="col-sm-2 control-label">所属部门<span class="text-danger">*</span></label>
+		            <div class="col-sm-10">
+		              <input type="text" class="form-control input-sm" id="unit" name="unit" />
+		            </div>
+		          </div>		          
+		          <!-- 处理部门 -->
+		          <div class="form-group">
+		            <label for="dealDepartment" class="col-sm-2 control-label" maxlength="50">所属处室<span class="text-danger">*</span></label>
+		            <div class="col-sm-10">
+		              <input type="text" class="form-control input-sm" id="dealDepartment" name="dealDepartment"  />
+		            </div>
+		          </div>
+		           <!-- 发生日期 -->
+		          <div class="form-group">
+		            <label for="occurDate" class="col-sm-2 control-label" maxlength="50">发生日期<span class="text-danger">*</span></label>
+		            <div class="col-sm-10">
+		              <input type="text" maxlength="10" class="form-control input-sm" id="occurDate" name="occurDate"  />
+		            </div>
+		          </div>
+		           <!-- 发生地 -->
+		           <div class="form-group">
+		            <label for="occurPlace" class="col-sm-2 control-label">发生地</label>
+		            <div class="col-sm-10">
+		              <input type="text" maxlength="255" class="form-control input-sm" id="occurPlace" name="occurPlace" />
+		            </div>
+		           </div>
+                      <!--航班-->
+               <div class="form-group">
+		            <label for="flight" class="col-sm-2 control-label">航班信息</label>		             
+		             <div class="col-sm-10">
+		             	<table class="uui-table uui-table-hover table-fixed"  >
+		             		<thead>
+		             			<tr class="infomodel-title">
+		             				<th colspan="3"></th>
+		             				<th class="operate-tool btn-addflight"><i class="fa fa-plus fa-lg"></i></th>
+		             			</tr>
+		             			<tr id="table-flight-header" class="hidden">
+		             				<th>航班日期</th>
+		             				<th>航班号</th>
+		             				<th>飞行阶段</th>
+		             				<th></th>
+		             			</tr>
+		             		</thead>
+		             		<tbody id="table-flight-body"></tbody>
+		             	</table>
+		            </div>
+		           </div>
+		          <!-- 标题 -->
+		          <div class="form-group">
+		            <label for="summary" class="col-sm-2 control-label">标题<span class="text-danger">*</span></label>
+		            <div class="col-sm-10">
+		              <input type="text" maxlength="255" class="form-control input-sm" id="summary" name="summary" />		  
+		            </div>
+		          </div>
+		          <!-- 描述 -->
+		          <div class="form-group">
+		            <label for="description" class="col-sm-2 control-label">描述<span class="text-danger">*</span></label>
+		            <div class="col-sm-10">
+		              <textarea maxlength="2000" class="form-control input-sm" id="description" name="description" maxlength="2000" rows="6" ></textarea>
+		            </div>
+		          </div>
+		          <div class="form-group">
+		            <label for="measure" class="col-sm-2 control-label">希望采取措施</label>
+		            <div class="col-sm-10">
+		              <textarea class="form-control input-sm" id="hopeMeasure" name="measure" maxlength="2000" rows="6" ></textarea>
+		            </div>
+		          </div>
+		          <!-- 联系手机 -->
+		          <div class="form-group">
+		            <label for="reporterPhone" class="col-sm-2 control-label" >联系手机</label>
+		            <div class="col-sm-10">
+		              <input type="text" class="form-control input-sm" id="reporterPhone" maxlength="255" name="reporterPhone" />
+		              <div class="warm" style="color:#a94442"></div>
+		              <div class="help-block">
+		              	  如果您希望知晓我们的处理情况，请至少准确填写手机或邮箱其中之一
+		              </div>
+		            </div>
+		          </div>
+		          <!-- email -->
+		          <div class="form-group">
+		            <label for="email" class="col-sm-2 control-label" >邮箱</label>
+		            <div class="col-sm-10">
+		              <input type="text" class="form-control input-sm" id="email" maxlength="255" name="email" />
+		            </div>
+		          </div>
+		          <!-- 附件 -->
+		          <div class="form-group">
+		            <label for="username" class="col-sm-2 control-label" >附件</label>
+		            <div class="col-sm-10">
+		              <input type="file" class="form-control" id="file" />
+		              <div id="filelist">
+		              </div>
+		            </div>
+		          </div>
+		          <div class="form-group">
+		            <div class="col-sm-offset-2 col-sm-10 text-center">
+		              <button class="btn btn-default" id="btn-submit">&nbsp;提&nbsp;&nbsp;交&nbsp;</button>
+		            </div>
+		          </div>
+		        </form>
+		    </div>
+		</div>
+	</div>
+	<div umid="fly"></div>
+    <script type="text/javascript" src="../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../uui/widget/jqurl/jqurl.js"></script>
+    <script type="text/javascript" src="../../uui/widget/jqblockui/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../../uui/widget/validation/last/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../../uui/widget/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="../../uui/widget/select2/js/select2_locale_zh-CN.js"></script>
+    <script type="text/javascript" src="../../uui/widget/uploadify/last/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="boot.js"></script>
+    <script type="text/javascript" src="staffReport.js"></script>
+    <script src="xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+    
+</body>
+</html>

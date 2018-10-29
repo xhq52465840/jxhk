@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>E-IOSA审计</title>
+    <script type="text/javascript">
+    var docList_moduleInstance='';
+        $(function () {
+        	
+        	docList_moduleInstance = $.um($("div[umid='docList']"),{reportId :$.cookie("workReportId"),sectionId:sectionId});
+        });
+    </script>
+
+</head>
+<body>
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main" style="padding:0px;padding-top: 0px">
+    			<div umid="docList" umodule="com.eiosa.document.docList"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+</body>
+</html>

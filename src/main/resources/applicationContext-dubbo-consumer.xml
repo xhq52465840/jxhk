@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd 
+                        http://code.alibabatech.com/schema/dubbo 
+                        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 使用zookeeper暴露发现服务地址 -->
+	<dubbo:registry address="${zookeeper.default.address}" check="false" default="true" />
+	<!-- 短信注册中心 -->
+	<dubbo:registry id="smsregistry" address="${zookeeper.sms.address}" check="false"  default="false" />
+
+	<!-- 生成远程服务代理，可以和本地bean一样使用flightService -->
+	<dubbo:reference id="flightService" interface="com.juneyaoair.service.FlightService" protocol="dubbo" timeout="20000" check="false" />
+
+	<dubbo:reference id="ncInfoService" interface="com.juneyaoair.service.NcInfoService" protocol="dubbo" timeout="960000" check="false" />
+
+	<dubbo:reference id="flightAirportService" interface="com.juneyaoair.service.FlightAirportService" protocol="dubbo" timeout="20000" check="false" />
+
+	<dubbo:reference id="airPlaneInfoService" interface="com.juneyaoair.service.AirPlaneInfoService" protocol="dubbo" timeout="20000" check="false" />
+
+	<dubbo:reference id="metarContentService" interface="com.juneyaoair.service.MetarContentService" protocol="dubbo" timeout="20000" check="false" />
+
+	<dubbo:reference id="crewInfoService" interface="com.juneyaoair.service.CrewInfoService" protocol="dubbo" timeout="20000" check="false" />
+	
+	<dubbo:reference id="smsService" registry="smsregistry" interface="com.juneyaoair.sms.service.SmsService" protocol="dubbo" timeout="20000" check="false" />
+
+</beans>

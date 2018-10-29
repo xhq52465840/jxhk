@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="activitytypes.css" type="text/css"></link>
+
+</head>
+<body>
+    <div>
+    	<div umid="activityTypeSchemeDialog"></div>
+    	<div umid="activityTypesSchemes"></div>
+    	<div class="page-header" style="padding:0;">
+	        <div class="page-header-inner">
+	            <div class="page-header-image">
+	                <div style="vertical-align:top;width:48px;height:48px;position:relative;">
+	                    <div class="unit-config-icon48-permissions"></div>
+	                </div>
+	            </div>
+	            <div class="page-header-main">
+	                <span><%=com.sms.unitconfig.activityTypes.i18n.title %></span>
+	                <h3 >
+	                    <span qid="activity-types-name" ></span>
+	                </h3>
+	            </div>
+	            <div class="page-header-actions">
+		            <div class="btn-group hidden" qid="btn-action">
+		            	<button class="btn btn-default btn-sm dropdown-toggle"   data-toggle="dropdown" ><span class="glyphicon glyphicon-cog"></span>&nbsp;行为&nbsp;<span class="caret"></span></button>
+		            	<ul class="dropdown-menu pull-right text-left" role="menu" >
+						  </ul>
+					  </div>
+	            </div>
+	       </div>
+	    </div>
+	    <p><%=com.sms.unitconfig.activityTypes.i18n.explainA %></p>
+	    <p><%=com.sms.unitconfig.activityTypes.i18n.explainB %></p>
+
+		 <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            
+        </table>
+    </div>
+</body>
+</html>

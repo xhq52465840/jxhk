@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage">
+    <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">LOSA计划</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+     <div class="form uui-managepage-filter uui-panel-graph" qid="query">
+       <div class="uui-panel-rect-widget" style="padding:0px">
+           <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:180px;padding:0px">
+              <div class="row">
+                  <div class="form-group col-sm-20 col-md-20" >
+                   <label style="padding:8px;color:black">观察员编号</label>&nbsp;
+			           <input type="text" class="form-control input-sm" qid="startAirport" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			        <label style="color:black">姓名</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="flightNo" style="width:12%" />&nbsp;&nbsp;
+			      <label style="padding:8px;color:black">所属公司</label>
+			           <input type="text" class="form-control input-sm" qid="startAirport" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			       <label style="color:black">观察日期从</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="flightNo" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			       <label style="color:black">到</label>
+			           <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:12%" />          
+			      </div>
+			      <div class="form-group col-sm-20 col-md-20">
+			      <label style="padding:8px;color:black">观察活动编号</label>
+			           <input type="text" class="form-control input-sm" qid="startAirport" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			      <label style="color:black;">状态</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="flightNo" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;	
+			         
+			        <label style="color:black">观察活动批次号</label>&nbsp;
+			           <input type="text" class="form-control input-sm" qid="flightNo" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;	
+			   </div>
+			   
+                <div class="col-sm-11 text-right">
+	            	<button type="button" class="btn btn-default" id="search">查询</button>
+	            	<button type="button" class="btn btn-default"  qid="reset">重置</button>
+	           </div>
+           </div>
+       </div>
+    </div>
+    <div>
+       <table qid="taskPlanTab"  class="table table-striped table-bordered" cellspacing="0" width="100%">
+		</table>
+    </div>
+   <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:200px">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+           <tbody>
+              <tr>
+                 <td>观察员编号</td>
+                 <td>姓名</td>
+                 <td>所属公司</td>
+                 <td>观察日期</td>
+                 <td>航班号</td>
+                 <td>状态</td>
+                  <td>观察活动号</td>
+                 <td>观察批次号</td>
+                 <td>操作</td>
+              </tr>
+              <tr>
+                 <td>LA23123</td>
+                 <td>袁明鸣</td>
+                 <td>浙江分公司</td>
+                 <td>2015-10-11</td>
+                 <td>UJ5515 <button type="button" qid="flightDetail">>></button></td>
+                 <td>未发布</td>
+                 <td>BJ15_001_UJ5515_01</td>
+                 <td>BJ15_001<button type="button" qid="detail">>></button></td>
+                 <td><button type="button" id="search">发布</button><button type="button" id="search">修改</button>
+                 <button type="button" id="search">删除</button></td>
+              </tr>
+              
+           </tbody>
+        </table>
+      </div>
+    </div>
+   <div  id="newCreate" style="position:absolute;top:400px;left:100px;width:160px">
+    <li style="height:37px;"class=" btn btn-warning btn-lg btn-block" qid="create"><span class="glyphicon glyphicon-plus"></span>新建</li>
+   </div>
+   <div  qid="taskPlanDialog" style="display:none">
+     <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">观察员信息</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+     <div class="form uui-managepage-filter uui-panel-graph" qid="query">
+       <div class="row">
+          <div class="form-group col-sm-20 col-md-20">
+              <label style="color:black;padding:8px">观察员编号</label>
+			      <input type="text" class="form-control input-sm" value="A15001"qid="aircraftNo" style="width:150px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			      <label style="color:black;padding:8px">姓名</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+               <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:150px" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <label style="color:black;padding:8px">所属单位</label> 
+               <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:150px" /> 
+               
+		  </div>
+		  <div class="form-group col-sm-20 col-md-20">
+              <label style="color:black;padding:8px">技术岗位</label>&nbsp;&nbsp;&nbsp;
+			      <input type="text" class="form-control input-sm" value=""qid="aircraftNo" style="width:150px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			      <label style="color:black;padding:8px">机型</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:150px" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <label style="color:black;padding:8px">联系电话</label> 
+               <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:150px" /> 
+		  </div>
+		   <div class="form-group col-sm-20 col-md-20">
+              <label style="color:black;padding:8px">身份证号码</label>
+			      <input type="text" class="form-control input-sm" value=""qid="aircraftNo" style="width:150px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			      <label style="color:black;padding:8px">活动批次号</label> 
+               <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:150px" /> 
+               <button type="button" qid="newDetail">>></button>
+		  </div>
+          
+       </div>
+      </div>
+      </br>
+      <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">观察活动计划</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+       <div>
+       </br>
+           <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+             <tbody>
+               <tr>
+				  <td align="center">
+					      观察日期
+				   </td>
+					<td  align="center">
+					    观察航班号
+					</td>
+					
+					
+				</tr>
+				<tr>
+				   <td>
+						<input type="text" class="form-control" value="2015-06-21"/>
+					</td>
+					<td>
+							<input type="text" class="form-control" value="HO5515;HO5243"/>
+					</td>
+					
+						
+				</tr>
+				
+				
+             </tbody>
+           </table>
+            <button class="btn btn-default" type="button" id="more" onclick="addmore()">保存并增加一条</button>
+       </div>
+    
+   </div> 
+   <div qid="flight" style="display:none">
+      <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+         <tbody>
+           <tr>
+               <td>航班号：</td>
+               <td>UJ5515</td>
+               <td>航空器型号：</td>
+               <td>A330</td>
+           </tr>
+           <tr>
+               <td>航班日期：</td>
+               <td>2015-10-21</td>
+               <td>起飞机场：</td>
+               <td>北京机场</td>
+           </tr>
+           <tr>
+               <td>降落机场：</td>
+               <td>西安机场</td>
+           </tr>
+         </tbody>
+      </table>
+      
+   </div>
+    <div qid="PatchDetail" style="display:none">
+      <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+         <tbody>
+           <tr>
+               <td>观察批次号</td>
+               <td><input type="text" class="form-control" style="width:100px"value="BJ15_001"/></td>
+               <td>观察类型</td>
+               <td><select class="form-control"> 
+							<option>机场</option> 
+							<option>机队</option> 
+							</select>
+		     </td>
+           </tr>
+           <tr>
+               <td>观察机场：</td>
+               <td><input type="text" class="form-control" style="width:100px"value="北京机场"/></td>
+               <td>计划观察员人数：</td>
+               <td><input type="text" class="form-control" style="width:100px"value="50"/>人</td>
+               
+           </tr>
+           <tr>
+               <td>计划观察周期：</td>
+               <td><input type="text" class="form-control" style="width:100px"value="8"/>周</td>
+               <td>计划观察次数</td>
+               <td><input type="text" class="form-control" style="width:100px"value="50"/>次</td>
+           </tr>
+           <tr>
+               <td>计划开始时间：</td>
+               <td><input type="text" class="form-control" style="width:100px"value="2015-10-01"/></td>
+               <td>计划结束时间</td>
+               <td><input type="text" class="form-control" style="width:100px"value="2015-12-31"/></td>
+           </tr>
+         </tbody>
+      </table>
+      
+   </div>
+</div>
+</body>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../uui/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../../uui/core/uclazz.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false;});
+
+            var pCls = $.u.clazz.extend({
+                _init: function (name) {
+                    this.name = name;
+                },
+                _initafter: function (name) {
+
+                },
+                returnTest: function () { return (this.name) },
+                returnTest78: function () { return (this.name) }
+            });
+            // 1、测试类
+            var pClsObj = new pCls("1");
+            console.log(pClsObj.returnTest() == "1");
+            pClsObj = new pCls("1");
+            console.log(pClsObj.returnTest() == "2");
+            console.log(pClsObj.returnTest3() == "3");
+            // 3、测试类的继承
+            var cCls = pCls.extend({
+                returnTest4: function () { return (this.name) }
+            });
+            var cClsObj = new cCls("4");
+            console.log(cClsObj.returnTest4() == "4");
+            // 4、测试类方法的override
+            // 可以直接写(new cCls("4")).override({returnTest4: function () { return("5") }});
+            cClsObj.override({
+                returnTest4: function () { return ("5") }
+            });
+            console.log(cClsObj.returnTest4() == "5");
+            // 5、override还可以这样，用JQuery
+            $.extend(cClsObj, {
+                returnTest4: function () { return ("6") }
+            });
+            console.log(cClsObj.returnTest4() == "6");
+
+            var cClsObj7 = new pCls("7");
+            var cClsObj8 = new pCls("8");
+            console.log(cClsObj7.returnTest78() == "7");
+            console.log(cClsObj8.returnTest78() == "8");
+            cClsObj7.override({
+                returnTest78: function () { return ("0") }
+            });
+            console.log(cClsObj7.returnTest78() == "0"); 
+            console.log(cClsObj8.returnTest78() == "8"); 
+            var cClsObj9 = new pCls("9");
+            console.log(cClsObj9.returnTest78() == "9");
+
+            //pCls.impl({
+            //    returnTest: function () { this._super("xxxxxx") }
+            //});
+            //var cClsObjxxxx = new pCls("xxxx");
+            //console.log(cClsObjxxxx.returnTest() == "xxxx");
+        });
+    </script>
+</body>
+</html>

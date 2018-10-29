@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+ <form role="form"  way-data="jsonObserve" way-persistent="true">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">整个飞行</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:600px">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+           <tbody>
+					<tr>
+						<td>
+							叙述
+						</td>
+						<td>
+							这一叙述应当包括你对机组的整体印象。
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea style="width:100%" rows="4" name="theFlightDesc">
+							</textarea>
+						</td>
+					</tr>
+				</tbody>
+	 </table>
+	  <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">
+							整体行为的基准
+						</td>
+						<td>
+							评分
+						</td>
+					</tr>
+					<tr>
+						<td>
+							沟通环境
+						</td>
+						<td>
+							建立并保持了机组间坦诚交流的环境
+						</td>
+						<td>
+							 良好的交谈<br />  信息流通顺畅，清晰和直接
+						</td>
+						<td>
+							<select class="form-control" id="theFlightCommunicationEnvir" name="theFlightCommunicationEnvir"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							领导能力
+						</td>
+						<td>
+							机长显示出了领导能力，并且协调好了飞行机组的工作
+						</td>
+						<td>
+							 指挥得当，有决断力，并鼓励机组参与
+						</td>
+						<td>
+							<select class="form-control" id="theFlightLeadership" name="theFlightLeadership"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+				<tbody>
+					<tr>
+						<td>
+							在该城市对的第一个航段中，你是否观察了飞行乘务员的简令？（选一）
+						</td>
+						<td>
+							<select class="form-control" id="theFlightIsExtBrifing" name="theFlightIsExtBrifing"> <option value="">请选择</option> <option value="1">是</option> <option value="2">否</option> <option value="3">没有机会观察</option></select>
+						</td>
+						<td>
+							评分
+						</td>
+						<td>
+							<select class="form-control" id="theFlightScore" name="theFlightScore"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+				<tbody>
+					<tr>
+						<td>
+							对机组有效性的贡献
+						</td>
+						<td>
+							机长
+						</td>
+						<td>
+							<select class="form-control" id="contributionOfCaptain" name="contributionOfCaptain"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+						<td>
+							副驾驶
+						</td>
+						<td>
+							<select class="form-control" id="contributionOfPolit" name="contributionOfPolit"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+				<tbody>
+					<tr>
+						<td>
+							机组工作的整体有效性
+						</td>
+						<td>
+							评分
+						</td>
+						<td>
+							<select class="form-control" id="theFlightCrewValidity" name="theFlightCrewValidity"> 
+							<option value="">请选择</option> 
+							<option value="1">1-差-被观察的行为表现具有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+           <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+           
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a  id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item active"><a style="color:white" id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+            <button  type="button" class="btn btn-default" qid="saveWhole" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitWhole" href="">提交</button>
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+   </div>
+   </div>
+  </div>
+ </body>

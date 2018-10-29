@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    
+    <link href="../res/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="upm.css" type="text/css"></link>
+	
+    </head>
+<body>
+    <div class="uui-managepage">
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="row">
+	                <div class="col-md-3">
+	                    <h3 class="uui-managepage-title"><%=com.sms.upm.upm.i18n.title %></h3>
+	                </div>
+	                <div class="col-md-9 text-right" >
+	                		<div class="btn-group">
+			                    <button class="btn btn-default btn-sm disabled hidden" qid="btn_uploadplugin"><%=com.sms.upm.upm.i18n.uploadPlug %></button>
+			                    <button class="btn btn-default btn-sm disabled hidden" qid="btn_createplugin"><%=com.sms.upm.upm.i18n.createPlug %></button>
+		                    </div>
+	                </div>
+	            </div>
+            </div>
+        </div>
+        
+        <div style="margin:10px 0 0 0;">
+           <p><%=com.sms.upm.upm.i18n.explain %> <a href="Featured.html"><%=com.sms.upm.upm.i18n.lookPlug %> </a></p>
+        </div>
+
+        <div class="form-inline" qid="filter">
+	        <div class="form-group ">
+	        	<div class="col-sm-6" style="padding-left:0;">
+		        	<div class="input-group">
+					  <input type="text" class="form-control input-sm" qid="text_search">
+					  <span class="input-group-btn">
+					  	<!--  <span class="glyphicon glyphicon-search"></span>-->
+					  	<button class="btn btn-default btn-sm" qid="btn_search"><span class="glyphicon glyphicon-search"></span></button>
+					  </span>
+					</div>
+				</div>
+	            <div class="col-sm-6">
+					<select class="form-control input-sm">
+		            	<option><%=com.sms.upm.upm.i18n.hasInstall %></option>
+		            	<option><%=com.sms.upm.upm.i18n.Pending %></option>
+		            	<option><%=com.sms.upm.upm.i18n.sys %></option>
+		            	<option><%=com.sms.upm.upm.i18n.allPlug %></option>
+		            </select>
+	            </div>
+            </div> 
+        </div>
+        
+        
+        <div class="upm-plugin-area">
+	        <div style="margin-top:30px;">
+		        <h2 class="uui-module-h2"><%=com.sms.upm.upm.i18n.installPlug %></h2>
+		        
+		        <div class="list-group upm-plugin-group" qid="pluginlist">
+		        </div>
+	        </div>
+	        
+	        <!-- 
+	        <div style="margin-top:30px;">
+		        <h2>系统插件</h2>
+		        <div class="list-group upm-plugin-group">
+		        	<div class="list-group-item">
+		        		<div class="upm-plugin-header container">
+			        			<div class="col-sm-4">
+			        				<span class="glyphicon glyphicon-chevron-right"></span>
+			        				<span class="glyphicon glyphicon-qrcode"></span>
+			        				<strong>顶部导航栏</strong>
+			        			</div>
+			        			
+		        		</div>
+		        		<div class="upm-plugin-body hidden">
+			        		<p class="upm-plugin-summary">
+			        			此插件提供项目甘特图展示支持。
+			        		</p>
+			        		<div class="upm-plugin-description">
+			        			<span class="description-text"><strong>试用30天</strong></span>
+			        		</div>
+			        		<div class="upm-plugin-actions">
+			        			<button >免费试用</button>
+			        			<button>配置</button>
+			        			<button>立即购买</button>
+			        			<button>卸载</button>
+			        			<button>禁用</button>
+			        		</div>
+			        		<div class="upm-plugin-info container">
+				        			<div class="col-sm-4">
+				        				屏幕截图
+				        			</div>    
+				        			<div class="col-sm-4 main-column">
+				        				<dl class="dl-horizontal">
+				        					<dt class="text-left">Version：</dt>
+				        					<dd>1.0.0</dd>
+				        					<dt>开发者：</dt>
+				        					<dd>Jack Chan</dd>
+				        					<dt>插件关键字：</dt>
+				        					<dd>org.apache.grant</dd>
+				        				</dl>
+				        			</div>	  			
+				        			<div class="col-sm-4">
+				        				链接信息
+				        			</div>
+			        		</div>
+			        	</div>
+		        	</div>
+		        	<div class="list-group-item">
+		        		<div class="upm-plugin-header container">
+			        			<div class="col-sm-4">
+			        				<span class="glyphicon glyphicon-chevron-right"></span>
+			        				<span class="glyphicon glyphicon-qrcode"></span>
+			        				<strong>页脚</strong>
+			        			</div>
+			        			
+		        		</div>
+		        		<div class="upm-plugin-body hidden">
+			        		<p class="upm-plugin-summary">
+			        			此插件提供项目甘特图展示支持。
+			        		</p>
+			        		<div class="upm-plugin-description">
+			        			<span class="description-text"><strong>试用30天</strong></span>
+			        		</div>
+			        		<div class="upm-plugin-actions">
+			        			<button >免费试用</button>
+			        			<button>配置</button>
+			        			<button>立即购买</button>
+			        			<button>卸载</button>
+			        			<button>禁用</button>
+			        		</div>
+			        		<div class="upm-plugin-info container">
+				        			<div class="col-sm-4">
+				        				屏幕截图
+				        			</div>    
+				        			<div class="col-sm-4 main-column">
+				        				<dl class="dl-horizontal">
+				        					<dt class="text-left">Version：</dt>
+				        					<dd>1.0.0</dd>
+				        					<dt>开发者：</dt>
+				        					<dd>Jack Chan</dd>
+				        					<dt>插件关键字：</dt>
+				        					<dd>org.apache.grant</dd>
+				        				</dl>
+				        			</div>	  			
+				        			<div class="col-sm-4">
+				        				链接信息
+				        			</div>
+			        		</div>
+			        	</div>
+		        	</div>
+		        	<div class="list-group-item">
+		        		<div class="upm-plugin-header container">
+			        			<div class="col-sm-4">
+			        				<span class="glyphicon glyphicon-chevron-right"></span>
+			        				<span class="glyphicon glyphicon-qrcode"></span>
+			        				<strong>系统提示</strong>
+			        			</div>
+			        			
+		        		</div>
+		        		<div class="upm-plugin-body hidden">
+			        		<p class="upm-plugin-summary">
+			        			此插件提供项目甘特图展示支持。
+			        		</p>
+			        		<div class="upm-plugin-description">
+			        			<span class="description-text"><strong>试用30天</strong></span>
+			        		</div>
+			        		<div class="upm-plugin-actions">
+			        			<button >免费试用</button>
+			        			<button>配置</button>
+			        			<button>立即购买</button>
+			        			<button>卸载</button>
+			        			<button>禁用</button>
+			        		</div>
+			        		<div class="upm-plugin-info container">
+				        			<div class="col-sm-4">
+				        				屏幕截图
+				        			</div>    
+				        			<div class="col-sm-4 main-column">
+				        				<dl class="dl-horizontal">
+				        					<dt class="text-left">Version：</dt>
+				        					<dd>1.0.0</dd>
+				        					<dt>开发者：</dt>
+				        					<dd>Jack Chan</dd>
+				        					<dt>插件关键字：</dt>
+				        					<dd>org.apache.grant</dd>
+				        				</dl>
+				        			</div>	  			
+				        			<div class="col-sm-4">
+				        				链接信息
+				        			</div>
+			        		</div>
+			        	</div>
+		        	</div>
+		        	<div class="list-group-item">
+		        		<div class="upm-plugin-header container">
+			        			<div class="col-sm-4">
+			        				<span class="glyphicon glyphicon-chevron-right"></span>
+			        				<span class="glyphicon glyphicon-qrcode"></span>
+			        				<strong>自定义字段类型&搜索器</strong>
+			        			</div>
+			        			
+		        		</div>
+		        		<div class="upm-plugin-body hidden">
+			        		<p class="upm-plugin-summary">
+			        			此插件提供项目甘特图展示支持。
+			        		</p>
+			        		<div class="upm-plugin-description">
+			        			<span class="description-text"><strong>试用30天</strong></span>
+			        		</div>
+			        		<div class="upm-plugin-actions">
+			        			<button >免费试用</button>
+			        			<button>配置</button>
+			        			<button>立即购买</button>
+			        			<button>卸载</button>
+			        			<button>禁用</button>
+			        		</div>
+			        		<div class="upm-plugin-info container">
+				        			<div class="col-sm-4">
+				        				屏幕截图
+				        			</div>    
+				        			<div class="col-sm-4 main-column">
+				        				<dl class="dl-horizontal">
+				        					<dt class="text-left">Version：</dt>
+				        					<dd>1.0.0</dd>
+				        					<dt>开发者：</dt>
+				        					<dd>Jack Chan</dd>
+				        					<dt>插件关键字：</dt>
+				        					<dd>org.apache.grant</dd>
+				        				</dl>
+				        			</div>	  			
+				        			<div class="col-sm-4">
+				        				链接信息
+				        			</div>
+			        		</div>
+			        	</div>
+		        	</div>
+		        </div> 
+	        </div>
+        </div>
+        	 -->
+    </div>
+</body>
+</html>

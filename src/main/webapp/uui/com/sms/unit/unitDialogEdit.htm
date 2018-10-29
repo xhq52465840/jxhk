@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+	<div>
+		<div umid="select-unit-avatar"></div>
+        <div qid="unit-dialog-edit">
+        	<div>
+	        	<div class="col-sm-12">
+	        		<form class="form-horizontal" role="form" qid="unit-form">
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.name %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-10">
+		                        <input type="text" class="form-control" qid="unit-name" name="name" placeholder="" maxlength="50">
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.key %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-10">
+		                        <input type="text" class="form-control" qid="unit-key" name="code" placeholder="" maxlength="50">
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.icon %><span class="text-danger">&nbsp;</span></label>
+		                    <div class="col-sm-10">
+		                        <img qid="unit-image" name="avatarUrl"  style="cursor:pointer;" src="../../../img/unitavatar/unitavatar-default.png" width="48" height="48"></img>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.describe %><span class="text-danger">&nbsp;</span></label>
+		                    <div class="col-sm-10">
+		                        <textarea class="form-control input-sm" qid="unit-description" name="description" placeholder="" maxlength="255" style="resize:none;"></textarea>
+		                    	<div class="help-block"><%=com.sms.unit.unitDialogEdit.i18n.explain %></div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.category %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-10">
+								<input type="text" class="form-control select2" qid="category" name="category">
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-2 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialogEdit.i18n.respuser %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-10">
+								<input type="text" class="form-control select2" qid="unit-person" name="responsibleUser">
+		                    </div>
+		                </div>
+	                </form>
+                </div>
+        	</div>
+        </div>
+	</div>        
+</body>
+</html>

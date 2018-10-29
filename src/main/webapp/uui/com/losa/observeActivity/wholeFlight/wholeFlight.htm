@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage">
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+ 	<form role="form"  id="wholeFlight" way-persistent="true">
+  		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">整个飞行</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+     	<div v-if="scoreList.length>0" class="form uui-managepage-filter-new uui-panel-graph-new accountDepart" qid="accountDepart">
+     		<div class="uui-panel-rect-header-new">叙述</div>
+     		<div class="uui-panel-rect-body uui-managepage-filter-content-new">
+        		<table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+           			<tbody>
+			   			<tr>
+				  			<td  style="font-size:12px;border:0px;height:23px;padding:0px" v-align="top">你的叙述应当提供各种有关情况：机组在哪些方面做得好？哪些地方做得不好？当机组遇到威胁、机组差错和重要事件时是如何表现的？此外，需阐明你给出的行为评分的理由。</strong>
+				 			</td>
+						</tr>
+						<tr>
+				   			<td  style="border:0px;padding:0px">
+					   			<textarea id="depAccount" class="depAccountBgWhite" rows="4" v-model="wholeFlight.theFlightDesc"></textarea>
+				   			</td>
+						</tr>
+		  			</tbody>
+				</table>
+     		</div>
+   		</div>
+   		<div v-if="scoreList.length>0" class="form uui-managepage-filter-new uui-panel-graph-new ruleDepart wholeflight" qid="ruleDepart" >
+      		<div class="uui-panel-rect-header-new" style="padding-left:31px">评分</div>
+      			<div class="uui-panel-rect-body uui-managepage-filter-content-new-wholeflight" style="height:auto;min-height:59px">
+         			<table class="table table-bordered" style="font-family: sans-serif;font-size:12px" id="product_table">
+						<tbody>
+						<tr style="font-weight:bold;">					   
+							<td  align="center" style="width:5%;">评分基准</td>
+							<td  align="center" style="width:6%;">评分项</td>
+							<td  align="center" style="width:6%;">评分项解释</td>
+							<td  align="center" style="width:8%;">评分项内容</td>
+							<td  align="center" style="width:1%;">评分选项</td>
+						</tr>
+							<tr v-for="score in scoreList" align="center">
+								<td>{{score.scoreStandard}}</td>
+								<td >{{score.scoreItems}}</td>
+								<td>{{score.scoreItemsExplan}}</td>
+								<td>{{score.scoreItemContent}}</td>
+								<td>
+									<select v-model="score.scoreSelectKey">
+										<option value="">请选择</option>
+										<option v-for="option in score.scoreSelect"  v-bind:value="option.scoreKey">
+											{{ option.scoreVlaue}}
+										</option>
+									</select>
+								</td>
+							</tr>
+		  				</tbody>
+					</table>
+      			</div>
+   		</div>
+    	<div id="footer" class="row  float_footer" >
+	  		<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	   			<button  type="button" class="btn btn-default" qid="saveWhole" href="" v-on:click="save">保存</button>
+       			<button  type="button" class="btn btn-default" qid="submitWhole" href="" v-on:click="submit">提交</button>
+     		</div>
+  		</div>
+	</form>
+  	</div>
+ </div>
+ </body>

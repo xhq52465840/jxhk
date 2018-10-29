@@ -1,0 +1,80 @@
+.com-sms-upm-featured{
+	max-width:1020px;
+	min-height:600px;
+	min-width:715px;
+	color:#000;
+}
+.com-sms-upm-featured .upm-plugin-group{
+	margin-top:15px;
+}
+.com-sms-upm-featured .upm-plugin-group .list-group-item{
+	padding:0 !Important;
+}
+.com-sms-upm-featured .upm-plugin-header{
+	padding:16px;
+	cursor:pointer;
+}
+.com-sms-upm-featured .upm-plugin-header:hover{
+	background:#f0f0f0;
+}
+.com-sms-upm-featured .upm-plugin-header.active{
+	background:#ebf1fc;
+}
+.com-sms-upm-featured .upm-plugin-header .container{
+	padding:0;
+}
+.com-sms-upm-featured .upm-plugin-header .container > div{
+	padding:0;
+}
+.com-sms-upm-featured .upm-plugin-header h4{
+	margin:0;
+}
+.com-sms-upm-featured .upm-plugin-header .upm-plugin-summary{
+	margin-top:1em;
+	line-height:21px;
+	color:#404040;
+}
+.com-sms-upm-featured .upm-plugin-header .upm-section >div{
+	margin-top:6px;
+}
+.com-sms-upm-featured .upm-plugin-header .upm-section >div:first-child{
+	margin-top:0px;
+}
+
+.com-sms-upm-featured .upm-plugin-header .upm-plugin-support{
+	padding-left:10px;
+}
+.com-sms-upm-featured .upm-plugin-body{
+	padding:16px;
+}
+.com-sms-upm-featured .upm-plugin-body .container,
+.com-sms-upm-featured .upm-plugin-body .container > div{
+	padding:0;
+}
+.com-sms-upm-featured .upm-plugin-screenshots{
+
+}
+.com-sms-upm-featured .upm-plugin-version-details{
+	font-size:95%;
+	padding-left:20px;
+}
+.com-sms-upm-featured .upm-plugin-version-details li{
+	list-style:disc;
+	margin:0 0 3px 0;
+}
+.com-sms-upm-featured .upm-plugin-links{
+	margin:0 0 25px 0 ;
+	padding-left:20px;
+}
+.com-sms-upm-featured .upm-plugin-links li:first-child{
+	margin-top:0;
+}
+.com-sms-upm-featured .upm-plugin-links li{
+	margin-top:3px;
+	list-style:none;
+}
+.com-sms-upm-featured .upm-plugin-see-more{
+	background-color:#ebf1fc;
+	height:50px;
+	line-height:50px;
+}

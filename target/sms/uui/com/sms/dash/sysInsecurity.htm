@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+.outline {
+	border: 1px solid black;
+	width: 1100px;
+	margin-left: 100px;
+	margin-top: 10px;
+	height: 550px;
+}
+</style>
+</head>
+<body>
+	<div class="uui-module">
+		<h2 class="uui-module-h2">
+		安监机构:<span qid="unit"></span>&nbsp;&nbsp;&nbsp;
+		系统：<span qid="system"></span>&nbsp;&nbsp;&nbsp;
+		重大风险：<span qid="consequence"></span>
+		</h2>
+		<div class="outline">
+			<div qid="insecurityTabs">
+				<ul>
+					<li><a href="#tabs-1">不安全状态柱状图</a></li>
+					<li><a href="#tabs-2">不安全状态告警图(可查询)</a></li>
+					<li><a href="#tabs-3">不安全状态告警图(全部)</a></li>
+				</ul>
+				<div id="tabs-1">
+					<div umid="insebar"></div>
+				</div>
+				<div id="tabs-2">
+					<div umid="insegauge"></div>
+				</div>
+				<div id="tabs-3" style="overflow: auto;height:480px;">
+					<div umid="insegaugeall"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

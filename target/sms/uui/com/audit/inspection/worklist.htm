@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div>
+	<div class="uui-managepage">
+		<div qid="content" class="hidden">
+			<div class="row form-group" style="height: 43px;margin-bottom: 12px;">
+				<div class="col-md-12 text-right" qid="btn_area" style="margin-top:10px;">
+					<button class="btn btn-default btn-sm hidden" qid="baoCun">保存</button>
+				</div>
+			</div>
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-baseinfo-panel"></span>工作单基本信息</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed">
+							<tbody>
+								<tr>
+									<td class="name" data-field="workName">工作单名称</td>
+									<td class="value" colspan="3">
+										<input type="text" class="form-control input-sm"  name="workName"/>
+									</td>
+								</tr>
+								<tr>
+									<td class="name" data-field="workNo">工作单编号</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="workNo"/></td>
+									<td class="name" data-field="address">检查地点</td>
+									<td class="value"><input type="text" maxlength="512" class="form-control input-sm"  name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >检查日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm" qid="startDate" name="startDate" maxlength="12"/></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm" qid="endDate" name="endDate" maxlength="12"/></div>
+										</div>
+									</td>
+									<td class="name" data-field="method">检查方式</td>
+									<td class="value"><input type="text" class="form-control input-sm"  name="method"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="teamLeader">检查组长</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm"  name="teamLeader"/></td>
+									<td class="name" data-field="standard">检查标准</td>
+									<td class="value"><input type="text" maxlength="256" class="form-control input-sm" name="standard"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="member">检查组员</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm"  name="member"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="remark">备注</td>
+									<td class="value" colspan="3">
+										<textarea class="form-control input-sm" maxlength="2000" rows="3"  name="remark"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><span class="fa fa-minus uui-cursor-pointer toggle-panel" style="padding-right: 5px;" qid="toggle-checkarea-panel"></span>检查范围</h2>
+					</div>
+					<div class="panel-body">
+						<div class="row show-grid" qid="professionContainer"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div qid="logsContainer"></div>
+	</div>
+</div>
+</body>
+</html>

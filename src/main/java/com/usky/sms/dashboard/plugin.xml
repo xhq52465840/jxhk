@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="dashboardDao" class="com.usky.sms.dashboard.DashboardDao" />
+	<bean id="dashboard" class="com.usky.sms.dashboard.DashboardService" />
+	<bean id="gadgetsDao" class="com.usky.sms.dashboard.GadgetsDao" />
+	<bean id="gadgetsinstanceDao" class="com.usky.sms.dashboard.GadgetsinstanceDao" />
+	<bean id="gadgetInsParamDao" class="com.usky.sms.dashboard.GadgetInsParamDao" />
+
+</beans>

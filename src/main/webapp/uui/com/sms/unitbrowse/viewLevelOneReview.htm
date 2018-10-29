@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+    	.th-1{
+			background:url(../../../img/sms/title.jpg) repeat-x;
+			color:white;
+			text-align:center;
+			border-top-left-radius: 10px;
+		}
+		.th-2{
+			background:url(../../../img/sms/title.jpg) repeat-x;
+			color:white;
+			text-align:center;
+			border-top-right-radius: 10px;
+		}
+		.th-3{
+			text-align:center;
+			color:white;
+			background-color:#A2ACB5;
+		}
+		.th-right{
+			border-right: 1px solid white;
+		}
+		.td-color{
+			background-color:#F4F4F6;
+		}
+		table.text-mid td{
+			text-align : center;
+		}
+		.com-edit{
+			cursor:pointer;
+		}
+    </style>
+</head>
+<body>
+<div>
+    <div class="uui-managepage">
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="row form-group">
+	                <div class="col-md-3">
+	                    <h3 class="uui-managepage-title">安全评审</h3>
+	                </div>
+	            </div>
+	            <form>
+		            <div class="row form-group">
+		            	<div class="col-sm-1 text-right">
+		            		<label>年份</label>
+		            	</div>
+		            	<div class="col-sm-5">
+		            		<select class="form-control" qid="year" name="year">
+							</select>
+		            	</div>
+		            	<div class="col-sm-1 text-right">
+		            		<label>季度</label>
+		            	</div>
+		            	<div class="col-sm-5">
+		            		<select class="form-control" qid="season" name="season">
+		            			<option value="1">第一季度</option>
+		            			<option value="2">第二季度</option>
+		            			<option value="3">第三季度</option>
+		            			<option value="4">第四季度</option>
+		            		</select>
+		            	</div>
+		            </div>
+		            <div class="row form-group">
+		            	<div class="col-sm-1 text-right">
+		            		<label>备注</label>
+		            	</div>
+		            	<div class="col-sm-5">
+		            		<input type="text" class="form-control" qid="remark" name="remark"/>
+		            	</div>
+		            	<div class="col-sm-1 text-right">
+		            		<label>状态</label>
+		            	</div>
+		            	<div class="col-sm-5">
+		            		<select class="form-control" qid="status" name="">
+		            			<option value="NEW">新建</option>
+		            			<option value="WAITING">待审核</option>
+		            			<option value="COMPLETE">完成</option>
+		            			<option value="">全部</option>
+		            		</select>
+		            	</div>
+		            </div>
+		            <div class="row form-group">
+		            	<div class="col-sm-12 text-right">
+		            		<button type="button" class="btn btn-default" qid="search">查询</button>
+		            	</div>
+		            </div>
+	            </form>
+            </div>
+        </div>
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        </table>
+    </div>
+    <div qid="levelOneDialog">
+    	<div class="row" style="padding:10px 0;">
+			<div class="col-sm-12" style="text-align:center;">
+				<div class="form-group" style="font-weight: bold;font-size:25px;color:#7d4fab;">
+					<span qid="unitReview" name="unitReview">
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-12" style="text-align:center;">
+				<input type="hidden" qid="sendID"/>
+				<span style="font-size: 10px;" qid="subTitle"></span>
+			</div>
+			<div class="col-sm-12" style="text-align:right;">
+				<button class="btn btn-default hidden" qid="replace" >重新计算</button>
+			</div>
+    	</div>
+    	<table class="table text-mid">
+	    	<thead>
+	    		<tr>
+	    			<th colspan="3" width="60%" class="th-1">评审标准</th><th colspan="3" class="th-2">完成情况统计表</th>
+	    		</tr>
+	    		<tr>
+	    			<th width="15%" class="th-3 th-right">考核项目</th>
+	    			<th width="10%" class="th-3 th-right">考核内容</th>
+	    			<th width="40%" class="th-3 th-right">描述</th>
+	    			<th width="15%" class="th-3 th-right comp">完成情况</th>
+	    			<th width="10%" class="th-3 th-right">得分</th>
+	    			<th width="10%" class="th-3">操作</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    	</tbody>
+	    	<tfoot>
+	    		<tr><td>评审小组成员</td><td colspan="5"><textarea class="form-control" qid="member" readonly></textarea></td></tr>
+	    		<tr><td>备注</td><td colspan="5"><textarea class="form-control" qid="remark" readonly></textarea></td></tr>
+	    		<tr><td colspan="5" style="text-align:right;">总分:<span qid="countScore"></span></td></tr>
+	    	</tfoot>
+	    </table>
+    </div>
+</div>
+</body>
+</html>

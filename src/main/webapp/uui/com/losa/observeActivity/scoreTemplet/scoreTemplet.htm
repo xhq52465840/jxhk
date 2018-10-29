@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<style>
+	td {
+	  padding: 4px;
+	  vertical-align:middle;
+	  align:center;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div id="scoreTempletVue" style="padding: 12px 0 0 0;">
+			<div class="page-header-main unit-details">
+				<table style="width:101%;">
+					<thead class="header">
+						<tr>
+							<td class="searchTitleIcon"><div>&nbsp;</div></td>
+							<td  class="rightBigTitle"><div class="uui-managepage-title" style="margin-top: 4px;">{{tabName}}</div></td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="panel panel-sms" style="width: 100%; padding: 8px 0 0 0; ">
+				<table  class="changeColor" style="width: 100%; font-size:12px;">
+					<thead class="header">
+						<tr>					
+							<td style="width:9%; font-weight:bold;" align="center">飞行阶段</td>
+							<td style="width:9%; font-weight:bold;" align="center">评分基准</td>
+							<td style="width:14%; font-weight:bold;" align="center">评分项</td>
+							<td style="width:18%; font-weight:bold;" align="center">评分项解释</td>
+							<td style="width:18%; font-weight:bold;" align="center">评分项内容</td>
+							<td style="width:10%; font-weight:bold;" align="center">评分下拉选项类型</td>
+							<td style="width:7%; font-weight:bold;" align="center">评分项顺序</td>
+							<td style="font-weight:bold;" align="center">状态</td>
+							<td style="width:11%; font-weight:bold;" align="center"></td>
+						</tr>
+					</thead>
+					<tbody qid="pro_tbody">
+						<tr v-for="st in scoreTemplets" style="height: 41px;">						
+							<td align="center" v-show="st.edit"><input type="text" style="width:100%" v-model="st.flyStageValue" readonly="true"/></td><td v-else align="center">{{st.flyStageValue}}</td>
+							<td align="center" v-show="st.edit"><textarea style="width:100%" v-model="st.scoreStandard"/></td><td v-else align="center">{{st.scoreStandard}}</td>
+							<td align="center" v-show="st.edit"><textarea style="width:100%" v-model="st.scoreItems"/></td><td v-else align="center">{{st.scoreItems}}</td>
+							<td align="center" v-show="st.edit"><textarea style="width:100%" v-model="st.scoreItemsExplan"/></td><td v-else align="center">{{st.scoreItemsExplan}}</td>
+							<td align="center" v-show="st.edit"><textarea style="width:100%" v-model="st.scoreItemContent"/></td><td v-else align="center">{{st.scoreItemContent}}</td>						
+							<td align="center" v-show="st.edit"><input type="text" style="width:100%" v-select="st.scoreSelectType" :options="options" /></td><td v-else align="center">
+								<input type="text" style="width:100%" v-select="st.scoreSelectType" :options="options" readonly="true"/>
+							</td>
+							<td align="center" v-show="st.edit"><input type="text" style="width:70%;text-align:center" v-model="st.scoreItemsSort" /></td><td v-else align="center">{{st.scoreItemsSort}}</td>
+							<td align="center" >{{st.deleted==0?"正常":"失效"}}</td>
+							<td align="center" >
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="changer(this)" v-show="st.deleted==0&&!st.edit">修改</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="del(this)" v-show="st.deleted==0&&!st.edit">失效</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="add(this)" v-show="st.deleted==1">复效</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="save(this)" v-show="st.deleted==0&&st.edit">保存</button>
+								<button type="button" class="btn btn-default"  style="margin:0px 0px 0px 2px;" @click="cancel(this)" v-show="st.deleted==0&&st.edit">取消</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-default"  style="margin:10px 0px 0px 8px;width:100px;" @click="append">添加</button>
+				<pagebars :pagemsg.sync="pagebarsData" :pagefun="page"></pagebars>
+			</div>		
+		</div>
+	</div>
+</body>
+</html>

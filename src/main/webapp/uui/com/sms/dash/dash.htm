@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="header uui-container">
+        <div qid="allalert" class="alert alert-info" role="alert" style="margin-top: 20px; display: none;">
+            <p><span class="glyphicon glyphicon-info-sign"></span><%=com.sms.dash.dash.i18n.explainA %><a style="margin-left: 10px; cursor: pointer;" qid="allalertfav"><%=com.sms.dash.dash.i18n.addBookmarks %></a>。</p>
+        </div>
+        <div class="uui-grid row">
+            <div class="col-md-3 col-xs-3 uui-container">
+                <h3 qid="dashname"></h3>
+            </div>
+            <div class="col-md-9 col-xs-9 uui-container" style="text-align: right; margin-top: 15px; padding-right: 20px !important;">
+                <div class="btn-group">
+                    <a  style="display:inline-block;float:left;padding-top:6px" target="_blank" download='Employee_Report_Guide.pdf' qid="btn_ofenQuestion" href="Employee_Report_Guide.pdf"><span class="glyphicon glyphicon-save"></span><%=com.sms.dash.dash.i18n.userGuide %></a>
+                    <button class="btn btn-default  myedit" qid="btn_gadget"><span class="glyphicon glyphicon-plus"></span><%=com.sms.dash.dash.i18n.addtool %></button>
+                    <button class="btn btn-default  myedit" qid="btn_layout"><span class="glyphicon glyphicon-pencil"></span><%=com.sms.dash.dash.i18n.layout%></button>
+                    <div class="btn-group notadmin">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-cog"></span><%=com.sms.dash.dash.i18n.tool %>
+                               
+                            <span class="caret"></span>
+                        </button>
+                        <ul qid="btn_layouttools" class="dropdown-menu" role="menu" style="text-align: left; width: 80px;">
+                            <li>
+                                <a href="#"><%=com.sms.dash.dash.i18n.copyPanel %></a>
+                            </li>
+                            <li class="myedit">
+                                <a href="#"><%=com.sms.dash.dash.i18n.editPanel %></a>
+                            </li>
+                            <li class="myedit">
+                                <a href="#"><%=com.sms.dash.dash.i18n.sharePanel %></a>
+                            </li>
+                            <li class="myedit">
+                                <a href="#"><%=com.sms.dash.dash.i18n.deletePanel %></a>
+                            </li>
+                            <li>
+                                <a href="#"><%=com.sms.dash.dash.i18n.findPanel %></a>
+                            </li>
+                            <li>
+                                <a href="#"><%=com.sms.dash.dash.i18n.createPanel %></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-default " qid="btn_restore" style="display: none;"><span class="gadgeticon-restore"></span><%=com.sms.dash.dash.i18n.back %></button>
+                </div>
+            </div>
+        </div>
+        <div qid="dashlayout" class="dash-layout uui-container">
+            <ul class="dash-column dash-first dash-empty uui-box" style="min-height: 840px; position: relative;">
+                <li class="empty-text"><%=com.sms.dash.dash.i18n.explainB %>
+                       
+                    <a class="add-gadget-link" href="#"><%=com.sms.dash.dash.i18n.addtool %></a>
+                </li>
+            </ul>
+            <ul class="dash-column dash-second dash-empty uui-box" style="min-height: 840px; position: relative;">
+                <li class="empty-text"><%=com.sms.dash.dash.i18n.explainB %>
+                       
+                    <a class="add-gadget-link" href="#"><%=com.sms.dash.dash.i18n.addtool %></a>
+                </li>
+            </ul>
+            <ul class="dash-column dash-third dash-empty uui-box" style="min-height: 840px; position: relative;">
+                <li class="empty-text"><%=com.sms.dash.dash.i18n.explainB %>
+                       
+                    <a class="add-gadget-link" href="#"><%=com.sms.dash.dash.i18n.addtool %></a>
+                </li>
+            </ul>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</body>
+</html>

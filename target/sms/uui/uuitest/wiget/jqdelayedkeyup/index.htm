@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqui/ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../uui/widget/jqui/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="../../../uui/widget/jqdelayedkeyup/delayedkeyup.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#testkey").delayedkeyup({
+                handler: function (e) {
+                    alert($(e.currentTarget).val());
+                },
+                delay: 2000
+            });
+        });
+    </script>
+</head>
+<body style="font-size: 75%;">
+    <input type="text" id="testkey" />
+</body>
+</html>

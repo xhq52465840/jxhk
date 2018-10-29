@@ -1,0 +1,54 @@
+.float_footer {
+	position: fixed; bottom:0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: right; float: right;
+}
+.link{
+	position: fixed; top:195px; left:20px; float: left;
+}
+/* 交替行切换颜色，属性class里面包含 changeColor的table,table下的tbody,tbody下的tr的偶数行具有background:#F0F0F0的颜色*/
+table.changeColor tbody tr:nth-of-type(even) {background:#F8F8F8}  
+/* 定义标题行的样式 */ 
+table thead.header tr{
+	height: 40px;
+	WIDTH: 1309px;
+	background: url(../img/losa/rightbigtitlebg.png) repeat-x;
+	border:1px solid #d5d5d5;
+}
+
+table thead.header2 tr{
+	height: 40px;
+	WIDTH: 1309px;
+	background: #F1F1F1;
+	border:1px solid #d5d5d5;
+}
+
+/*分页控件*/
+.onpagebars {
+	font-weight: bold;
+	color: black;
+}
+/*分页控件*/
+
+/*排序指令*/
+.arrow {
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	height: 0;
+	margin-left: 6px;
+	margin-top: 6px;
+	opacity: 0.9;
+}
+
+.arrow.asc {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #113DEE;
+}
+
+.arrow.dsc {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #113DEE;
+}
+/*排序指令*/
+

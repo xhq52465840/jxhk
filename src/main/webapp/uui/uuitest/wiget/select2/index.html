@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src='../../../uui/widget/select2/js/select2.js'></script>
+    <script type="text/javascript" src='../../../uui/widget/select2/js/select2_locale_zh-CN.js'></script>
+    <link rel="stylesheet" type="text/css" href="../../../uui/widget/select2/css/select2-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../../uui/widget/select2/css/select2.css" />
+
+</head>
+<body>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#code").select2({
+                width: 220, placeholder: "请选择编码", allowClear: true,
+                ajax: {
+                    url: "dcode.ashx",
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            id: term, // 这里是服务端接收的"id"
+                        };
+                    },
+                    results: function (data, page) {
+                        return { results: data };
+                    }
+                },
+                dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+                escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+            });
+        });
+    </script>
+    <input id="code" type="hidden" />
+</body>
+</html>

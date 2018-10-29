@@ -1,0 +1,176 @@
+*{
+	box-sizing:border-box;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+a:active{
+	text-decoration:none;
+}
+a:visited{
+	text-decoration:none;
+}
+a:link{
+	text-decoration:none;
+}
+li{
+	list-style-type:none;
+}
+#ceair_accordioncontainer.accordioncontainer{
+	width:250px;
+	height:auto;
+	min-height:500px;
+}
+.accordioncontainerul{
+	position:relative;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	padding:0px;
+	margin-top:2px;
+	margin-bottom:2px;
+	border-radius:5px;
+}
+.accordioncontainerul >li{
+	width:100%;
+	height:auto;
+	min-height:30px;
+	border-radius: 5px;
+	margin: 2px 0 0;
+	border-style:solid;
+	border-width:1px 1px 1px 1px;
+	border-color:#d5d5d5;
+}
+
+.accordioncontainerul >li .firstmenucollapsediv{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:auto;
+	min-height:30px;
+	border-radius:5px;
+	background: rgba(0, 0, 0, 0) url("rightpagebigtitlebg.png") repeat-x scroll 0 0;
+}
+.accordioncontainerul >li .firstmenucollapsediv.unselected{
+	background: rgba(0, 0, 0, 0) url("rightpagebigtitlebg.png") repeat-x scroll 0 0;
+	color:#ffffff;
+}
+.accordioncontainerul >li .firstmenucollapsediv.selected{
+	background:#673d93;
+	color:#000000;
+}
+.accordioncontainerul >li .firstmenucollapsediv > a{
+	display:block;
+	width:87%;
+	height:100%;
+	float:left;
+	background:transparent;
+	font-size:15px;
+	color: #444;
+	line-height: 1.14286;
+	overflow: hidden;
+	padding: 6px 4px 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.accordioncontainerul >li .firstmenucollapsediv.selected a{
+	color:#ffffff;
+}
+.accordioncontainerul >li > ul{
+	padding:0px;
+}
+.accordioncontainerul > li > ul > li{
+	/*background:#f8f8f8;*/
+	text-align:center;
+	vertical-align:middle;
+}
+
+.accordioncontainerul > li > ul > li:last-child{
+	border-bottom:0px;
+}
+
+.secondmenulicss{
+	background:transparent;
+	border-bottom:1px solid #d5d5d5;
+}
+
+.liodd{
+	background:transparent;
+}
+.lieven{
+	background:#f8f8f8;
+}
+
+.accordioncontainerul >li > ul > li > a{
+	display:inline-block;
+	width:100%;
+	height:100%;
+	font-size:15px;
+	color: #444;
+	line-height: 1.14286;
+	overflow: hidden;
+	padding: 7px 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align:center;
+	vertical-align:middle;
+}
+.accordioncontainerul .firstmenucollapsediv .firstmenucollapse{
+	float:left;
+	width:13%;
+	height:30px;
+	background:transparent;
+	padding-right:4px;
+}
+.accordioncontainerul .firstmenucollapsediv .firstmenucollapse .collapsearrowright{
+	width:8px;
+	height:8px;
+	border-width:2px 2px 0px 0px;
+	border-color:#bebebe #bebebe transparent transparent;
+	border-style:solid;
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); 	/* IE 9 */
+	-moz-transform:rotate(45deg); 	/* Firefox */
+	-webkit-transform:rotate(45deg); /* Safari 鍜�Chrome */
+	-o-transform:rotate(45deg);
+	margin-top:11px;
+	margin-left:11px;
+}
+
+.accordioncontainerul .firstmenucollapsediv .firstmenucollapse .collapsearrowdown{
+	width:8px;
+	height:8px;
+	border-width:2px 2px 0px 0px;
+	border-color:#ffffff #ffffff transparent transparent;
+	border-style:solid;
+	transform:rotate(135deg);
+	-ms-transform:rotate(135deg); 	/* IE 9 */
+	-moz-transform:rotate(135deg); 	/* Firefox */
+	-webkit-transform:rotate(135deg); /* Safari 鍜�Chrome */
+	-o-transform:rotate(135deg);
+	margin-top:11px;
+	margin-left:11px;
+}
+
+.accordioncontainerul .firstmenucollapsediv.unselected .firstmenucollapse .collapsearrowdown{
+	width:8px;
+	height:8px;
+	border-width:2px 2px 0px 0px;
+	border-color:#bebebe #bebebe transparent transparent;
+	border-style:solid;
+	transform:rotate(135deg);
+	-ms-transform:rotate(135deg); 	/* IE 9 */
+	-moz-transform:rotate(135deg); 	/* Firefox */
+	-webkit-transform:rotate(135deg); /* Safari 鍜�Chrome */
+	-o-transform:rotate(135deg);
+	margin-top:11px;
+	margin-left:11px;
+}
+
+.secondmenuselected{
+	font-weight:bold;
+}

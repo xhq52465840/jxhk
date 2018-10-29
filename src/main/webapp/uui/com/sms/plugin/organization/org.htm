@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+        <div umid="orgDialog" ></div>
+        
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+        			<div class="col-md-12">
+        				<h3 class="uui-managepage-title">组织</h3>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+
+        <div class="container-fluid no-left-right-padding" style='margin-top: 5px;'>
+        	<div class="row">
+        		<div class="col-lg-3 col-md-4 no-right-padding" style="overflow-x: auto;">
+        			<ul qid="libTree" class="ztree" style="background-color: #f3f2f7; border: 1px solid #e0e0e0;"></ul>
+        		</div>
+        		<div class="col-lg-9 col-md-8" qid="main">
+        			
+	    			<div style="margin-bottom: 10px;">
+	    				<button class="btn btn-default btn-sm"  qid="btn_addorg"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.plugin.organization.org.i18n.group %></button>
+	    				<button class="btn btn-default btn-sm"  qid="btn_editorg"><span class="glyphicon glyphicon-pencil"></span> <%=com.sms.plugin.organization.org.i18n.editgroup %></button>
+	    				<button class="btn btn-default btn-sm"  qid="btn_delorg"><span class="glyphicon glyphicon-minus"></span> <%=com.sms.plugin.organization.org.i18n.delgroup %></button>
+	    			</div>
+		    		
+    				<table class="uui-table">
+    					<tbody>
+    						<tr>
+    							<td class="name">名称:</td>
+    							<td class="value" qid="orgName"></td>
+    						</tr>
+    						<tr>
+    							<td class="name">所属系统:</td>
+    							<td class="value" qid="orgSystem"></td>
+    						</tr>
+    						<tr>
+    							<td class="name">组织编号:</td>
+    							<td class="value" qid="orgDeptCode"></td>
+    						</tr>
+    						<tr>
+    							<td class="name">组织编号描述:</td>
+    							<td class="value" qid="orgDeptCodeDesc"></td>
+    						</tr>
+    						<tr>
+    							<td class="name">安监机构:</td>
+    							<td class="value" qid="orgUnit"></td>
+    						</tr>
+    						<tr>
+    							<td class="name">系统管理员:</td>
+    							<td class="value" qid="userUnit"></td>
+    						</tr>
+    					</tbody>
+    				</table>
+					
+					<div class="panel panel-sms" style="margin-top: 20px;">
+						<div class="panel-heading">
+							<h2 class="panel-title">成员
+								<div qid="btn_adduser" class="pull-right panel-button-container" >
+									<div class="panel-button-inner"><i class="fa fa-plus" title="添加成员"></i>
+									</div>
+								</div>
+							</h2>
+						</div>
+						<div class="panel-body">
+							<table qid="datatable" class="table table-striped table-bordered" style="margin-top: 0px !important;" cellspacing="0" width="100%"></table>
+							<!-- <table class="uui-table">
+								<thead>
+									<tr class="infomodel-title">
+										<th>用户</th>
+										<th>角色</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+								</tbody>
+							</table> -->
+						</div>
+					</div>
+
+					<!-- <div qid="orgUser">
+						<button class="btn btn-default btn-sm" qid="btn_adduser"><span class="glyphicon glyphicon-plus"></span>添加成员</button>
+						<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				        </table>
+					</div> -->
+        		</div>
+        	</div>
+        </div>
+
+        <!-- <div class="page-content">
+	        <div class="page-content-inner" style="min-height: 600px;">
+	        	<div class="page-content-nav" style="max-width:240px;width:240px;overflow-x: auto;">
+	    			<ul qid="libTree" class="ztree">
+	    			</ul>
+	    		</div>
+	    		<div class="page-content-main" qid="main">
+	    			<div style="border-bottom:1px solid #ccc;height: 50px;margin-bottom:20px;">
+		    			<div class="row" >
+		    				<button class="btn btn-default btn-sm" style="margin-left:12px;" qid="btn_addorg"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.plugin.organization.org.i18n.group %></button>
+		    				<button class="btn btn-default btn-sm" style="margin-left:5px;" qid="btn_editorg"><span class="glyphicon glyphicon-pencil"></span> <%=com.sms.plugin.organization.org.i18n.editgroup %></button>
+		    				<button class="btn btn-default btn-sm" style="margin-left:5px;" qid="btn_delorg"><span class="glyphicon glyphicon-minus"></span> <%=com.sms.plugin.organization.org.i18n.delgroup %></button>
+		    			</div>
+		    		</div>
+	    			<div qid="libContent">
+		    			<form role="form" style="min-height: 50px;margin-bottom:20px;margin-left: 1px;padding-bottom: 20px;">
+		    				<div class="row">
+		    					<label class="col-sm-2" style="margin-left: -9px;">名称:</label>
+		    					<div class="col-sm-3" qid="orgName"></div>
+		    					<label class="col-sm-2">所属系统:</label>
+							    <div class="col-sm-3" qid="orgSystem"></div>
+		    				</div>
+		    				<div class="row" style="border-bottom:1px solid #ccc;">
+		    					<label class="col-sm-2" style="margin-left: -9px;">组织编号:</label>
+		    					<div class="col-sm-3" qid="orgDeptCode"></div>
+		    					<label class="col-sm-2">组织编号描述:</label>
+							    <div class="col-sm-3" qid="orgDeptCodeDesc"></div>
+		    				</div>
+						</form>
+					</div>
+					<div qid="orgUser">
+						<button class="btn btn-default btn-sm" qid="btn_adduser"><span class="glyphicon glyphicon-plus"></span>添加成员</button>
+						<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				        </table>
+					</div>
+		        </div>
+   			</div>
+   		</div> -->
+   		<div qid="addOrgDialog" >
+			<form class="form-horizontal" role="form" qid="form" style="padding-top: 1em;">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">名称<span class="text-danger">*</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="name" qid="edit_name" maxlength="255"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">所属系统<span class="text-danger">*</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="systems" qid="systems"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">组织层级<span class="text-danger">*</span></label>
+					<div class="col-sm-7">
+						<select class="form-control input-sm" name="olevel" qid="olevel">
+							<option>请选择</option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<!-- <option value="3.5">3.5</option> -->
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">上级组织<span class="text-danger" qid="upOrg">*</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="parent" qid="parent" style="background:transparent;cursor:pointer;" readonly="readonly" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">前一组织<span class="text-danger">&nbsp;</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="previousParent" qid="previousParent"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">组织编号<span class="text-danger">*</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="deptCode" qid="deptCode" maxlength="20"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">组织编号描述<span class="text-danger">&nbsp;</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="deptCodeDesc" qid="deptCodeDesc" maxlength="50"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">安监机构<span class="text-danger">&nbsp;</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="unit" qid="unit" maxlength="50"/>
+					</div>
+				</div>
+			</form>
+   		</div>
+   		<div qid="addMebDialog">
+   			<form class="form-horizontal" role="form" qid="addform" style="padding-top: 1em;">
+	   			<div class="form-group">
+					<label class="col-sm-3 control-label">成员<span class="text-danger">*</span></label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control input-sm" name="users" qid="member"/>
+					</div>
+				</div>
+			</form>
+   		</div>
+   		<div qid="delMebDialog">
+	   		<div>
+			 	<div class='alert alert-info'>
+			 		<span class='glyphicon glyphicon-exclamation-sign'>删除成员？</span>
+			 	</div>
+			</div>
+   		</div>
+   		<div qid="treeContent" style="display:none; position: absolute;z-index:1060;  background: #fff;border: 1px solid #ddd;-webkit-box-shadow: 0 0 10px #DDD;box-shadow: 0 0 10px #DDD;width: 329px;height:200px;overflow:auto;">
+			<ul qid="tree" class="ztree" style="margin-top:0; width:160px;"></ul>
+		</div>
+   </div>
+</body>
+</html>

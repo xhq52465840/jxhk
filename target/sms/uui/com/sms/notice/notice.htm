@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>站内通知</title>
+<style type="text/css">
+	.com-sms-notice-notice span.msg{
+		position: absolute;
+		left: 30px;
+		margin: 0px;
+		padding: 0px;
+		width: 22px;
+		height: 22px;
+		overflow: hidden;
+	}
+	.com-sms-notice-notice img.msg-i{
+		left: -14px;
+		top: -40px;
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div umid="createDialog"></div>
+		<div qid="noticeDialog" class="com-sms-notice-notice">
+			<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			</table>
+		</div>
+		<div qid="detailDialog" class="hidden">
+			<form class="form-horizontal" role="form"">
+				<div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="">发送人：</label>
+					<div class="col-sm-10">
+						<!-- <input class="form-control" type="text" placeholder="" qid="text_sender" readOnly="readOnly"> -->
+						<span style="padding:6px 0;margin:0;display:inline-block;" qid="text_sender"></span>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="">主题：</label>
+					<div class="col-sm-10">
+						<!-- <input class="form-control" type="text" placeholder="" qid="text_title" readOnly="readOnly"> -->
+						<span style="padding:6px 0;margin:0;display:inline-block;" qid="text_title"></span>
+					</div>
+				</div>
+				<div class="form-group ">
+					<label class="col-sm-2 control-label" for="">内容：</label>
+					<div class="col-sm-10">
+						<!-- <textarea class="form-control " qid="textarea_content" rows="17" readOnly="readOnly"></textarea> -->
+						<div style="padding:6px 0;margin:0;" qid="textarea_content"></div>
+					</div>
+				</div>
+				<div class="form-group ">
+					<label class="col-sm-2 control-label" for="">附件：</label>
+					<div class="col-sm-10">
+						<div style="padding:6px 0;margin:0;" qid="attachments_container"></div>
+					</div>
+				</div>
+				<div class="form-group ">
+					<label class="col-sm-2 control-label" for="">信息链接：</label>
+					<div class="col-sm-10">
+						<a style="padding:6px 0;margin:0;" href="#" qid="a_link"></a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+.li-col-3 {
+	width: 33%;
+}
+
+.div-height {
+	height: 400px;
+}
+
+.main {
+	width: 50%;
+	float: left;
+	margin-right: 0px;
+	padding-right: 0px;
+	border-right-width: 0px;
+	cursor: default;
+}
+
+.main2 {
+	width: 50%;
+	float: left;
+	margin-left: 0px;
+	padding-left: 0px;
+	border-left-width: 0px;
+	cursor: default;
+}
+</style>
+</head>
+<body>
+<div style="padding:10px;">
+	<div class="row" style="margin-top: 5px;">
+		<div class="col-md-12" style="background-color: #eee;">
+			<div class="search-criteria">
+				<ul class="criteria-list">
+					<li class="criteria-actions">
+						<button qid="btn-more-1" type="button" class="btn btn-subtle"
+							data-placement="bottom" title="增加更多筛选条件">
+							更多<span
+								class="caret"></span>
+						</button>
+					</li>
+					<li>
+						<button qid="btn-search-1" class="btn btn-subtle"
+							type="button" data-placement="bottom" title="查找">
+							<span class="glyphicon glyphicon-search"
+								style="color: #3b73af;"></span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-12" style="margin-bottom: 5px;background-color: #eee;">
+			<div class="search-criteria-extended">
+				<ul class="criteria-list" style="max-height:72px;overflow-y: auto;">
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-12" style="margin-bottom: 5px;">
+			<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    		</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

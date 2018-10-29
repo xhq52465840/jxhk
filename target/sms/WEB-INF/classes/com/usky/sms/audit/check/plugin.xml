@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="checkDao" class="com.usky.sms.audit.check.CheckDao" />
+	<bean id="checkFlowUserDao" class="com.usky.sms.audit.check.CheckFlowUserDao" />
+	<bean id="checkListDao" class="com.usky.sms.audit.check.CheckListDao" >
+		<property name="cronForSendingExecuteNotice" value="${cronForSendingExecuteNotice}" ></property>
+	</bean>
+	<bean id="improveItemUserDao" class="com.usky.sms.audit.check.ImproveItemUserDao" />
+	<bean id="check" class="com.usky.sms.audit.check.CheckService" />
+	<bean id="checkList" class="com.usky.sms.audit.check.CheckListService" />
+
+</beans>

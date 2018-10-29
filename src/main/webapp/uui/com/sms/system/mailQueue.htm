@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+</head>
+<body>
+    <div class="uui-managepage">
+        <div class="uui-managepage-header">
+        	<div class="container-fluid">
+	            <div class="row">
+	                <div class="col-md-3  no-left-right-padding">
+	                    <h3 class="uui-managepage-title" style="display:inline-block;"><%=com.sms.system.mailQueue.i18n.title %></h3><span class="label label-primary" qid="label-active"></span>
+	                </div>
+	            </div>
+            </div>
+        </div>
+        <div qid="mailqueue">
+	        <p style="margin-top:10px;"><small><%=com.sms.system.mailQueue.i18n.mailQueueDesc %></small></p>
+	        <p><small><%=com.sms.system.mailQueue.i18n.mailQueueCount %></small></p>
+	        <button class="btn btn-default btn-sm" qid="btn_sendmailqueue"><%=com.sms.system.mailQueue.i18n.sendMailButtonName %></button><span><small><%=com.sms.system.mailQueue.i18n.sendMailButtonDesc %></small></span>
+		</div>
+		<div qid="errorqueue" class="hidden">
+	        <p style="margin-top:10px;"><small><%=com.sms.system.mailQueue.i18n.errorQueueDesc %></small></p>
+	        <p><small><%=com.sms.system.mailQueue.i18n.errorQueueCount %></small></p>
+	        <ul style="padding-left:20px;">
+	        	<li><small><strong><button class="btn btn-link" qid="btn_senderrorqueue"><%=com.sms.system.mailQueue.i18n.sendErrorButtonName %></button></strong><%=com.sms.system.mailQueue.i18n.sendErrorButtonDesc %></small></li>
+	        	<li><small><strong><button class="btn btn-link" qid="btn_removeerrorqueue"><%=com.sms.system.mailQueue.i18n.removeErrorButtonName %></button></strong><%=com.sms.system.mailQueue.i18n.removeErrorButtonDesc %></small></li>
+	        </ul>
+		</div>
+		<ul class="nav nav-tabs sms-tabs" role="tablist" qid="tabs" style="margin-top:20px;">
+			<li class="active"><a href="#mailqueue" role="tab" data-toggle="tab"><%=com.sms.system.mailQueue.i18n.mailTabName %></a></li>
+			<li><a href="#errorqueue" role="tab" data-toggle="tab"><%=com.sms.system.mailQueue.i18n.errorTabName %></a></li>
+		</ul>
+		<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
+        
+    </div>
+</body>
+</html>

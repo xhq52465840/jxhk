@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+	<div>
+        <div qid="detail-dialog-edit">
+       	<div class="col-sm-12">
+       		<form class="form-horizontal" role="form" qid="unit-form">
+       		 <input type="text" class="hidden" autofocus>
+         	   <div class="form-group">
+				    <label for="<%= this._id%>-itemPoint" class="col-sm-2 control-label">审计要点</label>
+				    <div class="col-sm-10">
+				      <textarea class="form-control input-sm " qid="itemPoint" disabled="disabled" rows="2"></textarea>
+				    </div>
+				 </div>
+				 <div class="form-group">
+				    <label for="<%= this._id%>-itemAccording" class="col-sm-2 control-label">审计依据</label>
+				    <div class="col-sm-10">
+				      <textarea class="form-control input-sm" qid="itemAccording" disabled="disabled" rows="2"></textarea>
+				    </div>
+				 </div>
+				 <div class="form-group">
+				    <label for="<%= this._id%>-itemPrompt" class="col-sm-2 control-label">审计提示</label>
+				    <div class="col-sm-10">
+				      <textarea class="form-control input-sm" qid="itemPrompt" disabled="disabled" rows="4"></textarea>
+				    </div>
+				 </div>
+				 <div class="form-group">
+				    <label for="<%= this._id%>-auditRecord" class="col-sm-2 control-label">审计记录<span qid="auditRecord-tip" class="text-danger">*</span></label>
+				    <div class="col-sm-10">
+				      <textarea class="form-control input-sm" qid="auditRecord" name="auditRecord" maxLength="2000" rows="4"></textarea>
+				    </div>
+				 </div>
+				<div class="form-group">
+				    <label for="<%= this._id%>-auditResult" class="col-sm-2 control-label">审计结论</label>
+				    <div class="col-sm-4">
+				    	<input type="text" qid="auditResult" name="auditResult" class="form-control input-sm"/ >
+				    </div>
+				    <label for="<%= this._id%>-improveLastDate" class="col-sm-2 control-label">整改期限<span qid="improveLastDate-tip" class="text-danger">*</span></label>
+				     <div class="col-sm-4">
+				      <input type="text" qid="improveLastDate"  name="improveLastDate" class="form-control input-sm"/>
+				    </div>
+				 </div>
+				
+				<div class="form-group">
+				    <label for="<%= this._id%>-termResponsibilityUnit" class="col-sm-2 control-label">航站责任单位<span qid="termResponsibilityUnit-tip" class="text-danger">*</span></label>
+				    <div class="col-sm-4">
+				      <input type="text" qid="termResponsibilityUnit" name="termResponsibilityUnit" class="form-control input-sm"/>
+				    </div>
+				 </div>
+           		  <div class="form-group">
+				    <label for="<%= this._id%>-upload" class="col-sm-2 control-label">附件</label>
+				    <div class="col-sm-4">
+				      <input type="file" qid="upload" name="upload" class="form-control input-sm"/>
+				    </div>
+				 </div>
+				 
+				 <div class="form-group">
+				    <label for="<%= this._id%>-upload" class="col-sm-2 control-label">已上传的附件</label>
+				     <div class="col-sm-10">
+				      <table qid="fileList" class="table table-condensed hidden" style="margin-top:-20px;">
+					    <thead><tr>
+				    			<th style="width: 40%;">文件名</th>
+				      			<th >文件大小</th>
+				      			<th style="width: 15%;">上传人</th>
+				      			<th style="width: 8%;">操作</th>
+						      	</tr>
+						</thead>
+					    <tbody></tbody>
+				   	 </table>
+				    </div>
+				 </div>
+				 
+				 <input type='reset'  class="hidden"></input>
+               </form>
+              </div>
+      	
+        </div>
+	</div> 
+	
+	                     
+</body>
+</html>

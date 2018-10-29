@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片新闻</title>
+</head>
+<body style="background-color:#fff !important;overflow: hidden; ">
+   <div umid="carousel" umodule="com.sms.dash.juneyao.carousel"></div>
+   <script type="text/javascript" src="../../../../uui/jquery.min.js"></script>
+   <script type="text/javascript" src="../../../../uui/uui-loader.js"></script>
+   <script type="text/javascript" src="../../boot.js"></script>
+   <script type="text/javascript" src="../../../../uui/widget/jqurl/jqurl.js"></script> 
+   <script type="text/javascript">
+       $(function () {
+          var scrrenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth;
+           $('body').css({
+                width: scrrenWidth,
+                minWidth: scrrenWidth
+            });
+           var params = $.urlParam(null);
+           if (!params.mode || params.mode.indexOf("config") > -1) {
+               $.um($("div[umid='carousel']"), "config", params.gadgetsinstance);
+           }
+           else {
+               $.um($("div[umid='carousel']"), "display", params.gadgetsinstance);
+           }
+       });
+   </script>
+</body>
+</html>

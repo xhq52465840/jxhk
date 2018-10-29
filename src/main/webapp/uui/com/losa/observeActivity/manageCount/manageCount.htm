@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div>
+  <div class="container-fluid"  id="manageCount">
+     <table class="table changeColor rightBigContentTable" >
+		     <td  align="right">
+		       <button type="button" class="btn btn-default"  v-on:click="exportmanage">导出</button>	 
+		     </td>
+	 </table>	     
+	 <table style="table-layout: fixed;text-align: center;" class="uui-table" v-for="count in countList">
+	 <tr>
+			  <td class="name" style="width:100px">项目名称</td>
+			  <td class="value" style="width:100px">统计结果</td>  
+	  </tr>
+	   <tr >
+			  <td class="name" style="width:100px">每段航班中的威胁数量（威胁总数/总航班段数）：</td>
+			  <td class="value" style="width:100px">{{count.threatcounts}}&nbsp;&nbsp;&nbsp;({{count.threatcount}}/{{count.count}})</td>  
+	  </tr>  
+	   <tr>
+			  <td class="name" style="width:100px">每段航班中的差错数量（差错总数/总航班段数）：</td>
+			  <td class="value" style="width:60px">{{count.errorcounts}}&nbsp;&nbsp;&nbsp;({{count.errorcount}}/{{count.count}})</td>  
+	  </tr> 
+	  
+	   <tr>
+			  <td class="name" style="width:100px">对威胁进行有效管理比率（有效管理的威胁数量/威胁总数）：</td>
+			  <td class="value" style="width:60px">{{count.threatPercent}}&nbsp;&nbsp;&nbsp;({{count.responsethreat}}/{{count.threatcount}})</td>  
+	  </tr> 
+	   <tr>
+			  <td class="name" style="width:100px">对差错进行有效管理比率（有效管理的差错数量/差错总数）：</td>
+			  <td class="value" style="width:60px">{{count.errorPercent}}&nbsp;&nbsp;&nbsp;({{count.responseerror}}/{{count.errorcount}})</td>  
+	  </tr> 
+	   <tr>
+			  <td class="name" style="width:100px">机组未识别差错的比率（除有效管理以外的差错数量/差错总数）：</td>
+			  <td class="value" style="width:60px">{{count.unitPercent}}&nbsp;&nbsp;&nbsp;({{count.unitErrorPercent}}/{{count.errorcount}})</td>  
+	  </tr>                                             	         
+      </table>
+  </div>
+  </div>
+</body>
+</html>

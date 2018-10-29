@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+</style>
+</head>
+<body >
+	<div class=" container-fluid" >
+		<div class="uui-managepage">
+			<div id="auditors2">
+				<div class="form uui-managepage-filter uui-panel-graph" style="width: 95%; padding: 10px">
+					<div class="uui-panel-rect-widget">
+						<div class="uui-panel-rect-body uui-managepage-filter-content">
+							<div class="row">
+								<div class="form-group col-sm-20 col-md-20">
+									<label>Section :</label>&nbsp;&nbsp;
+									<select id="auditorSection" v-model="auditorQueryForm.sectionId" style="width: 130px">
+										<option value="">请选择</option>
+										<option v-for="option in auditorSectionNames" v-bind:value="option.number">
+										    {{ option.name }}
+										 </option>
+									</select>&nbsp;&nbsp;&nbsp;&nbsp; 
+									<label> Name:</label>&nbsp;&nbsp;
+									<input id="auditorName" type="text" class="form-control input-sm" v-model="auditorQueryForm.auditorName" style="width:13%"/>&nbsp;&nbsp;&nbsp;&nbsp;
+									<button type="button" class="btn btn-default" v-on:click="search">Search</button>&nbsp;&nbsp;
+									<button type="button" class="btn btn-default" v-on:click="reset">Reset</button>&nbsp;&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>		
+								
+				<div class="panel panel-sms" style="margin-top: 10px;">
+					<table id="auditorTable" class=" scrolltable   table_docs table-bordered ">
+						<thead>
+							<tr>
+							    <td class="name w1" v-sortfun.literal="page" :options="orders" sortby="tt.spell">Name</td>
+								<td class="name w1" v-sortfun.literal="page" :options="orders" sortby="tu.username">ID</td>
+								<td class="name w2" >Title</td>
+								<td class="name w3" >Employment Status(Contracted or Internal Auditor)</td>
+								<td class="name w4" v-sortfun.literal="page" :options="orders" sortby="tt.sectionname">IOSA Disciplines Audited</td>
+							</tr>
+						</thead>
+						<tr v-for="al in auditorsList">
+						    <td class="w1"><a href="#" v-on:click="auditorInfo" data={{al.userId}}>
+						                  {{ al.name }}</a></td>
+							<td class="w1">{{ al.id }}</td>
+							<td class="w2">Auditor</td>
+							<td class="w3">Internal Auditor</td>
+							<td class="w4">{{ al.disciplines }}</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 分页开始 -->
+				<pagebars :pagemsg.sync="pagebarsData" :pagefun="page"></pagebars>
+				<!-- 分页结束 -->
+			</div>	
+		
+		</div>
+	</div>
+</body>
+</html>

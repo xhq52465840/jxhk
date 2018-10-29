@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title></head>
+<body>
+    <div>
+    	<div class="container">
+    	<div class="row">
+    		<div class="col-sm-6">
+    			<h5><%=com.sms.plugin.workflow.fieldRequired.i18n.title %></h5>
+    			<select class="form-control" multiple="multiple" qid="systemFields">
+	    			<option value="名称"><%=com.sms.plugin.workflow.fieldRequired.i18n.name %></option>
+	    			<option value="风险级别"><%=com.sms.plugin.workflow.fieldRequired.i18n.riskClass %></option>
+	    			<option value="安全信息类型"><%=com.sms.plugin.workflow.fieldRequired.i18n.safeMsgType %></option>
+	    		</select>
+	    		<div class="help-block"><small><%=com.sms.plugin.workflow.fieldRequired.i18n.remiand %></small></div>
+    		</div>
+    		<div class="col-sm-6">
+    			<h5><%=com.sms.plugin.workflow.fieldRequired.i18n.remiandA %></h5>
+    			<select class="form-control"  multiple="multiple" qid="requiredFields">
+	    			
+	    		</select>
+	    		<div class="help-block"><small><%=com.sms.plugin.workflow.fieldRequired.i18n.remiandB %></small></div>
+    		</div>
+    	</div>
+    	<div class="row" style="margin-top:10px;">
+    		<div class="col-sm-6">
+    			<button class="btn btn-default btn-sm" qid="btn_addSlectedField"><%=com.sms.plugin.workflow.fieldRequired.i18n.addfield %></button>
+    		</div>
+    		<div class="col-sm-6">
+    			<button class="btn btn-default btn-sm" qid="btn_removeSelectedField"><%=com.sms.plugin.workflow.fieldRequired.i18n.removefield %></button>
+    		</div>
+    	
+    	</div>
+    		
+    	</div>
+    </div>
+</body>
+</html>

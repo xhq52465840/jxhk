@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div>
+	<div class=" container-fluid" style="padding: 20px 0" id="queryGenralform">
+		 <div class="form uui-managepage-filter uui-panel-graph" style="width: 95%; padding: 10px">
+			<div class="uui-panel-rect-widget">
+				<div class="uui-panel-rect-body uui-managepage-filter-content">
+					<div class="row">
+						<div class="form-group col-sm-20 col-md-20">
+							<div class="uui-managepage-title" align="center" style="font-family : 微软雅黑,宋体;font-size : 2.8em;" id="querygeneral">
+								<button type="button" class="btn btn-subtle btn-sm"  title="切换到上一年度报告"  v-on:click="searchRepotBefore"> 
+								<img src="../../../../uui/com/audit/img/more-left.png" height="20" > </img>
+								</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#" ><span id="generaltit" ></span></a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-subtle btn-sm"  title="切换到下一年度报告" v-on:click="searchRepotAfter" >
+							    <img src="../../../../uui/com/audit/img/more-right.png" height="20" > </img>
+								</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<div style="font-family : 微软雅黑,宋体;font-size : 0.6em; margin-top: 18px;">
+								被实施单位&nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" style="width: 15%" class="form-control input-sm" v-select.multiple="manageQueryForm.f_org_code" :options="options6" />&nbsp;&nbsp;
+								<button type="button" class="btn btn-default" v-on:click="search"><span class="fa fa-search"></span>查询</button>
+								<button type="button" class="btn btn-default" v-on:click="cancel">重置</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<table style="table-layout: fixed; text-align: center; margin: 18px 0px 0px 35px; width: 90%;" class="uui-table" v-for="count in countList">
+			<tr>
+				<td class="name" style="width: 100px">项目名称</td>
+				<td class="value" style="width: 100px">统计结果</td>
+			</tr>
+			<tr>
+				<td class="name" style="width: 100px">每段航班中的威胁数量（威胁总数/总航班段数）：</td>
+				<td class="value" style="width: 100px">{{count.threatcounts}}&nbsp;&nbsp;&nbsp;({{count.threatcount}}/{{count.count}})</td>
+			</tr>
+			<tr>
+				<td class="name" style="width: 100px">每段航班中的差错数量（差错总数/总航班段数）：</td>
+				<td class="value" style="width: 60px">{{count.errorcounts}}&nbsp;&nbsp;&nbsp;({{count.errorcount}}/{{count.count}})</td>
+			</tr>
+
+			<tr>
+				<td class="name" style="width: 100px">对威胁进行有效管理比率（有效管理的威胁数量/威胁总数）：</td>
+				<td class="value" style="width: 60px">{{count.threatPercent}}&nbsp;&nbsp;&nbsp;({{count.responsethreat}}/{{count.threatcount}})</td>
+			</tr>
+			<tr>
+				<td class="name" style="width: 100px">对差错进行有效管理比率（有效管理的差错数量/差错总数）：</td>
+				<td class="value" style="width: 60px">{{count.errorPercent}}&nbsp;&nbsp;&nbsp;({{count.responseerror}}/{{count.errorcount}})</td>
+			</tr>
+			<tr>
+				<td class="name" style="width: 100px">机组未识别差错的比率（除有效管理以外的差错数量/差错总数）：</td>
+				<td class="value" style="width: 60px">{{count.unitPercent}}&nbsp;&nbsp;&nbsp;({{count.unitErrorPercent}}/{{count.errorcount}})</td>
+			</tr>
+		</table>
+		
+		<div id="generaltab1" style="width: 1050px;height:600px; position:relative; top:50px; left:95px;"></div>
+		<div id="generaltab2" style="width: 1050px;height:600px; position:relative; top:50px; left:95px;"></div>
+
+	</div>
+	</div>
+</body>

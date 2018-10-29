@@ -1,0 +1,23 @@
+﻿$.extend(com.sms.customfields.selectFieldType.i18n,{
+	all : '全部',
+	standard : '标准',
+	advanced :'高级',
+	name :'名称',
+	describute : '描述',
+	other : '字典类型',
+	search: '是否加入搜索',
+	dataCol:'是否加入数据列', 
+	nameNotNull :'名称不能为空',
+	selectField :'选择字段类型',
+	seacrch :'搜索',
+	nextPage : '下一步',
+	backPage : '上一步',
+	config : '配置',
+	field: '字段',
+	create : '创建',
+	cancel: '取消',
+	reminder : '无相关自定义字段类型。',
+	reminderA : '尝试去',
+	reminderB : '应用商店',
+	reminderC : '搜索其他自定义字段类型。'
+});

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="commonFunction.css" type="text/css"></link>
+</head>
+<body>
+    <div>
+    	<div qid="function-dialog" >
+    		<div class="container-fluid com-sms-workflow-commonFunction" >
+    			<div class="row help-block" qid="description"></div>
+	    		<div class="row">
+	    			<div class="col-sm-3" style="padding-left:0px;border-right:1px solid #ddd;height:390px;overflow-y:auto;">
+	    				<h5><strong qid="first-title"></strong></h5>
+	    				<table class="table" qid="system-functions">
+	    					<tbody>
+	    					</tbody>
+	    				</table>
+	    			</div>
+	    			<div class="col-sm-3" style="border-right:1px solid #ddd;height:390px;overflow-y:auto;">
+	    				<h5><strong qid="second-title"></strong></h5>
+	    				<table class="table" qid="exist-functions">
+	    					<tbody>
+							</tbody>
+						</table>
+	    			</div>
+	    			<div class="col-sm-6" style="height:390px;overflow-y:auto;">
+	    				<h5><strong qid="third-title"></strong></h5>
+	    				<div umid="container" ></div>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-sm-3" style="padding-left:0px;border-right:1px solid #ddd;">
+	    				<button class="btn btn-default btn-sm" qid="btn_addSelectedFunction"><%=com.sms.workflow.commonFunction.i18n.addFunction %></button>
+	    			</div>
+	    			<div class="col-sm-3" style="border-right:1px solid #ddd;">
+	    				<button class="btn btn-default btn-sm" qid="btn_removeSelectedFunction"><%=com.sms.workflow.commonFunction.i18n.delFunction %></button>
+	    			</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>

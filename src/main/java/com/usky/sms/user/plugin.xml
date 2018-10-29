@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="user" class="com.usky.sms.user.UserService" />
+	<bean id="userDao" class="com.usky.sms.user.UserDao" />
+	<bean id="userAssociationDao" class="com.usky.sms.user.UserAssociationDao" />
+	<bean id="userGroupDao" class="com.usky.sms.user.UserGroupDao" />
+	<bean id="userHistoryItemDao" class="com.usky.sms.user.UserHistoryItemDao" />
+	<bean id="userAssociation" class="com.usky.sms.user.UserAssociationService" />
+
+</beans>

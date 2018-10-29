@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">威胁管理工作单</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" id="spans" style="height:300px">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+          <tbody id="text">
+                  
+						<td colspan="7" align="center">
+							威胁——产生于飞行机组的影响能力之外，但需要机组积极管理以保持安全的事件或差错
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" align="center" style="width:10%;">
+							威胁代号
+						</td>
+						<td colspan="4" align="center">
+							对威胁的描述
+						</td>
+						<td colspan="2" align="center">
+							威胁管理
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							描述该威胁
+						</td>
+						<td align="center">
+							威胁类型
+						</td>
+						<td align="center">
+							威胁编号
+						</td>
+						<td align="center">
+							飞行阶段
+						</td>
+						<td align="center">
+							是否得到有效管理？
+						</td>
+						<td align="center">
+							机组对该威胁是如何管理或者管理不当的？
+						</td>
+					</tr>
+					<tr >
+						<td>
+						    <div way-repeat="jsonThreat">
+							<input type="text" class="form-control"  way-data="threatCode" value="T1"/>
+							</div>
+						</td>
+						<td >
+						<div way-repeat="jsonThreat">
+							<input type="text" class="form-control" way-data="threatDesc"/>	
+						</div>
+						</td>
+						<td>
+						<div way-repeat="jsonThreat">
+							<select class="form-control" way-data="threatType" id= threatType$$key onchange="onclik(this.value,$$key)"> 
+							<!--   <option value="">请选择</option> 
+							 <option value="1">离场/进场威胁</option>
+							 <option value="2">天气的威胁</option>
+							 <option value="3">运行威胁</option> 
+							 <option value="4">客舱中的威胁</option> 
+							 <option value="5">ATC带来的威胁</option> 
+							 <option value="6">机组支持方面的威胁</option> 
+							 <option value="7">其他威胁</option>-->
+							 </select>
+							 </div>
+						</td>
+						<td style="width:15%">
+						<div way-repeat="jsonThreat">
+							 <select class="form-control" way-data="threatNumber"id=threatNumber$$key> 
+							 </select>
+						</div>
+						</td>
+						<td>
+						  <div way-repeat="jsonThreat">
+							 <select class="form-control" way-data="flightProcedure"> 
+							 <option value="">请选择</option>
+							  <option value="1">离场前/滑行</option> 
+							  <option value="2">起飞/爬升</option>
+							  <option value="3">巡航</option> 
+							  <option value="4">下降/进近/着陆</option> 
+							  <option value="5">滑回</option>
+							   </select>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonThreat">
+							 <select class="form-control" way-data="isDealValidity"> 
+							  <option value="1">是</option>
+							  <option value="0">否</option></select>
+						     </div>
+						</td>
+						<td>
+						    <div way-repeat="jsonThreat">
+							<input type="text" class="form-control" way-data="theMeasuresForThreat"/>
+						</div>
+						</td>
+						
+					</tr>
+				 
+				</tbody>
+        </table>
+        <button class="btn btn-default" type="button" id="more" onclick="addmore()">增加一条威胁记录</button>
+      </div>
+    </div>
+    <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+          
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item active"><a style="color:white" id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+           <button  type="button" class="btn btn-default" qid="saveThreat" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitThreat" href="">提交</button>
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+ </div>
+ 
+  </div>
+ </body>

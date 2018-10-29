@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<!-- 添加事件分析Dialog begin -->
+		<div umid="analysisDialog"></div>
+		<!-- 添加事件分析Dialog end -->
+
+		<!-- 事件分析模板 begin -->
+		<div qid="analysis-widget-template" class="hidden">
+			<table class="uui-table analysis-header">
+				<thead>
+					<tr class="infomodel-title">
+						<th><%= com.sms.detailmodule.shel.analysis.i18n.subTitle%></th>
+						<th class="operate-tool edit-analysis" data-mode="edit" data-actionItemId="" data-id="">
+							<i class="fa fa-pencil fa-lg fa-lg " ></i>
+						</th>
+						<th class="operate-tool remove-analysis" data-id="" >
+							<i class="fa fa-trash-o fa-lg " ></i>
+						</th>
+					</tr>
+				</thead>
+			</table>
+			<table class="uui-table table-fixed analysis-body">
+				<tbody>
+					<tr>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.defectType %></td>
+						<td class="value" data-field="defectType"></td>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.defectAnalysis %></td>
+						<td class="value" data-field="defectAnalysis"></td>
+					</tr>
+					<tr>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.measureType %></td>
+						<td class="value" data-field="measureType"></td>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.description %></td>
+						<td class="value" data-field="description"></td>
+					</tr>
+					<tr>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.organizations %></td>
+						<td class="value" data-field="organizations"></td>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.deadline %></td>
+						<td class="value" data-field="deadline"></td>
+					</tr>
+					<tr>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.confirmMan %></td>
+						<td class="value"  data-field="confirmMan"></td>
+						<td class="name"><%= com.sms.detailmodule.shel.analysis.i18n.fields.status %></td>
+						<td class="value" data-field="status"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 事件分析模板 end -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<%= com.sms.detailmodule.shel.analysis.i18n.title %>
+					<div qid="btn_add" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus"></i>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" qid="analysis-container"></div>
+		</div>
+
+	</div>
+</body>
+</html>

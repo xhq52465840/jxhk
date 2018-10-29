@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="assessmentCommentDao" class="com.usky.sms.safetyreview.AssessmentCommentDao" />
+	<bean id="assessmentProjectDao" class="com.usky.sms.safetyreview.AssessmentProjectDao" />
+	<bean id="scoreStandardDao" class="com.usky.sms.safetyreview.ScoreStandardDao" />
+	<bean id="scoreStandardDetailDao" class="com.usky.sms.safetyreview.ScoreStandardDetailDao" />
+	<bean id="assessmentProject" class="com.usky.sms.safetyreview.AssessmentProjectService" />
+	<bean id="scoreStandardDetail" class="com.usky.sms.safetyreview.ScoreStandardDetailService" />
+	<bean id="methanolRoleDao" class="com.usky.sms.safetyreview.MethanolRoleDao" />
+	<bean id="assessmentUnitDao" class="com.usky.sms.safetyreview.AssessmentUnitDao" />
+	
+	<bean id="scoreStandard" class="com.usky.sms.safetyreview.ScoreStandardService" />
+
+	<bean id="assessmentCommentInstDao" class="com.usky.sms.safetyreview.inst.AssessmentCommentInstDao" />
+	<bean id="assessmentProjectInstDao" class="com.usky.sms.safetyreview.inst.AssessmentProjectInstDao" />
+	<bean id="scoreStandardInstDao" class="com.usky.sms.safetyreview.inst.ScoreStandardInstDao" />
+	<bean id="completionInstDao" class="com.usky.sms.safetyreview.inst.CompletionInstDao" />
+	<bean id="methanolInstDao" class="com.usky.sms.safetyreview.inst.MethanolInstDao" />
+	<bean id="scoreStandardDetailInstDao" class="com.usky.sms.safetyreview.inst.ScoreStandardDetailInstDao" />
+	<bean id="methanolInst" class="com.usky.sms.safetyreview.inst.MethanolInstService" />
+	<bean id="completionInst" class="com.usky.sms.safetyreview.inst.CompletionInstService" />
+<!-- 	<bean id="scoreStandardDetailInst" class="com.usky.sms.safetyreview.inst.ScoreStandardDetailInstService" /> -->
+	<bean id="completionInstOperationDao" class="com.usky.sms.safetyreview.inst.CompletionInstOperationDao" />
+	
+</beans>

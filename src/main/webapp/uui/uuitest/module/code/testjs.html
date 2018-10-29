@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+            $.u.loadcomponent('uui.comp.code.jscode');
+            $("body").height($(window).height());
+            var jscode = new uui.comp.code.jscode("js", null, null, { "IS_JSON": false });
+            $.ajax({
+                //url: "/com/module/ors/simple.js",
+                url: "/uui/comp/code/jscode.js",
+                cache: false
+            }).done(function (result, textStatus, jqXHR) {
+                jscode.setValue(result);
+                $("body").height($(window).height());
+            });
+        });
+    </script>
+
+</body>
+</html>

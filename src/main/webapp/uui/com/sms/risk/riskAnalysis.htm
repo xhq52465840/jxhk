@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="row">
+	                <div class="col-md-3">
+	                    <h3 class="uui-managepage-title"><%=com.sms.risk.riskAnalysis.i18n.pageTitle %></h3>
+	                </div>
+	                <div class="col-md-9 text-right">
+	                    <button class="btn btn-default btn-sm hidden" qid="btn_create"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.risk.riskAnalysis.i18n.buttons.create %></button>
+	                </div>
+	            </div>
+            </div>
+        </div>
+        <!-- 黄色预警 begin-->
+        <div class="uui-managepage">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="text" style='padding:10px;line-height:30px;
+	             background-color:#FFFF95;color:#F1410E;border-radius:5px;
+	             font-weight:700;font-size: 15px;'>
+	              <p style='padding-left:10px'>目前此画面只提供既存风险分析数据的查询功能，
+	                                新版的风险分析的创建、变更和查询，请按照如下方法进行：</p>
+                  <p>（1）风险分析的创建：请点击画面右上方的【新建】按钮，选择信息类型为【风险管理】/【新开航线】，
+                                                    输入相关内容后，点击【确认】按钮便可创建。</p>
+                 <p>（2）风险分析的变更和查询：请选择主菜单【安全信息】下的子菜单【所有安全信息】，
+                                                  选择信息类型为【风险管理】/【新开航线】/【风险分析】，输入其他检索条件后便可查询到所需数据。</p>          
+	            </div>
+            </div>
+        </div>
+        <!-- 黄色预警 end-->
+        <div class="form uui-managepage-filter uui-panel-graph" qid="filter">
+        	<div class="uui-panel-rect-widget">
+        		<div class="uui-panel-rect-header">
+        			<h3 class="uui-panel-rect-title"><%=com.sms.risk.riskAnalysis.i18n.filter.filterTitle %></h3>
+        		</div>
+        		<div class="uui-panel-rect-body uui-managepage-filter-content">
+        			<div>
+			            <div class="form-group col-md-6 col-xs-6">
+			                <label for="<%=this._id%>-riskTitleContains"><%=com.sms.risk.riskAnalysis.i18n.filter.riskTitle %></label>
+			                    <input type="text" class="form-control input-sm" qid="riskTitleContains" maxlength="255" />
+			            </div>
+			            <div class="form-group col-md-6 col-xs-6 ">
+			                <label for="<%=this._id%>-statusContains"><%=com.sms.risk.riskAnalysis.i18n.filter.status %></label>
+			                    <select  class="form-control input-sm" qid="statusContains"  >
+			                        <option value="">请选择</option>    
+                                    <option value="新建">新建</option>    
+                                    <option value="完成">完成</option>    
+			                    </select>
+			            </div>
+		            </div>
+		            <div class="text-right">
+			            <button class="btn btn-default btn-sm" qid="btn_filter"><%=com.sms.risk.riskAnalysis.i18n.buttons.filter %></button>
+			            <button type="button" qid="btn_resetfilter" class="btn btn-link"><%=com.sms.risk.riskAnalysis.i18n.buttons.removeFilter %></button>
+		            </div>
+        		</div>
+        	</div>
+        </div>
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="allalert" class="alert alert-info hidden" role="alert" style="margin-top: 20px;">
+            <p><span class="glyphicon glyphicon-info-sign"></span><%=com.sms.dash.dashDialog.i18n.explain %></p>
+        </div>
+        <form class="form-horizontal" role="form" qid="dashform">
+            <div class="form-group control">
+                <label for="<%=this._id%>-name" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.name %><span class="text-danger">*</span></label>
+                <div class="col-sm-7">
+                    <input type="text" qid="name" maxlength="50" class="form-control input-sm" name="name" />
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-description" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.describute %></label>
+                <div class="col-sm-7">
+                    <textarea qid="description" maxlength="1000" class="form-control input-sm" name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group control add">
+                <label for="<%=this._id%>-copyfrom" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.copy %></label>
+                <div class="col-sm-7">
+                    <select class="form-control input-sm" qid="copyfrom">
+                    </select>
+                    <span class="helper-block control">
+                        <small><%=com.sms.dash.dashDialog.i18n.explainA %></small>
+                        <br />
+                        <small><%=com.sms.dash.dashDialog.i18n.explainB %></small>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-charnelThose" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.collect %></label>
+                <div class="col-sm-7">
+                    <span class="star glyphicon glyphicon-star" qid="charnelThose" style="margin-top: 7px;cursor: pointer;"></span>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-sharedlist" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.share %></label>
+                <div class="col-sm-7">
+                    <div qid="sharedlist" style="margin-top: 7px;">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-shared" class="col-sm-3 control-label"><%=com.sms.dash.dashDialog.i18n.shared %></label>
+                <div class="col-sm-3" style="padding-left: 0px;">
+                    <select class="form-control input-sm" qid="shared">
+                        <option value="ALL"><%=com.sms.dash.dashDialog.i18n.anyone %></option>
+                        <option value="GROUP"><%=com.sms.dash.dashDialog.i18n.userGroup %></option>
+                        <option value="USER"><%=com.sms.dash.dashDialog.i18n.user %></option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" qid="sharedgrouplist" class="form-control input-sm" style="float: left;" />
+                    <input type="text" qid="shareduserlist" class="form-control input-sm" style="float: left;" />
+                    <button class="btn btn-link  btn-sm" qid="btn_addshare" style="float: left;"><span class="glyphicon glyphicon-plus"></span><%=com.sms.dash.dashDialog.i18n.addShare %></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

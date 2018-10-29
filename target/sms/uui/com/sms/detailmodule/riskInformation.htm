@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="riskSerialNumberDialog"></div>
+		<div umid="riskTitleDialog"></div>
+		<div umid="riskDescDialog"></div>
+		<div umid="riskAnalysisPersonDialog"></div>
+		<div umid="systemWorkAnalysisDialog"></div>
+		<!-- risk information begin -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskInformation.i18n.title.riskInformation%>
+				</h2>
+			</div>
+			<div class="panel-body" >
+				<table class="uui-table" style="table-layout: fixed;">
+					<tbody>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.riskSerialNumber%></td>
+							<td class="value" style="position: relative;">
+								<!-- <a href="#" target="_blank" qid="riskSerialNumber"></a> -->
+								<span qid="riskSerialNumber"></span>
+								<i class="fa fa-pencil fa-lg uui-cursor-pointer pull-right mode-add mode-edit" title="<%= com.sms.detailmodule.riskInformation.i18n.buttons.editActivity%>" qid="btn_riskSerialNumber"></i>
+								<!-- <i class="fa fa-upload fa-lg uui-cursor-pointer pull-right mode-add mode-edit" qid="btn_uploadFile"></i> -->
+								<span class="mode-add mode-edit"><input type="file" class="pull-right hidden" name="file-upload" qid="file-upload" /></span>
+							</td>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.status%></td>
+							<td class="value" style=""><label class="label label-success" qid="status"></label></td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.riskTitle%><span class="text-danger">*</span></td>
+							<td class="value" colspan="3">
+								<span qid="riskTitle"></span>
+								<i class="fa fa-pencil fa-lg uui-cursor-pointer pull-right mode-add mode-edit" title="<%= com.sms.detailmodule.riskInformation.i18n.buttons.editRiskTitle%>" qid="btn_riskTitle"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.riskDesc%><span class="text-danger">*</span></td>
+							<td class="value" colspan="3">
+								<span qid="riskDesc"></span>
+								<i class="fa fa-pencil fa-lg uui-cursor-pointer pull-right mode-add mode-edit" title="<%= com.sms.detailmodule.riskInformation.i18n.buttons.editRiskDesc%>" qid="btn_riskDesc"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.attachment%></td>
+							<td class="value" colspan="3">
+								<ul qid="attachment" class="list-inline" style="margin-bottom: 0;"></ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.createdTime%></td>
+							<td class="value" qid="createdTime"></td>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.createdUser%></td>
+							<td class="value" qid="createdUser"></td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.riskAnalysisPerson%></td>
+							<td class="value" colspan="3">
+								<span qid="riskAnalysisPerson"></span>
+								<i class="fa fa-pencil fa-lg uui-cursor-pointer pull-right mode-add mode-edit" title="<%= com.sms.detailmodule.riskInformation.i18n.buttons.editRiskAnalysts%>" qid="btn_riskAnalysisPerson"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="name" rowspan="2"><%= com.sms.detailmodule.riskInformation.i18n.form.systemWorkAnalysis%></td>
+							<td class="value" colspan="3">
+								<span qid="systemWorkAnalysis">
+									<!-- <label class="label label-success">飞行运行FLT</label>
+									<label class="label label-success">机务系统MNT</label> -->
+								</span>
+								<i class="fa fa-pencil fa-lg uui-cursor-pointer pull-right mode-add mode-edit"  title="<%= com.sms.detailmodule.riskInformation.i18n.buttons.editSystems%>" qid="btn_systemWorkAnalysis"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="value" colspan="3">
+								<ul class="list-inline" style="margin-bottom: 0;" >
+									<!-- <li class="hidden"><a href="#" data-type="airport" data-param="" qid="departureAirport" class="flightInfoView"></a></li>
+									<li class="hidden"><a href="#" data-type="airport" data-param="" qid="arrivalAirport" class="flightInfoView"></a></li>
+									<li class="hidden" qid="aircraftTypes"></li> -->
+									<li class="hidden"><a href="#" target="_blank" qid="unSafeEvent"><%= com.sms.detailmodule.riskInformation.i18n.link.unSafeEvent%></a> </li>
+									<li class="hidden"><a href="#" target="_blank" qid="hazard"><%= com.sms.detailmodule.riskInformation.i18n.link.hazard%></a></li>
+									<li class="hidden"><a href="#" target="_blank" qid="risk"><%= com.sms.detailmodule.riskInformation.i18n.link.risk%></a></li>
+									<li class="hidden"><span qid="arp" class="text-muted"><%= com.sms.detailmodule.riskInformation.i18n.link.arp%></span></li>
+									<li class="hidden"><span qid="chart" class="text-muted"><%= com.sms.detailmodule.riskInformation.i18n.link.chart%></span></li>
+								</ul>
+								<div class="flightinfo hidden" qid="flightinfoview">
+									<div umid="flightinfomodule"></div>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- risk information end -->
+
+		<!-- airline begin -->
+		<div class="panel panel-sms hidden" qid="riskInformationWidget">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskInformation.i18n.title.airlineInformation%>
+				</h2>
+			</div>
+			<div class="panel-body" >
+				<table class="uui-table table-fixed" qid="flightInfoLink">
+					<tbody>
+						<tr>
+							<td rowspan="2" class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.airlineName%></td>
+							<td class="value" style="width: 40px;">
+								<span class="text-muted"><%= com.sms.detailmodule.riskInformation.i18n.form.departureAirport%></span>
+							</td>
+							<td class="value">
+								<a href="#" data-type="riskairport" data-param="" qid="departureAirport" class="flightInfoView"></a>
+								<span class="text-muted" style="padding: 0px 5px;"><%= com.sms.detailmodule.riskInformation.i18n.form.arrivalAirport%></span>
+								<a href="#" data-type="riskairport" data-param="" qid="arrivalAirport" class="flightInfoView"></a>		
+							</td>
+						</tr>
+						<tr>
+							<td class="value" style="width: 40px;">
+								<span class="text-muted" ><%= com.sms.detailmodule.riskInformation.i18n.form.stopovers%></span>
+							</td>
+							<td class="value">
+								<span qid="stopovers">
+									
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.org%></td>
+							<td class="value" colspan="2"><span qid="unitDisplayName"></span></td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.riskInformation.i18n.form.craft%></td>
+							<td class="value" colspan="2">
+								<span qid="aircraftTypes">
+									
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- airline end -->
+
+	</div>
+</body>
+</html>

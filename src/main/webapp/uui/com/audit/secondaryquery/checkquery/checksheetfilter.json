@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+    
+      {
+        "propid": "checkNo",
+        "propname": "检查单编号",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkTextProp"
+      },
+      {
+        "propid": "checkName",
+        "propname": "检查单名称",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkNameProp"
+      },
+      {
+        "propid": "planTime",
+        "propname": "审计日期",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkDateProp"
+      },
+      {
+        "propid": "record",
+        "propname": "反馈记录",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkTextProp"
+      },
+      {
+        "propid": "address",
+        "propname": "审计地点",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkTextProp"
+      },
+      {
+        "propid": "result",
+        "propname": "检查小结 ",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkTextProp"
+      },
+      {
+        "propid": "remark",
+        "propname": "备注",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.checkquery.checkTextProp"
+      },
+      {
+        "propid": "flowStatus",
+        "propname": "状态",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      }
+    ],
+    "orders": {
+		"propid":"checkName",
+		"propname":"检查单名称",
+		"order":"asc"
+    },
+    "uql": "",
+     "staticfilters": [
+      {
+        "propid": "checkType",
+        "propname": "审计专业",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.checkquery.checkTypeProp"
+      },
+      {
+        "propid": "target",
+        "propname": "审计对象",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.secondaryquery.checkquery.checkTargetProp"
+      }
+    ],
+    "_staticfilters": [
+      {
+        "propid": "PSD",
+        "propname": "运行控制",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "CAB",
+        "propname": "客舱服务",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "CGO",
+        "propname": "货物运输",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "ORG",
+        "propname": "组织管理",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "MNT",
+        "propname": "机务维修",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "FLT",
+        "propname": "飞行运行",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "GRH",
+        "propname": "地面保障",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "OTH",
+        "propname": "其他系统",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

@@ -1,0 +1,431 @@
+﻿﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+    	.downloadfile{
+    		color: #428bca;
+    		text-decoration: underline;
+    		cursor: pointer;
+    	}
+    	ul {
+    		padding: 0;
+    	}
+    	li {
+		    list-style: none;
+		}
+    </style>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="userinfo"></div>
+	    <div class="page-header" style="padding-bottom: 0px; font-size:24px;line-height:1.25;">
+	    	 <div class="uui-managepage-header">
+	    	 	<div class="container-fluid no-left-right-padding row ">
+			    	 	<div class="col-md-3">
+			    	 		<i class="fa fa-list-ul shortcut-icon icon-list-alt" style="margin-right:10px;"></i> 
+				    		整改问题<br/>
+			    	 	</div >
+			    	 	<div class="col-md-9 text-right" style="margin-bottom:5px;">
+			    	 		<button  type="button" class="btn btn-default btn-sm exp-check" title="验证的功能键">导出验证单</button>
+			    	 		<button type="button" class="btn btn-default btn-sm" qid="btn_verify" style="margin-right: 10px;" title="验证的功能键">批量验证</button>
+			    	 		<button  type="button" class="btn btn-default btn-sm" name="export" >导出Excel</button>
+			    	 	</div >
+			    	 </div>
+	    	 </div>
+	    </div>
+	    <!--页面主内容区域 begin-->
+	    <div class="page-content">
+            <div class="container-fluid ">
+            	<div  class="row " style="margin: 0;">
+            		<ul id="navtabs" class="nav  nav-tabs ">
+            		 <li role="presentation" class="active">
+						  <a  id="a_official" href="#official"  data-toggle="tab">局&nbsp;方</a>
+					  </li>
+					  <li role="presentation">
+						  <a  id="a_audit" href="#audit"  data-toggle="tab">审&nbsp;计</a>
+					  </li>
+					  <li role="presentation">
+					  	  <a  id="a_check" href="#check"  data-toggle="tab">检&nbsp;查</a>
+					  </li>
+					  <li role="presentation">
+					  	  <a  id="a_terminal" href="#terminal"  data-toggle="tab">外站审计</a>
+					  </li>
+					</ul>
+				</div>
+				<div  class="row ">
+				<div id="myTabContent" class="tab-content">
+				<!-- 局方开始 -->
+					<div id="official"  class=" tab-pane fade in active  col-sm-12">
+						<div class="panel panel-default">
+           					<div class=" panel-heading">
+								<div>
+									<div  class="row">
+									  	<div class="form-group col-sm-6 ">
+							           		<label for="<%=this._id%>-audittype" class="col-sm-2 control-label " >检查类型</label>
+							           	 	<div class="col-sm-10">
+							               	<input type="text" class="form-control input-sm " name="audittypeOfficial" maxlength="255" />
+							               	</div>
+							       		</div>
+									  	<div class="form-group col-sm-6 ">
+							           		<label class="col-sm-2 control-label " >执行单位</label>
+							           	 	<div class="col-sm-10">
+							               	<input type="text" class="form-control input-sm " name="operatorsOfficial"/>
+							               	</div>
+							       		</div>
+					            	</div>
+					            	<div class="row">
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-improveUnit" class="col-sm-2 ">责任单位</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="improveUnitOfficial"/>
+						                    </div>
+						                </div>
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-improveItemStatus" class="col-sm-2 ">检查状态</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="improveItemStatusOfficial" maxlength="255" />
+						            		</div>
+						            	</div>
+						            </div>
+									<div class="row" >
+										<div class="form-group col-sm-6  ">
+						              		<label for="<%=this._id%>-completeStartDate" class="col-sm-2 ">整改期限</label>
+						              		<div class="col-sm-10">
+						                	<input type="text" class="form-control input-sm " name="improveStartDateOfficial" style="width:40%;" />
+											&nbsp;-&nbsp;
+										    <input type="text" class="form-control input-sm " name="improveEndDateOfficial" style="width:40%; " />
+								           	</div>
+							           	</div>
+							           	<div class="form-group col-md-6 col-xs-6">
+						                	<label for="<%=this._id%>-confirmResult" class="col-sm-2">验证状态</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="confirmResultOfficial" maxlength="255" />
+						            		</div>
+						            	</div>
+					            	</div>
+						           	<div  class="row" >
+					            	 	<div class="form-group col-sm-6 col-xs-6 ">
+						              		<label for="<%=this._id%>-improveStartDate" class="col-sm-2">完成日期</label>
+						              		<div class="col-sm-10">
+						                	<input type="text" class="form-control input-sm " name="completeStartDateOfficial" style="width:40%;" />
+											&nbsp;-&nbsp;
+										    <input type="text" class="form-control input-sm " name="completeEndDateOfficial" style="width:40%; " />
+						           			</div>
+						           		</div>
+						           		<div class="form-group col-md-6 col-xs-6">
+						                	<label for="<%=this._id%>-auditReason" class="col-sm-2">原因类型</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="auditReasonOfficial" maxlength="255" />
+						            		</div>
+						            	</div>
+						            	<div class="form-group ">
+										 	<button type="button" class="btn btn-default btn-sm pull-right" qid="btn_official_filter">搜索</button>
+						            	</div>
+									</div>
+								</div>
+							</div>
+           					<div class="panel-body" style="padding:0px;">
+           						<div class="dl-horizontal resume-details">
+			            			<table qid="issueofficialtable"
+										class=" table table-striped table-bordered" 
+										cellspacing="0"
+										width="100%" style="margin-bottom: 0;table-layout:fixed;">
+									</table>
+								</div>
+           					</div>
+						</div>
+					</div>
+<!-- 				 局方结束	 -->
+<!-- 				审计开始 -->
+					<div id="audit"  class="tab-pane fade col-sm-12">
+						<div class="panel panel-default">
+           					<div class=" panel-heading">
+								<div>
+								<form>
+								<div class="row">
+								  	 <div class="form-group col-sm-6 ">
+						           		<label for="<%=this._id%>-audittype" class="col-sm-2 control-label " >审计类型</label>
+						           	 	<div class="col-sm-10">
+						               	<input type="text" class="form-control input-sm " name="audittype" maxlength="255" />
+						               	</div>
+						       		</div>
+						       		<div class="form-group col-sm-6 ">
+						           		<label class="col-sm-2 control-label " >执行单位</label>
+						           	 	<div class="col-sm-10">
+						               	<input type="text" class="form-control input-sm " name="operators"/>
+						               	</div>
+						       		</div>
+				            	</div>
+				            	<div class="row">
+				            		<div class="form-group col-sm-6">
+					                	<label class="col-sm-2 control-label">被审计单位</label>
+					                    <div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm " name="target" />
+						            	</div>
+					            	</div>
+				            		<div class="form-group col-sm-6">
+					                	<label for="<%=this._id%>-version" class="col-sm-2 control-label">审计版本</label>
+					                    <div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm " name="version" maxlength="255" />
+						            	</div>
+					            	</div>
+				            	</div>
+				            	<div class="row">
+					            	 <div class="form-group col-sm-6 ">
+					                	<label for="<%=this._id%>-profession" class="col-sm-2 ">审计专业</label>
+					                	<div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm  " name="profession" maxlength="255" />
+					                    </div>
+					            	</div>
+					            	<div class="form-group col-sm-6 ">
+					                	<label for="<%=this._id%>-improveUnit" class="col-sm-2 ">主要责任单位</label>
+					                	<div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm  " name="improveUnit" maxlength="255" />
+					                    </div>
+				                    </div>
+					            </div> 
+				            	<div class="row" >
+					            	<div class="form-group col-sm-6 ">
+					                	<label for="<%=this._id%>-auditResult" class="col-sm-2 ">审计结论</label>
+					                	<div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm " name="auditResult" maxlength="255" />
+					            		</div>
+					            	</div>
+					            	<div class="form-group col-sm-6 ">
+					                	<label for="<%=this._id%>-improveItemStatus" class="col-sm-2 ">审计状态</label>
+					                	<div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm  " name="improveItemStatus" maxlength="255" />
+					            		</div>
+					            	</div>
+					            </div>
+								<div class="row" >
+									<div class="form-group col-sm-6  ">
+					              		<label for="<%=this._id%>-completeStartDate" class="col-sm-2 ">整改期限</label>
+					              		<div class="col-sm-10">
+					                	<input type="text" class="form-control input-sm " name="improveStartDate" style="width:40%;" />
+										&nbsp;-&nbsp;
+									    <input type="text" class="form-control input-sm " name="improveEndDate" style="width:40%; " />
+						           		</div>
+						           	</div>
+						           	<div class="form-group col-md-6 col-xs-6">
+					                	<label for="<%=this._id%>-confirmResult" class="col-sm-2">验证状态</label>
+					                	<div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm " name="confirmResult" maxlength="255" />
+					            		</div>
+					            	</div>
+				            	</div>
+					           	<div class="row" >
+				            	 	<div class="form-group col-sm-6 col-xs-6">
+					              		 <label for="<%=this._id%>-improveStartDate" class="col-sm-2">完成日期</label>
+					              		  <div class="col-sm-10">
+					                	 <input type="text" class="form-control input-sm " name="completeStartDate" style="width:40%;" />
+										 &nbsp;-&nbsp;
+									     <input type="text" class="form-control input-sm " name="completeEndDate" style="width:40%; " />
+					           			</div>
+					           		</div>
+					           		<div class="form-group col-md-6 col-xs-6">
+					                	<label for="<%=this._id%>-auditReason" class="col-sm-2">原因类型</label>
+					                	 <div class="col-sm-10">
+					                    <input type="text" class="form-control input-sm " name="auditReason" maxlength="255" />
+					            		</div>
+					            	</div>
+					            	 <div class="form-group  ">
+					            	 	<button type="button" class="btn btn-default btn-sm pull-right" qid="btn_audit_filter">搜索</button>
+					            	</div>
+								</div>
+								</form>
+								</div>
+							</div>
+           					<div class="panel-body" style="padding:0px;">
+           						<div class="dl-horizontal resume-details">
+			            			<table qid="issueaudittable"
+											class=" table table-striped table-bordered" 
+											cellspacing="0"
+											width="100%" style="margin-bottom: 0;table-layout:fixed;">
+										</table>
+								</div>
+           					</div>
+						</div>
+					</div>
+             <!--审计结束 -->
+             <!-- 检查开始 -->
+					<div id="check"  class=" tab-pane fade  col-sm-12">
+						<div class="panel panel-default">
+           					<div class=" panel-heading">
+								<div>
+									<div  class="row">
+									  	<div class="form-group col-sm-6 ">
+							           		<label for="<%=this._id%>-audittype" class="col-sm-2 control-label " >检查类型</label>
+							           	 	<div class="col-sm-10">
+							               	<input type="text" class="form-control input-sm " name="audittype" maxlength="255" />
+							               	</div>
+							       		</div>	
+							       		<div class="form-group col-sm-6">
+						                	<label for="<%=this._id%>-version" class="col-sm-2 ">检查版本</label>
+						                    <div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="version" maxlength="255" />
+							            	</div>
+						            	</div>
+					            	</div>
+					            	<div class="row">
+									  	<div class="form-group col-sm-6 ">
+							           		<label class="col-sm-2 control-label " >执行单位</label>
+							           	 	<div class="col-sm-10">
+							               	<input type="text" class="form-control input-sm " name="operators"/>
+							               	</div>
+							       		</div>
+					            	</div>
+					            	<div class="row">
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-profession" class="col-sm-2 ">检查专业</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="profession" maxlength="255" />
+						                    </div>
+						            	</div>
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-improveUnit" class="col-sm-2 ">责任单位</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="improveUnit"/>
+						                    </div>
+						                </div>
+						            </div> 
+					            	<div class="row" >
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-auditResult" class="col-sm-2 ">检查结论</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="auditResult" maxlength="255" />
+						            		</div>
+						            	</div>
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-improveItemStatus" class="col-sm-2 ">检查状态</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="improveItemStatus" maxlength="255" />
+						            		</div>
+						            	</div>
+						            </div>
+									<div class="row" >
+										<div class="form-group col-sm-6  ">
+						              		<label for="<%=this._id%>-completeStartDate" class="col-sm-2 ">整改期限</label>
+						              		<div class="col-sm-10">
+						                	<input type="text" class="form-control input-sm " name="improveStartDate" style="width:40%;" />
+											&nbsp;-&nbsp;
+										    <input type="text" class="form-control input-sm " name="improveEndDate" style="width:40%; " />
+								           	</div>
+							           	</div>
+							           	<div class="form-group col-md-6 col-xs-6">
+						                	<label for="<%=this._id%>-confirmResult" class="col-sm-2">验证状态</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="confirmResult" maxlength="255" />
+						            		</div>
+						            	</div>
+					            	</div>
+						           	<div  class="row" >
+					            	 	<div class="form-group col-sm-6 col-xs-6 ">
+						              		<label for="<%=this._id%>-improveStartDate" class="col-sm-2">完成日期</label>
+						              		<div class="col-sm-10">
+						                	<input type="text" class="form-control input-sm " name="completeStartDate" style="width:40%;" />
+											&nbsp;-&nbsp;
+										    <input type="text" class="form-control input-sm " name="completeEndDate" style="width:40%; " />
+						           			</div>
+						           		</div>
+						           		<div class="form-group col-md-6 col-xs-6">
+						                	<label for="<%=this._id%>-auditReason" class="col-sm-2">原因类型</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="auditReason" maxlength="255" />
+						            		</div>
+						            	</div>
+						            	<div class="form-group ">
+										 	<button type="button" class="btn btn-default btn-sm pull-right" qid="btn_check_filter">搜索</button>
+						            	</div>
+									</div>
+								</div>
+							</div>
+           					<div class="panel-body" style="padding:0px;">
+           						<div class="dl-horizontal resume-details">
+			            			<table qid="issuechecktable"
+										class=" table table-striped table-bordered" 
+										cellspacing="0"
+										width="100%" style="margin-bottom: 0;table-layout:fixed;">
+									</table>
+								</div>
+           					</div>
+						</div>
+					</div>
+<!-- 				 检查结束	 -->
+                 <!--航站审计 -->
+					<div id="terminal"  class=" tab-pane fade  col-sm-12">
+						<div class="panel panel-default">
+           					<div class=" panel-heading">
+								<div>
+								    <div class="row">
+									  	<div class="form-group col-sm-6 ">
+							           		<label class="col-sm-2 control-label " >执行单位</label>
+							           	 	<div class="col-sm-10">
+							               	<input type="text" class="form-control input-sm " name="operators"/>
+							               	</div>
+							       		</div>
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-improveUnit" class="col-sm-2 ">责任单位</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm  " name="improveUnit"/>
+						                    </div>
+						                </div>
+						            </div> 
+									<div  class="row">	
+							       		<div class="form-group col-sm-6">
+						                	<label for="<%=this._id%>-version" class="col-sm-2 ">检查版本</label>
+						                    <div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="version" maxlength="255" />
+							            	</div>
+						            	</div>
+						            	<div class="form-group col-sm-6 ">
+						                	<label for="<%=this._id%>-auditResult" class="col-sm-2 ">检查结论</label>
+						                	<div class="col-sm-10">
+						                    <input type="text" class="form-control input-sm " name="auditResult" maxlength="255" />
+						            		</div>
+						            	</div>
+						            	</div>
+					            	<div class="row" >
+										<div class="form-group col-sm-6  ">
+						              		<label for="<%=this._id%>-completeStartDate" class="col-sm-2 ">整改期限</label>
+						              		<div class="col-sm-10">
+						                	<input type="text" class="form-control input-sm " name="improveStartDate" style="width:40%;" />
+											&nbsp;-&nbsp;
+										    <input type="text" class="form-control input-sm " name="improveEndDate" style="width:40%; " />
+								           	</div>
+							           	</div>
+					            	<div class="form-group ">
+										 	<button type="button" class="btn btn-default btn-sm pull-right" qid="btn_terminal_filter">搜索</button>
+						            </div>
+						          </div>
+								</div>
+							</div>
+           					<div class="panel-body" style="padding:0px;">
+           						<div class="dl-horizontal resume-details">
+			            			<table qid="issueterminaltable"
+										class=" table table-striped table-bordered" 
+										cellspacing="0"
+										width="100%" style="margin-bottom: 0;table-layout:fixed;">
+									</table>
+								</div>
+           					</div>
+						</div>
+					</div>
+					
+				</div>
+           	</div>
+    	</div>
+	
+	    <!--页面主内容区域 end-->
+    </div>
+    <div qid="dialog">
+    <input type="hidden" autofocus="autofocus">
+    	<div class="row">
+    		<input type="file" qid="fileUpload" />
+    	</div>
+    </div>
+     </div>
+</body>
+</html>

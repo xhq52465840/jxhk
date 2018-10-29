@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage">
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+  		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">差错管理工作单</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+     	<div class="form uui-managepage-filter-new uui-panel-graph-new error" id="error">
+     	<div class="allChecked">
+    			<input type="checkbox" id="allPlan" v-on:click="checkAllPlans"><label for="allPlan">全选</label>
+    	</div>
+     	<template v-for="error in errorList">
+        	<div class="uui-panel-rect-body uui-managepage-filter-content-new" id="spans" style="height:450+errorList.length*80 px" qid="pro_tbody">
+        		<div class="error-block">
+	        		<div class="error-heading">
+						<div class="error-input">
+							<input type="checkbox" dataid={{error.id}} value="" v-on:click="isCheckAllChecked"/>
+						</div>
+						<div class="error-title"></div>
+					</div>
+					<div class="error-subblock5">
+						<div class="error-item-desc">
+							<div class="error-item-desc-left">
+								<div class="error-item-desc-left-text">差错代号</div>
+							</div>
+							<div class="error-item-desc-right">
+								<table>
+									<tr>
+										<td><input class="form-control selectstyle" type="text" style="width:238px" v-model="error.errorCode"/></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="error-subblock1">
+						<div class="error-item-desc">
+							<div class="error-item-desc-left">对差错的描述</div>
+							<div class="error-item-desc-right">描述机组的差错和相应的非预期航空器状态</div>
+						</div>
+						<div class="error-item-desc-textarea">
+							<textarea cols="65" rows="5" v-model="error.errorDesc"></textarea>
+						</div>
+						<div class="error-item-desc-select">
+							<table>
+								<tr>
+									<td>飞行阶段</td>
+									<td>错误类型</td>
+									<td>错误类型细分</td>
+									<td>错误编号（使用编号本）</td>
+								</tr>
+								<tr>
+									<td>
+									    <select class="form-control selectstyle" v-model="error.flightProcedure">
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='flight_statue'" v-bind:value="option.dictCode">
+								                  {{ option.dictName }}
+								                </option>
+								        </select>
+					                </td>
+									<td>
+										<select class="form-control selectstyle" v-model="error.errorType" >
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.errorBaseInfo"  v-if="option.parentNode==null" v-bind:value="option">
+											 {{ option.name }}
+										</option>
+										</select>
+							        </td>
+									<td>
+									    <select class="form-control selectstyle" v-model="error.errorTypeItem | syncitemfromtype error.errorType baseInfo.errorBaseInfo $index 'errorTypeItem'" >
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.errorBaseInfo"  v-if="option.parentNode==error.errorType.id" v-bind:value="option">
+											 {{ option.name }}
+										</option>
+										</select>
+                                    </td>
+									<td>
+										<select class="form-control selectstyle" v-model="error.errorNumber | syncitemfromtype error.errorTypeItem baseInfo.errorBaseInfo $index 'errorNumber'" >
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.errorBaseInfo"  v-if="option.parentNode==error.errorTypeItem.id" v-bind:value="option">
+											 {{ option.name }}
+										</option>
+							            </select>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="error-subblock2">
+						<div class="error-item-desc">
+							<div class="error-item-desc-left">
+								<div class="error-item-desc-left-text">差错反应/后果</div>
+							</div>
+							<div class="error-item-desc-right">
+								<table>
+									<tr>
+										<td>谁导致了这个差错</td>
+										<td>谁发现了这个差错</td>
+										<td>机组对差错的反应</td>
+										<td>差错的后果</td>
+									</tr>
+									<tr>
+										<td>
+											<select class="form-control selectstyle" v-model="error.thePersonCauseError" >
+										    <option value="">请选择</option>
+										    <option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='staff_type'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+									        </option>
+							                </select>
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.thePersonFoundError" >							
+						                    <option value="">请选择</option>
+						                    <option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='staff_type'" v-bind:value="option.dictCode">
+					                                 {{ option.dictName }}
+					                        </option>
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.crewPesponseForError">
+											<option value="">请选择</option>
+											<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='error_response'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+									        </option>
+											</select>
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.theConsequencesOfError">
+											<option value="">请选择</option>
+											<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='error_consequences'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+									        </option>
+									        </select>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="error-subblock3">
+						<div class="error-item-desc">
+							<div class="error-item-desc-left">
+								<div class="error-item-desc-left-text">差错管理</div>
+							</div>
+							<div class="error-item-desc-right">
+								<table>
+									<tr>
+										<td>是否与威胁相关（如是则填入威胁类型）</td>
+										<td>是否与威胁相关（如是则填入威胁编号）</td>
+									</tr>
+									<tr>
+										<td style="height:42px;">
+											<select class="form-control selectstyle" v-model="error.isRelateThreatType"> 
+										    <option value="">请选择</option>
+										    <option v-for="option in baseInfo.threatBaseInfo"  v-if="option.parentNode==null" v-bind:value="option">
+											   {{ option.name }}
+										    </option>
+							                </select>
+										</td>
+										<td style="height:42px;">
+											<select class="form-control selectstyle"   v-model="error.isRelateThreatNumber | syncitemfromtype error.isRelateThreatType baseInfo.threatBaseInfo $index 'relateThreatNumber'" >
+											<option value="">请选择</option>
+											<option v-for="option in baseInfo.threatBaseInfo"  v-if="option.parentNode==error.isRelateThreatType.id" v-bind:value="option">
+												 {{ option.name }}
+											</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">机组对这一差错是如何管理或管理不当的</td>
+									</tr>
+									<tr>
+										<td colspan="2" class="textarea"><textarea class="form-control textareastyle" v-model="error.isDealError"></textarea></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="error-subblock4">
+						<div class="error-item-desc">
+							<div class="error-item-desc-left">
+								<div class="error-item-desc-left-text">非预期的航空器状态</div>
+							</div>
+							<div class="error-item-desc-right">
+								<table>
+									<tr>
+										<td>非预期的航空器状态类型</td>
+										<td>非预期的航空器状态编号</td>
+										<td>谁发现了这一问题</td>
+										<td>机组对非预期的航空器状态的反应</td>
+										<td>非预期的航空器状态的后果</td>
+									</tr>
+									<tr>
+										<td>
+											<select class="form-control selectstyle" v-model="error.unexceptAircraftType" > 
+											<option value="">请选择</option>
+										    <option v-for="option in baseInfo.unexcetStatus"  v-if="option.parentNode==null" v-bind:value="option">
+											    {{ option.name }}
+										    </option>
+										    </select>
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.unexceptAircraftNumber | syncitemfromtype error.unexceptAircraftType baseInfo.unexcetStatus  $index 'unexceptAircraftNumber'" >
+											<option value="">请选择</option>
+											 <option v-for="option in baseInfo.unexcetStatus"  v-if="option.parentNode==error.unexceptAircraftType.id" v-bind:value="option">
+												 {{ option.name }}
+											</option>
+							                </select>
+										</td>
+										<td>
+											 <select class="form-control selectstyle" v-model="error.thePersonFoundStatus" > 
+											 <option value="">请选择</option>
+											 <option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='staff_type'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+							                 </option>
+							                 </select>
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.crewResponseForUnexceptAir"> 
+											<option value="">请选择</option>							 
+											<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='Unanticipated_response'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+									        </option>
+									        </select>	
+										</td>
+										<td>
+											<select class="form-control selectstyle" v-model="error.theConsequencesofUnexceptAi">
+											<option value="">请选择</option> 
+											<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='Unanticipated_consequences'" v-bind:value="option.dictCode">
+									                  {{ option.dictName }}
+									         </option>
+											 </select>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+      		</div>	
+      		</template>
+      		<div  class="errorbutton">
+				<button class="btn btn-default" type="button" id="more" v-on:click="addmore">增加一条差错记录</button>
+       			<button type="button" class="btn btn-default" v-on:click="delerror">删除差错记录</button>
+			</div>
+   			<div id="footer" class="row  float_footer" >
+	  			<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	  				<button  type="button" class="btn btn-default" qid="saveError" href="" v-on:click="save">保存</button>
+       				<button  type="button" class="btn btn-default" qid="submitError" href="" v-on:click="submit">提交</button>
+     			</div>
+  			</div>
+  		</div>
+  	</div>
+</div>
+</body>

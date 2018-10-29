@@ -1,0 +1,129 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+    
+      {
+        "propid": "workName",
+        "propname": "工作单名称",
+        "propvalue": null,
+        "propplugin": "com.audit.secondaryquery.workquery.queryNameProp"
+      },
+      {
+        "propid": "workNo",
+        "propname": "工作单编号",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "planTime",
+        "propname": "审计日期",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryDateProp"
+      },
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "address",
+        "propname": "审计地点",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "remark",
+        "propname": "备注",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "flowStatus",
+        "propname": "状态",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      }
+    ],
+    "orders": {
+		"propid":"workName",
+		"propname":"工作单名称",
+		"order":"asc"
+    },
+    "uql": "",
+     "staticfilters": [
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.secondaryquery.workquery.queryTargetProp"
+      }
+    ],
+    "_staticfilters": [
+      {
+        "propid": "PSD",
+        "propname": "运行控制",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "CAB",
+        "propname": "客舱服务",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "CGO",
+        "propname": "货物运输",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "ORG",
+        "propname": "组织管理",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "MNT",
+        "propname": "机务维修",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "FLT",
+        "propname": "飞行运行",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "GRH",
+        "propname": "地面保障",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "OTH",
+        "propname": "其他系统",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

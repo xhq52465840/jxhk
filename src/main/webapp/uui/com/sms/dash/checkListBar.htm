@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div style="margin:10px;">
+	<div style="padding: 0px; background-color: #eee; border-radius: 10px;">
+	<form class="form-horizontal" role="form" qid="filter-form">
+	   <div class="row" style="padding:10px;">
+	   		<div class="form-group col-md-3 col-xs-3">
+               	   <label for="<%=this._id%>-auditType">审计类型</label>
+                   <input type="text" class="form-control input-sm" name="auditType" maxlength="25" />
+           	</div>
+	   		<div class="form-group col-md-3 col-xs-3">
+               	   <label for="<%=this._id%>-profession">审计专业</label>
+                   <input type="text" class="form-control input-sm" name="profession" maxlength="25" />
+           	</div>
+           	<div class="form-group col-md-3 col-xs-3">
+               	   <label for="<%=this._id%>-auditType">执行机构</label>
+                   <input type="text" class="form-control input-sm" name="operator" maxlength="25" />
+           	</div>
+	   		<div class="form-group col-md-3 col-xs-3">
+               	   <label for="<%=this._id%>-profession">被审计机构</label>
+                   <input type="text" class="form-control input-sm" name="target" maxlength="125" />
+           	</div>
+		</div>
+		 <div class="row" style="padding:10px;">
+	   		<div class="form-group col-md-3 col-xs-3">
+               	   <label for="<%=this._id%>-chapter">章节</label>
+                   <input type="text" class="form-control input-sm" name="chapter" maxlength="125" title="" autocomplete="off"/>
+           	</div>
+           	<div class="form-group col-md-3 col-xs-3">
+               		<label for="<%=this._id%>-checklist">检查项</label>
+                   	<input type="text" class="form-control input-sm" name="checklist" maxlength="2000" title="" autocomplete="off"/>
+           	</div>
+           	<div class="form-group col-md-4 col-xs-4">
+              		 <label for="<%=this._id%>-startdate" class="col-md-12 col-xs-12">日期范围</label>
+                	 <input type="text" class="form-control input-sm startdate" name="startdate" style="width:40%;" />
+					 &nbsp;-&nbsp;
+				     <input type="text" class="form-control input-sm enddate" name="enddate" style="width:40%; " />
+           	</div>
+           	<div class="form-group col-md-2 col-xs-2">
+           		    <label for="" class="col-md-12 col-xs-12">&nbsp;</label>
+           		    <button class="btn btn-success" name="fliter"  style="text-shadow: 0 0px 0 #ffffff;" >搜索</button>
+           		    <button class="btn btn-success" name="resetfilter"  style="text-shadow: 0 0px 0 #ffffff;" >清除筛选</button>
+           	</div>
+		</div>
+		</form>
+		 <div id="container" style="min-width:700px;"></div>
+	</div>
+	
+	 <div qid="treeContent" style="display:none; position: absolute;z-index:1060;background:#eee;width: 400px;">
+			<ul qid="tree" class="ztree" style="margin-top:0; width:393px;height: 200px;overflow: auto;"></ul>
+		</div>
+		
+</div>
+</body>
+</html>

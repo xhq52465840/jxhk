@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="dashboard-item-frame gadget-container uui-container color1">
+        <div class="dashboard-item-header">
+            <h3 class="dashboard-item-title" qid="dashname"></h3>
+            <div class="gadget-menu">
+                <ul>
+                    <li class="gadget-icon i-move mygadget"><%=com.sms.dash.gadget.i18n.move %></li>
+                    <li>
+                        <a href="#" qid="btn_max" class="gadget-icon maximize" title="最大化"><%=com.sms.dash.gadget.i18n.maximize %></a>
+                    </li>
+                    <li>
+                        <a href="#" qid="btn_restore" class="gadget-icon restore" title="恢复" style="display:none;"><%=com.sms.dash.gadget.i18n.back %></a>
+                    </li>
+                    <li class="gadget-dd-parent dd-allocated">
+                        <div class="btn-group" style="top: -4px;">
+                            <a class="gadget-dd-trigger standard dropdown-toggle" data-toggle="dropdown" href="#"><span><%=com.sms.dash.gadget.i18n.toolmenu %></span></a>
+                            <ul qid="gadgetmenus" class="gadget-dropdown standard gadget-dropdown-right dropdown-menu pull-right" role="menu" style="text-align: left; width: 160px;">
+                                <li class="dropdown-item minimization">
+                                    <a class="item-link" href="#"><%=com.sms.dash.gadget.i18n.minimize %></a>
+                                </li>
+                                <li class="dropdown-item maximization" style="display:none;">
+                                    <a class="item-link" href="#"><%=com.sms.dash.gadget.i18n.unfold %></a>
+                                </li>
+                                <li class="item-link gadget-colors mygadget">
+                                    <ul>
+                                        <li class="color1">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color1 %></a>
+                                        </li>
+                                        <li class="color2">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color2 %></a>
+                                        </li>
+                                        <li class="color3">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color3 %></a>
+                                        </li>
+                                        <li class="color4">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color4 %></a>
+                                        </li>
+                                        <li class="color5">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color5 %></a>
+                                        </li>
+                                        <li class="color6">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color6 %></a>
+                                        </li>
+                                        <li class="color7">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color7 %></a>
+                                        </li>
+                                        <li class="color8">
+                                            <a href="#"><%=com.sms.dash.gadget.i18n.color8 %></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item delete mygadget">
+                                    <a class="item-link" href="#"><%=com.sms.dash.gadget.i18n.remove %></a>
+                                </li>
+                                <li class="dropdown-item configure mygadget"><a class="item-link no_target" href="#"><%=com.sms.dash.gadget.i18n.edit %></a></li>
+                                <li class="dropdown-item reload"><a class="item-link no_target" href="#"><%=com.sms.dash.gadget.i18n.refresh %></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dashboard-item-content" qid="gadget-widget-container">
+            <div umid="<%= this._gadgetinstance.id %>-gadget" class="hidden"></div>
+            <iframe qid="gadgetframe" class="gadget-iframe hidden" gadgetinstanceid="<%=this._gadgetinstance.id%>" style="min-height:100px;"></iframe>
+        </div>
+    </div>
+</body>
+</html>

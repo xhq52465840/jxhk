@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>安全图书馆检索</title>
+    <link href="../res/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='searchLibList']"));
+
+            $.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+     
+    <div umid="searchLibList" umodule="com.sms.safelib.searchlist"></div>
+  
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

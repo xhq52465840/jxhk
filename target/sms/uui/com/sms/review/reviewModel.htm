@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+    .table{
+    		border: 1px solid #ddd;
+    		text-align: center;
+    	}
+    	.table th{
+    		border: 1px solid #ddd;
+    		text-align: center;
+    	}
+    	.table tr{
+    		border: 1px solid #ddd;
+    		text-align: left;
+    	}
+    	.table td{
+    		border: 1px solid #ddd;
+    		text-align: left;
+    	}
+    	
+    	.edit,.delete,.com-delete,.com-edit,.score-edit,.score-delete,.detail-edit,.detail-delete{
+    		cursor : pointer;
+    		margin-right : 5px;
+    		display:none;
+    	}
+    	.add,.detail-add,.score-add{
+    		cursor : pointer;
+    		margin-right : 5px;
+    	}
+    	pre {
+    		white-space: pre-wrap;
+         	background-color: white;
+    	 	border: none; 
+    	}
+    </style>
+</head>
+<body>
+	<div>
+		<div class="uui-module">
+			<div umid="reviewUnitDialog"></div>
+			<div umid="reviewRoleConfigDialog"></div>
+			<div umid="addReviewDialog"></div>
+			<div umid="addExamineDialog"></div>
+			<div class="uui-module-header">
+				<div class="row">
+					<div class="col-md-3">
+						<h2 class="uui-module-h2">安全管理工作评审标准</h2>
+					</div>
+					<div class="col-md-9" style="text-align: right; padding-right: 15px !important;">
+						<div class="btn-group">
+							<button class="btn btn-default btn-sm" qid="btn_setReviewUnit">
+								设置被评审机构
+							</button>
+							<button class="btn btn-default btn-sm" qid="btn_reviewRoleConfig">
+								<span class="glyphicon glyphicon-plus"></span>设置评审单接收角色
+							</button> 
+							<button class="btn btn-default btn-sm" qid="btn_generateMethanolInst">
+								生成评审单
+							</button>
+							<button class="btn btn-default btn-sm" qid="btn_addReview">
+								<span class="glyphicon glyphicon-plus"></span>添加评审规则
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<table qid="datatable" class="table" cellspacing="0" width="100%">
+				<thead>
+		            <tr>
+		                <th rowspan="3" width="8%" style="vertical-align: middle;">考核项目<br/><span class='glyphicon glyphicon-edit'></span></th>
+		                <th colspan="8">考核内容</th>
+		            </tr>
+		            <tr>
+		                <th rowspan="2" width="8%">考核内容<br/><span class='glyphicon glyphicon-edit'></span></th>
+		                <th rowspan="2" width="8%">来源</th>
+		                <th rowspan="2" width="28%">描述</th>
+		                <th colspan="5">标准</th>
+		            </tr>
+		            <tr>
+		            	<th width="7%">最小值<br/><span class='glyphicon glyphicon-edit'></span></th>
+		            	<th width="7%">最大值</th>
+		            	<th width="7%">范围<br/><span class='glyphicon glyphicon-edit'></span></th>
+		            	<th width="7%">公式</th>
+		            	<th width="20%">描述</th>
+		            </tr>
+	        	</thead>
+	        	<tbody>
+	        	</tbody>
+			</table>
+		</div>
+		<div qid="addExamineDialog">
+			<form>
+				<div class="form-group">
+					<label class="control-label">考核内容</label>
+					<input type="hidden" qid="assessmentProject">
+					<textarea class="form-control" qid="description" name="description" maxlength="255"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="control-label">考核来源</label>
+					<input type="text" class="form-control" qid="type" name="type"></input>
+				</div>
+				<div class="form-group">
+					<label class="control-label">描述</label>
+					<textarea class="form-control" qid="standardSummary" name="standardSummary"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="control-label">过滤器</label>
+					<input type="text" class="form-control" qid="filter" name="filter"></input>
+				</div>
+			</form>
+		</div>
+		<div qid="addStep2Dialog">
+			<form>
+				<div class="form-group">
+					<input type="hidden" qid="assessmentComment">
+					<label class="control-label">最小值(不能为空，必须为实数，不能比最大值大)</label>
+					<input type="text" class="form-control" qid="min" name="min" maxlength="255"></input>
+				</div>
+				<div class="form-group">
+					<label class="control-label">最大值(可为空，如果输入必须为实数，不能比最小值小)</label>
+					<input type="text" class="form-control" qid="max" name="max" maxlength="255"></input>
+				</div>
+			</form>
+		</div>
+		<div qid="addStep3Dialog">
+			<div class="form-group">
+				<label class="control-label">左区间(不能为空，必须为整数，不能比右区间大)</label>
+				<input type="hidden" qid="scoreStandard">
+				<input type="text" class="form-control" qid="leftInterval" name="leftInterval" maxlength="255"></input>
+			</div>
+			<div class="form-group">
+				<label class="control-label">右区间(可为空，如果输入必须为整数，不能比左区间小)</label>
+				<input type="text" class="form-control" qid="rightInterval" name="rightInterval" maxlength="255"></input>
+			</div>
+			<div class="form-group">
+				<label class="control-label">计算公式说明：不能为空。<br>
+				         <b>格式1：</b>常数，代表每一条的信息的得分。如：输入3,代表每条信息得3分。<br>
+				         <b>格式2：</b>输入带变量的x(运算符号只能用+-*/)的公式，x表示第x条信息的分数。如：输入3x+1，代表第x条信息的得分为3x+1，即第一条为3*1+1=4分，第二条为3*2+1=7分……
+				</label>
+				<input type="text" class="form-control" qid="expression" name="expression" maxlength="255"></input>
+			</div>
+			<div class="form-group">
+				<label class="control-label">备注</label>
+				<textarea class="form-control" qid="remark" name="remark" maxlength="255"></textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

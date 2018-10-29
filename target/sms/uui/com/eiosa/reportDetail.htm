@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>report detail here</title>
+</head>
+<>
+<body>
+	<div  class=" container-fluid" id="report" >
+	<div id="reportDialog">
+		<table class="uui-table" style="table-layout: fixed;">
+		<tbody>
+		<tr>
+	      <td class="name" style="width: 40%">
+	         Title: 
+	       </td>  
+			<td class="value"> <p id="reportTitle" name="reportTitle" v-html="reportAll.report.title"></p>
+			</td>
+			</tr>
+		<tr>
+	      <td class="name" style="width: 40%">
+	         Rev.No: 
+	       </td>  
+			<td class="value"> <p id="reportrepNO" name="reportrepNO" v-html="reportAll.report.repNO"></p>
+			</td>
+			</tr>
+		<tr>
+	      <td class="name" style="width: 40%">
+	         Status: 
+	       </td>  
+			<td class="value"> <p id="reportrepStatus" name="reportrepStatus" v-html="reportAll.report.repStatus"></p>
+			</td>
+			</tr>
+		<tr>
+	      <td class="name" style="width: 40%">
+	                    报告时间: 
+	       </td>  
+			<td class="value"> <p id="reportdeclaraction" name="reportdeclaraction" v-html="reportAll.report.repDate | datestr"></p>
+			</td>
+			</tr>
+			</tbody>
+		</table>
+		<br><br>
+		<br><br>
+		
+		<div class="uui-managepage">
+	    <div class="panel panel-sms">
+	      <div class="panel-heading">
+	            
+	         <h2 class="panel-title">
+	           <span id="g9SShQPdRwNF23RzzQKe-toggle-panel" class="fa uui-cursor-pointer fa-chevron-right fa-plus" v-on:click="logShow"></span>
+	           Log
+	         </h2>
+	        
+	      </div>
+	    <div class="panel-body hidden">
+	      <div umid="reportLogTable"></div> 
+	    </div>
+	    </div>
+	    </div>
+		
+		<!--  		<div id="footer" class="row float_footer"
+			>
+			<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+				<button type="button" class="btn btn-default" 
+					v-on:click="save" dataid="{{ doc.id }}">保存</button>
+				<button type="button" class="btn btn-default" v-on:click="close" >取消</button>
+			</div>
+		</div>
+		-->
+	<p class="footer_spaceholder"></p>
+	</div>
+	</div>
+	
+</body>
+</html>

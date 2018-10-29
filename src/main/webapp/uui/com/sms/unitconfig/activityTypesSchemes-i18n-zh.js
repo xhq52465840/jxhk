@@ -1,0 +1,26 @@
+$.extend(com.sms.unitconfig.activityTypesSchemes.i18n,{
+	remaind1 :'请关联安监机构',
+	remaind2 :'的安全信息类型方案。 如果你知道方案的名称，你可以直接选择安全信息类型方案。你也可以选择其他安监机构的安全信息类型方案或自己创建一个新的安全信息类型方案。',
+	remaind3:'当前方案是',
+	remaind4:'选择',
+	remaind5:'已存在的安全信息类型方案',
+	remaind6:'选择一个',
+	remaind7:'已存在的安监机构关联方案',
+	remaind8:'创建一个新的方案',
+	remaind9:'并关联到当前安监机构',
+	safeTypeCase:'安全信息类型方案:',
+	caseMsgtype:'方案的安全信息类型',
+	safeAgency:'安监机构:',
+	
+	editFail:'编辑操作失败：',
+	clickFail:'点击操作失败：',
+	choose:'选择安监机构',
+	MsgType:'的信息类型方案',
+	affirm:'确定',
+	cancel:'取消',
+	safeMsgNotNull:'安全信息类型方案不能为空',
+	safeAgencyNotNull:'安监机构不能为空',
+	schemeNotNull:'方案的安全信息类型不能为空',
+	newMsgType:'的新安全信息类型方案',
+	
+});

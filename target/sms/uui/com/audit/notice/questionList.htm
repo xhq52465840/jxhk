@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.upd{
+		cursor: pointer;
+	}
+	.updlist{
+		cursor: pointer;
+		margin-left: -50px;
+		list-style-type: none;
+		color: blue;
+	}
+	.mr-left{
+		cursor: pointer;
+		margin-left: 10px;
+		color: red;
+	}
+	.work{
+		cursor: pointer;
+		color: #428bca;
+		word-break: break-all;
+	}
+	.historyLog{
+		cursor: pointer;
+		color: blue;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div umid="upd"></div>
+		<div class="row show-grid" style="padding-right: 10px; padding-left: 10px;margin-bottom: 0px;">
+			<table class="uui-table table-fixed" qid="questionTable">
+				<thead>
+					<tr>
+						<th style="width: 500px;">问题</th>
+						<th style="width: 10%;">责任单位</th>
+						<th style="width: 10%;">整改期限</th>
+						<th style="width: 10%;">操作记录</th>
+						<th class="operate-tool"><i class="fa fa-plus fa-lg add_question"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		
+		<div qid="logDialog">
+		    <div umid="react" style="display:none"></div>
+			<div umid="historytLog"></div>
+		</div>
+	</div>
+	
+</body>
+</html>

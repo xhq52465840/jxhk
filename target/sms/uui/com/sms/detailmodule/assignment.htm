@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="assignOrg"></div>
+		<div umid="assignPublish"></div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<i class="fa fa-check-square-o fa-square-o fa-lg" style="cursor:pointer;margin-right:5px;" qid="btn_assign"></i>
+					<%= com.sms.detailmodule.assignment.i18n.whether %>
+					<div qid="btn_add" class="pull-right panel-button-container hidden" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus"></i>
+						</div>
+					</div>
+					<div qid="btn_startAnalysis" class="pull-right panel-button-container text-container" >
+						<div class="panel-button-inner">
+							<span class="textbutton"> <%= com.sms.detailmodule.assignment.i18n.startAnalysis %> </span>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" >
+				<table class="uui-table uui-table-hover hidden" qid="table">
+					<thead>
+						<tr class="infomodel-title">
+							<td style="width:60%;"> <%= com.sms.detailmodule.assignment.i18n.columns.orgName %> </td>
+							<td > <%= com.sms.detailmodule.assignment.i18n.columns.arePublished %> </td>
+							<td style="width:150px;"> <%= com.sms.detailmodule.assignment.i18n.columns.handle %> </td>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+ <meta http-equiv=Content-Type content="text/html; charset=gbk">
+<style>
+	body {
+        font-size:12.0pt; 
+		font-family:Microsoft YaHei;
+		vertical-align: middle;
+		text-align: center;
+    }
+    table, tr, th, td{
+        border: 1px solid black;
+        border-spacing: 0px;  
+    }
+	td, th, span{				
+		word-wrap:break-word;
+		word-break:break-all;
+		padding: 5px;
+	}
+</style>
+</head>
+<body>
+
+#foreach($isarp in $result)
+    <span style="font-size:13.0pt;font-weight:bold;">Section:&nbsp;&nbsp;${isarp.get("queryMap").get("sectionIds")}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Acronyms:&nbsp;&nbsp;${isarp.get("queryMap").get("acronyms")}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Chapter:&nbsp;&nbsp;${isarp.get("queryMap").get("charpter")}
+    </span>
+    <br></br>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
+ mso-border-alt:solid windowtext 1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:1.5pt solid windowtext;mso-border-insidev:
+ 1.5pt solid windowtext'>
+	  <tr>
+	    <th style="width:10%;">Section</th> 
+     <th style="width:10%;">ISARP</th> 
+     <th style="width:40%;">Text</th> 
+     <th style="width:20%;">Chapter</th> 
+     <th style="width:10%;">FlowStatus</th> 
+     <th style="width:10%;">Conformity</th>
+	  </tr>
+	  #foreach($check in $isarp['isarpCharpters'])
+	  <tr>
+	    <td style="width:10%;">${check.get("sectionName")}</td >
+	    <td style="width:10%;">${check.get("no")}</td>
+	    <td style="width:40%;">${check.get("text")}</td >
+	    <td style="width:20%;">${check.get("chapter")}</td >
+	    <td style="width:10%;">${check.get("status")}</td >
+	    <td style="width:10%;">${check.get("conformity")}</td >
+	  </tr>
+	  #end
+</table>
+<br></br><br></br><br></br><br></br><br></br>
+ #end
+ 
+</body>
+</html>

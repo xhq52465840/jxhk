@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">差错管理工作单</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" id="spans" style="height:450px">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+         <tbody id="text2">
+					<tr>
+					   
+						<td rowspan="2" align="center" style="width:10%;">
+							差错代号
+						</td>
+						<td colspan="6" rowspan="1" align="center">
+							对差错的描述
+						</td>
+						<td colspan="3" rowspan="1" align="center">
+							差错反应/后果
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							描述机组的差错和相应的非预期航空器状态
+						</td>
+						<td align="center">
+							飞行阶段
+						</td>
+						<td align="center">
+							差错类型
+						</td>
+						<td align="center">
+							差错类型细分
+						</td>
+						<td align="center">
+							差错编号（使用编号本）
+						</td>
+						<td align="center">
+							谁导致了这一差错
+						</td>
+						<td align="center">
+							谁发现了这一差错
+						</td>
+						<td align="center">
+							机组对差错的反应
+						</td>
+						<td align="center">
+							差错的后果
+						</td>
+					</tr>
+					<tr>
+						<td>
+						    <div way-repeat="jsonError">
+							<input class="form-control" type="text" way-data="errorCode"/>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<input class="form-control" type="text" way-data="errorDesc"/>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<select class="form-control" way-data="flightProcedure">
+							<option value="1">1.离场前/滑行</option>
+							<option value="2">2.起飞/爬升</option>
+							<option value="3">3.巡航</option>
+							<option value="4">4.下降/进近/着陆</option>
+							<option value="5">5.滑回</option></select>
+							</div>
+						</td>
+						
+						<td>
+						 <div way-repeat="jsonError">
+							<select class="form-control" way-data="errorType" id=errorType$$key onchange="onclik2(this.value,$$key)">
+							</select>
+							</div>
+						</td>
+						<td>
+						    <div way-repeat="jsonError">
+							<select class="form-control" way-data="errorTypeItem" id=errorTypeItem$$key    onchange="onclik3(this.value,$$key)"></select>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<select class="form-control" way-data="errorNumber" id=errorNumber$$key></select>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<select class="form-control" way-data="thePersonCauseError" id=thePersonCauseError$$key>
+							<!--  <option>请选择</option><option>1.机长</option><option>2.副驾驶</option><option>3.第二副驾驶</option><option>4.换班人员</option><option>5.观察员座位就坐者</option><option>6.所有机组成员</option><option>7.没有人</option><option>8.空中交通管制员</option><option>9.乘务员</option><option>10.安全员</option><option>11.签派人员</option><option>12.地面人员</option><option>13.维修人员</option><option>20.航空器系统</option><option>20.航空器系统</option>-->
+							</select>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<select class="form-control" way-data="thePersonFoundError" id=thePersonFoundError$$key>
+						
+							</div>
+						</td>
+						<td>
+						 <div way-repeat="jsonError">
+							<select class="form-control" way-data="crewPesponseForError">
+							
+							<option value="1">阻止</option>
+							<option value="2">加重</option>
+							<option value="3">未做反应</option>
+							</select>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							<select class="form-control" way-data="theConsequencesOfError">
+							
+							<option value="1">无关紧要</option>
+							<option value="2">非预期的状态</option>
+							<option value="3">增加差错</option></select>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+				<tbody id="text3">
+					<tr>
+						<td rowspan="2" align="center" style="width:10%;">
+							差错代号
+						</td>
+						<td colspan="3" rowspan="1" align="center">
+							差错管理
+						</td>
+						<td colspan="5" rowspan="1" align="center">
+							非预期的航空器状态
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							是否与威胁相关？（如是，则填入威胁类型）
+						</td>
+						<td align="center">
+							是否与威胁相关？（如是，则填入威胁编号）
+						</td>
+						<td align="center">
+							机组对这一差错是如何管理或管理不当的？
+						</td>
+						<td align="center">
+							非预期的航空器状态类型
+						</td>
+						<td align="center">
+							非预期的航空器状态编号
+						</td>
+						<td align="center">
+							谁发现了这一状态？
+						</td>
+						<td align="center">
+							机组对非预期航空器状态的反应
+						</td>
+						<td align="center">
+							非预期航空器状态的后果
+						</td>
+					</tr>
+					<tr>
+						<td>
+						     <div way-repeat="jsonError">
+							<input class="form-control" type="text" way-data="errorCode"/>
+							</div>
+						</td>
+						<td>
+						      <div way-repeat="jsonError">
+							 <select class="form-control" way-data="isRelateThreatType" id=isRelateThreatType$$key  onchange="onclik(this.value,$$key)"> 
+							
+							 </select>
+							 </div>
+						</td>
+						<td style="width:15%">
+						      <div way-repeat="jsonError">
+							 <select class="form-control"   way-data="isRelateThreatNumber" id=isRelateThreatNumber$$key>
+							  </select>
+							 </div>
+						</td>
+						<td>
+						    <div way-repeat="jsonError">
+							<input class="form-control" type="text" way-data="isDealError"/>
+							</div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							 <select class="form-control" way-data="unexceptAircraftType" id=unexceptAircraftType$$key onchange="onclik1(this.value,$$key)"> 
+							 </select>
+							 </div>
+						</td>
+						<td>
+						      <div way-repeat="jsonError">
+							 <select class="form-control" way-data="unexceptAircraftNumber" id=unexceptAircraftNumber$$key>
+							</select>
+							 </div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							 <select class="form-control" way-data="thePersonFoundStatus" id=thePersonFoundStatus$$key>
+							
+						</td>
+						<td>
+						    <div way-repeat="jsonError" >
+							 <select class="form-control" way-data="crewResponseForUnexceptAir"> 
+							 
+							 <option value="1">减轻</option> 
+							 <option value="2">加重</option>
+							  <option value="3">未作反应</option></select>
+							 </div>
+						</td>
+						<td>
+						     <div way-repeat="jsonError">
+							 <select class="form-control" way-data="theConsequencesofUnexceptAi"> 
+							  <option value="1">无关紧要</option> 
+							  <option value="2">增加差错</option></select>
+							 </div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+        <button class="btn btn-default" type="button" id="more" onclick="addmore()">增加一条差错记录</button>
+         
+      </div>
+    </div>
+   <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+         
+            <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a   id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item active"><a style="color:white" id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+            <button  type="button" class="btn btn-default" qid="saveError" href="">保存</button>&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitError" href="">提交</button>
+           
+         
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+ </div>
+  </div>
+ </body>

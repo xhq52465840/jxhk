@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body> 
+ <div class="uui-managepage" >
+ <form role="form"  way-data="jsonObserve" way-persistent="true">
+    <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title"><%=com.sms.losa.obserview.i18n.pageTitle %></h3>
+	      </div>
+	      	  <!--<div class="col-md-9 text-right">
+	         <a href="auditContent.html"><button class="btn btn-default btn-md" ><%=com.sms.losa.obserview.i18n.back %></button></a>
+	      </div>  -->
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="observiewerInfo">
+        <div class="uui-panel-rect-widget">
+           <div class="uui-panel-rect-header">
+              <h3 class="uui-panel-rect-title"><%=com.sms.losa.obserview.i18n.observiewer.title %></h3>
+          </div>
+         
+          <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:150px" >
+             <div>
+                <div class="form-group col-md-6 col-sm-6" >
+               
+                 <!--  <div class="btn btn-sm btn-default pull-right" style="position:relative;top:-5px;" way-clear way-persistent="true">
+							Clear data
+						</div> -->
+			        <label style="color:black"><%=com.sms.losa.obserview.i18n.observiewer.observiewerId %><span style="color:red">*</span></label>
+			           <!-- <input type="text" class="form-control input-sm" id="observiewerId" value="LA17221"  readonly="true" maxlength="255" /> -->
+			           <input type="text" class="form-control input-sm" id="identifyNumber" name="identifyNumber" readonly="true" maxlength="255" />
+			    </div>
+			    <div class="form-group col-md-6 col-sm-6">
+			        <label style="color:black"><%=com.sms.losa.obserview.i18n.observiewer.observiewNum %><span style="color:red">*</span></label>
+			           <input type="text" class="form-control input-sm" id="activityNumber"  name="activityNumber" readonly="true" maxlength="255" />
+			    </div>
+			    
+			    <div class="form-group col-md-11 col-sm-11">
+			        <label style="color:black"><%=com.sms.losa.obserview.i18n.crewActive.id %></label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="crewActiveId" name="currentNumber" style="width:50" />航段
+			            &nbsp;&nbsp;&nbsp;
+			           <label style="color:black">共</label>
+			           <input type="text" class="form-control input-sm" qid="crewActiveTotal" name="totalNumber" style="width:50" />
+			                                段&nbsp;&nbsp;&nbsp;
+			          <label style="color:black"> <%=com.sms.losa.obserview.i18n.crewActive.isThreat %>&nbsp;
+                         <input type="checkbox"  id="isThreat" name="isExtThreat">
+                    </label>
+                     &nbsp;
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.crewActive.total%>
+                         <input type="text" class="form-control input-sm" style="width:100" qid="threatNum" name="threatNumber">
+                         <%=com.sms.losa.obserview.i18n.crewActive.num%>
+                    </label>
+                     &nbsp;&nbsp;&nbsp; &nbsp;
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.crewActive.isError %>&nbsp;
+                         <input type="checkbox"   qid="isError" name="isExtError">
+                    </label>
+                     &nbsp;
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.crewActive.total %>
+                         <input type="text" class="form-control input-sm" style="width:100" qid="errorNum" name="errorNumber">
+                          <%=com.sms.losa.obserview.i18n.crewActive.num%>
+                    </label>
+                    
+             </div>
+             </div>
+          </div>
+        
+        </div>  
+    </div>
+ 
+ <div class="form uui-managepage-filter uui-panel-graph" qid="flightStaticData">
+        <div class="uui-panel-rect-widget">
+           <div class="uui-panel-rect-header">
+              <h3 class="uui-panel-rect-title"><%=com.sms.losa.obserview.i18n.flightStaticData.title %></h3>
+          </div>
+             <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:430px">
+                 <div class="form-group col-md-6 col-sm-6">
+                   <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.flightNo %></label>
+                          <input type="text" class="form-control input-sm" qid="flightNo"  style="width:100%" name="flightNO"/>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6">
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.flightDate %></label>
+                         <input type="text" class="form-control input-sm" id="flightDate" style="width:100%" name="flightDate"/>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6" style="padding:0px">
+                   <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.startAirport %></label>
+                          <input type="text" class="form-control input-sm" qid="startAirport" style="width:100%"name="depAirport"/>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6">
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.arriveAiroort %></label>
+                         <input type="text" class="form-control input-sm" qid="arriveAiroort" style="width:100%" name="arrAirport"/>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6" style="padding:0px">
+                  
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.aircraftNo %></label>
+                        <!--  <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:100%" name="aircraftType"/> -->
+                         <select class="form-control" style="height:30px" id="aircraftType" name="aircraftType"> 
+							<option value="A319">A319</option> 
+							<option value="A320">A320</option> 
+							<option value="A321">A321 </option>
+							<option value="B737-300">B737-300</option> 
+							<option value="B737-700">B737-700</option> 
+							<option value="B737-700W">B737-700W</option>
+							<option value="B737-800">B737-800</option> 
+							<option value="B737-800W">B737-800W</option> 
+							<option value="B737-800">B737-800</option>
+							</select>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6">
+                   <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.startDriver %></label>
+                         <!-- <pre way-data="__all__" way-json="true" way-default="{}"></pre> -->
+                         <!--   <input type="text" class="form-control input-sm" qid="startDriver" style="width:100%" name="aircraftCaptain"/> -->
+                         <select class="form-control" style="height:31px"id="aircraftCaptain" name="aircraftCaptain"> 
+							<option value="机长">机长</option> 
+							<option value="航线机长">航线机长</option> 
+							<option value="第一副驾驶(右座)">第一副驾驶(右座) </option>
+							<option value="第一副驾驶(左座)">第一副驾驶(左座)</option> 
+							<option value="第二副驾驶">第二副驾驶</option> 
+							</select>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6" style="padding:0px">
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.fallDriver %></label>
+                         <!-- <input type="text" class="form-control input-sm" qid="fallDriver" style="width:100%" name="aircraftCopilot"/> -->
+                         <select class="form-control" style="height:30px" id="aircraftCopilot" name="aircraftCopilot"> 
+							<option value="机长">机长</option> 
+							<option value="航线机长">航线机长</option> 
+							<option value="第一副驾驶(右座)">第一副驾驶(右座) </option>
+							<option value="第一副驾驶(左座)">第一副驾驶(左座)</option> 
+							<option value="第二副驾驶">第二副驾驶</option> 
+							</select>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6" >
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.aircraPullTime %></label>
+                         <input type="text" class="form-control input-sm" qid="aircraPullTime" style="width:100%" name="depTime"/>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6" style="padding:0px">
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.aircraArriveTime %></label>
+                         <input type="text" class="form-control input-sm" qid="aircraArriveTime" style="width:100%" name="arrTime"/>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6" >
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.pullToArriveTime %></label>
+                         <input type="text" class="form-control input-sm" qid="pullToArriveTime" style="width:100%" name="timeForGetReady"/>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6" style="padding:0px">
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.isDelay %></label>
+                         <!--  <input type="text" class="form-control input-sm" qid="isDelay" style="width:100%" name="isDelay"/>-->
+                          <select class="form-control" style="height:30px;" id="isDelay" name="isDelay"> 
+							<option value="否">否</option> 
+							<option value="是">是</option> 
+							</select>
+                 </div>
+                 <div class="form-group col-md-6 col-sm-6" >
+                    <label style="color:black"> <%=com.sms.losa.obserview.i18n.flightStaticData.delayTime %></label>
+                         <input type="text" class="form-control input-sm" qid="delayTime" style="width:100%" name="delayTime"/>
+                 </div>
+			   </div>
+             </div>
+         </div>
+  <div class="form uui-managepage-filter uui-panel-graph" qid="crewStaticInfo" >
+    <div class="uui-panel-rect-widget" style="height:450px">
+           <div class="uui-panel-rect-header">
+              <h3 class="uui-panel-rect-title"><%=com.sms.losa.obserview.i18n.crewStaticInfo.title %></h3>
+          </div>
+          <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:390px">
+              <table  class="table table-bordered">
+                <tbody>
+					<tr style="font-family: sans-serif;font-size:14px">
+						<td> 
+						</td>
+						<td>
+						   <div>
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.caption1 %>
+							</div>
+						</td>
+						<td>
+							<%= com.sms.losa.obserview.i18n.crewStaticInfo.caption2 %>
+						</td>
+						<td>
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.copliot1%>
+						</td>
+						<td>
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.copliot2%>
+						</td>				
+					</tr>					
+					<tr>
+						<td style="font-family: sans-serif;font-size:14px">
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.menberBranchCom%>
+						</td>
+						<td>
+							<!-- <input class="form-control" type="text" qid="cap1com" name="companyCaptain1"/> -->
+							 <select class="form-control" style="height:33px" id="companyCaptain1" name="companyCaptain1"> 
+							<option value="上航">上航</option> 
+							<option value="西北分公司">西北分公司</option> 
+							<option value="云南分公司">云南分公司</option>
+							<option value="北京分公司">北京分公司</option> 
+							<option value="江苏分公司">江苏分公司</option> 
+							<option value="上海飞行部">上海飞行部</option> 
+							<option value="山东分公司">山东分公司</option> 
+							<option value="安徽分公司">安徽分公司</option>
+							<option value="江西分公司">江西分公司</option> 
+							<option value="山西分公司">山西分公司</option> 
+							<option value="浙江分公司">浙江分公司</option> 
+							<option value="甘肃分公司">甘肃分公司</option>
+							<option value="四川分公司">四川分公司</option> 
+							<option value="武汉分公司">武汉分公司</option>
+							<option value="中联航">中联航</option>
+							</select>
+						</td>
+						<td>
+							<!-- <input class="form-control" type="text" qid="cap2com" name="companyCaptain2"/> -->
+							<select class="form-control" style="height:33px" id="companyCaptain2" name="companyCaptain2"> 
+							<option value="上航">上航</option> 
+							<option value="西北分公司">西北分公司</option> 
+							<option value="云南分公司">云南分公司</option>
+							<option value="北京分公司">北京分公司</option> 
+							<option value="江苏分公司">江苏分公司</option> 
+							<option value="上海飞行部">上海飞行部</option> 
+							<option value="山东分公司">山东分公司</option> 
+							<option value="安徽分公司">安徽分公司</option>
+							<option value="江西分公司">江西分公司</option> 
+							<option value="山西分公司">山西分公司</option> 
+							<option value="浙江分公司">浙江分公司</option> 
+							<option value="甘肃分公司">甘肃分公司</option>
+							<option value="四川分公司">四川分公司</option> 
+							<option value="武汉分公司">武汉分公司</option>
+							<option value="中联航">中联航</option>
+							</select>
+						</td>
+						<td>
+							<!-- <input class="form-control" type="text" qid="cop1com" name="companyCopilot1"/> -->
+							<select class="form-control" style="height:33px" id="companyCopilot1" name="companyCopilot1"> 
+							<option value="上航">上航</option> 
+							<option value="西北分公司">西北分公司</option> 
+							<option value="云南分公司">云南分公司</option>
+							<option value="北京分公司">北京分公司</option> 
+							<option value="江苏分公司">江苏分公司</option> 
+							<option value="上海飞行部">上海飞行部</option> 
+							<option value="山东分公司">山东分公司</option> 
+							<option value="安徽分公司">安徽分公司</option>
+							<option value="江西分公司">江西分公司</option> 
+							<option value="山西分公司">山西分公司</option> 
+							<option value="浙江分公司">浙江分公司</option> 
+							<option value="甘肃分公司">甘肃分公司</option>
+							<option value="四川分公司">四川分公司</option> 
+							<option value="武汉分公司">武汉分公司</option>
+							<option value="中联航">中联航</option>
+							</select>
+						</td>
+						<td>
+							<!--  <input class="form-control" type="text" qid="cop2com"  name="companyCopilot2"/>-->
+							<select class="form-control" style="height:33px" id="companyCopilot2" name="companyCopilot2"> 
+							<option value="上航">上航</option> 
+							<option value="西北分公司">西北分公司</option> 
+							<option value="云南分公司">云南分公司</option>
+							<option value="北京分公司">北京分公司</option> 
+							<option value="江苏分公司">江苏分公司</option> 
+							<option value="上海飞行部">上海飞行部</option> 
+							<option value="山东分公司">山东分公司</option> 
+							<option value="安徽分公司">安徽分公司</option>
+							<option value="江西分公司">江西分公司</option> 
+							<option value="山西分公司">山西分公司</option> 
+							<option value="浙江分公司">浙江分公司</option> 
+							<option value="甘肃分公司">甘肃分公司</option>
+							<option value="四川分公司">四川分公司</option> 
+							<option value="武汉分公司">武汉分公司</option>
+							<option value="中联航">中联航</option>
+							</select>
+						</td>
+						
+					</tr>
+					<tr>
+						<td style="font-family: sans-serif;font-size:14px">
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.totalFlyTime%>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap1totime" name="fullTimeCaptain1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap2totime" name="fullTimeCaptain2"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cop1totime" name="fullTimeCopilot1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cop1totime" name="fullTimeCopilot2"/>
+						</td>
+						
+					</tr>
+					<tr>
+						<td style="font-family: sans-serif;font-size:14px">
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.captionFlyTime%>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap1flyTime" name="CaptainFlyTime1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap2flyTime" name="CaptainFlyTime2"/>
+						</td>
+						
+					</tr>
+					<tr>
+						<td style="font-family: sans-serif;font-size:14px">
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.aircraFlyTime%>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap1PlaneTime" name="thisAircraftTimeCaptain1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap2PlaneTime" name="thisAircraftTimeCaptain2"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cop1PlaneTime" name="thisAircraftTimeCopilot1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cop2PlaneTime" name="thisAircraftTimeCopilot2"/>
+						</td>
+						
+					</tr>
+					<tr>
+						<td style="font-family: sans-serif;font-size:14px">
+							<%=com.sms.losa.obserview.i18n.crewStaticInfo.onTelexFlyTime%>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap1OntelTime" name="telexAircraftTimeCaptain1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap2OntelTime" name="telexAircraftTimeCaptain2"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cop1OntelTime" name="telexAircraftTimeCopilot1"/>
+						</td>
+						<td>
+							<input class="form-control" type="text" qid="cap1OntelTime" name="telexAircraftTimeCopilot2"/>
+						</td>
+					</tr>
+				</tbody>
+              </table>
+              <div>
+                 <div class="form-group col-md-6 col-xs-6">
+			        <label style="color:black"><%=com.sms.losa.obserview.i18n.crewStaticInfo.observiewDuty %></label>
+			           <input type="text" class="form-control input-sm" qid="observiewDuty" name="dutyOfObserver" maxlength="255" />
+			    </div>
+			    <div class="form-group col-md-6 col-xs-6">
+			        <label style="color:black"><%=com.sms.losa.obserview.i18n.crewStaticInfo.crewAcquainProce%></label>
+			           <!--<input type="text" class="form-control input-sm" qid="crewAcquainProce" maxlength="255" />  -->
+			             <select class="form-control" id ="firstLegOfCrew" name="firstLegOfCrew"> 
+							<option value="该机组共同飞行的第一航段">该机组共同飞行的第一航段</option> 
+							<option value="该机组共同飞行的第一天">该机组共同飞行的第一天</option> 
+							<option value="该机组曾经共同飞行过" selected>该机组曾经共同飞行过 </option> 
+							</select>
+			           
+			    </div>
+              </div> 
+          </div>
+          <!--<div>
+                 <button  qid="saveBasic" class="btn btn-default btn-md mode-add" style="position:absolute;right:50px;">保存</button>
+          </div>  -->
+    </div>
+    
+ </div>
+
+						
+ <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+   <!--<div class="form uui-managepage-filter uui-panel-graph"style="height:320px;">  -->
+   <ul class="list-group" style="width:150px"id="link">
+          
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item active" ><a  style="color:white" id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+           <button  type="button" class="btn btn-default" qid="saveObserve" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitObserve" href="">提交</button>
+            </ul>
+     <!-- <div class="uui-panel-rect-body uui-managepage-filter-content" id="link"style="height:260px;">
+           <li style="height:30px;font-family: sans-serif;font-size:20px" ><a id="basicUrl" href="">基础信息</a></li>
+           <li style="height:30px;font-family: sans-serif;font-size:20px"><a id="departUrl" href="" >离场前/滑出</a></li>
+           <li style="height:30px;font-family: sans-serif;font-size:20px"><a id="takeOffUrl"href="">起飞/爬行</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="cruiseUrl"href="">巡航</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="techWsUrl"href="">着陆技术工作单</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="launchUrl"href="">下降/进近/着陆</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="wholeFlUrl"href="">整个飞行</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="threatUrl"href="">威胁管理工作单</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="errorUrl"href="">差错管理工作单</a></li>
+           <li  style="height:30px;font-family: sans-serif;font-size:20px"><a id="crewUrl"href="">机组访谈</a></li>
+      </div>  --> 
+     <!--  <ul class="pager" style="background:blue;width:100px">
+         <li class="next" ><a href="departure.html">下一步 &rarr;</a></li>
+      </ul> -->
+    </div> 
+    <div id="saveDialog" style="display:none;font-size:25px">
+     <div>数据已经保存，确定进入下一页吗？</div>
+ </div>
+ </from>
+ </div>
+</body>
+
+</html>

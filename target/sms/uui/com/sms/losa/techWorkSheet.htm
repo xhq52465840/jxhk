@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage" style="width:100%">
+  <form role="form"  way-data="jsonObserve" way-persistent="true">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-11">
+	         <h3 class="uui-managepage-title">下降/进近/着陆技术工作单</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+   <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:1700px;">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px;">
+            <tbody>
+                  <tr>
+						<td rowspan="4">
+							下降（高于10 000英尺）
+						</td>						
+						<td rowspan="2">
+							是否在到达下降顶点（TOD）之前作出了进近简令？（是/否）
+						</td>
+						<td  rowspan="2" style="width:20%">
+						<input type="checkbox" data-off-color="warning"  id="isMadeBriefingBeforeTod" name="isMadeBriefingBeforeTod" data-on-text="是" data-off-text="否"  >
+                
+                      <!--<pre way-data="__all__" way-json="true" way-default="{}"></pre>  --> 
+						</td>
+						
+				</tr>
+					<tr>
+					</tr>				
+					<tr>
+						<td>
+							机组是否在到达飞行管理系统（FMS）的TOD时或在此之前开始下降的？（是/否）
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="isDroBeforeTod" name="isDroBeforeTod" data-on-text="是" data-off-text="否" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							该航空器是否大幅度高于/低于飞行管理系统的垂直轨迹或标准的垂直轨迹？（是/否）
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="isBigMarginFly" name="isBigMarginFly" data-on-text="是" data-off-text="否" >
+						</td>
+					</tr>
+				</tbody>
+        </table>
+         <table class="table table-bordered" style="width:80%%;">
+				<tbody>
+					<tr>	
+					    <td>
+							进近和着陆（低于10 000英尺）
+						</td>
+						<td rowspan="4">
+							何种进近？
+						</td>
+						<td rowspan="4">
+							<select class="form-control" id="theAppoachType"name="theAppoachType">
+		
+							<option value="1">精密进近</option>
+							<option value="2">非精密进近</option>
+							<option value="3">类精密进近</option>
+							<option value="4">目视/目视盘旋</option>
+							</select>
+						</td>
+						<td rowspan="2">
+							进近类型
+						</td>
+						<td rowspan="2">
+							<input type="input"  name="theAppoachDesc" >
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered" style="width:80%;">
+				<tbody>
+					<tr>
+						<td>
+							进近：人工飞行还是自动飞行？
+						</td>
+						<td>
+							<select class="form-control" id="theAppoachArtificialOrAut" name="theAppoachArtificialOrAut">
+							<option value="1">人工飞行</option>
+							<option value="2">自动飞行</option>							
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table  class="table table-bordered" style="width:80%;">
+				<tbody>
+					<tr>
+						
+						<td>
+							该航空器是否大幅高于/低于所期望的下降垂直轨迹？（是/否）
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="isBigMarginAbroveExpect" name="isBigMarginAbroveExpect" data-on-text="是" data-off-text="否"  >
+
+						</td>					
+					</tr>
+				</tbody>
+			</table>
+		   <table class="table table-bordered"  style="width:80%;">
+				<tbody>
+					<tr>
+						<td>
+							在放襟翼期间，襟翼是否被“正常”的放下？<br /> （选一）
+						</td>
+						<td>
+							 <select class="form-control" id="isFlapNormal" name="isFlapNormal">
+							 
+							 <option value="1">达到或接近最低机动速度</option> 
+							 <option value="2">达到或接近最大放襟翼速度</option> 
+							 <option value="3">超过最大放襟翼速度</option>
+							 <option value="4">正常</option>
+							 </select>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+			
+			<table class="table table-bordered" style="width:80%;">
+				<tbody>
+					<tr>
+						<td>
+							天气（选一）
+						</td>
+						<td>
+							 <select class="form-control" id="theWeatherType" name="theWeatherType">
+							  <option value="1">目视气象条件</option> 
+							  <option value="2">仪表气象条件</option> </select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		<table class="table table-bordered" style="width:100%;">
+				<tbody>
+					<tr>					
+						<td>
+							稳定进近的参数
+						</td>
+						<td>
+							高于机场标高1500英尺
+						</td>
+						<td>
+							高于机场标高1000英尺
+						</td>
+						<td>
+							高于机场标高500英尺
+						</td>
+					</tr>
+					<tr>
+						<td>
+							目标空速误差在-5至+15之间
+						</td>
+						<td >
+							<input type="checkbox" data-off-color="warning" id="theTatgetAirspeedAbove1500"name="theTatgetAirspeedAbove1500" data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theTatgetAirspeedAbove1000"name="theTatgetAirspeedAbove1000" data-on-text="是" data-off-text="否" > 
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"id="theTatgetAirspeedAbove500"name="theTatgetAirspeedAbove500" data-on-text="是"  data-off-text="否" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							垂直速度≤1000 ft/min
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theVerticalVelocity1500"name="theVerticalVelocity1500"data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theVerticalVelocity1000"name="theVerticalVelocity1000"data-on-text="是"  data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theVerticalVelocity500"name="theVerticalVelocity500"data-on-text="是"  data-off-text="否"> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							稳定的发动机功率
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theRunningEngine1500"name="theRunningEngine1500" data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theRunningEngine1000"name="theRunningEngine1000"data-on-text="是" data-off-text="否" > 
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="theRunningEngine500"name="theRunningEngine500"data-on-text="是" data-off-text="否" > 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							着陆构型（襟缝翼位置/起落架放下）
+						</td>
+						<td>
+						    <input type="checkbox" data-off-color="warning"  id="loadingType1500"name="loadingType1500"data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+						    <input type="checkbox" data-off-color="warning"  id="loadingType1000"name="loadingType1000"data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+						   <input type="checkbox" data-off-color="warning"  id="loadingType500"name="loadingType500"data-on-text="是" data-off-text="否" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							稳定的航向道跟踪或着陆航迹
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning" id="stableCrouse1500"name="stableCrouse1500" data-on-text="是" data-off-text="否" > 
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"  id="stableCrouse1000"name="stableCrouse1000"data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"  id="stableCrouse500"name="stableCrouse500"data-on-text="是" data-off-text="否" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							稳定的下滑道跟踪或下降率
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"   id="stableSlop1500"name="stableSlop1500"data-on-text="是" data-off-text="否" >
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"  id="stableSlop1000"name="stableSlop1000" data-on-text="是" data-off-text="否">
+						</td>
+						<td>
+							<input type="checkbox" data-off-color="warning"  id="stableSlop500"name="stableSlop500" data-on-text="是" data-off-text="否" >
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			 <table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td>
+							叙述
+						</td>
+						<td>
+							使用下面的图来描述从TOD到着陆所有的重要事件。描述机组成员遭遇威胁和差错时的表现。此外，需阐明你给出的行为评分的理由。
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea style="width:100%" rows="4" name="dropDesc">
+							</textarea>
+						</td>
+					</tr>
+				</tbody>
+		 </table>
+		   <div class="body-nest" id="tableStatic">
+               <img  height="500" width="800" src="../../../img/TOD.png"/>
+         </div>                              
+     </div>
+     
+  </div> 
+  <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+           
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a   id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item active"><a style="color:white"id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+          <button  type="button" class="btn btn-default" qid="saveTechWork" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitTechWork" href="">提交</button>
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+ </div>
+ </form>
+</div>
+
+</body>

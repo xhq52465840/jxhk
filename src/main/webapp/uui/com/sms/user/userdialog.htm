@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_user">
+            <form class="form-horizontal" role="form" qid="userform">
+                <div class="form-group control add edit">
+                    <label for="<%=this._id%>-username" class="col-sm-3 control-label"><%=com.sms.user.userdialog.i18n.form.accountName %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <input type="text" qid="username" class="form-control input-sm" name="username"  maxlength="255">
+                        <span class="helper-block text-muted">
+                            <small><%=com.sms.user.userdialog.i18n.description.accountName %></small>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="form-group control add">
+                    <label for="<%=this._id%>-password" class="col-sm-3 control-label"><%=com.sms.user.userdialog.i18n.form.password %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <input type="password" qid="password" class="form-control input-sm" name="password" maxlength="50">
+                        
+                    </div>
+                </div>
+                <div class="form-group control add">
+                    <label for="<%=this._id%>-confirmPassword" class="col-sm-3 control-label"><%=com.sms.user.userdialog.i18n.form.againEnter %></label>
+                    <div class="col-sm-7">
+                        <input type="password" qid="confirmPassword" class="form-control input-sm"  name="confirmPassword" maxlength="50">
+                    </div>
+                </div> -->
+                <div class="form-group control add edit">
+                    <label for="<%=this._id%>-fullName" class="col-sm-3 control-label"><%=com.sms.user.userdialog.i18n.form.userName %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <input type="text" qid="fullName" class="form-control input-sm" name="fullName" maxlength="255">
+                        <span class="helper-block text-muted">
+                            <small><%=com.sms.user.userdialog.i18n.description.userName %></small>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group control add edit">
+                    <label for="<%=this._id%>-email" class="col-sm-3 control-label"><%=com.sms.user.userdialog.i18n.form.mail %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <input type="text" qid="email" class="form-control input-sm" name="email" maxlength="255">
+                        <!--<div qid="email-error text-danger hidden">邮箱无效</div>-->
+                       <!--  <div class="checkbox control edit">
+                            <label>
+                                <input type="checkbox" qid="active" />
+                               <%=com.sms.user.userdialog.i18n.form.valid %> 
+                            </label>
+                        </div> -->
+                        <!-- <div class="checkbox control add">
+                            <label>
+                                <input type="checkbox" qid="notice" />
+                                <%=com.sms.user.userdialog.i18n.description.notice %>  
+                            </label>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

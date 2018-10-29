@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="airlineDialog"></div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.airline.i18n.title%>
+					<div qid="btn_edit" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-pencil"></i>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" >
+				<table class="uui-table table-fixed" >
+					<tbody>
+						<tr>
+							<td rowspan="2" class="name"><%= com.sms.detailmodule.airline.i18n.name%></td>
+							<td class="value" style="width: 40px;">
+								<span class="text-muted"><%= com.sms.detailmodule.airline.i18n.departureAirport%></span>
+							</td>
+							<td class="value">
+								<span qid="departureAirport"></span>
+								<span class="text-muted" style="padding: 0px 5px;"><%= com.sms.detailmodule.airline.i18n.arrivalAirport%></span>
+								<span qid="arrivalAirport"></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="value" style="width: 40px;">
+								<span class="text-muted" ><%= com.sms.detailmodule.airline.i18n.stopovers%></span>
+							</td>
+							<td class="value">
+								<span qid="stopovers">
+									<!-- <label class="label label-success">太原</label>
+									<label class="label label-success">昆明</label> -->
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.airline.i18n.org%></td>
+							<td class="value" colspan="2"><span qid="unitDisplayName"></span></td>
+						</tr>
+						<tr>
+							<td class="name"><%= com.sms.detailmodule.airline.i18n.craft%></td>
+							<td class="value" colspan="2">
+								<span qid="craft">
+									<!-- <label class="label label-success">B777-300ER</label>
+									<label class="label label-success">空客320</label> -->
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

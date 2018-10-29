@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+	<div>
+		<div umid="select-unit-avatar"></div>
+        <div qid="item-dialog-edit">
+        	<div>
+	        	<div class="col-sm-12">
+	        		<form class="form-horizontal" role="form" qid="unit-form">
+		          	 <div class="form-groups ">
+		                <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">行动项</label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-description" name="description"  rows="4" placeholder="" maxlength="2000"  ></textarea>
+		                    </div>
+		                </div>
+	                    <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">责任部门</label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-actionOrganization" name="actionOrganization"  rows="4" placeholder="" maxlength="2000" ></textarea>
+		                    </div>
+		                </div>
+		                 <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">创建人所属单位</label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-creatorOrganization" name="creatorOrganization"  rows="4" placeholder="" maxlength="2000" ></textarea>
+		                    </div>
+		                </div>
+		                 <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">验证人</label>
+		                    <div class="col-sm-9">
+		                        <input type="text" class="form-control  " qid="unit-validator" name="validator" value="" placeholder="" maxlength="50">
+		                    </div>
+		                </div> 
+		          <!--       <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">ssd</label>
+		                    <div class="col-sm-9">
+		                        <input type="text" class="form-control  " qid="unit-pointchapter" name="confirmMan" placeholder="" maxlength="50">
+		                    </div>
+		                </div>  -->
+		               <!--   <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">验证日期</label>
+						 	<div class="col-sm-9">
+								<input type="text" class="form-control input-sm confirmLastDate" name="confirmLastDate" style="width:150px;" /> 
+						  		<div class="text-danger hidden validmsg"></div>
+						  	</div>
+						</div>
+		 -->
+		        	</div>
+	                </form>
+                </div>
+        	</div>
+        </div>
+        <div qid="treeContent" style="display:none; position: absolute;z-index:1060;background:#eee;width: 400px;">
+			<ul qid="tree" class="ztree" style="margin-top:0; width:393px;height: 200px;overflow: auto;"></ul>
+		</div>
+	</div> 
+	
+	                     
+</body>
+</html>

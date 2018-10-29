@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="allalert" class="alert alert-info" role="alert" style="margin-top: 20px;">
+            <p><span class="glyphicon glyphicon-info-sign"></span><%=com.sms.filter.filterDialog.i18n.explain %></p>
+        </div>
+        <form class="form-horizontal" role="form" qid="filterform">
+            <div class="form-group control">
+                <label for="<%=this._id%>-name" class="col-sm-3 control-label"><%=com.sms.filter.filterDialog.i18n.name %><span class="text-danger">*</span></label>
+                <div class="col-sm-7">
+                    <input type="text" qid="name" class="form-control input-sm" name="name" maxlength="50"/>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-description" class="col-sm-3 control-label"><%=com.sms.filter.filterDialog.i18n.describute %></label>
+                <div class="col-sm-7">
+                    <textarea qid="description" class="form-control input-sm" name="description" maxlength="800" style="resize:none;"></textarea>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-charnelThose" class="col-sm-3 control-label"><%=com.sms.filter.filterDialog.i18n.collect %></label>
+                <div class="col-sm-7">
+                    <span class="star glyphicon glyphicon-star" qid="charnelThose" style="margin-top: 7px;cursor: pointer;"></span>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-sharedlist" class="col-sm-3 control-label"><%=com.sms.filter.filterDialog.i18n.share %></label>
+                <div class="col-sm-7">
+                    <div qid="sharedlist" style="margin-top: 7px;">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label for="<%=this._id%>-shared" class="col-sm-3 control-label"><%=com.sms.filter.filterDialog.i18n.shared %></label>
+                <div class="col-sm-3" style="padding-left: 0px;">
+                    <select class="form-control input-sm" qid="shared">
+                        <option value="ALL"><%=com.sms.filter.filterDialog.i18n.anyone %></option>
+                        <option value="GROUP"><%=com.sms.filter.filterDialog.i18n.userGroup %></option>
+                        <option value="USER"><%=com.sms.filter.filterDialog.i18n.user %></option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" qid="sharedgrouplist" class="form-control input-sm" style="float: left;" />
+                    <input type="text" qid="shareduserlist" class="form-control input-sm" style="float: left;" />
+                    <button class="btn btn-link  btn-sm" qid="btn_addshare" style="float: left;"><span class="glyphicon glyphicon-plus"></span><%=com.sms.filter.filterDialog.i18n.addShare %></button>
+                </div>
+            </div>
+            <div class="form-group control">
+                <label  class="col-sm-3 control-label"></label>
+            	<div class="col-sm-9" style="font-size: 12px;padding-left:0px;">共享给哪些用户</div>
+            </div>
+            <div class="form-group control">
+            	<label  class="col-sm-3 control-label"></label>
+            	<div class="col-sm-9" style="font-size: 12px;padding-left:0px;" qid="share-man"></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

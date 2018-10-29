@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage">
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">威胁管理工作单</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="form uui-managepage-filter-new uui-panel-graph-new threat" id="threat">
+    		<div class="allChecked">
+    			<input type="checkbox" id="allPlan" v-on:click="checkAllPlans"><label for="allPlan">全选</label>
+    		</div>
+    	<template v-for="threat in threatList">
+     		<div class="uui-panel-rect-header-new">
+     			<div class="threatheadertb"><input type="checkbox" dataid={{threat.id}} v-on:click="isCheckAllChecked"/></div>
+     			<div class="threatheadercontent">威胁——产生于飞行机组的影响能力之外，但需要机组积极管理以保持安全的事件或差错</div>
+     		</div>
+     		<div class="uui-panel-rect-body uui-managepage-filter-content-new" id="spans" style="margin-bottom:20px;height:300+threatList.length*40 px">
+        		<table class="table table-bordered threattable1" cellspacing="1" style="font-family: sans-serif;font-size:12px;margin-bottom:0px;">
+          			<tbody id="text">
+						<tr>					   
+							<td class="bold" align="center" style="width:10%;">
+							威胁代号
+							</td>
+							<td colspan="3" align="left"  style="width:90%;padding-left:16px">
+								<input type="text" class="form-control" style="width:200px"  v-model="threat.threatCode"/>
+							</td>
+						</tr>
+						<tr>
+							<td  class="bold" align="center" valign="middle"  style="width:10%;">
+							对威胁的描述
+							</td>
+							<td colspan="3" style="width:90%;" class="paddinglr paddingtb">
+								<div class="threatdesc">
+									<div class="threatdesctitle">描述该威胁</div>
+									<div class="threatdesccontent">
+										<textarea type="text" class="form-control threattextarea" v-model="threat.threatDesc"></textarea>
+									</div>
+								</div>
+								<div class="threatdesc1">
+									<div class="threattype">
+										<div class="threattypetitle">威胁类型</div>
+										<div class="threattypecontent">
+											<select class="form-control threatselect" v-model="threat.threatType">
+												<option value="">请选择</option>
+				    							<option v-for="option in baseInfo.threatBaseInfo" v-if="option.parentNode==null"  v-bind:value="option">
+						 							{{ option.name}}
+												</option>
+				   							</select>
+				   						</div>
+									</div>
+									<div  class="threatnumber">
+										<div class="threatnumbertitle">威胁编号</div>
+										<div class="threatnumbercontent">
+											<select class="form-control threatselect" v-model="threat.threatNumber | syncfromthreattype threat.threatType baseInfo.threatBaseInfo $index" > 
+				     							<option value="">请选择</option>
+				     							<option v-for="option in baseInfo.threatBaseInfo" v-if="option.parentNode==threat.threatType.id && threat.threatType != ''"   v-bind:value="option">
+						 							{{ option.name}}
+												</option>
+					 						</select>
+				   						</div>
+									</div>
+									<div class="threatflightprocedure">
+										<div class="threatflightproceduretitle">飞行阶段</div>
+										<div class="threatflightprocedurecontent">
+											<select class="form-control threatselect" v-model="threat.flightProcedure"> 
+												<option value="">请选择</option>
+					  							<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='flight_statue'" v-bind:value="option.dictCode">
+			                  						{{ option.dictName }}
+			                					</option>
+					  						</select>
+				   						</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td  class="bold">威胁管理</td>
+							<td class="paddinglr">
+								<div class="threatmanger">
+									<div class="threatmangertitle">是否得到有效管理？</div>
+									<div class="threatmangercontent">
+										<select class="form-control threatselect" v-model="threat.isDealValidity">
+											<option value="">请选择</option>
+					  						<option value="是">是</option>
+					  						<option value="否">否</option>
+					  					</select>
+									</div>
+								</div>
+								<div class="threatmanger1">
+									<div class="threatmanger1title">
+										机组对该威胁是如何管理或者管理不当的？
+									</div>
+									<div class="threatmanger1content">
+										<textarea type="text" class="form-control threattextarea" v-model="threat.theMeasuresForThreat"></textarea>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<!--  
+							<td colspan="2"  align="left"  style="width:12%;"><input type="checkbox" id="allPlan" v-on:click="checkAllPlans">全选</td>					
+						
+						<tr v-for="threat in threatList" id="planListBody">
+							<td align="left">
+								<input type="checkbox" dataid={{threat.id}} v-on:click="isCheckAllChecked"/>
+							</td>
+							<td>
+						-->		
+					</tbody>
+        		</table>
+      		</div>
+      		</template>
+      		<div class="threatbutton">
+      			<button class="btn btn-default" type="button" v-on:click="addmore">增加一条威胁记录</button>
+        		<button type="button" class="btn btn-default" v-on:click="delthreats">删除威胁记录</button>
+      		</div>
+     		<div id="footer" class="row  float_footer" >
+	  			<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	   				<button  type="button" class="btn btn-default" qid="saveThreat" href="" v-on:click="save">保存</button>
+       				<button  type="button" class="btn btn-default" qid="submitThreat" href="" v-on:click="submit">提交</button>
+     			</div>
+  			</div>
+  		
+  		</div>
+  	</div>
+ </div>
+ </body>

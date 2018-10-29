@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试header模块</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript">
+        var header = null;
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+
+            var settings = {
+                logo: { type: "text", value: "API" }, // text & image http://jira.usky.com.cn:8080/s/zh_CNetk6d2-1988229788/6262/7/_/jira-logo-scaled.png
+                search: {
+                    title: "快速检索",
+                    event: function (ads) {
+                        $("<div/>").dialog({
+                            title: "提示框",
+                            modal: true,
+                            resizable: false,
+                            create: function () {
+                                $("<p>" + ads + "</p>").appendTo(this);
+                            },
+                            close: function () {
+                                $(this).dialog("destroy").remove();
+                            },
+                            buttons: [
+                                {
+                                    text: "确定", click: function () {
+
+                                    }
+                                },
+                                {
+                                    text: "取消", click: function () {
+                                        
+                                    }
+                                }
+                            ]
+                        });
+                    }
+                },
+                menus: [
+                    {
+                        label: "面板", childrens: [
+                            { label: "面板" },
+                            { label: "管理面板" }
+                        ]
+                    },
+                    {
+                        label: "办证中心", childrens: [
+                              { label: "最近浏览" },
+                              { label: "查看所有" }
+                        ]
+                    },
+                    {
+                        label: "从业单位", childrens: [
+                              { label: "最近浏览" },
+                              { label: "查看所有" },
+                              {label:"新增单位"}
+                        ]
+                    },
+                    {
+                        label: "从业人员", childrens: [
+                              { label: "最近浏览" },
+                              { label: "查看所有" },
+                              { label: "新增人员" }
+                        ]
+                    },
+                    {
+                        label: "通行证", childrens: [
+                              { label: "最近浏览" },
+                              { label: "查看所有" },
+                              { label: "申办证件" }
+                        ]
+                    }
+                ]
+            };
+            header = $.um($("div[umid='application-header']"), settings);
+
+            $("textarea").val(JSON2.stringify(settings));
+            $("button").click(function () {
+                try{
+                    var options = JSON2.parse($("textarea").val());
+                    header.resetOptions(options);
+                    $(".alert").hide();
+                } catch (e) {
+                    $(".alert").show();
+                    throw new Error("JSON Parse:"+e.message);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div umid="application-header" umodule="com.sms.header"></div>
+    <div style="padding:10px;margin:0 auto;width:50%;">
+        <textarea class="form-control" rows="20"></textarea>
+        <button class="btn btn-danger" style="margin-top:10px;margin-bottom:10px;">执行</button>
+        <div class="alert alert-warning" style="display:none;">转换JSON失败</div>
+    </div>
+    
+</body>
+</html>

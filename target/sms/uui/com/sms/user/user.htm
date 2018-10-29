@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+        <div umid="userDialog" ></div>
+        <div umid="userGroup" ></div>
+        <div umid="userOrg" ></div>
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="row">
+	                <div class="col-md-3">
+	                    <h3 class="uui-managepage-title"><%=com.sms.user.user.i18n.title %></h3>
+	                </div>
+	                <div class="col-md-9 text-right">
+	                    <button class="btn btn-default btn-sm" qid="btn_createuser"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.user.user.i18n.buttons.CreateUser %></button>
+	                </div>
+	            </div>
+            </div>
+        </div>
+
+        <div class="form uui-managepage-filter uui-panel-graph" qid="filter">
+        	<div class="uui-panel-rect-widget">
+        		<div class="uui-panel-rect-header">
+        			<h3 class="uui-panel-rect-title"><%=com.sms.user.user.i18n.filter.title %></h3>
+        		</div>
+        		<div class="uui-managepage-filter-content uui-panel-rect-body">
+        			<div class="row">
+			            <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-usernamecontains"><%=com.sms.user.user.i18n.filter.form.accountNameHas %></label>
+			                    <input type="text" class="form-control input-sm" qid="usernamecontains" maxlength="255" />
+			            </div>
+			            <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-fullnamecontains"><%=com.sms.user.user.i18n.filter.form.userNameHas %></label>
+			                    <input type="text" class="form-control input-sm" qid="fullnamecontains" maxlength="255" />
+			            </div>
+			            <!--  <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-unit">安监机构</label>
+			                    <input type="text" class="form-control input-sm" qid="unit" maxlength="255" />
+			            </div> -->
+			             <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-organization">组织</label>
+			                    <input type="text" class="form-control input-sm" qid="organization" maxlength="255" />
+			            </div>
+		            </div>
+		           	 <div class="row">
+		                <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-emailcontains"><%=com.sms.user.user.i18n.filter.form.mailHas %></label>
+			                    <input type="text" class="form-control input-sm" qid="emailcontains" maxlength="255" />
+			            </div>
+			            <div class="form-group col-md-3 col-xs-3 ">
+			                <label for="<%=this._id%>-groupscontains"><%=com.sms.user.user.i18n.filter.form.userGroup %></label>
+			                    <select  class="form-control input-sm" qid="groupscontains"  >
+			                        <option value=""><%=com.sms.user.user.i18n.filter.form.allUserGroup %></option>    
+			                        <!-- <option>sms-administrators</option>    
+			                        <option>sms-developers</option>    
+			                        <option>sms-users</option>  -->   
+			                    </select>
+			            </div>
+			             <div class=" col-md-6 col-xs-6 ">
+				            <div class="text-right" style="line-height: 5em;">
+				            <button class="btn btn-default btn-sm" qid="btn_filter"><%=com.sms.user.user.i18n.buttons.filter %></button>
+				            <button type="button" qid="btn_resetfilter" class="btn btn-link"><%=com.sms.user.user.i18n.buttons.removeFilter %></button>
+			            	</div>
+		            	 </div>
+	           		 </div>
+		         </div> 
+        	</div>
+        </div>
+        
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+             
+        </table>
+        
+        <div qid="treeContent" style="display:none; position: absolute;z-index:1060;  background: #fff;border: 1px solid #ddd;-webkit-box-shadow: 0 0 10px #DDD;box-shadow: 0 0 10px #DDD;width: 329px;height:200px;overflow:auto;">
+			<ul qid="tree" class="ztree" style="margin-top:0; width:160px;"></ul>
+		</div>
+		
+		
+		<div qid="userrole" class="hidden">
+			<div class="col-sm-12">
+			       <form class="form-horizontal" role="form" qid="unit-form">
+			       			<div class="form-group hidden">
+				       			<select name="type"> <option>SITUATION</option>
+							  </select>
+			               </div>
+		             
+		                <div class="form-group ">
+		                	    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">日期：</label>
+						 		<div class="col-sm-9">
+								       <input type="text" class="form-control" qid="eventDate" name="eventDate" placeholder="" maxlength="50">
+								</div>
+					   </div>
+		               <div class="form-group">
+		                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">名称：</label>
+		                   <div class="col-sm-9">
+		                       <input type="text" class="form-control " qid="content" name="content" placeholder="" maxlength="50">
+		                   </div>
+		               </div>
+		               <div class="form-group">
+		                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">颁证机构：</label>
+		                   <div class="col-sm-9">
+		                       <input  type="text"  class="form-control input-sm" qid="department" name="department" placeholder="" maxlength="2000" ></input>
+		                   </div>
+		               </div>
+		           </form>   
+				</div>
+			</div>
+    </div>
+</body>
+</html>

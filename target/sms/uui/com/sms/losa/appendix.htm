@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">附件</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+     <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:250px">
+        <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+        <tbody>
+        <tr>
+             <!--  <td>序号</td>-->
+             <td >名称</td>
+             <td >大小</td>
+             <td >上传时间</td>
+             <td >上传者</td>
+             <td>操作</td>
+             
+          </tr>
+          <tr>
+           <!-- <td >
+              <div way-repeat="jsonAttach">
+              <p id=index$$key > </p>
+             
+              </div>
+            </td> --> 
+            <td >
+              <div way-repeat="jsonAttach">
+              <p way-data="attachShowName" > </p>
+             
+              </div>
+            </td>
+            <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="attachSize" ></p>
+             
+              </div>
+              
+            </td> 
+             <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="updateTime"></p>
+              </div>
+            </td>
+             <td>
+              <div way-repeat="jsonAttach">
+              
+              <p way-data="creatorName"></p>
+              </div>
+            </td>
+            
+            <td>
+              <div way-repeat="jsonAttach">
+              <p>
+              <a   id=download$$key  href="">下载</a>&nbsp;&nbsp;
+               <span class="glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file" 
+               id=deleteAttach$$key onclick="deleteAttach($$key)"></span>
+               </p>
+              </div>
+            </td>
+            
+          
+          </tr>
+          
+        </tbody>
+        </table>
+     </div>
+     <div>
+     <button type="button" qid="addAttach"  >上传附件</button>
+     <div id="uploadDialog" style="display:none;">
+       <div qid="div_Dialog">
+        <div id="content"></div>
+        <input type="file" id="uploadAttach" multiple="multiple"/>
+	   </div>
+     </div>
+     <div id="deleteDialog" style="display:none;">
+        <p id="deleteContent"></p>
+     </div>
+   </div>
+    
+ <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+           <button  type="button" class="btn btn-default" qid="saveAppendix" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitAppendix" href="">提交</button>
+           <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a   id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item "><a  id="departUrl" href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl"href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item " ><a  id="cruiseUrl"href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item "><a id="techWsUrl"href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="launchUrl"href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl"href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item "><a id="threatUrl"href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item "><a id="errorUrl"href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item "><a id="crewUrl"href="">机组访谈</a></li>
+           <li  style="height:34px;"class="list-group-item active"><a style="color:white" id="appendix"href="">附件</a></li>
+         
+           
+   </ul>
+     
+    </div> 
+</div>  
+</body>
+</html>

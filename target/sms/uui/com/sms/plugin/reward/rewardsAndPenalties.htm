@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="activityTypeDialog" ></div>
+        
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title">奖惩记录配置</h3>
+                    </div>
+                    <div class="col-md-9 text-right">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm" qid="btn_addActivityType"><span class="glyphicon glyphicon-plus"></span>添加安全信息</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form uui-module-filter" qid="filter" style="width:365px;">
+            <h3 class="uui-module-h3" style="margin-bottom:10px;">筛选字段</h3>
+            <div class="form-group col-md12 uui-module-filter-firstitem">
+                <label for="">安全信息类型</label>
+                    <input type="text" class="form-control input-sm" qid="name" maxlength="255" />
+            </div>
+            <button class="btn btn-default btn-sm" qid="btn_filter">搜索</button>
+            <button type="button" class="btn btn-link" qid="btn_resetfilter">清除筛选</button>
+        </div>
+
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            
+        </table>
+    </div>
+</body>
+</html>

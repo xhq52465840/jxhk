@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    	.show-grid{
+    		margin-bottom: 5px;
+    	}
+    	.cur-pt{
+    		cursor: pointer;
+    	}
+    	.red{
+    		color: red;
+    	}
+    	.edit{
+    		color : #428bca;
+    		cursor: pointer;
+    	}
+    </style>
+</head>
+<body>
+    <div>
+    	<div umid="fly"></div>
+    	<div class="panel panel-sms">
+    		<div class="panel-heading">
+				<h2 class="panel-title">
+					奖惩记录
+					<div class="pull-right panel-button-container" qid="add_record" title="新增奖惩记录">
+						<div class="panel-button-inner">
+							<i class="fa fa-plus "></i>
+						</div>
+					</div> 
+				</h2>
+			</div>
+    		<div class="panel-body">
+    			<table class="uui-table" qid="datatable">
+					<thead>
+						<tr class="infomodel-title">
+							<th style="width:10%;">姓名</th>
+							<th style="width:10%;">类型</th>
+							<th style="width:75%;">奖惩措施</th>
+							<th class="operate-tool" style="border-left: none;width:5%;"></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+    		</div>
+    	</div>
+    	<div qid="infoDialog" style="display:none;">
+	    	<form qid="form">
+				<div class="form-group">
+					<div class="row">
+						<label class="col-sm-2 control-label">记录编号</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="rewardNo" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">类型</label>
+						<div class="col-sm-4">
+							<select class="form-control" name="rewardType">
+								<option value="R">奖励</option>
+								<option value="P">惩罚</option>
+							</select>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2">个人信息</label>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">姓名<span class="red">*</span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="name" />
+						</div>
+						<label class="col-sm-2 control-label">工号<span class="red">*</span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="jobNumber" />
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">飞行单位<span class="red">*</span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="flightUnit" />
+						</div>
+						<label class="col-sm-2 control-label">职位<span class="red">*</span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="position" />
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">身份证<span class="red">*</span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="idCard" />
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2">航班信息</label><i class="fa fa-plus cur-pt" qid="add_fly"></i>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">航班号</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="flightNo" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">航班日期</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="flightDate" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">机型</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="aircraftType" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">机号</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="tailNo" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">主操纵</label>
+						<div class="col-sm-4">
+							<select class="form-control" name="control">
+								<option value="FM">FM</option>
+								<option value="PM">PM</option>
+								<option value="PM/FM">PM/FM</option>
+							</select>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2">奖惩信息</label>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">处理结论</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="3" name="conclusion"></textarea>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">备注</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="3" name="remark"></textarea>
+						</div>
+					</div>
+				</div>
+			</form>
+ 		</div>
+    </div>
+</body>
+</html>

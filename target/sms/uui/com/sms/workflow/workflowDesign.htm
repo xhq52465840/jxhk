@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="../res/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="workflowDesign.css" type="text/css"></link></head>
+<body>
+    <div class="uui-module">
+    	<!-- 添加新状态 -->
+    	<div umid='addStatusDialog'></div>
+    	
+    	<!-- 编辑选项（属性、触发条件、校验条件、结果处理） -->
+    	<div umid='optionDialog'></div>
+    	
+    	<!-- 编辑工作流（名称、描述）  -->
+    	<div umid='workflowDialog'></div>
+    	
+    	<!-- 增加状态节点 -->
+    	<div umid="selectStateDialog"></div>
+    	
+    	<!-- 编辑当前节点 -->
+    	<div umid="stateDialog"></div>
+    	
+    	<!-- 编辑当前路径 -->
+    	<div umid="pathDialog"></div>
+    	
+    	<div class="uui-module-header" qid="header">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="ListWorkflows.html"><%=com.sms.workflow.workflowDesign.i18n.workflow %></a><br/>
+                    <h5 style="display:inline-block;"><strong qid="workflow-name"></strong>&nbsp;</h5><span class="label hidden" qid="label-active" style="display:inline-block;margin-left:5px;"></span><span class="glyphicon glyphicon-pencil" style="cursor:pointer;display:inline-block;margin-left:5px;" qid="btn_editWorkflow"></span>
+                    <div qid="workflow-description"></div>
+                </div>
+                <div class="col-md-6" style="text-align:right;padding-right:15px !important;">
+                    <button class="btn btn-default btn-sm" qid="button-edit"><%=com.sms.workflow.workflowDesign.i18n.edit %></button>
+                </div>
+            </div>
+        </div>
+
+        <div qid="workflowGraph" class="panel panel-default position-default" >
+        	<div class="panel-heading" style="height:50px;">
+        		<div qid="button-toolbars" class="pull-left">
+	        		<button class="btn btn-default btn-sm" qid="btn_addRect"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.workflow.workflowDesign.i18n.addStatus %></button>
+	                <div class="btn-group hidden" style="margin-left:20px;">
+	                    <button class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-plus"></span></button>
+	                    <button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+	                </div>
+	                <div class="btn-group" style="margin-left:10px;">
+	                    <button class="btn btn-default btn-sm disabled switch-workflow-operate-mode" qid="btn_select"><%=com.sms.workflow.workflowDesign.i18n.choose %></button>
+	                    <button class="btn btn-default btn-sm switch-workflow-operate-mode" qid="btn_connect"><%=com.sms.workflow.workflowDesign.i18n.connection %></button>
+	                </div>
+	                &nbsp;<button class="btn btn-default btn-sm" qid="btn_getFlowData"><%=com.sms.workflow.workflowDesign.i18n.saveData %></button>
+	                &nbsp;<button class="btn btn-default btn-sm" qid="button-release"><%=com.sms.workflow.workflowDesign.i18n.publish %></button>
+                </div>
+        		<div class="pull-right">
+        			<span class="text-muted" qid="workflow-lastupdate"></span>&nbsp;&nbsp;<button class="btn btn-default btn-sm" qid="btn_graphPosition"><span class="glyphicon glyphicon-resize-full" ></span></button>&nbsp;<button class="btn btn-default btn-sm hidden" qid="btn_basemode_edit"><span class="glyphicon glyphicon-pencil" ></span></button></div>
+        	</div>
+        	<div class="panel-body" style="position:relative;">
+	        	<div qid="workflowCore"></div>
+	        	<div class="property-panel hidden" qid="property-panel">
+					<div class="property-view">
+						<h3 qid="state"><%=com.sms.workflow.workflowDesign.i18n.taskNode %></h3>
+						<div class="description" qid="description"></div>
+						<div class="module">
+								<button class="btn btn-default btn-sm" qid="btn_editState"><span class="glyphicon glyphicon-pencil"></span>&nbsp;<%=com.sms.workflow.workflowDesign.i18n.edit %></button>
+								<button class="btn btn-link btn-sm" qid="btn_remove"><%=com.sms.workflow.workflowDesign.i18n.del %></button>
+						</div>
+						<div class="module">
+							<div class="mod-header">
+								<h5><strong><%=com.sms.workflow.workflowDesign.i18n.option %></strong></h5>
+							</div>
+							<div class="mod-content">
+								<ul class="list-unstyled" qid="property-list">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        	</div>
+        </div>
+    </div>
+</body>
+</html>

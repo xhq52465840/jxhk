@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_setdialog">
+            <form class="form-horizontal" role="form" qid="setForm">
+                <div class="form-group">
+                    <label for="<%=this._id%>-name" class="col-sm-3 control-label"><%=com.sms.permissionset.setdialog.i18n.name %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" qid="name" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="<%=this._id%>-type" class="col-sm-3 control-label"><%=com.sms.permissionset.setdialog.i18n.type %></label>
+                    <div class="col-sm-7">
+                        <div class="checkbox control edit">
+                            <label>
+                                <input type="checkbox" qid="type" value="global" /><%=com.sms.permissionset.setdialog.i18n.global %>
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="<%=this._id%>-description" class="col-sm-3 control-label"><%=com.sms.permissionset.setdialog.i18n.describute %></label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" qid="description" name="description"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

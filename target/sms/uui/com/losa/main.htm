@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LOSA审计</title>
+<style>
+	table.dataTable tbody th,
+	table.dataTable tbody td {
+	  padding: 3px 3px;
+	  vertical-align:middle;
+	}
+	.table {
+		margin-bottom : 0;
+	}
+	.onpagebars{
+	    font-weight:bold;
+	    color:black;
+    }
+</style>
+</head>
+<body>
+<div>
+	<div class="container-fluid">
+		<div class="uui-managepage" >
+			<nav class="navbar navbar-default navbar-horizontalNav" role="navigation">
+				<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse" style="padding-left:0;">
+					<ul id="myTab" class="nav navbar-nav" style="width:100%">
+						<li class="active"><a id="tab_portal" href="#report" data-toggle="tab">看板</a></li>
+						<li><a id="tab_scheme" href="#scheme" data-toggle="tab">审计方案</a></li> 
+            			<li><a id="tab_plan" href="#plan"  data-toggle="tab">审计计划</a></li>
+            			<li v-show="userRole!='观察员'"><a id="tab_basisInfo" href="#tabBasisInfo"  data-toggle="tab">基础数据</a></li>
+            			<li><a id="tab_reportInfo" href="#tabReportInfo"  data-toggle="tab">统计分析</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="report">
+					<div umid="general"></div>
+	            </div>
+				 <div class="tab-pane fade" id="scheme">
+					<div umid="auditScheme"></div>
+	            </div>          
+	            <div class="tab-pane fade" id="plan">
+	                <div umid="taskPlan"></div>
+	            </div>       
+	            <div class="tab-pane fade" id="tabBasisInfo">
+	                <div umid="basisInfo"></div>
+	            </div> 
+	            <div class="tab-pane fade" id="tabReportInfo">
+	                <div umid="reportInfo"></div>
+	            </div>     
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

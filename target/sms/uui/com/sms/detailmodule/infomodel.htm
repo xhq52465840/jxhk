@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div >
+    	<div umid="happentime"></div>
+    	<div umid="unit"></div>
+    	<div umid="fly"></div>
+    	<div umid="position"></div>
+    	<div umid="car"></div>
+    	<div umid="tool"></div>
+    	<div umid="staff"></div>
+    	<div class="hidden" qid="flightpersondialog" style="padding:0;">
+    		<div umid="flightperson"></div>
+    	</div>
+			<div class="panel panel-sms">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<!-- <span class="fa fa-chevron-down"></span> -->
+						信息获取
+						<div class="pull-right">
+							发生时间：<span qid="datetime" style="padding-right:10px;"></span>
+							<div class="panel-button-container" qid="btn-edithappentime">
+								<div class="panel-button-inner">
+									<i class="fa fa-pencil"  ></i>
+								</div>
+							</div> 
+						</div>
+					</h2>
+				</div>
+				<div class="panel-body">
+					
+					<!-- 单位信息 begin -->
+					<table class="uui-table uui-table-hover" style="display:none">
+						<thead>
+							<tr class="infomodel-title">
+								<th>单位信息</th>
+								<th class="operate-tool" qid="btn-addunit"><i class="fa fa-plus fa-lg" ></i></th>
+							</tr>
+							<tr>
+								<th colspan="2">单位</th>
+							</tr>
+						</thead>
+						<tbody qid="unitcontainer">
+							
+						</tbody>
+					</table>
+					<!-- 单位信息 end -->
+
+					<!-- 航班信息 begin -->
+					<table class="uui-table uui-table-hover">
+						<thead>
+							<tr class="infomodel-title">
+								<th colspan="8">航班信息</th>
+								<th class="operate-tool" qid="btn-addflight"><i class="fa fa-plus fa-lg" ></i></th>
+							</tr>
+							<tr>
+								<th>航班号</th>
+								<th>航班日期</th>
+								<th>飞行阶段</th>
+								<th>起飞|降落</th>
+								<th class="text-center" colspan="5" width="340px">查看</th>
+							</tr>
+						</thead>
+						<tbody qid="flycontainer"></tbody>
+					</table>
+					<!-- 航班信息 end -->
+					
+					<div class="flightinfo hidden" qid="flightinfoview">
+						<div umid="flightinfomodule"></div>
+					</div>			
+						 	
+					<div qid="more-info" style="display:none;">
+						<!-- 地面位置 begin -->								 															
+						<table class="uui-table uui-table-hover">
+							<thead>
+								<tr class="infomodel-title">
+									<th colspan="2">地面位置</th>
+									<th class="operate-tool" qid="btn-addlocation"><i class="fa fa-plus fa-lg" ></i></th>
+								</tr>
+								<tr >
+									<th width="30%">位置</th>
+									<th colspan="2">说明</th>
+								</tr>
+							</thead>
+							<tbody qid="positioncontainer">
+							</tbody>
+						</table>
+						<!-- 地面位置 end -->
+
+						<!-- 车辆信息 begin -->
+						<table class="uui-table uui-table-hover">
+							<thead>
+								<tr class="infomodel-title">
+									<th colspan="3">车辆信息</th>
+									<th class="operate-tool" qid="btn-addcar"><i class="fa fa-plus fa-lg" ></i></th>
+								</tr>
+								<tr class="active">
+									<th width="30%">车牌号</th>
+									<th width="30%">车型</th>
+									<th colspan="2">说明</th>
+								</tr>
+							</thead>
+							<tbody qid="carcontainer">
+							</tbody>
+						</table>		
+						<!-- 车辆信息 end -->
+
+						<!-- 维护工具 begin -->		
+						<table class="uui-table uui-table-hover">
+							<thead>
+								<tr class="infomodel-title">
+									<th colspan="2">维护工具</th>
+									<th class="operate-tool" qid="btn-addtool"><i class="fa fa-plus fa-lg" ></i></th>
+								</tr>
+								<tr class="active">
+									<th width="30%">名称</th>
+									<th colspan="2">说明</th>
+								</tr>
+							</thead>
+							<tbody qid="toolcontainer">
+							</tbody>
+						</table>
+						<!-- 维护工具 end -->		
+
+						<!-- 地面人员 begin -->
+						<table class="uui-table uui-table-hover">
+							<thead>
+								<tr class="infomodel-title">
+									<th colspan="3">地面人员</th>
+									<th class="operate-tool" qid="btn-addgroundstaff"><i class="fa fa-plus fa-lg" ></i></th>
+								</tr>
+								<tr class="active">
+									<th width="30%">姓名</th>
+									<th width="30%">工种</th>
+									<th colspan="2">描述</th>
+								</tr>
+							</thead>
+							<tbody qid="groundstaffcontainer">						
+							</tbody>
+						</table>
+						<!-- 地面人员 end -->		
+					</div>
+
+					<div class="text-center">
+						<button qid="btn-togglemore" class="btn btn-link btn-sm" style="width: 100%;">显示其它信息</button>
+					</div>
+																			
+				</div>
+			</div>
+    </div>
+</body>
+</html>

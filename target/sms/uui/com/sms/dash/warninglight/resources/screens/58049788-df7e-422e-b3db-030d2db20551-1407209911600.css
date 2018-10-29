@@ -1,0 +1,93 @@
+#s-58049788-df7e-422e-b3db-030d2db20551 {
+  background-color: transparent;
+  background-image: none;
+  min-width: 950px;
+  min-height: 723px;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 > #alignmentBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 #s-Image_1 {
+  position: absolute;
+  top: 154px;
+  left: 262px;
+  width: 684px;
+  height: 569px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 #s-Category_1 {
+  position: absolute;
+  top: 175px;
+  left: 732px;
+  padding-left: 7px;
+  width: 169px;
+  height: 23px;
+  background-color: #E9E9E9;
+  background-image: none;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #D8D8D8;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #D8D8D8;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #D8D8D8;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #D8D8D8;
+  border-radius: 4px 4px 4px 4px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  opacity: 0.96;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  color: #000000;
+  text-align: left;
+  text-decoration: none;
+  font-family: 微软雅黑,Arial;
+  font-size: 10pt;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 #s-Category_1 .valign {
+  width: 151px;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 #s-Label_1 {
+  position: absolute;
+  top: 145px;
+  left: 732px;
+  width: 218px;
+  height: 29px;
+  background-color: transparent;
+  background-image: none;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+  text-shadow: none;
+  color: #666666;
+  text-align: left;
+  text-decoration: none;
+  font-family: 微软雅黑,Arial;
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12pt;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 #s-Label_1 .valign {
+  vertical-align: middle;
+}
+#s-58049788-df7e-422e-b3db-030d2db20551 > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}

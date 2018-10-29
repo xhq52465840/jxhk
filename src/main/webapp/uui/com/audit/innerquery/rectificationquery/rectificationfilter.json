@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+    
+      {
+        "propid": "improveName",
+        "propname": "整改单名称",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.rectificationquery.queryNameProp"
+      },
+      {
+        "propid": "improveNo",
+        "propname": "整改编号",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "planTime",
+        "propname": "整改期限",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryDateProp"
+      },
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.rectificationquery.queryTextProp"
+      },
+      {
+        "propid": "address",
+        "propname": "审计地点",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.rectificationquery.queryaddressProp"
+      },
+      {
+        "propid": "transactor",
+        "propname": "经办人",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.rectificationquery.queryTransactorProp"
+      },
+      {
+        "propid": "transactorTel",
+        "propname": "经办人电话",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "flowStatus",
+        "propname": "流程状态",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      }
+    ],
+    "orders": {
+		"propid":"improveName",
+		"propname":"整改单名称",
+		"order":"asc"
+    },
+    "uql": "",
+     "staticfilters": [
+      {
+        "propid": "improveName",
+        "propname": "整改单名称",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.rectificationquery.queryNameProp"
+      },
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.innerquery.rectificationquery.TargetProp"
+      }
+    ],
+    "_staticfilters": [
+      {
+        "propid": "PSD",
+        "propname": "运行控制",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "CAB",
+        "propname": "客舱服务",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "CGO",
+        "propname": "货物运输",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "ORG",
+        "propname": "组织管理",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "MNT",
+        "propname": "机务维修",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "FLT",
+        "propname": "飞行运行",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "GRH",
+        "propname": "地面保障",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "OTH",
+        "propname": "其他系统",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

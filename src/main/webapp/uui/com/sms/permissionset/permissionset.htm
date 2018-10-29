@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-module">
+        <div umid="setDialog" umodule="com.sms.permissionset.setdialog"></div>
+        <div umid="permissionDialog" umodule="com.sms.permissionset.permissiondialog"></div>
+        <div class="container uui-module-header">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="uui-module-h2"><%=com.sms.permissionset.permissionset.i18n.title %></h2>
+                </div>
+                <div class="col-md-9" style="text-align:right;padding-right:15px !important;">
+                    <button class="btn btn-default btn-sm" qid="btn_addset"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.permissionset.permissionset.i18n.addPermissionset %></button>
+                </div>
+            </div>
+        </div>
+        <div style="margin:10px 0 0 0;">
+           <p><%=com.sms.permissionset.permissionset.i18n.explain %></p>
+        </div>
+
+        <div class="form uui-module-filter" qid="filter" style="width:365px;">
+            <h3 class="uui-module-h3" style="margin-bottom:10px;"><%=com.sms.permissionset.permissionset.i18n.filterPermissionset %></h3>
+            <div class="form-group col-md12 uui-module-filter-firstitem">
+                <label for="<%=this._id%>-namecontains"><%=com.sms.permissionset.permissionset.i18n.nameHas %></label>
+                    <input type="text" class="form-control input-sm" qid="namecontains" maxlength="255" />
+            </div>
+            <button class="btn btn-default btn-sm" qid="btn_filter"><%=com.sms.permissionset.permissionset.i18n.filter %></button>
+            <button type="button" class="btn btn-link" qid="btn_resetfilter"><%=com.sms.permissionset.permissionset.i18n.removefilter %></button>
+        </div>
+
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <!--<thead>
+                <tr>
+                    <th>名称</th>
+                    <th>用户数</th>
+                    <th>权限方案</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <tr>
+                    <td>sms-administrators</td>
+                    <td><button type="button" class="btn btn-link">1</button></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                        <button type="button" class="btn btn-link editmembers">编辑成员</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>sms-developers</td>
+                    <td><button type="button" class="btn btn-link">1</button></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                        <button type="button" class="btn btn-link editmembers">编辑成员</button>
+                    </td>
+                </tr>
+               <tr>
+                    <td>sms-users</td>
+                    <td><button type="button" class="btn btn-link">1</button></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                        <button type="button" class="btn btn-link editmembers">编辑成员</button>
+                    </td>
+                </tr>
+                
+            </tbody>-->
+        </table>
+    </div>
+</body>
+</html>

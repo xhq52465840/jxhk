@@ -1,0 +1,113 @@
+*{
+	box-sizing:border-box;
+}
+.ceair-uui-table{
+	border-top: 1px solid #fff;
+	width: 100%;
+	table-layout: fixed; 
+	text-align: center;
+	border:1px solid #d5d5d5;
+}
+
+.ceair-uui-table table{
+	width:100%;
+}
+
+.ceair-uui-table > thead > tr{
+  background-color: #a2acb6;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  height: 28px;
+}
+
+.ceair-uui-table  tr.oddtrstyle{
+	background-color: #d5d5d5;
+}
+
+.ceair-uui-table  tr.eventrstyle{
+	background-color: #f5f5f7;
+}
+
+.ceair-uui-table td.value1{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.ceair-uui-table td.value{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.ceair-uui-table td.w1 div.treearrowright{
+	display:inline-block;
+	width:0px;
+	height:0px;
+	border-width:6px;
+	border-color:#75707b #75707b transparent transparent;
+	border-style:solid;
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); 	/* IE 9 */
+	-moz-transform:rotate(45deg); 	/* Firefox */
+	-webkit-transform:rotate(45deg); /* Safari Chrome */
+	-o-transform:rotate(45deg);
+	margin-top:11px;
+	margin-left:11px;
+}
+
+.ceair-uui-table td{
+	border-color:#ccc;
+	border-style:dotted;
+	border-width:0px 1px 1px 0px;
+}
+
+.ceair-uui-table td.w1 div.treearrowdown{
+	display:inline-block;
+	width:0px;
+	height:0px;
+	border-width:6px;
+	border-color:#000000 #000000 transparent transparent;
+	border-style:solid;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 	/* IE 9 */
+	-moz-transform:rotate(90deg); 	/* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari Chrome */
+	-o-transform:rotate(90deg);
+	margin-bottom:0px;
+	margin-left:11px;
+}
+
+.ceair-uui-table td.w1{
+	width: 11%; 
+	cursor: pointer;
+	text-align:left;
+}
+.ceair-uui-table td.w2{
+	width: 7%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.w3{
+	width: 8%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.w4{
+	width: 32%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.w5{
+	width: 15%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.w6{
+	width: 17%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.w7{
+	width: 10%; 
+	cursor: pointer;
+}
+.ceair-uui-table td.isarpText{
+	table-layout:fixed;
+	word-wrap:break-word;
+	padding-left:10px;
+	padding-right:10px;
+}

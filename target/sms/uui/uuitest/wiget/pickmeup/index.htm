@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/pickmeup/js/pickmeup.js"></script>
+    <link rel="stylesheet" href="../../../uui/widget/pickmeup/css/pickmeup.css" />
+    <style>
+        .ui-datepicker-calendar .ui-state-active {
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+            $("#datepicker").pickmeup({
+                mode: "multiple",
+                format: 'Y-m-d',
+                title_format: "Y年b月",
+                locale: {
+                    days: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                    daysShort: ['日', '一', '二', '三', '四', '五', '六', '日'],
+                    daysMin: ['日', '一', '二', '三', '四', '五', '六', '日'],
+                    months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    monthsShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+                },
+                change: function (strdate, date) {
+                    if (strdate instanceof Array) {
+
+                    }
+                    else {
+
+                    }
+                    console.log($("#datepicker").pickmeup("get_date"));
+                },
+                max : new Date()
+            });
+        });
+    </script>
+</head>
+<body>
+    Date:
+    <div id="datepicker"></div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/config/application.properties=UTF-8
+encoding//src/main/resources/config/external_interface.properties=UTF-8
+encoding//src/main/resources/config/quartz_cron.properties=UTF-8
+encoding//src/main/resources/context.properties=UTF-8
+encoding//src/main/resources/hibernate.properties=UTF-8
+encoding//src/main/resources/i18n/message/message_en.properties=UTF-8
+encoding//src/main/resources/i18n/message/message_zh.properties=UTF-8
+encoding//src/main/resources/quartz.properties=UTF-8
+encoding//src/main/webapp/uui/com/eiosa/xls/isarpCharpterReports-pdf.vm=UTF-8
+encoding//src/main/webapp/uui/com/eiosa/xls/ism-CEA-pdf.vm=UTF-8
+encoding//src/main/webapp/uui/com/eiosa/xls/ism-CEA.vm=UTF-8
+encoding//src/main/webapp/uui/uui/widget/bootstrap/css/bootstrap-usky.css=UTF-8
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8

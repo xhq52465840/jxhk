@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="roles.css" type="text/css"></link>
+
+</head>
+<body>
+    <div>
+    	<div class="page-header" style="padding:0;">
+	        <div class="page-header-inner">
+	            <div class="page-header-image">
+	                <div style="vertical-align:top;width:48px;height:48px;position:relative;">
+	                    <div class="unit-config-icon48-roles"></div>
+	                </div>
+	            </div>
+	            <div class="page-header-main">
+	                <h4><%=com.sms.unitconfig.roles.i18n.title %></h4>
+	                
+	            </div>
+	            <div class="page-header-actions">
+		            
+	            </div>
+	       </div>
+	    </div>
+	    <p><%=com.sms.unitconfig.roles.i18n.explain %></p>
+		<ul class="hidden">
+			<li><%=com.sms.unitconfig.roles.i18n.safeAgency %></li>
+			<li><%=com.sms.unitconfig.roles.i18n.defaultManager %></li>
+		</ul>
+		<table class="table">
+			<thead>
+				<tr>
+					<th style="width:125px;"><%=com.sms.unitconfig.roles.i18n.safeAgencyRole %></th>
+					<th style="width:60%;"><%=com.sms.unitconfig.roles.i18n.user %></th>
+					<th style="width:30%; display:none"><%=com.sms.unitconfig.roles.i18n.userGroup %></th>
+					<th ></th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr>
+					<td calss="unit-config-role-name">Administrator</td>
+					<td class="unit-config-role-users">
+						<span class="editable">
+							<ul class="list-unstyled list-inline">
+								<li><img src="../../../img/unitavatar/unitavatar(12).png" height="16" width="16"/><span>测试A</span></li>
+								<li><img src="../../../img/unitavatar/unitavatar(14).png" height="16" width="16"/><span>测试B</span></li>
+							</ul>
+							<span class="glyphicon glyphicon-pencil"></span>
+						</span>
+						<span class="edit-mode hidden">
+							<input type="hidden" class="select2 select2-users"/>
+							<div class="block-help"><small>输入账号</small></div>
+						</span>
+					</td>
+					<td class="unit-config-role-groups">
+						<span class="editable">
+							<ul class="list-unstyled list-inline">
+								<li><span class="unit-config-icon unit-config-icon-person"></span><span>jira-administrators</span></li>
+							</ul>
+							<span class="glyphicon glyphicon-pencil"></span>
+						</span>
+						<span class="edit-mode hidden">
+							<input type="hidden" class="select2 select2-groups"/>
+							<div class="block-help"><small>输入用户组名</small></div>
+						</span>
+					</td>
+					<td class="restfultable-operations">
+						<span class="edit-mode hidden">
+						<button class="btn btn-default btn-sm">更新</button><button class="btn btn-link cancel-edit">取消</button>
+						</span>
+					</td>
+				</tr> -->
+				
+			</tbody>
+		</table>
+		
+    </div>
+</body>
+</html>

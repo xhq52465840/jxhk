@@ -1,0 +1,14 @@
+#_qt{
+	background-color: #E8E8EA;	
+	height: 32px;
+	margin-top: 1px; 
+	font-family: serif;
+}
+#_qt_centent{	
+	padding-top: 1px;		
+}
+#_qt_centent table{	
+	padding-top:1px;
+	position:relative;left:-15px;
+	width: 866px;
+}

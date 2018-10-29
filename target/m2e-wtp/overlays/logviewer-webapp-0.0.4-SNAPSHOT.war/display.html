@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Log File Viewer</title>
+
+<script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="scripts/jquery.json-2.3.js"></script>
+<script type="text/javascript" src="scripts/underscore-1.4.1.js"></script>
+
+<script language="javascript" type="text/javascript">
+
+window.LogViewer = {
+		
+	on_ready : function() {
+		// alert('ready')
+		if (typeof(WebSocket) != "function" ) {
+    		$('body').html("Error: Your browser does not support HTML5 Web Sockets.");
+    		return;
+  		}
+		
+		var support_path = '/logviewer/websocket';
+		
+		var select = $('#pick_log_file');
+
+		var dir_field = $('#dir_field');
+		
+		var remote_field = $('#remote_field');
+		
+		var password_field = $('#password_field');
+		
+		var passphrase_field = $('#passphrase_field');
+		
+		var remote_btn = $('#remote_btn');
+		
+		var log_area = $('#log_area');
+		
+		var log_area_throttle_ms = 1000;
+		
+		var log_data = "";
+		
+		var log_data_limit = 100000;
+		
+		var keep_alive_ms = 60000;
+		
+		var pause_btn = $('#pause_btn');
+		
+		var paused = false;
+		
+		var ws_handlers = {
+			
+			websocket : new WebSocket('ws://' + window.location.host + support_path),
+			
+			onopen : function(event) {
+				// alert('onopen');
+				this.ping_server();
+				
+				var get_msg = {
+					action : "GET_LOG_FILENAMES"
+				};
+				this.websocket.send($.toJSON(get_msg));
+			},
+			
+			onmessage : function(event) {
+				// alert('onmessage: ' + event.data);
+				var message = $.evalJSON(event.data);
+				switch (message.action) {
+				case "PONG_CLIENT":
+					var timer_id = setTimeout(this.ping_server, keep_alive_ms);
+					break;
+				case "GOT_LOG_FILENAMES":
+					this.got_log_filenames(message.directory, message.filenames);
+					break;
+				case "LOG_UPDATED":
+					this.log_updated(message.content);
+					break;
+				default:
+					// alert('unexpected action: ' + message.action);
+				}
+			},
+			
+			onclose: function(event) {
+                //alert('onclose');
+                this.log_updated(['[connection closed]']);
+			},
+			
+			///////////////////////////////////////////////////////////////////
+			
+			ping_server : function() {
+				// alert('ping_server');
+				var ping_server_msg = {
+					action : "PING_SERVER"
+				};
+				this.websocket.send($.toJSON(ping_server_msg));
+			},
+			
+			got_log_filenames : function(directory, filenames) {
+				// alert('filenames: ' + filenames);
+				$(dir_field).val(directory);
+				filenames.forEach(function (filename) {
+					var html = '<option>_<\/option>'.replace('_', filename); 
+					$(html).appendTo(select);
+				});
+			},
+			
+			picked_local : function() {
+				this.send_close();
+				var picked = $(select).val();
+				// alert('picked_local: ' + picked);
+				if ($(select).children(":first").text() != picked) {
+					this.clear_text_area();
+					var open_log_msg = {
+						action : "OPEN_LOG_LOCAL",
+						filenames : [picked]
+					};
+					this.websocket.send($.toJSON(open_log_msg));
+				}
+			},
+			
+			picked_remote : function() {
+				this.send_close();
+				var remote_uri = $.trim($(remote_field).val());
+				// alert('picked_remote: ' + remote_uri);
+				if (remote_uri != "") {
+					this.clear_text_area();
+				    var open_log_msg = {
+			    	    action : "OPEN_LOG_REMOTE",
+			    	    filenames : [remote_uri],
+       					password : $(password_field).val(),
+       					passphrase : $(passphrase_field).val()
+				    };
+				    this.websocket.send($.toJSON(open_log_msg));
+				}
+			},
+
+			send_close: function() {
+				var close_log_msg = {
+						action : "CLOSE_LOG"
+					};
+				this.websocket.send($.toJSON(close_log_msg));
+			},
+			
+			log_updated: function(lines) {
+				//alert('log_updated: ' + lines);
+				lines.forEach(function (line) {
+					log_data += line + "\n"; 
+					log_data = log_data.slice(-log_data_limit)
+				});
+				if (!paused) {
+					this.update_text_area();
+				}
+			},
+
+			clear_text_area: function() {
+                log_data = "";
+                log_area.val(log_data);
+			},
+			
+			update_text_area : _.throttle(function() {
+				log_area.val(log_data);
+				log_area.scrollTop(log_area[0].scrollHeight - log_area.height());
+			}, log_area_throttle_ms),
+			
+			pause_event: function() {
+				paused = $(pause_btn).prop('checked');
+				//alert('pause_event: ' + paused);
+				if (!paused && log_area.val() != log_data) {
+					log_area.val(log_data);
+				}
+			}
+			
+		};
+		_.bindAll(ws_handlers);
+		$.extend(ws_handlers.websocket, ws_handlers);
+		$(select).change(ws_handlers.picked_local);
+		$(remote_btn).click(ws_handlers.picked_remote);
+		$(pause_btn).change(ws_handlers.pause_event);
+	}
+	
+}
+
+_.bindAll(window.LogViewer);
+
+$(document).ready(window.LogViewer.on_ready);
+	
+</script>
+</head>
+<body>
+    <h1>Log File Viewer</h1>
+	<form action="">
+		<fieldset>
+			<legend><b>Local</b></legend>
+			<label for="dir_field">Log Dir:</label>
+	    	<input id="dir_field" size="40" readonly="true"/>
+			<select id="pick_log_file">
+				<option>pick log file</option>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend><b>Remote</b></legend>
+			<label for="remote_field">Ssh Uri:</label>
+	    	<input id="remote_field" size="60"/>
+			<label for="password_field">Password:</label>
+	    	<input id="password_field" size="40" type="password"/>
+			<label for="passphrase_field">Passphrase:</label>
+	    	<input id="passphrase_field" size="40" type="password"/>
+	    	<button id="remote_btn" type="button">Tail</button>
+		</fieldset>
+		<label for="pause_btn">Pause</label><input type="checkbox" id="pause_btn"/>
+	</form>
+	<div style="width: 100%">
+		<textarea id="log_area" style="width: 100%" rows="20" wrap="off" readonly="true">
+		</textarea>
+	</div>
+</body>
+</html>

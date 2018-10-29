@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-container">
+        <div class="container uui-module-header">
+            <div class="uui-grid row">
+                <div class="col-md-3 uui-container">
+                    <h2 class="uui-module-h2"><%=com.sms.matrix.matrixs2.i18n.title %>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="container">
+                <div class="row" style="padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+                    <div class="col-md-12 matrixwizard" style="background-color: #f6f6f6;">
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.one %></span><%=com.sms.matrix.matrixs2.i18n.oneDesc %></a>
+                        <a class="matrixcurrent"><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.two %></span><%=com.sms.matrix.matrixs2.i18n.twoDesc %></a>
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.three %></span><%=com.sms.matrix.matrixs2.i18n.threeDesc %></a>
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.four %></span><%=com.sms.matrix.matrixs2.i18n.fourDesc %></a>
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.five %></span><%=com.sms.matrix.matrixs2.i18n.fiveDesc %></a>
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.six %></span><%=com.sms.matrix.matrixs2.i18n.sixDesc %></a>
+                        <a><span class="matrixbadge"><%=com.sms.matrix.matrixs2.i18n.seven %></span><%=com.sms.matrix.matrixs2.i18n.sevenDesc %></a>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+                    <div class="col-md-12">
+                        <span class="matrix-icon">
+                            <img src="/img/sms/matrix-perspective-48.png" />
+                        </span>
+                        <div style="font-style: italic; margin-top: 10px;"><%=com.sms.matrix.matrixs2.i18n.remaind %></div>
+                        <span class="matrix-actions" style="margin-top: -20px;">
+                            <button class="btn btn-default matrix_btn_prev"><%=com.sms.matrix.matrixs2.i18n.back %></button>
+                            <button class="btn btn-default matrix_btn_next"><%=com.sms.matrix.matrixs2.i18n.next %></button>
+                            <a class="btn btn-link" href="./RiskMatrix.html"><%=com.sms.matrix.matrixs2.i18n.cancel %></a></span>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <form role="form">
+                        <div class="form-group control">
+                            <label for="<%=this._id%>-perspectives" class="col-sm-12 control-label" style="margin-top: 10px;"><%=com.sms.matrix.matrixs2.i18n.observe %></label>
+                            <div class="col-sm-12" style="margin-top: 10px;">
+                                <div qid="perspectives" class="container">
+                                    <div class="col-sm-7 perspectives-row">
+                                        <div class='col-sm-12 col-xs-12'>
+                                            <button qid="btn-add-perspectives" class="btn btn-default glyphicon glyphicon-plus"><%=com.sms.matrix.matrixs2.i18n.addobserve %></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row" style="border-top: 1px solid #ccc;">
+                    <div class="col-md-12">
+                        <span class="matrix-actions" style="margin-top: 10px; margin-bottom: 10px;">
+                            <button class="btn btn-default matrix_btn_prev"><%=com.sms.matrix.matrixs2.i18n.back %></button>
+                            <button class="btn btn-default matrix_btn_next"><%=com.sms.matrix.matrixs2.i18n.next %></button>
+                            <a class="btn btn-link" href="./RiskMatrix.html"><%=com.sms.matrix.matrixs2.i18n.cancel %></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

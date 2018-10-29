@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <div>
+   <div umid="uploadDialog"></div>
+    <div id="fileList" class="fileList">
+     <div class="panel panel-sms fileListcontent">
+     <table  class="table table-striped table-bordered filelisttable" cellspacing="0" width="100%" >
+         <thead class="header2">
+           <tr v-show="language=='ch'">
+             <td>文件名</td>
+             <td>大小</td>
+             <td>上传时间</td>
+             <td>上传者</td>
+             <td></td>
+             <td></td>
+           </tr >
+         	<tr v-else>
+             <td >Name</td>
+             <td >Size</td>
+             <td >UploadDate</td>
+             <td >Auditor</td>
+             <td></td>
+             <td></td>
+          	</tr>
+         </thead>
+       <tbody>
+         <tr v-for="attach in fileList">
+						<td><a dataid="{{ attach.id }}" href="#"
+								v-on:click="downFile">{{ attach.attachShowName }}</a></td>
+						<td>{{ attach.attachSize }}</td>
+						<td>{{ attach.updateTime | datestr }}</td>
+						<td>{{ attach.creatorName }}</td>
+						<td style="text-align:right;"><span><button dataid="{{ attach.id }}" href="#"
+								v-on:click="downFile"
+								class="glyphicon uui-cursor-pointer filelistbutton"
+								title="{{ attach.attachShowName }}">下载</button>
+								<button v-show="isDeleted!='N'" dataid="{{ attach.id }}" v-on:click="deleteFile" class="glyphicon uui-cursor-pointer filelistbutton">删除</button> </span></td>
+			</tr> 
+       </tbody>
+      </table>      
+      </div>
+       <div class="uploadbuttondiv">
+       		<button v-show="isUpload!='N'" class="uploadbutton" v-on:click="addFile">上传附件</button>
+       </div>
+    </div>
+   </div>
+</body>
+</html>

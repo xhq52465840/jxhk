@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+    	.com-sms-login .login-header{
+				background-color: #780735;
+    	}
+    	.com-sms-login .login-header .login-header-container{
+    		max-width: 1366px;
+    		height: 80px;
+    		margin: 0px auto;
+    	}
+    	.com-sms-login .login-header .login-header-container .login-header-logo{
+    		margin-top: 15px;
+    		margin-left: 20px;
+    	}
+    	.com-sms-login .login-header .login-header-container .login-header-language{
+    		margin-top:20px;
+    	}
+    	.com-sms-login .login-header .login-header-container .login-header-language .dropdown-toggle{
+    		color: #fff;
+    	}
+    	.com-sms-login .login-body{
+    		background-color: #660733;
+    	}
+    	.com-sms-login .login-footer{
+    		height: 90px;
+			margin-top: -55px;
+			padding-top: 45px;
+			background-color: #fff;
+			text-align: center;
+			margin-bottom: 15px;
+    	}
+    	.com-sms-login .login-footer .login-copyright{
+    		color: #333;
+    	}
+
+    	.com-sms-login .login-body-container{
+    		height:502px;
+    		max-width: 1366px;
+    		margin: 0 auto;
+    		background: url("../../img/logo/bg2.png") no-repeat;
+    	}
+    	.com-sms-login .login-body-container .login-panel{
+    		position: relative;
+				top: 70px;
+				left: 8px;
+				border: none;
+				border-radius: 5px;
+				width: 358px;
+				height: 380px;
+				background-color: rgba(255, 255, 255, 0.87);/* #F2D6E5*/
+				-moz-box-shadow: 0px 0px 40px #969696;
+				-webkit-box-shadow: 0px0px 40px #969696;
+				box-shadow: 0px 0px 40px #75063B;
+    	}
+    	.com-sms-login .login-body-container .login-panel .login-title{
+    		border-bottom: none;
+    		line-height: 55px;
+    	}
+    	.com-sms-login .login-body-container .login-panel .login-body{
+    		position: relative;
+				top: 0px;
+				left: 0px;
+				border-radius: 0px;
+				width: 358px;
+				height: 380px;
+				-moz-box-shadow: 0px 0px 40px #969696;
+				-webkit-box-shadow: 0px0px 40px #969696;
+				box-shadow: 0px 0px 40px #75063B;
+    	}
+    	.com-sms-login .login-body-container .login-form{
+    		margin-top:33px;
+    	}
+    	.com-sms-login .login-body-container .login-form .form-group{
+    		margin-left: 0px;
+    		margin-right:0px;
+    	}
+    	.com-sms-login .login-body-container .login-form .input-username{
+				background: url("../../img/logo/user_jx.png") no-repeat 5px center;
+				background-color: #fff;
+				padding-left: 35px;
+    	}
+    	.com-sms-login .login-body-container .login-form .input-password{
+    		background: url("../../img/logo/password_jx.png") no-repeat 5px center;
+				background-color: #fff;
+				padding-left: 35px;
+    	}
+    	.com-sms-login .login-body-container .login-form .btn-login-container{
+    		position: absolute;
+				bottom: 0px;
+				margin:0px;
+    		padding: 0;
+    	}
+    	.com-sms-login .login-body-container .login-form .btn-login-container .text-danger{
+    		margin-bottom: 20px;
+    	}
+    	.com-sms-login .login-body-container .login-form .btn-login-container .btn-login{    		
+				height: 43px;
+				width: 358px;
+				border: 0px solid #000000;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+	    	border-bottom-left-radius: 5px;
+	    	border-bottom-right-radius: 5px;
+				background: #FCB831;
+				color: #fff;
+				font-family: inherit;
+				font-size: 20px !important;
+    	}
+    	.question{
+     	       margin-left:30px;
+    	}
+    </style>
+</head>
+<body>
+    <div class="uui-container login-bg" >
+
+        <!-- 头部 begin -->
+        <div class="login-header">
+        	<div class="login-header-container">
+        		<img class="login-header-logo" src='../../img/logo/logo_sms.png'>
+	        	<div class="login-header-language pull-right">
+	        		 <ul class="nav navbar-nav">
+			           <li class="dropdown">
+				               <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+				                   <span><%=($.cookie('locale') === 'en' ? '简体中文' : 'English') %></span>
+				                   <b class="caret"></b></a>
+				               <ul class="dropdown-menu" qid="nav-language">
+				                <li class="dropdown">
+				                 <a href="#" class="change-language" data-language="zh">简体中文</a>
+				                </li>
+				                <li class="dropdown">
+				                 <a href="#" class="change-language" data-language="en">English</a>
+				                </li>
+				               </ul>
+				           </li>
+			          </ul>
+	        	</div>
+	        </div>
+				</div>
+				<!-- 头部 end -->
+
+				<!-- 主体 begin -->
+				<div class="login-body">
+	        <div class="login-body-container">
+		        <div class="panel panel-default login-panel">
+		            <div class="login-panel-body">	              
+		                <div class="login-title" >
+		                	<span><%=com.sms.login.i18n.tag.welcome %></span>
+		                </div>	                
+										<div qid="msg" ></div>	                
+		                <form class="form-horizontal login-form" role="form" qid="loginform">	 
+		                    <div class="form-group">
+		                        <div class="col-sm-12">
+		                            <input type="text" autocomplete="off" class="form-control  input-username" maxlength="255" qid="username" name="username" placeholder="<%=com.sms.login.i18n.tag.form.username %>" />
+		                        </div>
+		                    </div>
+		                    <div class="form-group" style="margin-top: 30px;">
+		                        <div class="col-sm-12">
+		                            <input type="password" class="form-control  input-password" maxlength="50" qid="password" name="password" placeholder="<%=com.sms.login.i18n.tag.form.password %>"/>
+		                        </div>
+		                    </div>
+		                    <div class="form-group" style="margin-top: 30px;">
+		                        <div class="col-sm-6">
+		                            <input type="text" class="form-control" maxlength="50" qid="identifying" name="identifying" placeholder="<%=com.sms.login.i18n.tag.form.identifying %>"/>
+		                        </div>
+		                        <div class="col-sm-6">
+		                           <img style="width:140px;height:33px;" src="../../../../sms/login.do?method=getVerifyCode"  id="identifyingCode">
+		                        </div>
+		                    </div>
+		                    <div class="form-group"> 
+				                    <div class="col-sm-6">
+			                        <a class="btn btn-link" qid="btn_anonymityReport" href="#"><%=com.sms.login.i18n.tag.buttons.report %></a>
+				                    </div>
+				                    <div class="col-sm-6">
+			                        <a class="btn btn-link question" download='loginQuestion.pdf' target="_blank" qid="btn_ofenQuestion" href="loginQuestion.pdf"><%=com.sms.login.i18n.tag.buttons.question %></a>
+				                    </div>
+				                 <!--     
+				                 <div class="col-sm-6 text-right">
+			                    		<a class="btn btn-link" href="#"><%=com.sms.login.i18n.tag.buttons.sesms %></a>
+			                    </div>
+			                    -->
+				             </div>
+		                    <div class="form-group btn-login-container"  style="postion:absolute;bottom:-40px;" >
+		                    		<div class="text-center text-danger"><%= com.sms.login.i18n.tag.ieTips %></div>
+		                            <button qid="btn_login" class="btn btn-default btn-login">                            
+		                            <%=com.sms.login.i18n.tag.buttons.login %></button>
+		                    </div>
+		                </form>
+		            </div>
+		        </div>
+	        </div>
+        </div>
+        <!-- 主体 end -->
+
+        <!-- 尾部 begin -->
+        
+        <div class="login-footer">
+	    	 <a href="http://www.staralliance.com/zh/cn/"  target="_blank">
+	        	<img src="../../img/logo/SA123.png" style="width:150px;padding-bottom:15px" />
+	         </a>
+    	</div>
+    	<div class="login-footer">
+            <span class="login-footer-copyright"><%=com.sms.login.i18n.tag.copyright %></span>
+        </div>
+        <!-- 尾部 end -->
+
+    </div>
+</body>
+</html>

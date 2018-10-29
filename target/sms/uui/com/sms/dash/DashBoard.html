@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script>
+    <script type="text/javascript">
+        // 将url的参数转换成json格式
+        document.title="首页-看板";
+        var _urlParams = $.urlParam();
+        // 已经进行hash定位的gadgetinstanceid
+        var _hasBeenResizedGadeget = [];
+
+        /**
+         * @ttile 给子iframe的ajax之后调用,调整gadget的高度
+         * @param {number} gadgetinstanceid
+         * @param {string} height
+         */
+        function resizeGadget(gadgetinstanceid, height) {
+            var $gadgetPanel = $('#' + gadgetinstanceid),
+                fm = null;
+            if ($gadgetPanel.length > 0 && $gadgetPanel.find('.dashboard-item-content').attr('data-widget-type') === 'iframe') {
+                fm = $("iframe[gadgetinstanceid='" + gadgetinstanceid + "']");
+                if (/px/.test(height)) {
+                    height = height.replace(/px/g, '');
+                }
+                if ($.isNumeric(height) && fm.length > 0) {
+                    height = parseInt(height);
+                    fm.css("height", height);
+                    fm.parent().css("height", height + 1);
+                }
+            } else if($.inArray(gadgetinstanceid, _hasBeenResizedGadeget) < 0){
+                _hasBeenResizedGadeget.push(gadgetinstanceid);
+                goHash();
+            }
+        }
+
+        /**
+         * @ttile 给子iframe的ajax之后调用,设置gadget的标题
+         * @param {number} gadgetinstanceid
+         * @param {string} title
+         */
+        function setGadgetTitle(gadgetinstanceid, title) {
+            var fm = $("iframe[gadgetinstanceid='" + gadgetinstanceid + "']");
+            if (fm.length > 0) {
+                var head = fm.parent().siblings(".dashboard-item-header").find(".dashboard-item-title");
+                if (head.length > 0) {
+                    head.text(title);
+                }
+            }
+        }
+
+        /**
+         * @ttile 滚动页面至url中scrollTarget的位置
+         * @param {number} gadgetinstanceid
+         */
+        function goHash(gadgetinstanceid) {
+            if (_urlParams.scrollTarget) {
+                $(document).scrollTop($('#' + _urlParams.scrollTarget).offset().top);
+            }
+        }
+
+        $(function() {
+            $.ajax({
+                url: $.u.config.constant.smsqueryserver,
+                type: "post",
+                dataType: "json",
+                cache: false,
+                data: {
+                    "tokenid": $.cookie("tokenid"),
+                    "method": "getFavorDashboard",
+                    "homePage": "HOME"
+                }
+            }).done(function(result) {
+                if (result.success) {
+                    var dataget = result.data.aaData;
+                    var pageid = _urlParams.pageId;
+                    if (pageid) {
+                        pageid = parseInt(pageid);
+                        // 这里可以返回没有的，表示要加进来
+                    }
+
+                    /*
+                    // 吉祥不需要记录上次选择的DashBoard功能，所以注释
+                    if (!pageid) {
+                        //pageid = $.jStorage.get("defaultdashpageid");                        
+                        pageid = $.cookie('defaultdashpageid');
+                        if (pageid) {
+                            pageid = parseInt(pageid);
+                            // 返回结果没有，表示删掉了...
+                            var pgget = $.grep(dataget, function (adt) {
+                                return adt.id == pageid;
+                            })
+                            if (pgget.length == 0) {
+                                pageid = null;
+                            }
+                        }
+                    }*/
+                    if (!pageid) {
+                        pageid = dataget[0].id;
+                    }
+                    if (dataget.length < 2) {
+                        $("div[qid='leftnav']").hide();
+                        $("div[qid='leftnav']").next().removeClass("col-md-10");
+                        $("div[qid='leftnav']").next().addClass("col-md-12");
+                    } else {
+                        $("div[qid='leftnav']").show();
+                        $("div[qid='leftnav']").next().removeClass("col-md-12");
+                        $("div[qid='leftnav']").next().addClass("col-md-10");
+                    }
+                    var dashobj = null;
+                    var htm = "<div class='vertical-nav'><ul class='nav' style='border-top: 0px;'>";
+                    $.each(dataget, function(idx, adt) {
+                        if (pageid == adt.id) {
+                            dashobj = adt;
+                            htm += "<li class='checked'><a class='dashpage' href='./DashBoard.html?pageId=" + adt.id + "'target=_blank title='" + adt.name + "'>" + adt.name + "</a></li>";
+                            document.title=adt.name+'-看板';
+                        } else {
+                            htm += "<li><a class='dashpage' href='./DashBoard.html?pageId=" + adt.id + "'target=_blank  title='" + adt.name + "' >" + adt.name + "</a></li>";
+                        }
+                    });
+                    htm += "</ul></div>";
+                    $("#dashboard-navs").html(htm);
+                    $.cookie('defaultdashpageid', pageid, {
+                        expires: 7
+                    });
+                    //$.jStorage.set("defaultdashpageid", pageid); // 设置当期的
+                    //$.jStorage.setTTL("defaultdashpageid",  7 * 24 * 60 * 60 * 1000);
+                    $.um($("div[umid='application-header']"));
+                    // 还要考虑不是自己收藏的，此时dashobj为null，需要getbyid一下，形成临时的
+                    $.um($("div[umid='dashboard']"), dashobj, pageid);
+                    $.um($("div[umid='foot']"));
+                }
+            }).fail(function(jqXHR, errorText, errorThrown) {
+
+            })
+        });
+    </script>
+    <style type="text/css">
+        #dashboard{
+            position: relative;
+        }
+        #dashboard-navs{
+            bottom: 0;
+            left: 0;
+            padding-top: 20px;
+            position: absolute;
+            top: 0;
+            width: 188px;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+            margin: 0;
+            vertical-align: top;
+            border-right: 1px solid #ddd;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+        #dashboard-content{
+            margin: 0;
+            padding-left: 10px;
+            margin-left: 188px;
+            min-height: 600px;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+            position: relative;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+        <div class="container-fluid" style="padding: 0 10px; margin:0;">
+            <div id="dashboard">
+                <div id="dashboard-navs">
+                </div>            
+                <div id="dashboard-content">
+                    <div umid="dashboard" umodule="com.sms.dash.dash"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container-fluid" style="margin:0;">
+            <div class="row">
+                <div class="col-md-2 col-lg-1" qid="leftnav" > -->
+                    <!--左侧导航栏 begin-->
+                    <!-- <div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>-->
+                    <!--左侧导航栏 end -->
+                <!-- </div>
+                <div class="col-md-10 col-lg-11" style="border-left: 1px solid #ccc;">
+                    <div umid="dashboard" umodule="com.sms.dash.dash"></div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

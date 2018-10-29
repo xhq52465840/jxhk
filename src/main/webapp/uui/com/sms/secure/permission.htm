@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    </head>
+<body>
+	<div>
+	    <div qid="dialog">
+	    	<form class="form-horizontal" role="form" qid="form">
+				<div>
+				<table style="width:100%">
+				<tr>
+					<td width="30%"  height="100px;"  >
+						<%=com.sms.secure.permission.i18n.grant %>
+					</td>
+					<td width="70%" colspan="2">
+						<div>
+							<select size="4"  qid="permission" name="permission" multiple="multiple"  style="width:320px;" class="form-control">
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+					<div class="radio">
+						<label>
+							<input type="radio"  name="type" value="USER_GROUP"  checked="checked" /><%=com.sms.secure.permission.i18n.userGroup %>
+						</label>
+					</div>
+					</td>
+					<td width="70%" colspan="2">
+						<div>
+							<input type="hidden"  qid="usergroup" name="usergroup" class="form-control"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+						<div class="radio">
+							<label>
+								<input type="radio"  name="type" value="USER" /><%=com.sms.secure.permission.i18n.singleUser %>
+							</label>
+						</div>
+					</td>
+					<td width="70%" colspan="2">
+						<div>
+							<input type="hidden"  qid="user" name="user" class="form-control"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+						<div class="radio">
+							<label>
+								<input type="radio"  name="type" value="ROLE" /><%=com.sms.secure.permission.i18n.role %>
+							</label>
+						</div>
+					</td>
+					<td width="70%" colspan="2">
+						<div>
+							<input type="hidden"  qid="role" name="role" class="form-control"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+						<div class="radio">
+							<label>
+								<input type="radio"  name="type" value="PROCESSOR" /><%=com.sms.secure.permission.i18n.processor %>
+							</label>
+						</div>
+					</td>
+					<td width="70%" colspan="2">
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+						<div class="radio">
+							<label>
+								<input type="radio"  name="type" value="REPORTER" /><%=com.sms.secure.permission.i18n.reporter %>
+							</label>
+						</div>
+					</td>
+					<td width="70%" colspan="2">
+					</td>
+				</tr>
+				<tr>
+					<td width="30%"  height="40px;">
+						<div class="radio">
+							<label>
+								<input type="radio"  name="type" value="UNIT_RESPONSIBLE_USER" /><%=com.sms.secure.permission.i18n.unitResponsibleUser %>
+							</label>
+						</div>
+					</td>
+					<td width="70%" colspan="2">
+					</td>
+				</tr>
+				</table>
+				</div>
+	        </form>
+	    </div>
+    </div>
+</body>
+</html>

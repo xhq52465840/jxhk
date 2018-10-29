@@ -1,0 +1,45 @@
+$.extend(com.sms.secure.permissionschemes.i18n,{
+	title : '权限方案',
+	addNewGrantCase : '添加新的权限方案',
+	explainA : '权限方案允许你建立一系列权限控制，并将权限方案应用到任何安监机构中。',
+	explainB : '权限方案中的所有权限都将应用到关联的安监机构中。',
+	explainC : ' 下面表格显示这个SMS实例中已经配置的权限方案。如果要设置所有安监机构都默认的权限，请在',
+	explainD : ' 全局权限',
+	explainE : ' 中设置。',
+	
+	name : '名称',
+	nameNotNull : '名称不能为空',
+	describe : '描述',
+	safeagency : '安监机构',
+	handle : '操作',
+	
+	
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',
+	
+	grant : '权限',
+	copy : '复制',
+	edit : '编辑',
+	remove : '删除',
+	editFail : '编辑操作失败',
+	editGrantCase : '编辑权限方案：',
+	copyGrantCase : '复制权限方案：',
+	copyFail : '复制操作失败：',
+	confirm : '请确认你要删除这个权限方案。',
+	removeStatus : '删除状态：',
+	removeFail : '删除操作失败：',
+	
+	
+});

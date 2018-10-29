@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: right; float: right;
+}
+</style>
+</head>
+<body>
+<div>
+	<div class="container-fluid">
+	<div umid="linkUm"></div>
+		<div class="panel panel-sms" id="planEditForm">
+			<div class="panel-heading">
+				<h2 class="panel-title">航线审计任务计划信息</h2>
+			</div>
+			<table class="uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name">
+							所属方案：
+						</td>
+						<td class="value" width="40%">
+							<input type="text" v-model="planInfo.schemeId" class="form-control input-sm popover-toggle" id="planEditScheme"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table class="uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name">
+							观察日期：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value" colspan="3">
+							<input type="text" style="width:45%" v-model="planInfo.observeDate | datestr"
+								class="form-control input-sm popover-toggle" id="observeDate"/>
+						</td>
+					</tr>	
+					<tr>
+						<td class="name" style="width: 20%">
+							观察航班：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value" colspan="3">
+							<input type="text" v-model="planInfo.flightId" class="form-control input-sm popover-toggle" id="planEditFly"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							起飞机场：
+						</td>
+						<td class="value">
+							<input type="text" v-model="planInfo.deptAirport" readonly="readonly" class="form-control input-sm popover-toggle"/>
+						</td>
+						<td class="name" style="width: 20%">
+							着陆机场：
+						</td>
+						<td class="value">
+							<input type="text" v-model="planInfo.arrAirport" readonly="readonly" class="form-control input-sm popover-toggle"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							观察人员：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value" colspan="3">
+							<input type="text" v-model="planInfo.observerId" class="form-control input-sm popover-toggle" id="planEditObserver"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							详细描述：
+						</td>
+						<td class="value" colspan="3">
+							<textarea rows="5" cols="65" v-model="planInfo.planDesc" class="form-control input-sm popover-toggle">
+							</textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="footer" class="row float_footer">
+				<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+					<button type="button" class="btn btn-default" v-on:click="save" dataid="{{ planInfo.id }}">保存</button>
+					<button type="button" class="btn btn-default" v-on:click="cancel" >取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

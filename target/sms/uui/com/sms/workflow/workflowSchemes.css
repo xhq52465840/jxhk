@@ -1,0 +1,37 @@
+
+.com-sms-workflow-workflowSchemes ul.item-details{
+	padding-left:15px;
+	margin:0;
+}
+.com-sms-workflow-workflowSchemes ul.item-details li{
+	list-style-type:none;
+}
+.com-sms-workflow-workflowSchemes ul.item-details>li+li{
+	margin-top:5px;
+}
+.com-sms-workflow-workflowSchemes ul.item-details li dl{
+	border-spacing: 0;
+	display: table;
+	table-layout: fixed;
+	margin: 0;
+	width: 100%;
+}
+.com-sms-workflow-workflowSchemes thead ul.item-details li dl dt{
+	font-weight:bold;
+}
+.com-sms-workflow-workflowSchemes ul.item-details li dl dt{
+	font-weight:normal;
+	display: table-cell;
+	text-align:right;
+	vertical-align:top;
+}
+
+.com-sms-workflow-workflowSchemes ul.item-details li dl dd{
+	display: table-cell;
+	padding:0;
+	padding-left: 10px;
+}
+.com-sms-workflow-workflowSchemes ul.item-details li dl dd.rarr{
+	text-align: center;
+	width: 2em;
+}

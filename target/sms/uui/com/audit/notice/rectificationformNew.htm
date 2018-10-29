@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div umid="questionDialog"></div>
+		<div class="row">
+			<div class="col-md-3">
+                 <h3 class="uui-managepage-title">整改通知单/建议书</h3>
+             </div>
+             <div class="col-md-9 text-right" qid="top_btn" style="padding-top:5px;">
+			</div>
+		</div>
+		<div class="row">
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">基本信息</h2>
+					</div>
+					<div class="panel-body">
+						<div umid="baseInfo"></div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">问题列表</h2>
+					</div>
+					<div class="panel-body">
+						<div umid="questionInfo" style="height:auto"></div>
+					</div>
+				</div>
+				<div name="auditOpinionDiv">
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">小结</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed" qid="table">
+							<tr>
+								<td class="name">说明</td>
+								<td class="value">
+									<textarea class="form-control" rows="5" style="resize: none;" qid="description" name="description"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title">附件</h2>
+					</div>
+					<div class="panel-body">
+						<div umid="fileInfo"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		
+	<div qid="auditorDialog" class="hidden">
+	<div class="col-sm-12">
+	       <form class="form-horizontal" role="form" >
+               <div class="form-group">
+                   <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">选择审核人</label>
+                   <div class="col-sm-9">
+                       <input type="text" class="form-control "  name="auditor" placeholder="" maxlength="50">
+                   </div>
+               </div>
+           </form>   
+		</div>
+	</div>
+	
+	</div>
+</body>
+</html>

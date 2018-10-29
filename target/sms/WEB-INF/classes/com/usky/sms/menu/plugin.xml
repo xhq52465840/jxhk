@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="menu" class="com.usky.sms.menu.MenuService" />
+	<bean id="menuCache" class="com.usky.sms.menu.MenuCache" />
+	<bean id="menuDao" class="com.usky.sms.menu.MenuDao" />
+
+</beans>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="selectControlDialog"></div>
+		<div umid="riskThreatErrorMappingDialog"></div>
+		<div umid="actionItemDialog"></div>
+		<div umid="mappingTextDialog"></div>
+		<div qid="addDialog" class="hidden">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label"><%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.addRiskAnalysisDialog.system %></label>
+			    <div class="col-sm-9">
+					<input type="hidden" class="form-control" qid="system"/>
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<!--  显示title  begin-->
+				<span class='title_show' style='position: absolute;padding:10px; display:none;background:#edeef0; border: solid 1px #999999;border-radius:5px; z-index:9999'></span>
+				<!--  显示title   end-->
+		<!-- 风险分析begin -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.title %>
+					<div qid="btn_add" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus" title="<%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.buttons.addRiskAnalysis%>"></i>
+						</div>
+					</div>
+					<div qid="btn_release" class="pull-right panel-button-container hidden"  style="margin-right:5px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif">
+						<div class="panel-button-inner">
+							<i class="release" title="<%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.buttons.release%>">发布</i>
+						</div>
+					</div>
+				</h2>
+			</div>
+			<div class="panel-body" qid="tablecontainer">
+				
+			</div>
+		</div>
+		<!--风险分析end  -->
+		<!--衍生分析begin  -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.spareTitle %>
+				</h2>
+			</div>
+			<div class="panel-body" qid="tableDerive">
+				
+			</div>
+		</div>
+		<!--  衍生风险end-->
+		<!--评价总结begin  -->
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					<%= com.sms.detailmodule.riskAnalysis.riskAnalysis.i18n.summrize %>
+				</h2>
+			</div>
+			<div class="panel-body" qid="summrize" style="position:relative;">
+			<textarea qid="text_summrize" rows="" disabled="disabled" cols="" maxlength='1000' style="height:200px;width:100%;background-color:#F5F5F5;resize:none" readonly></textarea>	
+			<span qid="edit_summrize" style=" display:inline-block;height:20px;width:20px;background-color:#E8E8EA; position:absolute;right:20px;top:60px;"><i title='编辑总结结论' class='fa fa-pencil editText uui-cursor-pointer mod-edit mod-add' data-mappingId='' data-text='' data-type=''></i></span>
+			</div>
+		</div>
+		<!-- 评价总结end -->
+		<!--评价总结 dialog -->
+		<div qid="textDialog" class="hidden">
+		    <form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <div class="col-sm-12">
+					<textarea qid="edit_text_summrize" rows="" cols="" maxlength='1000' style="height:200px;width:100%;"></textarea>
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<!--评价总结dialog ed  -->
+		<!-- 风险等级dialog begin -->
+		<div qid="riskDeriveDialog" class="hidden">
+		    <form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label">可能性</label>
+			    <div class="col-sm-9">
+					<select class="form-control" qid="riskLevelP">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label">严重性</label>
+			    <div class="col-sm-9">
+					<select type="number" class="form-control" qid="riskLevelS">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					</select>
+			    </div>
+			    
+			  </div>
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label">危险系数</label>
+			    <div class="col-sm-9">
+					<input type="" class="form-control" qid="riskLevelPS" readonly="readonly"/>
+			    </div>
+			    
+			  </div>
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label" style="color:red"><!-- 矩阵分析说明 --></label>
+			    <div class="col-sm-9">
+			    <div for=""  style="text-align:center;color:red">矩阵分析说明</div>
+					<img alt="矩阵分析说明" src="juzhengfenxi.png" style='width:90%;hieght:80%'>
+			    </div>
+			    
+			  </div>
+			</form>
+		</div>
+		<!--风险等级diaolog end  -->
+	</div>
+</body>
+</html>

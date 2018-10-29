@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LOSA审计</title>
+<style>
+</style>
+</head>
+<body>
+<div style="overflow:hidden" id="tab">
+	<div id="basisInfoVue" class="col-lg-2 col-md-2 no-right-padding vertical-nav" style="margin-top: 10px;width:220px" >
+		<div class="nav-heading style_css">
+			<strong>基础数据修改</strong>
+		</div>
+		<accordion :data-object="dataObject" :options="options"></accordion>
+	</div>
+	<div id="myTabContent" class="col-lg-10 col-md-10" style="width:1089px">   
+	 	<div umid="basisInfoTemplet" id="tabBasisInfoTemplet"></div>      
+	</div>
+</div>
+</body>
+</html>

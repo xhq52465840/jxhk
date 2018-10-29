@@ -1,0 +1,28 @@
+$.extend(com.sms.dash.managePopular.i18n,{
+	managePopular : '热门面板',
+	explain : '此页面允许你查看常用的面板',
+	name : '名称',
+	owner : '拥有者',
+	share : '共享给',
+	popular : '热门',	
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',	
+	privateDash : '私有面板',
+	allperShare : '所有人共享',
+	user : '用户',
+	userGroup : '用户组',
+	unknown : '未知'
+});
+

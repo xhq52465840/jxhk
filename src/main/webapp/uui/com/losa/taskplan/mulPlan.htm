@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+div.layui-layer-title{
+	background:#8C82B3;
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	color:#ffffff;
+	
+}
+
+.layui-layer{
+	border:1px solid #d5d5d5;
+}
+
+.container-fluid{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: left; float: right;
+}
+
+.align-right{
+	float:right;
+	margin-right:20px;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="panel panel-sms flyqueryformout">
+		<div id="flyQueryForm">
+			<table class="flyqueryform-uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name" style="width:7%">
+							所属方案：
+						</td>
+						<td class="value" style="width:86%">
+							<input v-if="schemeId==null" placeholder="请选择计划所属方案"  style="width:20%" type="text" id="mulPlanScheme" v-select.allowclear="schemeSubject" :options="options1" selectOnChange="changeScheme"/>
+							<p v-else >{{ schemeSubject }}</p>
+						</td>
+				</tbody>
+			</table>
+		<table  class="flyqueryform-uui-table1" style="table-layout: fixed;">
+			<tbody>
+				<tr>
+					<td class="name" style="width:7%"><span style="color:red">*</span>
+						航班日期：
+					</td>
+					<td class="value" style="width:8%">
+						<input type="text" v-model="flyDate" 
+							class="form-control input-sm popover-toggle" id="observeDate"/>
+					</td>
+					<td class="name" style="width:7%">
+						所属机队：
+					</td>
+					<td class="value" style="width:15%">
+						<input type="text"   placeholder="请选择航班所属机队" v-select.allowclear="flyTeam" :options="options2" class="form-control input-sm popover-toggle" id="flyTeam"/>
+					</td>
+					<td class="name" style="width:7%"><span style="color:red">*</span>
+						起飞机场：
+					</td>
+					<td class="value" style="width:15%">
+						<input type="text"  v-select.allowclear="deptAirport" :options="options3" class="form-control input-sm popover-toggle airport"/>
+					</td>
+					<td class="name" style="width:7%">
+						着陆机场：
+					</td>
+					<td class="value" style="width:15%">
+						<input type="text"  v-select.allowclear="arrAirport" :options="options3" class="form-control input-sm popover-toggle airport"/>
+					</td>
+					<td style="width:8%">
+						<button type="button" class="btn btn-default flyqueryformbtn" v-on:click="searchFly" >查询</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<table class="table table_docs table-bordered flyqueryform-airline-table" style="table-layout: fixed;">
+			<thead>
+				<tr>
+					<td style="width:30%" align="center">航线</td>
+					<td style="width:15%" align="center">所属机队</td>
+					<td style="width:15%" align="center">机长</td>
+					<td style="width:15%" align="center">第一副驾驶</td>
+					<td style="width:15%" align="center">观察员</td>
+					<td style="width:10%" align="center">操作</td>
+					<td style="width:17px" align="center"></td>
+				</tr>
+			</thead>
+		</table>
+		<div style="height:400px;overflow:auto;" >
+			<table id="flyList" class="table table_docs table-bordered flyqueryform-airline-table1" style="table-layout: fixed;">
+				<tr v-for="fl in flyList">
+					<td colspan="6">
+						<div>
+							<table style="width:100%" class="flyqueryform-airline-subtable">
+								<tr style="{{fl.joinPlan=='0'?'background-color: #FFEC8B':''}}">
+									<td style="width:30%;text-align: center">
+										<a href="#" dataid="{{ fl.flightTaskId }}" v-on:click="openDesc($index,$event)">
+											{{fl.applyFlightNo}}<br/>
+											{{fl.route}}<br/>
+											{{fl.departTime}}--{{fl.arriveTime}}<br/>
+											{{fl.acType}}
+										</a>
+									</td>
+									<td style="width:15%;text-align: center">{{fl.unitName}}</td>
+									<td style="width:15%;text-align: center">{{fl.pilotIncommand}}</td>
+									<td style="width:15%;text-align: center">{{fl.cfirstOfficer}}</td>
+									<td v-if="fl.joinPlan!='0'" style="width:15%;text-align: center">
+										 <input type="text" placeholder="请选择观察员"  v-select.allowclear="fl.observer" :options="options1"  dataid="{{fl.flightTaskId}}"/>
+									</td>
+									<td v-else style="width:15%;text-align: center">
+										{{fl.observerNames}}
+									</td>
+									<td v-if="fl.updatePlan=='0'" style="width:10%;text-align: center;color:#00CC00">已发布</td>
+									<td v-else style="width:10%;text-align: center">
+										<input type="button"  value={{fl.joinPlan=='0'?'取消计划':'加入计划'}} v-on:click="operAll($index,$event)" 
+											dataid="{{fl.flightTaskId}}" dataid1="{{fl.taskDate}}"/>
+									</td>
+								</tr>
+								<tr id="flyDetail{{fl.flightTaskId}}" style="display:none">
+									<td colspan="6">
+										<table class="table table-bordered" style="width:100%;">
+											<tr v-for="dl in fl.mulFlyDetails" style="{{dl.isTempPlan!='0'?'background-color: #FFFACD':''}}">
+												<td style="width:30%;text-align: center;font-size: small;">{{dl.flyNo}}</td>
+												<td style="width:20%;text-align: center;font-size: small;">{{dl.edt}}--{{dl.eat}}</td>
+												<td style="width:30%;text-align: center;font-size: small;">{{dl.deptAirport}}-{{dl.arrAirport}}</td>
+												<td v-if="dl.isTempPlan=='0'" style="width:10%;text-align: center;font-size: small;">
+													 <input type="text" v-select.allowclear="dl.observer" :options="options1" dataid="{{dl.tempPlanId}}" value="{{dl.observerName}}"/>
+												</td>
+												<td v-else style="width:10%;text-align: center;font-size: small;">
+													{{dl.observerName}}
+												</td>
+												<td v-if="dl.isStatue=='1'" style="width:10%;text-align: center;color:#00CC00">已发布</td>
+												<td  v-else style="width:20%;text-align: center">
+												    <input type="button" value={{dl.isTempPlan=='0'?'加入计划':'取消计划'}} v-on:click="operPlan($index,$event)" data="{{dl.flightPlanId}}" data1="{{dl.flightDate}}" data2="{{fl.rownum}}" dataid="{{fl.flightTaskId}}"/>
+												</td>					
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>	
+					</td>									
+				</tr>
+			</table>
+		</div>
+		<br/>
+		<div id="footer" class="row float_footer" style="display:none">
+			<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+				<button type="button" class="btn btn-default align-right" v-on:click="closeMulPlan">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

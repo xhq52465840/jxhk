@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="actionDao" class="com.usky.sms.activity.action.ActionDao" />
+	<bean id="activity" class="com.usky.sms.activity.ActivityService" />
+	<bean id="activityDao" class="com.usky.sms.activity.ActivityDao" />
+	<bean id="activityPriorityDao" class="com.usky.sms.activity.attribute.ActivityPriorityDao" />
+	<bean id="activityResolutionDao" class="com.usky.sms.activity.attribute.ActivityResolutionDao" />
+	<bean id="activitySecurityLevelDao" class="com.usky.sms.activity.security.ActivitySecurityLevelDao" />
+	<bean id="activitySecurityLevelEntityDao" class="com.usky.sms.activity.security.ActivitySecurityLevelEntityDao" />
+	<bean id="activitySecuritySchemeDao" class="com.usky.sms.activity.security.ActivitySecuritySchemeDao" />
+	<bean id="activityStatusDao" class="com.usky.sms.activity.attribute.ActivityStatusDao" />
+	<bean id="activityTypeDao" class="com.usky.sms.activity.type.ActivityTypeDao" />
+	<bean id="activityTypeSchemeDao" class="com.usky.sms.activity.type.ActivityTypeSchemeDao" />
+	<bean id="activityTypeSchemeMappingDao" class="com.usky.sms.activity.type.ActivityTypeSchemeMappingDao" />
+	<bean id="aircraftCommanderReportTempDao" class="com.usky.sms.activity.aircraftcommanderreport.AircraftCommanderReportTempDao" />
+	<bean id="activityDistributeConfigDao" class="com.usky.sms.activity.distribute.ActivityDistributeConfigDao" />
+
+</beans>

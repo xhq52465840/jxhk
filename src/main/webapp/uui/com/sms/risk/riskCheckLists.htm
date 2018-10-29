@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<!-- 编辑风险等级Dialog begin -->
+		<div umid="riskGradeDialog"></div>
+		<!-- 编辑风险等级Dialog end -->
+        <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+	            <div class="row">
+	                <div class="col-md-3">
+	                    <h3 class="uui-managepage-title"><%=com.sms.risk.riskCheckLists.i18n.pageTitle %></h3>
+	                </div>
+	                <div class="col-md-9 text-right">
+	                </div>
+	            </div>
+            </div>
+        </div>
+
+        <div class="form uui-managepage-filter uui-panel-graph" qid="filter">
+	        <div class="uui-panel-rect-widget">
+        		<div class="uui-panel-rect-header">
+        			<h3 class="uui-panel-rect-title"><%=com.sms.risk.riskCheckLists.i18n.filter.filterTitle %>
+        			 <button class='btn btn-default btn-sm' style='float:right' qid='excel'>导出Excel</button>
+        			</h3>
+        		</div>
+        		<div class="uui-panel-rect-body uui-managepage-filter-content">
+        			<div >
+	        			<div class="form-group col-md-6 col-xs-6">
+			                <label for="<%=this._id%>-dengerName"><%=com.sms.risk.riskCheckLists.i18n.filter.dengerName %></label>
+			                    <input type="text" class="form-control input-sm" qid="dengerName" maxlength="255" />
+			            </div>
+			            <!-- <div class="form-group col-md-3 col-xs-3">
+			                <label for="<%=this._id%>-riskSerialNumberContains"><%=com.sms.risk.riskCheckLists.i18n.filter.riskSerialNumber %></label>
+			                    <input type="text" class="form-control input-sm" qid="riskSerialNumberContains" maxlength="255" />
+			            </div> -->
+			            <!-- <div class="form-group col-md-4 col-xs-4">
+			                <label for="<%=this._id%>-responsibleOrgContains"><%=com.sms.risk.riskCheckLists.i18n.filter.responsibleOrg %></label>
+			                    <input type="text" class="form-control input-sm" qid="responsibleOrgContains" maxlength="255" />
+			            </div> -->
+			            <div class="form-group col-md-6 col-xs-6 ">
+			                <label for="<%=this._id%>-dengerclassify"><%=com.sms.risk.riskCheckLists.i18n.filter.dengerClassify %></label>
+			                    <select  class="form-control input-sm choose" qid="dengerclassify">
+                                    <option value="threat"><%=com.sms.risk.riskCheckLists.i18n.dengerClassify.threaten %></option>    
+                                    <option value="error"><%=com.sms.risk.riskCheckLists.i18n.dengerClassify.error %></option>    
+			                    </select>
+			            </div>
+			            <div class="form-group col-md-2 col-xs-2">
+			                <label for="<%=this._id%>-actionItemDescContains"><%=com.sms.risk.riskCheckLists.i18n.filter.startTime %></label>
+			                    <input type="text" class="form-control input-sm" qid="startTime" maxlength="255" />
+			                    </div>
+			                    <div class="form-group col-md-2 col-xs-2">
+			                    <label for="<%=this._id%>-actionItemDescContains"><%=com.sms.risk.riskCheckLists.i18n.filter.endTime %></label>
+			                    <input type="text" class="form-control input-sm" qid="endTime" maxlength="255" />
+			            </div>
+			        </div>
+		            <div class="text-right" style="padding-bottom:30px">
+			            <button class="btn btn-default btn-sm" qid="btn_filter"><%=com.sms.risk.riskCheckLists.i18n.buttons.filter %></button>
+			            <button type="button" qid="btn_resetfilter" class="btn btn-link"><%=com.sms.risk.riskCheckLists.i18n.buttons.removeFilter %></button>
+		            </div>
+		            
+        		</div>
+	        </div>
+        </div>
+        <!--  显示title  begin-->
+		   <span class='title_show' style='position: absolute;padding:10px; display:none;background:#edeef0; border: solid 1px #999999;border-radius:5px; z-index:9999'></span>
+		<!--  显示title   end-->
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+             
+        </table>
+    </div>
+</body>
+</html>

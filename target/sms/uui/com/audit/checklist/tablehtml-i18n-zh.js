@@ -1,0 +1,40 @@
+$.extend(com.audit.checklist.tablehtml.i18n,{
+	
+	name : '',
+	remove : '删除',
+	removechecklist : '删除检查单',
+	removedis : '请确定删除当前检查单',
+	
+	edit : '编辑',
+	editSurface : '编辑界面',
+	editSafeAgency : '编辑安监机构：',
+	editFail : '编辑操作失败：',
+	affirm : '请确认你要删除这个安监机构。',
+	removeSafeAgency : '删除安监机构：',
+	removeFail : '删除操作失败：',
+	
+	
+	safeAgency : '安监机构负责人',
+	nameNotNull : '名称不能为空',
+	keyNotNull : '键值不能为空',
+	agencyNotNull : '负责人不能为空',
+	selectSafeAgency : '选择安监机构类型',
+	createSafeAgency : '新建安监机构',
+	back : '退回',
+	commit : '提交',
+	cancel : '取消',
+	describe : '描述',
+	explain : '你可以为安监机构输入安监机构的描述。 可以使用 HTML 标记语言, 但是请确保所有元素标签都完整。',
+	nameNotNull : '名称不能为空',
+	keyNotNull : '键值不能为空',
+	update : '更新',
+	cancel : '取消',
+	add : '添加',
+	respuser:'责任人',
+	respUserNotNull:'责任人不能为空',
+	category:'类别',
+	categoryNotNull:'安监机构类别不能为空',
+	startDateFormat: "开始日期格式错误",
+	endDateFormat: "结束日期格式错误",
+	startBigThanEnd: "开始日期不能大于结束日期"
+});

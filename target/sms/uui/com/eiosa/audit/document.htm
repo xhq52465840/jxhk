@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <div>
+    <div umid="uploadDialog"></div>
+     <div class="container-fluid"  id="documentDilog"> 
+        <!-- <table  class="uui-table" style="table-layout: fixed;">
+   <tbody>
+     <tr>
+      <td><p id="documentText"></p></td>
+    </tr> 
+   </tbody>
+  </table>-->
+      <form role="form" >
+      <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documents：
+	          <div class="pull-right panel-button-container" v-if="doc.id==null"  data="newDocument" v-on:click="addNewDocument"  id="addNeWDocument">
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加参考文件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+	        
+	      </div>
+     
+     <table  class="uui-table" style="table-layout: fixed;">
+       <tbody>
+         <tr>
+           <td class="name" style="width:40%">Full name of the Manuals/Documents：<span class="text-danger" > *</span> </td>
+           <td class="value"> 
+           <input type="text" v-model="doc.reviewed"  readOnly='{{doc.id==null? false:true}}'   class="form-control input-sm" id="documentReviewed"   /></td>
+           
+         </tr>
+         
+         <tr>
+         <td class="name">Acronyms：<span class="text-danger"> *</span></td>
+         <td class="value"> <input  type="text" readOnly={{display}} class="form-control input-sm " style="text-transform:uppercase" id="documentAcronyms"v-model="doc.acronyms" /></td>
+         </tr>
+         <tr>
+          <td class="name">Version/ Revision：<span class="text-danger"> *</span></td>
+          <td class="value"><input type="text" readOnly={{display}} class="form-control input-sm" id="documentVersiono"v-model="doc.versionno"  /></td> 
+         </tr>
+         <tr>
+            <td class="name">Documentation Type:<span class="text-danger"> *</span></td>
+            <td class="value" ><select disabled={{display}}  v-model="doc.type" id="docType" style="width:100% ; backgroundColor:{{display?'#F0F0F0':'white'}}" >
+			    <option value="Type 1" selected>Type1</option>
+			    <option value="Type 2" >Type2</option>
+			    <option value="Type 3">Type3</option>
+			    <option value="Paper">Paper</option>
+	             </select>
+	       </td>
+         </tr>
+         <tr>
+           <td class="name">Distribution Date:<span class="text-danger"> *</span></td>
+           <td class="value"> <input type="text" v-model="doc.docdate" readOnly={{display}} class="form-control input-sm popover-toggle" id="documentDate"   /></td>
+         </tr>
+         <tr>
+            <td class="name">Charpter：</td>
+            <td class="value"> <input type="text"  v-model="doc.charpter" id="charpter"class="form-control input-sm popover-toggle" 
+          /></td>
+         </tr>
+         
+       </tbody>
+     </table>
+    <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documents Attachments：
+	            <div class="pull-right panel-button-container"  qid="docAttach" >
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加附件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+               <div class="panel-body">
+               <table  class="table table-striped table-bordered" cellspacing="0" width="100%">
+       <tbody>
+          <tr>
+             <td >name</td>
+             <td >size</td>
+             <td >uploadDate</td>
+             <td >auditor</td>
+             <td></td>
+             
+          </tr>
+          <tr>
+            <td >
+              <div way-repeat="jsonAttach">
+              <p way-data="attachShowName" > </p>
+             
+              </div>
+            </td>
+            <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="attachSize" ></p>
+             
+              </div>
+              
+            </td> 
+             <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="updateTime"></p>
+              </div>
+            </td>
+             <td>
+              <div way-repeat="jsonAttach">
+              
+              <p way-data="creatorName"></p>
+              </div>
+            </td>
+            
+            <td>
+              <div way-repeat="jsonAttach">
+              <p>
+              <a   id=download$$key  href=""  class="glyphicon glyphicon-paperclip uui-cursor-pointer"></a>&nbsp;&nbsp;
+               <a class="glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file" 
+                     id=deleteAttach$$key onclick="deleteAttach($$key)"></a>
+               </p>
+              </div>
+            </td>
+          </tr>
+       </tbody>
+     </table>
+     
+     </div>
+     <div class="row float_footer" >
+     <div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+      <button type="button" class="btn btn-default" qid="saveDocument" >保存</button> 
+    </div>
+    </div>
+  </div>
+  
+</body>
+</html>

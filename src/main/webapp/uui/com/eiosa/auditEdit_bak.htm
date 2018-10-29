@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>审计点编辑</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div>
+  <div umid="uploadDialog"></div>
+  <div class="container-fluid" > 
+   <div id="waitDialog" style="display:none;">
+   <p>请耐心等待</p>
+   </div>
+  <div id="documentDialog"style="display:none;">
+  <table  class="uui-table" style="table-layout: fixed;">
+   <tbody>
+    <tr>
+      <td><p id="documentText"></p></td>
+    </tr>
+   </tbody>
+  </table>
+     <!--  <p id="documentText"></p>
+     
+     <hr></hr>-->
+     <br></br>
+     <!--  <form role="form"  way-data="document" way-persistent="true">-->
+      <form role="form" >
+      <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documents：
+	          <div class="pull-right panel-button-container" data="newDocument"  id="addNeWDocument">
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加参考文件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+	        
+	      </div>
+     
+     <table  class="uui-table" style="table-layout: fixed;">
+       <tbody>
+         <tr>
+           <td class="name" style="width:40%">Full name of the Manuals/Documents：<span class="text-danger" > *</span> </td>
+           <td class="value"> <input type="text" class="form-control input-sm popover-toggle" id="documentReviewed"  v-model="reviewed" 
+           title="提示" data-container="body" 
+           data-toggle="popover" data-placement="bottom" 
+             data-content='"Full name of the Manuals/Documents"不能为空'  /></td>
+         </tr>
+         <tr>
+         <td class="name">Acronyms：<span class="text-danger"> *</span></td>
+         <td class="value"> <input type="text" class="form-control input-sm popover-toggle" style="text-transform:uppercase" id="documentAcronyms"v-model="acronyms" 
+         title="提示" data-container="body" 
+           data-toggle="popover" data-placement="bottom" 
+            data-content='"Acronyms"不能为空'/></td>
+         </tr>
+         <tr>
+          <td class="name">Version/ Revision：<span class="text-danger"> *</span></td>
+          <td class="value"><input type="text" class="form-control input-sm popover-toggle" id="documentVersiono"v-model="versionno" 
+           title="提示" data-container="body" 
+           data-toggle="popover" data-placement="bottom" 
+            data-content='"Version/ Revision"不能为空'  /></td> 
+         </tr>
+         <tr>
+            <td class="name">Documentation Type:<span class="text-danger"> *</span></td>
+            <td class="value"><select v-model="type" id="docType" style="width:100%">
+			    <option value="Type 1" >Type1</option>
+			    <option value="Type 2" >Type2</option>
+			    <option value="Type 3">Type3</option>
+			    <option value="Paper">Paper</option>
+	             </select>
+	       </td>
+         </tr>
+         <tr>
+           <td class="name">Distribution Date:<span class="text-danger"> *</span></td>
+           <td class="value"> <input type="text" class="form-control input-sm popover-toggle" id="documentDate"  
+           title="提示" data-container="body" 
+           data-toggle="popover" data-placement="bottom" 
+            data-content='"Distribution Date"不能为空' /></td>
+         </tr>
+         <tr>
+            <td class="name">Charpter：</td>
+            <td class="value"> <input type="text"  id="charpter"class="form-control input-sm popover-toggle" 
+          
+           title="提示" data-container="body" 
+           data-toggle="popover" data-placement="bottom" 
+            data-content='章节输入只能是字母数字和";,-()"'/></td>
+         </tr>
+         
+       </tbody>
+     </table>
+     
+    <!--   <div id="docSelect2" style="display:none"> 
+      <input type="text" class="form-control input-sm" id="documentReviewed"  name="reviewed" style="width:100%" />
+      <div id="addDocBtn" style="display:true">
+      
+       </div>
+      </div>
+      <div id="docInput" style="dispaly:true" >
+       <input type="text" class="form-control input-sm"   name="reviewed" style="width:100%" disabled/>
+      </div>
+       <br></br>
+      <label>Acronyms：</label>
+     <input type="text" class="form-control input-sm" id="documentAcronyms"name="acronyms" style="width:100%" /><br></br>
+     
+      <label>Version/ Revision：</label>
+     <input type="text" class="form-control input-sm" id="documentVersiono"name="versionno" style="width:100%" /><br></br>
+    
+      <label>Documentation Type:</label>
+      <select name="type" id="docType" style="width:100%;">
+			<option value="Type 2" > Type2</option>
+			<option value="Type 3"> Type3</option>
+	  </select>
+	  <br></br>
+	  <label>Distribution Date:</label>
+     <input type="text" class="form-control input-sm" id="documentDate" name="docdate" style="width:20%" /> <br></br>
+	
+	   <label>Charpter：</label>
+    
+     <input type="text" id="charpter"class="form-control input-sm"  style="width:100%" /><br></br>-->
+     <br></br>
+    <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documents Attachments：
+	            <div class="pull-right panel-button-container"  id="docAttach" >
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加附件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+               <div class="panel-body">
+               <table  class="table table-striped table-bordered" cellspacing="0" width="100%">
+       <tbody>
+          <tr>
+             <td >name</td>
+             <td >size</td>
+             <td >uploadDate</td>
+             <td >auditor</td>
+             <td></td>
+             
+          </tr>
+          <tr>
+            <td >
+              <div way-repeat="jsonAttach">
+              <p way-data="attachShowName" > </p>
+             
+              </div>
+            </td>
+            <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="attachSize" ></p>
+             
+              </div>
+              
+            </td> 
+             <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="updateTime"></p>
+              </div>
+            </td>
+             <td>
+              <div way-repeat="jsonAttach">
+              
+              <p way-data="creatorName"></p>
+              </div>
+            </td>
+            
+            <td>
+              <div way-repeat="jsonAttach">
+              <p>
+              <a   id=download$$key  href="">downLoad</a>&nbsp;&nbsp;
+               <span class="glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file" 
+                     id=deleteAttach$$key onclick="deleteAttach($$key)"></span>
+               </p>
+              </div>
+            </td>
+          </tr>
+       </tbody>
+     </table>
+               
+               </div>
+	      </div>
+     <!--  <label>Attachments：</label>-->
+     <div id="showAddAttach" style="display:none"> <button type="button" qid="docAttach" >+</button></div>
+     
+    <!--   <p id="isarpDocAttach" ></p>-->
+     <!--<label>Disciplines：</label><br></br>
+       <table>
+        <tr>
+           <td width="100px"><input type="checkbox" id="org" value="ORG">ORG</td>
+           <td width="100px"><input type="checkbox" id="flt" value="FLT">FLT</td>
+           <td width="100px"><input type="checkbox" id="dsp" value="DSP">DSP</td>
+           <td width="100px"><input type="checkbox" id="mnt" value="MNT">MNT</td>
+        </tr>
+        <tr>
+           <td width="100px"><input type="checkbox" id="cgo" value="CGO">CGO</td>
+           <td width="100px"><input type="checkbox" id="grh" value="GRH">GRH</td>
+           <td width="100px"><input type="checkbox" id="cab" value="CAB">CAB</td>
+           <td width="100px"><input type="checkbox" id="sec" value="SEC">SEC</td>
+        </tr>
+     </table>-->
+     </form>
+    </div>
+    <div id="actionEditDialog" style="display:none;">
+   <!--   <form role="form"  way-data="action" way-persistent="true">-->
+    <table class="uui-table" style="table-layout: fixed;">
+      <tr>
+       <td><p  id="title" /></td>
+      </tr>
+    </table>
+    <table  class="uui-table" style="table-layout: fixed;">
+      <tr>
+        <td class="name">Name(s) of the Auditor:<span class="text-danger" > *</span></td>
+        <td class="value">
+        <input type="text" class="form-control input-sm"  id="actionAuditor" style="width:45%"/>&nbsp;&nbsp;
+      <input type="text" class="form-control input-sm"  id="auditors" v-model="auditors" style="width:45%" disabled/> 
+        </td>
+      </tr>
+      <tr>
+        <td class="name">Audit Record：<span class="text-danger" > *</span></td>
+        <td class="value"> <textarea style="width:90%" rows="2"  id="reports" v-model="reports"></textarea> </td>
+      </tr>
+      <tr>
+        <td class="name">Audit Date:<span class="text-danger" > *</span></td>
+        <td class="value">
+        <input type="text" class="form-control input-sm" id="auditDate"  v-model="auditDate" style="width:45%"/>&nbsp;&nbsp;
+     <input type="text" class="form-control input-sm"  id="auditDate_string" v-model="auditDate_string" style="width:45%" disabled/>
+        </td>
+      </tr>
+      <tr>
+        <td class="name">Satus :<span class="text-danger" > *</span></td>
+        <td class="value">
+        <select id="actionStatus" style="width:100%;" >
+			<option value="0">未完成</option>
+			<option value="1">已完成</option>
+	  </select>
+        </td>
+      </tr>
+    </table>
+    <!--  <label>Title:</label><br></br>
+    <p  id="title" style="width:100%"/>
+    <hr></hr>
+    <label>Name(s) of the Auditor:</label>
+     <input type="text" class="form-control input-sm"  id="actionAuditor" style="width:90%" /> <br></br>
+      <input type="text" class="form-control input-sm"  name="auditors" style="width:90%" disabled/> <br></br>
+   <label>Audit Record：</label>
+    <textarea style="width:90%" rows="2"  id="reports"></textarea> <br></br>-->
+   <br></br>
+     <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Relevant Attachments:
+	            <div class="pull-right panel-button-container"  qid="addAttach" >
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加附件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+             <div class="panel-body">
+             <table  class="table table-striped table-bordered" cellspacing="0" width="100%">
+       <tbody>
+          <tr>
+             <td >name</td>
+             <td >size</td>
+             <td >uploadDate</td>
+             <td >auditor</td>
+             <td>operate</td>
+             
+          </tr>
+          <tr>
+            <td >
+              <div way-repeat="jsonAttach">
+              <p way-data="attachShowName" > </p>
+             
+              </div>
+            </td>
+            <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="attachSize" ></p>
+             
+              </div>
+              
+            </td> 
+             <td>
+              <div way-repeat="jsonAttach">
+              <p way-data="updateTime"></p>
+              </div>
+            </td>
+             <td>
+              <div way-repeat="jsonAttach">
+              
+              <p way-data="creatorName"></p>
+              </div>
+            </td>
+            
+            <td>
+              <div way-repeat="jsonAttach">
+              <p>
+              <a   id=download$$key  href="">downLoad</a>&nbsp;&nbsp;
+               <span class="glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file" 
+                     id=deleteAttach$$key onclick="deleteAttach($$key)"></span>
+               </p>
+              </div>
+            </td>
+          </tr>
+       </tbody>
+     </table>
+             
+             </div>  
+	      </div>
+  <!--   <label>Relevant Attachments:</label>
+     <button type="button" qid="addAttach" >+</button>-->
+     
+   <!-- <label>Audit Date:</label>
+     <input type="text" class="form-control input-sm" id="auditDate"  style="width:30%" />&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" class="form-control input-sm"  name="auditDate_string"  style="width:30%" disabled/>
+  <br></br>
+   <label>Satus :</label>
+      <select id="actionStatus" style="width:100%;" >
+			<option value="1">未完成</option>
+			<option value="2">已完成</option>
+	  </select>
+  </form>
+  -->
+</div>
+   <div id="deleteDialog" style="display:none;">
+        <p id="deleteContent"></p>
+   </div> 
+   <div id="logDialog" style="display:none">
+     <div umid="isarpLogTable"></div>
+   </div>
+   <div id="addExplainDialog" style="display:none;">
+       <textarea id="explainTxt" style="width:100%" rows="2"  name="comments"></textarea>
+   </div>
+   <div id="messageDialog" style="display:none;">
+       <label>消息内容：</label>
+       <textarea id="messageTxt" style="width:80%" rows="2"></textarea><br></br>
+       <label>接收人：</label>
+       <input type="text" class="form-control input-sm" style="width:80%" id="receiverTxt"></input>
+   </div> 
+   	<div qid="div_Dialog"  class="activity-body-content">
+   	   <div class="row">
+   	   
+	   <form id="actionDialog" role="form"   way-persistent="true">
+	   <div class="col-sm-12">
+	   <table class="uui-table" style="table-layout: fixed;">
+	     <tbody>
+	     <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Text:</label></td>
+	       </tr>
+	       <tr>
+	         <td> <p style="width:90%"  id="isarpText"  ></p></td>
+	       </tr>
+	       <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Guidance:</label></td>
+	       </tr>
+	       <tr>
+	         <td><p style="width:100%" rows="2" id="guidance"  ></p></td>
+	       </tr>
+	       <tr>
+	           <td><label class="label label-success" style="font-size:18px;">Status:</label><label  id="status" name="status"></label></td>
+	           
+	       </tr>
+	       <tr></tr>
+	     </tbody>
+	   </table>
+	      <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Auditor Actions：
+	            <div class="pull-right panel-button-container" data="" qid="addAction">
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加action"></i>
+                </div>
+              </div>
+              </h2>
+	          </div>
+	          <div class="panel-body">
+	           
+	         <table  qid=actionTable  style="table-layout: fixed;" class="uui-table">
+	         <thead>
+	         <tr >
+	            <td class="name" style="width:250px">Title</td>
+	            <td class="name" style="width:100px">Audit Date</td>
+	            <td class="name" style="width:150px">Name(s) of the Auditor</td>
+	            <td class="name" style="width:200px">Audit Record</td>
+	            <td class="name" style="width:200px">Relevant Attachments</td>
+	            <td class="name" >Status</td>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        </tbody>
+	       
+	    </table>
+	  <!--   <table way-repeat="actionList" way-persistent="true" qid=actionTable$$key style="table-layout: fixed;" class="uui-table">
+	          <tr>
+	           <td style="width:180px" >
+	             
+	             <a  class="action" data=$$key href="#" id=action$$key></a>
+	             
+	           </td>
+	            <td style="width:80px">
+	            
+	             <div way-data="auditDate"></div>
+	             
+	           </td>
+	            <td style="width:130px">
+	            
+	             <div way-data="auditingAuditors"></div>
+	            
+	           </td >
+	            <td style="width:150px">
+	            
+	               <div style="width:130px" way-data="reports"></div>
+	           </td>
+	            <td style="width:150px">
+	            
+	              <div id=attach$$key></div>
+	            
+	           </td>
+	            <td style="width:100px">
+	           
+	             <div way-data="status"></div>
+	           
+	           </td>
+	           
+	        </tr>
+	     </tbody>
+	   </table>  -->
+	          </div>
+	      </div>
+	     
+	      <!--  <td>
+	       <button type="button" style="height:30px"class="btn btn-warning" qid="addAction"  data="" >+Action</button>
+	     </td>-->
+	 
+	   <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documentation References:
+	         
+	          <div class="pull-right panel-button-container" data="" qid="addDocument">
+                <div class="panel-button-inner">
+                 <i class="fa fa-plus" title="添加参考文件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+               <div class="panel-body">
+                <table qid=documentTable  style="table-layout: fixed;" class="uui-table">
+		  
+		   	  <!--   <tr>
+		   	    <td>Manuals/ Documents Reviewed</td>
+		   	    <td>Acronyms</td>
+		   	    <td>Version/ Revision</td>
+		   	    <td>Charpter</td>
+		   	    <td></td>
+		   	  </tr>-->
+		   	  <thead>
+		   	   <tr>
+		   	    <td class="name" style="width:300px">Manuals/ Documents Reviewed</td>
+		   	    <td class="name" style="width:200px">Acronyms</td>
+		   	    <td class="name" style="width:240px">Version/ Revision</td>
+		   	    <td class="name" style="width:150px">Charpter</td>
+		   	    <td></td>
+		   	  </tr>
+		   	  </thead>
+		   	  <tbody></tbody>
+		   	</table>
+		   	<!--  <table qid=documentTable$$key way-repeat="documentList"  style="table-layout: fixed;" class="uui-table">
+		   	<tbody>-->
+		   	 <!--   <tr>
+		   	    <td>Manuals/ Documents Reviewed<span style="font-size:60px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		   	    Acronyms<span style="font-size:60px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		   	    Version/ Revision<span style="font-size:60px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		   	    Charpter<span style="font-size:60px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		   	    </td>
+		   	  </tr>-->
+		   	  <!--  <tr >
+		   	    <td style="width:200px">
+		   	      
+		   	       
+		   	       <p><a class="document" data=$$key  way-data="reviewed" href="#"></a></p>
+		   	     
+		   	    </td>
+		   	     <td style="width:150px">
+		   	      
+		   	       <p way-data="acronyms"></p>
+		   	     
+		   	    </td>
+		   	     <td style="width:150px">
+		   	      
+		   	       <p way-data="versionno"></p> 
+		   	       
+		   	    </td>
+		   	    <td style="width:150px">
+		   	       
+		   	       <p way-data="charpter"></p>
+		   	       
+		   	    </td>
+		   	    <td style="width:50px"> 
+		   	       
+		   	       <span class="glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file" 
+                    data=$$key  id=deleteDocument$$key></span>
+                   
+		   	    </td>
+		   	  </tr>
+		   	</tbody>
+		  </table>-->
+               </div>
+	          <!-- <button type="button" class="btn document btn-default" data=""  qid="addDocument">+Doc</button> --> 
+	      </div>
+       <!--  <label>Documentation References:</label>&nbsp;&nbsp;
+        
+         <!--  <button type="button" class="btn btn-link  " data=""  qid="linkDocument">+DocRef</button>-->
+		  
+	  <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Assessment/Status of Conformity :</h2>
+	          </div>
+	      </div>
+	  
+	  <select id="assessment" style="width:100%" >
+			
+		</select>
+	<div id="comments" style="display:none;">
+	    <label>Auditor Comments：</label>
+	   <textarea class="form-control" style="width:100%" rows="2" id="commentsText" ></textarea>
+	   </div>
+	<div id="na" style="display:none;">
+	    <label>Description of Nonconformity or Description of Reason for N/A:</label>
+	   <textarea class="form-control" style="width:100%" rows="2" id="reason"></textarea>
+	 </div>
+	 <div id="root" style="display:none;">
+	    <label>Root Cause：</label>
+	   <textarea class="form-control" style="width:100%" rows="2" id="rootCause"></textarea>
+	    <label>Corrective Action Taken：</label>
+	   <textarea class="form-control"style="width:100%" rows="2" id="taken"></textarea>
+	   </div>
+	  <!--  <label>Actions Note：</label>
+	    <textarea style="width:100%" rows="2" name=""></textarea><br></br> -->
+	   <!--   <label>Assessment/Status of Conformity :</label>
+	    <select id="assessment" style="width:100%" name="assessment">
+			
+		</select>
+	<div id="comments" style="display:none;">
+	    <label>Auditor Comments：</label>
+	   <textarea style="width:100%" rows="2" name="comments" way-persistent></textarea>
+	   </div>
+	<div id="na" style="display:none;">
+	    <label>Description of Nonconformity or Description of Reason for N/A:</label>
+	   <textarea style="width:100%" rows="2" name="reason"></textarea>
+	 </div>
+	 <div id="root" style="display:none;">
+	    <label>Root Cause：</label>
+	   <textarea style="width:100%" rows="2" name="rootCause"></textarea>
+	    <label>Corrective Action Taken：</label>
+	   <textarea style="width:100%" rows="2" name="taken"></textarea>
+	   </div>-->
+	   </form>
+	   <hr></hr>
+	   <label class="label label-warning" style="font-size:18px;">Logs：</label>
+	      <div umid="actionLogTable"></div>  
+	   <hr></hr>
+	 </div>
+	 </div>   
+	</div>
+</div> 
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* 颜色 */
+
+.com-sms-system-lookAndFeel .table tr td:first-child{
+	width:520px;
+	font-size: 13px;
+}
+.com-sms-system-lookAndFeel .edit{
+	position:relative;
+	width:295px;
+	background-color:#FFF; 
+	cursor:pointer;
+}
+.com-sms-system-lookAndFeel .edit:hover{
+	background-color:#FFF; 
+}
+.com-sms-system-lookAndFeel .edit:hover .bi{
+	visibility: visible; 
+}
+
+.com-sms-system-lookAndFeel .table tr td input{
+	width:250px;
+	border:1px solid #fff;
+	cursor:pointer;
+}
+.com-sms-system-lookAndFeel .colorSelector {
+	/* position: relative; */
+	width: 20px;
+	height: 20px;
+	border:1px solid black;
+	/* float:right;  */
+	display:inline-block;
+	margin-top:6px;
+}
+
+.com-sms-system-lookAndFeel .bi{
+	position: absolute;
+	top: 6px;
+	right: 2px;
+	visibility: hidden;
+	/* float:right;
+	margin-right:1px; */
+}
+.com-sms-system-lookAndFeel .table tr:hover{
+	background-color: #f0f0f0;
+}
+
+/* 日期格式 */
+.com-sms-system-lookAndFeel .datafm{
+	width:295px;
+	background-color:#FFF; 
+	cursor:pointer;
+}
+
+.com-sms-system-lookAndFeel #yes,#no,#choose{
+	display:none;
+}
+.com-sms-system-lookAndFeel #choose{
+	width:20px;
+}
+.com-sms-system-lookAndFeel .sp{
+	float:right;
+	top: -25px;
+	visibility: hidden; 
+}
+.com-sms-system-lookAndFeel .pp{
+	float:right;
+	visibility: hidden; 
+}
+.com-sms-system-lookAndFeel .datafm:hover .sp {
+	visibility: visible;
+}
+.com-sms-system-lookAndFeel .datafm:hover .pp {
+	visibility: visible;
+}
+
+
+/*标识*/
+.com-sms-system-lookAndFeel .uploadify-button{
+	position:absolute;
+	border-radius:20px;
+	text-align:center;
+	font-size:15px;
+	color:#fff;
+	background-color:gray;
+}
+ .com-sms-system-lookAndFeel .uploadify-progress {
+	position:relative;
+   	float:left;
+}
+.com-sms-system-lookAndFeel #logoimage{
+	width: 200px;
+	height: 50px;
+	margin-left: 150px;
+}

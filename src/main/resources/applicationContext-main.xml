@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> -->
+<!-- <beans default-lazy-init="false" default-autowire="no"> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="propertyConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/application.properties</value>
+				<value>classpath:config/external_interface.properties</value>
+				<value>classpath:config/quartz_cron.properties</value>
+				<value>classpath:hibernate.properties</value>
+			</list>
+		</property>
+	<property name="fileEncoding">
+		<value>UTF-8</value>
+	</property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource ">
+		<property name="basenames">
+			<list>
+				<value>classpath:i18n/message/message</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean> 
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			 <value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			 <value>${jdbc.password}</value>
+		</property>
+		<!-- <property name="properties">
+			<props>
+			<prop key="hsqldb.default_table_type">cached</prop>
+			</props>
+			</property> -->
+		<!-- 最大连接数据库连接数，设置为0时，表示没有限制 -->
+		<property name="maxActive">
+			<value>150</value>
+		</property>
+		<!-- 最大等待连接中的数量，设置为0时，表示没有限制 -->
+		<property name="maxIdle">
+			<value>30</value>
+		</property>
+		<!-- 最大等待秒数，单位为毫秒，超过时间会报出错误信息。设为-1表示无限制 -->
+		<property name="maxWait">
+			<value>10000</value>
+		</property>
+		<property name="defaultAutoCommit">
+			<value>true</value>
+		</property>
+		<!-- 打开检查,用异步线程evict进行检查 -->
+		<property name="testWhileIdle">
+			<value>true</value>
+		</property>
+		<property name="testOnBorrow">
+			<value>false</value>
+		</property>
+		<property name="testOnReturn">
+			<value>false</value>
+		</property>
+		<property name="validationQuery">
+			<value>select sysdate from dual</value>
+		</property>
+		<property name="validationQueryTimeout">
+			<value>1</value>
+		</property>
+		<property name="timeBetweenEvictionRunsMillis">
+			<value>30000</value>
+		</property>
+		<property name="numTestsPerEvictionRun">
+			<value>20</value>
+		</property>
+	</bean>
+
+	<!-- hibernate Session to DB -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> -->
+				<prop key="hibernate.dialect">com.usky.sms.eiosa.Oracle10gExtendedDialect</prop>
+				<prop key="hibernate.query.substitutions"></prop><!-- Need to force empty despite Hibernate reference saying this is the default -->
+				<prop key="hibernate.cache.region_prefix"></prop><!-- Need to force empty. Hibernate reference says this is the default -->
+				<prop key="hibernate.show_sql">${hibernate.showsql}</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.default_batch_fetch_size">16</prop>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+				<!-- 查询缓存，默认为false -->
+				<!-- 
+					<prop key="hibernate.cache.use_query_cache">true</prop>
+				-->
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</prop>
+				<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory</prop>
+				<!-- <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop> -->
+				<prop key="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+				<prop key="hibernate.jdbc.fetch_size">200</prop>
+				<prop key="hibernate.search.default.directory_provider">org.hibernate.search.store.FSDirectoryProvider</prop>
+				<prop key="hibernate.search.default.indexBase">${user.home}/sms/hibernate-search</prop>
+				<prop key="hibernate.search.worker.batch_size">1000</prop>
+				<prop key="hibernate.search.default.optimizer.operation_limit.max">1000</prop>
+				<prop key="hibernate.search.default.optimizer.transaction_limit.max">100</prop>
+				<prop key="hibernate.search.worker.execution">sync</prop>
+				<prop key="hibernate.search.worker.buffer_queue.max">10</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+<!-- 				<prop key="hibernate.hbm2ddl.auto">update</prop> -->
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.usky.sms</value>
+				<value>de.micromata.hibernate.history</value>
+				<value>de.micromata.hibernate.history.delta</value>
+			</list>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<!-- never run a schema update on the database -->
+		<property name="schemaUpdate">
+			<value>false</value>
+		</property>
+		<!-- <property name="configXml">
+			<ref bean="configXml" />
+			</property> -->
+		<property name="entityInterceptor">
+			<ref bean="hibernateHistoryInterceptor" />
+		</property>
+	</bean>
+	
+<!-- 	<bean id="solrClient" class="org.apache.solr.client.solrj.impl.HttpSolrServer"> -->
+<!--  		<constructor-arg index="0" value="http://127.0.0.1:8983/solr"></constructor-arg> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="solrClientFactory" class="com.usky.sms.solr.support.HttpSolrClientFactory"> -->
+<!-- 		<property name="baseUrl"> -->
+<!-- 			<value>http://172.20.25.77:8004/solr/activity</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<aop:aspectj-autoproxy proxy-target-class="true" /> -->
+	
+<!-- 	<bean id="myInterceptor" class="cn.csdn.service.MyInterceptor" /> -->
+<!-- 	<bean id="personService" class="cn.csdn.service.impl.PersonServiceBean"></bean> -->
+	
+<!-- 	<bean id="solrTransactionalAnnotationAspect" class="com.usky.sms.solr.transaction.SolrTransactionalAnnotationAspect"> -->
+<!-- 	 	<property name="solrClientFactory" ref="solrClientFactory"></property> -->
+<!-- 	</bean> -->
+
+</beans>

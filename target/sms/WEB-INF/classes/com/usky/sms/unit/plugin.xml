@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="unit" class="com.usky.sms.unit.UnitService" />
+	<bean id="unitCategoryDao" class="com.usky.sms.unit.UnitCategoryDao" />
+	<bean id="unitConfigDao" class="com.usky.sms.unit.UnitConfigDao" />
+	<bean id="unitDao" class="com.usky.sms.unit.UnitDao" />
+	<bean id="unitRoleActorDao" class="com.usky.sms.unit.UnitRoleActorDao" />
+
+</beans>

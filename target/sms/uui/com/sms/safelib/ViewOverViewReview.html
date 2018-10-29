@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>安全工作评审</title>
+    <link href="../res/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+
+            //$.um($("div[umid='admin-horizontal-menus']"), {menuId:174, selected:"安全评审审核"});
+
+            $.um($("div[umid='review']"));
+
+            $.um($("div[umid='foot']"));
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+	<div class="page-header">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="page-header-inner">
+					<div class="page-header-main"><h3 class="title">安全评审审核</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 	<!--二级横向导航 begin-->
+    <!--<div umid="admin-horizontal-menus" umodule="com.sms.horizontalMenus"></div>-->
+    <!--二级横向导航 end-->
+
+    <!--页面主内容区域 begin-->
+     
+    <div umid="review" umodule="com.sms.safelib.overreview"></div>
+  
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

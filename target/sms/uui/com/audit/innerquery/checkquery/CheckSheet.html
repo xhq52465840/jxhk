@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>检查单查询</title>
+    <style type="text/css"> 
+        .style_css{
+            margin-top: 0px !important;
+            margin-bottom: 12px !important;
+        }
+        .style_css strong{
+            font-size: 18px !important;
+        }
+    </style>
+    <script type="text/javascript" src="../../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../../uui/uui-loader.js"></script>
+     <script type="text/javascript" src="../../../sms/boot.js"></script>
+<!--         <link type="text/css" rel="stylesheet" href="../../../../main.css" /> -->
+  <!--   <script type="text/javascript" src="../boot.js"></script> -->
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+       		 $.um($("div[umid='vertical-menus']"),{menuId:1043,selected:"检查单查询"});
+       		 $.um($("div[umid='checksheet']")); 
+            
+     	    $.um($("div[umid='foot']"));
+        });
+    </script>
+</head>
+<body>
+    
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner" style="margin-top: 0px; background-color: #f5f5f5;">
+            <div class="page-content-nav" style="border-color:#ddd;padding:0px 10px;">
+	    	  <div umid="vertical-menus" umodule="com.sms.verticalMenus">
+	    	  </div>
+            </div>
+    		<div class="page-content-main" style="padding:20px;padding-top: 0px">
+    			<div umid="checksheet" umodule="com.audit.innerquery.checkquery.checksheetindex"></div>
+    		</div>  
+    	</div>
+    </div>
+
+   
+
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

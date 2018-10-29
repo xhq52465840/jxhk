@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class=" container-fluid" style="padding: 10px ">
+	<div umid="reportDetail" ></div>
+	<div id="report">
+	<div umid="sectionTab"></div>
+	<div umid="reportExportDialog" ></div>
+	
+              <div class="page-header-main unit-details" >                
+               </div>
+               <div class="form uui-managepage-filter uui-panel-graph" style="width:95%;padding:10px">
+                <div class="uui-panel-rect-widget">
+        		<div class="uui-panel-rect-body uui-managepage-filter-content">
+               <div class="row">
+                  <div class="form-group col-sm-20 col-md-10" >
+			        <label>No:</label>&nbsp;&nbsp;
+			      <!--       <input type="text" class="js-example-tokenizer form-control input-sm" qid="reprotNo"  style="width:15%" />-->
+			           <input type="text" class="form-control chief" style="width:15%" v-select.allowclear="section" :options="options" v-model="reportQueryForm.repNo" />		
+			           &nbsp;&nbsp;&nbsp;&nbsp;
+			        <label>Date :</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="reportDate" style="width:15%" v-model="reportQueryForm.repDate"/>&nbsp;&nbsp;&nbsp;&nbsp;
+			         <label>To:</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="reportDateTo" style="width:15%" v-model="reportQueryForm.repDateto"/>&nbsp;&nbsp;&nbsp;&nbsp;
+			        <label>Status:</label>&nbsp;&nbsp;
+			    
+			           <select qid="reportStatus" style="width:130px" v-model="reportQueryForm.repStatus">
+							<option value="">全部</option>
+							<option value="审计中" >审计中</option>
+							<option value="已完成">已完成</option>
+					  </select>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+					  <button type="button" class="btn btn-default" v-on:click="searchClick">Search</button>&nbsp;&nbsp;
+	            	 <!--  <button type="button" class="btn btn-default"  v-on:click="reset">Reset</button>--> 
+	            	       
+			      </div>
+			   </div> </div> </div></div>
+		      <div style="width:100%;margin-top:10px;" class="row">
+	            <table style="table-layout: fixed; text-align: center;width:100%" class="uui-table">		
+						<thead>
+							<tr>
+							    <td class="name w1" v-sortfun.literal="page" :options="orders" sortby="t.repNo" style="width:100px">No</td>
+								<td class="name w2" v-sortfun.literal="page" :options="orders" sortby="t.title" style="width:100px">Title</td>
+								<td class="name w3" v-sortfun.literal="page" :options="orders" sortby="t.repDate" style="width:100px">Date</td>
+								<td class="name w4" v-sortfun.literal="page" :options="orders" sortby="t.repStatus" style="width:100px">Statue</td>
+							</tr>
+						</thead>
+						<tr v-for="rl in reportList" >  	 					                    
+						    <td class="w1"><a href="#" v-on:click="showReport1" data={{rl.id}}>{{ rl.repNo }}</td>
+							<td class="w2"> {{ rl.title }}</td>	
+							<td class="w3"> {{ rl.repDate | datestr}}</td>
+		                    <td class="w4"> {{ rl.status }}</td>
+		            </table>
+				</div>
+		       <!-- 分页开始 -->
+				<pagebars :pagemsg.sync="pagebarsVue" :pagefun="reportSearch"></pagebars>
+				<!-- 分页结束 -->
+			   <br></br>
+	  </div>
+	</div>
+</body>

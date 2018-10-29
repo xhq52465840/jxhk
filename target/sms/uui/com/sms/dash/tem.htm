@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	.esl{
+			width:100%;
+			overflow:auto;
+		}
+	.com-sms-dash-tem .rightMenu{
+		display:none;
+		position: absolute;
+		border: 0px solid rgb(51, 51, 51);
+		background-color: rgba(0, 0, 0, 0.701961);
+		padding:15px;
+		color:white;
+		border-radius:5px;
+		z-index: 9999;
+		min-width: 150px;
+	}
+	.com-sms-dash-tem .hkaqxx,
+	.com-sms-dash-tem .fxld,
+	.com-sms-dash-tem .zxt,
+	.com-sms-dash-tem .wxcc{
+		cursor : pointer;
+	}
+	.com-sms-dash-tem .insecurity{
+		height:1px;
+		width: 100%;
+		overflow: hidden;
+		border-bottom-width:0px;
+		border-radius: 4px;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+		cursor: default;
+	}
+</style>
+</head>
+<body>
+	<div style="margin:0 auto;">
+		<div id="rightMenuContent" class="rightMenu"></div>
+		<div style="padding:0px;">
+			<div>
+				<ul class="nav nav-tabs dashboard-tem-tabs" role="tablist">
+					<li class="active" style="width:25%;">
+						<a href="#tabs-1" data-toggle="tab" style="border-radius:10px 0 0 0;">风险雷达</a>
+					</li>
+					<li style="width:25%;">
+						<a href="#tabs-2" data-toggle="tab">风险趋势</a>
+					</li>
+					<li style="width:25%;">
+						<a href="#tabs-3" data-toggle="tab">风险排名</a>
+					</li>
+					<li style="width:25%;">
+						<a href="#tabs-4" data-toggle="tab" style="border-radius:0 10px 0 0;">不安全状态排名</a>
+					</li>
+				</ul>
+				<div class="tab-content" style="background-color: #eee;">
+					<!-- tab1 -->
+					<div id="tabs-1" class="tab-pane active">
+						<div class="row" style="margin: 0px;">
+							<div umid="sr0"></div>
+							<div class="col-md-12" style="margin-bottom: 5px;">
+								<div id="tem_radar" class="esl" style="height: 530px;"></div>
+							</div>
+						</div>
+					</div>
+					<!-- tab2 -->
+					<div id="tabs-2" class="tab-pane">
+						<div class="row" style="margin: 0px;">
+							<div umid="sr1"></div>
+							<div class="col-md-12" style="margin-bottom: 5px;">
+								<div id="tem_line" class="esl" style="height: 530px;"></div>
+							</div>
+						</div>
+					</div>
+					<!-- tab3 -->
+					<div id="tabs-3" class="tab-pane">
+						<div class="row" style="margin: 0px;">
+							<div umid="sr2"></div>
+							<div class="col-md-12" style="margin-bottom: 5px;">
+								<div id="tem_row" class="esl" style="height: 530px;"></div>
+							</div>
+						</div>
+					</div>
+					<!-- tab4 -->
+					<div id="tabs-4" class="tab-pane">
+						<div class="row" style="margin: 0px;">
+							<div umid="sr3"></div>
+							<div>
+								<button type="button" qid="showEight" class="btn btn-default" style="margin-left: 8px;">显示前8项</button>
+								<button type="button" qid="showAll" class="btn btn-default">显示全部</button>
+							</div>
+							<div class="col-md-12" style="margin-bottom: 5px;background-color:white;">
+								<div id="insecurity_line" class="esl insecurity" style="width:40%;float:left;"></div>
+								<div id="insecurity_bar" class="esl insecurity" style="width:60%;float:left;"></div>
+								<div class="row" style="margin: 0 auto;">
+									<div umid="srother"></div>
+									<div class="col-md-12">
+										<div id="insecurity_line2" class="insecurity"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

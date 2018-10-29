@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>审计</title>
+    <link type="text/css" rel="stylesheet" href="inspection.css" />
+</head>
+<body>
+	<div>
+		<div class="panel panel-sms" style="margin-top: 5px;">
+			<div class="panel-heading" style="height: 43px;margin-bottom: 12px;">
+				<div class="pull-left" style="margin-top: 5px;font-size: 18px;">
+					<span qid="plan"><!-- 2015年公司现场检查计划 --></span>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: -14px;">
+			<div class="col-sm-12">
+				<div class="text-right">
+					<div style="font-size: 16px">
+						<div>
+							<ul class="test_ul">
+								<li><img src="../img/r7.png">延期</li>
+								<li><img src="../img/r6.png">完成</li>
+								<li><img src="../img/r5.png">跟踪</li>
+								<li><img src="../img/r4.png">整改</li>
+								<li><img src="../img/r3.png">检查</li>
+								<li><img src="../img/r2.png">计划</li>
+								<li>图例</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-3">
+				<input type="text" class="form-control" qid="sys_sys" />
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" qid="sys_item" />
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control hidden" qid="sys_unit" />
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-3">
+				<input type="text" class="form-control" qid="sys_year" />
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-3">
+				<input type="text" class="form-control hidden" qid="sys_date" />
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-6">
+				<input type="text" class="form-control" qid="sys_type"/>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-12 text-center">
+				<button type="button" qid="btn_search" class="btn btn-default">
+				查询</button>
+				<button type="button" qid="btn_create" class="btn btn-primary hidden" disabled="disabled">
+				创建</button>
+			</div>
+		</div>
+		<div class="row hidden" style="margin-top: 10px;" qid="spot">
+			<table qid="datatable" class="table" style="border: #EFEFF1 1px solid;border-collapse: collapse;">
+				<thead style="background-color: #EFEFF1;">
+					<tr>
+						<th rowspan=2  class="text-center th_width">类型｜年月<br><img src="../img/50-5.png" alt="" /></th>
+						<th colspan=12 class='text-center'><span qid="planYear"></span></th>
+					</tr>
+					<tr>
+						<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th>
+						<th>07</th><th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+					</tr>
+				</thead>
+				<tbody class="td_border">
+				</tbody>
+			</table>
+		</div>
+		<div class="row hidden" style="margin-top: 10px;" qid="spec">
+			<table qid="spectable" class="table" style="border: #EFEFF1 1px solid;">
+				<thead style="background-color: #EFEFF1;">
+					<tr>
+						<th qid="head_th1" rowspan=2  class="text-center">安监机构｜年月<br><img src="../img/50-5.png" alt="" /></th>
+						<th qid="head_th" style="width:70%"></th>
+						<th class="text-center" style="width:5%">
+							<span class="glyphicon glyphicon-plus span_cursor" qid="btn_do" data-toggle="modal"
+							 data-target="#myModal_do" title="新增"></span>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="td_border">
+					
+				</tbody>
+			</table>
+		</div>
+		<ul class="dropdown-menu ul-show">
+        	<li><a href="javascript:void(0);" qid="work">工作单</a></li>
+        	<li><a href="javascript:void(0);" data-target="#myModal" data-toggle="modal" qid="move">移动</a></li>
+        	<li><a href="javascript:void(0);" qid="checklist">检查单</a></li>
+        	<li><a href="javascript:void(0);" qid="checkreport">检查报告</a></li>
+        	<li><a href="javascript:void(0);" qid="improvelist">整改单</a></li>
+        	<li><a href="javascript:void(0);" qid="tracking">跟踪表</a></li>
+        	<li><a href="javascript:void(0);" qid="del">删除</a></li>
+        </ul>
+		<div class="modal fade" id="myModal"  aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="top:200px;">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		      	<div style="font-size: 30px;margin-bottom: 30px;">请选择要修改的月份</div>
+		        <table class="table" style="border: #EFEFF1 1px solid">
+					<thead style="background-color: #EFEFF1;">
+						<tr>
+							<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th>
+							<th>07</th><th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+						</tr>
+					</thead>
+					<tbody class="td_border">
+						<tr>
+							<td class="edit" data-month="01"></td>
+							<td class="edit" data-month="02"></td>
+							<td class="edit" data-month="03"></td>
+							<td class="edit" data-month="04"></td>
+							<td class="edit" data-month="05"></td>
+							<td class="edit" data-month="06"></td>
+							<td class="edit" data-month="07"></td>
+							<td class="edit" data-month="08"></td>
+							<td class="edit" data-month="09"></td>
+							<td class="edit" data-month="10"></td>
+							<td class="edit" data-month="11"></td>
+							<td class="edit" data-month="12"></td>
+						</tr>
+					</tbody>
+				</table>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal" qid="modal_click">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="modal fade" id="myModal_do"  aria-labelledby="myModalLabel_do">
+		  <div class="modal-dialog" role="document" style="top:200px;">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        <div class="row">
+					<div class="col-sm-5">
+						<input type="text" class="form-control" readonly="readonly" qid="plantime_1" />
+					</div>
+					<div class="col-sm-2 text-center">
+						至
+					</div>
+					<div class="col-sm-5">
+						<input type="text" class="form-control disabled" readonly="readonly" qid="plantime_2" />
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-primary" qid="modal_ed_click">确定</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal" qid="modal_do_click">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

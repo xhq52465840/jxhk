@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div class="uui-managepage">
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+ 	<form role="form"  id="launch" way-persistent="true">
+  		<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+	        	<div class="row">
+	          		<div class="col-md-3">
+		         		<div class="uui-managepage-title">下降/进近/着陆</div>
+		      		</div>
+        		</div>
+      		</div>
+    	</div>
+      	<div v-if="scoreList.length>0" class="form uui-managepage-filter-new uui-panel-graph-new ruleDepart"  style="height:auto;min-height:59px" qid="ruleDepart" >
+         <div class="uui-panel-rect-header-new" style="padding-left: 31px;">评分</div>     		
+      		<div class="uui-panel-rect-body uui-managepage-filter-content-new" style="height:auto;min-height:59px;padding-top:10px">
+         		<table class="table table-bordered" style="font-family: sans-serif;font-size:12px" id="product_table">
+         			<tbody>
+         			<tr style="font-weight:bold;">					   
+							<td  align="center" style="width:4%;">评分基准</td>
+							<td  align="center" style="width:3%;">评分项</td>
+							<td  align="center" style="width:5%;">评分项解释</td>
+							<td  align="center" style="width:10%;">评分项内容</td>
+							<td  align="center" style="width:1%;">评分选项</td>
+						</tr>
+						<tr v-for="score in scoreList" align="center">
+						  <td >{{score.scoreStandard}}</td>
+						  <td>{{score.scoreItems}}</td>
+						  <td>{{score.scoreItemsExplan}}</td>
+						  <td>{{score.scoreItemContent}}</td>
+						  <td>
+						    <select v-model="score.scoreSelectKey">
+						    	<option value="">请选择</option>
+						     	<option v-for="option in score.scoreSelect"  v-bind:value="option.scoreKey">
+											 {{ option.scoreVlaue}}
+								</option>
+						    </select>
+						  </td>
+						</tr>
+		  			</tbody>
+				</table>
+      		</div>
+   		</div>
+        <div id="footer" class="row  float_footer" >
+	  		<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	   			<button  type="button" class="btn btn-default" qid="saveLaunch" href="" v-on:click="save">保存</button>
+       			<button  type="button" class="btn btn-default" qid="submitLaunch" href="" v-on:click="submit">提交</button>
+     		</div>
+  		</div>   
+   	</form>
+  	</div>
+</div>
+</body>

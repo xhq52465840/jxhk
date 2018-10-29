@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+     <div umid="auditEdit"></div>
+      <div id="isarpChapter">
+         <div class="form uui-managepage-filter uui-panel-graph" style="width:95%;padding:10px">
+                <div class="uui-panel-rect-widget">
+        		<div class="uui-panel-rect-body uui-managepage-filter-content">
+               <div class="row">
+                  <div class="form-group col-sm-20 col-md-10" >
+			        <label>Section :</label>&nbsp;&nbsp;
+			           <select  id="isarpCharpterSection"  style="width:130px" v-on:change="noClick">
+							<option value="">全部</option>
+							<option v-for="option in isarpSectionNames" v-bind:value="option.number">
+										    {{ option.name }}
+										 </option>
+					  </select>&nbsp;&nbsp;&nbsp;&nbsp;
+			         <label>Acronyms：</label>&nbsp;&nbsp;
+			         <input type="text" class="form-control chief" id="isarpAcronyms" style="width:10%" v-select.allowclear="select" :options="options" />
+			         <!--  <input type="text" class="form-control input-sm" id="isarpAcronyms" style="width:10%"/> --> &nbsp;&nbsp;&nbsp;&nbsp;
+			          <label>chapter:</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" id="isarpCharpter" style="text-transform:uppercase;width:10%"/>&nbsp;&nbsp;&nbsp;&nbsp;  
+					  <button type="button" class="btn btn-default" v-on:click="iarpCharpterSearchClick">查询</button>&nbsp;&nbsp;
+	            	  <button type="button" class="btn btn-default" v-on:click="resetIsarpCharpter">重置</button>&nbsp;&nbsp; 
+	            	<button type="button" class="btn btn-default"  id="export">导出</button>
+	            	<div id="exportComformity" style="display:none;" class="isarp"><table>
+	            	<div v-if="eiosaUserRole=='auditor'">
+	            	<input type=button  value="导出Pdf报表 " v-on:click="exportEXcelOrPdf('pdf')"></div>
+	            	<div v-else class="panel-button-inner">
+	            	<input type=button  value="导出Pdf报表    " v-on:click="exportEXcelOrPdf('pdf')">	
+	            	 <br/>        
+	            	<input type=button  value="导出Word报表" v-on:click="exportEXcelOrPdf('word')">
+	            	</div>
+	            	
+	            	</table></div>          
+			      </div>
+			   </div>
+			  </div>
+			 </div>
+		</div>
+			   <!--  <div class="panel panel-sms" style="margin-top: 10px;">
+					<table id="isarpCharpterTable" class=" scrolltable   table_docs table-bordered ">-->
+				<div style="width:100%;margin-top: 10px;">
+	            <table    style="table-layout: fixed; text-align: center;width:100%" class="uui-table">		
+						<thead>
+							<tr>
+							    <td class="name w1" v-sortfun.literal="page" :options="orders" sortby="sectionId" style="width:100px">Section</td>
+								<td class="name w2" v-sortfun.literal="page" :options="orders" sortby="no" style="width:100px">ISARP</td>
+								<td class="name w3" v-sortfun.literal="page" :options="orders" sortby="text" style="width:400px">Text</td>
+								<td class="name w4" style="width:300px">Chapter</td>
+								<td class="name w5" v-sortfun.literal="page" :options="orders" sortby="status" style="width:150px">FlowStatus</td>
+								<td class="name w6" v-sortfun.literal="page" :options="orders" sortby="assessment" style="width:150px">Conformity</td>
+							</tr>
+						</thead>
+						<tr v-for="il in isarpList">
+						    <td class="w1"><a href="#" v-on:click="isarpInfo" data={{il.isarpId}}>
+						                  {{ il.sectionName }}</a></td>
+							<td class="w2">{{ il.no }}</td>
+							<td class="isarpText" data-toggle='tooltip' data-placement='right' data-html='true' style="width:400px" title={{il.text|titleToolTtip}}>{{ il.text | shortTitle}}</td>
+							<td class="w4">{{ il.chapter }}</td>
+							<td class="w5">{{ il.status }}</td>
+							<td class="w6">{{ il.conformity }}</td>
+						</tr>
+					</table>
+				</div>
+			      <!-- 分页开始 -->
+				<pagebars :pagemsg.sync="pagebarsVue" :pagefun="iarpCharpterSearch"></pagebars>
+				<!-- 分页结束 -->
+		       </div>
+		    </div>
+          </div>
+</body>
+</html>

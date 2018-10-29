@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="updateSmtpMailServer.css" rel="stylesheet" /></head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="dictionaryDialog" ></div>
+        <div class="uui-managepage-header">
+        	<div class="container-fluid">
+	            <div class="row">
+	                <div class="col-md-12 no-left-right-padding">
+	                    <h3 class="uui-managepage-title"><%=com.sms.system.updateSmtpMailServer.i18n.updateSMTP %></h3>
+	                </div>
+	            </div>
+            </div>
+        </div>
+
+		<p style="margin-top:10px;"><small><%=com.sms.system.updateSmtpMailServer.i18n.explainF %></small></p>
+        <form class="form-horizontal" qid="form" role="form" style="width:550px;">
+		  <div class="form-group">
+		    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.name %><span class="text-danger">*</span></label>
+		    <div class="col-sm-7">
+		      <input class="form-control input-sm" qid="name" name="name" maxlength="50" />
+		      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.serveName %></small></div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.discretion %></label>
+		    <div class="col-sm-7">
+		      <textarea class="form-control input-sm" qid="description" name="description" maxlength="1000"></textarea>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.address %><span class="text-danger">*</span></label>
+		    <div class="col-sm-7">
+		      <input class="form-control input-sm" qid="address" name="address" maxlength="200" />
+		      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.sendMail %></small></div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.mailPrefix %><span class="text-danger">*</span></label>
+		    <div class="col-sm-7">
+		      <input class="form-control input-sm" qid="prefix" name="prefix" maxlength="100" />
+		      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.mainPrefix %></small></div>
+		    </div>
+		  </div>
+		
+		<p><strong><%=com.sms.system.updateSmtpMailServer.i18n.serveAddr %></strong></p>
+		
+		<strong><%=com.sms.system.updateSmtpMailServer.i18n.SMTPserve %></strong>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.agreement %></label>
+			    <div class="col-sm-7">
+			      <select class="form-control input-sm" qid="protocol" name="protocol">
+			      	<option value="smtp">SMTP</option>
+			      	<option value="smtps">SECURE_SMTP</option>
+			      </select>
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.name %><span class="text-danger">*</span></label>
+			    <div class="col-sm-7">
+			      <input class="form-control input-sm" qid="server" name="server" maxlength="50" />
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.SMTPservename %></small></div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.SMTPPort %></label>
+			    <div class="col-sm-7">
+			      <input class="form-control input-sm" qid="port" name="port" value="25" maxlength="10"/>
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.optionPort %></small></div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.overtime %></label>
+			    <div class="col-sm-7">
+			      <input class="form-control input-sm" qid="timeout" name="timeout" value="10000" maxlength="10"/>
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.unit %></small></div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label">TLS</label>
+			    <div class="col-sm-7">
+			      <input type="checkbox" class="" qid="tls" name="tls" value="true"/>
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.optionTLS %></small></div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.account %></label>
+			    <div class="col-sm-7">
+			      <input class="form-control input-sm" qid="account" name="account" maxlength="50"/>
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.optionSMTP %></small></div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.modifyPassword %></label>
+			    <div class="col-sm-7">
+			      <input type="checkbox" class="" qid="changePassword" name="changePassword" value="true"/>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label  class="col-sm-5 control-label"><%=com.sms.system.updateSmtpMailServer.i18n.password %></label>
+			    <div class="col-sm-7">
+			      <input type="password" class="form-control input-sm" qid="password" name="password" maxlength="20"/>
+			      <div class="help-block"><small><%=com.sms.system.updateSmtpMailServer.i18n.optionTest %></small></div>
+			    </div>
+			  </div>
+		 </form>
+		 <div>
+			 <div class="row">
+			 	<div class="col-sm-5"></div>
+			 	<div class="col-sm-7">
+			 		<button class="btn btn-default" qid="button-test-connect"><%=com.sms.system.updateSmtpMailServer.i18n.connection %></button>&nbsp;&nbsp;
+			 		<button class="btn btn-default" qid="button-update"><%=com.sms.system.updateSmtpMailServer.i18n.update %></button>
+			 		<button class="btn btn-link" qid="button-cancel"><%=com.sms.system.updateSmtpMailServer.i18n.cancel %></button>
+			 	</div>
+			 </div>
+		 </div>
+    </div>
+</body>
+</html>

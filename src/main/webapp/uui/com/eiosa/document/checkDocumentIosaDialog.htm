@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div class="container-fluid" id="checkDocument">
+			<div class="activity-body-content">
+				<span class="sectionName">此文档与如下ISARPs关联，请确认是否修改？</span>
+				<div v-for="sd in iosadocuments">
+					<a v-on:click="openIsarp" class="linkspot uui-cursor-pointer"> <span class="sectionName">{{ sd[0] }}</span><span class="chapter">{{ sd[1] }}</span>
+					</a>
+				</div>
+			</div>
+
+			<div id="footer" class="row  float_footer" style="bottom: -40px;">
+				<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+					<button type="button" class="btn btn-default" qid="searchDocument" v-on:click="iosadoccheck" value="1">确认</button>
+					&nbsp;&nbsp;
+					<button type="button" class="btn btn-default document" data="" qid="addNewDocument" v-on:click="iosadoccheck" value="0">取消</button>
+					&nbsp;
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

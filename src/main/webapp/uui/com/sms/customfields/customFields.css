@@ -1,0 +1,15 @@
+.com-sms-customfields-customFields span.operate:hover{
+	background-color:#3c78b5;
+}
+.com-sms-customfields-customFields span.operate:hover > a{
+	color:white;
+}
+
+
+.com-sms-customfields-customFields span.open{
+	background-color:#3c78b5;
+}
+.com-sms-customfields-customFields span.open > a{
+	color:white;
+}
+.com-sms-customfields-customFields .apply-context dt{font-weight:normal;}

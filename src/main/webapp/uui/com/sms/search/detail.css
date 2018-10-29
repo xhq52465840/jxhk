@@ -1,0 +1,257 @@
+
+.com-sms-search-detail .activity-command-bar {
+	margin: 0;
+	padding: 10px 20px 10px 20px;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+}
+
+.com-sms-search-detail .activity-body-content {
+	padding: 0 20px;
+}
+
+/*.com-sms-search-detail .activity-body-content>div.row>div>div+div {
+	margin-top: 15px;
+	padding-top: 15px;
+}*/
+
+.com-sms-search-detail .activity-body-content .module>.module-heading {
+	/* background: url(/sms/uui/img/line.png) repeat-x scroll 0 10px; */
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,
+		startColorStr=#7c1947, endColorStr=#b52c70); /*IE 6 7 8*/
+	background: -ms-linear-gradient(top, #7c1947, #b52c70); /* IE 10 */
+	background: -moz-linear-gradient(top, #7c1947, #b52c70); /*firfox*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7c1947),
+		to(#b52c70)); /*chrome*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7c1947),
+		to(#b52c70)); /* Safari 4-5, Chrome 1-9*/
+	background: -webkit-linear-gradient(top, #7c1947, #b52c70);
+	/*Safari5.1 Chrome 10+*/
+	background: -o-linear-gradient(top, #7c1947, #b52c70); /*Opera 11.10+*/
+	height: 30px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-heading>.glyphicon
+	{
+	float: right;
+	/* background:white; */
+	color: white;
+	/* margin-top: 4px;
+	padding-left: 10px; */
+	margin-top: 3px;
+	margin-right: 10px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-heading h2
+	{
+	margin: 0;
+	padding-left: 10px;
+	font-size: 15px;
+	line-height: 30px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-heading h2 span.fa-chevron-down
+	{
+	margin-left: -14px;
+	visibility: hidden;
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-heading h2 span.fa-chevron-right
+	{
+	margin-left: -10px;
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-heading+.module-content
+	{
+	/* margin-top:5px; */
+	
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-content {
+	/* padding-left:10px; */
+	
+}
+
+.com-sms-search-detail .activity-body-content .module>.module-content>.module>.module-heading h2
+	{
+	font-weight: normal;
+}
+
+.com-sms-search-detail .property-list {
+	display: block;
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+
+.com-sms-search-detail .property-list > li {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	border-top: 1px solid #fff;
+}
+.com-sms-search-detail .property-list > li + li {
+	border-right: 1px solid #fff;
+}
+
+.com-sms-search-detail .property-list .wrap {
+	padding: 0 1px 0 150px;
+	background-color: #E7E7E9;	
+}
+
+.com-sms-search-detail .property-list .item .name {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	word-break: break-word;
+	color: #333;
+	display: inline-block;
+	font-weight: normal;
+	text-align: left;
+	width: 150px;
+	/*padding-left: 15px;*/
+	padding: 10px;
+	height: 35px;
+	/*line-height: 35px;*/
+	font-weight: bolder;
+}
+
+.com-sms-search-detail .property-list .item .value {
+	word-wrap: break-word;
+	word-break: break-word;
+	display: inline-block;
+	max-width: 100%;
+	/*padding-bottom: 2px;
+	padding-left: 5px;
+	padding-top: 2px;*/
+	padding: 10px;
+	position: relative;
+	vertical-align: top;
+	background-color: #f4f4f6;
+	width: 100%;
+	min-height: 40px;
+	border-left: 1px solid #fff;
+}
+.com-sms-search-detail .property-list .wrap .name {
+	float: left;
+	margin-left: -150px;
+}
+
+.com-sms-search-detail .property-list.two-cols>.item {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	clear: left;
+	float: left;
+	width: 50%;
+}
+
+.com-sms-search-detail .property-list.two-cols>.item-right {
+	clear: right;
+	float: right;
+}
+
+.com-sms-search-detail .property-list.two-cols:before,
+	.com-sms-search-detail .property-list.two-cols:after {
+	content: " ";
+	display: table;
+}
+
+.com-sms-search-detail .property-list.two-cols:after {
+	clear: both;
+}
+
+/***********************************
+***********common css begin*********
+************************************/
+.com-sms-search-detail .item-details {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.com-sms-search-detail .item-details dl {
+	border-spacing: 0;
+	display: table;
+	table-layout: fixed;
+	margin: 0;
+	width: 100%;
+}
+
+.com-sms-search-detail .item-details  dl>dt {
+	text-align: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 2px 5px 2px 0;
+	color: #707070;
+	display: table-cell;
+	font-weight: normal;
+	vertical-align: top;
+	width: 140px;
+}
+
+.com-sms-search-detail .item-details dl>dd {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: table-cell;
+	padding: 2px 0 2px 5px;
+}
+
+/***********************************
+***********common css end*********
+************************************/
+.com-sms-detailmodule-infomodel label, .com-sms-detailmodule-infomodel .table>thead>tr>th,
+	.com-sms-detailmodule-temmodel label, .com-sms-detailmodule-temmodel .table>thead>tr>th
+	{
+	font-weight: normal;
+}
+
+.com-sms-detailmodule-infomodel .table thead tr th.operate-buttons {
+	width: 50px;
+}
+
+/*.com-sms-detailmodule-infomodel .flightinfo {
+	background: #fff;
+	width: 500px;
+	position: absolute;
+	z-index: 999;
+	-webkit-box-shadow: 0 0 10px #DDD;
+	box-shadow: 0 0 10px #DDD;
+}*/
+
+.com-sms-detailmodule-infomodel .flightinfo .tdlabel {
+	width: 150px;
+}
+
+.com-sms-detailmodule-temmodel .btn-setprimary {
+	cursor: pointer;
+}
+
+.com-sms-detailmodule-people .people-details>dl:first-child {
+	line-height: 24px;
+}
+
+.com-sms-detailmodule-workflowlog table.table>thead th {
+	font-weight: normal;
+	text-align: center;
+}
+
+.com-sms-detailmodule-workflowlog table.transition {
+	width: 100%;
+}
+
+.com-sms-detailmodule-workflowlog table.transition td {
+	border: none !important;
+}

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_addglobalpermission">
+            <form class="form-horizontal" role="form" qid="globalpermissionForm">
+                <div class="form-group">
+                    <label for="<%=this._id%>-permissionsets" class="col-sm-3 control-label"><%=com.sms.globalpermission.globalpermissiondialog.i18n.title %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <select  class="form-control input-sm" qid="permissionsets" name="permissions">
+                            <option value=""><%=com.sms.globalpermission.globalpermissiondialog.i18n.choose %></option>
+                            <option value="1"><%=com.sms.globalpermission.globalpermissiondialog.i18n.PermissionSetA %></option>
+                            <option value="2"><%=com.sms.globalpermission.globalpermissiondialog.i18n.PermissionSetB %></option>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="<%=this._id%>-group" class="col-sm-3 control-label"><%=com.sms.globalpermission.globalpermissiondialog.i18n.userGroup %><span class="text-danger">*</span></label>
+                    <div class="col-sm-7">
+                        <select class="form-control input-sm" qid="group" name="group">
+                            <option value=""><%=com.sms.globalpermission.globalpermissiondialog.i18n.anyone %></option>
+                             <option value="3">sms-administrators</option>
+                            <option value="4">sms-users</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

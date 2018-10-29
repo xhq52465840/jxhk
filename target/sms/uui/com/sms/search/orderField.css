@@ -1,0 +1,4 @@
+.com-sms-search-orderField .list-group{max-height:300px;overflow-y:auto;}
+.com-sms-search-orderField .list-group .list-group-item{cursor:default;}
+.com-sms-search-orderField .list-group .list-group-item:first-child{border-radius:0;}
+.com-sms-search-orderField .list-group .list-group-item:hover {background:#ebf2f9}

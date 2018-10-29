@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+    	.com-sms-plugin-organization-orgUserRole .unit-config-icon48-roles:after{
+			background-image: url(/sms/uui/img/icon48-people.png);
+		}
+		.com-sms-plugin-organization-orgUserRole .unit-config-icon48-roles:after{
+			content: "";
+			height: 48px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 48px;
+			/*background: transparent none no-repeat 0 0;*/
+		}
+    </style>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="addMemberDialog"></div>
+    	<div umid="editRoleDialog"></div>
+        <div umid="orgDialog" ></div>
+        
+        <div class="page-header" style="padding:0; height: 60px;">
+	        <div class="page-header-inner">
+	            <div class="page-header-image">
+	                <div style="vertical-align:top;width:48px;height:48px;position:relative;">
+	                    <div class="unit-config-icon48-roles"></div>
+	                </div>
+	            </div>
+	            <div class="page-header-main">
+	                <h4><%= com.sms.plugin.organization.orgUserRole.i18n.title %></h4>
+	                
+	            </div>
+	            <div class="page-header-actions">
+		            
+	            </div>
+	       </div>
+	    </div>
+        <!-- <div class="uui-managepage-header">
+        	<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+        			<div class="col-md-12">
+        				<h3 class="uui-managepage-title"><%= com.sms.plugin.organization.orgUserRole.i18n.title%></h3>
+        			</div>
+        		</div>
+        	</div>
+        </div> -->
+
+        <div class="container-fluid no-left-right-padding" style='margin-top: 5px;'>
+        	<div class="row">
+        		<div class="col-lg-3 col-md-4 no-right-padding" style="overflow-x: auto;">
+        			<ul qid="libTree" class="ztree" style="background-color: #f3f2f7; border: 1px solid #e0e0e0;"></ul>
+        		</div>
+        		<div class="col-lg-9 col-md-8" qid="main">
+        			
+    				<table class="uui-table">
+    					<tbody>
+    						<tr>
+    							<td class="name"><%= com.sms.plugin.organization.orgUserRole.i18n.form.name%></td>
+    							<td class="value" qid="orgName"></td>
+    						</tr>
+    						<tr>
+    							<td class="name"><%= com.sms.plugin.organization.orgUserRole.i18n.form.system%></td>
+    							<td class="value" qid="orgSystem"></td>
+    						</tr>
+    						<tr>
+    							<td class="name"><%= com.sms.plugin.organization.orgUserRole.i18n.form.deptCode%></td>
+    							<td class="value" qid="orgDeptCode"></td>
+    						</tr>
+    						<tr>
+    							<td class="name"><%= com.sms.plugin.organization.orgUserRole.i18n.form.deptCodeDesc%></td>
+    							<td class="value" qid="orgDeptCodeDesc"></td>
+    						</tr>
+    					</tbody>
+    				</table>
+					
+					<div class="panel panel-sms" style="margin-top: 10px;">
+						<div class="panel-heading">
+							<h2 class="panel-title"><%= com.sms.plugin.organization.orgUserRole.i18n.columns.member%>
+								<div qid="btn_adduser" class="pull-right panel-button-container" >
+									<div class="panel-button-inner"><i class="fa fa-plus" title="添加成员"></i>
+									</div>
+								</div>
+							</h2>
+						</div>
+						<div class="panel-body">
+							<table qid="datatable" class="table table-striped table-bordered" style="margin-top: 0px !important;" cellspacing="0" width="100%"></table>
+							
+						</div>
+					</div>
+
+        		</div>
+        	</div>
+        </div>
+
+   		
+   		
+   		
+   </div>
+</body>
+</html>

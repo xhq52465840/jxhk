@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+  <div>
+    <div umid="uploadDialog"></div>
+    
+    <div class="relform container-fluid">	
+    <table class="uui-table" style="table-layout: fixed;">
+    <!--  -->
+      
+    </table>
+   
+    <table  class="uui-table" style="table-layout: fixed;">
+      <tr>
+        <td class="name">Title：<span class="text-danger" > *</span></td>
+        <td class="value"><textarea style="width:90%" rows="2"  id="relTitle"  v-model="rel.title" readOnly='{{rel.id==null? false:true}}'
+							class="form-control input-sm popover-toggle" id="relTitle"></textarea></td>
+      </tr>
+      <tr>
+        <td class="name">Name(s) of the Auditor:<span class="text-danger" v-on:click="addselect"> *</span></td>
+        <td class="value"><input type="text" style="width:45%"
+							class="form-control input-sm popover-toggle" id="relActionAuditor"
+							/></td>
+      </tr>
+      <tr>
+        <td class="name">Audit Record：<span class="text-danger" > *</span></td>
+        <td class="value"><textarea style="width:90%" rows="2"  id="relReports"  v-model="rel.reports"
+							class="form-control input-sm popover-toggle" id="relReports"
+							></textarea></td>
+      </tr>
+       <tr>
+        <td class="name">Audit Date:<span class="text-danger" > *</span></td>
+        <td class="value"><input type="text" style="width:45%"
+							v-model="rel.auditDate | datestr"
+							class="form-control input-sm popover-toggle" id="relAuditDate"
+				            /></td>
+      </tr>
+      </tr>
+      <tr>
+        <td class="name">Satus :<span class="text-danger" > *</span><span class="text-danger" v-if="rel.statusValue==null">不能为空</span></td>
+        <td class="value"><select class="form-control" id="relStatusValue"
+							style="width: 100%" v-model="rel.statusValue">
+								<option value="0">未完成</option>
+								<option value="1">已完成</option>
+								
+						</select></td>
+      </tr>
+    </table>
+   <br></br>
+    <div umid="attachList"></div>
+     <!--  <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Relevant Attachments:
+	            <div class="pull-right panel-button-container" id="addRelAttach"  v-on:click="addAttach">
+						<div class="panel-button-inner">
+							<i class="fa fa-plus" title="添加附件"></i>
+						</div>
+					</div>
+              </div>
+              </h2>
+              
+    
+         <table  class="table table-striped table-bordered" cellspacing="0" width="100%">
+       <tbody>
+          <tr>
+             <td >Name</td>
+             <td >Size</td>
+             <td >UploadDate</td>
+             <td >Auditor</td>
+             
+             
+          </tr>
+         <tr v-for="attach in rel.attach">
+						<td><a dataid="{{ attach.id }}" href="#"
+								v-on:click="attachclick">{{ attach.attachShowName }}</a></td>
+						<td>{{ attach.attachSize }}</td>
+						<td>{{ attach.updateTime | datestr }}</td>
+						<td>{{ attach.creatorName }}</td>
+						<td><span><a dataid="{{ attach.id }}" href="#"
+								v-on:click="attachclick"
+								class="glyphicon glyphicon-paperclip uui-cursor-pointer"
+								title="{{ attach.attachShowName }}"></a>&nbsp;&nbsp;
+								<a dataid="{{ attach.id }}" v-on:click="attachdel" class="glyphicon glyphicon-trash uui-cursor-pointer"></a> </span></td>
+			</tr> 
+       </tbody>
+     </table>      
+      </div>-->
+	  <div id="footer" class="row float_footer">
+			<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+				<button type="button" class="btn btn-default" 
+					v-on:click="save" dataid="{{ rel.id }}">保存</button>
+				<button type="button" class="btn btn-default" v-on:click="close" >取消</button>
+			</div>
+		</div>
+   </div>
+    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+  <div class="uui-managepage">
+    <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title"><%=com.sms.losa.auditContent.i18n.pageTitle %></h3>
+	      </div>
+	      <!--<div class="col-md-9 text-right">
+	         <a href="obserview.html"><button class="btn btn-default btn-sm" qid="btn_create"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.losa.auditContent.i18n.buttons.create %></button></a>
+	         &nbsp;&nbsp;
+	          <!-- <a href="obserview.html"><button class="btn btn-default btn-sm" qid="btn_create"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.losa.auditContent.i18n.buttons.upload %></button></a> -->
+	     <!-- </div>  -->
+	      
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="query">
+       <div class="uui-panel-rect-widget" style="padding:0px">
+           <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:120px;padding:0px">
+              <div class="row">
+                  <div class="form-group col-sm-20 col-md-10" >
+                 
+			        <label style="padding:8px;color:black">观察活动编号</label>
+			           <input type="text" class="form-control input-sm" qid="observeNo" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			        <label style="color:black">航班号</label>
+			           <input type="text" class="form-control input-sm" qid="flightNo" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			        	
+					  <label style="padding:8px;color:black">观察日期从</label>&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="dateFrom" style="width:12%" />&nbsp;&nbsp;&nbsp;&nbsp;
+			        <label style="color:black">到</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			           <input type="text" class="form-control input-sm" qid="dateTo" style="width:12%" />&nbsp;&nbsp;&nbsp; 
+			           <label style="color:black">状态</label>
+			          <select qid="status" style="width:130px">
+							<option value="">全部</option>
+							<option value="草稿">草稿</option>
+							<option value="已提交">已提交</option>
+					  </select>&nbsp;&nbsp;          
+			      </div>
+			   </div>
+                <div class="col-sm-11 text-right">
+	            	<button type="button" class="btn btn-default" qid="search"><%=com.sms.losa.auditContent.i18n.buttons.query%></button>
+	            	<button type="button" class="btn btn-default"  qid="reset"><%=com.sms.losa.auditContent.i18n.buttons.reset%></button>
+	           </div>
+           </div>
+       </div>
+    </div>
+    <div>
+       <table qid="auditContTab" id="auditCont" class="table table-striped table-bordered" cellspacing="0" width="100%">
+		</table>
+    </div>
+    
+
+ <!-- <div qid="selectModify" style="display:none">
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="departUrl" href="">离场前/滑出</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="takeOffUrl"href="">起飞/爬行</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="cruiseUrl"href="">巡航</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="techWsUrl"href="">着陆技术工作单</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="launchUrl"href="">下降/进近/着陆</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="wholeFlUrl"href="">整个飞行</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="threatUrl"href="">威胁管理工作单</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="errorUrl"href="">差错管理工作单</a></li>
+           <li  style="height:35px;font-family: sans-serif;font-size:20px"><a id="crewUrl"href="">机组访谈</a></li>  
+  </div>  --> 
+  <div qid="deleteDialog" style="display:none;font-weight: bold;font-size:25px;color:#7d4fab;">
+       <p>你确定要删除该条数据吗？</p>
+    </div>
+    <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true" style="display:none">
+   
+   <div class="modal-dialog ">
+      <div class="modal-content" >
+         <div class="modal-header" style="background:#fff0f5">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true" style="font-size:30px">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel"  style="font-family: sans-serif;font-size:24px">
+                                          请选择需修改页面
+            </h4>
+         </div>
+         <div class="modal-body" style="background:#fffff0">
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="basicUrl" href="">基础信息</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="departUrl" href="">离场前/滑出</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="takeOffUrl"href="">起飞/爬行</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="cruiseUrl"href="">巡航</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="techWsUrl"href="">着陆技术工作单</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="launchUrl"href="">下降/进近/着陆</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="wholeFlUrl"href="">整个飞行</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="threatUrl"href="">威胁管理工作单</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="errorUrl"href="">差错管理工作单</a></li>
+             <li  style="height:40px;font-family: sans-serif;font-size:24px"><a id="crewUrl"href="">机组访谈</a></li>  
+          
+         </div>
+         <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default"  style="font-family: sans-serif;font-size:24px"
+               data-dismiss="modal">关闭
+            </button>
+   
+         </div> -->
+       </div>
+    </div>
+ </div>
+ <!--  <div id="newCreate" style="position:absolute;top:400px;left:100px;width:160px">
+    <li style="height:37px;"class=" btn btn-warning btn-lg btn-block" qid="create"><span class="glyphicon glyphicon-plus"></span>新建</li>
+ </div> -->
+  </div>
+</body>
+</html>

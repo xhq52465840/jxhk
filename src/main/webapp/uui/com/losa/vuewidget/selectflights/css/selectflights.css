@@ -1,0 +1,216 @@
+/*任务计划航班选择框样式 by bao*/
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+  font-family: Microsoft YaHei;
+  font-size: 14px;
+}
+
+.coverClass{
+	position:fixed;
+	left:0px;
+	top:0px;
+	z-index:7000;
+}
+
+.selectnew{
+	position:absolute;
+	border: 1px solid #5897fb !important;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+	margin-top: 1px;
+	background: #fff none repeat scroll 0 0;
+	width:600px;
+	height:306px;
+	outline:none;
+	z-index:9999;
+}
+.selectnew-search{
+	display: inline-block;
+    width: 100%;
+    min-height: 26px;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    position: relative;
+    z-index: 10000;
+    white-space: nowrap;
+}
+.selectnew-search-input{
+	width: 100%;
+    height: auto !important;
+    min-height: 26px;
+    padding: 4px 20px 4px 5px;
+    margin: 0;
+    outline: 0;
+    font-family: sans-serif;
+    font-size: 1em;
+	margin-top: 4px;
+    border: 1px solid #aaa;
+    border-radius: 0;
+
+    -webkit-box-shadow: none;
+            box-shadow: none;
+
+    background: #fff url('select2.png') no-repeat 100% -22px;
+    background: url('select2.png') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+    background: url('select2.png') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+    background: url('select2.png') no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
+    background: url('select2.png') no-repeat 100% -22px, linear-gradient(top, #fff 85%, #eee 99%);
+}
+
+.selectnew-title{
+	position:relative;
+	width:100%;
+	height:41px;
+	line-height:41px;
+	color:#000000;
+	background-color: #e8e8e8;
+	padding-right:17px;
+}
+
+.selectnew-title div{
+	height: 41px;
+	width: 25%;
+	float:left;
+	text-align:center;
+	line-height:41px;
+}
+
+.selectnew-content{
+	position:relative;
+	width:100%;
+	height:230px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+.selectnew-row{
+	position:relative;
+	width:100%;
+	height:41px;
+	line-height:41px;
+	color:#000000;
+}
+
+.selectnew-row:nth-child(odd){
+	background-color:#ffffff;
+}
+
+.selectnew-row:nth-child(even){
+	background-color:#f8f8f8;
+}
+
+.selectnew-row:hover{
+	background-color:#3875d7;
+	color:#ffffff;
+}
+
+
+.selectnew-column{
+	float:left;
+	width:25%;
+	height:41px;
+	line-height:41px;
+	text-align:center;
+	background-color:transparent;
+}
+
+.selectnew-row-ajaxicon{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:230px;
+	line-height:20px;
+	text-align:center;
+	background:url(select2-spinner.gif) no-repeat 50% 50%;
+}
+
+.selectnew-row-ajaxicon img{
+	display:block;
+	margin:0 auto;
+}
+
+.selectnew-input{
+	position:absolute;
+	width:141px;
+	height: 28px;
+	line-height: 28px;
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	color: #444;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0 0 0 0px;
+	white-space: nowrap;
+	border-radius: 4px 4px 4px 4px;
+	background: rgba(0, 0, 0, 0) url("select2.png") no-repeat scroll 121px 1px;
+}
+
+.selectnew-input-disabled{
+	display: block;
+	margin-top: 0px;
+	margin-left:0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 26px;
+	line-height:24px;
+	color:#999;
+	border-radius: 4px 4px 4px 4px;
+	padding: 0 18px 0 8px;
+	width:100%;
+}
+
+.selectnew-input-enabled{
+	display: block;
+	margin-top: 0px;
+	margin-left:0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height:24px;
+	color:#000;
+	width:100%;
+	border-radius: 4px 4px 4px 4px;
+	padding: 0 18px 0 8px;
+	width:100%;
+	background:#ffffff;
+}
+
+.selectnew-input-disabled-arrow{
+	background-clip: padding-box;
+	display: inline-block;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 18px;
+	line-height:26px;
+	color:#999
+	
+}
+
+.selectnew-input-disabled-arrow b{
+	background: rgba(0, 0, 0, 0) url("select2.png") no-repeat scroll 0 1px;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+
+.actived{
+	background-color:#333000;
+}
+
+.unactived{
+	background-color:#ffffff;
+}

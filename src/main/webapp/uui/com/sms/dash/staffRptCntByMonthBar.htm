@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+    <div>
+    <ul class="nav nav-tabs dashboard-tem-tabs">
+		<li qid="countByDay" class="active" style="width:50%;"><a href="#tabs-1" data-toggle="tab" >按日统计</a></li>
+		<li qid="countByMonth" class=" " style="width:50%;"><a href="#tabs-2" data-toggle="tab" >按月统计</a></li>
+	</ul>
+	<div class="tab-content" style="background-color:#eee;">
+		<!-- TAB1 START -->
+		<div id="tabs-1" class="tab-pane active">
+			<div class="row" style="padding:10px;">
+				<label  class="col-xs-2 col-sm-2" style="text-align:left;padding-top: 7px;width:7%">安监机构</label>
+				<div class="col-xs-10 col-sm-10">
+					<input type="text" class="form-control" qid="unitDay" placeholder="安监机构">
+				</div>
+			</div>
+			<div class="row" style="padding:10px;">
+				<label class="col-xs-2 col-sm-2" style="text-align:left;padding-top: 7px;width:7%">日期范围：</label>
+				<div class="col-xs-3 col-sm-3" style="align:center">
+                <input type="text" class="form-control input-sm startdate" name="startdate" style="width:40%;" readonly/>
+					 &nbsp;&nbsp;-&nbsp;&nbsp;
+				<input type="text" class="form-control input-sm enddate" name="enddate" style="width:40%;" readonly/>
+				</div>
+				<div class="col-xs-7 col-sm-7" style="align:left">
+					<button type="button" class="btn btn-default" qid="searchDay">搜索</button>
+					<span style="color:red">（默认为当月）</span>
+				</div>
+				<div class="col-md-12" style="background-color:#eee;padding-top:10px">
+    				<div id="infoTypeCntByDayBar" style="width: 100%;height:500px;border:1px solid #ccc;"></div>
+    			</div>
+			</div>
+		</div>
+		<div id="tabs-2" class="tab-pane">
+			<div class="row" style="padding:10px;">
+				<label  class="col-xs-2 col-sm-2" style="text-align:left;padding-top: 7px;width:7%">安监机构</label>
+				<div class="col-xs-10 col-sm-10">
+					<input type="text" class="form-control" qid="unitMonth" placeholder="安监机构">
+				</div>
+			</div>
+			<div class="row" style="padding:10px;">
+				<label class="col-xs-1 col-sm-1" style="text-align:left;padding-top: 7px;width:7%">开始年份：</label>
+				<div class="col-xs-1 col-sm-1">
+					<select class="form-control" qid="yearBegins">
+						<option value="0">请选择</option>
+					</select>
+				</div>
+				<label class="col-xs-1 col-sm-1" style="text-align:left;padding-top: 7px;width:7%">开始月份：</label>
+				<div class="col-xs-1 col-sm-1">
+					<select class="form-control" qid="monthBegins">
+						<option value="0">请选择</option>
+						<option value="1">1月</option>
+						<option value="2">2月</option>
+						<option value="3">3月</option>
+						<option value="4">4月</option>
+						<option value="5">5月</option>
+						<option value="6">6月</option>
+						<option value="7">7月</option>
+						<option value="8">8月</option>
+						<option value="9">9月</option>
+						<option value="10">10月</option>
+						<option value="11">11月</option>
+						<option value="12">12月</option>
+					</select>
+				</div>
+				<label class="col-xs-1 col-sm-1" style="text-align:center;padding-top: 7px;width:3%">&nbsp;&nbsp;至&nbsp;&nbsp;</label>
+				<label class="col-xs-1 col-sm-1" style="text-align:left;padding-top: 7px;width:7%">结束年份：</label>
+				<div class="col-xs-1 col-sm-1">
+					<select class="form-control" qid="yearEnds">
+						<option value="0">请选择</option>
+					</select>
+				</div>
+				<label class="col-xs-1 col-sm-1" style="text-align:left;padding-top: 7px;width:7%">结束月份：</label>
+				<div class="col-xs-1 col-sm-1">
+					<select class="form-control" qid="monthEnds">
+						<option value="0">请选择</option>
+						<option value="1">1月</option>
+						<option value="2">2月</option>
+						<option value="3">3月</option>
+						<option value="4">4月</option>
+						<option value="5">5月</option>
+						<option value="6">6月</option>
+						<option value="7">7月</option>
+						<option value="8">8月</option>
+						<option value="9">9月</option>
+						<option value="10">10月</option>
+						<option value="11">11月</option>
+						<option value="12">12月</option>
+					</select>
+				</div>
+				<div class="col-xs-3 col-sm-3">
+					<button type="button" class="btn btn-default" qid="searchMonth">搜索</button>
+					<span style="color:red">（默认为当年）</span>
+				</div>
+				<div class="col-md-12" style="background-color:#eee;padding-top:10px">
+    				<div id="staffRptCntByMonthBar" style="width:100%;height:500px;border:1px solid #ccc;"></div>
+    			</div>
+			</div>
+		</div>
+	</div>
+    </div>
+</body>
+</html>

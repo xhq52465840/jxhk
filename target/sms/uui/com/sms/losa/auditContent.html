@@ -1,0 +1,46 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>LOSA安全审计内容</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript" src="../losa/losa.js"></script>
+     <script type="text/javascript" src="../losa/WdatePicker.js"></script>
+    <script type="text/javascript">
+        $(function () {
+          
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='user-vertical-menus']"),{menuId:1200, selected:"LOSA观察活动"});
+
+            $.um($("div[umid='auditCont']"));
+
+            $.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-nav">
+    			<div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+    		</div>
+    		<div class="page-content-main">
+    			<div umid="auditCont" umodule="com.sms.losa.auditContent"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="statusDialog" ></div>
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title"><%=com.sms.activityproperty.status.i18n.title %></h3>
+                    </div>
+                    <div class="col-md-9 text-right" >
+                        <div class="btn-group">
+    	                    <button class="btn btn-default btn-sm" qid="btn_addstatus"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.activityproperty.status.i18n.addStatus %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top:10px;">
+        	<p><%=com.sms.activityproperty.status.i18n.explain %></p>
+        	<p><%=com.sms.activityproperty.status.i18n.statusModel %></p>
+        	<ul>
+        		<li><span style='color:#006400;'><strong><%=com.sms.activityproperty.status.i18n.executed %></strong></span> <%=com.sms.activityproperty.status.i18n.relevance %></li>
+        		<li><span style='color:#c00;'><strong><%=com.sms.activityproperty.status.i18n.notEffect %></strong></span><%=com.sms.activityproperty.status.i18n.notUse %></li>
+        	</ul>
+        	<p><%=com.sms.activityproperty.status.i18n.explainS %></p>
+        </div>
+
+        <table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            
+        </table>
+    </div>
+</body>
+</html>

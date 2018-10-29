@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+	.uui-managepage:after{
+		content:'.';
+		clear:both;
+		height:0;
+		visibility:hidden;
+		display:block;
+	}
+	.input-group input.form-control{
+		z-index:0;
+	}
+</style>
+</head>
+<body> 
+<div class="uui-managepage" >
+	<div class="page-content-inner wholepageleftlink">
+		<div umid="linknewUm"></div>
+	</div>
+	<div class="wholepagerightcontent">
+ 	<form role="form"  id="jsonObserve" way-persistent="true">
+    	<div class="uui-managepage-header">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">基础信息</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="form uui-managepage-filter uui-panel-graph-new" qid="observiewerInfo">
+        	<div class="uui-panel-rect-widget-new">
+          		<div class="uui-panel-rect-header-new">观察员信息</div>
+          		<div class="uui-panel-rect-body uui-managepage-filter-content-new obverioustable">
+                	<div class="form-group col-md-6 col-sm-6 obverioustablefirst">
+			        	<label style="color:black">观察员的身份证明（编号）</label>
+			        	<input type="text" class="form-control input-sm" id="identifyNumber" v-model="obserview.identifyNumber" readonly="true" maxlength="255" />
+			    	</div>
+			    	<div class="form-group col-md-6 col-sm-6 obverioustablesecond">
+			        	<label style="color:black">观察活动编号</label>
+			           <input type="text" class="form-control input-sm" id="activityNumber"  v-model="plan.planNo" readonly="true" maxlength="255" />
+			    	</div>
+			    	<div class="form-group col-md-11 col-sm-11 obverioustablethird">
+			        	<label style="color:black">被观察机组执飞第<span style="color:red">*</span></label>
+			           	<input type="text" class="form-control input-sm" qid="crewActiveId" v-model="obserview.currentNumber" style="width:170px" /><label style="color:black">航段</label>
+			            &nbsp;&nbsp;&nbsp;
+			           	<label style="color:black">共<span style="color:red">*</span></label>
+			           	<input type="text" class="form-control input-sm" qid="crewActiveTotal" v-model="obserview.totalNumber" style="width:95px" />
+			           	<label style="color:black">段</label>&nbsp;&nbsp;&nbsp;
+			           	<label style="color:black"> 是否观察到威胁&nbsp;
+                       	<input type="checkbox"  id="isThreat" checked={{threat!=0}}  disabled>
+                    	</label>
+                     &nbsp;
+                    	<label style="color:black"> 共
+                        <input type="text" class="form-control input-sm" v-model="threat"  style="width:95px"  disabled > 次
+                    	</label>
+                     &nbsp;&nbsp;&nbsp;&nbsp;
+                    	<label style="color:black"> 是否观察到差错&nbsp;
+                        <input type="checkbox"  checked={{error!=0}} qid="isError"  disabled >
+                    	</label>
+                     &nbsp;
+                    	<label style="color:black"> 共
+                        <input type="text" class="form-control input-sm" style="width:95px"  v-model="error" disabled> 次
+                    	</label>
+             		</div>
+          		</div>
+        	</div>  
+    	</div>
+ 		<div class="form uui-managepage-filter-new uui-panel-graph-new2" qid="flightStaticData">
+        	<div class="uui-panel-rect-widget-new">
+           		<div class="uui-panel-rect-header-new">航班统计数据<span style="color:red">*</span></div>
+           		<div class="uui-panel-rect-body uui-managepage-filter-content-new2 obverioustable1">
+               		<div class="form-group col-md-6 col-sm-6 odd">
+               			<template v-if="plan.flightId == null">
+                 			<label style="color:black"> 航班号（航班未做关联，请在此处关联航班号）<span style="color:red">*</span></label>
+                        	<selectflights :data-object.sync="dataObject" :options="options" :input-tips="inputTips" :input-value.sync="plan"></selectflights>
+                        </template>
+                        <template v-if="plan.flightId != null">
+                        	<label style="color:black"> 航班号</label>
+                        	<input type="text" class="form-control input-sm" qid="flightNo" v-model="plan.flyNo" disabled/>
+                        </template>
+               		</div>
+               		<div class="form-group col-md-6 col-sm-6 even">
+                  		<label style="color:black"> 航班日期</label>
+                       	<input type="text" class="form-control input-sm" id="flightDate" v-model="plan.observeDate| datestr" disabled/>
+                	</div>
+                	<div class="form-group col-md-6 col-sm-6 odd">
+                 		<label style="color:black"> 起飞机场(四字码)</label>
+                        <input type="text" class="form-control input-sm" qid="startAirport" v-model="plan.depAirportNo" disabled/>
+                	</div>
+                	<div class="form-group col-md-6 col-sm-6 even">
+                  		<label style="color:black"> 降落机场(四字码)</label>
+                       	<input type="text" class="form-control input-sm" qid="arriveAiroort"  v-model="plan.arrAirportNo" disabled/>
+                	</div>
+                	<div class="form-group col-md-6 col-sm-6 odd">
+	                  <label style="color:black"> 航空器型号</label>
+                      <!--  <input type="text" class="form-control input-sm" qid="aircraftNo" style="width:100%" v-model="obserview.aircraftType"/> -->
+                       <input type="text" class="form-control input-sm" style="height:30px" id="aircraftType" v-model="plan.aircraftNo" disabled> </input>
+						<!--  <option value="A319">A319</option> 
+							<option value="A320">A320</option> 
+						<option value="A321">A321 </option>
+						<option value="B737-300">B737-300</option> 
+						<option value="B737-700">B737-700</option> 
+						<option value="B737-700W">B737-700W</option>
+						<option value="B737-800">B737-800</option> 
+						<option value="B737-800W">B737-800W</option> 
+						<option value="B737-800">B737-800</option>
+						</select>-->
+                	</div>
+                	<div class="form-group col-md-6 col-sm-6 even">
+                 		<label style="color:black"> 操作飞机起飞的驾驶员<span style="color:red">*</span></label>
+                       <!-- <pre way-data="__all__" way-json="true" way-default="{}"></pre> -->
+                       <!--   <input type="text" class="form-control input-sm" qid="startDriver" style="width:100%" v-model="obserview.aircraftCaptain"/> -->
+                       	<select class="form-control" style="height:31px"id="aircraftCaptain" v-model="obserview.aircraftCaptain"> 
+							<option value="">请选择</option>
+							<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='driver_type'" v-bind:value="option.dictCode">
+			                  {{ option.dictName }}
+			                </option>
+						</select>
+                	</div>
+                	<div class="form-group col-md-6 col-sm-6 odd">
+                  		<label style="color:black"> 操作飞机降落的驾驶员<span style="color:red">*</span></label>
+                       <!-- <input type="text" class="form-control input-sm" qid="fallDriver" style="width:100%" v-model="obserview.aircraftCopilot"/> -->
+                       	<select class="form-control" style="height:33px" id="aircraftCopilot" v-model="obserview.aircraftCopilot">
+							<option value="">请选择</option>
+							<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='driver_type'" v-bind:value="option.dictCode">
+			                  {{ option.dictName }}
+			                </option>
+						</select>
+               		</div>
+               		<div class="form-group col-md-6 col-sm-6 even" >
+                  		<label style="color:black"> 航空器推出时间（UTC）<span style="color:red">*</span></label>
+                  		<vue-datetime-picker class="vue-picker1" qid="aircraPullTime" name="picker1" :type="type" :time-format="timeFormat" :language="language" :model.sync="obserview.depTime"></vue-datetime-picker>
+                  		<!-- 
+                       <input type="text" class="form-control input-sm" qid="aircraPullTime" v-model=""/>
+                       -->
+               		</div>
+               		<div class="form-group col-md-6 col-sm-6 odd">
+                  		<label style="color:black"> 航空器到达停机位时间（UTC）<span style="color:red">*</span></label>
+                  		<vue-datetime-picker class="vue-picker1" qid="aircraArriveTime" name="picker2" :type="type" :time-format="timeFormat" :language="language" :model.sync="obserview.arrTime"></vue-datetime-picker>
+                  	<!-- 
+                       	<input type="text" class="form-control input-sm" qid="aircraArriveTime" v-model="obserview.arrTime"/>
+                    -->
+               		</div>
+               		<div class="form-group col-md-6 col-sm-6 even" >
+                  		<label style="color:black"> 从航空器推出至到达停机位的时间（小时：分钟）<span style="color:red">*</span></label>
+                       	<input type="text" class="form-control input-sm" qid="pullToArriveTime" v-model="obserview.timeForGetReady"/>
+               		</div>
+               		<div class="form-group col-md-6 col-sm-6 odd">
+                  		<label style="color:black"> 是否延迟离场？<span style="color:red">*</span></label>
+                       <!--  <input type="text" class="form-control input-sm" qid="isDelay" v-model="obserview.isDelay"/>-->
+                        <select class="form-control" style="height:33px;" id="isDelay" v-model="obserview.isDelay">
+                        	<option value="">请选择</option> 
+							<option value="0">否</option> 
+							<option value="1">是</option> 
+						</select>
+               		</div>
+               		<div v-show="obserview.isDelay=='1'"class="form-group col-md-6 col-sm-6 even" >
+                  		<label style="color:black"> 延迟时间（小时：分钟）<span style="color:red">*</span>（是延迟离场，请填写延迟时间）</label>
+                  		<vue-datetime-picker class="vue-picker1" qid="aircraArriveTime" name="picker3" :type="type" :time-format="timeFormat" :language="language" :model.sync="obserview.delayTime"></vue-datetime-picker>
+                      	<!-- 
+                      	<input type="text" class="form-control input-sm" qid="delayTime" v-model="obserview.delayTime"/>
+                      	-->
+               		</div>
+	   	   		</div>
+        	</div>
+    	</div>
+  		<div class="form uui-managepage-filter-new uui-panel-graph-new3" qid="crewStaticInfo" >
+    		<div class="uui-panel-rect-widget-new">
+          		<div class="uui-panel-rect-header-new">机组统计信息</div>
+          		<div class="uui-panel-rect-body uui-managepage-filter-content-new3">
+              		<div class="obvtextbox">
+                 		<div class="form-group col-md-6 col-xs-6 odd">
+			        		<label style="color:black">观察员位置人员职责</label>
+			    			<select class="form-control" id ="observiewDuty" qid="observiewDuty" v-model="obserview.dutyOfObserver"> 
+								<option value="">请选择</option>
+								<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='duty_of_observer'" v-bind:value="option.dictCode">
+					                  {{ option.dictName }}
+					            </option>
+							</select>
+			    		</div>
+			    		<div class="form-group col-md-6 col-xs-6 even">
+			        		<label style="color:black">机组相互熟悉程序的程度</label>
+			           <!--<input type="text" class="form-control input-sm" qid="crewAcquainProce" maxlength="255" />  -->
+			             	<select class="form-control" id ="firstLegOfCrew" v-model="obserview.firstLegOfCrew"> 
+								<option value="">请选择</option>
+								<option v-for="option in baseInfo.dictypeInfo" v-if="option.dictType=='familiarity_status'" v-bind:value="option.dictCode">
+					                  {{ option.dictName }}
+					            </option>
+							</select>
+			    		</div>
+              		</div> 
+              		<table class="obvtextboxtableheader">
+              			<thead>
+                			<tr style="font-family: sans-serif;font-size:14px" class="tableheader">
+								<td width="260px"> 
+								</td>
+								<td width="203px">
+						   			<div>
+									机长1
+									</div>
+								</td>
+								<td width="205px">
+									机长2
+								</td>
+								<td width="203px">
+									第一副驾驶
+								</td>
+								<td>
+									第二副驾驶
+								</td>				
+							</tr>
+						</thead>		
+              		</table>
+              		<table  class="table obvtextboxtablebody">	
+                		<tbody>		
+							<tr>
+								<td style="font-family: sans-serif;font-size:14px">
+									所属分公司
+								</td>
+								<td>
+							<!-- <input class="form-control" type="text" qid="cap1com" v-model="obserview.companyCaptain1"/> -->
+							 		<select class="form-control" style="height:33px" id="companyCaptain1" v-model="obserview.companyCaptain1"> 
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.branchInfo" v-bind:value="option.id">
+					                  		{{ option.name }}
+					                	</option>
+									</select>
+								</td>
+								<td>
+							<!-- <input class="form-control" type="text" qid="cap2com" v-model="obserview.companyCaptain2"/> -->
+									<select class="form-control" style="height:33px" id="companyCaptain2" v-model="obserview.companyCaptain2"> 
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.branchInfo" v-bind:value="option.id">
+					                  		{{ option.name }}
+					                	</option>
+									</select>
+								</td>
+								<td>
+							<!-- <input class="form-control" type="text" qid="cop1com" v-model="obserview.companyCopilot1"/> -->
+									<select class="form-control" style="height:33px" id="companyCopilot1" v-model="obserview.companyCopilot1"> 
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.branchInfo" v-bind:value="option.id">
+					                  		{{ option.name }}
+					                	</option>
+									</select>
+								</td>
+								<td>
+							<!--  <input class="form-control" type="text" qid="cop2com"  v-model="obserview.companyCopilot2"/>-->
+									<select class="form-control" style="height:33px" id="companyCopilot2" v-model="obserview.companyCopilot2"> 
+										<option value="">请选择</option>
+										<option v-for="option in baseInfo.branchInfo" v-bind:value="option.id">
+					                 		 {{ option.name }}
+					                	</option>
+									</select>
+								</td>
+						
+							</tr>
+							<tr>
+								<td style="font-family: sans-serif;font-size:14px">
+									总经历时间
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap1totime" v-model="obserview.fullTimeCaptain1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap2totime" v-model="obserview.fullTimeCaptain2"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cop1totime" v-model="obserview.fullTimeCopilot1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cop1totime" v-model="obserview.fullTimeCopilot2"/>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: sans-serif;font-size:14px">
+									机长飞行时间
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap1flyTime" v-model="obserview.CaptainFlyTime1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap2flyTime" v-model="obserview.CaptainFlyTime2"/>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: sans-serif;font-size:14px">
+									本机型经历时间
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap1PlaneTime" v-model="obserview.thisAircraftTimeCaptain1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap2PlaneTime" v-model="obserview.thisAircraftTimeCaptain2"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cop1PlaneTime" v-model="obserview.thisAircraftTimeCopilot1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cop2PlaneTime" v-model="obserview.thisAircraftTimeCopilot2"/>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: sans-serif;font-size:14px">
+									在电传飞机上的经历时间
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap1OntelTime" v-model="obserview.telexAircraftTimeCaptain1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap2OntelTime" v-model="obserview.telexAircraftTimeCaptain2"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cop1OntelTime" v-model="obserview.telexAircraftTimeCopilot1"/>
+								</td>
+								<td>
+									<input class="form-control" type="text" qid="cap1OntelTime" v-model="obserview.telexAircraftTimeCopilot2"/>
+								</td>
+							</tr>
+						</tbody>
+              		</table>
+          		</div>
+          <!--<div>
+                 <button  qid="saveBasic" class="btn btn-default btn-md mode-add" style="position:absolute;right:50px;">保存</button>
+          </div>  -->
+    		</div>
+    	</div>
+     	<div id="footer" class="row  float_footer" >
+	  		<div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	   			<button  type="button" class="btn btn-default" qid="saveObserve" href="" v-on:click="save">保存</button>
+       			<button  type="button" class="btn btn-default" qid="submitObserve" href="" v-on:click="submit">提交</button>
+     		</div>
+  		</div>
+ 	</form>
+ 	</div>
+ </div>
+</body>
+
+</html>

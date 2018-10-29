@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+	<div>
+		<div umid="fileDialog"></div>
+		<div umid="recordDiForm"></div>
+		
+		<div class="row form-group" style="height: 43px;margin-bottom: 12px;">
+			<div qid="top_buttons" class="col-md-12 text-right" style="margin-top:10px;padding-right:30px;">
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="panel panel-sms">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<i class="fa fa-minus baseInfo_zhankai" title="展开" style="cursor:pointer"></i>
+						&nbsp;基本信息
+					</h2>
+				</div>
+			<div class="panel-body baseInfo" qid="content1" style="">
+				<table class="uui-table table-fixed">
+					<tbody>
+						<tr>
+							<td class="name" data-field="workName">整改反馈名称</td>
+							<td class="value"><input type="text" class="form-control input-sm" qid="improveName" readonly="true"/></td>
+							<td class="name" data-field="workNo">整改反馈单编号</td>
+							<td class="value"><input type="text" class="form-control input-sm" qid="improveNo" readonly="true"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="target">签发单位</td>
+							<td class="value"><input type="text" class="form-control input-sm" qid="auditunit_Name" readonly="true"/></td>
+							<td class="name" data-field="address">检查日期</td>
+							<td class="value"><input type="text" maxlength="512" class="form-control input-sm" qid="auditDate" readonly="true"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="startEndDate" >被检查单位</td>
+							<td class="value"><input type="text" maxlength="512" class="form-control input-sm" qid="auditedunit_Name" name="auditedunit_Name" readonly="true"/></td>
+							<td class="name" data-field="method">检查地点</td>
+							<td class="value"><input type="text" class="form-control input-sm" qid="audit_address" readonly="true"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="teamLeader">经办人</td>
+							<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="transactor" readonly="true"/></td>
+							<td class="name" data-field="standard">经办人联系方式</td>
+							<td class="value"><input type="text" maxlength="256" class="form-control input-sm" qid="transactorTel" readonly="true"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="member"><span class="bitian" style="color:red">*</span>整改联系人</td>
+							<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="improver"/></td>
+							<td class="name" data-field="standard"><span class="bitian"  style="color:red">*</span>联系方式</td>
+							<td class="value"><input type="text" maxlength="256" class="form-control input-sm" qid="improverTel"/></td>
+						</tr>
+						<tr>
+							<td class="name" data-field="remark">备注</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control input-sm" maxlength="2000" rows="3" qid="info_remark"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name" data-field="member">检查报告签批件</td>
+							<td class="value" colspan="3">
+								<div class="col-sm-11" qid="audit_report_qianpijian" style="overflow:hidden;height:1.2em;">
+				            	</div>
+							</td>
+						</tr>								
+					</tbody>			
+				</table>	
+			</div>
+			</div>
+		    
+		    <!-- 整改反馈问题列表-->
+			<div class="panel panel-sms">
+				<div class="panel-heading"><h2 class="panel-title">
+					<i class="fa fa-minus problem_zhankai" title="展开" style="cursor:pointer"></i>
+					&nbsp;整改反馈问题列表
+				</div>
+				<!-- <p class="zhenggaidan_info"></p> -->
+				<div class="panel-body">
+					<table class="uui-table zhenggaidan_modify_table example">
+						<thead class='no_thead'>
+							<tr class="infomodel-title">
+								 <th>序号</th>
+						         <th style="width:40%">存在问题汇总</th>
+						         <th>主要责任单位</th>
+						         <th>整改期限</th>
+						         <th>检查状态</th>
+					      	</tr>
+						</thead>
+						<tbody qid="pro_tbody">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		
+			<div class="panel panel-sms files">
+				<div class="panel-heading">
+					<i class="fa fa-minus file_zhankai" title="展开" style="cursor:pointer"></i>
+					&nbsp;拒绝签批件
+				</div>
+				<div class="panel-body file_body">
+					<table class="uui-table">
+						<thead class="file_thead">
+							<tr class="infomodel-title">
+						         <th style="width:200px;">文件名</th>
+						         <th style="width:150px;">大小</th>
+						         <th style="width:220px;">上传时间</th>
+						         <th style="width:160px;">上传用户</th>
+						         <th style="width:50px;">操作</th>
+					      	</tr>
+						</thead>
+						<tbody qid="file1">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		
+			<div class="panel panel-sms files">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+					<i class="fa fa-minus file_zhankai" title="展开" style="cursor:pointer"></i>
+					&nbsp;上传签批件
+						<div qid="add_file" class="pull-right uui-cursor-pointer">
+							<div class="">
+							<img title="添加附件" src="../img/add-question.png">
+							</div>
+						</div>
+					</h2>
+				</div>
+				<div class="panel-body file_body">
+					<table  qid="datatable" class="uui-table">
+						<thead class='file_thead'>
+							<tr class="infomodel-title">
+						         <th style="width:200px;">文件名</th>
+						         <th style="width:150px;">大小</th>
+						         <th style="width:220px;">上传时间</th>
+						         <th style="width:160px;">上传用户</th>
+						         <th style="width:50px;">操作</th>
+					      	</tr>
+						</thead>
+						<tbody qid="file2">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- 日志 -->
+		<div class="activity-body-content container-fluid">
+			<div qid="left-column" style="margin-top: 20px;">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.show-grid{
+		margin-bottom: 5px;
+	}
+	.text-left{
+		text-align : left;
+	}
+</style>
+</head>
+<body>
+<div class="uui-managepage">
+	<div umid="recordDiForm"></div>
+	<div qid="content">
+		<div class="row show-grid">
+			<div class="col-sm-12" ><h3>检查单</h3></div>
+		</div>
+		<div class="row show-grid">
+			<div class="col-md-12">
+				<div class="col-md-2">检查小结：</div>
+				<div class="col-md-10">
+					<textarea class="form-control" rows="3" qid="remark" name="remark"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="row show-grid">
+			<div class="col-sm-12">
+				<div>此次共审计检查52项，其中：符合项为8项，一般不符合项为5项，严重不符合项为5项，建议项为4项，不适用项为1项。</div>
+			</div>
+		</div>
+		<div class="row show-grid">
+			<div class="col-sm-12">
+				<table qid="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        		</table>
+			</div>
+		</div>
+		<div class="row show-grid">
+			<div class="col-sm-12 text-left">
+				<button type="submit" class="btn btn-default" qid="save">保存</button>
+				<button type="submit" class="btn btn-default" qid="commit">提交</button>
+				<button type="submit" class="btn btn-default" qid="exportEx">导出</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

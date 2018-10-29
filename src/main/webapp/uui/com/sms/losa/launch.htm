@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+ <div class="uui-managepage">
+ <form role="form"  way-data="jsonObserve" way-persistent="true">
+  <div class="uui-managepage-header">
+      <div class="container-fluid no-left-right-padding">
+        <div class="row">
+          <div class="col-md-3">
+	         <h3 class="uui-managepage-title">下降/进近/着陆</h3>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class="form uui-managepage-filter uui-panel-graph" qid="accountDepart">
+       <div class="uui-panel-rect-body uui-managepage-filter-content" style="height:800px">
+          <table class="table table-bordered" style="font-family: sans-serif;font-size:14px">
+             <tbody>
+					<tr>
+						<td colspan="3" rowspan="1" align="center">
+							计划行为的基准
+						</td>
+						<td align="centert">
+							评分
+						</td>
+					</tr>
+					<tr>
+						<td>
+							SOP标准简令
+						</td>
+						<td>
+							必须的简令是交互式的并且在操作上是完整的
+						</td>
+						<td>
+							 简练，不仓促，满足标准操作程序的要求。<br />  确定了要点。
+						</td>
+						<td>
+							<select class="form-control" id="loadingBriefing" name="loadingBriefing"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							规定的计划
+						</td>
+						<td>
+							传达并确认了运行计划和决定
+						</td>
+						<td>
+							 对计划达成了共同理解。<br />  “所有人员达到一致”。
+						</td>
+						<td>
+							 <select class="form-control" id="loadingPlan" name="loadingPlan"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							工作任务分配
+						</td>
+						<td>
+							确定了正常和非正常情况下的任务和责任
+						</td>
+						<td>
+							 传达并确认了工作任务分派。
+						</td>
+						<td>
+							<select class="form-control" id="loadingWorkDistribute" name="loadingWorkDistribute"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							应急管理
+						</td>
+						<td>
+							机组成员制定了有效的策略来处置对安全的威胁
+						</td>
+						<td>
+							 预计到了威胁及其后果。<br />  使用了所有可用的资源来处置威胁。
+						</td>
+						<td>
+							<select class="form-control" id="loadingEmergencyMeasure" name="loadingEmergencyMeasure"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" align="center">
+							执行行为的基准
+						</td>
+						<td align="centert">
+							评分
+						</td>
+					</tr>
+					<tr>
+						<td>
+							监控/交叉检查
+						</td>
+						<td>
+							机组成员对系统和其他机组成员进行了积极的监控和交叉检查
+						</td>
+						<td>
+							 核实了航空器的位置、各种设置和机组的行为。
+						</td>
+						<td>
+							<select class="form-control" id="loadingCheck" name="loadingCheck"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							工作任务管理
+						</td>
+						<td>
+							对操作任务进行了优先排序和恰当管理，以完成主要的飞行任务
+						</td>
+						<td>
+							 避免任务固定。<br />  不允许超负荷工作。
+						</td>
+						<td>
+							<select class="form-control" id="loadingWorkManage" name="loadingWorkManage"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							警觉性
+						</td>
+						<td>
+							机组成员保持了对环境和航空器位置的警觉
+						</td>
+						<td>
+							 机组成员保持了情境意识。
+						</td>
+						<td>
+						<select class="form-control" id="loadingAlertness" name="loadingAlertness"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							自动设备的管理
+						</td>
+						<td>
+							对自动化设备进行了恰当的管理，以平衡情境和/或工作负荷要求
+						</td>
+						<td>
+							 自动化设备的设置情况通报给了其他机组成员。<br />  有效的纠正了自动化设备反常情况。
+						</td>
+						<td>
+							<select class="form-control" id="loadingAutoManage"name="loadingAutoManage"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" align="center">
+							回顾/调整行为的基准
+						</td>
+						<td align="centert">
+							评分
+						</td>
+					</tr>
+					<tr>
+						<td>
+							计划的评估
+						</td>
+						<td>
+							在需要时对现有的计划进行了审查和调整
+						</td>
+						<td>
+							 对机组的决定和措施进行了公开的分析，确保当前的计划为最佳计划。
+						</td>
+						<td>
+							<select class="form-control" id="loadingPlanAssess" name="loadingPlanAssess"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							询问
+						</td>
+						<td>
+						机组成员提出了问题，以审查和/或澄清当前的行动计划
+						</td>
+						<td>
+							 机组成员不惧怕显示其知识的缺乏。<br />  有“凡事问个究竟”态度。
+						</td>
+						<td>
+							<select class="form-control" id="loadingQuestion"name="loadingQuestion"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							自信
+						</td>
+						<td>
+							机组成员以恰当的坚定态度阐述了关键信息和/或解决方案
+						</td>
+						<td>
+							 机组成员毫不迟疑地大胆表明自己的意见
+						</td>
+						<td>
+							<select class="form-control" id="loadingConfidence" name="loadingConfidence"> 
+							<option>请选择</option> 
+							<option value="1">1-差-被观察的行为表现有安全隐忧</option> 
+							<option value="2">2-中-被观察的行为表现勉强合格</option> 
+							<option value="3">3-好-被观察的行为表现是有效的</option> 
+							<option value="4">4-优秀-被观察的行为表现非常出色</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+          </table>
+       </div>
+     </div>
+     <div id="scrollnext" style="position:absolute;top:400px;left:100px;">
+          <ul class="list-group" style="width:150px"id="link">
+           
+            <li  style="height:34px;"class="list-group-item " ><a id="homePage" href="auditContent.html">首页</a></li>
+           <li  style="height:34px; "class="list-group-item " ><a   id="basicUrl" href="">基础信息</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="departUrl"  href="" >离场前/滑出</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="takeOffUrl" href="">起飞/爬行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="cruiseUrl"  href="">巡航</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="techWsUrl"  href="">着陆技术工作单</a></li>
+           <li  style="height:34px;"class="list-group-item active" ><a style="color:white" id="launchUrl"  href="">下降/进近/着陆</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="wholeFlUrl" href="">整个飞行</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="threatUrl" href="">威胁管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="errorUrl" href="">差错管理工作单</a></li>
+           <li  style="height:34px;"class="list-group-item"><a id="crewUrl" href="">机组访谈</a></li>
+            <li  style="height:34px;"class="list-group-item"><a id="appendix"href="">附件上传</a></li>
+            <button  type="button" class="btn btn-default" qid="saveLaunch" href="">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           <button  type="button" class="btn btn-default" qid="submitLaunch" href="">提交</button>
+           
+   </ul>
+     
+    </div> 
+    <div id="saveDialog" style="display:none">
+     <div>数据已经保存，确定进入一下页码？</div>
+   </div>
+   </form>
+ </div>
+ </body>

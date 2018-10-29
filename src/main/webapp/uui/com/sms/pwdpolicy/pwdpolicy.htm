@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div qid="container" class="uui-managepage">
+        <div class="uui-managepage-header">
+        	<div class="container-fluid">
+	            <div class="row">
+	                <div class="col-sm-12 no-left-right-padding">
+	                    <h3 class="uui-managepage-title"><%=com.sms.pwdpolicy.pwdpolicy.i18n.title %></h3>
+	                </div>
+	            </div>
+            </div>
+        </div>
+        <div class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span><%=com.sms.pwdpolicy.pwdpolicy.i18n.statusA %></div>
+        <div class="alert alert-success"><span class="glyphicon glyphicon glyphicon-ok"></span><%=com.sms.pwdpolicy.pwdpolicy.i18n.statusB %></div>
+        <div class="form">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="pwdpolicy" value="disabled" />
+                    <strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.forbidden %></strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindA %>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="pwdpolicy" value="basic" />
+                    <strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.base %></strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindB %>
+                </label>
+                <span class="help-block">
+                    <ul>
+                        <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindC %>
+                        </li>
+                        <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindD %>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="pwdpolicy" value="secure" />
+                    <strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.safe %></strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindE %>
+                </label>
+                <span class="help-block">
+                    <ul>
+                        <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindF %>
+                        </li>
+                        <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindG %>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="pwdpolicy" value="custom" />
+                    <strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.define %></strong><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindH %>
+                </label>
+            </div>
+
+        </div>
+        <div class="form form-horizontal custompolicy" qid="div_custompolicy" style="display: none; width: 680px;margin-top:30px;">
+            <h3 class="uui-module-h3"><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindI %></h3>
+            <div class="form-group">
+                <label for="minlength" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.minLength %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="minlength" class="form-control input-sm" value="8" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="maxlength" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.maxLength %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="maxlength" class="form-control input-sm" value="255" />
+                </div>
+            </div>
+            <h3 class="uui-module-h3"><%=com.sms.pwdpolicy.pwdpolicy.i18n.remaindJ %></h3>
+            <div class="form-group">
+                <label for="minnumuppercase" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.minCapital %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="minnumuppercase" class="form-control input-sm" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="minnumlowercase" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.LowerCase %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="minnumlowercase" class="form-control input-sm" value="0" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mindigit" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.minNum %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="mindigit" class="form-control input-sm" value="0" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="minspecial" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.minspecial %></label>
+                <div class="col-sm-9">
+                    <input type="text" id="minspecial" class="form-control input-sm" value="0" />
+                    <span class="help-block">
+                        <ul>
+                            <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.explainA %></li>
+                            <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.explainB %></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="combination" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.group %></label>
+                <div class="col-sm-9">
+                    <select id="combination" class="form-control input-sm">
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.any %></option>
+                        <option value="" selected="selected"><%=com.sms.pwdpolicy.pwdpolicy.i18n.atlastT %></option>
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.atlastH %></option>
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.atlastF %></option>
+                    </select>
+                    <span class="help-block">
+                        <ul>
+                            <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.explainC %></li>
+                            <li><%=com.sms.pwdpolicy.pwdpolicy.i18n.explainD %></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <h3 class="uui-module-h3"><%=com.sms.pwdpolicy.pwdpolicy.i18n.explainD %></h3>
+            <div class="form-group">
+                <label for="oldpwd" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.oldPass %></label>
+                <div class="col-sm-9">
+                    <select class="form-control input-sm" id="oldpwd">
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.ignore %></option>
+                        <option value="" selected="selected"><%=com.sms.pwdpolicy.pwdpolicy.i18n.common %></option>
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.strict %></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userinformation" class="col-sm-3 control-label"><%=com.sms.pwdpolicy.pwdpolicy.i18n.userMsg %></label>
+                <div class="col-sm-9">
+                    <select class="form-control input-sm" id="userinformation">
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.ignore %></option>
+                        <option value="" selected="selected"><%=com.sms.pwdpolicy.pwdpolicy.i18n.common %></option>
+                        <option value=""><%=com.sms.pwdpolicy.pwdpolicy.i18n.strict %></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="comp-buttons-container" style="padding-left: 120px;">
+            <div class="comp-buttons">
+                <button qid="btn_update" class="btn btn-primary btn-sm disabled"><%=com.sms.pwdpolicy.pwdpolicy.i18n.modify %></button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

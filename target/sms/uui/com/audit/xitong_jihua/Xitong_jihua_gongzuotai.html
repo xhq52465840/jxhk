@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司审计</title>
+	<style type="text/css"> 
+		.style_css{
+			margin-top: 0px !important;
+  			margin-bottom: 12px !important;
+		}
+		.style_css strong{
+			font-size: 18px !important;
+		}
+    </style>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='gongzuotai_content']"),{year:$.urlParam().year,type:"",id:$.urlParam().id});
+            $.um($("div[umid='shenji-vertical-menus']"),{menuId:1020,selected:"工作台"});
+            $.um($("div[umid='foot']"));
+
+            //$.um($("div[umid='shengcheng_shenjibaogao']"));
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+	<div class="page-content" style="background-color:#f5f5f5;">
+     <div class="page-content-inner" >
+     	<div class="page-content-nav" style="border-color:#ddd;padding:0px 10px;">
+     		<div umid="shenji-vertical-menus" umodule="com.sms.verticalMenus">
+    		</div>
+     	</div>
+    	
+    	<div class="page-content-main" style="padding:20px;padding-top: 0px;background-color:#fff;">
+    		<div umid="gongzuotai_content" umodule="com.audit.xitong_jihua.gongzuotai_content"></div>
+    	</div>
+     </div>
+    </div>
+    <div class="coveraudit" style="position:absolute;top:0px;left:0px;display:none;z-index:10px"></div>
+  
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

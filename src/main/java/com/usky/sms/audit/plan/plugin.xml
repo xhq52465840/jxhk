@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="auditUnitDao" class="com.usky.sms.audit.plan.AuditUnitDao" />
+	<bean id="planDao" class="com.usky.sms.audit.plan.PlanDao" />
+	<bean id="planFlowUserDao" class="com.usky.sms.audit.plan.PlanFlowUserDao" />
+	<bean id="plan" class="com.usky.sms.audit.plan.PlanService" />
+
+</beans>

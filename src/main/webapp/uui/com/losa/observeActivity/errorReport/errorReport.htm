@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div >
+  <div class="container-fluid"  id="errorReport" style="overflow-x:scroll">
+     <table class="table changeColor rightBigContentTable" style="width: 3000px;">
+		     <td  align="left">
+		     <button type="button" class="btn btn-default"  v-on:click="exportError">导出</button>	
+		     </td>
+	</table>	     
+	 <table class="table changeColor rightBigContentTable" style="width:3000px">			
+				<thead class="header2" >
+					<tr>
+						<td style="width:3%" v-sortfun.literal="page" :options="orders" sortby="c.scheme_no" align="center">所属方案</td>
+						<td style="width:4%" v-sortfun.literal="page" :options="orders" sortby="b.plan_no" align="center">计划编号</td>
+						<td style="width:3%" align="center" >差错代号</td>
+						<td style="width:8%" align="center" >描述机组的差错和相应的非预期航空器状态</td>
+						<td style="width:3%" v-sortfun.literal="page" :options="orders" sortby="d.dict_name" align="center">飞行阶段</td>
+						<td style="width:3%" v-sortfun.literal="page" :options="orders" sortby="e.name" align="center">差错类型</td>
+						<td style="width:5%" v-sortfun.literal="page" :options="orders" sortby="f.name" align="center">差错类型细分</td>
+						<td style="width:7%" v-sortfun.literal="page" :options="orders" sortby="g.name" align="center">差错编号（使用编号本）</td>
+						<td style="width:3%" v-sortfun.literal="page" :options="orders" sortby="h.dict_name" align="center">谁导致了这一差错</td>
+						<td style="width:3%" v-sortfun.literal="page" :options="orders" sortby="i.dict_name" align="center">谁发现了这一差错</td>
+						<td style="width:4%" v-sortfun.literal="page" :options="orders" sortby="j.dict_name" align="center">机组对差错的反应</td>
+						<td style="width:4%" v-sortfun.literal="page" :options="orders" sortby="k.dict_name" align="center">差错的后果</td>
+						<td style="width:7%" v-sortfun.literal="page" :options="orders" sortby="l.name" align="center">是否与威胁相关？（如是，则填入威胁类型）</td>
+						<td style="width:7%" v-sortfun.literal="page" :options="orders" sortby="m.name" align="center">是否与威胁相关？（如是，则填入威胁编号）</td>
+						<td style="width:8%" align="center">机组对这一差错是如何管理或管理不当的？</td>
+						<td style="width:6%" v-sortfun.literal="page" :options="orders" sortby="n.name" align="center">非预期的航空器状态类型</td>
+						<td style="width:5%" v-sortfun.literal="page" :options="orders" sortby="p.name" align="center">非预期的航空器状态编号</td>
+						<td style="width:4%"v-sortfun.literal="page" :options="orders" sortby="r.dict_name" align="center">谁发现了这一状态？</td>
+						<td style="width:5%"v-sortfun.literal="page" :options="orders" sortby="w.dict_name" align="center">机组对非预期航空器状态的反应</td>
+						<td style="width:5%"v-sortfun.literal="page" :options="orders" sortby="y.dict_name" align="center">非预期航空器状态的后果</td>					
+					</tr>
+				</thead>
+				<tbody id="planListBody">
+					<tr v-for="el in errorList" style="height: 41px;">
+                        <td align="center"><a href="#" dataid={{el.schemeId}} v-on:click="retriveScheme">{{el.schemeNo}}</a></td>
+						<td align="center"><a href="#" data={{el.observiewId}} data1={{el.planId}} v-on:click="openObserview">{{el.planNo}}</a></td>
+						<td align="center">{{el.errorCode}}</td>
+						<td align="center">{{el.errorDesc}}</td>
+						<td align="center">{{el.flightStatue}}</td>
+						<td align="center">{{el.errorType}}</td>
+						<td align="center">{{el.errorItem}}</td>
+						<td align="center">{{el.errorNumber}}</td>
+						<td align="center">{{el.causeError}}</td>
+						<td align="center">{{el.perError}}</td>
+						<td align="center">{{el.resError}}</td>
+						<td align="center">{{el.conError}}</td>
+						<td align="center">{{el.threatType}}</td>
+						<td align="center">{{el.threatNumber}}</td>
+						<td align="center">{{el.dealError}}</td>
+						<td align="center">{{el.airType}}</td>
+						<td align="center">{{el.airNumber}}</td>
+						<td align="center">{{el.foundStatue}}</td>
+						<td align="center">{{el.forAir}}</td>
+						<td align="center">{{el.theAi}}</td>
+					</tr>
+					<!-- 为了不影响交替行换色，加了一个空行 -->
+				</tbody>
+			</table>
+			<!-- 分页开始 -->
+			 <pagebars :pagemsg.sync="pagebarsData" :pagefun="query"></pagebars> 
+		<!-- 分页结束 -->
+  </div>
+  </div>
+</body>
+</html>

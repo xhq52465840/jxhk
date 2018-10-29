@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	.show-grid{
+		margin-bottom : 10px;
+	}
+	.downloadfile{
+   		color: #428bca;
+   		text-decoration: underline;
+   		cursor: pointer;
+   	}
+</style>
+</head>
+<body>
+	<div>
+		<div qid="question">
+			<form qid="form">
+			 <input type="hidden" autofocus="autofocus" />
+				<table class="uui-table table-fixed" qid="table">
+					<tbody>
+						<tr>
+							<td class="name">问题描述</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control" rows="3" style="resize: none;" qid="issueContent" name="issueContent" disabled></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">原因类型</td>
+							<td class="value" colspan="3">
+								<input type="text" class="form-control input-sm" qid="reasonType" name="reasonType" disabled/>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">分析原因</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control" rows="3" style="resize: none;" qid="improveReason" name="improveReason" disabled></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">整改措施</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control" rows="3" style="resize: none;" qid="improveMeasure" name="improveMeasure" disabled></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">审核意见</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control" rows="3" style="resize: none;" qid="auditOpinion" name="auditOpinion" disabled></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">完成情况</td>
+							<td class="value" colspan="3">
+								<textarea class="form-control" rows="3" style="resize: none;" qid="completionStatus" name="completionStatus" disabled></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">责任单位</td>
+							<td class="value" colspan="3">
+								<input type="text" class="form-control input-sm" qid="improveUnit" name="improveUnit" disabled/>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">整改期限</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" qid="improveDeadLine" name="improveDeadLine" disabled/>
+							</td>
+							<td class="name">预计完成时间</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" qid="expectedCompletedDate" name="expectedCompletedDate" disabled/>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">上传附件</td>
+							<td class="value" name="filetd" colspan="3">
+								<input type="file" name="uploadify" qid="uploadify" />
+							</td>
+						</tr>
+						<!-- <tr>
+							<td class="name">完成时间</td>
+							<td class="value">
+								<input type="text" class="form-control input-sm date" qid="completionDate" name="completionDate" disabled/>
+							</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

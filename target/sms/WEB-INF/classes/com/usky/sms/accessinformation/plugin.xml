@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="accessInformationActivityTypeEntityDao" class="com.usky.sms.accessinformation.AccessInformationActivityTypeEntityDao" />
+	<bean id="accessInformationDao" class="com.usky.sms.accessinformation.AccessInformationDao" />
+	<bean id="groundPositionEntityDao" class="com.usky.sms.accessinformation.GroundPositionEntityDao" />
+	<bean id="flightInfoEntityDao" class="com.usky.sms.accessinformation.FlightInfoEntityDao" />
+	<bean id="maintainToolEntityDao" class="com.usky.sms.accessinformation.MaintainToolEntityDao" />
+	<bean id="organizationEntityDao" class="com.usky.sms.accessinformation.OrganizationEntityDao" />
+	<bean id="vehicleInfoEntityDao" class="com.usky.sms.accessinformation.VehicleInfoEntityDao" />
+	<bean id="groundStaffEntityDao" class="com.usky.sms.accessinformation.GroundStaffEntityDao" />
+	
+</beans>

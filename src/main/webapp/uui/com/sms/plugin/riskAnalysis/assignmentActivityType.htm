@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<div umid="activityTypeDialog" ></div>
+        
+        <div class="uui-managepage-header">
+            <div class="container-fluid no-left-right-padding">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="uui-managepage-title"><%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.title %></h3>
+                    </div>
+                    <div class="col-md-9 text-right">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm" qid="btn_editSetting"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.buttons.editSetting %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <table class="uui-table" style="margin-top:10px;">
+            <thead>
+                <tr>
+                    <th><%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.columns.key %></th>
+                    <th><%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.columns.value %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name"><%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.form.role %></td>
+                    <td class="value" qid="role"></td>
+                </tr>
+                <tr>
+                    <td class="name"><%=com.sms.plugin.riskAnalysis.assignmentActivityType.i18n.form.activityType %></td>
+                    <td class="value" qid="activityTypes"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

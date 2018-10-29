@@ -1,0 +1,37 @@
+$.extend(com.sms.unitcategory.unitcategories.i18n,{
+	header : '查看安监机构类别',
+	addnewSafeAgency : '添加新的安监机构类别',
+	explain : '以下表格列示可用于对安监机构分组的安监机构类别。',
+	
+	name  :'名称',
+	nameNotNull  :'名称不能为空',
+	describe  :'描述',
+	safeAgency  :'安监机构',
+	handle  :'操作',
+	
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',
+	
+	edit : '编辑',
+	remove : '删除',
+	editSurface : '编辑安监机构类别：',
+	editFail : '编辑操作失败：',
+	affirm : '请确认你要删除这个安监机构类别。',
+	notice : '注意：',
+	noticef : '这个安监机构类别。。。。。',
+	removeSafeAgency : '删除安监机构类别：',
+	removeFail : '删除操作失败：',
+	
+});

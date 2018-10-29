@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="selectFieldType.css" type="text/css"></link>
+</head>
+<body>
+	<div>
+	        <div qid="fieldtype-dialog" class="com-sms-customfields-selectFieldType">
+	        	<div class="field-panel firststep-page">
+	        		<div class="col-sm-3">
+	        			<div class="list-group">
+						  <a href="#" class="list-group-item selected">
+						    	<%=com.sms.customfields.selectFieldType.i18n.all %>
+						  </a>
+						  <!-- <a href="#" class="list-group-item"><%=com.sms.customfields.selectFieldType.i18n.standard %></a>
+						  <a href="#" class="list-group-item"><%=com.sms.customfields.selectFieldType.i18n.advanced %></a> -->
+						</div>
+	
+	        		</div>
+	                <div class="col-sm-9">
+	                    <ol class="customfields-types" qid="fieldtypes">
+	                        <!--  <li class="item">
+	                            <img class="field-preview" src="http://jira.usky.com.cn:8080/s/zh_CN-ucqdy1-1988229788/6262/7/1.0/_/download/resources/com.atlassian.jira.plugin.system.customfieldtypes:multiselect/customfieldpreview.png" alt="Select List (多选)" width="120" height="60">
+	                            <h4 class="field-name">Select List (多选)</h4>
+	                            <p class="field-description">从选择列表中选择多个值</p>
+	                        </li>-->
+	                    </ol>
+	                </div>
+	        	</div>
+	        	<div class="field-panel secondstep-page hidden">
+		        	<div class="col-sm-12">
+		        		<form class="form-horizontal" role="form" qid="custom-field-form">
+			                <div class="form-group">
+			                    <label for="<%=this.id%>-custom-field-name" class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.customfields.selectFieldType.i18n.name %><span class="text-danger">*</span></label>
+			                    <div class="col-sm-7">
+			                        <input type="text" class="form-control" qid="custom-field-name" name="custom-field-name" placeholder="" maxlength="50">
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="<%=this.id%>-custom-field-description" class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.customfields.selectFieldType.i18n.describute %><span class="text-danger">&nbsp;</span></label>
+			                    <div class="col-sm-7">
+			                        <textarea type="text" class="form-control" qid="custom-field-description" name="custom-field-description" placeholder="" maxlength="255"></textarea>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="<%=this.id%>-custom-field-config" class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.customfields.selectFieldType.i18n.other %><span class="text-danger">&nbsp;</span></label>
+			                    <div class="col-sm-7">
+			                        <textarea type="text" class="form-control" qid="custom-field-config" name="custom-field-config" placeholder="" maxlength="255"></textarea>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="<%=this.id%>-custom-field-config" class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.customfields.selectFieldType.i18n.search %><span class="text-danger">&nbsp;</span></label>
+			                    <div class="col-sm-7">
+			                        <input type="checkbox" qid="searchOrNot"/>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="<%=this.id%>-custom-field-config" class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.customfields.selectFieldType.i18n.dataCol %><span class="text-danger">&nbsp;</span></label>
+			                    <div class="col-sm-7">
+			                        <input type="checkbox" qid="dataColOrNot"/>
+			                    </div>
+			                </div>
+		                </form>
+	                </div>
+	        	</div>
+	        </div>
+        </div>
+</body>
+</html>

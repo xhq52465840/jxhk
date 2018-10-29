@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+       .list-group-item{ 
+           border: none;
+           padding: 6px 10px 6px 10px;
+       }
+	</style>
+</head>
+<body>
+    <div>
+        <div class="uui-module-header">
+            <div style="padding:10px;">
+	            <div class="row">
+	                <div class="col-md-12">
+						<h2 class="uui-module-h2">数据列</h2>
+	                </div>
+	            </div>
+	            <div style="margin: 10px 0 0 0;">
+	            	<div class="btn-group" data-toggle="buttons" qid="button_div">
+					  <label class="btn btn-default ">
+					    <input type="radio" name="options" value="default"  autocomplete="off" qid="btn_mydefault" > 我的默认
+					  </label>
+					  <label class="btn btn-default active">
+					    <input type="radio" name="options" value="filter"  autocomplete="off" checked qid="btn_filter"> 过滤器
+					  </label>
+					  <!-- <label class="btn btn-default">
+					    <input type="radio" name="options" value="system"  autocomplete="off" qid="btn_system "> 系统
+					  </label> -->
+					</div>
+	            </div>
+	            <div class="form-group has-feedback" style="margin: 10px 0 10px 0;">
+	            	<input type="text" placeholder="搜索"  class="form-control input-sm"  qid="input_search"/>		
+					<span class="glyphicon glyphicon-search form-control-feedback" style="top:0px;"></span>		
+	            </div>
+            </div>
+            <div style="max-height: 270px;overflow-y: auto;overflow-x: hidden;clear: both;" qid="field_div">
+            
+            </div>
+            <div class="buttons-container text-right"  style="margin: 10px 0 0 0;border-top: 1px solid #ccc;padding:10px;">
+            	<button class="btn btn-default btn-sm update">更新</button>
+            	<button class="btn btn-link closed" >关闭</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

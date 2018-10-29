@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>审计结论看板</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../sms/boot.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../main.css" />
+	<script type="text/javascript">
+        $(function () {
+            var params = $.urlParam();
+        	$.um($("div[umid='audit']"), "display", params.gadgetsinstance);
+        });
+    </script>
+</head>
+<body style="overflow-x: hidden;">
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main" style="padding-right: 0px;">
+    			<div umid="audit" umodule="com.audit.dash.auditConclusion">审计结论看板</div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+</body>
+</html>

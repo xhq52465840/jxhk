@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+<bean id="losa" class="com.usky.sms.losa.LosaService" />
+<bean id="observeDao" class="com.usky.sms.losa.ObserveDao" />
+<bean id="crewInterviewDao" class="com.usky.sms.losa.CrewInterviewDao" />
+<bean id="attachmentDao" class="com.usky.sms.losa.AttachmentDao" />
+<bean id="causeFindPersonTypeDao" class="com.usky.sms.losa.CauseFindPersonTypeDao" />
+<bean id="unexceptStatusBaseInfoDao" class="com.usky.sms.losa.UnexceptStatusBaseInfoDao" />
+<bean id="dictTypeService" class="com.usky.sms.losa.DictTypeService"/>
+<bean id="dictTypeDao" class="com.usky.sms.losa.DictTypeDao"/>
+<bean id="losaOperateLogDao" class="com.usky.sms.losa.LosaOperateLogDao"/>
+
+
+</beans>

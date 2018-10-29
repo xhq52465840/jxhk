@@ -1,0 +1,15 @@
+.com-sms-detailmodule-riskAnalysis-actionItem .commentinfo{
+	display:inline-block;border-radius:4px;padding:5px;background:#fff;border:1px solid #ddd;
+}
+.com-sms-detailmodule-riskAnalysis-actionItem .isme{
+	background:rgb(0, 224, 255);
+}
+.com-sms-detailmodule-riskAnalysis-actionItem .unittreecontainer{
+	background:#fff;
+	border:1px solid #ddd;
+	-webkit-box-shadow: 0 0 10px #DDD;
+	box-shadow: 0 0 10px #DDD;
+	width:300px;
+	position: absolute;
+	z-index: 999;
+}

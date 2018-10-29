@@ -1,0 +1,10 @@
+$.extend(com.sms.unitconfig.fieldscreen.i18n,{
+	addControl:'添加选项卡',
+	editControl:'编辑选项卡',
+	Controlname:'选项卡名',
+	ControlnameNotNull:'选项卡名不能为空',
+	editFail:'编辑操作失败：',
+	affirm:'确认删除选项卡',
+	remove:'删除选项卡',
+	removeFail:'删除操作失败：',
+});

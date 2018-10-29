@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+	<link rel="stylesheet" href="activityTypeScheme.css" type="text/css"></link>
+</head>
+<body>
+    <div>
+        <div qid="activityTypeSchemeDialog">
+            <form class="form-horizontal" role="form" qid="activityTypeSchemeForm">
+            	<div class="dropdown" style="display:inline-block;margin: 0 0 10px 0;">
+            		<span class="label label-success dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.applicationA %><span qid="units"></span><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.applicationB %></span>
+            		<ul class="dropdown-menu units" role="menu" qid="units-ul" style="max-height:200px;overflow:auto;"></ul>
+            	</div>
+               <div class="form-group">
+                    <label for="<%=this._id%>-name" class="col-sm-4 control-label"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.name %><span class="text-danger">*</span></label>
+                    <div class="col-sm-8">
+                    	<input class=" form-control input-sm" qid="name" name="name" maxlength="255"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="<%=this._id%>-description" class="col-sm-4 control-label"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.describute %><span class="text-danger"></span></label>
+                    <div class="col-sm-8">
+	                    <input rows="" cols="" qid="description" class="form-control input-sm" type="text" maxlength="255"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="<%=this._id%>-select" class="col-sm-4 control-label"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.defaultSafeModel %><span class="text-danger"></span></label>
+                    <div class="col-sm-8">
+	                    <select class="form-control input-sm" qid="select">
+	                    </select>
+                    </div>
+                </div>
+                <div class="form row activity-sortlist" >
+                		<div class="form-group col-md-6" >
+	                	<label><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.currSafeType %></label>
+	                	<div class="activity-div">
+	                		<button qid="btn_activity_del" class="btn btn-link"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.removeAll %></button>
+		                   <ul qid="current-activity-sortable" class="list-group connectedSortable" >
+							</ul>
+						</div>
+	            </div>
+	            <div class="form-group col-md-6" >
+	                	<label><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.availableSafeType %></label>
+	                	<div class="activity-div">
+	                       <button qid="btn_activity_add" class="btn btn-link"><%=com.sms.activitytype.activityTypeSchemeDialog.i18n.addAll %></button>
+		                   <ul qid="available-activity-sortable" class=" list-group connectedSortable" >
+							</ul>
+						</div>
+	            </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

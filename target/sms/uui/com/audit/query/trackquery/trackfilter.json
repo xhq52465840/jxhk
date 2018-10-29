@@ -1,0 +1,124 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns":false,
+    "columns": [
+    
+      {
+        "propid": "traceName",
+        "propname": "跟踪表名称",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.trackquery.queryNameProp"
+      },
+      {
+        "propid": "traceNo",
+        "propname": "跟踪表编号",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryTextProp"
+      },
+      {
+        "propid": "planTime",
+        "propname": "审计日期",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.workquery.queryDateProp"
+      },
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.trackquery.queryTextProp"
+      },
+      {
+        "propid": "address",
+        "propname": "审计地点",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.trackquery.queryaddressProp"
+      }
+    ],
+    "orders": {
+		"propid":"traceName",
+		"propname":"跟踪表名称",
+		"order":"asc"
+    },
+    "uql": "",
+     "staticfilters": [
+      {
+        "propid": "traceName",
+        "propname": "跟踪表名称",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.trackquery.queryNameProp"
+      },
+      {
+        "propid": "target",
+        "propname": "被审计单位",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.audit.plugin.rectificationquery.queryTargetProp"
+      }
+    ],
+    "_staticfilters": [
+      {
+        "propid": "PSD",
+        "propname": "运行控制",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "CAB",
+        "propname": "客舱服务",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.priorityProp"
+      },
+      {
+        "propid": "CGO",
+        "propname": "货物运输",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "ORG",
+        "propname": "组织管理",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "MNT",
+        "propname": "机务维修",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "FLT",
+        "propname": "飞行运行",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "GRH",
+        "propname": "地面保障",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.typeProp"
+      },
+      {
+        "propid": "OTH",
+        "propname": "其他系统",
+        "propvalue": [],
+        "propshow":"",
+        "propplugin": "com.sms.plugin.search.statusProp"
+      }
+    ],
+    "dynamicfilters": [
+      
+    ]
+  }
+}

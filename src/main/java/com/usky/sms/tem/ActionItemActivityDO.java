@@ -1,0 +1,120 @@
+
+package com.usky.sms.tem;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.hibernate.cfg.Comment;
+
+import com.usky.sms.core.AbstractBaseDO;
+
+/**
+ * 行动项与安全信息关联的视图
+ * CREATE OR REPLACE VIEW A_ACTION_ITEM_ACTIVITY AS
+	(
+	-----------------T_CONTROL_MEASURE START------------------
+	  SELECT ACTION_ITEM.ID AS ACTION_ITEM_ID,
+	       ACT.ID AS ACTIVITY_ID
+	  FROM T_ACTION_ITEM ACTION_ITEM
+	  INNER JOIN T_CONTROL_MEASURE CM
+	    ON (ACTION_ITEM.MEASURE_ID = CM.ID AND ACTION_ITEM.DELETED = 0 AND CM.DELETED = 0)
+	  INNER JOIN T_THREAT_MAPPING TM
+	    ON (CM.THREAT_ID = TM.ID AND TM.DELETED = 0)
+	  INNER JOIN T_TEM TM_TEM
+	    ON (TM.TEM_ID = TM_TEM.ID AND TM_TEM.DELETED = 0)
+	  INNER JOIN T_ACTIVITY ACT
+	    ON (TM_TEM.ACTIVITY_ID = ACT.ID AND ACT.DELETED = 0)
+	UNION ALL
+	  SELECT ACTION_ITEM.ID AS ACTION_ITEM_ID,
+	       ACT.ID AS ACTIVITY_ID
+	  FROM T_ACTION_ITEM ACTION_ITEM
+	  INNER JOIN T_CONTROL_MEASURE CM
+	    ON (ACTION_ITEM.MEASURE_ID = CM.ID AND ACTION_ITEM.DELETED = 0 AND CM.DELETED = 0)
+	  INNER JOIN T_ERROR_MAPPING EM
+	    ON (CM.ERROR_ID = EM.ID AND EM.DELETED = 0)
+	  INNER JOIN T_TEM EM_TEM
+	    ON (EM.TEM_ID = EM_TEM.ID AND EM_TEM.DELETED = 0)
+	  INNER JOIN T_ACTIVITY ACT
+	    ON (EM_TEM.ACTIVITY_ID = ACT.ID AND ACT.DELETED = 0)
+	-----------------T_CONTROL_MEASURE END---------------------
+	UNION ALL
+	-----------------T_CLAUSE START----------------------------
+	  SELECT ACTION_ITEM.ID AS ACTION_ITEM_ID,
+	       ACT.ID AS ACTIVITY_ID
+	  FROM T_ACTION_ITEM ACTION_ITEM
+	  INNER JOIN T_CLAUSE CLAUSE
+	    ON (ACTION_ITEM.CLAUSE_ID = CLAUSE.ID AND ACTION_ITEM.DELETED = 0 AND CLAUSE.DELETED = 0)
+	  INNER JOIN T_RISK_THREAT_MAPPING RTM
+	    ON (CLAUSE.THREAT_ID = RTM.ID AND RTM.DELETED = 0)
+	  INNER JOIN T_RISK_ANALYSIS RTM_RA
+	    ON (RTM.ANALYSIS_ID = RTM_RA.ID AND RTM_RA.DELETED = 0)
+	  INNER JOIN T_RISK RTM_RISK
+	    ON (RTM_RA.RISK_ID = RTM_RISK.ID AND RTM_RISK.DELETED = 0)
+	  LEFT JOIN T_ACTIVITY ACT
+	    ON (RTM_RISK.ACTIVITY_ID = ACT.ID)
+	  WHERE ACT.ID IS NULL OR ACT.DELETED = 0
+	UNION ALL
+	  SELECT ACTION_ITEM.ID AS ACTION_ITEM_ID,
+	       ACT.ID AS ACTIVITY_ID
+	  FROM T_ACTION_ITEM ACTION_ITEM
+	  INNER JOIN T_CLAUSE CLAUSE
+	    ON (ACTION_ITEM.CLAUSE_ID = CLAUSE.ID AND ACTION_ITEM.DELETED = 0 AND CLAUSE.DELETED = 0)
+	  INNER JOIN T_RISK_ERROR_MAPPING REM
+	    ON (CLAUSE.ERROR_ID = REM.ID AND REM.DELETED = 0)
+	  INNER JOIN T_RISK_ANALYSIS REM_RA
+	    ON (REM.ANALYSIS_ID = REM_RA.ID AND REM_RA.DELETED = 0)
+	  INNER JOIN T_RISK REM_RISK
+	    ON (REM_RA.RISK_ID = REM_RISK.ID AND REM_RISK.DELETED = 0)
+	  LEFT JOIN T_ACTIVITY ACT
+	    ON (REM_RISK.ACTIVITY_ID = ACT.ID)
+	  WHERE ACT.ID IS NULL OR ACT.DELETED = 0
+	-----------------T_CLAUSE END----------------------------
+	UNION ALL
+	-----------------T_EVENT_ANALYSIS START------------------
+	  SELECT ACTION_ITEM.ID AS ACTION_ITEM_ID,
+	       ACT.ID AS ACTIVITY_ID
+	  FROM T_ACTION_ITEM ACTION_ITEM
+	  INNER JOIN T_EVENT_ANALYSIS EA
+	    ON (ACTION_ITEM.EVENT_ANALYSIS_ID = EA.ID AND ACTION_ITEM.DELETED = 0 AND EA.DELETED = 0)
+	  INNER JOIN T_ACTIVITY ACT
+	    ON (EA.ACTIVITY_ID = ACT.ID AND ACT.DELETED = 0)
+	-----------------T_EVENT_ANALYSIS END---------------------
+	)
+	with read only
+	;
+ * @author Administrator
+ *
+ */
+@Entity
+@Table(name = "A_ACTION_ITEM_ACTIVITY")
+public class ActionItemActivityDO extends AbstractBaseDO {
+	
+	private static final long serialVersionUID = -9097376918180542478L;
+	
+	/** 安全信息 */
+	private Integer activity;
+	
+	/** 行动项 */
+	private Integer actionItem;
+	
+	@Column(name = "ACTIVITY_ID")
+	@Comment("安全信息")
+	public Integer getActivity() {
+		return activity;
+	}
+
+	public void setActivity(Integer activity) {
+		this.activity = activity;
+	}
+
+	@Column(name = "ACTION_ITEM_ID")
+	@Comment("行动项")
+	public Integer getActionItem() {
+		return actionItem;
+	}
+
+	public void setActionItem(Integer actionItem) {
+		this.actionItem = actionItem;
+	}
+
+}

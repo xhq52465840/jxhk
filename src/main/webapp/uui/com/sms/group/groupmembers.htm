@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_groupmembers">
+            <form class="form-horizontal" role="form">
+                <div class="form-group control">
+                    <label  class="col-sm-3 control-label"><%=com.sms.group.groupmembers.i18n.selectuser %></label>
+                    <div class="col-sm-8" style="padding-left:0;">
+                        <input type="hidden" qid="users" class="form-control"/>
+	                    <div class="help-block"><small><%=com.sms.group.groupmembers.i18n.remaind %></small></div>
+                    </div>
+                </div>
+                <div class="form-group control">
+                    <label  class="col-sm-3 control-label"><%=com.sms.group.groupmembers.i18n.userGroupMember %></label>
+                    <div class="col-sm-8" style="padding-left:0;">
+                        <select class="form-control" qid="groupmembers" multiple="multiple" size="10"></select>
+                    	<button qid="btn_removeselectedusers" style="margin-top:10px;"><%=com.sms.group.groupmembers.i18n.removeuser %></button>
+                    </div>
+                </div>
+                   
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_userorg">
+            <form class="" role="form">
+                <div class="form-group col-md-6" style="padding-left:0;padding-right:0;">
+                    <label class="control-label"><%=com.sms.user.userorg.i18n.EffectiveGroup %></label>
+                    <div style="height:183px;overflow-y:auto;border:1px solid #ccc;"><ul qid="orgTree" class="ztree"></ul></div>
+                    <button qid="btn_joinselectedorgs" style="margin-top:10px;"><%=com.sms.user.userorg.i18n.addGroup %></button>
+                </div>
+                <div class="form-group col-md-6" style="padding-left:20px;padding-right:0;">
+                    <label for="<%=this._id%>-currentorgs" class="control-label"><%=com.sms.user.userorg.i18n.currentGroup %></label>
+                    <select class="form-control" qid="currentorgs" multiple="multiple" size="10"></select>
+                    <button qid="btn_leaveselectedorgs" style="margin-top:10px;"><%=com.sms.user.userorg.i18n.remove %></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

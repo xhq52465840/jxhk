@@ -1,0 +1,309 @@
+/***********************************************
+********** override bootstrap css***************
+***********************************************/
+/*.row [class^="col-md-"] {
+    padding:0 20px 0 20px;
+}
+.row [class^="col-md-10"] {
+    border-left:1px solid #ccc;
+}
+
+.uui-module{
+	min-height:600px;
+}
+
+.uui-module-header{
+	margin:0;
+  padding:0;
+}
+
+.uui-module-header .row [class^="col-md-"]{
+	padding:0 0 0 15px !important;
+}
+
+.uui-module-h2{
+	margin:0;
+  padding:0;
+  font-size:20px;
+  font-weight:normal;
+  line-height:1.5;
+}
+
+.uui-module-h3{
+	margin:0;
+  padding:0;
+  font-size:16px;
+  font-weight:bold;
+  line-height:1.5;
+}
+
+.uui-module-filter{
+	margin-top:20px;
+  margin-bottom:20px;
+}
+
+.uui-module-filter label{
+	color:#707070;
+  font-weight:normal;
+}
+
+.uui-module-filter-firstitem{
+	padding-left:0px !important;
+}
+
+.uui-module-filter-lastitem{
+	padding-right:0px !important;
+}/*
+
+
+/***********************************************
+********** uui component style***************
+***********************************************/
+/*.com-sms-user-user,
+.com-sms-group-group,
+.com-sms-com-sms-plugin-organization-organization-org,
+.com-sms-role-role,
+.com-sms-ups-ups,
+.com-sms-upm-upm,
+.com-sms-customfields-customFields,
+.com-sms-customfields-configureCustomField,
+.com-sms-customfields-configureFieldLayout,
+.com-sms-customfields-configureFieldLayoutScheme,
+.com-sms-customfields-fieldLayouts,
+.com-sms-customfields-fieldLayoutSchemes,
+.com-sms-fieldscreen-screens,
+.com-sms-fieldscreen-configScreen,
+.com-sms-fieldscreen-screenSchemes,
+.com-sms-fieldscreen-activityTypeScreenSchemes,
+.com-sms-fieldscreen-configureActivityTypeScreenScheme,
+.com-sms-fieldscreen-configureScreenScheme,
+.com-sms-activitytype-activityTypes,
+.com-sms-activitytype-activityTypeSchemes,
+.com-sms-upm-featured,
+.com-sms-globalpermission-globalpermission,
+.com-sms-usersetting-usersetting,
+.com-sms-pwdpolicy-pwdpolicy,
+.com-sms-permissionset-permissionset,
+.com-sms-workflow-workflows,
+.com-sms-workflow-workflowSchemes,
+.com-sms-workflow-editWorkflowScheme,
+.com-sms-workflow-workflowDesign,
+.com-sms-secure-configactivitysecurityschemes,
+.com-sms-secure-notificationschemes,
+.com-sms-activityproperty-status,
+.com-sms-secure-activitysecurityschemes,
+.com-sms-secure-permissionschemes,
+.com-sms-secure-configpermissionschemes,
+.com-sms-activityproperty-resolutions,
+.com-sms-activityproperty-priorities,
+.com-sms-unitcategory-unitcategories,
+.com-sms-unit-unit,
+.com-sms-system-dictionary,
+.com-sms-unitconfig-summary{
+	min-height:600px;
+}
+.com-sms-user-user .header,
+.com-sms-group-group .header,
+.com-sms-plugin-organization-org .header,
+.com-sms-ups-ups .header,
+.com-sms-upm-upm .header,
+.com-sms-customfields-customFields .header,
+.com-sms-customfields-configureCustomField .header,
+.com-sms-customfields-configureFieldLayout .header,
+.com-sms-customfields-configureFieldLayoutScheme .header,
+.com-sms-customfields-fieldLayouts .header,
+.com-sms-customfields-fieldLayoutSchemes .header,
+.com-sms-fieldscreen-configScreen .header,
+.com-sms-fieldscreen-screens .header,
+.com-sms-fieldscreen-screenSchemes .header,
+.com-sms-fieldscreen-activityTypeScreenSchemes .header,
+.com-sms-fieldscreen-configureActivityTypeScreenScheme .header,
+.com-sms-fieldscreen-configureScreenScheme .header,
+.com-sms-activitytype-activityTypes .header,
+.com-sms-activitytype-activityTypeSchemes .header,
+.com-sms-upm-featured .header,
+.com-sms-upm-featured .header,
+.com-sms-usersetting-usersetting .header,
+.com-sms-pwdpolicy-pwdpolicy .header,
+.com-sms-permissionset-permissionset .header,
+.com-sms-workflow-workflows .header,
+.com-sms-workflow-workflowSchemes .header,
+.com-sms-workflow-editWorkflowScheme .header,
+.com-sms-workflow-workflowDesign .header,
+.com-sms-secure-configactivitysecurityschemes .header,
+.com-sms-secure-notificationschemes .header,
+.com-sms-activityproperty-status .header,
+.com-sms-secure-activitysecurityschemes .header,
+.com-sms-secure-permissionschemes .header,
+.com-sms-secure-configpermissionschemes .header,
+.com-sms-activityproperty-resolutions .header,
+.com-sms-activityproperty-priorities .header,
+.com-sms-unitcategory-unitcategories .header,
+.com-sms-unit-unit .header,
+.com-sms-system-dictionary .header {
+    margin:0;
+    padding:0;
+}
+
+.com-sms-user-user .header .row [class^="col-md-"],
+.com-sms-upm-upm .header .row [class^="col-md-"],
+.com-sms-upm-featured .header .row [class^="col-md-"],
+ .com-sms-group-group .header .row [class^="col-md-"],
+ .com-sms-customfields-customFields .header .row [class^="col-md-"],
+ .com-sms-customfields-configureCustomField  .header .row [class^="col-md-"],
+ .com-sms-customfields-configureFieldLayout .row [class^="col-md-"],
+ .com-sms-customfields-configureFieldLayoutScheme .row [class^="col-md-"],
+ .com-sms-customfields-fieldLayouts .header .row [class^="col-md-"],
+ .com-sms-customfields-fieldLayoutSchemes .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-configScreen .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-screens .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-screenSchemes .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-activityTypeScreenSchemes .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-configureActivityTypeScreenScheme .header .row [class^="col-md-"],
+ .com-sms-fieldscreen-configureScreenScheme .header .row [class^="col-md-"],
+ .com-sms-activitytype-activityTypes .header .row [class^="col-md-"],
+ .com-sms-activitytype-activityTypeSchemes .header .row [class^="col-md-"],
+ .com-sms-plugin-organization-org .header .row [class^="col-md-"],
+ .com-sms-permissionset-permissionset .header .row [class^="col-md-"],
+.com-sms-ups-ups .header .row [class^="col-md-"],
+.com-sms-usersetting-usersetting .header .row [class^="col-md-"],
+.com-sms-pwdpolicy-pwdpolicy .header .row [class^="col-md-"],
+.com-sms-workflow-workflows .header .row [class^="col-md-"],
+.com-sms-workflow-workflowSchemes .header .row [class^="col-md-"],
+.com-sms-workflow-editWorkflowScheme .header .row [class^="col-md-"],
+.com-sms-workflow-workflowDesign .header .row [class^="col-md-"],
+.com-sms-secure-configactivitysecurityschemes .header .row [class^="col-md-"],
+.com-sms-secure-notificationschemes .header .row [class^="col-md-"],
+.com-sms-activityproperty-status .header .row [class^="col-md-"],
+.com-sms-secure-activitysecurityschemes .header .row [class^="col-md-"],
+.com-sms-secure-permissionschemes .header .row [class^="col-md-"],
+.com-sms-secure-configpermissionschemes .row [class^="col-md-"],
+.com-sms-activityproperty-resolutions .row [class^="col-md-"],
+.com-sms-activityproperty-priorities .row [class^="col-md-"],
+.com-sms-unitcategory-unitcategories .row [class^="col-md-"],
+.com-sms-unit-unit .row [class^="col-md-"],
+ .com-sms-system-dictionary .header .row [class^="col-md-"]{
+    padding:0 0px 0 15px !important;
+}
+
+
+
+.com-sms-user-user  h2,
+.com-sms-group-group  h2,
+.com-sms-plugin-organization-org h2,
+.com-sms-role-role h2,
+.com-sms-ups-ups h2,
+.com-sms-upm-upm h2,
+.com-sms-customfields-customFields h2,
+ .com-sms-customfields-configureCustomField h2,
+.com-sms-customfields-configureFieldLayout h2,
+.com-sms-customfields-configureFieldLayoutScheme h2,
+.com-sms-customfields-fieldLayouts h2,
+.com-sms-customfields-fieldLayoutSchemes h2,
+.com-sms-fieldscreen-configScreen h2,
+.com-sms-fieldscreen-screens h2,
+.com-sms-fieldscreen-screenSchemes h2,
+.com-sms-fieldscreen-activityTypeScreenSchemes h2,
+ .com-sms-fieldscreen-configureActivityTypeScreenScheme h2,
+ .com-sms-fieldscreen-configureScreenScheme h2,
+.com-sms-activitytype-activityTypes h2,
+.com-sms-activitytype-activityTypeSchemes h2,
+.com-sms-upm-featured h2,
+.com-sms-upm-featured h2,
+.com-sms-usersetting-usersetting  h2,
+.com-sms-pwdpolicy-pwdpolicy  h2 ,
+.com-sms-permissionset-permissionset  h2,
+.com-sms-workflow-workflows h2,
+.com-sms-workflow-workflowSchemes h2,
+ .com-sms-workflow-editWorkflowScheme h2,
+.com-sms-workflow-workflowDesign h2,
+.com-sms-secure-configactivitysecurityschemes  h2,
+.com-sms-secure-notificationschemes  h2,
+.com-sms-activityproperty-status h2,
+.com-sms-secure-activitysecurityschemes  h2,
+.com-sms-secure-permissionschemes h2,
+.com-sms-secure-configpermissionschemes h2,
+.com-sms-activityproperty-resolutions h2,
+.com-sms-activityproperty-priorities h2,
+.com-sms-unitcategory-unitcategories h2,
+.com-sms-unit-unit h2,
+.com-sms-system-dictionary h2{
+    margin:0;
+    padding:0;
+    font-size:20px;
+    font-weight:normal;
+    line-height:1.5;
+}
+.com-sms-user-user  h3,
+.com-sms-upm-upm  h3,
+.com-sms-upm-featured  h3,
+.com-sms-group-group  h3,
+.com-sms-customfields-customFields  h3,
+ .com-sms-customfields-configureCustomField h3,
+.com-sms-customfields-configureFieldLayout h3,
+.com-sms-customfields-configureFieldLayoutScheme h3,
+.com-sms-customfields-fieldLayouts h3,
+.com-sms-customfields-fieldLayoutSchemes h3,
+.com-sms-fieldscreen-configScreen h3,
+.com-sms-fieldscreen-screens h3,
+.com-sms-fieldscreen-screenSchemes h3,
+.com-sms-fieldscreen-activityTypeScreenSchemes h3,
+ .com-sms-fieldscreen-configureActivityTypeScreenScheme h3,
+ .com-sms-fieldscreen-configureScreenScheme h3,
+.com-sms-activitytype-activityTypes h3,
+.com-sms-activitytype-activityTypeSchemes  h3,
+.com-sms-plugin-organization-org h3,
+.com-sms-usersetting-usersetting  h3,
+.com-sms-pwdpolicy-pwdpolicy  h3,
+.com-sms-role-role  h3 ,
+.com-sms-globalpermission-globalpermission  h3,
+.com-sms-permissionset-permissionset  h3,
+.com-sms-workflow-workflows h3,
+.com-sms-workflow-workflowSchemes h3,
+ .com-sms-workflow-editWorkflowScheme h3,
+.com-sms-workflow-workflowDesign h3,
+.com-sms-secure-configactivitysecurityschemes  h3,
+.com-sms-secure-notificationschemes  h3,
+.com-sms-activityproperty-status h3,
+.com-sms-secure-activitysecurityschemes  h3,
+.com-sms-secure-permissionschemes h3,
+.com-sms-secure-configpermissionschemes h3,
+.com-sms-activityproperty-resolutions h3,
+.com-sms-activityproperty-priorities h3,
+.com-sms-unitcategory-unitcategories h3,
+.com-sms-unit-unit h3,
+.com-sms-system-dictionary h3 {
+    margin:0;
+    padding:0;
+    font-size:16px;
+    font-weight:bold;
+    line-height:1.5;
+}
+.com-sms-user-user .firstfilter,
+.com-sms-group-group .firstfilter,
+.com-sms-plugin-organization-org .firstfilter,
+.com-sms-permisionset-permissionset .firstfilter {
+    padding-left:0px !important;
+}
+.com-sms-user-user .lastfilter {
+    padding-right:0px !important;
+}
+.com-sms-user-user .filter, 
+.com-sms-group-group .filter,
+.com-sms-plugin-organization-org .filter,
+.com-sms-permissionset-permissionset .filter {
+ margin-top:20px;
+ margin-bottom:20px;
+}
+.com-sms-user-user .filter label, 
+.com-sms-group-group .filter label,
+.com-sms-plugin-organization-org .filter label,
+.com-sms-permissionset-permissionset .filter label,
+.com-sms-pwdpolicy-pwdpolicy .custompolicy label
+{
+    color:#707070;
+    font-weight:normal;
+}
+
+*/
+

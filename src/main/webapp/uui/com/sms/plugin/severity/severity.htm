@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="uui-module">
+	<!-- 添加严重等级组件 -->
+	<div qid="severityDialog">
+		<form class="form-horizontal" role="form" >
+			<div class="form-group">
+				<label for="name" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.name %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="name" >
+	    		</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="comment" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.comment %></label>
+				<div class="col-sm-10">
+	      		<textarea id="comment" style="width:377px;height:140px;resize: none"></textarea> 
+	    		</div>
+			</div>
+		</form>
+	</div>
+	<!-- 编辑严重等级组件 -->
+	<div qid="editseverityDialog">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="edit-name" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.name %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="edit-name" >
+	    		</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="edit-comment" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.comment %></label>
+				<div class="col-sm-10">
+	      		<textarea id="edit-comment" style="width:377px;height:140px;resize: none"></textarea> 
+	    		</div>
+			</div>
+		</form>
+	</div>
+	<!-- 添加等级组件 -->
+	<div qid="gradeDialog">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="grade_name" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.name %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="grade_name" >
+	    		</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="score" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.score %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="score" >
+	    		</div>
+			</div>
+		</form>
+	</div>
+	<!-- 编辑等级组件 -->
+	 <div qid="editgradeDialog">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="edit_grade_name" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.name %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="edit_grade_name" >
+	    		</div>
+			</div>
+			<div class="form-group">
+				<label for="edit_score" class="col-sm-2 control-label"><%=com.sms.plugin.severity.severity.i18n.score %></label>
+				<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="edit_score" >
+	    		</div>
+			</div>
+		</form>
+	</div> 
+	<!-- 过滤 -->
+	<h2 class="uui-module-h2"><%=com.sms.plugin.severity.severity.i18n.severity %></h2>
+	<button class="btn btn-default btn-sm add" qid="add-severity" style="float:right"><span class="glyphicon glyphicon-plus"></span> <%=com.sms.plugin.severity.severity.i18n.addSeverity %></button>
+	<div class="form uui-module-filter" qid="filter">
+	<div class="form-group col-md-3 col-xs-3">
+         <label for="filtername"><%=com.sms.plugin.severity.severity.i18n.nameHas %></label>
+         <input type="text" class="form-control input-sm" qid="filtername" maxlength="255" />
+     </div>
+	<div class="form-group col-md-3 col-xs-3">
+         <label for="filtercomment"><%=com.sms.plugin.severity.severity.i18n.commentHas %></label>
+         <input type="text" class="form-control input-sm" qid="filtercomment" maxlength="255" />
+     </div>
+     <button class="btn btn-default btn-sm " qid="butFilter" id="butFilter" style="margin-top: 25px"><%=com.sms.plugin.severity.severity.i18n.filter %></button>
+     <button class="btn btn-link " qid="delFilter" id="delFilter" style="margin-top: 25px"><%=com.sms.plugin.severity.severity.i18n.delFilter %></button>
+     </div>
+	<table qid="severity-table" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
+	</div>
+</body>
+</html>
+		

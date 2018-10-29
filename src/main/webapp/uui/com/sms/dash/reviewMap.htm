@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div style="margin:10px;">
+	<div class="row" style="padding:10px;">
+		<label class="col-xs-1 col-sm-1" style="text-align:right;padding-top: 7px;">年份</label>
+		<div class="col-xs-2 col-sm-2">
+			<select class="form-control" qid="year">
+				<option value="0">请选择</option>
+			</select>
+		</div>
+		<label class="col-xs-1 col-sm-1" style="text-align:right;padding-top: 7px;">季度</label>
+		<div class="col-xs-2 col-sm-2">
+			<select class="form-control" qid="season">
+				<option value="0">请选择</option>
+				<option value="1">第一季度</option>
+				<option value="2">第二季度</option>
+				<option value="3">第三季度</option>
+				<option value="4">第四季度</option>
+			</select>
+		</div>
+		<div class="col-xs-4 col-sm-4">
+			<button type="button" class="btn btn-default" qid="search">搜索</button>
+		</div>
+	</div>
+	<div id="mainMap" style="height:600px;"></div>
+</div>
+</body>
+</html>

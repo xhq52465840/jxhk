@@ -1,0 +1,52 @@
+.com-sms-dashfilter-filter .criteria-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: static;
+}
+.com-sms-dashfilter-filter .criteria-list > li {
+    position: relative;
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.com-sms-dashfilter-filter .criteria-selector > .criteria-wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+}
+.com-sms-dashfilter-filter .search-criteria-extended .criteria-selector {
+    padding-right: 25px;
+}
+.com-sms-dashfilter-filter .search-criteria-extended .remove-filter {
+    right: 3px;
+    top: 6px;
+    position: absolute;
+}
+.com-sms-dashfilter-filter .search-criteria-extended .criteria-close,.com-sms-dashfilter-filter  .search-criteria-other .criteria-close{
+	color: #bbb;
+}
+.com-sms-dashfilter-filter .search-criteria-extended .criteria-close:hover,.com-sms-dashfilter-filter .search-criteria-other .criteria-close:hover{
+	color: #000;
+}
+.com-sms-dashfilter-filter .listtablerefersh {
+    padding-top: 1em;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.com-sms-dashfilter-filter .form-control-feedback{
+	top: 0px;
+}
+.com-sms-dashfilter-filter .form-group.startdategroup,.com-sms-dashfilter-filter .form-group.enddategroup{
+	display: inline-block;
+}
+.com-sms-dashfilter-filter .nav-tabs>li.active>a, .com-sms-dashfilter-filter .nav-tabs>li.active>a:hover, .com-sms-dashfilter-filter .nav-tabs>li.active>a:focus{
+	background: url(../../../img/sms/title.jpg) repeat-x;
+	color : white;
+}
+.com-sms-dashfilter-filter .li-width {
+	width: 33.3%; 
+	height: 36px;
+}

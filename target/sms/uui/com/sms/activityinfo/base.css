@@ -1,0 +1,107 @@
+.com-sms-activityinfo-base .help-block{margin-bottom:0;}
+.com-sms-activityinfo-base .base-area{
+	
+	padding:0px;
+}
+.com-sms-activityinfo-base .form-group > div:last-child{
+	padding-left:0;
+}
+.com-sms-activityinfo-base .form-group label{
+	font-weight:normal;
+	color:#707070;
+}
+.com-sms-activityinfo-base .select2-container .select2-choice{
+	height:30px;
+	line-height:30px;
+}
+.com-sms-activityinfo-base  button{
+	font-size:14px;
+}
+
+
+/***********************
+****配置自定义字段*******
+************************/
+
+.com-sms-activityinfo-base .qf-picker{
+	margin:0;
+}
+.com-sms-activityinfo-base .qf-picker h4{
+	margin: 6px 0 3px 0;
+	font-size: 13px;
+	font-weight: normal;
+	background: url("../../../img/mod_header_bg.png") 0 8px repeat-x;
+	color: #666;
+	line-height:1.42857142857143;
+}
+.com-sms-activityinfo-base .qf-picker h4 span{
+	background: #fff;
+	display: inline-block;
+	padding-right: 5px;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-unconfigurable{
+	opacity: 0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+.com-sms-activityinfo-base .qf-picker-buttons{
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 5px;
+	overflow: hidden;
+	-moz-column-width: 150px;
+	-webkit-column-width: 150px;
+}
+.com-sms-activityinfo-base .qf-picker-buttons li{
+	margin-bottom:10px;
+}
+.com-sms-activityinfo-base .qf-picker-button.qf-active{
+	background-position: 0 -48px;
+}
+.com-sms-activityinfo-base .qf-picker-button
+{
+	width: 150px;
+	display: block;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url("../../../img/icon-checkbox.png") 0 2px no-repeat;
+	padding-left: 20px;
+	color: #333!important;
+	font-weight:normal;
+}
+
+.com-sms-activityinfo-base .qf-picker .qf-picker-header{
+	border-bottom:1px solid #ddd;
+	padding:10px;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-header dl{
+	margin:0px;
+	font-weight:normal;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-header dl a{
+	color:#3b73af;
+}
+.com-sms-activityinfo-base .qf-picker .whereismycf-qfpicker-link{
+	float:right;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-header dt{
+	display:inline-block;
+	font-weight:bold;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-header dt+dd{
+	border-left:none;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-header dd{
+	display: inline-block;
+	padding: 0 5px;
+	border-left: 1px solid #ddd;
+	font-weight:normal;
+}
+.com-sms-activityinfo-base .qf-picker .qf-picker-content{
+	overflow: auto;
+	padding: 10px 15px;
+	max-height:397px;
+}
+
+

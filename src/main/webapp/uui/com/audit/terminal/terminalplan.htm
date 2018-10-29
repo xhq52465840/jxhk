@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="container-fluid">
+		  <div class="page-header" style="padding-bottom: 0px; font-size:26px;/* height:50px; */">
+	    	 <div class="uui-managepage-header">
+	    	 	<div class="container-fluid no-left-right-padding row ">
+			    	 	<div class="col-md-9">
+			    	 		<!-- <i class="fa fa-shield shortcut-icon icon-list-alt" style="margin-right:10px;"></i>  -->
+				    		<span class="uui-managepage-title terminal-title">公司外站审计计划</span>
+				    		<button type="button" id="addPlan" class="btn btn-primary " style="margin-left:30px;background-color: #337ab7;">新增</button>
+				    		<br/>
+			    	 	</div >
+			    	 	
+			    		<div class=" text-right col-md-3" name="btn-group">
+							
+						</div> 
+			    	 </div>
+	    	 </div>
+	    </div>
+	    <!--页面主内容区域 begin-->
+	    <div class="page-content">
+		</div>
+				<div class="panel  panel-default " >
+					<div class="panel-heading">
+						<div class="row" style="margin-top: -14px;">
+							<div class="col-md-4 col-sm-4">
+								<div class="row">
+									<div class="col-md-6 col-sm-6" style="">
+										<select class="form-control first_year">
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+							<div class="text-right"  style="font-size: 16px">
+									 <ul class="test_ul">
+								     <!--   <li><img src="../img/r7.png">延期</li> -->
+								       <li><img src="../img/r6.png">完成</li>
+								     <!--   <li><img src="../img/r4.png">整改</li> -->
+								       <li><img src="../img/r3.png">审计</li>
+								       <li><img src="../img/r2.png">计划</li>
+								       <li><img src="../img/r1.png">未发布</li>
+								       <li style="margin-left:0px;">图例 :</li>
+								     </ul>
+							</div>
+							</div>
+			          </div>
+                   </div>
+					<div class="panel-body">
+						 <table qid="viewtable"
+						class="results table table-striped table-bordered" cellspacing="0"
+						width="100%" style="margin-bottom: 0;margin-top: 0px !important;">
+						</table>
+						<div class="form-group  loading-group hidden">
+	               		      <div class="col-sm-2">  </div>
+	               		      <div class="col-sm-10 "> 
+		               		        <div class=" ">
+		               		         <div  class="loading img-circle" ></div>
+        							  <div class="" style="padding-left:20%;"><h4>努力加载中...</h4> </div>
+									</div>  
+							 </div>
+	               			 </div> 
+					</div>
+				</div>
+
+		<ul class="dropdown-menu right_Menu " qid="model_plan" style="display:none" >
+		 
+			<li class='gongzuodan'><a class='gongzuodan_time' href="javascript:;" >工作单</a>
+			</li>
+			
+			<li class='target'><a class='target_time' href="javascript:;" >分配单位</a></li>
+		<!-- 	<li class='jianchadan'><a class='jianchadan_time' href="" name="">检查单</a></li>
+			<li class='shenjibaogao'><a class='shenjibaogao_time' href="" name="">审计报告</a></li>
+			<li class='zhenggaidan'><a class='zhenggaidan_time' href="" name="">整改单</a></li> -->
+		<li class='update'><a class='update_time' href="javascript:;" name="" >修改时间</a></li>
+		<li class='delete'><a class='delete_time' >删除</a></li>	
+  		</ul>
+  		<!-- 改变旗子月份的模态框开始 -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal"
+   			data-target="#qiziModal" style="display:none">
+		</button>
+	<div class="timeModal modal fade" id="qiziModal" tabindex="-1" role="dialog" 
+	aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false" >
+   	<div class="modal-dialog">
+      <div class="modal-content" style="width: 769px;">
+         <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel1">
+              	请选择你要修改的月份
+            </h4>
+         </div>
+         <div class="modal-body">
+         	   <div class="currentyear" name=""></div>
+         	   <div class="months text-center">
+    				<span><input type="radio" name="month" value="01">1月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="02">2月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="03">3月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="04">4月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="05">5月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="06">6月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="07">7月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="08">8月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="09">9月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="10">10月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="11">11月</span>&nbsp;&nbsp;
+    				<span><input type="radio" name="month" value="12">12月</span>
+   			   </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary" qid="timeok">
+            		   提交更改
+            </button>
+         </div>
+      </div>
+</div>
+</div>
+
+	<!-- 改变旗子月份的模态框结束 -->
+</body>
+ <body>	
+<div class="qiziModal modal fade" id="qiziModal" role="dialog"
+   		aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+   	<div class="modal-dialog">
+      <div class="modal-content" style="width: 769px;">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button>
+            <h4 class="modal-title" id="myModalLabel1">任务分配 </h4>
+         </div>
+         <div class="modal-body" style="height: 79px;">
+         	   <div class="modalunit text-center" >
+         	     <label  class="col-sm-3 control-label text-right" style="color:#707070;font-weight:normal;">分配单位 :</label>
+                  <div class="col-sm-8">
+                     	 <input type="text" class="form-control" name="unit" placeholder="" maxlength="50">
+                  </div>
+         	   </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default"data-dismiss="modal">关闭 </button>
+            <button type="button" class="btn btn-primary" qid="unitok"> 确定</button>
+         </div>
+      </div>
+      </div>
+</div>  
+<div qid="logsContainer"></div>
+<div umid="addPlan" role="dialog"></div>
+<!-- 			 	<div> -->
+<!-- 				<table class="table"> -->
+<!-- 				<caption>caption...</caption> -->
+<!-- 				<thead><tr><th>ththth...</th><th>th2th2th2...</th></tr></thead> -->
+<!-- 				<tbody><tr><td>tdtdt..</td><td>td3td3td4..</td></tr></tbody> -->
+<!-- 				<tfoot><tr><td>tftf..</td><td>ttftftftf44..</td></tr></tfoot> -->
+<!-- 				</tbody></table>  -->
+<!-- 				 </div>  -->
+</div>
+</body>
+
+</html>

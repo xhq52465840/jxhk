@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+	.li-col-3 {
+		width: 50%;
+		height:36px;
+	}
+	
+	.div-height {
+		height: 420px;
+	}
+	.rightMenu{
+		display:none;
+		position: absolute;
+		border: 0px solid rgb(51, 51, 51);
+		background-color: rgba(0, 0, 0, 0.701961);
+		padding:15px;
+		color:white;
+		border-radius:5px;
+		z-index: 9999;
+		min-width: 150px;
+	}
+	.hkaqxx,.baqsj{
+		cursor : pointer;
+	}
+</style>
+</head>
+<body style="overflow-x: hidden;">
+<div>
+	<div>
+		<div id="rightMenuContent" class="rightMenu">
+		</div>
+		<div >
+			<div>
+				<ul  class="nav nav-tabs dashboard-tem-tabs">
+					<li class="active" style="width:50%;"><a href="#tabs-1" data-toggle="tab" >不安全事件--系统</a></li>
+					<li style="width:50%;"><a href="#tabs-2" data-toggle="tab" >不安全事件--严重程度</a></li>
+				</ul>
+				<div class="tab-content" style="background-color:#eee;">
+					<!-- TAB1 START -->
+					<div id="tabs-1" class="tab-pane active">
+						<div class="row" style="margin: 0;">
+							<div umid="sr0"></div>
+							<div class="col-md-12" style="margin-bottom: 5px;">
+								<div id="main11" class="div-height">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END -->
+					<!-- TAB2 START -->
+					<div id="tabs-2" class="tab-pane">
+						<div class="row" style="margin: 0;">
+							<div umid="sr1"></div>
+							<div class="col-md-12" style="margin-bottom: 5px;">
+								<div id="main21" class="div-height">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END -->
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+</body>
+</html>

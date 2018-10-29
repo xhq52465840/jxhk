@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图书馆</title>
+    <style type="text/css">
+        .com-sms-dash-slibrary .table-fixed td{
+            width:100%;
+            word-break:keep-all;/* 不换行 */
+            white-space:nowrap;/* 不换行 */
+            overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+            text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+        }
+    </style>
+</head>
+<body style="background-color:#fff !important;overflow: hidden; ">
+   <div umid="slibrary" umodule="com.sms.dash.slibrary">看板准备中...</div>
+   <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+   <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+   <script type="text/javascript" src="../boot.js"></script>
+   <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script> 
+   <script type="text/javascript">
+       $(function () {
+            var scrrenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth
+           $('body').css({
+                width: scrrenWidth,
+                minWidth: scrrenWidth
+            });
+           var params = $.urlParam(null);
+           if (!params.mode || params.mode.indexOf("config") > -1) {
+               $.um($("div[umid='slibrary']"), "config", params.gadgetsinstance);
+           }
+           else {
+               $.um($("div[umid='slibrary']"), "display", params.gadgetsinstance);
+           }
+       });
+   </script>
+</body>
+</html>

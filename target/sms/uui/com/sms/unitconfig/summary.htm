@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+</head>
+<body>
+    <div>
+    	
+    	<div class="uui-panel-graph container-fluid">
+    		<div qid="unit-description" class="unit-config-description"></div>
+    		<div class="row">
+    			<div class="col-sm-6 col-xm-6 " style="padding-right: 0px;">
+	    			<div class="uui-panel-rect">
+	    				<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.title %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-activitytypes">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explain %></div>
+	    							<p class="unit-config-summary-scheme">
+	    								<strong><%=com.sms.unitconfig.summary.i18n.scheme %></strong>
+	    								<a href="#" qid="unit-activitytype-scheme-name"></a>
+	    							</p>
+	    							<ul class="unit-config-list" qid="unit-activitytype-scheme">
+	    							</ul>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    				
+    				<div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.surface %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-screens">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainB %></div>
+	    							<p class="unit-config-summary-scheme">
+	    								<strong><%=com.sms.unitconfig.summary.i18n.scheme %></strong>
+	    								<a href="#" qid="unit-activitytype-screen-scheme-name"></a>
+	    							</p>
+	    							<ul class="unit-config-list" qid="unit-activitytype-screen-scheme">
+	    							</ul>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    				<div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.field %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-fields">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainC %></div>
+	    							<p class="unit-config-summary-scheme">
+	    								<strong><%=com.sms.unitconfig.summary.i18n.scheme %></strong>
+	    								<a href="#" qid="unit-activitytype-field-config-scheme-name"><%=com.sms.unitconfig.summary.i18n.sysDefault %></a>
+	    							</p>
+	    							<ul class="unit-config-list" qid="unit-activitytype-field-config-scheme">
+	    							</ul>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-sm-6 col-xm-6 " style="padding-left: 10px;">
+    				<div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.workFlow %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-workflow">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainA %></div>
+	    							<p class="unit-config-summary-scheme">
+	    								<strong><%=com.sms.unitconfig.summary.i18n.scheme %></strong>
+	    								<a href="#" qid="unit-workflow-scheme-name"></a>
+	    							</p>
+	    							<ul class="unit-config-list" qid="unit-workflow-scheme">
+	    							</ul>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    				<div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.agencyRole %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-people">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainD %></div>
+	    							<dl class="dl-horizontal text-right">
+	    								<dt><%=com.sms.unitconfig.summary.i18n.agencyManager %></dt>
+	    								<dd><a href="../ViewProfile.html" qid="unit-responsibleuser" ><%=com.sms.unitconfig.summary.i18n.no%></a></dd>
+	    								<dt><%=com.sms.unitconfig.summary.i18n.role %></dt>
+	    								<dd><a href="Roles.html" qid="unit-roles" ><%=com.sms.unitconfig.summary.i18n.lookRole %></a></dd>
+	    							</dl>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    				<div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.grant %></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-permissions">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainE %></div>
+	    							<dl class="dl-horizontal text-right">
+	    								<dt><%=com.sms.unitconfig.summary.i18n.scheme%></dt>
+	    								<dd><a href="#" qid="unit-permission-scheme-name">&nbsp;</a></dd>
+	    								<!-- <dt><%=com.sms.unitconfig.summary.i18n.safeMsg%></dt>
+	    								<dd><a href="#" ><%=com.sms.unitconfig.summary.i18n.no%></a></dd> -->
+	    							</dl>
+	    						</div>
+	    					</div>
+	    				</div>
+    				</div>
+    				<!-- <div class="uui-panel-rect">
+    					<div class="module">
+	    					<div class="mod-header">
+	    						<h3><%=com.sms.unitconfig.summary.i18n.noticeSet%></h3>
+	    					</div>
+	    					<div class="mod-content">
+	    						<div class="unit-config-icon48-notifications">
+	    							<div class="unit-config-help"><%=com.sms.unitconfig.summary.i18n.explainF%></div>
+	    							<dl class="dl-horizontal text-right">
+	    								<dt><%=com.sms.unitconfig.summary.i18n.scheme%></dt>
+	    								<dd><a href="#" qid="unit-notification-scheme-name">&nbsp;</a></dd>
+	    								<dt><%=com.sms.unitconfig.summary.i18n.mail%></dt>
+	    								<dd><a href="#" >jiraadmin@usky.com.cn</a></dd>
+	    							</dl>
+	    						</div>
+	    						
+	    					</div>
+	    				</div>
+    				</div> -->
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>

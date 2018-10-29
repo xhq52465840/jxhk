@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<link rel="stylesheet" href="textView.css" type="text/css"></link>
+</head>
+<body>
+    <div>
+    	<div class="textview com-sms-workflow-textview" >
+	    	<div class="textview-container">
+	    		<table class="table" qid="table">
+	    			<thead>
+	    				<tr>
+	    					<th style="width:20%;"><%=com.sms.workflow.textView.i18n.from %></th>
+	    					<th style="width:55%;"><%=com.sms.workflow.textView.i18n.workflowAction %></th>
+	    					<th></th>
+	    					<th style="width:20%;"><%=com.sms.workflow.textView.i18n.to %></th>
+	    				</tr>
+	    			</thead>
+	    			<tbody qid="tbody">
+	    				<tr>
+	    					<td rowspan="2"><span class="label label-default">TO DO</span></td>
+	    					<td>Start Progress<br/><%=com.sms.workflow.textView.i18n.configPanel %></td>
+	    					<th><span class="glyphicon glyphicon-arrow-right"></span></th>
+	    					<td><span class="label label-default"><%=com.sms.workflow.textView.i18n.underway %></span></td>
+	    				</tr>
+	    				<tr>
+	    					<td>Done<br/><%=com.sms.workflow.textView.i18n.configPanel %></td>
+	    					<th><span class="glyphicon glyphicon-arrow-right"></span></th>
+	    					<td><span class="label label-default">Done</span></td>
+	    				</tr>
+	    				<tr>
+	    					<td rowspan="2"><span class="label label-default"><%=com.sms.workflow.textView.i18n.underway %></span></td>
+	    					<td>Stop Progress<br/><%=com.sms.workflow.textView.i18n.configPanel %></td>
+	    					<th><span class="glyphicon glyphicon-arrow-right"></span></th>
+	    					<td><span class="label label-default">TO DO</span></td>
+	    				</tr>
+	    				<tr>
+	    					<td>Done<br/><%=com.sms.workflow.textView.i18n.configPanel %></td>
+	    					<th><span class="glyphicon glyphicon-arrow-right"></span></th>
+	    					<td><span class="label label-default">Done</span></td>
+	    				</tr>
+	    			</tbody>
+	    		</table>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>

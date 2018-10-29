@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="smtpDao" class="com.usky.sms.email.SmtpDao" />
+	<bean id="emailDao" class="com.usky.sms.email.EmailDao" />
+	<bean id="smtp" class="com.usky.sms.email.SmtpService" />
+	<bean id="email" class="com.usky.sms.email.EmailService" />
+
+</beans>

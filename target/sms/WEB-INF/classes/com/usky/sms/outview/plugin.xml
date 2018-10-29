@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="colorDao" class="com.usky.sms.outview.ColorDao" />
+	<bean id="logoDao" class="com.usky.sms.outview.LogoDao" />
+	<bean id="timeFormatDao" class="com.usky.sms.outview.TimeFormatDao" />
+	<bean id="toolColorDao" class="com.usky.sms.outview.ToolColorDao" />
+	<bean id="siteFlagDao" class="com.usky.sms.outview.SiteFlagDao" />
+	<bean id="logo" class="com.usky.sms.outview.LogoService" />
+	<bean id="color" class="com.usky.sms.outview.ColorService" />
+	<bean id="toolColor" class="com.usky.sms.outview.ToolColorService" />
+	
+</beans>

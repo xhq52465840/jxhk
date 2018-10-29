@@ -1,0 +1,1 @@
+﻿$.extend($.u.config.i18n,{version:"0.1版本"});

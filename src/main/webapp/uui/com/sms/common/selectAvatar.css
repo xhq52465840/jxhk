@@ -1,0 +1,59 @@
+.com-sms-selectAvatar{
+	padding:0 !important;
+}
+.com-sms-selectAvatar .upload{
+	padding:20px;
+	border-bottom:1px solid #ddd;
+}
+.com-sms-selectAvatar .uploadify{
+	height:20px !important;
+}
+.com-sms-selectAvatar .list{
+	padding:20px;
+}
+.com-sms-selectAvatar .list-inline >li{
+	padding:0;
+}
+
+.com-sms-selectAvatar .avatars img{
+	margin:3px;
+	padding:3px;
+	border:2px solid transparent;
+	vertical-align:middle;
+}
+.com-sms-selectAvatar .avatars .avatar{
+	cursor:pointer;
+	position:relative;
+}
+.com-sms-selectAvatar .avatars .avatar:hover img{
+	-moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	border-color: #000;
+}
+.com-sms-selectAvatar .avatars .avatar:hover .delete-avatar{
+	display:block;
+}
+.com-sms-selectAvatar .avatars .selected-avatar img{
+	border-color:#3C78B5;
+}
+.com-sms-selectAvatar .avatars .selected-avatar:hover img{
+	border-color:#3C78B5;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.com-sms-selectAvatar .avatars .selected-avatar .delete-avatar{
+	top: -4px;
+	right: -3px;
+}
+.com-sms-selectAvatar .avatars .delete-avatar{
+	display: none;
+	position: absolute;
+	/*height: 16px;
+	width: 16px;
+	background: url("/s/zh_CN-jn3qyw-1988229788/6262/23/1.0/_/download/resources/jira.webresources:avatar-picker/../../../images/icn-remove.png") 0 0 no-repeat;*/
+	top: -2px;
+	right: -1px;
+	
+}

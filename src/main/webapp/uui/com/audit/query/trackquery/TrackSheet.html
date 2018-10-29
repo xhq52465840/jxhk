@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>跟踪表查询</title>
+    <script type="text/javascript" src="../../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../../uui/uui-loader.js"></script>
+     <script type="text/javascript" src="../../../sms/boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.um($("div[umid='application-header']"));
+       		 $.um($("div[umid='vertical-menus']"),{menuId:1020,selected:"跟踪表"});
+       		 $.um($("div[umid='track']")); 
+     	     $.um($("div[umid='foot']"));
+        });
+    </script>
+</head>
+<body>
+    
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content" style="background:transparent;margin-left: 10px;">
+    	<div class="page-content-inner">
+	    	<div class="col-lg-2 col-md-2" umid="vertical-menus" umodule="com.sms.verticalMenus"  style="margin-top:10px;" >
+	    	</div>
+    		  <div class="col-lg-10 col-md-10 page-content-main" style="padding:0;">
+    			<div umid="track" umodule="com.audit.query.trackquery.track"></div>
+    		</div>  
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

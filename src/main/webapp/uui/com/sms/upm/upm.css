@@ -1,0 +1,55 @@
+
+.com-sms-upm-upm{
+	max-width:1020px;
+	min-height:600px;
+	min-width:715px;
+	color:#000;
+}
+.com-sms-upm-upm .upm-plugin-group{
+	margin-top:15px;
+}
+.com-sms-upm-upm .upm-plugin-group .list-group-item{
+	padding:0 !Important;
+}
+.com-sms-upm-upm .upm-plugin-header{
+	padding:0;
+	height:50px;
+	line-height:50px;
+	cursor:pointer;
+}
+.com-sms-upm-upm .upm-plugin-header:hover{
+	background:#f0f0f0;
+}
+.com-sms-upm-upm .upm-plugin-header.active{
+	background:#ebf1fc;
+}
+.com-sms-upm-upm .upm-plugin-header span{
+	padding-right:5px;
+}
+.com-sms-upm-upm .upm-plugin-body{
+	padding:20px;
+}
+.com-sms-upm-upm .upm-plugin-actions{
+	padding:0 10px 10px 0;
+	margin-top:16px;
+}
+.com-sms-upm-upm .upm-plugin-actions button{
+	margin-right:10px;
+}
+.com-sms-upm-upm .upm-plugin-description{
+ 	margin:1.5em 0 1em 0;
+}
+.com-sms-upm-upm .upm-plugin-info{
+	margin-top:1em;
+	background-color:#f8f8f8;
+}
+.com-sms-upm-upm .upm-plugin-info > div{
+	padding:15px 25px;
+}
+.com-sms-upm-upm .upm-plugin-info > div.main-column{
+	border-left:2px solid #ddd;
+	border-right:2px solid #ddd;
+}
+.com-sms-upm-upm .upm-plugin-info dl.dl-horizontal{}
+.com-sms-upm-upm .upm-plugin-info dl.dl-horizontal dt{width:auto;color:#555;font-weight:normal;padding-top:5.6px;}
+.com-sms-upm-upm .upm-plugin-info dl.dl-horizontal dd{margin-left:0;padding-top:5.6px;}

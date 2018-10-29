@@ -1,0 +1,57 @@
+
+.com-sms-unitconfig-fieldscreen span.handler{
+	margin-right:1em;
+	cursor:move;
+}
+.com-sms-unitconfig-fieldscreen span.operate{
+	margin-left:5px;
+	cursor:pointer;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs >div{
+	margin-top:0px;
+	padding:0px;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs >ul{
+	border-bottom-width:2px;
+	padding-left:2em;
+	margin-bottom:0px;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs .ui-tabs-anchor{
+	padding:4px 15px 3px 10px;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs .ui-tabs-nav li{
+	margin-right:0px;
+	background-color:#f5f5f5;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs .ui-tabs-nav a.ui-tabs-anchor{
+	border:1px solid #ddd;
+	border-left:none;
+	border-radius:0px;
+	color:#333;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs .ui-tabs-nav li:first-child a.ui-tabs-anchor{
+	border-top-left-radius:4px;
+	border-left:1px solid #ddd;
+}
+.com-sms-unitconfig-fieldscreen .field-tabs .ui-tabs-nav li:last-child a.ui-tabs-anchor{
+	border-right:1px solid #ddd;
+	border-top-right-radius:4px;
+}
+.com-sms-unitconfig-fieldscreen .list-fields li:first-child{
+	border-top:none;
+}
+.com-sms-unitconfig-fieldscreen .list-fields li:first-child,
+.com-sms-unitconfig-fieldscreen .list-fields li:last-child{
+	border-radius:0;
+}
+.com-sms-unitconfig-fieldscreen .list-fields li{
+	border-left:none;
+	border-right:none;
+}
+.com-sms-unitconfig-fieldscreen .list-fields li:hover{
+	background-color:#f5f5f5;
+}
+.com-sms-unitconfig-fieldscreen .list-fields li button.remove-field{
+	margin-top:-5px;
+	margin-right:30px;
+}

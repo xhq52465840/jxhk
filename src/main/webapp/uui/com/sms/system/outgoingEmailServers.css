@@ -1,0 +1,8 @@
+/*.com-sms-system-outgoingEmailServer h1,h2,h3,h4,h5,h6{margin:0;padding:0;}*/
+.com-sms-system-outgoingEmailServer table{
+	margin-top:10px;
+}
+.com-sms-system-outgoingEmailServer table  tbody tr td{
+	vertical-align:top;
+}
+.com-sms-system-outgoingEmailServer table  tbody .dl-horizontal dt{font-weight:normal}

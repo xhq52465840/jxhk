@@ -1,0 +1,54 @@
+.td_border td{
+	height:25px;
+	border:1px;
+}
+.td_border td:not(:first-child){
+	background-image: url("../img/aa.png");
+	background-position:center;
+	background-repeat: repeat-x;
+}
+.td_border img{
+	margin-bottom:1px;
+}
+.td_border td{
+	border-top:1px solid #ddd !important;
+}
+.table th {
+	border : 1px solid #6E8792;
+}
+.table td {
+	border : 1px solid #6E8792;
+}
+ul{
+	list-style:none;
+}
+.test_ul li{
+	float:right;
+	margin-left:10px;
+}
+.edit{
+	cursor : pointer;
+	width : 60px;
+}
+.div-error{
+	border-color: red;
+}
+.th_width{
+	width: 15%;	
+}
+.th_fix{
+	width : 100%;
+	position : fixed;
+	top : 0px;
+	margin-right: 10px;
+}
+.span_cursor{
+	cursor : pointer;
+	margin-left: 10px;
+}
+tr th{
+	text-align: center;
+}
+tr td{
+	text-align: center;
+}

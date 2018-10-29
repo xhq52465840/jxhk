@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="../../main.css" type="text/css"></link>
+    <link rel="stylesheet" href="../../css/applicationHeader.css" type="text/css"></link>
+    <style type="text/css">
+    	.com-sms-applicationHeader .navbar-toolbar-a{
+    		color: #fff;
+    	}
+    </style>
+</head>
+<body>
+<div>
+	<div umid="activityDialog" ></div>
+	<div umid="unitDialog"></div>
+	<div umid="noDialog"></div>
+	<div umid="imptDialog"></div>
+    <div class="uui-container">
+    <!-- 1、上 -->
+    	<div style='height:104px; background-color: #780735;'>
+    		<div style='float:left;width:43%;'>
+    			<div style='margin-top:50px;margin-left:22px;'>
+	                <!-- logo begin -->
+	                <a href="../../com/sms/dash/DashBoard.html">
+	                	<img src="../../img/logo/logo_sms.png" style="padding-right:10px;float:left;margin-top:-25px;" />
+	                </a>
+	               <!--  <a class="navbar-brand logo" qid="logo" href="#"></a> -->
+	                <!-- logo end -->
+    			</div>
+    		</div>    		
+    		<div style='float:right;' class="applicationheader-top-right">
+    			<div style='margin-top:10px;'class="bd">
+	                <ul class="nav navbar-nav navbar-right navbar-toolbar">
+						<li class="dropdown" qid="noticeLi">
+							<a class="navbar-toolbar-a" href="#"><span class='fa fa-volume-up fa-lg' style='margin-right:5px;'></span><%= com.sms.applicationHeader.i18n.tag.notice%><span class="notice" qid="noticenum">0</span></a>
+						</li>	                						
+						<li class="dropdown" title="<%= com.sms.applicationHeader.i18n.tag.staffReport%>">
+							<a class="btn btn-link navbar-toolbar-a" qid="btn_headerAnonymityReport"><%= com.sms.applicationHeader.i18n.tag.staffReport%></a>
+						</li>
+						<li class="dropdown" title="<%= com.sms.applicationHeader.i18n.tag.airReport%>">
+							<a class="btn btn-link navbar-toolbar-a" qid="btn_air_report"><%= com.sms.applicationHeader.i18n.tag.airReport%></a>
+						</li>
+						<!-- <li class="dropdown" title="<%= com.sms.applicationHeader.i18n.tag.library%>">
+							<a class= 'Threemenu' href="safelib/ViewLibrary.html"><%= com.sms.applicationHeader.i18n.tag.library%></a>
+						</li>
+						<li class="dropdown" id= 'tt' title="<%= com.sms.applicationHeader.i18n.tag.tem%>">
+							<a class='Fourmenu' href="tem/temModel.html"><%= com.sms.applicationHeader.i18n.tag.tem%></a></li> -->
+						<!-- 切换语言 begin -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle navbar-toolbar-a" data-toggle="dropdown" >
+                            <span><%=($.cookie('locale') === 'en' ? '简体中文' : 'English') %></span>
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu" qid="nav-language">
+                        	<li class="dropdown">
+                        		<a href="#" class="change-language" data-language="zh">简体中文</a>
+                        	</li>
+                        	<li class="dropdown">
+                        		<a href="#" class="change-language" data-language="en">English</a>
+                        	</li>
+                        </ul>
+                    </li>
+                    <!-- 切换语言 end -->	 
+	
+                    <!-- 个人中心菜单导航 begin -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle navbar-toolbar-a" data-toggle="dropdown" qid="dropdown-user">
+                            <!-- <img width="24" height="24" src="" qid="img-user" alt="" /> -->
+                            <i class="fa fa-user fa-lg"></i>
+                            <span qid="user_name" style="padding: 4px;"></span>
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu" qid="nav-user"></ul>
+                    </li>
+                    <!-- 个人中心菜单导航 end -->	
+
+                    <!-- 系统菜单导航 begin -->
+                    <li class="dropdown">
+                    	<a href="#" class="dropdown-toggle dropdown-toggle-icon navbar-toolbar-a"  data-toggle="dropdown" qid="dropdown-sys">
+                            <i class="fa fa-cog fa-lg"></i><b class="caret" ></b></a>
+                        <ul class="dropdown-menu" qid="nav-sys"></ul>
+                    </li>
+                    <!-- 系统菜单导航 end -->	
+
+                    <!-- 帮助菜单导航 begin -->
+                    <li class="dropdown">
+                    	<a href="#" class="dropdown-toggle dropdown-toggle-icon navbar-toolbar-a" data-toggle="dropdown" >
+                            <span class="glyphicon glyphicon-question-sign"  style='color: #bcbbbb;'></span><b class="caret"></b></a>
+                        <ul class="dropdown-menu" qid="nav-help">
+                            <!--  <li><a href="user/UserBrowser.html">在线帮助</a></li>
+                            <li><a href="upm/PluginManage.html">最新功能</a></li>
+                            <li><a href="upm/PluginManage.html">关于系统</a></li>-->
+                        </ul>
+                    </li>
+                    <!-- 帮助菜单导航 end -->	                    
+	                </ul>
+					<div style='clear:both;'></div>
+    			</div>
+    			<div class="text-right">
+	                <div class="btn-group">
+					  <button type="button" qid="button-create-activity" class="btn btn-primary dropdown-toggle" style="margin:0 0 0 20px;box-shadow:rgba(255,255,255,0.1) 0 1px 0 0 inset,rgba(0,0,0,0.2) 0 1px 1px 0;border:0;" data-toggle="dropdown">
+					   	<span class='fa fa-plus' style='margin-right:5px;'></span><%= com.sms.applicationHeader.i18n.tag.createButton %> 
+					  </button>
+					</div>					
+	                <!-- 快速检索 end -->
+		            <form class="navbar-form" role="search" style='display:inline-block;'>
+	                    <div class="form-group">
+	                        <input type="text" class="form-control quicksearch" qid="quicksearch" placeholder="<%= com.sms.applicationHeader.i18n.tag.quickSearch %>"/>
+	                        <span class='glyphicon glyphicon-search btn btn-primary' qid="btn_search" style='margin-left:-35px;margin-top:-3px;line-height: 22px;border-top-left-radius:0;border-bottom-left-radius:0;'></span>
+	                    </div>		                    
+		            </form>
+					<div style='clear:both;'></div>
+    			</div>   			
+    		</div>
+    		<div style='clear:both;'></div>    		
+    	</div>
+    	<div style="height:36px;background-color: #780735;border-top:1px solid rgba(255,255,255,0.3);">   
+	        <!-- 系统导航栏 begin -->
+	        <nav class="uui-box navbar navbar-default navbar-top" role="navigation">
+	            <div class="navbar-header">
+	            	<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"> </span>
+	                    <span class="icon-bar"></span>
+	                </button> 响应式设计小于指定宽度显示的菜单 -->
+	                
+	                <!-- 网站菜单导航 begin -->
+	                <ul class="nav navbar-nav" >
+	                    <li class="dropdown">
+	                        <a href="#" class="dropdown-toggle dropdown-toggle-icon" qid="button-navigation" data-toggle="dropdown" ><span class="fa fa-bars" ></span> </a>
+	                        <ul class="dropdown-menu" qid="nav-application">
+	                            <!-- <li><a href="#">看板</a></li>
+	                            <li><a href="#">管理看板</a></li> -->
+	                        </ul>
+	                    </li>
+	                </ul>
+	                <!-- 网站菜单导航 end -->
+	            </div>	
+	            <div class="collapse navbar-collapse hidden" qid="top-container">
+	                <!-- 业务菜单导航 begin -->
+	                <ul class="nav navbar-nav leftmenu" qid="nav-menu"></ul>
+	                <!-- 业务菜单导航 end -->	                
+	                <ul class="nav navbar-nav navbar-right" style='display:none;'>
+	                	<li class="dropdown" qid="dataImpt"><a href="#">数据导入</a></li>
+	                </ul>
+	                <!-- 快速检索 end -->	                
+	            </div>
+	        </nav>
+	        <!-- 系统导航栏 end -->
+	        <!-- 公告 -->
+	       <!--  <div style="padding: 8px;clear: both;border: 1px solid #A7C2A3;border-radius: 5px;margin: 10px 20px;" class="alert-success">
+	       	<div qid="bulletin" ></div>
+	       </div> -->
+	        <!-- 公告 end-->    	
+    	</div>
+    </div>
+</div>
+</body>
+</html>

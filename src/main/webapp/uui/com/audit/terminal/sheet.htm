@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div>
+<div class="uui-managepage">
+		<div qid="content" class="">
+	    <div umid="recordDiForm"></div>
+		<div umid="itemDialogEdit" ></div>
+		<div umid="itemDialogEditConfirm" ></div>
+			<div class="row" style="height: 43px;margin-bottom: 12px;">
+				<div class="col-md-8 flow_link" style=""></div>
+				<div class="col-md-4 text-right" qid="btn_area" style="margin-top:8px"></div>
+			</div>
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn glyphicon-title" style="margin: 0 5px;"></i><span>航站工作单基本信息</span></h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed">
+							<tbody>
+								<tr>
+									<td class="name" data-field="workName">工作单名称</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="workName" name="workName"/></td>
+									<td class="name" data-field="workNo">工作单编号</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="workNo" name="workNo"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >审计日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm" qid="startDate" name="startDate" maxlength="12"/></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm" qid="endDate" name="endDate" maxlength="12"/></div>
+										</div>
+									</td>
+									<td class="name" data-field="address">审计地点</td>
+									<td class="value"><input type="text" maxlength="512" class="form-control input-sm" qid="address" name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="teamLeader">审计组长</td>
+									<td class="value"><input type="text" maxlength="1024" class="form-control input-sm" qid="teamLeader" id="teamLeader" name="teamLeader"/></td>
+									<td class="name" data-field="member">审计组员</td>
+									<td class="value" colspan="1"><input type="text" class="form-control input-sm" qid="member" name="member"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="managers">项目主管</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm" qid="managers" name="managers"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="method">审计方式</td>
+									<td class="value" colspan="3"><input type="text" class="form-control input-sm" qid="method" name="method"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="remark">备注</td>
+									<td class="value" colspan="3">
+										<textarea class="form-control input-sm" maxlength="2000" rows="3" qid="remark" name="remark" style="resize:none"></textarea>
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+		<!-- 检查要点 begin -->
+		<div class="checkPoint"></div>
+		<!-- 检查要点 end -->
+		
+		<!-- 审计结论   begin -->
+		<div class="resultDiv"></div>
+		<!-- 审计结论        end -->
+		
+		<!-- 上传 div  begin -->
+		<div class="uploadDiv"></div>
+		<!-- 上传 end -->
+		
+		
+			</form>
+			
+		</div>
+		<div qid="logsContainer"></div>
+		
+		
+		<!-- 添加检查点 begin -->
+	<div qid="addDialog" class="hidden">
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="tree-container ztree" qid="left-div"></div>
+			</div>
+			<div class="col-sm-7">
+				<div class="row show-grid">
+					<div class="col-sm-4">审计要点：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="3" disabled name="point"></textarea></div>
+				</div>
+				<div class="row show-grid">
+					<div class="col-sm-4">审计依据：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="3" disabled name="according"></textarea></div>
+				</div>
+				<div class="row show-grid">
+					<div class="col-sm-4">审计提示：</div>
+					<div class="col-sm-8"><textarea class="form-control" rows="6" disabled name="prompt"></textarea></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 添加检查点 end -->
+		<!-- 增加临时审计要点 begin -->
+	<div qid="addPointDialog" class="hidden">
+		<form qid="pointForm">
+			<div class="row show-grid">
+				<div class="col-sm-4">审计要点：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="3" name="point"></textarea></div>
+			</div>
+			<div class="row show-grid">
+				<div class="col-sm-4">审计依据：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="3" name="according"></textarea></div>
+			</div>
+			<div class="row show-grid">
+				<div class="col-sm-4">审计提示：<span class="text-danger">*</span></div>
+				<div class="col-sm-8"><textarea class="form-control" rows="6" name="prompt"></textarea></div>
+			</div>
+		</form>
+	</div>
+	<!-- 增加临时审计要点 end -->
+	</div>
+</div>
+</body>
+</html>

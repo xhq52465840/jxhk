@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns": false,
+    "columns": [
+      {
+        "propid": "description",
+        "propname": "行动项",
+        "propvalue": null,
+        "propplugin": "com.audit.plugin.validate.queryTextProp"
+      }, {
+        "propid": "result",
+        "propname": "验证结论",
+        "propvalue": [],
+        "propplugin": "com.audit.plugin.validate.queryResultProp"
+      }
+    ],
+    "orders": {
+      "propid": "workName",
+      "propname": "工作单名称",
+      "order": "asc"
+    },
+    "uql": "",
+    "staticfilters": [{
+      "propid": "creatorOrganizationIds",
+      "propname": "创建人所属单位",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.audit.plugin.validate.queryTargetProp"
+    }, {
+      "propid": "actionOrganizationIds",
+      "propname": "责任部门",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.audit.plugin.validate.queryTargetProp"
+    }, {
+      "propid": "deadline",
+      "propname": "到期日",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.audit.plugin.validate.queryDateProp"
+    }],
+
+    "dynamicfilters": [
+
+    ]
+  }
+}

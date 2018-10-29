@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    	.show-grid{
+    		margin-bottom: 5px;
+    	}
+    	.cur-pt{
+    		cursor: pointer;
+    	}
+    	.red{
+    		color: red;
+    	}
+    	.edit{
+    		color : #428bca;
+    		cursor: pointer;
+    	}
+    	.fieldsetborder{
+    		border-radius:3px;
+    		border:2px solid #88C0B8;
+    		padding:10px;
+    	}
+    	.fieldsetborder legend.legendstyle{
+    		width:auto;
+    		font-size:14px;
+    		color:#707070;
+    		margin-bottom:5px;
+    		border-width:0px;
+    	}
+    	.row1{
+    		margin-bottom:15px;
+    	}
+    	.marginleft{
+    		margin-left:10px;
+    	}
+    	.input-col-5{
+    		width:30%;
+    		display:block;
+    		float:left;
+    		margin-top:2px;
+    	}
+    	.input-col-4{
+    		width:25%;
+    		display:block;
+    		float:left;
+    		margin-top:2px;
+    	}
+    	.select-col-3{
+    		width:20%;
+    		display:block;
+    		float:left;
+    		margin-top:2px;
+    	}
+    	.select-col-2{
+    		width:15%;
+    		display:block;
+    		float:left;
+    		margin-top:2px;
+    	}
+    	.select-col-1{
+    		width:10%;
+    		display:block;
+    		float:left;
+    		margin-top:2px;
+    	}
+    	.checkbox-col-2{
+    		width:20px;
+    		display:block;
+    		float:left;
+    	}
+    	div.word-col-0{
+    		border-width:0px;
+    		display:block;
+    		width:20px;
+    		float:left;
+    		height:38px;
+    		line-height:28px;
+    		text-align:center;
+    		padding-top:5px;
+    		padding-bottom:5px;
+    	}
+    	div.word-col-1{
+    		border-width:0px;
+    		display:block;
+    		width:20px;
+    		float:left;
+    		height:38px;
+    		line-height:28px;
+    		text-align:center;
+    		padding-top:5px;
+    		padding-bottom:5px;
+    	}
+    	div.word-col-2{
+    		border-width:0px;
+    		display:block;
+    		width:40px;
+    		float:left;
+    		height:38px;
+    		line-height:28px;
+    		text-align:center;
+    		padding-top:5px;
+    		padding-bottom:5px;
+    	}
+    	div.word-col-3{
+    		border-width:0px;
+    		display:block;
+    		width:60px;
+    		float:left;
+    		height:38px;
+    		line-height:28px;
+    		text-align:center;
+    		padding-top:5px;
+    		padding-bottom:5px;
+    	}
+    	div.word-col-4{
+    		border-width:0px;
+    		display:block;
+    		width:100px;
+    		float:left;
+    		height:38px;
+    		line-height:28px;
+    		text-align:center;
+    		padding-top:5px;
+    		padding-bottom:5px;
+    	}
+    	.leftlabel{
+    		margin-top:10px;
+    	}
+    	.leftlabeltextarea{
+    		margin-top:24px;
+    	}
+    	.textarea-col-10{
+    		width:100%;
+    		padding-left:10px;
+    		padding-right:10px;
+    	}
+    </style>
+</head>
+<body>
+    <div>
+    	<div qid="infoDialog" style="padding-left:20px;padding-right:20px;margin-top:20px">
+	    	<form qid="form">
+				<div class="form-group">
+					<div class="row row1">
+						<label class="col-sm-2 control-label">记录编号：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="rewardNo" name="rewardNo" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">处理类型：</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="rewardType" name="rewardType"></select>
+						</div>
+					</div>
+					<div class="row row1">
+						<label class="col-sm-2 control-label">人员类别：</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="personnelCategory" name="personnelCategory"></select>
+						</div>
+						<label class="col-sm-2 control-label">所属系统：</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="systemCategory" name="systemCategory"></select>
+						</div>
+					</div>
+					<div class="row row1">
+					<fieldset class="fieldsetborder">
+					<legend class="legendstyle">人员信息</legend>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">姓名：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="name" name="name" placeholder="飞行员姓名,选择" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">飞行单位：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="flightUnit" name="flightUnit" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">工号</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="jobNumber" name="jobNumber" readonly="readonly"/>
+						</div>
+						<label class="col-sm-2 control-label">身份证</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="idCard" name="idCard" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">聘用标准：</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="empStandard" name="empStandard" ></select>
+						</div>
+						<label class="col-sm-2 control-label">聘用时间：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="empDate" name="empDate" />
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">本机型飞行时间：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="localFlightTime" name="localFlightTime" />
+						</div>
+						<label class="col-sm-2 control-label">总飞行时间：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="sumFlightTime" name="sumFlightTime" />
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label">驾驶舱角色：</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="cockpitRole" name="cockpitRole" ></select>
+						</div>
+						<label class="col-sm-2 control-label">行政职务：</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="adminPost" name="adminPost" />
+						</div>
+					</div>
+					</fieldset>
+					</div>
+					<div class="row row1">
+					<fieldset class="fieldsetborder">
+					<legend class="legendstyle">奖惩情况</legend>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabel">行政处理：</label>
+						<div class="col-sm-10">
+							<input type="checkbox" class="form-control checkbox-col-2" name="adminStop" id="adminStop"/><div class="word-col-2">停飞&nbsp;&nbsp;</div>
+							<input type="text" class="form-control input-col-5" name="adminStartDate" id="adminStartDate"/><div class="word-col-1">~</div>
+							<input type="text" class="form-control input-col-5" name="adminEndDate" id="adminEndDate"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabeltextarea">行政处理说明：</label>
+						<div class="col-sm-10">
+							<textarea class="form-control textarea-col-10" name="adminDesc" id="adminDesc"></textarea>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabel">技术处理：</label>
+						<div class="col-sm-10">
+							<input type="checkbox" class="form-control checkbox-col-2" name="technologyDegrade" id="technologyDegrade"/><div class="word-col-2">降级&nbsp;&nbsp;</div>
+							<input type="text" class="form-control input-col-5" name="technologyStartDate" id="technologyStartDate"/><div class="word-col-1">~</div>
+							<input type="text" class="form-control input-col-5" name="technologyEndDate" id="technologyEndDate"/>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabeltextarea">技术处理说明：</label>
+						<div class="col-sm-10">
+							<textarea class="form-control textarea-col-10" name="technologyDesc" id="technologyDesc"></textarea>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabel">经济处理：</label>
+						<div class="col-sm-10">
+							<input type="checkbox" class="form-control checkbox-col-2" name="economyCheck" id="economyCheck"/><div class="word-col-4">安全考核扣分</div>
+							<select class="form-control select-col-3" name="economySource" id="economySource" disabled="disabled"></select><div class="word-col-1">&nbsp;</div>
+							<input type="checkbox" class="form-control checkbox-col-2" name="economyPunish" id="economyPunish"/>
+							<select class="form-control select-col-2" id="rewardType1" name="rewardType1" disabled="disabled"></select><div class="word-col-3">&nbsp;人民币</div>
+							<input type="text" class="form-control input-col-4" name="economyRMB" id="economyRMB"/><div class="word-col-1">元</div>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabeltextarea">经济处理说明：</label>
+						<div class="col-sm-10">
+							<textarea class="form-control textarea-col-10" name="economyDesc" id="economyDesc"></textarea>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabel">星级分数：</label>
+						<div class="col-sm-10">
+							<select class="form-control select-col-2" id="rewardType2" name="rewardType2" disabled="disabled"></select>
+							<input type="text" class="form-control input-col-5 marginleft" name="starlevelSource" id="starlevelSource"/><div class="word-col-1">分</div>
+						</div>
+					</div>
+					<div class="row show-grid">
+						<label class="col-sm-2 control-label leftlabeltextarea">星级人员扣分说明：</label>
+						<div class="col-sm-10">
+							<textarea class="form-control textarea-col-10" name="starlevelDesc" id="starlevelDesc"></textarea>
+						</div>
+					</div>
+				</fieldset>
+				</div>
+				</div>
+			</form>
+			<div class="text-danger"></div>
+ 		</div>
+    </div>
+</body>
+</html>

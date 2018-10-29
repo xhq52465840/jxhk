@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>LOSA审计</title>
+	<script type="text/javascript" src="../../uui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../uui/layer/layer.js"></script>
+	<script type="text/javascript" src="../../uui/layer/extend/layer.ext.js"></script>
+	<script type="text/javascript" src="../../uui/uui-loader.js"></script>
+	<script type="text/javascript" src="../sms/boot.js"></script>
+	<script type="text/javascript" src="../../uui/vue.min.js"></script>
+	<script type="text/javascript" src="../../uui/jsonpath-0.8.0.js"></script>
+	<script type="text/javascript" src="../eiosa/base.js"></script>
+	<script type="text/javascript">
+		var losaMainUm='';
+		$(function(){	        
+	        $.um($("div[umid='application-header']"));
+	        losaMainUm = $.um($("div[umid='main']"));
+	        $.um($("div[umid='foot']"));
+	    });
+	</script>
+</head>
+<body>
+	<!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+    
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-main" style="padding:0px;padding-top: 0px">
+    			<div umid="main" umodule="com.losa.main"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+    
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

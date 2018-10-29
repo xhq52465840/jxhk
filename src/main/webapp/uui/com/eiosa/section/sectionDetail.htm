@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sectionDetail显示</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div>
+
+  <div class="container-fluid" id="section"> 
+
+   	<div qid="div_Dialog"  class="activity-body-content">
+   	   <div class="row">
+   	   
+	   <form id="sectionDialog" role="form" >
+	   <div class="col-sm-12">
+	   <table class="uui-table" style="table-layout: fixed;">
+	     
+	     <tr>
+	      <td><label class="label label-success" style="font-size:18px;">Title:</label>
+	        <label  id="sectionFullName" name="sectionFullName" v-html="sectionAll.section.sectionFullName"></label></td>
+	     <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Applicability:</label></td>
+	       </tr>
+	       <tr>
+	         <td> <p style="width:100%"  id="sectionText" v-html="sectionAll.section.applicability"></p></td>
+	       </tr>
+	       <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Guidance:</label></td>
+	       </tr>
+	       <tr>
+	         <td><p style="width:100%" rows="2" id="guidance"  v-html="sectionAll.section.guidance"></p></td>
+	       </tr>
+	       <tr>
+	        <td><label >开始日期: </label>
+	        <label  id="startDate" name="startDate" v-html="sectionAll.section.startDate | datestr"></label></td>
+	       </tr>
+	       <tr>
+	         <td><label >结束日期: </label>
+	        <label  id="enddate" name="enddate" v-html="sectionAll.section.endDate | datestr"></label></td>
+	       </tr>            	   
+        </table> 
+        <div class="uui-managepage">
+	    <div class="panel panel-sms">
+	      <div class="panel-heading">    
+	         <h2 class="panel-title">
+	           <span id="g9SShQPdRwNF23RzzQKe-toggle-panel" class="fa uui-cursor-pointer fa-chevron-right fa-plus" v-on:click="logShow"></span>
+	           Log
+	         </h2>	        
+	      </div>
+	    <div class="panel-body hidden">
+	      <div umid="sectionLogTable"></div> 
+	    </div>
+	    </div>
+	    </div>      
+      </div>
+      
+	         
+     </form>
+   
+    </div>
+   </div>
+   </div>
+  </div>
+</body>
+</html>

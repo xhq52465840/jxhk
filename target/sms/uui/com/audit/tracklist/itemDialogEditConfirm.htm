@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+	<div>
+		<div umid="select-unit-avatar"></div>
+        <div qid="item-dialog-edit-confirm">
+        	<div>
+	        	<div class="col-sm-12">
+	        		<form class="form-horizontal" role="form" qid="unit-form">
+		          	 <div class="form-groups ">
+		                <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.itemPoint %></label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-itemPoint" name="itemPoint" placeholder="" maxlength="2000" style="resize:none;" rows="4"></textarea>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">整改原因</label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-improveReason" name="improveReason" placeholder="" maxlength="2000" style="resize:none;" rows="2" ></textarea>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;">整改措施</label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-improveMeasure" name="improveMeasure" placeholder="" maxlength="2000" style="resize:none;" rows="4" ></textarea>
+		                    </div>
+		                </div>
+	                    <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.confirmRemark %></label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-confirmRemark" name="confirmRemark" placeholder="" maxlength="2000" style="resize:none;"></textarea>
+		                    </div>
+		                </div>
+		                 <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.improveRemark %></label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-improveRemark" name="improveRemark" placeholder="" maxlength="2000" style="resize:none;"></textarea>
+		                    </div>
+		                </div>
+		                 <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.verification %></label>
+		                    <div class="col-sm-9">
+		                        <textarea class="form-control input-sm" qid="unit-verification" name="verification" placeholder="" maxlength="2000" style="resize:none;"></textarea>
+		                    </div>
+		                </div>
+		                  <div class="form-group">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.confirmResult %></label>
+		                    <div class="col-sm-9">
+		                        <input type="text" class="form-control select2 " qid="unit-confirmResult" name="confirmResult" placeholder="" maxlength="200">
+		                    </div>
+		                </div>
+		         <!--         <div class="form-group ">
+		                    <label  class="col-sm-3 control-label" style="color:#707070;font-weight:normal;"><%=com.audit.tracklist.itemDialogEditConfirm.i18n.confirmDate %></label>
+						 	<div class="col-sm-9">
+								<input type="text" class="form-control input-sm confirmDate" qid="unit-confirmDate" name="confirmDate" style="width:150px;" /> 
+						  		<div class="text-danger hidden validmsg"></div>
+						  	</div>
+						</div> -->
+		        	</div>
+	                </form>
+                </div>
+        	</div>
+        </div>
+        <div qid="treeContent" style="display:none; position: absolute;z-index:1060;background:#eee;width: 400px;">
+			<ul qid="tree" class="ztree" style="margin-top:0; width:393px;height: 200px;overflow: auto;"></ul>
+		</div>
+	</div> 
+	
+	                     
+</body>
+</html>

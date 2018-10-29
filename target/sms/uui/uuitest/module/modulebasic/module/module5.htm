@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 注意：这里地址都是相对module2.htm的地址 -->
+    <script type="text/javascript" src="../js-modulebasic.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css-modulebasic.css" />
+</head>
+<body>
+    <div>
+        <ul>
+            <% for(var tx = 0 ; tx < this.count ; tx ++){ %>
+            <li qid="myid<%=tx%>" >ID：<%= this._id %></li>
+            <li qid="myclass<%=tx%>">类名：<%=this.getclazz().clazzname%></li>
+            <li>父类名：<%-this.getclazz().superclazz.clazzname%></li>
+            <li>全局版本：<%-$.u.config.i18n.version %></li>
+            <li>类的i18n：<%=this.getclazz().i18n.test%></li>
+            <li>对象的_super之前的属性：<%=this.module2display%></li>
+            <li>对象的_super之后的属性：<%-this.notdisplay%></li>
+            <li>对象的方法：<%=this.bark5()%></li>
+            <li><a href="../htmlfortest.html">xxxxxx</a></li>
+            <li><img src="../testpng.png" /></li>
+            <% } %>
+        </ul>
+        <div umid="module2" umodule="uuitest.module.modulebasic.module.module2"></div>
+    </div>
+</body>
+</html>

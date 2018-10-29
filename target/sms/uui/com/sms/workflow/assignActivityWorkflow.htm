@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="assignActivityWorkflow.css" type="text/css"></link>
+</head>
+<body>
+    <div>
+    	<div qid="activitytyps-dialog" class="com-sms-workflow-assignActivityWorkflow" style="padding:0;">
+    		<div class="step-first">
+    			<div class="row" style="padding:0;margin:0;">
+    				<div class="col-sm-3" style='padding:0;border-right:1px solid #ddd;height:655px;overflow-y:auto;'>
+    					<table class="table" qid="workflows-table">
+    						<tbody>
+    							
+    						</tbody>
+    					</table>
+    				</div>
+    				<div class="col-sm-9 text-center" style="padding:0;overflow:auto;">
+    					<h4><strong qid="workflow-name"></strong></h4>
+    					<div qid="workflow-graph"></div>
+    					<dl class="dl-horizontal">
+						  <dt><%=com.sms.workflow.assignActivityWorkflow.i18n.describe %></dt>
+						  <dd qid="workflow-desc"></dd>
+						  <dt><%=com.sms.workflow.assignActivityWorkflow.i18n.lastModify %></dt>
+						  <dd qid="workflow-lastupdate"></dd>
+						</dl>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="step-second hidden">
+    			<table class="table" qid="activity-types-table">
+	    			<thead>
+	    				<tr>
+	    					<th style="width:20px;"><input type="checkbox"/></th>
+	    					<th><%=com.sms.workflow.assignActivityWorkflow.i18n.safeMsgType %></th>
+	    					<th><%=com.sms.workflow.assignActivityWorkflow.i18n.current %></th>
+	    				</tr>
+	    			</thead>
+	    			<tbody>
+	    			</tbody>
+	    		</table>
+    		</div>
+    		
+    	</div>
+    </div>
+</body>
+</html>

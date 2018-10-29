@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="deferredDefectDao" class="com.usky.sms.flightmovementinfo.Maintenance.DeferredDefectDao" />
+	<bean id="deferredPepairDao" class="com.usky.sms.flightmovementinfo.Maintenance.DeferredPepairDao" />
+	<bean id="bzcsjDao" class="com.usky.sms.flightmovementinfo.Maintenance.BzcsjDao" />
+	<bean id="monitDao" class="com.usky.sms.flightmovementinfo.Maintenance.MonitDao" />
+	<bean id="aircraftDao" class="com.usky.sms.flightmovementinfo.Maintenance.AircraftDao" />
+	<bean id="aircraft" class="com.usky.sms.flightmovementinfo.Maintenance.AircraftService" />
+</beans>

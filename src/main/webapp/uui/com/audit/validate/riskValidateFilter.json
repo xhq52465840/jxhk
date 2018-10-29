@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "view": "list",
+    "mode": "basic",
+    "mydefaultcolumns": false,
+    "columns": [],
+    "orders": {
+      "propid": "workName",
+      "propname": "工作单名称",
+      "order": "asc"
+    },
+    "uql": "",
+    "staticfilters": [{
+      "propid": "organizations.unit.id",
+      "propname": "安监机构",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.sms.plugin.search.unitProp"
+    },
+    {
+      "propid": "organizations.id",
+      "propname": "责任部门",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.audit.plugin.validate.queryTargetProp"
+    }, {
+      "propid": "completionDeadLine",
+      "propname": "到期日",
+      "propvalue": [],
+      "propshow": "",
+      "propplugin": "com.audit.plugin.validate.queryDateProp"
+    }, {
+      "propid": "description",
+      "propname": "行动项",
+      "propvalue": null,
+      "propplugin": "com.audit.plugin.validate.queryTextProp"
+    }, {
+      "propid": "status",
+      "propname": "状态",
+      "propvalue": null,
+      "propplugin": "com.audit.plugin.validate.queryStatusProp"
+    }, {
+      "propid": "confirmMan.id",
+      "propname": "验证人",
+      "propvalue": null,
+      "propplugin": "com.audit.plugin.validate.queryConfirmManProp"
+    }],
+    "dynamicfilters": [
+
+    ]
+  }
+}

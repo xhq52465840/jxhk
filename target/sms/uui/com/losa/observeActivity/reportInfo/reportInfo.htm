@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LOSA审计</title>
+<style>
+</style>
+</head>
+<body>
+<div>
+	<div class="col-lg-2 col-md-2 no-right-padding vertical-nav" style="margin-top: 10px;" >
+		<div class="nav-heading style_css reportinfoleftheader">
+			<strong>报表导出信息</strong>
+		</div>
+		<div id="reportlink"  class="reportlink">
+     		<accordion :data-object="dataObject" :options="options"></accordion>
+   		</div>
+	</div>
+	<div id="manageQueryForm" class="col-lg-10 col-md-10 reportinfo" >
+		<div class="uui-managepage-header reportinforightheader">
+      		<div class="container-fluid no-left-right-padding">
+        		<div class="row">
+          			<div class="col-md-3">
+	         			<div class="uui-managepage-title">{{headername}}</div>
+	      			</div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="reportcontent">
+  		<table id="schemeQueryTable" style="background-color:#FCFCFC">
+			<tbody>
+				<tr class="first">												
+					<td align="center" style="width: 8%">
+						方案主题:
+					</td>
+					<td class="value"  style="width: 13%">
+						<input  type="text" class="form-control input-sm"  style="width: 100%" id="scheme" v-select.multiple="manageQueryForm.s_schemeName" :options="options1"/>						  
+					</td>
+					<td align="center" style="width: 8%">
+						被实施单位:
+					</td>
+					<td class="value"  style="width: 10%">
+	            	<input type="text" style="width: 100%" class="form-control input-sm" v-select.multiple="manageQueryForm.f_org_code" :options="options5"  />
+					</td>
+					<td align="center" style="width: 8%">
+						方案类型:
+					</td>
+					<td class="value"  style="width: 10%">
+						<select id="" style="width:100%" v-model="manageQueryForm.s_schemeType">
+							<option value="">全部</option>
+							<option v-for="option in schemeTypeNames" v-bind:value="option.dictCode">
+								{{ option.dictName }}
+							</option>							
+  						</select>
+					</td>
+					<td align="center" style="width:6%">
+						观察员:
+					</td>
+					<td style="width:13%">
+						<input type="text" class="form-control input-sm" style="width: 100%"  id=observer" v-select.multiple="manageQueryForm.p_observerId" :options="options3"/>
+					</td>
+					<td align="center" style="width: 8%">
+						实施单位:
+					</td>
+					<td class="value"  style="width: 10%">
+	            	<input type="text" style="width: 100%" class="form-control input-sm" v-select.multiple="manageQueryForm.s_impleUnitId" :options="options2" id="schemeEditImpleUnit" />
+					</td>
+				</tr>
+				<tr></tr>
+				<tr class="second">
+					<td align="center" style="width:8%">
+						起飞机场:
+					</td>
+					<td>
+						<input type="text" style="width: 100%" v-select.multiple="manageQueryForm.p_depAirportNo" :options="options4" class="form-control input-sm" />
+					</td>
+					<td align="center">
+						着陆机场:
+					</td>
+					<td>
+						<input type="text" style="width: 100%" v-select.multiple="manageQueryForm.p_arrAirportNo" :options="options4" class="form-control input-sm" />
+					</td>
+					<td align="center">
+						观察日期 :
+					</td>
+					<td>
+						<input type="text" class="form-control input-sm" id="observeDateFrom" v-model="manageQueryForm.p_observeDate"/>
+					</td>
+					<td align="center" style="width:5%" align="center">
+						至 :
+					</td>
+					<td>
+						<input type="text" class="form-control input-sm" id="observeDateTo" v-model="manageQueryForm.p_observeDateTo"/>
+					</td>
+					<td align="right">
+						<button type="button" class="btn btn-default" v-on:click="search"><span class="fa fa-search"></span>查询</button>
+				  	</td> 
+				  	<td align="left">
+						<button type="button" class="btn btn-default" v-on:click="cancel">重置</button>
+				  	</td> 
+				</tr>
+				<tr>
+					<td colspan="10" style="width:100%;height:16px"></td>
+				</tr>
+			</tbody>
+		</table>
+	 	<div umid="manageCountTemplet" id="manageCountTemplet"></div> 
+	 	</div>    
+	</div>
+</div>
+</body>
+</html>

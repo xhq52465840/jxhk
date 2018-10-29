@@ -1,0 +1,19 @@
+.com-sms-unitconfig-permissions h1,h2,h3,h4,h5,h6{margin:0;}
+.com-sms-unitconfig-permissions .unit-config-icon48-permissions:after{
+	background-image: url(/sms/uui/img/icon48-permissions.png);
+}
+.com-sms-unitconfig-permissions .unit-config-icon48-permissions:after{
+	content: "";
+	height: 48px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 48px;
+	/*background: transparent none no-repeat 0 0;*/
+}
+.com-sms-unitconfig-permissions .table thead th{
+	border-bottom:none;
+}
+.com-sms-unitconfig-permissions .table tbody tr:last-child td{
+	border-bottom:1px solid #ddd;
+}

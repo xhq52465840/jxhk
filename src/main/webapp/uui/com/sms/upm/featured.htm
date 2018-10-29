@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+<link rel="stylesheet" href="featured.css" type="text/css"></link></head>
+<body>
+    <div calss="uui-managepage">
+       
+        <div class="uui-managepage-header">
+        	<div class="container-fluid">
+	            <div class="row">
+	                <div class="col-md-12 no-left-right-padding">
+	                    <h3 class="uui-managepage-title"><%=com.sms.upm.featured.i18n.title %></h3>
+	                </div>
+	            </div>
+            </div>
+        </div>
+
+        
+        <div style="margin:10px 0 0 0;">
+           <p><%=com.sms.upm.featured.i18n.explainA %><a href="PluginManage.html"><%=com.sms.upm.featured.i18n.managePlug %></a></p>
+        </div>
+
+        <div class="form-inline" qid="filter">
+        	
+	        <div class="form-group ">
+	        	<div class="col-sm-6" style="padding-left:0;">
+			        <div class="input-group">
+		        		<input type="text" class="form-control input-sm" qid="text_search" placeholder="搜索应用商店"/>
+		        		<span class="input-group-btn">
+		        			<button class="btn btn-default" qid="btn_search">
+		        				<span class="glyphicon glyphicon-search"></span>
+		        			</button>
+		        		</span>
+			        </div>
+			        
+				            
+		        </div>
+		        <div class="col-sm-6">
+			        <select class="form-control input-sm">
+		            	<option><%=com.sms.upm.featured.i18n.allClassify %></option>
+		            	<option><%=com.sms.upm.featured.i18n.sysManager %></option>
+		            	<option><%=com.sms.upm.featured.i18n.fidleType %></option>
+		            </select>
+	            </div>
+            </div> 
+        </div>
+        
+        
+        <div class="upm-plugin-area">
+	        <div class="list-group upm-plugin-group" qid="pluginlist">
+	        	
+	        	<div class="list-group-item ">
+	        		<div class="upm-plugin-see-more text-center" ><a href="#"><%=com.sms.upm.featured.i18n.lookMore %></a></div>
+	        	</div>
+	        </div>
+	        
+	         
+	        
+	        
+        </div>
+	    
+        
+    </div>
+</body>
+</html>

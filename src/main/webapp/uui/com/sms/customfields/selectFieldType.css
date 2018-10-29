@@ -1,0 +1,61 @@
+.com-sms-customfields-selectFieldType{
+	padding:0 !important;
+}
+.com-sms-customfields-selectFieldType .field-panel{
+	padding-left:0;
+	padding-right:0;
+	width:100%;
+}
+.com-sms-customfields-selectFieldType .field-panel > div{
+	padding:20px 10px 10px 10px;
+	overflow-x:hidden;
+}
+
+.com-sms-customfields-selectFieldType .firststep-page > div:last-child{
+	height:417px;
+	overflow-y:auto;
+	border-left:1px solid #ccc;
+}
+.com-sms-customfields-selectFieldType .field-panel a.list-group-item{
+	border:none;
+	color:#3b73af;
+	padding:7px 10px;
+	line-height:1.1428;
+	font-family:inherit;
+}
+.com-sms-customfields-selectFieldType .field-panel a.list-group-item.selected{
+	border:none;
+	color:#333;
+	font-weight:bold;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types{
+	list-style: none;
+	padding: 0;
+	margin: 0 !important;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types>.item{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	overflow: auto;
+	padding: 10px 10px 10px 152px;
+	border-bottom:1px solid #ccc;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types>.item:hover{
+    background-color:#e9e9e9;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types>.item.selected{
+	background: #ebf2f9;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types>.item .field-preview{
+	background: #fff;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: -140px;
+}
+.com-sms-customfields-selectFieldType .field-panel .customfields-types>.item .field-name{
+	margin-top: 0;
+	font-weight:bold;
+}

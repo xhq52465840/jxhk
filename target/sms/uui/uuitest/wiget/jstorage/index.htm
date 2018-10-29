@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            window.console = window.console || {};
+            console.log || (console.log = function () { return false; });
+            $.u.inituui();
+            $.jStorage.set("xml1", { xml1: "abcnode", bbc1: "bbcnode" });
+            $.jStorage.set("xml2", { xml2: "abcnode", bbc2: "bbcnode" });
+            console.log($.jStorage.get("xml1", "mmm1"));
+            console.log($.jStorage.get("xml2", "mmm2"));
+            $.jStorage.deleteKey("xml1");
+            console.log($.jStorage.get("xml1", "mmm1"));
+            console.log($.jStorage.get("xml2", "mmm2"));
+            $.jStorage.flush();
+            console.log($.jStorage.get("xml1", "mmm1"));
+            console.log($.jStorage.get("xml2", "mmm2"));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

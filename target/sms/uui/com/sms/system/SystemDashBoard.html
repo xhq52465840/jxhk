@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>系统面板</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript">
+        // 给子iframe的ajax之后调用
+        function resizeGadget(gadgetinstanceid, height) {
+            var fm = $("iframe[gadgetinstanceid='" + gadgetinstanceid + "']");
+            if (fm.length > 0) {
+                fm.css("height", height);
+            }
+        }
+        
+        function setGadgetTitle(gadgetinstanceid, title){
+        	var fm = $("iframe[gadgetinstanceid='" + gadgetinstanceid + "']");
+        	if (fm.length > 0){
+        		var head = fm.parent().siblings(".dashboard-item-header").find(".dashboard-item-title");
+                if (head.length > 0) {
+                    head.text(title);
+                }
+        	}
+        }
+
+
+        $(function () {
+            //$.u.inituui();
+
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='page-header']"));
+
+            $.um($("div[umid='admin-horizontal-menus']"), { menuType: "SYS", selected: "系统" });
+
+            $.um($("div[umid='user-vertical-menus']"), { menuId: 31, selected: "系统面板" });
+
+            $.um($("div[umid='dash']"), null, 1, true);
+
+            $.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面头部 begin-->
+    <div umid="page-header" umodule="com.sms.pageheader.admin"></div>
+    <!--页面头部 end-->
+
+    <!--二级横向导航 begin-->
+    <div umid="admin-horizontal-menus" umodule="com.sms.horizontalMenus"></div>
+    <!--二级横向导航 end-->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+        <div class="page-content-inner">
+            <div class="page-content-nav">
+                <div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+            </div>
+            <div class="page-content-main">
+                <div class="page-workcomp">
+                    <div class=" uui-module-header">
+                        <div class="row" style="border-bottom: 1px solid #ccc;">
+                            <div class="col-md-3">
+                                <h2 class="uui-module-h2" style="font-weight:bold;">配置系统面板</h2>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-md-12">
+                                <small>注意: 你正在设置系统面板，这将影响所有用户。</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div umid="dash" umodule="com.sms.dash.dash"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+                </div>
+                <div class="col-md-10">
+                    <div class="page-workcomp">
+                        <div class=" uui-module-header">
+                            <div class="row" style="border-bottom: 1px solid #ccc;">
+                                <div class="col-md-3">
+                                    <h2 class="uui-module-h2" style="font-weight:bold;">配置系统面板</h2>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-md-12">
+                                    <small>注意: 你正在设置系统面板，这将影响所有用户。</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div umid="dash" umodule="com.sms.dash.dash"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

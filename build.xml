@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sms">
+	<property file="build_test.properties" />
+	<property name="project.name" value="${ant.project.name}" />
+	<tstamp>
+		<format property="current_time" pattern="yyyyMMddHHmmss" locale="en" />
+		<format property="current_day" pattern="yyyy-MM-dd" locale="en" />
+	</tstamp>
+	<!--
+	<taskdef name="sshexec" classname="org.apache.tools.ant.taskdefs.optional.ssh.SSHExec" classpath="${ant.home}/lib/ant-jsch.jar;${ant.home}/lib/jsch-0.1.53.jar" />
+	<taskdef name="scp" classname="org.apache.tools.ant.taskdefs.optional.ssh.Scp" classpath="${ant.home}/lib/ant-jsch.jar;${ant.home}/lib/jsch-0.1.53.jar" />
+	-->
+
+	<!-- 备份war包-->
+	<target name="backupWar">
+		<echo message=">>>>项目备份开始----------------------------------" />
+		<sshexec host="${server.ip}" username="${server.username}" password="${server.password}" trust="true" failonerror="false" command="mkdir ${tomcat.path}/war_backup ; cp ${tomcat.path}/webapps/${project.name}.war ${tomcat.path}/war_backup/${project.name}${current_time}.war" />
+		<echo message=">>>>项目备份完成----------------------------------" />
+	</target>
+
+	<!-- 关闭服务器 -->
+	<target name="killServer" depends="backupWar">
+		<echo message=">>>>服务器关闭中----------------------------------" />
+		<sshexec host="${server.ip}" username="${server.username}" password="${server.password}" trust="true" failonerror="false" command="ps -ef | grep tomcat | grep java |grep -v grep | awk '{print $2}' | xargs kill -9" />
+		<echo message=">>>>服务器关闭完成----------------------------------" />
+	</target>
+	
+	<!-- 清除缓存 -->
+	<target name="cleanCache" depends="killServer">
+		<echo message=">>>>清除缓存开始----------------------------------" />
+		<sshexec host="${server.ip}" username="${server.username}" password="${server.password}" trust="true" failonerror="true" command="rm -rf ${tomcat.path}/webapps/${project.name} ${tomcat.path}/webapps/${project.name}.war" />
+		<echo message=">>>>清除缓存成功----------------------------------" />
+	</target>
+	
+	<!-- SSH登录上传项目到服务器tomcat目录webapps下 -->
+	<target name="ftpUploadProject" depends="cleanCache">
+		<!-- 备份项目的路径重新建目录 -->
+		<echo message=">>>>SSH上传项目开始----------------------------------" />
+		<scp todir="${server.username}:${server.password}@${server.ip}:${tomcat.path}/webapps" trust="true" failonerror="true">
+			<fileset dir="${basedir}/target">
+				<include name="${project.name}.war" />
+			</fileset>
+		</scp>
+		<echo message=">>>>SSH上传项目成功------------------------------。" />
+	</target>
+
+	<!-- 启动服务器 -->
+	<target name="startServer" depends="ftpUploadProject">
+		<echo message=">>>>服务器启动中----------------------------------" />
+		<sshexec host="${server.ip}" username="${server.username}" password="${server.password}" trust="true" failonerror="false" command="${tomcat.path}/bin/startup.sh" />
+		<echo message=">>>>服务器启动完成------------------------------" />
+	</target>
+	
+	<!-- 查看日志 -->
+	<target name="printLog" >
+			<echo message="》》》》日志查看。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。" />
+			<sshexec host="${server.ip}" username="${server.username}" password="${server.password}" trust="true" command="tail -200f ${tomcat.path}/logs/catalina.${current_day}.out" />
+	</target>
+
+</project>

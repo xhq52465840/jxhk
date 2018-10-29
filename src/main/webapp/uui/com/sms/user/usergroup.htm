@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_usergroup">
+            <form class="" role="form">
+                <div class="form-group col-md-6" style="padding-left:0;padding-right:0;">
+                    <label for="<%=this._id%>-availablegroups" class="control-label"><%=com.sms.user.usergroup.i18n.EGID %></label>
+                    <select class="form-control" qid="availablegroups" multiple="multiple" size="10"></select>
+                    <button qid="btn_joinselectedgroups" style="margin-top:10px;"><%=com.sms.user.usergroup.i18n.addSelGroup %></button>
+                </div>
+                <div class="form-group col-md-6" style="padding-left:20px;padding-right:0;">
+                    <label for="<%=this._id%>-currentgroups" class="control-label"><%=com.sms.user.usergroup.i18n.currentUserGroup %></label>
+                    <select class="form-control" qid="currentgroups" multiple="multiple" size="10"></select>
+                    <button qid="btn_leaveselectedgroups" style="margin-top:10px;"><%=com.sms.user.usergroup.i18n.remove %></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

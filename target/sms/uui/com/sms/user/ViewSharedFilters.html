@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>共享的过滤器</title>
+    
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //$.u.inituui();
+
+            $.um($("div[umid='application-header']"));
+
+            $.um($("div[umid='page-header']"));
+
+            $.um($("div[umid='admin-horizontal-menus']"), { menuType: "SYS", selected: "用户" });
+
+            $.um($("div[umid='user-vertical-menus']"), { menuId: 32, selected: "共享的过滤器" });
+
+            $.um($("div[umid='filter']"));
+
+            $.um($("div[umid='foot']"));
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 顶部导航栏 begin -->
+    <div umid="application-header" umodule="com.sms.applicationHeader"></div>
+    <!-- 顶部导航 end -->
+
+    <!--页面头部 begin-->
+    <div umid="page-header" umodule="com.sms.pageheader.admin"></div>
+    <!--页面头部 end-->
+
+    <!--二级横向导航 begin-->
+    <div umid="admin-horizontal-menus" umodule="com.sms.horizontalMenus"></div>
+    <!--二级横向导航 end-->
+
+    <!--页面主内容区域 begin-->
+    <div class="page-content">
+    	<div class="page-content-inner">
+    		<div class="page-content-nav">
+    			<div umid="user-vertical-menus" umodule="com.sms.verticalMenus"></div>
+    		</div>
+    		<div class="page-content-main">
+    			<div umid="filter" umodule="com.sms.user.manageSharedFilters"></div>
+    		</div>
+    	</div>
+    </div>
+    <!--页面主内容区域 end-->
+
+    <!--页面底部 begin-->
+    <div umid="foot" umodule="com.sms.foot"></div>
+    <!--页面底部 end-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div >
+  <div class="container-fluid" id="threatReport" style="overflow-x:scroll">
+		  <table class="table changeColor rightBigContentTable" style="width: 1500px;">
+		     <td  align="left">
+		       <button type="button" class="btn btn-default"  v-on:click="exportThreatDetail">导出</button>
+		     </td>
+		  </table>  
+			<table class="table changeColor rightBigContentTable" style="width: 1500px;padding: 2px;">
+			
+				<thead class="header2">
+					<tr>
+						<td style="width:6%; text-align: center;"v-sortfun.literal="page" :options="orders" sortby="c.scheme_no">所属方案</td>
+						<td style="width:8%;text-align: center;"v-sortfun.literal="page" :options="orders" sortby="b.plan_no" >计划编号</td>
+						<td style="width:4%; text-align: center;">威胁代号</td>
+						<td style="width:15%; text-align: center;">描述该威胁</td>
+						<td style="width:8%; text-align: center;"v-sortfun.literal="page" :options="orders" sortby="d.name">威胁类型</td>
+						<td style="width:8%; text-align: center;"v-sortfun.literal="page" :options="orders" sortby="f.name">威胁编号</td>
+						<td style="width:8%; text-align: center;"v-sortfun.literal="page" :options="orders" sortby="s.dict_name">飞行阶段</td>
+						<td style="width:6%;text-align: center;"v-sortfun.literal="page" :options="orders" sortby="is_deal_validity" >是否得到有效管理</td>
+						<td style="width:15%; text-align: center;">机组对该威胁是如何管理或者管理不当的？</td>
+					</tr>
+				</thead>
+				<tbody id="planListBody">
+					<tr v-for="tl in threatList" style="height: 41px;">
+                        <td align="center"><a href="#" dataid={{tl.schemeId}} v-on:click="retriveScheme">{{tl.schemeNo}}</a></td>
+						<td align="center"><a href="#" data={{tl.observiewId}} data1={{tl.planId}} v-on:click="openObserview">{{tl.planNo}}</a></td>
+						<td align="center">{{tl.threatCode}}</td>
+						<td align="center">{{tl.threatDesc}}</td>
+						<td align="center">{{tl.threatType}}</td>
+						<td align="center">{{tl.threatNumber}}</td>
+						<td align="center">{{tl.flight}}</td>
+						<td align="center">{{tl.isDeal}}</td>
+						<td align="center">{{tl.forThreat}}</td>
+					</tr>
+					<!-- 为了不影响交替行换色，加了一个空行 -->
+				</tbody>
+			</table>
+			<!-- 分页开始 -->
+			 <pagebars :pagemsg.sync="pagebarsData" :pagefun="query"></pagebars> 
+		<!-- 分页结束 -->
+		</div>		
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="airPlaneDubboService" class="com.usky.sms.external.AirPlaneDubboService" />
+	<bean id="airportDubboService" class="com.usky.sms.external.AirportDubboService" />
+	<bean id="flightDubboService" class="com.usky.sms.external.FlightDubboService" />
+	<bean id="metarContentDubboService" class="com.usky.sms.external.MetarContentDubboService" />
+	<bean id="userDubboService" class="com.usky.sms.external.UserDubboService" />
+	<bean id="crewDubboService" class="com.usky.sms.external.CrewDubboService" />
+	<bean id="maintenanceWebService" class="com.usky.sms.external.MaintenanceWebService">
+		<property name="jwSmsServiceImplUrl" value="${jwSmsServiceImplUrl}"></property>
+	</bean>
+	<bean id="smsSendDubboService" class="com.usky.sms.external.SmsSendDubboService">
+		<property name="smsType" value="${smsType}"></property>
+		<property name="emsLoginName" value="${emsLoginName}"></property>
+		<property name="emsPassword" value="${emsPassword}"></property>
+	</bean>
+
+</beans>

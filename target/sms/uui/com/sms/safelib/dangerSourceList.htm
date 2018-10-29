@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>危险源库</title>
+<style type="text/css">
+	.show-grid {
+		margin-top: 10px;
+	}
+	.list-group-item {
+		cursor: pointer;
+	}
+	.m-left{
+		margin-left: 10px;
+	}
+	.m-focus {
+		cursor: pointer;
+	}
+	.add_c{
+		margin-top: -30px;
+		cursor: pointer;
+	}
+	.last-ui-index {
+		z-index: 1051;
+	}
+	.last-dg-index {
+		z-index: 1061;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs" qid="navUl">
+				</ul>
+			</div>
+		</div>
+		<div class="row show-grid hidden" qid="sys_tabs">
+			<div class="col-xs-6 col-sm-3">
+				<strong>子系统</strong>
+				<span class="glyphicon glyphicon-plus m-left m-focus" qid="child_add"></span>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<strong>一级流程</strong>
+				<span class="glyphicon glyphicon-plus m-left m-focus" qid="first_add"></span>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<strong>二级流程</strong>
+				<span class="glyphicon glyphicon-plus m-left m-focus" qid="second_add"></span>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<strong>三级流程</strong>
+				<span class="glyphicon glyphicon-plus m-left m-focus" qid="third_add"></span>
+			</div>
+		</div>
+		<div class="row show-grid hidden" qid="subSystem">
+			<div class="col-xs-6 col-sm-3">
+				<ul class="list-group" qid="childsys">
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<ul class="list-group" qid="firstsys">
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<ul class="list-group" qid="secondsys">
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<ul class="list-group" qid="thirdsys">
+				</ul>
+			</div>
+		</div>
+		<div class="row show-grid hidden" qid="subDangerous">
+			<div class="pull-right" style="padding:20px;cursor: pointer;">
+				<button class="btn btn-primary" qid="risk_add" title="">添加危险源</button>
+			</div>
+			<table class="table table-bordered table-hover" style="border: 1px solid #ddd;">
+				<thead>
+					<tr>
+						<th rowspan="2" class="text-center" width="5%">序号</th>
+						<th rowspan="2" class="text-center" width="5%">编号</th>
+						<th rowspan="2" class="text-center" width="10%">描述</th>
+						<th rowspan="2" class="text-center" width="15%">控制措施</th>
+						<th colspan="4" class="text-center" width="30%">风险评价</th>
+						<th colspan="4" class="text-center" width="30%">剩余风险</th>
+						<th rowspan="2" class="text-center" width="5%">操作</th>
+					</tr>
+					<tr>
+						<th class="text-center" width="5%">可能性</th>
+						<th class="text-center" width="5%">严重性</th>
+						<th class="text-center" width="5%">风险值</th>
+						<th class="text-center" width="5%">风险等级</th>
+						<th class="text-center" width="5%">可能性</th>
+						<th class="text-center" width="5%">严重性</th>
+						<th class="text-center" width="5%">风险值</th>
+						<th class="text-center" width="5%">风险等级</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div qid="editDialog">
+			<form class="form-horizontal" role="form" qid="editForm">
+				<div class="row">
+					<label class="col-sm-4">名称<span class='text-danger'>*</span>:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control input-sm name" name="name"/>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div qid="riskDialog">
+			<form class="form-horizontal" role="form" qid="riskForm">
+				<div class="row show-grid">
+					<label class="col-sm-2">编号<span class='text-danger'>*</span>:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control input-sm" name="code" qid="code"/>
+					</div>
+				</div>
+				<div class="row show-grid">
+					<label class="col-sm-2">描述:</label>
+					<div class="col-sm-10">
+						<textarea class="form-control input-sm" name="desc" rows="10" qid="desc"></textarea>
+					</div>
+				</div>
+				<div class="row show-grid">
+					<h3>风险评价</h3><span class="glyphicon glyphicon-plus pull-right add_c" qid="add_cons" data-type="a" title="添加风险评价"></span>
+				</div>
+				<div class="row show-grid">
+					<table class="table table-bordered table-hover" style="border: 1px solid #ddd;">
+						<tbody>
+							<tr>
+								<td width="20%">可能性</td>
+								<td width="80%"><label qid="a"></label></td>
+							</tr>
+							<tr>
+								<td>严重性</td>
+								<td><label qid="b"></label></td>
+							</tr>
+							<tr>
+								<td>风险值</td>
+								<td><label qid="c"></label></td>
+							</tr>
+							<tr>
+								<td>风险等级</td>
+								<td><label qid="d"></label></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row show-grid">
+					<h3>剩余风险</h3><span class="glyphicon glyphicon-plus pull-right add_c" qid="add_left" data-type="e" title="添加剩余风险"></span>
+				</div>
+				<div class="row show-grid">
+					<table class="table table-bordered table-hover" style="border: 1px solid #ddd;">
+						<tbody>
+							<tr>
+								<td width="20%">可能性</td>
+								<td width="80%"><label qid="e"></label></td>
+							</tr>
+							<tr>
+								<td>严重性</td>
+								<td><label qid="f"></label></td>
+							</tr>
+							<tr>
+								<td>风险值</td>
+								<td><label qid="g"></label></td>
+							</tr>
+							<tr>
+								<td>风险等级</td>
+								<td><label qid="h"></label></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+		<div qid="scoreDialog">
+			<div class="row" style="margin-bottom:10px;padding-bottom: 15px;border-bottom: 1px solid rgb(221, 221, 221);">
+				<div class="col-sm-3 control-label">选择风险矩阵</div>
+				<div class="col-sm-9">
+					<input type="text" class="form-control input-sm" qid="riskMatrix"></input>
+				</div>
+			</div>
+			<div class="hidden" qid="riskMatrixSelect">
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-sm-3 control-label">可能性</div>
+					<div class="col-sm-9">
+						<input type="text" class="form-control input-sm" qid="riskMatrixPossible"></input>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom:10px;" qid="riskMatrixPossibleLabel">
+				</div>
+				<div class="row"style="margin-bottom:10px;">
+					<div class="col-sm-3 control-label">严重性</div>
+					<div class="col-sm-9">
+						<input type="text" class="form-control input-sm" qid="riskMatrixSerious"></input>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom:10px;" qid="riskMatrixSeriousLabel">
+				</div>
+				<div class="row"style="margin-bottom:10px;">
+					<div class="col-sm-3 control-label">风险系数</div>
+					<div class="col-sm-3">
+						<label qid="riskMatrixCoefficient"></label>
+					</div>
+					<div class="col-sm-3">
+						<label qid="riskMatrixCoefficientlabel" class="label"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div qid="concDialog">
+			<form class="form-horizontal" role="form" qid="concForm">
+				<div class="row show-grid">
+					<h3>后果</h3><span class="glyphicon glyphicon-plus pull-right add_c" title="添加后果" qid="add_conc"></span>
+				</div>
+				<div class="row show-grid">
+					<table class="table table-bordered table-hover" style="border: 1px solid #ddd;">
+						<thead>
+							<tr>
+								<th class="text-center" width="10%">编号</th>
+								<th class="text-center" width="70%">描述</th>
+								<th class="text-center" width="20%">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+		<div qid="ctrlDialog">
+			<form class="form-horizontal" role="form" qid="ctrlForm">
+				<div class="row show-grid">
+					<h3>控制措施</h3><span class="glyphicon glyphicon-plus pull-right add_c" title="添加控制措施" qid="add_ctrl"></span>
+				</div>
+				<div class="row show-grid">
+					<table class="table table-bordered table-hover" style="border: 1px solid #ddd;">
+						<thead>
+							<tr>
+								<th class="text-center" width="10%">编号</th>
+								<th class="text-center" width="70%">描述</th>
+								<th class="text-center" width="20%">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+		<div qid="edit_c_cDialog">
+			<form class="form-horizontal" role="form" qid="edit_c_cDialogForm">
+				<div class="row show-grid">
+					<label class="col-sm-2">描述<span class='text-danger'>*</span>:</label>
+					<div class="col-sm-10">
+						<textarea class="form-control input-sm description" name="description" rows="10"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

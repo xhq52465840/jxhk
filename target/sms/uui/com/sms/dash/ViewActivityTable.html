@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>安全信息列表</title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../boot.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqurl/jqurl.js"></script> 
+    <script type="text/javascript">
+        $(function () {
+            //$.u.inituui();
+            var params = $.urlParam(null);
+            if (!params.mode || params.mode.indexOf("config") > -1) {
+                $.um($("div[umid='activitytable']"), "config", params.gadgetsinstance);
+            }
+            else {
+                $.um($("div[umid='activitytable']"), "display", params.gadgetsinstance);
+            }
+        });
+    </script>
+</head>
+<body style="background-color:#fff !important;">
+   <div umid="activitytable" umodule="com.sms.dash.activitytable"></div>
+</body>
+</html>

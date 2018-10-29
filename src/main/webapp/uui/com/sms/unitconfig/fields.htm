@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="fields.css" type="text/css"></link>
+</head>
+<body>
+    <div class="uui-module">
+    	<div umid="changeFieldScheme"></div>
+    	<div class="page-header" style="padding:0;">
+	        <div class="page-header-inner">
+	            <div class="page-header-image">
+	                <div style="vertical-align:top;width:48px;height:48px;position:relative;">
+	                    <div class="unit-config-icon48-screens"></div>
+	                </div>
+	            </div>
+	            <div class="page-header-main">
+	                <span><%=com.sms.unitconfig.fields.i18n.title %></span>
+	                <h3 >
+	                    <span qid="unit-config-fields" ></span>
+	                </h3>
+	            </div>
+	            <div class="page-header-actions">
+		            <div class="btn-group" qid="button-group-operate">
+		            	<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-cog"></span>&nbsp;行为&nbsp;<span class="caret"></span></button>
+		            	<ul class="dropdown-menu pull-right text-left" role="menu" >
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" qid="edit-scheme"><%=com.sms.unitconfig.fields.i18n.modifyColumn %></a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" style="cursor:pointer"qid="change-scheme"><%=com.sms.unitconfig.fields.i18n.userDiffCase %></a></li>
+						  </ul>
+					  </div>
+	            </div>
+	       </div>
+	    </div>
+	    <p><%=com.sms.unitconfig.fields.i18n.explainA %></p>
+		<p><%=com.sms.unitconfig.fields.i18n.explainB %></p>
+		<p><%=com.sms.unitconfig.fields.i18n.explainC %> <strong qid="scheme-count"></strong> <%=com.sms.unitconfig.fields.i18n.explainD %></p>
+
+    </div>
+</body>
+</html>

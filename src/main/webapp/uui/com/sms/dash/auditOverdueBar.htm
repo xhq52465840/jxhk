@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+    <div>
+    	<div class="row" style="padding:0px 10px 10px 10px;">
+			<label class="col-xs-2 col-sm-2" style="text-align:left;padding-top: 7px;width:7%">截止日期：</label>
+			<div class="col-xs-2 col-sm-2" style="align:center">
+                <input type="text" class="form-control input-sm startdate" name="startdate" style="width:40%;" readonly/>
+			</div>
+			<div class="col-xs-8 col-sm-8" style="align:left">
+				<button type="button" class="btn btn-default" qid="search">搜索</button>
+				<span style="color:red">（默认为截止当日）</span>
+			</div>
+		</div>
+    	<div id="auditOverdueBar" style="width:100%;height:500px;border:1px solid #ccc;padding:10px;"></div>
+    </div>
+</body>
+</html>

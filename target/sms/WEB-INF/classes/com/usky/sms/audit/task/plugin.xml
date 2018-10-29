@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+
+	<bean id="taskDao" class="com.usky.sms.audit.task.TaskDao" />
+	<bean id="masterDao" class="com.usky.sms.audit.task.MasterDao" />
+	<bean id="taskFlowUserDao" class="com.usky.sms.audit.task.TaskFlowUserDao" />
+	<bean id="task" class="com.usky.sms.audit.task.TaskService" />
+
+</beans>

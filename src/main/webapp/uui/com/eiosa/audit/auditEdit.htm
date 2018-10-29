@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>审计点编辑</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div>
+<div umid="isarpEdit"></div>
+<!-- 
+  <div umid="auditEditDialog"></div>--> 
+  <div class="container-fluid" id="isarp"> 
+<!--   <div id="deleteDialog" style="display:none;">
+        <p id="deleteContent"></p>
+   </div> 
+   <div id="logDialog" style="display:none">
+     <div umid="isarpLogTable"></div>
+   </div>
+   <div id="addExplainDialog" style="display:none;">
+       <textarea id="explainTxt" style="width:100%" rows="2"  name="comments"></textarea>
+   </div>
+   <div id="messageDialog" style="display:none;">
+       <label>消息内容：</label>
+       <textarea id="messageTxt" style="width:80%" rows="2"></textarea><br></br>
+       <label>接收人：</label>
+       <input type="text" class="form-control input-sm" style="width:80%" id="receiverTxt"></input>
+   </div> 
+ -->   
+   	<div qid="div_Dialog"  class="activity-body-content">
+   	   <div class="row">
+   	   
+	   <form id="isarpDialog" role="form" >
+	   <div class="col-sm-12">
+	   <table class="uui-table" style="table-layout: fixed;">
+	     <tbody>
+	       <tr  v-show="isarpAll.isarpHistory!=null">
+	         <td class="name">
+	        <div   class="row">
+	           <div  style="position:absolute;top:0px;right:0px"class="form-group col-sm-20 col-md-20"> 
+	            
+	            <label      v-for="history in isarpAll.isarpHistory">
+	               <label  v-if="isarpAll.isarp.id==history.isarpId" style="font-size:15px;" class="label label-success"  class="isarpHistory"  title=最后更新时间：{{history.lastUpdate}} >{{history.name}}</label>&nbsp;&nbsp;
+	               <a      v-else="isarpAll.isarp.id!=history.isarpId" class="isarpHistory" style="text-decoration:underline;" href="#"  title=最后更新时间：{{history.lastUpdate}}  data={{history.isarpId}} v-on:click="openIsarpHistory">{{history.name}}</a>&nbsp;&nbsp;
+	            </label>
+	            
+	          </div>
+	          </div>
+	         </td>
+	       </tr>
+	     <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Text:</label></td>
+	       </tr>
+	       <tr>
+	         <td> <p style="width:90%"  id="isarpText" v-html="isarpAll.isarp.text"></p></td>
+	       </tr>
+	       <tr>
+	         <td class="name"><label class="label label-success" style="font-size:18px;">Guidance:</label></td>
+	       </tr>
+	       <tr>
+	         <td><p style="width:100%" rows="2" id="guidance"  v-html="isarpAll.isarp.guidance"></p></td>
+	       </tr>
+	       <tr>
+	           <td><label class="label label-success" style="font-size:18px;">Status:</label><label  id="status" name="status" v-html="isarpAll.status.code_name"></label></td>
+	           
+	       </tr>
+	       <tr></tr>
+	     </tbody>
+	   </table>
+	      <div class="panel panel-sms" >
+	          <div class="panel-heading" >
+	            <h2 class="panel-title">Auditor Actions：
+	            <div class="pull-right panel-button-container"  v-on:click="openIsarpLink" v-show="isarpAll.showIsarpLink">
+                <div class="panel-button-inner">
+                 <span  title="ISARPs Link">Link</span>
+                </div>
+              </div>
+              <div class="pull-right panel-button-container"  qid="addAction"  data={{action.id}}>
+                <div class="panel-button-inner"  >
+                 <!-- span   title="添加 Action">Add AA</span-->
+                </div>
+              </div>
+              </h2>
+	          </div>
+	          <div class="panel-body" id="actionList">
+	           
+	         <table    style="table-layout: fixed;" class="uui-table">
+	         <thead>
+	         <tr >
+	            <td class="name" style="width:250px">Title</td>
+	            <td class="name" style="width:100px">Audit Date</td>
+	            <td class="name" style="width:160px;WORD-BREAK:break-all">Name(s) of the Auditor</td>
+	            <td class="name" style="width:150px">Audit Record</td>
+	            <td class="name" style="width:230px;text-align: center;">Relevant Attachments</td>
+	            <td class="name" >Status</td>
+	        </tr>
+	        </thead>
+	        <tbody >
+	          <tr v-for="action in actionlist">
+	           <td  style="width:250px">
+	           <p v-if="eiosaUserRole=='auditor' && isarpAll.status.code_name=='审核中'"><B>{{action.type}}</B>{{action.title}}</p>
+	           <a  v-else href="#" v-on:click="showAction"  data={{action.id}} class="actionText" ><B>{{action.type}}</B>{{action.title}}</a>
+	           
+	          </td>
+	           <td  style="width:100px">{{action.auditDate}}</td>
+	           <td  style="width:160px;word-break: break-all;" >{{action.auditingAuditors}}</td>
+	           <td  style="width:150px">{{action.reports}}</td>
+	           <td  style="width:230px;">
+	             <ul v-for="attach in action.attach">
+	             <a href="#" v-on:click="downAttach" data={{attach.id}}>{{attach.attachShowName}}</a>
+	               <p v-if="eiosaUserRole=='auditor' && isarpAll.status.code_name=='审核中'"></p>
+	               <a  v-else  data="0" class='glyphicon glyphicon glyphicon-trash uui-cursor-pointer fl-minus del-file' v-on:click="deleteAttach"></a>
+	             </ul>
+	           </td>
+	           <td  >{{action.status}}</td>
+	         <!--  <td ><a href="#"class="glyphicon glyphicon-trash uui-cursor-pointer" title="删除{{action.title}}" v-on:click="delAction" data={{action.id}}></a></td>
+	         -->
+	          </tr>
+	        </tbody>
+	       
+	       </table> 
+	       
+	   </div>
+	</div>
+	<div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Documentation References:
+	          
+	          <div class="pull-right panel-button-container"  id="addDocument" data="" v-on:click="showDocument" >
+	            <div v-if="eiosaUserRole=='auditor' && isarpAll.status.code_name=='审核中'"></div>
+                <div v-else class="panel-button-inner">
+                 <i class="fa fa-plus"  title="添加参考文件"></i>
+                </div>
+              </div>
+              </h2>
+               </div>
+               <div class="panel-body">
+                <table  id="documentTable" style="table-layout: fixed;" class="uui-table">
+		   	  <thead>
+		   	   <tr>
+		   	    <td class="name" style="width:300px">Manuals/ Documents Reviewed</td>
+		   	    <td class="name" style="width:200px">Acronyms</td>
+		   	    <td class="name" style="width:240px">Version/ Revision</td>
+		   	    <td class="name" style="width:150px;WORD-BREAK:break-all">Charpter</td>
+		   	    <td></td>
+		   	  </tr>
+		   	  </thead>
+		   	  <tbody>
+		   	    <tr v-for="document in documentList">
+		   	     <td style="width:300px">
+		   	      <p v-if="eiosaUserRole=='auditor' && isarpAll.status.code_name=='审核中'">{{document.documentid.reviewed}}</p>
+		   	     <a  v-else href="#" v-on:click="showDocument" data={{document.id}}>{{document.documentid.reviewed}}</a>
+		   	    </td>
+		   	     <td style="width:200px">{{document.documentid.acronyms}}</td>
+		   	     <td style="width:240px">{{document.documentid.versionno}}</td>
+		   	     <td style="width:150px">{{document.dec}}</td>
+		   	     <td ><p v-if="eiosaUserRole=='auditor' && isarpAll.status.code_name=='审核中'"></p>
+		   	     <a v-else href="#"class="glyphicon glyphicon-trash uui-cursor-pointer" title="删除{{document.documentid.reviewed}}"   v-on:click="delCharpter" data={{document.id}}></a>
+		   	     </td>
+		   	    </tr>
+		   	  </tbody>
+		   	</table>
+               </div>   
+	    </div>
+	  <div class="panel panel-sms" >
+	          <div class="panel-heading">
+	            <h2 class="panel-title">Assessment/Status of Conformity :<span class="text-danger"> *</span></h2>
+	          </div>
+	      </div>
+	  <span class="text-danger" v-if="isarpAll.assessment==null">Assessment不能为空</span>
+	  <select id="assessment" v-model="isarpAll.assessment" options="isarpAll.assessments" style="width:100%" >
+	  	<option v-for="option in isarpAll.assessments" v-bind:value="option.value">
+		    {{ option.text }}
+		  </option>
+	  </select>
+	  
+	<div id="comments" v-show="isarpAll.assessment==1">
+	    <label>Auditor Comments：</label><span class="text-danger"> *</span><span class="text-danger" v-if="isarpAll.isarp.comments==null">不能为空</span>
+	   <textarea class="form-control" v-model="isarpAll.isarp.comments"  style="width:100%" rows="2" id="commentsText" ></textarea>
+	   
+	   </div>
+	<div id="na" v-show="isarpAll.assessment!=1 && isarpAll.assessment!=null">
+	    <label>Description of Nonconformity or Description of Reason for N/A:</label><span class="text-danger"> *</span><span v-if="isarpAll.isarp.reason==null"class="text-danger" >不能为空</span>
+	   <textarea class="form-control" v-model="isarpAll.isarp.reason"style="width:100%" rows="2" id="reason"></textarea>
+	    
+	 </div>
+	 <div id="root" v-show="isarpAll.assessment!=1 && isarpAll.assessment!=8 && isarpAll.assessment!=null">
+	    <label>Root Cause：</label><span class="text-danger"> *</span> <span v-if="isarpAll.isarp.rootCause==null"class="text-danger">不能为空</span>
+	   <textarea class="form-control" v-model="isarpAll.isarp.rootCause" style="width:100%" rows="2" id="rootCause"></textarea>
+	    
+	    <label>Corrective Action Taken：</label><span class="text-danger"> *</span><span v-if="isarpAll.isarp.taken==null"class="text-danger">不能为空</span>
+	   <textarea class="form-control"style="width:100%" v-model="isarpAll.isarp.taken"rows="2" id="taken"></textarea>
+	    
+	   </div>
+	   </form>
+	   <hr></hr>
+	   <div class="uui-managepage">
+	    <div class="panel panel-sms">
+	      <div class="panel-heading">
+	          
+	         <h2 class="panel-title">
+	           <span id="g9SShQPdRwNF23RzzQKe-toggle-panel" class="fa uui-cursor-pointer fa-chevron-right fa-plus" v-on:click="logShow"></span>
+	           Log
+	         </h2>
+	        
+	      </div>
+	    <div class="panel-body hidden">
+	      <div umid="actionLogTable"></div> 
+	    </div>
+	    </div>
+	    </div>
+	    <br></br>
+	  </div>
+	  
+	 </div> 
+		   <div id="footer" class="row  float_footer" >
+	       <div class="form-group col-sm-20 col-md-20" style="margin:3px;">
+	          <button type="button" class="btn btn-default"  id="searchDocument" v-on:click="ismItemReport">导出</button>
+	          <button type="button" class="btn btn-default"  id="resetDoc" v-on:click="addExplain">添加说明</button>
+	          <button type="button" class="btn btn-default " id="addNewDocument" v-on:click="sendMessage">发送消息</button>
+	          <button type="button" class="btn btn-default"  id="isarpSubmit"  
+	          	v-if="isarpAll.status.code_name!='审核中' && isarpAll.status.code_name!='审核通过'"  v-on:click="submitIsarp">提交</button>
+	          <button type="button" class="btn btn-default"  id="isarpAudited"
+	          	v-if="isarpAll.userrole!='auditor'  && isarpAll.status.code_name=='审核中' " v-on:click="auditFinish">审核</button>
+	          <button type="button" class="btn btn-default"  id="isarpReaduit" v-on:click="reAudit"
+	          	v-if="isarpAll.userrole!='auditor'">重新审计</button>
+	          <button type="button" class="btn btn-default"  id="isarpSave"
+	          	v-if="(isarpAll.userrole=='auditor' &&(isarpAll.status.code_name=='审计中'|| isarpAll.status.code_name=='重新审计'))||(isarpAll.userrole!='auditor') " v-on:click="saveIsarp">保存</button>
+	         
+	       </div>
+	   </div>
+	   
+	   <div style="display:none">
+	     <div umid="isarpLinkCheck"></div>
+	   </div>
+   
+	</div>
+</div> 
+
+</body>
+</html>

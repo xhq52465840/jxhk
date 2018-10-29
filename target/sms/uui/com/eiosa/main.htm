@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+</style>
+</head>
+<body>
+<div>
+	<div umid="auditEdit"></div>
+	<div umid="documentAttach"></div>
+    <div class=" container-fluid">
+    <div class="uui-managepage" >
+          <!--  <div class="page-header-main unit-details">
+          <h1 align="center">E-IOSA内审</h1>
+          </div>-->
+          <nav class="navbar navbar-default navbar-horizontalNav" role="navigation">
+          	<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse" style="padding-left:0;">
+          		<ul id="myTab" class="nav navbar-nav" style="width:100%">
+             		<li class=" active"><a id="tab_portal" href="#report" data-toggle="tab">看板</a></li>
+            		<li v-show="userRole!='auditor'"><a id="tab_section" href="#section"  data-toggle="tab">分配</a></li>
+            		<li><a id="tab_documents" href="#tabContent_docList" data-toggle="tab">专业文件库</a></li>
+             		<li  v-show="userRole!='auditor'"><a id="tab_auditors" href="#auditors" data-toggle="tab">审计员</a></li>
+            		<li><a id="tab_isarps" href="#isarps"    data-toggle="tab">ISARPs</a></li>         
+            		<li><a id="tab_follow" href="#tabContent_followMain" data-toggle="tab">ISARPs跟踪</a></li>
+         		</ul>
+         	</div>
+          </nav>
+           <div id="myTabContent" class="tab-content">           
+            <div class="tab-pane fade in active" id="report">
+                <!-- div umid="reportList"></div -->
+				<div umid="general"></div>
+            </div>          
+            <div class="tab-pane fade " id="section">
+                <div umid="sectionMain"></div>
+            </div>           
+            <div class="tab-pane fade " id="tabContent_docList">
+				<div umid="docList"></div>
+            </div>                
+            <div class="tab-pane fade " id="auditors">
+				<div umid="auditorList"></div>
+            </div>`
+           <div class="tab-pane fade " id="isarps">
+				<div umid="isarpsList"></div>
+            </div>
+            <div class="tab-pane fade " id="tabContent_followMain">
+				<div umid="followMain"></div>
+            </div>                 
+        </div>   
+    </div>   
+    
+  </div>
+</div>
+</body>

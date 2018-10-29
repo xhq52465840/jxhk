@@ -1,0 +1,41 @@
+.com-sms-applicationHeader nav.navbar{
+	height:34px;
+}
+
+.com-sms-applicationHeader nav.navbar li.dropdown {
+	border : 1px solid #cacaca;
+	background:linear-gradient(to bottom, #ffffff 0%, #a4a4a6 100%);
+	margin-left:4px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;	
+	text-align: center;
+}
+
+.com-sms-applicationHeader nav.navbar li.dropdown a{
+	color:#333;
+}
+
+.com-sms-applicationHeader nav.navbar li.dropdown a:hover{
+	color:#fff;
+}
+
+.com-sms-applicationHeader nav.navbar li.dropdown .caret{
+	color:#333;
+}
+
+.com-sms-applicationHeader div.navbar-collapse > ul.leftmenu li.dropdown{
+	min-width:80px;
+}
+
+.com-sms-applicationHeader div.navbar-header > ul.navbar-nav li.dropdown{
+	min-width:40px;
+}
+/*
+.com-sms-applicationHeader .navbar-brand:hover {
+    background-color:#296CA3 !important;
+}
+*/
+.com-sms-applicationHeader nav.navbar li.dropdown:hover{
+	/*background-color:#296CA3;*/
+	background:linear-gradient(to bottom, #7d4fab 0%, #51267c 100%);
+}

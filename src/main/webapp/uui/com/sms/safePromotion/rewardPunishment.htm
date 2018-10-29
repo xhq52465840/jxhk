@@ -1,0 +1,108 @@
+﻿﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" name ="format-detection" content=" telephone = no,text/html,charset=utf-8"  />
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+</head>
+<body>
+    <div class="uui-managepage">
+    	<!-- 添加事件分析Dialog begin -->
+		<div umid="rewardDialog"></div>
+		<!-- 添加事件分析Dialog end -->
+		 <div class="uui-managepage-header">
+		 	<div class="container-fluid no-left-right-padding">
+	    	 	<div class="col-md-3">
+	    	 		<h3 class="uui-managepage-title"><%=com.sms.safePromotion.rewardPunishment.i18n.pageTitle %></h3>
+	    	 	</div >
+	    	 	<div class="col-md-9 text-right" style="margin-top:5px;">
+	    	 		<button  type="button" class="btn btn-default btn-sm hidden" qid="addRecord" mode="add">新增</button>	
+	    	 		<button  type="button" class="btn btn-default btn-sm" name="export" qid="export">导出Excel</button>
+	    	 	</div >
+		    </div>
+		 </div>
+	    <!--页面主内容区域 begin-->
+    	<div class="form uui-managepage-filter uui-panel-graph">
+           <div class="uui-panel-rect-widget">
+           	  <div class="uui-panel-rect-header">
+        			<h3 class="uui-panel-rect-title"><%=com.sms.safePromotion.rewardPunishment.i18n.filterTitle %></h3>
+        	  </div>
+			  <div  class="uui-managepage-filter-content uui-panel-rect-body">
+			  	<div class="row">
+		       		<div class="form-group col-md-3 col-xs-3">
+		           		<label for="<%=this._id%>-type">奖惩类别</label>
+		           	 	<select class="form-control input-sm" name="rewardType" qid="rewardType">
+		           	 	  	  <option value="">全部</option>
+							  <option value="R">奖励</option>
+							  <option value="P">惩罚</option>
+						</select>
+		       		</div>
+				  	<div class="form-group col-md-3 col-xs-3">
+		           		<label for="<%=this._id%>-unit">所属部门</label>
+		               	<input type="text" class="form-control input-sm" name="unit" qid="unit" maxlength="255" />
+		       		</div>
+		       		<div class="form-group col-md-3 col-xs-3">
+		           		<label for="<%=this._id%>-userName">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+		               	<input type="text" class="form-control input-sm" name="userName" qid="userName"/>
+		       		</div>
+		       		<div class="form-group col-md-3 col-xs-3">
+		           		<label for="<%=this._id%>-eventGrade">事件等级</label>
+		               	<input type="text" class="form-control input-sm" name="eventGrade" qid="eventGrade"/>
+		       		</div>
+		       	</div>
+		       	<div class="row">
+		       	
+		       	    <div  class="form-group col-md-3 col-xs-3">
+		       		<div class="form-group col-md-5 col-xs-5">
+	              		<label for="<%=this._id%>-startDate">更新日期</label>
+	                	<input type="text" class="form-control input-sm" name="startDate" qid="startDate"/>
+		           	</div>
+		           	<div class="form-group col-md-1 col-xs-1" style="margin-top:28px;text-align:center">
+	              		<label></label>
+	                		<span>--</span>
+		           	</div>
+		           	<div class="form-group col-md-5 col-xs-5" style="margin-top:23px;">
+	              		<label for="<%=this._id%>-endDate"></label>
+	                		<input type="text" class="form-control input-sm " name="endDate" qid="endDate"/>
+		           	</div>
+		           	</div>
+		           	<div class="form-group col-md-3 col-xs-3">
+		           	<div class="form-group col-md-5 col-xs-5">
+	              		<label for="<%=this._id%>-eventStartDate">事发时间</label>
+	                	<input type="text" class="form-control input-sm" name="eventStartDate" qid="eventStartDate"/>
+		           	</div>
+		           	<div class="form-group col-md-1 col-xs-1" style="margin-top:28px;text-align:center">
+	              		<label></label>
+	                		<span>--</span>
+		           	</div>
+		           	<div class="form-group col-md-5 col-xs-5" style="margin-top:23px">
+	              		<label for="<%=this._id%>-eventEndDate"></label>
+	                		<input type="text" class="form-control input-sm " name="eventEndDate" qid="eventEndDate"/>
+		           	</div>
+		           	</div>
+				</div>
+				<div class="row">
+					<div class=" col-md-12 col-xs-12 ">
+		            	   <div class="text-right" style="line-height: 5em;">
+		            	     <button type="button" class="btn btn-default btn-sm" qid="clean_filter" style="margin-right:20px;">清除条件</button>
+						 	 <button type="button" class="btn btn-default btn-sm" qid="btn_filter">搜索</button>
+						   </div>
+					   </div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="panel-body" style="padding:0px;">
+		<div class="dl-horizontal resume-details">
+    		<table qid="rewardTable"
+				class=" table table-striped table-bordered" 
+				cellspacing="0"
+				width="100%" style="margin-bottom: 0;table-layout:fixed;">
+			</table>
+		</div>
+	</div>
+    <!--页面主内容区域 end-->
+</div>
+</body>
+</html>

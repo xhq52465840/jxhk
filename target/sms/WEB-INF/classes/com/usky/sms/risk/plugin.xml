@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+	
+	<bean id="aircraftTypeDao" class="com.usky.sms.risk.airline.AircraftTypeDao" />
+	<bean id="airlineInfoActivityTypeEntityDao" class="com.usky.sms.risk.airline.AirlineInfoActivityTypeEntityDao" />
+	<bean id="airlineInfoDao" class="com.usky.sms.risk.airline.AirlineInfoDao" />
+	<bean id="clauseDao" class="com.usky.sms.risk.ClauseDao" />
+	<bean id="risk" class="com.usky.sms.risk.RiskService" />
+	<bean id="riskAnalysisDao" class="com.usky.sms.risk.RiskAnalysisDao" />
+	<bean id="riskDao" class="com.usky.sms.risk.RiskDao" />
+	<bean id="riskErrorMappingDao" class="com.usky.sms.risk.RiskErrorMappingDao" />
+	<bean id="riskTaskActivityTypeEntityDao" class="com.usky.sms.risk.RiskTaskActivityTypeEntityDao" />
+	<bean id="riskTaskDao" class="com.usky.sms.risk.RiskTaskDao" />
+	<bean id="riskTaskSettingDao" class="com.usky.sms.risk.RiskTaskSettingDao" />
+	<bean id="riskThreatMappingDao" class="com.usky.sms.risk.RiskThreatMappingDao" />
+	<bean id="stopoverDao" class="com.usky.sms.risk.airline.StopoverDao" />
+	<bean id="actionItemRiskAnalysisDao" class="com.usky.sms.risk.ActionItemRiskAnalysisDao" />
+
+</beans>

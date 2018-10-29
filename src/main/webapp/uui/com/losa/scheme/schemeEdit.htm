@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align:right; float: right;
+}
+</style>
+</head>
+<body>
+<div style="width:100%">
+	<div class="container-fluid" style="padding-left:1px;padding-right:1px">
+		<div class="schemeeditform" id="schemeEditForm">
+			<div class="schemeeditform-heading">
+				<div class="searchTitleIcon">
+					<div class="searchTitleIconDiv"></div>
+				</div>
+				<div class="schemeeditform-title">航线审计方案信息</div>
+				<div class="schemeeditform-heading-button" v-if="userAuth=='Y'">
+					<button v-if="flag=='M'" type="button" class="btn btn-default fa fa-pencil" v-on:click="modifyBasicInfo">修改</button>
+					<button v-if="flag=='S'" type="button" class="btn btn-default fa fa-save" v-on:click="save">保存</button>
+				</div>
+			</div>
+			<table class="uui-table schemeedittable" style="table-layout: fixed;">
+				<tbody>
+					 <tr v-if="schemeId!=null&&schemeId!=''">
+						<td class="name odd" width="10%">
+							方案编号：
+						</td>
+						<td class="value odd">
+							{{schemeInfo.schemeNo}}
+						</td> 
+						<td class="name  odd" width="10%">
+							流水号：
+						</td>
+						<td class="value  odd">
+							{{schemeInfo.id}}
+						</td>
+						
+					</tr> 
+					<tr>
+						<td class="name even" width="10%">
+							方案类型：<span class="text-danger" > *</span>
+						</td>
+						<td class="value even">
+							<span v-if="flag=='M'">{{schemeInfo.schemeTypeName}}</span>
+							<select v-else id="schemeType" style="width:130px" v-model="schemeInfo.schemeType">
+								<option value="">请选择</option>
+								<option v-for="option in schemeTypeNames" v-bind:value="option.dictCode">
+									{{ option.dictName }}
+								</option>							
+					  		</select>
+						</td>
+						<td class="name even">
+							实施单位：<span class="text-danger" > *</span>
+						</td>
+						<td class="value even" v-if="schemeInfo.isImpleUnitIn == 0">
+							<input type="text" class="form-control input-sm popover-toggle disabled"  disabled={{true}} v-model="schemeInfo.impleUnitName" id="schemeEditImpleUnit" />
+						</td>
+						<td class="value  even" v-else>
+							<input type="text" class="form-control input-sm popover-toggle disabled"  disabled={{flag=='M'}} v-select.allowclear="schemeInfo.impleUnitId" :options="options1" id="schemeEditImpleUnit" />
+						</td>
+					</tr>
+					<tr>
+						<td class="name odd" style="width: 20%">
+							被实施单位：<span v-show="schemeInfo.schemeType=='air_unit'" class="text-danger" > *</span>
+						</td>
+						<td class="value odd" colspan="3" v-if="schemeInfo.isAuditedUnitsIn == 0">
+							<input type="text" class="form-control input-sm popover-toggle disabled"  disabled={{true}} id="schemeAuditedUnits" v-model="schemeInfo.auditedUnitNames"/>
+						</td>
+						<td class="value odd" colspan="3" v-else>
+							<input type="text" class="form-control input-sm popover-toggle disabled"  disabled={{flag=='M'}} v-select.multiple="schemeInfo.auditedUnits" :options="options3" id="schemeAuditedUnits" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="uui-table schemeedittable" style="table-layout: fixed;">
+				<tbody>
+					<tr v-if="schemeId!=null&&schemeId!=''">
+						<td class="name even">
+							主题：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value even" colspan="3">
+							{{schemeInfo.schemeSubject}}
+						</td>
+					</tr>	
+					<tr>
+						<td class="name odd" style="width: 20%">
+							时间范围：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value odd" colspan="3">
+							<input type="text" style="width:45%" disabled={{flag=='M'}} v-model="schemeInfo.startDate"
+								class="form-control input-sm popover-toggle date"/>
+								&nbsp;&nbsp;
+								至
+								&nbsp;&nbsp;
+							<input type="text" style="width:45%" disabled={{flag=='M'}} v-model="schemeInfo.endDate"
+								class="form-control input-sm popover-toggle date"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name even" style="width: 20%">
+							参与人员：
+							<span class="text-danger" > *</span>
+						</td>
+						<td class="value even" colspan="3">
+							<input type="text" class="form-control input-sm popover-toggle disabled"  disabled={{flag=='M'}} v-select.multiple="schemeInfo.auditor" :options="options2" id="schemeObservers"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="name odd" style="width: 20%">
+							详细描述：
+						</td>
+						<td class="value odd" colspan="3">
+							<textarea rows="5" cols="65" v-model="schemeInfo.schemeDesc" disabled={{flag=='M'}} class="form-control input-sm popover-toggle">
+							</textarea>
+						</td>
+					</tr>
+					<tr v-show="schemeId!=''">
+						<td class="name odd" style="width: 20%">
+							报告上传：
+						</td>
+						<td class="value odd" colspan="3">
+							<div class="form uui-managepage-filter-new uui-panel-graph-new" style="height:auto;min-height:40px;border:0px;margin-top:10px" id="attachment" umid="attachments">
+     	                    </div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="footer" class="row float_footer" v-if="schemeId==null||schemeId==''">
+				<div class="form-group col-sm-20 col-md-20" style="margin: 3px;">
+					<button type="button" class="btn btn-default" v-on:click="save">确认</button>
+					<button type="button" class="btn btn-default" v-on:click="cancel" >取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

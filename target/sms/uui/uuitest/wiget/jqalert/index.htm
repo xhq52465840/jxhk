@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/uui-loader.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqalert/jqalert.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.u.inituui();
+            $("body").on("click", "button", function (e) {
+                var bt = $(e.currentTarget);
+                $.u.alert.reset();
+                if (bt.text() == "info") {
+                    $.u.alert.info("abc-123");
+                }
+                else if (bt.text() == "success") {
+                    $.u.alert.success("abc-123");
+                }
+                else if (bt.text() == "warn") {
+                    $.u.alert.warn("abc-123");
+                }
+                else if (bt.text() == "error") {
+                    $.u.alert.error("abc-123");
+                } else if (bt.text() == "infoex") {
+                    $.u.alert.info("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "successex") {
+                    $.u.alert.success("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "warnex") {
+                    $.u.alert.warn("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "errorex") {
+                    $.u.alert.error("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                } else if (bt.text() == "infoauto") {
+                    $.u.alert.options.timeout = 2000;
+                    $.u.alert.info("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                } else if (bt.text() == "infodialog") {
+                    $.u.alert.options.dialog = true;
+                    $.u.alert.info("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "successdialog") {
+                    $.u.alert.options.dialog = true;
+                    $.u.alert.success("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "warndialog") {
+                    $.u.alert.options.dialog = true;
+                    $.u.alert.warn("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+                else if (bt.text() == "errordialog") {
+                    $.u.alert.options.dialog = true;
+                    $.u.alert.options.timeout = 5000;
+                    $.u.alert.error("<span class=\"ui-icon ui-icon-info\" style=\"float: left; margin-right: .3em;\"></span><strong>Hey!</strong> Sample style.");
+                }
+            });
+        });
+    </script>
+</head>
+<body style="font-size: 75%;">
+    <button class="icon-exclamation-sign">info</button>
+    <button class="icon-ok">success</button>
+    <button class="icon-bell">warn</button>
+    <button class="icon-ban-circle">error</button>
+    <button>infoex</button>
+    <button>successex</button>
+    <button>warnex</button>
+    <button>errorex</button>
+    <button>infoauto</button>
+    <button>infodialog</button>
+    <button>successdialog</button>
+    <button>warndialog</button>
+    <button>errordialog</button>
+</body>
+</html>

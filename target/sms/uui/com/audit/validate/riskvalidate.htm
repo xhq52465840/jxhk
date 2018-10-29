@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<style type="text/css">
+	.com-audit-validate-riskvalidate .nav-tabs{
+		margin-bottom: -1px;
+	}
+	.com-audit-validate-riskvalidate .nav-tabs li.active a{
+		background-color: #f5f5f5;
+	}
+</style>
+</head>
+<body>
+<input type="hidden" class="myUnitID" qid="myUnitID">
+<div  class="uui-managepage">
+    <div umid="operationWidget"></div>
+	<div umid="verificationActionItemWidget"></div>
+	<div umid="approvalActionItemWidget"></div>
+	<div class="uui-managepage-header">
+    	<div class="container-fluid no-left-right-padding">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="uui-managepage-title">措施验证</h3>
+                </div>
+                <div class="col-md-9 text-right">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--页面主内容区域 begin-->
+	<div class="form uui-managepage-filter uui-panel-graph">
+		<div class="row" qid="query-component" style="margin-top: 5px;">
+			<div class="col-md-12">
+				<div class="search-criteria" qid="search-criteria">
+					<ul class="criteria-list">
+						<li class="text-query hidden">
+							<div class="text-query-container">
+								<input class="text" qid="search-query" type="text" placeholder="包含的内容" maxlength="20"/>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12" style="margin-bottom: 5px;">
+				<div class="search-criteria-extended" qid="search-criteria-extended">
+					<ul class="criteria-list">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row " style="margin: 0 10px;">
+			<ul id="navtabs" class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+				<a id="FENGPAI" href="#fenpai" data-toggle="tab">行动项</a>
+				</li>
+				<li role="presentation">
+				<a id="ZHIXING" href="#zhixing" data-cate='dwzx' data-toggle="tab">待我执行<span qid="operation-count"></span></a>
+				</li>
+				<li role="presentation">
+				<a id="YANZHENG" href="#yanzheng" data-cate='dwyz' data-toggle="tab">待我验证<span qid="confirm-count"></span></a>
+				</li>
+				<li role="presentation">
+				<a id="SHENPI" href="#shenpi" data-cate='dwsh' data-toggle="tab">待我审核<span qid="approval-count"></span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="row " style="margin: 0;">
+			<div id="myTabContent" class="tab-content">
+
+				<!-- 所有行动项 begin -->
+				<!--  显示title  begin-->
+				<span class='title_show' style='position: absolute;padding:10px; display:none;background:#edeef0; border: solid 1px #999999;border-radius:5px; z-index:9999'></span>
+				<!--  显示title   end-->
+				<div id="fenpai" class="tab-pane fade in active col-sm-12">
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<div class="row">
+								<div class=" text-right col-md-12" style="height: 34px;">
+									 <button class="btn btn-default btn-sm " qid="btn_excel" >导出Excel</button>
+									 <button class="btn btn-default btn-sm " qid="btn_col"  style="">数据列</button>
+								</div>
+								<!-- 数据列开始-->
+							 	<div class='columns-layer' qid="colDiv" style='display:none;width: 300px; padding: 0; background: white; border: 1px solid #ccc; border-radius: 5px; margin-top:-10px; height:350px; right: 10px; position: absolute;z-index:9999; -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);'>
+								     <div class="row" style="padding:15px">
+						                <div class="col-md-12">
+											<h2 class="uui-module-h2">数据列</h2>
+						                </div>
+						            </div>
+						            <div class="form-group has-feedback" style="display:inline-block;padding-left:20px; margin: 10px 0 10px 20; width:90%;">
+						            	<input type="text"   class="form-control input-sm"  qid="columnsdiv" />	
+						            </div>
+						            <div class="buttons-container text-right"  style="border-top: 1px solid #ccc;padding:10px; position:absolute;bottom:5px;right:0px;width:100%;">
+						            	<span class="btn btn-default btn-sm update" qid="update">更新</span>
+						            	<span class="btn btn-link closed" qid="closed">关闭</span>
+						            </div>
+							    </div>
+							  <!-- 数据列结束 -->
+							</div>
+						</div>
+						<div class="panel-body">
+							<table qid="viewtableone" class="results table table-striped table-bordered table-hover " cellspacing="0" width="100%" style="margin-bottom: 0;margin-top: 0px !important;table-layout:fixed;">
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 所有行动项 end -->
+                <!--待我执行begin-->
+                <div id="zhixing" class=" tab-pane fade col-sm-12">
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<div class="row">
+								<div class=" text-right col-md-12" style="height: 34px;">
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table qid="operationDataTable" class="results table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="margin-bottom: 0;margin-top: 0px !important;table-layout:fixed;">
+							</table>
+						</div>
+					</div>
+				</div>
+                <!--待我执行end -->  
+				<!-- 待我验证 begin -->
+				<div id="yanzheng" class=" tab-pane fade col-sm-12">
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<div class="row">
+								<div class=" text-right col-md-12">
+									<button class="btn btn-success" qid="batch-btn-comfirm" >批量验证</button>
+									<button class="btn btn-danger" qid="valite-reject" data-type="reject">批量退回</button>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table qid="verificationDataTable" class="results table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="margin-bottom: 0;margin-top: 0px !important;table-layout:fixed;">
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 待我验证 end -->
+				<!-- 待我审核 begin -->
+				<div id="shenpi" class=" tab-pane fade col-sm-12">
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<div class="row">
+								<div class=" text-right col-md-12">
+									<button class="btn btn-success" qid="batch-btn-approval" data-type="approve" >批量通过</button>
+									<button class="btn btn-danger" qid="batch-btn-reject" data-type="reject">批量退回</button>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table qid="approvalDataTable" class="results table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="margin-bottom: 0;margin-top: 0px !important;table-layout:fixed;">
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 待我审核 end -->
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+ </head>
+<body>
+    <div style="padding: 0 20px;">
+    	<div umid="riskMessage"></div>
+    	
+	    <!-- toobar　begin -->
+	    <div class="container-fluid no-left-right-padding" style="padding-bottom: 10px;">
+	    	
+	    	<div class="row">
+	    		<div class="col-sm-6">
+	    			<h1 class="summary-val break-word" ><%= com.sms.risk.detail.i18n.title%><span qid="title" class="hidden"><%= this._i18n.status.view%></span></h1>
+	    		</div>
+	    		<div class="col-sm-6 text-right">
+	    			<div class="toolbar-split toolbar-split-left2 " style="margin-top:5px" >
+			    		<button class="btn btn-default btn-sm mode-add hidden" qid="btn_save"><%= com.sms.risk.detail.i18n.buttons.save %></button>
+			    		<button class="btn btn-default btn-sm mode-edit hidden" qid="btn_submit"><%= com.sms.risk.detail.i18n.buttons.submit %></button>
+						<button class="btn btn-default btn-sm mode-edit hidden" qid="btn_assignment"><%= com.sms.risk.detail.i18n.buttons.assignment %></button>
+			    		<button class="btn btn-default btn-sm mode-edit hidden" qid="btn_generateReport"><%= com.sms.risk.detail.i18n.buttons.generateReport %></button>
+			    		<button class="btn btn-default btn-sm" qid="btn_back"><%= com.sms.risk.detail.i18n.buttons.back %></button>
+			    	</div>
+	    		</div>
+	    	</div>
+	    	
+		</div>
+		<!-- toobar end -->
+		
+		<!-- module begin -->
+		<div class="activity-body-content">
+	    	<div class="row">
+	    		<div class="col-sm-12" qid="moduleContainer">
+	    			<div umid="riskInformation"></div>
+	    			<div umid="riskAnalysis"></div>
+	    		</div>
+	    	</div>
+	    </div>
+    	<!-- module end -->
+    </div>
+</body>
+</html>

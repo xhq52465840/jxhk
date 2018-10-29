@@ -1,0 +1,27 @@
+$.extend(com.sms.fieldscreen.associateFieldToScreens.i18n,{
+	title1 : '将字段 ',
+	title2 : '关联到界面 ',
+	explainA : '将字段 关联到相关的界面中。 你必须将字段关联到界面上才能显示。新字段会被增加到 标签页的最后。 ',
+	update : '更新',
+	cancel : '取消',
+	surface : '界面',
+	label : '标签',
+	choose : '选择',
+	
+	search : '搜索:',
+	everPage : '每页显示',
+	record : '条记录',
+	message : '抱歉未找到记录',
+	from : '从',
+	to : '到',
+	all : '共',
+	allData : '条数据',
+	withoutData : '没有数据',
+	fromAll : '从总共',
+	filterRecord : '条记录中过滤',
+	searching : '检索中',
+	back : '上一页',
+	next : '下一页',
+	
+	updateFail : '更新操作失败：',
+});

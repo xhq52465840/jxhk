@@ -1,0 +1,20 @@
+.com-sms-unitbrowse-summary h1,
+.com-sms-unitbrowse-summary h2,
+.com-sms-unitbrowse-summary h3,
+.com-sms-unitbrowse-summary h4,
+.com-sms-unitbrowse-summary h5,
+.com-sms-unitbrowse-summary h6{
+	margin:0;
+}
+
+.com-sms-unitbrowse-summary .module{
+	padding-left:0;
+}
+.com-sms-unitbrowse-summary .right-column .module{
+	padding-left:20px;
+}
+.com-sms-unitbrowse-summary .module+.module{
+	border-top:1px solid #ccc;
+	padding-top:25px;
+	margin-top:25px;
+}

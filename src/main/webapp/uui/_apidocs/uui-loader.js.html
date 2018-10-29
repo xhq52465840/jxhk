@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: uui-loader.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: uui-loader.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>﻿/**
+* Created by wayne 
+* 
+* _打头的是尽量内部访问，大写的是外部访问
+* 功能：
+* 1、引入最基本的js和css，如果是dep发布模式，则自己在index.htm自己引入（所有js都在一个文件中）
+* 2、额外的js，还可以通过loadjs来加载
+*/
+//
+(function () {
+    $.u = $.u || {};
+    $.extend(true, $.u, {
+        /**
+        *   全局使用，需要设置
+        */
+        config: {
+            region: 'zh',
+            i18n: {},
+            appname: '',// 项目工程的名字，根据发布到web容器中的名字来
+            mode: 'dev', // dev开发模式，按corejs、corecss加载;dep发布模式，一次性加载（前提先加载jquery）
+            debug: false, // debug模式必须是mode为dev情况下，他会在head上再次加载一边js，就可以用chrome调试
+            constant: {} // 全局的常量, init后可以做一些extend
+        },
+        /**
+        *   全局内部使用，不可设置
+        */
+        _global: {
+            domain: "",
+            protocol: "",
+            scripturls: [],
+            // 以下路径，必须绝对路径（从根开始）
+            devcorejs: ['/uui/widget/jcookie/jquery.cookie.js', '/uui/widget/jqui/ui/jquery-ui.js', '/uui/widget/jqui/ui/i18n/jquery-ui-i18n.js', '/uui/util/json2.js', '/uui/util/dateutil.js', '/uui/util/objectutil.js', '/uui/util/stringutil.js', '/uui/core/uclazz.js', '/uui/core/ucomp.js'],
+            devcorecss: [{ id: 'jqui', path: '/uui/widget/jqui/themes/base/jquery-ui.css', disabled: false }], // 为什么要id，是因为
+            depcorejs: [],//一般是没有的，直接index.htm页面引入，留着以后做规范
+            depcorecss: []//一般也是没有的，直接index.htm页面引入，留着以后做规范，里面对象例子{ id: 'jqui', path: '/uui/widget/jqui/themes/base/jquery-ui.css' , disabled : false}
+        },
+        /////////////////////////////////以下是方法////////////////////////////////////////////
+        /**
+        * 解析相对Url的方法
+        * 
+        */
+        _absolutizeuri: function (base, href) {
+            function removeDotSegments(input) {
+                var output = [];
+                input.replace(/^(\.\.?(\/|$))+/, '')
+                 .replace(/\/(\.(\/|$))+/g, '/')
+                 .replace(/\/\.\.$/, '/../')
+                 .replace(/\/?[^\/]*/g, function (p) {
+                     if (p === '/..') {
+                         output.pop();
+                     } else {
+                         output.push(p);
+                     }
+                 });
+                return output.join('').replace(/^\//, input.charAt(0) === '/' ? '/' : '');
+            }
+            function parseURI(url) {
+                var m = String(url).replace(/^\s+|\s+$/g, '').match(/^([^:\/?#]+:)?(\/\/(?:[^:@]*(?::[^:@]*)?@)?(([^:\/?#]*)(?::(\d*))?))?([^?#]*)(\?[^#]*)?(#[\s\S]*)?/);
+                // authority = '//' + user + ':' + pass '@' + hostname + ':' port
+                return (m ? {
+                    href: m[0] || '',
+                    protocol: m[1] || '',
+                    authority: m[2] || '',
+                    host: m[3] || '',
+                    hostname: m[4] || '',
+                    port: m[5] || '',
+                    pathname: m[6] || '',
+                    search: m[7] || '',
+                    hash: m[8] || ''
+                } : null);
+            }
+
+            href = parseURI(href || '');
+            base = parseURI(base || '');
+
+            return !href || !base ? null : (href.protocol || base.protocol) +
+            (href.protocol || href.authority ? href.authority : base.authority) +
+            removeDotSegments(href.protocol || href.authority || href.pathname.charAt(0) === '/' ? href.pathname : (href.pathname ? ((base.authority &amp;&amp; !base.pathname ? '/' : '') + base.pathname.slice(0, base.pathname.lastIndexOf('/') + 1) + href.pathname) : base.pathname)) +
+            (href.protocol || href.authority || href.pathname ? href.search : (href.search || base.search)) +
+            href.hash;
+        },
+        /**
+        * 先将自己的链接保存下来，以便后面校验重复
+        * 参数，启动的当前html文件
+        */
+        inituui: function (pagename) {
+            if (this._global.domain == '') {
+                if (pagename &amp;&amp; pagename != "") {
+                    this.config.appname = window.location.pathname.replace(pagename, '');
+                }
+                if (window.location.protocol != 'http:' &amp;&amp; window.location.protocol != 'https:') {
+                    if (window.location.protocol == 'file:') {
+                        if (arguments.length > 0) {
+                            this._global.domain = window.location.protocol + '///' + arguments[0];
+                            this._global.protocol = window.location.protocol;
+                        }
+                        else {
+                            throw new Error('开发时错误：file:模式下需要指定项目基本路径，使用_inituui("C:\\xx\\xx")');
+                        }
+                    }
+                    else {
+                        // 不支持http和https以外的协议
+                        throw new Error('开发时错误：不支持http、https、file以外的协议');
+                    }
+                }
+                else {
+                    this._global.domain = window.location.protocol + '//' + window.location.host;
+                    if (this.config.appname != '') {
+                        this._global.domain += this.config.appname;
+                    } else {
+                        this._global.domain += "/";
+                    }
+                    this._global.protocol = window.location.protocol;
+                    /*
+                    if (window.location.hostname == "localhost") {
+                        var path = window.location.pathname;
+                        if (path.indexOf("/") == 0) {
+                            path = path.substring(1);
+                        }
+                        path = path.split("/", 1);
+                        if (path != "") {
+                            this._global.domain = this._global.domain + path + "/";
+                        }
+                    }
+                    */
+                }
+                // 检查head加载的js和css，免得重复加载
+                $('head').contents().filter(function () { return this.nodeType == 1; }).each(
+                        function (i, dom) {
+                            if ('link' == dom.tagName.toLowerCase()) {
+                                if (dom.href) {
+                                    this._global.scripturls.push(this._absolutizeuri(window.location, dom.href));
+                                }
+                            }
+                            else if ('script' == dom.tagName.toLowerCase()) {
+                                if (dom.src) {
+                                    this._global.scripturls.push(this._absolutizeuri(window.location, dom.src));
+                                }
+                            }
+                        }
+                    );
+                var corejs, corecss;
+                if (this.config.mode == 'dev') {
+                    // 加载国际化语言，如果配置了语言的话
+                    if (this.config.region != '') {
+                        var scriptLanUrl = this._global.domain + 'uui/core/i18n/uui-i18n-' + this.config.region + '.js';
+                        if ($.inArray(scriptLanUrl, this._global.scripturls) == -1) {
+                            if (this._global.protocol == 'file:') {
+                                $('head').append('&lt;script  type="text/javascript" src="' + scriptLanUrl + '">&lt;/script>');
+                            }
+                            else {
+                                $.ajax({
+                                    url: scriptLanUrl,
+                                    dataType: 'script',
+                                    async: false,
+                                    success: function (data) {
+                                        this._global.scripturls.push(scriptLanUrl);
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                        throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载全局国际化文件——' + scriptLanUrl);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                    corejs = this._global.devcorejs;
+                    corecss = this._global.devcorecss;
+                }
+                else {
+                    corejs = this._global.depcorejs;
+                    corecss = this._global.depcorecss;
+                }
+                // 加载this._global下的corejs和corecss
+                $.each(corejs, function (idx, jspath) {
+                    var absJSUrl;
+                    if (jspath != null &amp;&amp; jspath != "" &amp;&amp; jspath[0] == "/") {
+                        absJSUrl = this._global.domain + jspath.substr(1, jspath.length - 1);
+                    }
+                    else {
+                        absJSUrl = this._global.domain + jspath;
+                    }
+                    if ($.inArray(absJSUrl, this._global.scripturls) == -1) {
+                        if (this._global.protocol == "file:") {
+                            this._global.scripturls.push(absJSUrl);
+                            $('head').append('&lt;script  type="text/javascript" src="' + absJSUrl + '">&lt;/script>');
+                        }
+                        else {
+                            $.ajax({
+                                url: absJSUrl,
+                                dataType: 'script',
+                                async: false,
+                                success: function (data) {
+                                    this._global.scripturls.push(absJSUrl);
+                                },
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载——' + absJSUrl);
+                                }
+                            });
+                        }
+                    }
+                });
+                $.each(corecss, function (idx, cssobj) {
+                    // css即便没加载进来，也不用抛错
+                    if (cssobj.path != null &amp;&amp; cssobj.path != '') {
+                        var absHrefUrl;
+                        if (cssobj.path != null &amp;&amp; cssobj.path != "" &amp;&amp; cssobj.path[0] == "/") {
+                            absHrefUrl = this._global.domain + cssobj.path.substr(1, cssobj.path.length - 1);
+                        }
+                        else {
+                            absHrefUrl = this._global.domain + cssobj.path;
+                        }
+                        if ($.inArray(absHrefUrl, this._global.scripturls) == -1) {
+                            this._global.scripturls.push(absHrefUrl);
+                            var linkstr = '&lt;link  type="text/css" rel="stylesheet"';
+                            if (cssobj.id &amp;&amp; cssobj.id != '') {
+                                linkstr += ' id="' + cssobj.id + '" ';
+                            }
+                            if (cssobj.disabled &amp;&amp; cssobj.disabled == true) {
+                                linkstr += ' disabled="disabled" ';
+                            }
+                            $('head').append(linkstr + ' href="' + absHrefUrl + '"/>');
+                        }
+                    }
+                });
+            }
+        },
+        /**
+        *组织绝对路径的
+        */
+        _absurl: function (path, basepath) {
+            var absUrl = '';
+            if (path != null &amp;&amp; path != '') {
+                if (path.indexOf('file') == 0 || path.indexOf('http') == 0 || path.indexOf('https') == 0) {
+                    // 绝对
+                    absUrl = path;
+                }
+                else if (path.indexOf('/') == 0) {
+                    // 另一种绝对，加domain
+                    absUrl = this._global.domain + path.substr(1); // 去掉一个/
+                }
+                else {
+                    // 相对
+                    if (basepath != null &amp;&amp; basepath != '')
+                        absUrl = this._absolutizeuri(basepath, path)
+                    else
+                        absUrl = this._absolutizeuri(window.location, path)
+                }
+            }
+            return absUrl;
+        },
+        /**
+        *通过对象实例获取相对路径
+        */
+        absurlbycompobj: function (path, componentobject) {
+            return this._absurl(path, this._buildcomponentpathprefix(componentobject.constructor.clazzname) + '.js');
+        },
+        /**
+        * 做loadjs之前肯定已经_inituui过,所以domain已有
+        * jspath为js的绝对路径, callback为回调函数（有回调表示异步调用）
+        */
+        loadjs: function (jspath, callback) {
+            if (this.config.mode == 'dev') {
+                if (jspath == null || jspath == '')
+                    return;
+                //this._absurl(jspath, basepath);
+                var absJSUrl = jspath;
+                if ($.inArray(absJSUrl, this._global.scripturls) == -1) {
+                    if (this._global.protocol == 'file:') {
+                        this._global.scripturls.push(absJSUrl);
+                        $('head').append('&lt;script  type="text/javascript" src="' + absJSUrl + '">&lt;/script>');
+                    }
+                    else {
+                        if (callback &amp;&amp; $.isFunction(callback)) {
+                            // 同步，直接塞入
+                            $.ajax({
+                                url: absJSUrl,
+                                dataType: 'text',
+                                async: true,
+                                success: function (data) {
+                                    if ($.inArray(absJSUrl, this._global.scripturls) == -1) {
+                                        // 要再判断一次，免得异步多次执行（宁可多请求也不多执行）
+                                        eval(data); // js载入
+                                        this._global.scripturls.push(absJSUrl);
+                                        if (this.config.debug) {
+                                            $('head').append('&lt;script  type="text/javascript" src="' + absJSUrl + '">&lt;/script>');
+                                        }
+                                    }
+                                },
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载——' + absJSUrl);
+                                }
+                            });
+                        }
+                        else {
+                            // 异步，先拿到字符串，然后eval
+                            $.ajax({
+                                url: absJSUrl,
+                                dataType: 'script',
+                                async: false,
+                                success: function (data) {
+                                    this._global.scripturls.push(absJSUrl);
+                                    if (this.config.debug) {
+                                        $('head').append('&lt;script  type="text/javascript" src="' + absJSUrl + '">&lt;/script>');
+                                    }
+                                },
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载——' + absJSUrl);
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        },
+        /**
+        *执行远程的js，执行一次算一次,同步, callback是对返回数据data的封装, callback必须要有return
+        */
+        exeremotejs: function (absJSUrl, context, callback) {
+            if (absJSUrl == null || absJSUrl == '')
+                return;
+            var jstext = null;
+            $.ajax({
+                url: absJSUrl,
+                dataType: "text",
+                async: false,
+                success: function (data) {
+                    if (callback) {
+                        jstext = callback(data);
+                    }
+                    else {
+                        jstext = data;
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载——' + absJSUrl);
+                }
+            });
+            if (jstext &amp;&amp; context) {
+                var Args = [];
+                if (arguments.length > 2)
+                    Args = Array.prototype.slice.call(arguments, 2);
+                var func = new Function(jstext);
+                func.apply(context, Args);
+            }
+        },
+        /**
+        * 做Loadcss之前肯定已经_inituui过,所以domain已有
+        * 如果cssPath是以domain打头，则是绝对路径;否则是相对路径
+        * cssobj为对象, basepath为绝对路径
+        */
+        loadcss: function (cssobj) {
+            if (this.config.mode == 'dev') {
+                if (cssobj == null || cssobj.path == null || cssobj.path == '')
+                    return;
+                var absHrefUrl = cssobj.path;
+                if ($.inArray(absHrefUrl, this._global.scripturls) == -1) {
+                    this._global.scripturls.push(absHrefUrl);
+                    var linkstr = '&lt;link  type="text/css" rel="stylesheet"';
+                    if (cssobj.id &amp;&amp; cssobj.id != '') {
+                        linkstr += ' id="' + cssobj.id + '" ';
+                    }
+                    if (cssobj.disabled &amp;&amp; cssobj.disabled == true) {
+                        linkstr += ' disabled="disabled" ';
+                    }
+                    $('head').append(linkstr + ' href="' + absHrefUrl + '"/>');
+                }
+            }
+        },
+        /**
+         * 做loadjs之前肯定已经_inituui过,所以domain已有
+         * 如果htmPath是以domain打头，则是绝对路径;否则是相对路径
+         * htmpath为htm的绝对路径
+         */
+        loadhtm: function (htmpath) {
+            var dtreturn = null;
+            if (htmpath != null &amp;&amp; htmpath != '') {
+                var absHTMUrl = htmpath;
+                $.ajax({
+                    url: absHTMUrl,
+                    async: false,
+                    success: function (data) {
+                        if (this._global.protocol == 'file:') {
+                            dtreturn = this.xmltostring(data);
+                        }
+                        else {
+                            dtreturn = data;
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        throw new Error('开发时错误：' + XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown + ' ,' + '无法加载——' + absHTMUrl);
+                    }
+                });
+            }
+            return dtreturn;
+        },
+        /**
+         *将HTML字符串中的特殊字符转换为HTML实体, 包含 &amp; &lt; > " ' \
+         */
+        escape: function (string) {
+            return ('' + string).replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/>/g, '&amp;gt;').replace(/"/g, '&amp;quot;').replace(/'/g, '&amp;#x27;').replace(/\//g, '&amp;#x2F;');
+        },
+        getjssrcfromhead: function (headstr) {
+            var arraySrcs = new Array();
+            if (headstr != null &amp;&amp; headstr != '') {
+                var regExp_src = /&lt;script.*src\s*=\s*["'][^"']*["'].*\/?>([^&lt;>]*&lt;\/script\s*>)?/gi;
+                var matchArray_src = headstr.match(regExp_src);
+                if (matchArray_src) {
+                    for (var i = 0; i &lt; matchArray_src.length; i++) {
+                        var str_temp = matchArray_src[i].toString();
+                        var regExp_src_temp = /&lt;script.*src\s*=\s*["']([^"']*)["'].*\/?>([^&lt;>]*&lt;\/script\s*>)?/gi;
+                        str_temp.match(regExp_src_temp);
+                        arraySrcs[i] = RegExp.$1;
+                    }
+                }
+            }
+            return arraySrcs;
+        },
+        getcsssrcfromhead: function (headstr) {
+            var arraySrcs = new Array();
+            if (headstr != null &amp;&amp; headstr != '') {
+                var regExp_src = /&lt;link.*href\s*=\s*["'][^"']*["'].*\/?>([^&lt;>]*&lt;\/link\s*>)?/gi;
+                var matchArray_src = headstr.match(regExp_src);
+                if (matchArray_src) {
+                    for (var i = 0; i &lt; matchArray_src.length; i++) {
+                        var str_temp = matchArray_src[i].toString();
+                        var regExp_src_temp = /&lt;link.*href\s*=\s*["']([^"']*)["'].*\/?>([^&lt;>]*&lt;\/link\s*>)?/gi;
+                        str_temp.match(regExp_src_temp);
+                        arraySrcs[i] = RegExp.$1;
+                    }
+                }
+            }
+            return arraySrcs;
+        },
+        getcssrawfromhead: function (headstr) {
+            var arraySrcs = new Array();
+            if (headstr != null &amp;&amp; headstr != '') {
+                var regExp_src = /&lt;style.*>[^&lt;>]*&lt;\/style\s*>?/gi;
+                var matchArray_src = headstr.match(regExp_src);
+                if (matchArray_src) {
+                    for (var i = 0; i &lt; matchArray_src.length; i++) {
+                        var str_temp = matchArray_src[i].toString();
+                        var regExp_src_temp = /&lt;style.*>([^&lt;>]*)&lt;\/style\s*>?/gi;
+                        str_temp.match(regExp_src_temp);
+                        arraySrcs[i] = RegExp.$1;
+                    }
+                }
+            }
+            return arraySrcs;
+        },
+        /**
+         * xml转string工具
+         */
+        xmltostring: function (xmlData) {
+            var xmlString;
+            //IE
+            if (window.ActiveXObject) {
+                xmlString = xmlData.xml;
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+            else {
+                xmlString = (new XMLSerializer()).serializeToString(xmlData);
+            }
+            return xmlString;
+        },
+        /**
+        * 清理jq的垃圾缓存
+        * domselector：删除的dom选择器, type: 'remove'或'empty'，注意没有detach
+        * 此方法只有在IE下有点效果，FF和chrome可以不考虑
+        */
+        releasedom: function (domselector, type) {
+            if ($("#uuigarbage").length == 0) {
+                $('body').append('&lt;div id="uuigarbage" style="display:none">&lt;/div>');
+            }
+            if (domselector &amp;&amp; domselector.length > 0) {
+                if (type == null || type == 'remove') {
+                    $("#uuigarbage").append(domselector.remove());
+                }
+                else if (type == 'empty') {
+                    var allchd = domselector.children();
+                    var i = 0;
+                    for (; i &lt; allchd.length ; i++) {
+                        this.releasedom($(allchd[i]));
+                    }
+                    allchd = null;
+                }
+            }
+            domselector = null;
+            $("#uuigarbage").html("");
+        },
+        /**
+        * 生成唯一id，默认20长
+        * 2014-06-02
+        */
+        uniqid: function (idlength) {
+            if (!idlength)
+                idlength = 20;
+            var charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+            if (!idlength) {
+                idlength = Math.floor(Math.random() * charstoformid.length);
+            }
+            var uid = '';
+            for (var i = 0; i &lt; length; i++) {
+                uid += charstoformid[Math.floor(Math.random() * charstoformid.length)];
+            }
+            if ($("#" + uid).length == 0)
+                return uid;
+            else
+                return this.uniqid(idlength);
+        }
+    });
+})();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#_absolutizeuri">_absolutizeuri</a></li><li><a href="global.html#_absurl">_absurl</a></li><li><a href="global.html#_global">_global</a></li><li><a href="global.html#_init">_init</a></li><li><a href="global.html#_isValidCompSelector">_isValidCompSelector</a></li><li><a href="global.html#_loadhtm">_loadhtm</a></li><li><a href="global.html#absurlbycompobj">absurlbycompobj</a></li><li><a href="global.html#afterrender">afterrender</a></li><li><a href="global.html#beforerender">beforerender</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#escape">escape</a></li><li><a href="global.html#exeremotejs">exeremotejs</a></li><li><a href="global.html#getabsurl">getabsurl</a></li><li><a href="global.html#getclazz">getclazz</a></li><li><a href="global.html#hide">hide</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#inituui">inituui</a></li><li><a href="global.html#JSON">JSON</a></li><li><a href="global.html#loadcss">loadcss</a></li><li><a href="global.html#loadhtm">loadhtm</a></li><li><a href="global.html#loadjs">loadjs</a></li><li><a href="global.html#proxy">proxy</a></li><li><a href="global.html#releasedom">releasedom</a></li><li><a href="global.html#render">render</a></li><li><a href="global.html#resize">resize</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#target">target</a></li><li><a href="global.html#uniqid">uniqid</a></li><li><a href="global.html#xmltostring">xmltostring</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Fri Jun 06 2014 15:30:41 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

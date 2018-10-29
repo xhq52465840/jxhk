@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_usergroup">
+            <form class="" role="form">
+                <div class="form-group col-md-6" style="padding-left:0;padding-right:0;">
+                    <label for="<%=this._id%>-availableunits" class="control-label"><%=com.sms.review.setReviewUnit.i18n.systemUnits %></label>
+                    <select class="form-control" qid="availableunits" multiple="multiple" size="10"></select>
+                    <button qid="btn_joinselectedunits" style="margin-top:10px;"><%=com.sms.review.setReviewUnit.i18n.addSelUnit %></button>
+                </div>
+                <div class="form-group col-md-6" style="padding-left:20px;padding-right:0;">
+                    <label for="<%=this._id%>-currentunits" class="control-label"><%=com.sms.review.setReviewUnit.i18n.currentUnit %></label>
+                    <select class="form-control" qid="currentunits" multiple="multiple" size="10"></select>
+                    <button qid="btn_leaveselectedunits" style="margin-top:10px;"><%=com.sms.review.setReviewUnit.i18n.remove %></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

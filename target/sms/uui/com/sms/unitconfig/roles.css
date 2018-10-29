@@ -1,0 +1,83 @@
+.com-sms-unitconfig-roles h1,h2,h3,h4,h5,h6{margin:0;}
+.com-sms-unitconfig-roles .unit-config-icon48-roles:after{
+	background-image: url(/sms/uui/img/icon48-people.png);
+}
+.com-sms-unitconfig-roles .unit-config-icon48-roles:after{
+	content: "";
+	height: 48px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 48px;
+	/*background: transparent none no-repeat 0 0;*/
+}
+.com-sms-unitconfig-roles .table thead th{
+	border-bottom:none;
+}
+.com-sms-unitconfig-roles .table tbody tr:last-child td{
+	border-bottom:1px solid #ddd;
+}
+.com-sms-unitconfig-roles .table td.unit-config-role-users
+{
+	min-width:280px;
+	/* width:60%; */
+}
+.com-sms-unitconfig-roles .table td.unit-config-role-groups{
+	width:280px;
+}
+.com-sms-unitconfig-roles .table td.restfultable-operations{
+	width: 160px;
+	white-space: nowrap;
+}
+.com-sms-unitconfig-roles .table td.no-value .editable{
+	visibility:hidden;
+}
+.com-sms-unitconfig-roles .table tr:hover td{
+	background-color:#f5f5f5;
+}
+.com-sms-unitconfig-roles .table tr.focused td{
+background-color:#ebf2f9;
+}
+.com-sms-unitconfig-roles .table td:hover .editable{
+	background-color:#fffdf6;
+	visibility:visible;
+}
+.com-sms-unitconfig-roles .table td:hover .editable> span.glyphicon{
+	visibility:visible;
+}
+.com-sms-unitconfig-roles .editable{
+	cursor:pointer;
+	display: block;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 3px 24px 2px 4px;
+	position: relative;
+}
+.com-sms-unitconfig-roles .editable > ul{
+	margin:0;
+}
+.com-sms-unitconfig-roles .editable > span.glyphicon
+{
+	margin: 0;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	visibility: hidden;
+}
+
+.com-sms-unitconfig-roles .unit-config-icon{
+	background: transparent url(/sms/uui/img/icon16-sprite.png) no-repeat 0 0;
+	display: inline-block;
+	height: 16px;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -999em;
+	vertical-align: text-bottom;
+	width: 16px;
+	margin-right:5px;
+}
+
+.com-sms-unitconfig-roles .unit-config-icon-person{
+	background-position: 0 -80px;
+}

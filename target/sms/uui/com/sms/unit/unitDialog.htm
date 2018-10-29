@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+        <div qid="unit-dialog">
+        	<div class="container firststep-page" qid="unit-row">
+	        	<div class="row">
+	                <div class="col-sm-6">
+	                   点击下一步开始创建安监结构
+	                </div>
+	                <div class="col-sm-6">
+	                   
+	                </div>
+                </div>
+        	</div>
+        	<div class="container secondstep-page hidden">
+	        	<div class="col-sm-12">
+	        		<form class="form-horizontal" role="form" qid="unit-form">
+		                <div class="form-group">
+		                    <label  class="col-sm-4 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialog.i18n.name %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-5">
+		                        <input type="text" class="form-control input-sm"  qid="unit-name" name="unit-name" placeholder="">
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-4 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialog.i18n.key %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-5">
+		                        <input type="text" class="form-control input-sm" qid="unit-key" name="unit-key" placeholder="">
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label  class="col-sm-4 control-label" style="color:#707070;font-weight:normal;"><%=com.sms.unit.unitDialog.i18n.safeAgency %><span class="text-danger">*</span></label>
+		                    <div class="col-sm-5">
+		                        <input type="text" qid="unit-person" class="form-control" name="unit-person" >
+		                    </div>
+		                </div>
+	                </form>
+                </div>
+        	</div>
+        </div>
+</body>
+</html>

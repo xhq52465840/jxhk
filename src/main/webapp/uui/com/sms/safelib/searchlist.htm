@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>安全图书馆检索</title>
+</head>
+<body>
+	<div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12" style="padding-left: 20px;">
+					<i class="fa fa-search fa-2x uui-font-sms-color pull-left" ></i><h1 class="summary-val break-word">检索：<span qid="ads"></span></h1>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default navbar-horizontalNav" role="navigation">
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:0;">
+                            <ul class="nav navbar-nav"  qid="tabs">
+                                <li><a href="#activity" role="tab" data-toggle="tab" >安全信息</a></li>
+                                <li><a href="#directory" role="tab" data-toggle="tab">图书馆</a></li>
+                                <li><a href="#dailySafetyWorkStatus" role="tab" data-toggle="tab">日常安全工作</a></li>
+                                <li><a href="#hazards" role="tab" data-toggle="tab">危险源</a></li>
+                                <li><a href="#systemFlow" role="tab" data-toggle="tab">系统流程</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 " style="padding: 7px 20px;" >
+					<div id="activity" class="hidden search-results">
+					</div>
+					<div id="directory" class="hidden search-results">
+					</div>
+					<div id="dailySafetyWorkStatus" class="hidden search-results">
+					</div>
+					<div id="hazards" class="hidden search-results">
+					</div>
+					<div id="systemFlow" class="hidden search-results">
+					</div>
+				</div> 
+				<div class="col-md-12 text-center">
+					<button class="btn btn-link hidden" qid="more">更多</button>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="page-content" style="min-height:700px;" qid="main">
+		</div> -->
+	</div>
+</body>
+</html>

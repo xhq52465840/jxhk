@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div qid="riskGradeDialog">
+       		<form qid ="form" class="form">
+		       	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-possibility" class="col-sm-2" >可&nbsp;&nbsp;能&nbsp;&nbsp;性<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		           	 	<input type="text" class="form-control input-sm " qid="possibility"  name="possibility"/>
+		               	</div>
+		       		</div>
+            	</div>
+
+            	<div class="row">
+		       		<div class="form-group col-sm-12 ">
+		           		<label for="<%=this._id%>-severity" class="col-sm-2" >严&nbsp;&nbsp;重&nbsp;&nbsp;性<span style="color:red">*</span></label>
+		           	 	<div class="col-sm-10">
+		           	 	<input type="text" class="form-control input-sm " qid="severity"  name="severity"/>
+		               	</div>
+		       		</div>
+            	</div>
+            	<fieldset disabled>
+	            	<div class="row">
+			       		<div class="form-group col-sm-6 ">
+			           		<label for="<%=this._id%>-riskRatio" class="col-sm-4" >风&nbsp;&nbsp;险&nbsp;&nbsp;值<span style="color:red">*</span></label>
+			           	 	<div class="col-sm-8">
+			           	 	<input type="text" class="form-control input-sm disable " qid="riskRatio"  name="riskRatio"/>
+			               	</div>
+			       		</div>
+			       		<div class="form-group col-sm-6 hidden">
+			           	 	<div class="col-sm-4">
+			           	 	<input type="text" class="form-control input-sm disable " qid="riskColour"  name="riskColour" />
+			               	</div>
+			       		</div>
+	            	</div>
+	            </fieldset>
+	            
+	            <div class="form-group">
+			    <label for="" class="col-sm-2 control-label" style="color:red ;padding-top:20px"><!-- 矩阵分析说明 --></label>
+			    <div class="col-sm-10">
+			    <div for=""  style="text-align:center;color:red">矩阵分析说明</div>
+					<img alt="矩阵分析说明" src="juzhengfenxi.png" style='width:90%;hieght:80%;'>
+			    </div>
+			    
+			  </div>
+        	</form>
+       	</div>
+    </div>       	
+</body>
+</html>

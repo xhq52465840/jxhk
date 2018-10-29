@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<div>
+	<div class="uui-managepage">
+		<div qid="content" class="hidden">
+		<div umid="itemDialogEdit" ></div>
+		<div umid="itemDialogEditConfirm" ></div>
+			<div class="row" style="height: 43px;margin-bottom: 12px;">
+				<div class="col-md-12 text-right" qid="btn_area" style="margin-top:8px">
+					<button class="btn btn-default btn-sm " qid="export">导出</button>
+				</div>
+			</div>
+			<form qid="form">
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>跟踪表基本信息</h2>
+					</div>
+					<div class="panel-body">
+						<table class="uui-table table-fixed">
+							<tbody>
+								<tr>
+									<td class="name" data-field="traceName">跟踪表名称</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="traceName" name="traceName"/></td>
+									<td class="name" data-field="traceNo">跟踪表编号</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="traceNo" name="traceNo"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field=operator>检查单位</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="operator" name="operator"/></td>
+									<td class="name" data-field="address">检查地点</td>
+									<td class="value"><input type="text" maxlength="512" class="form-control input-sm" qid="address" name="address"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="startEndDate" >检查日期</td>
+									<td class="value">
+										<div class="row">
+											<div class="col-xs-5 no-right-padding"><input type="text" class="form-control input-sm" qid="startDate" name="startDate" maxlength="12"/></div>
+											<div class="col-xs-2 no-right-padding text-center"><span class="spanMar">至</span></div>
+											<div class="col-xs-5 no-left-padding"><input type="text" class="form-control input-sm" qid="endDate" name="endDate" maxlength="12"/></div>
+										</div>
+									</td>
+									<td class="name" data-field="target">被检查单位</td>
+									<td class="value"><input type="text" class="form-control input-sm" qid="target" name="target"/></td>
+								</tr>
+								<tr>
+									<td class="name" data-field="remark">备注</td>
+									<td class="value" colspan="3">
+										<textarea class="form-control input-sm" maxlength="2000" rows="3" qid="remark" name="remark"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+						<span class="fa fa-thumbs-o-up"></span>&nbsp;
+						<span class="panel-title panel-tips"></span>
+					</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>待验证的项目</h2>
+					</div>
+					<div class="panel-body">
+						<div class="">
+						 	<table qid="completeToDo" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+						</div>
+						<div class="text-right">
+							<button class="btn btn-default btn-sm hidden " qid="batch-btn">批量分配</button>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>已验证完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<div class="">
+							 <table qid="completedContainer" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>未按时完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<div class="">
+							<table qid="notInTimeContainer" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-sms">
+					<div class="panel-heading">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-minus glyphicon-btn" style="margin: 0 5px;"></i>暂时无法完成的项目</h2>
+					</div>
+					<div class="panel-body">
+						<div class="">	
+							<table qid="unfinishedContainer" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin-top: 0px !important;"></table>
+						</div>
+					</div>
+				</div>
+				
+			</form>
+			
+		</div>
+		<div qid="logsContainer"></div>
+	</div>
+</div>
+</body>
+</html>

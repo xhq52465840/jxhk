@@ -1,0 +1,27 @@
+﻿util目录，存放工具
+v0.1   created by Wayne
+stringutil有：
+	String.prototype.startwith
+	String.prototype.endwith
+	String.prototype.left
+	String.prototype.right
+	String.prototype.trim
+	String.prototype.ltrim
+	String.prototype.rtrim
+	String.prototype.reverse
+	String.prototype.addcharat
+	String.prototype.removecharat
+	String.prototype.striptags
+	String.prototype.replaceall
+	String.prototype.topropercase
+	String.prototype.byteslen
+dateutil有：
+	Date.prototype.format
+	Date.prototype.parsestring
+objectutil有：
+	Object.prototype.hashcode	
+
+v0.2	add by wayne in 201311227
+stringutil增加：
+	isFloat
+	isInt	

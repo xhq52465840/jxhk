@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed;
+	bottom: 0;
+	left: 10px;
+	width: 100%;
+	background: #e8e8e8;
+	border: solid 1px #CCC;
+	text-align: right;
+	float: right;
+}
+
+.item {
+	cursor: pointer;
+}
+
+.liColor {
+	color: #FFDD55;
+}
+
+.cur {
+	background: #DDDDDD;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div  id="threatEventVue" style="padding: 12px 0 0 0; width:100%;">
+			<div class="page-header-main unit-details">
+				<table style="width:101%;">
+					<thead class="header">
+						<tr>
+							<td class="searchTitleIcon"><div>&nbsp;</div></td>
+							<td  class="rightBigTitle"><div class="uui-managepage-title">{{tabName}}</div></td>
+						</tr>
+					</thead>
+				</table>
+				
+			</div>
+			<div class="panel panel-sms" style="width: 100%; margin: 2px 0px 0px 10px;">
+				<div class="container-fluid no-left-right-padding">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 no-right-padding" style="overflow-x: auto; height:400px;margin-top:5px;padding-top:5px;border: 1px solid #d5d5d5;  background:transparent;">
+
+							<ul>
+								<eventitem class="item" :model="treeData"> </eventitem>
+							</ul>
+
+						</div>
+						<div class="col-lg-7 col-md-7" style="height: 400px;">
+
+							<div style="margin: 0px 0px 10px 0px;  ">
+								<div class="threatevent-uui-table">
+									<div class="threatevent-uui-tableheader">威胁属性</div>
+									<div class="threatevent-uui-tablecontent">
+										<table>
+											<tbody>
+											<tr>
+												<td class="name">事件种类:</td>
+												<td class="value" id="orgType">{{threatEvent.parent_name}}</td>
+											</tr>
+											<tr>
+												<td class="name">事件名称:</td>
+												<td class="value"><input type="text" class="form-control input-sm" id="orgName" v-model="threatEvent.name" /></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="threatevent-uui-tablebutton">
+										<button class="btn btn-default btn-sm" id="btn_save" style="display: none" @click="save">
+											<span class="glyphicon glyphicon-pencil"></span>保存事件
+										</button>
+										<button class="btn btn-default btn-sm" id="btn_del" style="display: none;" @click="del">
+											<span class="glyphicon glyphicon-minus"></span>失效事件
+										</button>
+										<button class="btn btn-default btn-sm" id="btn_add" style="display: none;" @click="add">
+											<span class="glyphicon glyphicon-minus"></span>复效事件
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+	</div>
+</body>
+</html>

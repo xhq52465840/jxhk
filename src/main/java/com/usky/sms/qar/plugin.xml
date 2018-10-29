@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+	<bean id="qar" class="com.usky.sms.qar.QarService" />
+	<bean id="qarevent" class="com.usky.sms.qar.QarEventService" />
+	<bean id="qarEventDao" class="com.usky.sms.qar.QarEventDao" />
+	<bean id="qarQuery" class="com.usky.sms.qar.QarQueryService" />
+	<bean id="qarQueryDao" class="com.usky.sms.qar.QarQueryDao" />
+</beans>

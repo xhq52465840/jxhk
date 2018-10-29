@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../uui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../uui/widget/jqui/ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../uui/widget/jqui/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src='../../../uui/widget/jqdatatable/js/jquery.dataTables.js'></script>
+    <link rel="stylesheet" type="text/css" href='../../../uui/widget/jqdatatable/css/jquery.dataTables.css' />
+    <link rel="stylesheet" type="text/css" href='../../../uui/widget/jqdatatable/css/demo_table_jui.css' />
+    <script type="text/javascript" src="../../../uui/widget/jqautocompleteext/autocompleteext.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var dataTable = $("#jqtable").dataTable({
+                "bPaginate": false,  //分页
+                "bLengthChange": false, // 每页显示数量
+                "bFilter": false,   //页面过滤
+                "bSort": false,     //排序
+                "bInfo": false,     //左下角信息
+                "bAutoWidth": false, //自动宽度
+                "oLanguage": { //语言
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "...",
+                    "sInfo": "共 _TOTAL_ 条数据",
+                    "sInfoEmpty": "没有数据",
+                    "sInfoFiltered": "(从总共_MAX_条记录中过滤)"
+                },
+                "aaData": [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]
+                ],
+                "aoColumns": [
+                  {
+                      "sTitle": "T1", "sClass": "sel2", "sWidth": "180px", "mRender": function (dt, type, full) {
+                          return "fdsagdasfsdafsdafasfdsaf<input type='text' value='" + full[0] + "'/>"
+                      }
+                  },
+                  { "sTitle": "T2", "sWidth": "54px" },
+                  { "sTitle": "T3", "sWidth": "80px" },
+                  { "sTitle": "T4", "sWidth": "54px" }
+                ],
+                "fnDrawCallback": function (oSettings) {
+                    var headerdataheads = $("#tablearea .dataTables_scrollHeadInner thead tr th");
+                    $.each(oSettings.aoColumns, function (idx, aColumn) {
+                        var headx = $(headerdataheads[idx]);
+                        if (aColumn.sWidthOrig && aColumn.sWidthOrig.indexOf("%") < 0) {
+                            headx.css("min-width", aColumn.sWidthOrig);
+                            headx.css("max-width", aColumn.sWidthOrig);
+                        } else if (!aColumn.sWidthOrig) {
+                            headx.css("width", "");
+                        }
+                    })
+                    var dataheads = $("#tablearea .dataTables_scrollBody thead tr th");
+                    $.each(oSettings.aoColumns, function (idx, aColumn) {
+                        var headx = $(dataheads[idx]);
+                        if (aColumn.sWidthOrig && aColumn.sWidthOrig.indexOf("%") < 0) {
+                            headx.css("min-width", aColumn.sWidthOrig);
+                            headx.css("max-width", aColumn.sWidthOrig);
+                        }
+                        else if (!aColumn.sWidthOrig) {
+                            headx.css("width", "");
+                        }
+                    })
+                    $("#tablearea .dataTables_scrollHeadInner").css("width", "");
+                    $("#tablearea .dataTables_scrollHeadInner table").css("width", "");
+                    $("#jqtable").css("width", "");
+                }
+            });
+            $("input", this.dataTable).autocomplete({
+                minLength: 0,
+                delay: 500,
+                position: { collision: "flip" },
+                search: function (e) {
+                    $(e.target).removeClass("ui-autocomplete-input-search");
+                    $(e.target).addClass('autoloading');
+                },
+                open: function (e) {
+                    $(e.target).removeClass('autoloading');
+                    $(e.target).addClass("ui-autocomplete-input-search");
+                },
+                source: function (request, response) {
+                    var dt = [];
+                    dt.push({ id: 1, Code: "JAVA" });
+                    dt.push({ id: 2, Code: "C#" });
+                    dt.push({ id: 3, Code: "PHP" });
+                    response(dt);
+                },
+                select: function (e, ui) {
+                    $(e.target).val(ui.item.Code);
+                    return false;
+                }
+            }).on("focus", function (e) {
+                if ($(e.currentTarget).val() == "") {
+                    $(e.currentTarget).autocomplete("search");
+                }
+            }).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $("<li>").append("<a>" + item["Code"] + "</a>").appendTo(ul);
+            };
+        });
+    </script>
+</head>
+<body>
+    <div id="tablearea">
+        <table id="jqtable"></table>
+    </div>
+</body>
+</html>

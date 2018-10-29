@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div qid="div_orgmembers">
+            <form class="form-horizontal" role="form">
+                <div class="form-group control">
+                    <label  class="col-sm-3 control-label"><%=com.sms.plugin.organization.orgmembers.i18n.selectUser %></label>
+                    <div class="col-sm-8" style="padding-left:0;">
+                        <input type="hidden" qid="users" class="form-control"/><button class="btn btn-default btn-sm disabled" qid="btn-adduser" style="margin-left:5px;"><span class="glyphicon glyphicon-plus"></span></button>
+	                    <div class="help-block"><small><%=com.sms.plugin.organization.orgmembers.i18n.remaind %></small></div>
+                    </div>
+                </div>
+                <div class="form-group control">
+                    <label  class="col-sm-3 control-label"><%=com.sms.plugin.organization.orgmembers.i18n.userGroup %></label>
+                    <div class="col-sm-8" style="padding-left:0;">
+                        <select class="form-control" qid="orgmembers" multiple="multiple" size="10"></select>
+                    	<button qid="btn_removeselectedusers" class="btn btn-default btn-sm" style="margin-top:10px;"><%=com.sms.plugin.organization.orgmembers.i18n.removeUser %></button>
+                    </div>
+                </div>
+                   
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

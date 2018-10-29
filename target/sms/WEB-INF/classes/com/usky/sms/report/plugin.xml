@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byType">
+	
+	<bean id="reportDao" class="com.usky.sms.report.ReportDao" />
+	<bean id="report" class="com.usky.sms.report.ReportService" />
+	<bean id="flightCrewEventDao" class="com.usky.sms.report.FlightCrewEventDao" />
+	<bean id="ddflightCrewEventDao" class="com.usky.sms.report.DdFlightCrewEventDao" />
+	<bean id="reportFliterDao" class="com.usky.sms.report.ReportFliterDao" />
+
+</beans>

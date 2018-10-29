@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    </head>
+<body>
+	<div>
+	    <div qid="dialog">
+	    	<form class="form-horizontal" role="form" qid="form">
+				<div>
+				<div class="row">
+					<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind1 %><strong qid="unit-name"></strong><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind2 %></small>
+				</div>
+				<div style="margin-top:10px;" class="row">
+					<small ><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind3 %><strong qid="unit-activity"></strong>。</small>
+				</div>
+				<div qid="radio" class="row" style="background-color: #fefefe;border: 1px dotted #bbb;padding: 3px 5px;text-align: left;font-size:12px;">
+					<div class="radio">
+						<label>
+							<input type="radio"  name="activitytypescheme" value="first"  checked="checked"/><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind4 %> <strong><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind5 %></strong>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio"  name="activitytypescheme" value="second" /><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind6 %><strong><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind7 %></strong>
+						</label>
+					</div>
+					
+					<div class="radio">
+						<label>
+							<input type="radio"  name="activitytypescheme" value="third" /><strong><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind8 %> </strong><%=com.sms.unitconfig.activityTypesSchemes.i18n.remaind9 %></td>
+						</label>
+					</div>
+					
+				</div>
+				<div>
+				<div qid="first">
+					<div class="row">
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" style="text-align:left;">
+									<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.safeTypeCase %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<small><select class="form-control" qid="activitytypescheme-first" name="activitytypescheme-first"  size="10" style="width:200px;" >
+
+									</select></small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" >
+									<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.caseMsgtype %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" qid="div-col-first">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div qid="second"  class="hidden">
+					<div class="row">
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" style="text-align:left;">
+								<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.safeAgency %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<small><input type="text" qid="unit" name="unit"  class="form-control">
+									</input></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" style="text-align:left;">
+								<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.safeTypeCase %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" qid="activity-type-scheme-second">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" >
+									<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.caseMsgtype %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12"  qid="activity-type-second">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div qid="third"  class="hidden">
+					<div class="row">
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" style="text-align:left;">
+								<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.safeAgency %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" qid="qid-col-third-name">
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" style="text-align:left;">
+								<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.safeTypeCase %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" qid="qiv-col-third-type">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6" >
+							<div class="row">
+								<div class="col-md-12" >
+									<small><%=com.sms.unitconfig.activityTypesSchemes.i18n.caseMsgtype %></small>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12" >
+									<small><select class="form-control" qid="activitytypescheme-third" name="activitytypescheme-third" multiple="multiple" size="10" style="width:200px;" >
+									</select></small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+	        </form>
+	    </div>
+    </div>
+</body>
+</html>

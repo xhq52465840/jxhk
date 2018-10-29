@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2017-01-16T13:16:56 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="audit_report_cover" pageWidth="595" pageHeight="842" columnWidth="455" leftMargin="70" rightMargin="70" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="managers" uuid="3cc94449-bfd1-4fac-a544-89a95b95d1e6">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="name" class="java.lang.String"/>
+		<field name="contact" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="filePath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="managers" class="java.util.List"/>
+	<field name="target" class="java.util.Map"/>
+	<field name="auditor" class="java.lang.String"/>
+	<field name="planType" class="java.lang.String"/>
+	<field name="checkType" class="java.lang.String"/>
+	<field name="operator" class="java.util.Map"/>
+	<field name="managersDisplayName" class="java.lang.String"/>
+	<field name="contact" class="java.lang.String"/>
+	<field name="auditReportTransactor" class="java.lang.String"/>
+	<title>
+		<band height="227" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="10" width="455" height="50" backcolor="#000000" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="70" height="50" uuid="f630f938-1ac6-4a0b-97ea-42c322a4bfda"/>
+					<imageExpression><![CDATA[new File($P{filePath} + "/auditlogo.png")]]></imageExpression>
+				</image>
+			</frame>
+			<frame>
+				<reportElement x="0" y="123" width="455" height="64" uuid="7ab973e6-7c52-4372-930d-0133f9ea0ab9"/>
+				<textField>
+					<reportElement x="0" y="0" width="455" height="30" uuid="4d2ad8ec-ffca-4e70-b651-906dce4262a3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["上海吉祥航空股份有限公司"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="32" width="455" height="32" uuid="ccecdc0c-c248-48a6-9622-c043302e969e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="22"/>
+					</textElement>
+					<textFieldExpression><![CDATA[("TERM".equals($F{planType}) ? $F{target}.get("targetName") + "航站" :(("SYS".equals($F{planType}) || "SYS".equals($F{checkType})) ? "" : $F{operator}.get("name"))
+) + "安全运行" + (null != $F{checkType} ? "检查" : ("审" + (("SYS".equals($F{planType}) || ("TERM".equals($F{planType}))) ? "计" : "核"))) + "报告"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="161" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="247" splitType="Stretch">
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="105" width="455" height="75" uuid="c289ca26-cdad-458e-9623-4b4d2c322aa7"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#BDB9B9"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="230" y="3" width="225" height="24" uuid="8f69ec54-f3b9-437d-ac6d-5c3e0192bb83">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box padding="1"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[审    核   人：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="3" width="74" height="24" uuid="d1d1f4b5-7f61-4e1c-9fd0-405cf39fc6a1">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box padding="1"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[经 办 部 门：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="27" width="74" height="44" uuid="b8b2183d-b59f-432b-8417-ad2075a31309"/>
+					<box padding="1"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[经   办   人：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="230" y="47" width="225" height="24" uuid="27287bd2-abf3-48c5-86e4-9075ea954e26">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box padding="1"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[传 真 号 码：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="90" y="4" width="140" height="23" uuid="3f26e348-e533-4bb7-b90b-57e693e9ea19"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[("SYS".equals($F{planType}) || "SYS".equals($F{checkType})) ? "吉祥安全监察部" : ""]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="90" y="28" width="140" height="43" uuid="53ef7f05-9138-426f-8af2-118852aac2c9"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{checkType} != null ? $F{auditReportTransactor} : $F{managersDisplayName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="230" y="27" width="225" height="20" uuid="1041e414-61ec-4700-88bb-7f29dbf9639a"/>
+					<box padding="1"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA["联 系 电 话：" + ($F{contact} == null ? "" : $F{contact})]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="0" y="4" width="455" height="30" uuid="f5a1a28b-c096-4a84-8ff8-a983f2f472bb">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="微软雅黑" size="16"/>
+				</textElement>
+				<text><![CDATA[                            领导签发：]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="69" width="454" height="36" uuid="0749107e-3eec-4325-96e5-b76e2774734e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="454" height="18" uuid="4cbd24e9-697e-4396-9b72-214b57e27590">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle" rotation="None">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[报：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="18" width="454" height="18" uuid="46bb6e58-985d-4b29-9c85-4bd468ac8544"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle" rotation="None">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[抄：]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

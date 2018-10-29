@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 3px 3px;
+	vertical-align: middle;
+}
+
+.table {
+	margin-bottom: 0;
+}
+
+.float_footer {
+	position: fixed; bottom: 0; left: 10px; width: 100%; background: #e8e8e8; border: solid 1px #CCC; text-align: right; float: right;
+}
+</style>
+</head>
+<body>
+<div>
+	<div class="docform container-fluid">
+		<div class="panel panel-sms" id="planDetailForm">
+			<div class="panel-heading">
+				<h2 class="panel-title">航线审计任务计划详情</h2>
+			</div>
+			<table class="uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name" style="width: 20%">
+							计划编号：
+						</td>
+						<td class="value">
+							{{planInfo.planNo}}
+						</td>
+						<td class="name" style="width: 20%">
+							状态：
+						</td>
+						<td class="value">
+							{{planInfo.planStatusName}}
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							计划类型：
+						</td>
+						<td class="value">
+							{{planInfo.schemeTypeName}}
+						</td>
+						<td class="name" style="width: 20%">
+							实施单位：
+						</td>
+						<td class="value">
+							{{planInfo.impleUnitName}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<div class="panel-heading">
+				<h3 class="panel-title">计划概述：</h3>
+			</div>
+			<table class="uui-table" style="table-layout: fixed;">
+				<tbody>
+					<tr>
+						<td class="name" style="width: 20%">
+							所属方案
+						</td>
+						<td class="value" colspan="3">
+							{{planInfo.schemeSubject}}
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							观察日期
+						</td>
+						<td class="value">
+							{{planInfo.observeDate | datestr}}
+						</td>
+						<td class="name" style="width: 20%">
+							观察人员
+						</td>
+						<td class="value">
+							{{planInfo.observer}}
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							观察航班
+						</td>
+						<td class="value">
+							{{planInfo.flyNo}}
+						</td>
+						<td class="name" style="width: 20%">
+							所属机队
+						</td>
+						<td class="value">
+							上海飞行队
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							起飞机场
+						</td>
+						<td class="value">
+							{{planInfo.deptAirport}}
+						</td>
+						<td class="name" style="width: 20%">
+							着陆机场
+						</td>
+						<td class="value">
+							{{planInfo.arrAirport}}
+						</td>
+					</tr>
+					<tr>
+						<td class="name" style="width: 20%">
+							观察任务详细描述
+						</td>
+						<td class="value" colspan="3">
+							<textarea rows="5" cols="70" readonly="readonly">
+								{{planInfo.planDesc}}
+							</textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

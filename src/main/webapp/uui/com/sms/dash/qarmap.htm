@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div>
+		<div align="center">QAR事件分布 
+		     <select id="type_select">
+		         <option value ="high_rate">低空下降率大</option>
+                 <option value ="Unstabilized">不稳定进近</option>              
+             </select>
+		</div>
+		 年：<input type="checkbox" name="checkbox1" value="2013" id="2013">
+		2013 <input type="checkbox" name="checkbox2" value="2014" id="2014">
+		2014<input type="checkbox" name="checkbox2" value="2015" id="2015">
+		2015<input type="checkbox" name="checkbox2" value="2016" id="2016">
+		2016<input type="checkbox" name="checkbox2" value="2017" id="2017">
+		2017
+        <br>
+		月：<input type="checkbox" name="checkbox" value="1" id="0" >
+		1月 <input type="checkbox" name="checkbox" value="2" id="1" >
+		2月<input type="checkbox" name="checkbox" value="3" id="2" >
+		3月 <input type="checkbox" name="checkbox" value="4" id="3" >
+		4月<input type="checkbox" name="checkbox" value="5" id="4" >
+		5月 <input type="checkbox" name="checkbox" value="6" id="5" >
+		6月<input type="checkbox" name="checkbox" value="7" id="6" >
+		7月 <input type="checkbox" name="checkbox" value="8" id="7" >
+		8月<input type="checkbox" name="checkbox" value="9" id="8" >
+		9月 <input type="checkbox" name="checkbox" value="10" id="9" >
+		10月<input type="checkbox" name="checkbox" value="11" id="10" >
+		11月 <input type="checkbox" name="checkbox" value="12" id="11" >
+		12月<input type="checkbox" name="checkboxall" value="12" id="checkAll" >
+		全选<input type="checkbox" name="checkboxallnot" value="12" id="checkAllNOT" >
+		全不选<br>
+		<button qid="btn_query" style="margin-top:10px;" >查询</button>
+		<hr>
+		<div id="mainMapQ"
+			style="height: 500px; border: 1px solid #ccc; padding: 10px;"></div>
+	</div>
+</body>
+</html>

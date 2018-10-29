@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	<div>
+		<div umid="editdialog"></div>
+		<div umid="threatdialog"></div>
+		<div umid="errordialog"></div>
+		<div umid="controldialog"></div>
+		<div umid="selectControlDialog"></div>
+		<div umid="actionItemDialog"></div>
+		<div qid="addDialog" class="hidden">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="" class="col-sm-3 control-label">TEM系统分类</label>
+			    <div class="col-sm-9">
+					<input type="hidden" class="form-control" qid="system"/>
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<div class="panel panel-sms">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+					<!-- <span class="fa fa-chevron-down"></span> -->
+					TEM分析
+					<div qid="btn_add" class="pull-right panel-button-container" >
+						<div class="panel-button-inner">
+							<i class="fa fa-plus "  ></i>
+						</div>
+					</div>
+				</h2>
+				
+			</div>
+			<div umid="activityDialog" ></div>
+			<div class="panel-body" qid="content-tem">
+				<!-- <ul class="property-list two-cols">
+					<li class="item"><div class="wrap">
+							<strong class="name">严重程度:</strong><span class="value" qid="severity"></span>
+						</div></li>
+					<li class="item" style="width:100%;"><div class="wrap">
+							<strong class="name">对应条款:</strong><span class="value" qid="provision"></span>
+						</div></li>
+					<li class="item"><div class="wrap">
+							<strong class="name">不安全状态:</strong><span class="value" qid="insecurity"></span>
+						</div></li>
+					<li class="item item-right"><div class="wrap">
+							<strong class="name">重大风险:</strong><span class="value" qid="consequence"></span>
+						</div></li>
+				</ul>
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr class="active">
+							<th style="width:60%;">威胁</th>
+							<th style="width:20%;">控制措施</th>
+							<th style="width:15%;"></th>
+							<th style="width:5%;"><span class="glyphicon glyphicon-plus fl-plus" style="cursor:pointer;" title="添加威胁" qid="btn_threat"></span></th>
+						</tr>
+					</thead>
+					<tbody qid="threatlist">
+						
+					</tbody>
+				</table>
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr class="active">
+							<th style="width:30%;">差错</th>
+							<th style="width:30%;">部门</th>
+							<th style="width:20%;">控制措施</th>
+							<th style="width:15%;"></th>
+							<th style="width:5%;"><span class="glyphicon glyphicon-plus fl-plus" style="cursor:pointer;" title="添加差错"  qid="btn_error"></span></th>
+						</tr>
+					</thead>
+					<tbody qid="errorlist">
+						
+					</tbody>
+				</table> -->
+				<!-- <div class="module">
+					<div class="module-heading">
+						<h2>
+							<span class="fa fa-chevron-down"></span>威胁
+						</h2>
+						<span class="glyphicon glyphicon-plus fl-plus pull-right" qid="btn_threat"></span>
+					</div>
+					<div class="module-content">
+						<table class="table table-hover table-condensed">
+							<thead>
+								<tr class="active">
+									<th style="width:60%;">威胁</th>
+									<th style="width:20%;">控制措施</th>
+									<th style="width:15%;"></th>
+									<th style="width:5%;"><span class="glyphicon glyphicon-plus fl-plus pull-right" qid="btn_threat"></span></th>
+								</tr>
+							</thead>
+							<tbody qid="threatlist">
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="module">
+					<div class="module-heading">
+						<h2>
+							<span class="fa fa-chevron-down"></span>差错
+						</h2>
+						<span class="glyphicon glyphicon-plus fl-plus pull-right"  qid="btn_error"></span>
+					</div>
+					<div class="module-content">
+						<table class="table table-hover table-condensed">
+							<thead>
+								<tr class="active">
+									<th style="width:30%;">差错</th>
+									<th style="width:30%;">部门</th>
+									<th style="width:20%;">控制措施</th>
+									<th style="width:15%;"></th>
+									<th style="width:5%;"><span class="glyphicon glyphicon-plus fl-plus pull-right"  qid="btn_error"></span></th>
+								</tr>
+							</thead>
+							<tbody qid="errorlist">
+								
+							</tbody>
+						</table>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
